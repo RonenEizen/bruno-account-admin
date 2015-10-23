@@ -1,0 +1,27 @@
+<nav class="sidenav" ng-class="{'revealed':isNavRevealed}">
+	<span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="isNavRevealed=false"></span>
+	<ul ng-click="isNavRevealed=false">
+		<li><a href="/">Overview</a></li>
+		<li><a href="/orders">Orders</a></li>
+		<li><a href="/reservations">Reservations</a></li>
+		<li><a href="/statistics">Statistics</a></li>
+		<li><a href="/campaigns">Campaigns</a></li>
+		<li><a href="/food-menus">Food Menus</a></li>
+		<li><a href="/customers">Customers</a></li>
+		<li><a href="/marketing-wizard">Marketing Wizard</a></li>
+		<li><a href="/settings">Settings</a></li>
+		<li><a href="/login">Log Out</a></li>
+	</ul>
+</nav>
+<div class="navbar navbar-default" ng-class="{'slided':isNavRevealed}">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+            	Chef Bruno
+                <!-- <img alt="Brand" src="..."> -->
+            </a>
+        </div>
+        <span class="glyphicon glyphicon-menu-hamburger navbar-text navbar-right" aria-hidden="true" ng-click="isNavRevealed=!isNavRevealed">{{ isNavRevealed }}</span>
+    </div>
+</div>
+<section ui-view="" class="content" ng-class="{'slided':$parent.isNavRevealed}" ng-click="$parent.isNavRevealed=false"></section>

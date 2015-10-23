@@ -1,0 +1,152 @@
+
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+$beige:                         #F4F4E7;
+$black:                         #050505;
+$blue:                          #0A55D0;
+$buttonblue:                    #0D5CD0;
+$darkgrey:                      #535353;
+$lightgrey:                     #D5D5D5;
+$lightgrey1:                    #EAEAEA;
+$lightgrey2:                    #C1C1C1;
+$orange:                        #FD9B26;
+$red:                           #ED4736;
+$white:                         #FFFFFF;
+
+$title-font:                    Raleway, "Open Sans", sans-serif;
+$serif-font:                    Oswald, serif;
+$sans-font:                     Roboto, "Open Sans", sans;
+
+@mixin desaturate($amount)      {-webkit-filter: grayscale($amount); -moz-filter: grayscale($amount); -ms-filter: grayscale($amount); -o-filter: grayscale($amount);}
+
+
+
+// Component styles are injected through grunt
+// injector
+@import 'account/login/login.scss';
+@import 'admin/admin.scss';
+@import 'main/admin/admin.scss';
+@import 'main/campaigns/campaigns.scss';
+@import 'main/customers/customers.scss';
+@import 'main/dashboard/dashboard.scss';
+@import 'main/food-menus/food-menus.scss';
+@import 'main/main.scss';
+@import 'main/marketing-wizard/marketing-wizard.scss';
+@import 'main/orders/orders.scss';
+@import 'main/reservations/reservations.scss';
+@import 'main/settings/business-info/business-info.scss';
+@import 'main/settings/delivery/delivery.scss';
+@import 'main/settings/domain/domain.scss';
+@import 'main/settings/integration/integration.scss';
+@import 'main/settings/payments/payments.scss';
+@import 'main/settings/reservations/reservations.scss';
+@import 'main/settings/settings.scss';
+@import 'main/settings/site-builder/site-builder.scss';
+@import 'main/settings/users-and-roles/users-and-roles.scss';
+@import 'main/statistics/statistics.scss';
+@import 'modal/modal.scss';
+// endinjector
+
+
+
+.bold                           { font-weight: 600; }
+.row                            { overflow: hidden; }
+.close                          { clear: both; color: $darkgrey; font-size: 4rem; opacity: 1; }
+.drag                           { margin-right: 10px; width: 25px;
+  .icon-bar                     { border: 2px solid $lightgrey; border-radius: 1px; margin-bottom: 3px; }
+}
+
+// HEADER
+header.header                   { border-bottom: 1px solid $black; margin-bottom: 15px;
+  h1                            { color: $red; font: 300 36px $title-font; }
+}
+
+// SIDEBAR
+aside.sidebar                   { border-right: 1px solid $lightgrey; padding-bottom: 5000px; margin-bottom: -5000px; }
+
+// MAIN
+.main                           {
+  p                             { margin: 0; }
+  h1                            { color: $red; font: 100 40px $title-font; margin-bottom: 10px; text-align: center; }
+  h2                            { border-bottom: 1px solid $lightgrey; font: 400 20px $title-font; letter-spacing: -.5px; margin: 40px 0 20px; text-transform: uppercase;
+    span                        { color: $lightgrey; }
+    a span                      { color: $buttonblue; }
+  }
+}
+form.custom-form                {
+  label                         { font-size: 16px; font-family: $serif-font; }
+  input,
+  select,
+  textarea                      { /*border: none;*/ border-radius: 0; box-shadow: none; font-size: 16px; }
+  .resetsave                    { margin: 30px 0 20px;
+    button                      { border: none; font-family: $serif-font; padding: 12px 50px; text-transform: uppercase; text-shadow: none;
+      &.btn-default             { background: $lightgrey; color: $darkgrey; }
+      &.btn-primary             { background: $buttonblue; }
+    }
+  }
+  .taggroup                     { border: 1px solid $lightgrey; padding: 6px 12px;
+    .newtag                     { border: none; }
+  }
+  .label                        { background: $lightgrey; border-radius: 0; color: $darkgrey; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
+}
+a.circle                        { border: 1px solid $blue; border-radius: 100%; color: $blue; display: inline-block; height: 20px; text-align: center; width: 20px;  
+  i                             {  }
+}
+
+
+/**
+ * Bootstrap Fonts
+ */
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot');
+    src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'),
+    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+/**
+ *Font Awesome Fonts
+ */
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.1.0');
+    src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/**
+ * App-wide Styles
+ */
+
+html, body {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+html, body, div[ui-view] {
+    height: 100%;
+}

@@ -1,3 +1,251 @@
-<div class="col-md-12">
-This is the delivery view.
+<div class="col-md-6 col-md-offset-2 main content">
+  <h1>Edit Delivery</h1>
+
+  <div class="col-lg-12 checkbox hero-checkbox">
+    <label for="" class="control-label">
+      <input type="checkbox" checked> Enable Delivery
+    </label>
+  </div>
+
+  <div class="googlemap">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d58420.22179022014!2d-51.171596471397784!3d-30.028410566185656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1443130059406" allowfullscreen></iframe>
+    <div class="clearfix"></div>
+  </div>
+
+  <div class="col-lg-12">
+    <h2>Send Delivery Requests To</h2>
+  </div>
+  <form action="" class="custom-form">
+    <div class="col-lg-6">
+      <div class="checkbox checkbox-inverted">
+        <label for="" class="control-label">Email <input type="checkbox" checked></label>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="checkbox  checkbox-inverted">
+        <label for="" class="control-label">Phone <input type="checkbox"></label>
+      </div>
+      <div class="form-group">
+        <input type="tel" class="form-control" disabled>
+      </div>
+    </div>
+    <!-- END Send Delivery Requests To -->
+
+    <div class="col-lg-12">
+      <h2>Delivery Hours</h2>
+    </div>
+    <div class="col-lg-12 form-inline form-group">
+      <label for="" class="control-label">Time Format:</label>
+      <div class="radio-inline">
+        <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" id="ampm" checked> AM/PM</label>
+        <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" id="24h"> 24 hours</label>
+      </div>
+
+      <table class="table timetable">
+        <thead>
+          <tr>
+            <th class="col-md-4">Open</th>
+            <th class="col-md-4">From</th>
+            <th class="col-md-4">To</th>
+            <th class="col-md-1">Split</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="checkbox weekday">
+                <label for="" class="control-label">
+                  <input type="checkbox" name="" id="" checked> Monday
+                </label>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="time" value="08:00:00" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="time" value="20:00:00" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="checkbox"><input type="checkbox" name="" id=""></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox weekday">
+                <label for="" class="control-label">
+                  <input type="checkbox" name="" id="" checked> Tuesday
+                </label>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="time" value="08:00:00" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="time" value="20:00:00" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="checkbox"><input type="checkbox" name="" id=""></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox weekday">
+                <label for="" class="control-label">
+                  <input type="checkbox" name="" id="" checked> Wednesday
+                </label>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="time" value="08:00:00" class="form-control">
+                <input type="time" value="12:00:00" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="time" value="14:00:00" class="form-control">
+                <input type="time" value="20:00:00" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="checkbox"><input type="checkbox" name="" id="" checked></div>
+            </td>
+          </tr>
+          <tr class="disabled">
+            <td>
+              <div class="checkbox weekday">
+                <label for="" class="control-label">
+                  <input type="checkbox" name="" id=""> Thursday
+                </label>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" value="CLOSED" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" value="CLOSED" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="checkbox"><input type="checkbox" name="" id=""></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox weekday">
+                <label for="" class="control-label">
+                  <input type="checkbox" name="" id="" checked> Friday
+                </label>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="time" value="08:00:00" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="time" value="20:00:00" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="checkbox"><input type="checkbox" name="" id=""></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox weekday">
+                <label for="" class="control-label">
+                  <input type="checkbox" name="" id="" checked> Saturday
+                </label>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="time" value="08:00:00" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="time" value="20:00:00" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="checkbox"><input type="checkbox" name="" id=""></div>
+            </td>
+          </tr>
+          <tr class="disabled">
+            <td>
+              <div class="checkbox weekday">
+                <label for="" class="control-label">
+                  <input type="checkbox" name="" id=""> Sunday
+                </label>
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" value="CLOSED" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" value="CLOSED" class="form-control">
+              </div>
+            </td>
+            <td>
+              <div class="checkbox"><input type="checkbox" name="" id=""></div>
+            </td>
+          </tr>
+        </tbody>
+      </table><!-- END .timetable -->
+    </div><!-- END Delivery Hours -->
+
+    <div class="col-lg-12">
+      <h2>Additional Information</h2>
+    </div>
+    <div class="col-lg-6">
+      <div class="checkbox checkbox-inverted">
+        <label for="" class="control-label">Minimum Delivery Amount <input type="checkbox" checked></label>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="checkbox checkbox-inverted">
+        <label for="" class="control-label">Delivery Surcharge <input type="checkbox"></label>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" disabled>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="checkbox checkbox-inverted">
+        <label for="" class="control-label">Delivery Instructions <input type="checkbox"></label>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" disabled>
+      </div>
+    </div>
+    <!-- END Additional Information -->
+
+    <div class="col-lg-12 text-center resetsave">
+      <button class="btn btn-default">Reset</button>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </form>
 </div>

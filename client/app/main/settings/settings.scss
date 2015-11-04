@@ -43,3 +43,46 @@ table                           {
     }
   }
 }
+
+// DELIVERY
+.checkbox-inverted              {
+  input[type="checkbox"]        { margin: 0; position: relative; }
+  label                         { padding: 0; }
+}
+.googlemap                      { padding: 0; width: 100%;
+  iframe                        { border: 0; height: 400px; margin: 0 auto; width: 100%; }
+}
+
+// BUSINESS INFO
+table.openinghours              {
+  tr                            {
+    td                          { border: 0;
+      &.bold                    { width: 120px; }
+    }
+  }
+}
+
+// DOMAIN
+.domainpurchase                 {
+  p                             { margin-bottom: 10px; }
+  .domainsearch                 { margin: 20px 0; }
+  .hero-checkbox-small          { @extend .hero-checkbox; background-color: $darkgrey; display: inline-block; margin: 0 5px 5px 0; padding: 8px 12px; width: auto; }
+}
+
+// RESERVATION
+.reservationintegrations        {
+  .col-lg-12                    { margin: 30px 0 10px; }
+  p                             { font-size: 20px; }
+  img                           { width: 100%; @include desaturate(100%); filter: gray; }
+}
+
+// INTEGRATION
+.nomargin                       { margin-bottom: 0; }
+.appintegration                 { border-bottom: 1px solid $lightgrey; padding: 20px 0;
+  img                           { width: 200px; }
+  p                             { margin-top: 10px; }
+  .form-inline                  { margin-top: 10px; }
+  &.inactive                    {
+    img                         { @include desaturate(100%); opacity: .5; }
+  }
+}

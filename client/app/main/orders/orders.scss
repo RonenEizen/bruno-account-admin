@@ -1,0 +1,22 @@
+table                           {
+  &.table                       {
+    tr td                       { vertical-align: middle; }
+    .form-group input + input   { margin-top: 5px; }
+  }
+  &.orders                      {
+    tr                          {
+      &.fulfilled               {
+        td                      { color: $lightgrey; }
+        .status                 { color: lighten($orange, 20%); }
+      }
+      th                        { border-bottom-color: $black; font-size: 13px; }
+      td                        { padding: 15px 10px;
+        &.status                { color: $orange; }
+        a                       { color: $blue; }
+      }
+    }
+  }
+}
+.order-details                  { margin-top: 80px;
+  .order-summary                { margin-bottom: 20px; }
+}

@@ -1,0 +1,41 @@
+// SIDEBAR
+.sidebar                        {
+  a.new                         { color: $blue; font-size: 20px; }
+  .search                       { margin: 20px 0;
+    input                       { padding: 20px 15px; }
+    span                        { padding: 5px 0; }
+  }
+  .col-lg-4                     { padding: 0 5px; }
+  .dropdowns                    { position: relative;
+    header                      { background: $darkgrey; color: $white; margin: 0; padding: 5px 0; text-align: center; text-transform: uppercase; }
+    section                     { background: $white; border: 1px solid $darkgrey; border-width: 0 1px 1px 1px; color: $darkgrey; display: none; margin: 0; padding: 5px 10px; position: absolute;
+      label                     { font: 16px $sans-font; }
+    }
+  }
+  table                         { margin-top: 10px; width: 100%;
+    tr                          {
+      &:hover,
+      &.active                  { background: $lightgrey1;
+        .actions a              { visibility: visible }
+      }
+      h3                        { margin: 0; }
+      td                        { border-bottom: 1px solid $lightgrey; height: 90px; padding: 15px 0 0 15px; vertical-align: top; }
+      .actions                  { padding: 0; text-align: center; vertical-align: middle;
+        a                       { visibility: hidden; }
+      }
+      p                         { color: $lightgrey2; margin-top: 5px; }
+    }
+  }
+}
+.main                           {
+  .campaigntitle                { color: $black; font-family: $serif-font; text-align: left;
+    & + p                       { font-size: 1.8rem; }
+  }
+  h4                            { margin-top: 50px; }
+  .input-group                  {
+    .input-group-btn            {
+      .btn                      { background: $lightgrey1; border-radius: 0; color: $darkgrey; font-family: $serif-font; }
+    }
+  }
+  img                           { float: left; margin: 0 10px 10px 0; height: 120px; }
+}

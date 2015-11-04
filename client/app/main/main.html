@@ -21,7 +21,12 @@
                 <!-- <img alt="Brand" src="..."> -->
             </a>
         </div>
-        <span class="glyphicon glyphicon-menu-hamburger navbar-text navbar-right" aria-hidden="true" ng-click="isNavRevealed=!isNavRevealed">{{ isNavRevealed }}</span>
+        <button class="nav-toggle" aria-hidden="true" ng-click="isNavRevealed=!isNavRevealed">
+          <span class="sr-only">Toggle menu</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
     </div>
 </div>
 <section ui-view="" class="content" ng-class="{'slided':$parent.isNavRevealed}" ng-click="$parent.isNavRevealed=false"></section>

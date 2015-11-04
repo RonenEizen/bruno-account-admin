@@ -58,26 +58,10 @@ section.content {
     will-change: overflow;
 }
 
-span.glyphicon-menu-hamburger, span.glyphicon-remove {
-    font-size: x-large;
-    position: absolute;
-    display: block;
-    cursor: pointer;
-}
-
-span.glyphicon-menu-hamburger {
-    right: 25px;
-    top: 12px;
-    margin-right:0;
-}
-
 span.glyphicon-remove {
     top: 30px;
     right: 25px;
 }
-
-
-
 
 nav.sidenav {
     width: 240px;
@@ -94,6 +78,35 @@ nav.sidenav {
     -o-transform: translateX(240px);
     transform: translateX(240px);
 }
+
+.nav-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+}
+
+.nav-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  border: 1px solid #eee;
+  margin-bottom: 5px;
+}
+
+span.glyphicon-menu-hamburger, span.glyphicon-remove {
+  font-size: x-large;
+  position: absolute;
+  display: block;
+  cursor: pointer;
+}
+
 
 nav.sidenav dt, nav.sidenav a {
     color: #727272;

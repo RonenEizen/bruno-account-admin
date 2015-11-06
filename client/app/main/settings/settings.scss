@@ -1,88 +1,90 @@
-// SIDEBAR
-aside.sidebar                   { padding-left: 0; padding-right: 0; padding-top: 0;
-  li                            { text-transform: uppercase;
-    &.active                    {
-      a                         { background: $blue; color: $white; }
+.settings                       {
+  // SIDEBAR
+  aside.sidebar                   { padding-left: 0; padding-right: 0; padding-top: 0;
+    li                            { text-transform: uppercase;
+      &.active                    {
+        a                         { background: $blue; color: $white; }
+      }
+      a                           { border-radius: 0; color: $blue; padding: 15px 20px; }
     }
-    a                           { border-radius: 0; color: $blue; padding: 15px 20px; }
   }
-}
 
-// MAIN CONTENT
-.hero-checkbox                  { background: $red; color: $white; font: 300 18px $title-font; margin: 10px 0; padding: 25px 0px; text-align: center;
-  input[type="checkbox"]        {
-    &:checked                   { }
+  // MAIN CONTENT
+  .hero-checkbox                  { background: $red; color: $white; font: 300 18px $title-font; margin: 10px 0; padding: 25px 0px; text-align: center;
+    input[type="checkbox"]        {
+      &:checked                   { }
+    }
   }
-}
-button.rounded                  { border: none; border-radius: 100%; font-family: $serif-font; height: 40px; width: 40px; padding: 0; text-transform: uppercase; text-shadow: none;
-  &.btn-primary                 { background: $buttonblue; }
-}
+  button.rounded                  { border: none; border-radius: 100%; font-family: $serif-font; height: 40px; width: 40px; padding: 0; text-transform: uppercase; text-shadow: none;
+    &.btn-primary                 { background: $buttonblue; }
+  }
 
-// tbody tr:last-child         { border-bottom: 1px solid $lightgrey; }
+  // tbody tr:last-child         { border-bottom: 1px solid $lightgrey; }
 
-table                           {
-  &.table                       {
-    tr td                       { vertical-align: middle; }
-    .form-group input + input   { margin-top: 5px; }
-  }
-  &.userroles                   {
-    tr th                       { border-bottom-color: $black; font-size: 13px; }
-    tr td                       { padding: 15px 10px; }
-  }
-  &.timetable                   { margin-top: 20px;
-    tr                          {
-      th, td                    { border: 0; }
-      &:last-child              { border: 0; }
-      &.disabled                {
-        .weekday                { background: $lightgrey1; }
-        input.form-control      { border: none; }
+  table                           {
+    &.table                       {
+      tr td                       { vertical-align: middle; }
+      .form-group input + input   { margin-top: 5px; }
+    }
+    &.userroles                   {
+      tr th                       { border-bottom-color: $black; font-size: 13px; }
+      tr td                       { padding: 15px 10px; }
+    }
+    &.timetable                   { margin-top: 20px;
+      tr                          {
+        th, td                    { border: 0; }
+        &:last-child              { border: 0; }
+        &.disabled                {
+          .weekday                { background: $lightgrey1; }
+          input.form-control      { border: none; }
+        }
+      }
+      .weekday                    { background: $lightgrey2; color: $white; padding: 6px 15px; text-transform: uppercase; width: 100%;
+        label                     { font-size: 13px; }
       }
     }
-    .weekday                    { background: $lightgrey2; color: $white; padding: 6px 15px; text-transform: uppercase; width: 100%;
-      label                     { font-size: 13px; }
+  }
+
+  // DELIVERY
+  .checkbox-inverted              {
+    input[type="checkbox"]        { margin: 0; position: relative; }
+    label                         { padding: 0; }
+  }
+  .googlemap                      { padding: 0; width: 100%;
+    iframe                        { border: 0; height: 400px; margin: 0 auto; width: 100%; }
+  }
+
+  // BUSINESS INFO
+  table.openinghours              {
+    tr                            {
+      td                          { border: 0;
+        &.bold                    { width: 120px; }
+      }
     }
   }
-}
 
-// DELIVERY
-.checkbox-inverted              {
-  input[type="checkbox"]        { margin: 0; position: relative; }
-  label                         { padding: 0; }
-}
-.googlemap                      { padding: 0; width: 100%;
-  iframe                        { border: 0; height: 400px; margin: 0 auto; width: 100%; }
-}
-
-// BUSINESS INFO
-table.openinghours              {
-  tr                            {
-    td                          { border: 0;
-      &.bold                    { width: 120px; }
-    }
+  // DOMAIN
+  .domainpurchase                 {
+    p                             { margin-bottom: 10px; }
+    .domainsearch                 { margin: 20px 0; }
+    .hero-checkbox-small          { @extend .hero-checkbox; background-color: $darkgrey; display: inline-block; margin: 0 5px 5px 0; padding: 8px 12px; width: auto; }
   }
-}
 
-// DOMAIN
-.domainpurchase                 {
-  p                             { margin-bottom: 10px; }
-  .domainsearch                 { margin: 20px 0; }
-  .hero-checkbox-small          { @extend .hero-checkbox; background-color: $darkgrey; display: inline-block; margin: 0 5px 5px 0; padding: 8px 12px; width: auto; }
-}
+  // RESERVATION
+  .reservationintegrations        {
+    .col-lg-12                    { margin: 30px 0 10px; }
+    p                             { font-size: 20px; }
+    img                           { width: 100%; @include desaturate(100%); filter: gray; }
+  }
 
-// RESERVATION
-.reservationintegrations        {
-  .col-lg-12                    { margin: 30px 0 10px; }
-  p                             { font-size: 20px; }
-  img                           { width: 100%; @include desaturate(100%); filter: gray; }
-}
-
-// INTEGRATION
-.nomargin                       { margin-bottom: 0; }
-.appintegration                 { border-bottom: 1px solid $lightgrey; padding: 20px 0;
-  img                           { width: 200px; }
-  p                             { margin-top: 10px; }
-  .form-inline                  { margin-top: 10px; }
-  &.inactive                    {
-    img                         { @include desaturate(100%); opacity: .5; }
+  // INTEGRATION
+  .nomargin                       { margin-bottom: 0; }
+  .appintegration                 { border-bottom: 1px solid $lightgrey; padding: 20px 0;
+    img                           { width: 200px; }
+    p                             { margin-top: 10px; }
+    .form-inline                  { margin-top: 10px; }
+    &.inactive                    {
+      img                         { @include desaturate(100%); opacity: .5; }
+    }
   }
 }

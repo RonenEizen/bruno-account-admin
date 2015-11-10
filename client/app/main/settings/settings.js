@@ -49,18 +49,9 @@ angular.module('userAdminApp')
         controller: 'ReservationsCtrl'
       })
 
-      .state('main.settings.payments',{
-        abstract: true,
-        template: '<div data-ui-view></div>'
-      })
-      .state('main.settings.payments.preview', {
+      .state('main.settings.payments', {
         url: '/payments',
         templateUrl: 'app/main/settings/payments/payments.html',
-        controller: 'PaymentsCtrl'
-      })
-      .state('main.settings.payments.edit', {
-        url: '/payments/edit',
-        templateUrl: 'app/main/settings/payments/payments.edit.html',
         controller: 'PaymentsCtrl'
       })
 

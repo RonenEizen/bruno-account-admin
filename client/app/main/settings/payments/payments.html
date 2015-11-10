@@ -1,5 +1,6 @@
+<!-- THIS IS THE MAIN CONTAINER -->
 <div class="col-md-6 col-md-offset-2 main content">
-  <h1>Review Payments</h1>
+  <h1>Edit Payments</h1>
 
   <div class="col-lg-12 checkbox hero-checkbox">
     <label for="" class="control-label">
@@ -26,16 +27,21 @@
     <p>info@rodeobbq.com</p>
   </div>
 
-  <div class="col-lg-12">
-    <h2>Bank Information <a href="/settings/payments/edit" class="pull-right"><span><i class="fa fa-pencil"></i></span></a></h2>
-    <h4>Name:</h4>
-    <p>Chase Bank</p>
-    <br>
-    <h4>Routing Number:</h4>
-    <p>021000021</p>
-    <br>
-    <h4>Account Number:</h4>
-    <p>45300267</p>
-    <br>
-  </div>
-</div>
+  <form class="custom-form" ng-init="edit=false">
+    <div class="col-lg-12">
+      <h2>Bank Information <span class="pull-right" ng-click="edit=true"><i class="fa fa-pencil"></i></span></h2>
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Bank Routing Number</label>
+      <input type="number" class="form-control" value="123456789" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Account Number</label>
+      <input type="number" class="form-control" value="123456789" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-12 text-center resetsave" ng-show="edit">
+      <button class="btn btn-default">Reset</button>
+      <button class="btn btn-primary" ng-click="edit=false">Save</button>
+    </div>
+  </form>
+</div><!-- END .main.col-md-6 -->

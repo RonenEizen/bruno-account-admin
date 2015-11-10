@@ -126,3 +126,11 @@ nav.sidenav a {
     overflow-x: hidden;
     will-change: overflow;
 }
+
+.form-control[readonly] {
+    cursor: inherit;
+    background-color: transparent;
+    opacity: 1;
+    border: none !important;
+    box-shadow: none !important;
+}

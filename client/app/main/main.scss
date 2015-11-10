@@ -1,4 +1,4 @@
-nav.sidenav, div.navbar, section.content {
+nav.sidenav, section.main {
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -ms-transform-style: preserve-3d;
@@ -17,7 +17,7 @@ nav.sidenav, div.navbar, section.content {
     webkit-overflow-scrolling: touch;
 }
 
-nav.sidenav.revealed, div.navbar.slided, section.content.slided {
+nav.sidenav.revealed, section.main.slided {
     -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     -moz-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -29,7 +29,7 @@ nav.sidenav.revealed, div.navbar.slided, section.content.slided {
     transition-duration: 0.2s;
 }
 
-nav.sidenav.revealed, div.navbar, section.content {
+nav.sidenav.revealed, section.main {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -37,7 +37,7 @@ nav.sidenav.revealed, div.navbar, section.content {
     transform: translateX(0);
 }
 
-div.navbar.slided, section.content.slided {
+section.main.slided {
     -webkit-transform: translateX(-240px);
     -moz-transform: translateX(-240px);
     -ms-transform: translateX(-240px);
@@ -45,17 +45,12 @@ div.navbar.slided, section.content.slided {
     transform: translateX(-240px);
 }
 
-section.content {
+section.main {
     position: relative;
-/*    display: flex;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: -webkit-flex;*/
-    height: calc(100% - 80px);
+    height: 100%;
     margin: 0;
-    overflow: auto;
+    overflow: hidden;
     width: 100%;
-    will-change: overflow;
 }
 
 span.glyphicon-remove {
@@ -78,26 +73,26 @@ nav.sidenav {
     -o-transform: translateX(240px);
     transform: translateX(240px);
 }
-
-.nav-toggle {
-    position: relative;
-    float: right;
-    padding: 9px 10px;
-    margin-top: 8px;
-    margin-right: 15px;
-    margin-bottom: 8px;
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid transparent;
+.logo {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 999999;
 }
-
-.nav-toggle .icon-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  border-radius: 1px;
-  border: 1px solid #eee;
-  margin-bottom: 5px;
+.logo img {
+    width: 65px;
+}
+.hamburger{
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    right: 25px;
+    top: 35px;
+    z-index: 999999;
+    box-shadow: 0px 0px 10px #fff;
+    background-color: #fff;
 }
 
 span.glyphicon-remove {
@@ -126,11 +121,8 @@ nav.sidenav a {
     padding: 12px 0px 12px 25px;
 }
 
-div.navbar {
-    background-color: #212223;
-    height: 80px;
-    width: 100%;
-    margin: 0;
-    border: none;
-    border-radius: 0;
+.content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    will-change: overflow;
 }

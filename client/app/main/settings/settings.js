@@ -9,17 +9,8 @@ angular.module('userAdminApp')
         templateUrl: 'app/main/settings/settings.html'
       })
       .state('main.settings.business-info', {
-        abstract: true,
-        template: '<div data-ui-view></div>'
-      })
-      .state('main.settings.business-info.preview', {
         url: '/business-info',
         templateUrl: 'app/main/settings/business-info/business-info.html',
-        controller: 'BusinessInfoCtrl'
-      })
-      .state('main.settings.business-info.edit', {
-        url: '/business-info/edit',
-        templateUrl: 'app/main/settings/business-info/business-info.edit.html',
         controller: 'BusinessInfoCtrl'
       })
       .state('main.settings.users-and-roles', {
@@ -32,41 +23,19 @@ angular.module('userAdminApp')
         templateUrl: 'app/main/settings/delivery/delivery.html',
         controller: 'DeliveryCtrl'
       })
-
-
       .state('main.settings.reservations',{
-        abstract: true,
-        template: '<div data-ui-view></div>'
-      })
-      .state('main.settings.reservations.preview', {
         url: '/reservations',
         templateUrl: 'app/main/settings/reservations/reservations.html',
         controller: 'ReservationsCtrl'
       })
-      .state('main.settings.reservations.edit', {
-        url: '/reservations/edit',
-        templateUrl: 'app/main/settings/reservations/reservations.edit.html',
-        controller: 'ReservationsCtrl'
-      })
-
       .state('main.settings.payments', {
         url: '/payments',
         templateUrl: 'app/main/settings/payments/payments.html',
         controller: 'PaymentsCtrl'
       })
-
-      .state('main.settings.domain',{
-        abstract: true,
-        template: '<div data-ui-view></div>'
-      })
-      .state('main.settings.domain.preview', {
+      .state('main.settings.domain', {
         url: '/domain',
         templateUrl: 'app/main/settings/domain/domain.html',
-        controller: 'DomainCtrl'
-      })
-      .state('main.settings.domain.edit', {
-        url: '/domain/edit',
-        templateUrl: 'app/main/settings/domain/domain.edit.html',
         controller: 'DomainCtrl'
       })
       .state('main.settings.integration', {

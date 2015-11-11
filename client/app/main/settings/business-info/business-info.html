@@ -1,46 +1,194 @@
 <div class="col-md-6 col-md-offset-2 main content">
-  <h1>Review Business Info</h1>
+  <h1>Business Info</h1>
 
   <div class="col-lg-12">
-    <h2>Business Info <a href="/settings/business-info/edit" class="pull-right"><span><i class="fa fa-pencil"></i></span></a></h2>
-    <h4>Sushi House</h4>
-    <p>info@sushihouse.rest</p>
-    <p>917-678-9000</p>
-    <br>
-    <p>3000 Oceanview</p>
-    <p>Brooklyn, NY 11235</p>
+    <h2>Business Info <span class="pull-right" ng-click="edit=!edit"><i class="fa fa-pencil"></i></span></h2>
   </div>
+  <form class="custom-form text-input">
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Business Name</label>
+      <input type="text" class="form-control" placeholder="Sushi House" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">Business Email</label>
+      <input type="email" class="form-control" placeholder="info@sushihouse.rest" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">Business Phone Number</label>
+      <input type="tel" class="form-control" placeholder="917-678-9000" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Business Address Line 1</label>
+      <input type="text" class="form-control" placeholder="3000 Oceanview" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Business Address Line 2</label>
+      <input type="text" class="form-control" placeholder="Sushi House" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">City</label>
+      <input type="text" class="form-control" placeholder="City" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">State</label>
+      <fieldset ng-disabled="!edit">
+        <select name="" id="" class="form-control">
+          <option value=""></option>
+          <option value="NY">NY</option>
+          <option value="FL">FL</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">ZIP Code</label>
+      <input type="number" class="form-control" placeholder="11235" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">Country</label>
+      <fieldset ng-disabled="!edit">
+        <select name="" id="" class="form-control">
+          <option value=""></option>
+          <option value="US">United States</option>
+          <option value="BR">Brazil</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="col-lg-12 text-center resetsave" ng-show="edit">
+      <button class="btn btn-default" ng-click="edit=!edit">Reset</button>
+      <button class="btn btn-primary" ng-click="edit=!edit">Save</button>
+    </div>
+  </form>
   <!-- END Business Info -->
 
   <div class="col-lg-12">
-    <h2>Restaurant Info <a href="/settings/business-info/edit" class="pull-right"><span><i class="fa fa-pencil"></i></span></a></h2>
-    <h4>Sushi House</h4>
-    <p>info@sushihouse.rest</p>
-    <p>917-678-9000</p>
-    <br>
-    <p>3000 Oceanview</p>
-    <p>Brooklyn, NY 11235</p>
+    <h2>Restaurant Info <span class="pull-right" ng-click="edit=!edit"><i class="fa fa-pencil"></i></span></h2>
   </div>
+  <div class="col-lg-12 checkbox">
+    <label>
+      <input type="checkbox" ng-model="sameAsAbove" ng-readonly="!edit"> Same as Business Info
+    </label>
+  </div>
+  <form ng-hide="sameAsAbove" class="custom-form text-input">
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Restaurant Name</label>
+      <input type="text" class="form-control" placeholder="Sushi House" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">Restaurant Email</label>
+      <input type="email" class="form-control" placeholder="info@sushihouse.rest" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">Restaurant Phone Number</label>
+      <input type="tel" class="form-control" placeholder="917-678-9000" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Restaurant Address Line 1</label>
+      <input type="text" class="form-control" placeholder="3000 Oceanview" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Restaurant Address Line 2</label>
+      <input type="text" class="form-control" placeholder="Sushi House" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">City</label>
+      <input type="text" class="form-control" placeholder="City" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">State</label>
+      <fieldset ng-disabled="!edit">
+        <select name="" id="" class="form-control" ng-readonly="!edit">
+          <option value=""></option>
+          <option value="NY">NY</option>
+          <option value="FL">FL</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">ZIP Code</label>
+      <input type="number" class="form-control" placeholder="11235" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">Country</label>
+      <fieldset ng-disabled="!edit">
+        <select name="" id="" class="form-control" ng-readonly="!edit">
+          <option value=""></option>
+          <option value="US">United States</option>
+          <option value="BR">Brazil</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="col-lg-12 text-center resetsave" ng-show="edit">
+      <button class="btn btn-default" ng-click="edit=!edit">Reset</button>
+      <button class="btn btn-primary" ng-click="edit=!edit">Save</button>
+    </div>
+  </form>
   <!-- END Restaurant Info -->
 
   <div class="col-lg-12">
-    <h2>Business Owner Info <a href="/settings/business-info/edit" class="pull-right"><span><i class="fa fa-pencil"></i></span></a></h2>
-    <h4>Name:</h4>
-    <p>Laurance Martell</p>
-    <br>
-    <h4>Date of Birth:</h4>
-    <p>08/28/1974</p>
-    <br>
-    <h4>Email:</h4>
-    <p>lmartell75@gmail.com</p>
-    <br>
-    <h4>Phone Number:</h4>
-    <p>347-567-0908</p>
-    <br>
-    <h4>Address:</h4>
-    <p>231 Oriental Blvd, NY 11233</p>
-    <p>United States</p>
+    <h2>Business Owner Info <span class="pull-right" ng-click="edit=!edit"><i class="fa fa-pencil"></i></span></h2>
   </div>
+  <form class="custom-form text-input">
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">First Name</label>
+      <input type="text" class="form-control" placeholder="Laurance" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Last Name</label>
+      <input type="text" class="form-control" placeholder="Martell" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Date of Birth</label>
+      <input type="date" class="form-control" placeholder="08/28/1974" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Social Security Number</label>
+      <input type="text" class="form-control" placeholder="111-22-5555" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">Email</label>
+      <input type="email" class="form-control" placeholder="lmartell75@gmail.com" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">Phone Number</label>
+      <input type="tel" class="form-control" placeholder="347-567-0908" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-12 form-group">
+      <label for="" class="control-label">Street Address</label>
+      <input type="text" class="form-control" placeholder="231 Oriental Blvd" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">City</label>
+      <input type="text" class="form-control" placeholder="City" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">State</label>
+      <fieldset ng-disabled="!edit">
+        <select name="" id="" class="form-control">
+          <option value=""></option>
+          <option value="NY">NY</option>
+          <option value="FL">FL</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">ZIP Code</label>
+      <input type="number" class="form-control" placeholder="11235" ng-readonly="!edit">
+    </div>
+    <div class="col-lg-6 form-group">
+      <label for="" class="control-label">Country</label>
+      <fieldset ng-disabled="!edit">
+        <select name="" id="" class="form-control" ng-readonly="!edit">
+          <option value=""></option>
+          <option value="US">United States</option>
+          <option value="BR">Brazil</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="col-lg-12 text-center resetsave" ng-show="edit">
+      <button class="btn btn-default" ng-click="edit=!edit">Reset</button>
+      <button class="btn btn-primary" ng-click="edit=!edit">Save</button>
+    </div>
+  </form>
   <!-- END Business Owner Info -->
 
   <div class="col-lg-12">

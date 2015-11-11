@@ -1,75 +1,124 @@
 <div class="col-md-6 col-md-offset-2 main content">
-  <h1>Edit Integration</h1>
+  <h1>Integration</h1>
 
-  <div class="col-md-12">
-    <h2 class="nomargin">Reservation &amp; Online Ordering</h2>
-    <div class="appintegration">
-      <div class="pull-right">
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-chevron-down"></i><!-- up/down arrow --></a>
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-pencil"></i></a>
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="nomargin">Reservation &amp; Online Ordering</h2>
+      <div class="appintegration" ng-class="inactive">
+        <div class="pull-right">
+          <a href="javascript:void(0)" ng-click="toggle()"><i class="fa" ng-class="chevron"></i></a>
+          <a href="javascript:void(0)" ng-click="toggleEdit()"><i class="fa fa-pencil"></i></a>
+        </div>
+        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
+        <div class="form-inline" ng-hide="collapsed">
+          <form class="custom-form form-group">
+            <input type="text" class="form-control" placeholder="Enter Seatme ID" ng-readonly="!edit" ng-model="apiKey">
+            <button class="btn btn-primary rounded" ng-show="edit" ng-click="edit=!edit">OK</button>
+          </form>
+        </div>
       </div>
-      <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
-      <p>A32PV-16697-Z</p>
-    </div>
-    <div class="appintegration inactive">
-      <div class="pull-right">
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-chevron-down"></i><!-- up/down arrow --></a>
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-pencil"></i></a>
-      </div>
-      <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
-    </div>
-    <div class="appintegration">
-      <div class="pull-right">
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-chevron-down"></i><!-- up/down arrow --></a>
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-pencil"></i></a>
-      </div>
-      <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
-      <div class="form-inline">
-        <form class="custom-form form-group">
-          <input type="text" class="form-control" placeholder="Enter Seatme ID">
-          <button class="btn btn-primary rounded">OK</button>
-        </form>
-      </div>
-    </div>
-    <div class="appintegration inactive">
-      <div class="pull-right">
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-chevron-down"></i><!-- up/down arrow --></a>
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-pencil"></i></a>
-      </div>
-      <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
-    </div>
-    <div class="appintegration inactive">
-      <div class="pull-right">
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-chevron-down"></i><!-- up/down arrow --></a>
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-pencil"></i></a>
-      </div>
-      <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
-    </div>
-    <div class="appintegration inactive">
-      <div class="pull-right">
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-chevron-down"></i><!-- up/down arrow --></a>
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-pencil"></i></a>
-      </div>
-      <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
-    </div>
-  </div>
-  <!-- END Reservation & Online Ordering -->
 
-  <div class="col-md-12">
-    <h2 class="nomargin">Social Reviews</h2>
-    <div class="appintegration inactive">
-      <div class="pull-right">
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-chevron-down"></i><!-- up/down arrow --></a>
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-pencil"></i></a>
+      <div class="appintegration" ng-class="inactive">
+        <div class="pull-right">
+          <a href="javascript:void(0)" ng-click="toggle()"><i class="fa" ng-class="chevron"></i></a>
+          <a href="javascript:void(0)" ng-click="toggleEdit()"><i class="fa fa-pencil"></i></a>
+        </div>
+        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
+        <div class="form-inline" ng-hide="collapsed">
+          <form class="custom-form form-group">
+            <input type="text" class="form-control" placeholder="Enter Seatme ID" ng-readonly="!edit" ng-model="apiKey">
+            <button class="btn btn-primary rounded" ng-show="edit" ng-click="edit=!edit">OK</button>
+          </form>
+        </div>
       </div>
-      <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
+
+      <div class="appintegration" ng-class="inactive">
+        <div class="pull-right">
+          <a href="javascript:void(0)" ng-click="toggle()"><i class="fa" ng-class="chevron"></i></a>
+          <a href="javascript:void(0)" ng-click="toggleEdit()"><i class="fa fa-pencil"></i></a>
+        </div>
+        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
+        <div class="form-inline" ng-hide="collapsed">
+          <form class="custom-form form-group">
+            <input type="text" class="form-control" placeholder="Enter Seatme ID" ng-readonly="!edit" ng-model="apiKey">
+            <button class="btn btn-primary rounded" ng-show="edit" ng-click="edit=!edit">OK</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="appintegration" ng-class="inactive">
+        <div class="pull-right">
+          <a href="javascript:void(0)" ng-click="toggle()"><i class="fa" ng-class="chevron"></i></a>
+          <a href="javascript:void(0)" ng-click="toggleEdit()"><i class="fa fa-pencil"></i></a>
+        </div>
+        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
+        <div class="form-inline" ng-hide="collapsed">
+          <form class="custom-form form-group">
+            <input type="text" class="form-control" placeholder="Enter Seatme ID" ng-readonly="!edit" ng-model="apiKey">
+            <button class="btn btn-primary rounded" ng-show="edit" ng-click="edit=!edit">OK</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="appintegration" ng-class="inactive">
+        <div class="pull-right">
+          <a href="javascript:void(0)" ng-click="toggle()"><i class="fa" ng-class="chevron"></i></a>
+          <a href="javascript:void(0)" ng-click="toggleEdit()"><i class="fa fa-pencil"></i></a>
+        </div>
+        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
+        <div class="form-inline" ng-hide="collapsed">
+          <form class="custom-form form-group">
+            <input type="text" class="form-control" placeholder="Enter Seatme ID" ng-readonly="!edit" ng-model="apiKey">
+            <button class="btn btn-primary rounded" ng-show="edit" ng-click="edit=!edit">OK</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="appintegration" ng-class="inactive">
+        <div class="pull-right">
+          <a href="javascript:void(0)" ng-click="toggle()"><i class="fa" ng-class="chevron"></i></a>
+          <a href="javascript:void(0)" ng-click="toggleEdit()"><i class="fa fa-pencil"></i></a>
+        </div>
+        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
+        <div class="form-inline" ng-hide="collapsed">
+          <form class="custom-form form-group">
+            <input type="text" class="form-control" placeholder="Enter Seatme ID" ng-readonly="!edit" ng-model="apiKey">
+            <button class="btn btn-primary rounded" ng-show="edit" ng-click="edit=!edit">OK</button>
+          </form>
+        </div>
+      </div>
+
     </div>
-    <div class="appintegration inactive">
-      <div class="pull-right">
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-chevron-down"></i><!-- up/down arrow --></a>
-        <a href="javascript:void(0)" class="ok"><i class="fa fa-pencil"></i></a>
+    <!-- END Reservation & Online Ordering -->
+
+    <div class="col-md-12">
+      <h2 class="nomargin">Social Reviews</h2>
+      <div class="appintegration" ng-class="inactive">
+        <div class="pull-right">
+          <a href="javascript:void(0)" ng-click="toggle()"><i class="fa" ng-class="chevron"></i></a>
+          <a href="javascript:void(0)" ng-click="toggleEdit()"><i class="fa fa-pencil"></i></a>
+        </div>
+        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
+        <div class="form-inline" ng-hide="collapsed">
+          <form class="custom-form form-group">
+            <input type="text" class="form-control" placeholder="Enter Seatme ID" ng-readonly="!edit" ng-model="apiKey">
+            <button class="btn btn-primary rounded" ng-show="edit" ng-click="edit=!edit">OK</button>
+          </form>
+        </div>
       </div>
-      <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
+      <div class="appintegration" ng-class="inactive">
+        <div class="pull-right">
+          <a href="javascript:void(0)" ng-click="toggle()"><i class="fa" ng-class="chevron"></i></a>
+          <a href="javascript:void(0)" ng-click="toggleEdit()"><i class="fa fa-pencil"></i></a>
+        </div>
+        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
+        <div class="form-inline" ng-hide="collapsed">
+          <form class="custom-form form-group">
+            <input type="text" class="form-control" placeholder="Enter Seatme ID" ng-readonly="!edit" ng-model="apiKey">
+            <button class="btn btn-primary rounded" ng-show="edit" ng-click="edit=!edit">OK</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>

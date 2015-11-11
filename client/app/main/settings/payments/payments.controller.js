@@ -2,5 +2,5 @@
 
 angular.module('userAdminApp')
   .controller('PaymentsCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    $scope.enabled = true;
   });

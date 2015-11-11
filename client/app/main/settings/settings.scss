@@ -18,8 +18,17 @@
   button.rounded                  { border: none; border-radius: 100%; font-family: $serif-font; height: 40px; width: 40px; padding: 0; text-transform: uppercase; text-shadow: none;
     &.btn-primary                 { background: $buttonblue; }
   }
-
-  // tbody tr:last-child         { border-bottom: 1px solid $lightgrey; }
+  .text-input                     { background: red;
+    input[readonly],
+    fieldset[disabled] select     { background: transparent; border: none; color: $black; margin: 0; padding: 0;
+      &::-webkit-input-placeholder{ color: lighten($black, 40%); }
+      &::-moz-input-placeholder   { color: lighten($black, 40%); }
+      &:-moz-input-placeholder    { color: lighten($black, 40%); }
+      &:-ms-input-placeholder     { color: lighten($black, 40%); }
+    }
+    fieldset[disabled] select     { -webkit-appearance: none; -moz-appearance: none; appearance: none; text-indent: 0.01px; text-overflow: ''; }
+  }
+  // tbody tr:last-child             { border-bottom: 1px solid $lightgrey; }
 
   table                           {
     &.table                       {
@@ -47,7 +56,7 @@
 
   // DELIVERY
   .checkbox-inverted              {
-    input[type="checkbox"]        { margin: 0; position: relative; }
+    input[type="checkbox"]        { margin: 0 5px 0 0; position: relative; }
     label                         { padding: 0; }
   }
   .googlemap                      { padding: 0; width: 100%;

@@ -2,12 +2,12 @@
   <h1>Delivery</h1>
 
   <div class="col-lg-12 checkbox hero-checkbox">
-    <label for="" class="control-label">
-      <input type="checkbox" ng-model="delivery"> Enable Delivery
+    <label for="delivery" class="control-label">
+      <input id="delivery" type="checkbox" ng-model="enabled" ng-checked="enabled"> Enable Delivery
     </label>
   </div>
 
-  <div ng-show="delivery">
+  <div ng-show="enabled">
     <div class="googlemap">
       <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d58420.22179022014!2d-51.171596471397784!3d-30.028410566185656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1443130059406" allowfullscreen></iframe>
       <div class="clearfix"></div>
@@ -36,15 +36,13 @@
         </div>
         <!-- END Send Delivery Requests To -->
 
-        <div class="col-lg-12">
-          <h2>Delivery Hours</h2>
-        </div>
         <div class="col-lg-12 form-inline form-group">
-          <label for="" class="control-label">Time Format:</label>
+          <h2>Delivery Hours</h2>
+          <!-- <label for="" class="control-label">Time Format:</label>
           <div class="radio-inline">
-            <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" id="ampm" checked> AM/PM</label>
-            <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" id="24h"> 24 hours</label>
-          </div>
+            <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" ng-model="timeFormat" value="ampm" checked> AM/PM</label>
+            <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" ng-model="timeFormat" value="24h"> 24 hours</label>
+          </div> -->
 
           <table class="table timetable">
             <thead>
@@ -56,160 +54,30 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr ng-repeat="day in weekdays" ng-class="{disabled: !day.open}">
                 <td>
                   <div class="checkbox weekday">
                     <label for="" class="control-label">
-                      <input type="checkbox" name="" id="" checked> Monday
+                      <input type="checkbox" name="d" ng-model="day.open" ng-checked="day.open"> {{day.name}}
                     </label>
                   </div>
                 </td>
                 <td>
                   <div class="form-group">
-                    <input type="time" value="08:00:00" class="form-control">
+                    <input type="time" ng-value="day.start1" class="form-control" ng-hide="!day.open">
+                    <input type="time" ng-value="day.start2" class="form-control" ng-hide="!day.open" ng-show="day.split">
+                    <span ng-show="!day.open">CLOSED</span>
                   </div>
                 </td>
                 <td>
                   <div class="form-group">
-                    <input type="time" value="20:00:00" class="form-control">
+                    <input type="time" ng-value="day.stop1" class="form-control" ng-hide="!day.open">
+                    <input type="time" ng-value="day.stop2" class="form-control" ng-hide="!day.open" ng-show="day.split">
+                    <span ng-show="!day.open">CLOSED</span>
                   </div>
                 </td>
                 <td>
-                  <div class="checkbox"><input type="checkbox" name="" id=""></div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="checkbox weekday">
-                    <label for="" class="control-label">
-                      <input type="checkbox" name="" id="" checked> Tuesday
-                    </label>
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="time" value="08:00:00" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="time" value="20:00:00" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="checkbox"><input type="checkbox" name="" id=""></div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="checkbox weekday">
-                    <label for="" class="control-label">
-                      <input type="checkbox" name="" id="" checked> Wednesday
-                    </label>
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="time" value="08:00:00" class="form-control">
-                    <input type="time" value="12:00:00" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="time" value="14:00:00" class="form-control">
-                    <input type="time" value="20:00:00" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="checkbox"><input type="checkbox" name="" id="" checked></div>
-                </td>
-              </tr>
-              <tr class="disabled">
-                <td>
-                  <div class="checkbox weekday">
-                    <label for="" class="control-label">
-                      <input type="checkbox" name="" id=""> Thursday
-                    </label>
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="text" value="CLOSED" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="text" value="CLOSED" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="checkbox"><input type="checkbox" name="" id=""></div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="checkbox weekday">
-                    <label for="" class="control-label">
-                      <input type="checkbox" name="" id="" checked> Friday
-                    </label>
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="time" value="08:00:00" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="time" value="20:00:00" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="checkbox"><input type="checkbox" name="" id=""></div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="checkbox weekday">
-                    <label for="" class="control-label">
-                      <input type="checkbox" name="" id="" checked> Saturday
-                    </label>
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="time" value="08:00:00" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="time" value="20:00:00" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="checkbox"><input type="checkbox" name="" id=""></div>
-                </td>
-              </tr>
-              <tr class="disabled">
-                <td>
-                  <div class="checkbox weekday">
-                    <label for="" class="control-label">
-                      <input type="checkbox" name="" id=""> Sunday
-                    </label>
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="text" value="CLOSED" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="text" value="CLOSED" class="form-control">
-                  </div>
-                </td>
-                <td>
-                  <div class="checkbox"><input type="checkbox" name="" id=""></div>
+                  <div class="checkbox" ng-hide="!day.open"><input type="checkbox" ng-model="day.split" ng-checked="day.split"></div>
                 </td>
               </tr>
             </tbody>
@@ -250,6 +118,6 @@
           <button class="btn btn-primary">Save</button>
         </div>
       </form>
-        </div>
     </div>
+  </div>
 </div>

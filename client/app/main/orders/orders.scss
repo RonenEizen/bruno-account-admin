@@ -7,7 +7,7 @@
     &.orders                      {
       tr                          {
         &.fulfilled               {
-          td                      { color: $lightgrey; }
+          td                      { color: $lightgray; }
           .status                 { color: lighten($orange, 20%); }
         }
         th                        { border-bottom-color: $black; font-size: 13px; }

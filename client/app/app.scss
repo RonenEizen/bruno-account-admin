@@ -20,10 +20,10 @@ $beige:                         #F4F4E7;
 $black:                         #050505;
 $blue:                          #0A55D0;
 $buttonblue:                    #0D5CD0;
-$darkgrey:                      #535353;
-$lightgrey:                     #D5D5D5;
-$lightgrey1:                    #EAEAEA;
-$lightgrey2:                    #C1C1C1;
+$darkgray:                      #535353;
+$lightgray:                     #D5D5D5;
+$lightgray1:                    #EAEAEA;
+$lightgray2:                    #C1C1C1;
 $orange:                        #FD9B26;
 $red:                           #ED4736;
 $white:                         #FFFFFF;
@@ -177,9 +177,9 @@ html, body, div[ui-view]        { height: 100%; }
 // GLOBAL CLASSES
 .bold                           { font-weight: 600; }
 .row                            { overflow: hidden; }
-.close                          { clear: both; color: $darkgrey; font-size: 4rem; opacity: 1; }
+.close                          { clear: both; color: $darkgray; font-size: 4rem; opacity: 1; }
 .drag                           { margin-right: 10px; width: 25px;
-  .icon-bar                     { border: 2px solid $lightgrey; border-radius: 1px; margin-bottom: 3px; }
+  .icon-bar                     { border: 2px solid $lightgray; border-radius: 1px; margin-bottom: 3px; }
 }
 
 // HEADER
@@ -188,15 +188,15 @@ header.header                   { border-bottom: 1px solid $black; margin-bottom
 }
 
 // SIDEBAR
-aside.sidebar                   { border-right: 1px solid $lightgrey; padding-bottom: 5000px; margin-bottom: -5000px; }
+aside.sidebar                   { border-right: 1px solid $lightgray; padding-bottom: 5000px; margin-bottom: -5000px; }
 
 // MAIN
 .main                           {
   p                             { margin: 0; }
   h1                            { color: $red; font: 100 40px $title-font; margin-bottom: 10px; text-align: center; }
-  h2                            { border-bottom: 1px solid $lightgrey; font: 400 20px $title-font; letter-spacing: -.5px; margin: 40px 0 20px; text-transform: uppercase;
-    span                        { color: $lightgrey; }
-    a span                      { color: $buttonblue; }
+  h2                            { border-bottom: 1px solid $lightgray; font: 400 20px $title-font; letter-spacing: -.5px; margin: 40px 0 20px; text-transform: uppercase;
+    span                        { color: $buttonblue; }
+    span.gray                   { color: $lightgray; }
   }
 }
 form.custom-form                {
@@ -206,14 +206,14 @@ form.custom-form                {
   textarea                      { /*border: none;*/ border-radius: 0; box-shadow: none; font-size: 16px; }
   .resetsave                    { margin: 30px 0 20px;
     button                      { border: none; font-family: $serif-font; padding: 12px 50px; text-transform: uppercase; text-shadow: none;
-      &.btn-default             { background: $lightgrey; color: $darkgrey; }
+      &.btn-default             { background: $lightgray; color: $darkgray; }
       &.btn-primary             { background: $buttonblue; }
     }
   }
-  .taggroup                     { border: 1px solid $lightgrey; padding: 6px 12px;
+  .taggroup                     { border: 1px solid $lightgray; padding: 6px 12px;
     .newtag                     { border: none; }
   }
-  .label                        { background: $lightgrey; border-radius: 0; color: $darkgrey; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
+  .label                        { background: $lightgray; border-radius: 0; color: $darkgray; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
 }
 a.circle                        { border: 1px solid $blue; border-radius: 100%; color: $blue; display: inline-block; height: 20px; text-align: center; width: 20px;
   i                             {  }

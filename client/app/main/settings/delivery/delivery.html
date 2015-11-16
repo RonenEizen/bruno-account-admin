@@ -63,22 +63,22 @@
                   </div>
                 </td>
                 <td>
-                  <div class="form-group">
-                    <input type="time" ng-value="day.start1" class="form-control" ng-hide="!day.open">
-                    <input type="time" ng-value="day.start2" class="form-control" ng-hide="!day.open" ng-show="day.split">
-                    <span ng-show="!day.open">CLOSED</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="form-group">
-                    <input type="time" ng-value="day.stop1" class="form-control" ng-hide="!day.open">
-                    <input type="time" ng-value="day.stop2" class="form-control" ng-hide="!day.open" ng-show="day.split">
-                    <span ng-show="!day.open">CLOSED</span>
-                  </div>
-                </td>
-                <td>
-                  <div class="checkbox" ng-hide="!day.open"><input type="checkbox" ng-model="day.split" ng-checked="day.split"></div>
-                </td>
+                <div class="form-group">
+                  <input type="time" ng-value="day.start1" class="form-control" ng-show="day.open">
+                  <input type="time" ng-value="day.start2" class="form-control" ng-show="day.open && day.split">
+                  <span ng-show="!day.open">CLOSED</span>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="time" ng-value="day.stop1" class="form-control" ng-show="day.open">
+                  <input type="time" ng-value="day.stop2" class="form-control" ng-show="day.open && day.split">
+                  <span ng-show="!day.open">CLOSED</span>
+                </div>
+              </td>
+              <td>
+                <div class="checkbox" ng-show="day.open"><input type="checkbox" ng-model="day.split" ng-checked="day.split"></div>
+              </td>
               </tr>
             </tbody>
           </table><!-- END .timetable -->

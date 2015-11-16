@@ -42,11 +42,6 @@ angular.module('userAdminApp')
         url: '/integration',
         templateUrl: 'app/main/settings/integration/integration.html',
         controller: 'IntegrationCtrl'
-      })
-      .state('main.settings.site-builder', {
-        url: '/site-builder',
-        templateUrl: 'app/main/settings/site-builder/site-builder.html',
-        controller: 'SiteBuilderCtrl'
       });
 
     $urlRouterProvider.when('/settings', '/settings/business-info');

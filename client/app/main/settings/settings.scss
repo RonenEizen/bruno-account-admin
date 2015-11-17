@@ -9,6 +9,10 @@
     }
   }
 
+  .help-block                     { color: $red; }
+  input.ng-invalid.ng-touched,
+  select.ng-invalid.ng-touched    { border: 1px solid $red; }
+
   // MAIN CONTENT
   .hero-checkbox                  { background: $red; color: $white; font: 300 18px $title-font; margin: 10px 0; padding: 25px 0px; text-align: center;
     input[type="checkbox"]        {
@@ -20,7 +24,7 @@
   }
   .text-input                     {
     input[readonly],
-    fieldset[disabled] select     { background: transparent; border: none; cursor: default; color: $black; margin: 0; padding: 0;
+    fieldset[disabled] select     { background: transparent; border: none; cursor: default; color: $black; height: auto; margin: 0; padding: 0;
       &::-webkit-input-placeholder{ color: lighten($black, 90%); }
       &::-moz-input-placeholder   { color: lighten($black, 90%); }
       &:-moz-input-placeholder    { color: lighten($black, 90%); }

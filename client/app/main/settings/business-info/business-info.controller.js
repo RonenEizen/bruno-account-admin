@@ -2,7 +2,71 @@
 
 angular.module('userAdminApp')
   .controller('BusinessInfoCtrl', function ($scope, User, Auth) {
-    // time table
+    // form validation
+    // business info
+    $scope.business = {
+      edit: false,
+      name: "",
+      email: "",
+      phone: "",
+      addr1: "",
+      addr2: "",
+      city: "",
+      state: "",
+      zip: "",
+      country: ""
+    };
+
+    // restaurant info
+    $scope.restaurant = {
+      sameAsBusiness: false,
+      edit: false,
+      name: "",
+      email: "",
+      phone: "",
+      addr1: "",
+      addr2: "",
+      city: "",
+      state: "",
+      state: "",
+      zip: "",
+      country: ""
+    };
+
+    $scope.sameAsAbove = function () {
+      if ($scope.restaurant.sameAsBusiness) {
+        $scope.restaurant.edit = false;
+        $scope.restaurant.name = $scope.business.name;
+        $scope.restaurant.email = $scope.business.email;
+        $scope.restaurant.phone = $scope.business.phone;
+        $scope.restaurant.addr1 = $scope.business.addr1;
+        $scope.restaurant.addr2 = $scope.business.addr2;
+        $scope.restaurant.city = $scope.business.city;
+        $scope.restaurant.state = $scope.business.state;
+        $scope.restaurant.state = $scope.business.state;
+        $scope.restaurant.zip = $scope.business.zip;
+        $scope.restaurant.country = $scope.business.country;
+      } else { $scope.restaurant = {} }
+    }
+
+    // business owner info
+    $scope.owner = {
+      edit: false,
+      fname: "",
+      lname: "",
+      birthday: "",
+      ssn: "",
+      email: "",
+      phone: "",
+      addr1: "",
+      addr2: "",
+      city: "",
+      state: "",
+      zip: "",
+      country: ""
+    };
+
+    // opening hours
     $scope.timeFormat = "ampm";
     $scope.weekdays = [{
       name: "Monday",
@@ -62,6 +126,11 @@ angular.module('userAdminApp')
       stop2: ""
     }];
 
+    // validates forms
+    $scope.submitForm = function(isValid) {
+      if (isValid)
+        alert('yeap, you passed it');
+    };
 
 
 
@@ -81,5 +150,5 @@ angular.module('userAdminApp')
           $scope.message = '';
         });
       }
-		};
+    };
   });

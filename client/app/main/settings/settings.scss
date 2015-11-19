@@ -29,6 +29,11 @@
       &::-moz-input-placeholder   { color: lighten($black, 90%); }
       &:-moz-input-placeholder    { color: lighten($black, 90%); }
       &:-ms-input-placeholder     { color: lighten($black, 90%); }
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+      & ~ p                       { display: none; }
     }
     fieldset[disabled] select     { -webkit-appearance: none; -moz-appearance: none; appearance: none; text-indent: 0.01px; text-overflow: ''; }
   }

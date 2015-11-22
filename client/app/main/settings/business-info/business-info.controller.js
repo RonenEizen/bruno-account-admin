@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('BusinessInfoCtrl', function ($scope, User, Auth) {
+  .controller('BusinessInfoCtrl', function($scope, User, Auth, $log) {
     // form validation
     // business info
+    $scope.businessMaster = {};
     $scope.business = {
       edit: false,
       name: "",
@@ -18,6 +19,7 @@ angular.module('userAdminApp')
     };
 
     // restaurant info
+    $scope.restaurantMaster = {};
     $scope.restaurant = {
       sameAsBusiness: false,
       edit: false,
@@ -28,33 +30,36 @@ angular.module('userAdminApp')
       addr2: "",
       city: "",
       state: "",
-      state: "",
       zip: "",
       country: ""
     };
 
-    $scope.sameAsAbove = function () {
+    $scope.sameAsAbove = function() {
       if ($scope.restaurant.sameAsBusiness) {
+        $scope.restaurant.sameAsBusiness = true;
         $scope.restaurant.edit = false;
-        $scope.restaurant.name = $scope.business.name;
-        $scope.restaurant.email = $scope.business.email;
-        $scope.restaurant.phone = $scope.business.phone;
-        $scope.restaurant.addr1 = $scope.business.addr1;
-        $scope.restaurant.addr2 = $scope.business.addr2;
-        $scope.restaurant.city = $scope.business.city;
-        $scope.restaurant.state = $scope.business.state;
-        $scope.restaurant.state = $scope.business.state;
-        $scope.restaurant.zip = $scope.business.zip;
-        $scope.restaurant.country = $scope.business.country;
-      } else { $scope.restaurant = {} }
-    }
+        $scope.restaurant.name = $scope.businessMaster.name;
+        $scope.restaurant.email = $scope.businessMaster.email;
+        $scope.restaurant.phone = $scope.businessMaster.phone;
+        $scope.restaurant.addr1 = $scope.businessMaster.addr1;
+        $scope.restaurant.addr2 = $scope.businessMaster.addr2;
+        $scope.restaurant.city = $scope.businessMaster.city;
+        $scope.restaurant.state = $scope.businessMaster.state;
+        $scope.restaurant.state = $scope.businessMaster.state;
+        $scope.restaurant.zip = $scope.businessMaster.zip;
+        $scope.restaurant.country = $scope.businessMaster.country;
+      } else {
+        $scope.restaurant = {};
+      }
+    };
 
     // business owner info
+    $scope.ownerMaster = {};
     $scope.owner = {
       edit: false,
       fname: "",
       lname: "",
-      birthday: "",
+      bday: "",
       ssn: "",
       email: "",
       phone: "",
@@ -90,46 +95,74 @@ angular.module('userAdminApp')
       split: false,
       start1: "09:00:00",
       stop1: "12:00:00",
-      start2: "13:00:00",
-      stop2: "18:00:00"
+      start2: "",
+      stop2: ""
     }, {
       name: "Thurday",
       open: false,
       split: false,
-      start1: "09:00:00",
-      stop1: "18:00:00",
+      start1: "",
+      stop1: "",
       start2: "",
       stop2: ""
     }, {
       name: "Friday",
       open: false,
       split: false,
-      start1: "09:00:00",
-      stop1: "18:00:00",
+      start1: "",
+      stop1: "",
       start2: "",
       stop2: ""
     }, {
       name: "Saturday",
       open: false,
       split: false,
-      start1: "09:00:00",
-      stop1: "18:00:00",
+      start1: "",
+      stop1: "",
       start2: "",
       stop2: ""
     }, {
       name: "Sunday",
       open: false,
       split: false,
-      start1: "09:00:00",
-      stop1: "18:00:00",
+      start1: "",
+      stop1: "",
       start2: "",
       stop2: ""
     }];
 
-    // validates forms
-    $scope.submitForm = function(isValid) {
-      if (isValid)
-        alert('yeap, you passed it');
+    // saves & reset forms
+    $scope.reset = function(section) {
+      switch (section) {
+        case 'business':
+          $scope.business = angular.copy($scope.businessMaster);
+          $scope.business.edit = false;
+          break;
+        case 'restaurant':
+          $scope.restaurant = angular.copy($scope.restaurantMaster);
+          $scope.restaurant.edit = false;
+          break;
+        case 'owner':
+          $scope.owner = angular.copy($scope.ownerMaster);
+          $scope.owner.edit = false;
+          break;
+      };
+    };
+    $scope.save = function(section) {
+      switch (section) {
+        case 'business':
+          $scope.businessMaster = angular.copy($scope.business);
+          $scope.business.edit = false;
+          break;
+        case 'restaurant':
+          $scope.restaurantMaster = angular.copy($scope.restaurant);
+          $scope.restaurant.edit = false;
+          break;
+        case 'owner':
+          $scope.ownerMaster = angular.copy($scope.owner);
+          $scope.owner.edit = false;
+          break;
+      };
     };
 
 
@@ -139,16 +172,16 @@ angular.module('userAdminApp')
 
     $scope.changePassword = function(form) {
       $scope.submitted = true;
-      if(form.$valid) {
-        Auth.changePassword( $scope.user.oldPassword, $scope.user.newPassword )
-        .then( function() {
-          $scope.message = 'Password successfully changed.';
-        })
-        .catch( function() {
-          form.password.$setValidity('mongoose', false);
-          $scope.errors.other = 'Incorrect password';
-          $scope.message = '';
-        });
+      if (form.$valid) {
+        Auth.changePassword($scope.user.oldPassword, $scope.user.newPassword)
+          .then(function() {
+            $scope.message = 'Password successfully changed.';
+          })
+          .catch(function() {
+            form.password.$setValidity('mongoose', false);
+            $scope.errors.other = 'Incorrect password';
+            $scope.message = '';
+          });
       }
     };
   });

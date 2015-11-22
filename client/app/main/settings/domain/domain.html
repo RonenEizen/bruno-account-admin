@@ -4,16 +4,17 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h2>Subdomain <span class="pull-right" ng-click="edit=true" ng-class="{gray: edit}"><i class="fa fa-pencil"></i></span></h2>
-      <div class="form-inline">
-        <form class="custom-form form-group">
+      <h2>Subdomain <span class="pull-right" ng-click="subdomain.edit=true" ng-class="{gray: subdomain.edit}"><i class="fa fa-pencil"></i></span></h2>
+      <form name="subdomainForm" class="custom-form form-group">
+        <div class="form-inline">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Enter a domain name" ng-readonly="!edit">
+            <input type="text" name="subdomain" ng-model="subdomain.subdomain" class="form-control" placeholder="Enter a domain name" ng-readonly="!subdomain.edit" required>
             <div class="input-group-addon">.chefbr.uno</div>
           </div>
-          <button class="btn btn-primary rounded" ng-show="edit" ng-click="edit=!edit">Go</button>
-        </form>
-      </div>
+          <button class="btn btn-primary rounded" ng-disabled="subdomainForm.$invalid" ng-show="subdomain.edit" ng-click="save('subdomain')">Go</button>
+          <p ng-show="subdomain.subdomain.$invalid || (subdomainForm.subdomain.$error.required && subdomainForm.subdomain.$touched)" class="help-block">This is a required field.</p>
+        </div>
+      </form>
     </div>
     <!-- END Subdomain -->
 

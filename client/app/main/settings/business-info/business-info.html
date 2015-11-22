@@ -4,7 +4,7 @@
 
     <div class="col-lg-12">
       <h2>Business Info <span class="pull-right" ng-click="business.edit=true" ng-class="{gray: business.edit}"><i class="fa fa-pencil"></i></span></h2>
-      <form name="businessForm" ng-submit="submitForm(businessForm.$valid)" novalidate class="custom-form text-input">
+      <form name="businessForm" novalidate class="custom-form text-input">
         <div class="row">
           <div class="col-lg-12 form-group">
             <label class="control-label">Business Name</label>
@@ -46,7 +46,7 @@
           <div class="col-lg-6 form-group">
             <label class="control-label">State</label>
             <fieldset ng-disabled="!business.edit">
-              <select name="state" ng-model="business.state" name="" id="" class="form-control" required>
+              <select name="state" ng-model="business.state" id="" class="form-control" required>
                 <option value=""></option>
                 <option value="NY">NY</option>
                 <option value="FL">FL</option>
@@ -76,8 +76,8 @@
           </div>
 
           <div class="col-lg-12 text-center resetsave" ng-show="business.edit">
-            <button class="btn btn-default" type="reset" ng-click="business.edit=!business.edit;businessForm.setPristine()">Cancel</button>
-            <button class="btn btn-primary" ng-disabled="businessForm.$invalid" ng-click="submitForm(business);business.edit=!business.edit">Save</button>
+            <button class="btn btn-default" ng-click="reset('business')">Cancel</button>
+            <button class="btn btn-primary" ng-disabled="businessForm.$invalid" ng-click="save('business')">Save</button>
           </div>
         </div>
       </form>
@@ -89,13 +89,12 @@
 
     <div class="col-lg-12">
       <h2>Restaurant Info <span class="pull-right" ng-click="restaurant.edit=true;restaurant.sameAsBusiness=false" ng-class="{gray: restaurant.edit}"><i class="fa fa-pencil"></i></span></h2>
-      {{restaurant.name}}
       <div class="checkbox">
         <label>
           <input type="checkbox" ng-model="restaurant.sameAsBusiness" ng-change="sameAsAbove()" ng-checked="restaurant.sameAsBusiness"> Same as Business Info
         </label>
       </div>
-      <form ng-hide="restaurant.sameAsBusiness" name="restaurantForm" ng-submit="submitForm(restaurantForm.$valid)" novalidate class="custom-form text-input">
+      <form ng-hide="restaurant.sameAsBusiness" name="restaurantForm" novalidate class="custom-form text-input">
         <div class="row">
           <div class="col-lg-12 form-group">
             <label class="control-label">Restaurant Name</label>
@@ -166,8 +165,8 @@
           </div>
 
           <div class="col-lg-12 text-center resetsave" ng-show="restaurant.edit">
-            <button class="btn btn-default" type="reset" ng-click="restaurant.edit=!restaurant.edit;restaurantForm.setPristine()">Cancel</button>
-            <button class="btn btn-primary" ng-disabled="restaurantForm.$invalid" ng-click="submitForm(restaurant);restaurant.edit=!business.edit">Save</button>
+            <button class="btn btn-default" ng-click="reset('restaurant')">Cancel</button>
+            <button class="btn btn-primary" ng-disabled="restaurantForm.$invalid" ng-click="save('restaurant')">Save</button>
           </div>
         </div>
       </form>
@@ -179,15 +178,15 @@
 
     <div class="col-lg-12">
       <h2>Business Owner Info <span class="pull-right" ng-click="owner.edit=true" ng-class="{gray: owner.edit}"><i class="fa fa-pencil"></i></span></h2>
-      <form name="ownerForm" ng-submit="submitForm(ownerForm.$valid)" novalidate class="custom-form text-input">
+      <form name="ownerForm" novalidate class="custom-form text-input">
         <div class="row">
-          <div class="col-lg-12 form-group">
+          <div class="col-lg-6 form-group">
             <label class="control-label">First Name</label>
             <input name="fname" type="text" class="form-control" placeholder="Laurance" ng-model="owner.fname" ng-readonly="!owner.edit" required>
             <p ng-show="owner.fname.$invalid || (ownerForm.fname.$error.required && ownerForm.fname.$touched)" class="help-block">This is a required field.</p>
           </div>
 
-          <div class="col-lg-12 form-group">
+          <div class="col-lg-6 form-group">
             <label class="control-label">Last Name</label>
             <input name="lname" type="text" class="form-control" placeholder="Martell" ng-model="owner.lname" ng-readonly="!owner.edit" required>
             <p ng-show="owner.lname.$invalid || (ownerForm.lname.$error.required && ownerForm.lname.$touched)" class="help-block">This is a required field.</p>
@@ -195,8 +194,8 @@
 
           <div class="col-lg-6 form-group">
             <label class="control-label">Date of Birth</label>
-            <input name="birthday" type="date" class="form-control" placeholder="1974-08-12" ng-model="owner.birthday" ng-readonly="!owner.edit" required>
-            <p ng-show="owner.birthday.$invalid || (ownerForm.birthday.$error.required && ownerForm.birthday.$touched)" class="help-block">This is a required field.</p>
+            <input name="bday" type="date" class="form-control" ng-model="owner.bday" ng-readonly="!owner.edit" required>
+            <p ng-show="owner.bday.$invalid || (ownerForm.bday.$error.required && ownerForm.bday.$touched)" class="help-block">This is a required field.</p>
           </div>
 
           <div class="col-lg-6 form-group">
@@ -270,8 +269,8 @@
           </div>
 
           <div class="col-lg-12 text-center resetsave" ng-show="owner.edit">
-            <button class="btn btn-default" type="reset" ng-click="owner.edit=!owner.edit;ownerForm.setPristine()">Cancel</button>
-            <button class="btn btn-primary" ng-disabled="ownerForm.$invalid" ng-click="submitForm(owner);owner.edit=!business.edit">Save</button>
+            <button class="btn btn-default" ng-click="reset('owner')">Cancel</button>
+            <button class="btn btn-primary" ng-disabled="ownerForm.$invalid" ng-click="save('owner')">Save</button>
           </div>
         </div>
       </form>
@@ -300,7 +299,7 @@
               <td>
                 <div class="checkbox weekday">
                   <label class="control-label">
-                    <input type="checkbox" name="" ng-model="day.open" ng-checked="day.open"> {{day.name}}
+                    <input type="checkbox" ng-model="day.open" ng-checked="day.open"> {{day.name}}
                   </label>
                 </div>
               </td>

@@ -1,28 +1,69 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('IntegrationCtrl', function ($scope) {
+  .controller('IntegrationCtrl', function ($scope, $log) {
+    $scope.integrations = [{
+      edit: false,
+      collapsed: true,
+      name: 'SeatMe',
+      apiKey: '123',
+      imgUrl: 'https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png'
+    },{
+      edit: false,
+      collapsed: true,
+      name: 'JoinUs',
+      apiKey: '',
+      imgUrl: 'https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png'
+    },{
+      edit: false,
+      collapsed: true,
+      name: 'SeatMe',
+      apiKey: '',
+      imgUrl: 'https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png'
+    },{
+      edit: false,
+      collapsed: true,
+      name: 'SeatMe',
+      apiKey: '',
+      imgUrl: 'https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png'
+    },{
+      edit: false,
+      collapsed: true,
+      name: 'SeatMe',
+      apiKey: '',
+      imgUrl: 'https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png'
+    }];
 
-    $scope.chevron = "fa-chevron-down";
-    $scope.collapsed = true;
-    $scope.toggle = function () {
-      if ($scope.chevron === "fa-chevron-down") {
-        $scope.chevron = "fa-chevron-up";
-        $scope.collapsed = false;
-      } else {
-        $scope.chevron = "fa-chevron-down";
-        $scope.collapsed = true;
-      }
+    $scope.reviews = [{
+      edit: false,
+      collapsed: true,
+      name: 'SeatMe',
+      apiKey: '123',
+      imgUrl: 'https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png'
+    },{
+      edit: false,
+      collapsed: true,
+      name: 'SeatMe',
+      apiKey: '',
+      imgUrl: 'https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png'
+    },{
+      edit: false,
+      collapsed: true,
+      name: 'SeatMe',
+      apiKey: '',
+      imgUrl: 'https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png'
+    }];
+
+    $scope.toggle = function (element) {
+        element.collapsed = !element.collapsed;
     };
-
-    $scope.edit = false;
-    $scope.toggleEdit = function () {
-      if($scope.collapsed === true){
-        $scope.toggle();
-      }
-      $scope.edit = !$scope.edit;
+    $scope.edit = function (element) {
+      if (!element.edit) {
+        element.edit = true;
+        element.collapsed = false;
+      };
     };
-
-    $scope.apiKey = "";
-    $scope.inactive = "inactive";
+    $scope.save = function (element) {
+      element.edit = false;
+    }
   });

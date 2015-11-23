@@ -14,14 +14,14 @@ angular.module('userAdminApp')
       edit: false,
       sets: [{
         name: "Booth",
-        capacity: "6",
-        quantity: "5",
-        mergeable: "false"
+        capacity: 6,
+        quantity: 5,
+        mergeable: false
       },{
         name: "Window",
-        capacity: "2",
-        quantity: "2",
-        mergeable: "true"
+        capacity: 2,
+        quantity: 2,
+        mergeable: true
       }]
     };
 

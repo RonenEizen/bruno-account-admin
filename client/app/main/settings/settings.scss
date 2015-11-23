@@ -104,5 +104,8 @@
     &.inactive                    {
       img                         { @include desaturate(100%); opacity: .5; }
     }
+    .pull-right i                 { color: $buttonblue;
+      &.gray                      { color: $lightgray; }
+    }
   }
 }

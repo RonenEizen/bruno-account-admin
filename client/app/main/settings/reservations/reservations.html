@@ -31,36 +31,22 @@
               <th>Table Capacity</th>
               <th>Number of Tables</th>
               <th>Mergeable</th>
-              <th ng-show="edit"></th>
+              <th ng-show="tables.edit"></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Booth</td>
-              <td>6</td>
-              <td>5</td>
-              <td>No</td>
-              <td ng-show="edit"><a href="javascript:void(0)"><span class="fa fa-pencil"></span></a></td>
-            </tr>
-
-            <tr>
-              <td>Window</td>
-              <td>2</td>
-              <td>2</td>
-              <td>Yes</td>
-              <td ng-show="edit"><a href="javascript:void(0)"><span class="fa fa-pencil"></span></a></td>
+            <tr ng-repeat="table in tables.sets">
+              <td>{{table.name}}</td>
+              <td>{{table.capacity}}</td>
+              <td>{{table.quantity}}</td>
+              <td>{{table.mergeable ? 'yes':'no'}}</td>
+              <td ng-show="tables.edit"><a href="javascript:void(0)"><span class="fa fa-pencil"></span></a></td>
             </tr>
 
             <tr ng-show="tables.edit">
-              <td class="form-group">
-                <input type="text" class="form-control">
-              </td>
-              <td class="form-group">
-                <input type="number" class="form-control">
-              </td>
-              <td class="form-group">
-                <input type="number" class="form-control">
-              </td>
+              <td class="form-group"><input type="text" class="form-control"></td>
+              <td class="form-group"><input type="number" class="form-control"></td>
+              <td class="form-group"><input type="number" class="form-control"></td>
               <td>
                 <div class="checkbox text-center">
                   <label><input type="checkbox"></label>
@@ -72,13 +58,7 @@
             </tr>
           </tbody>
         </table>
-        <span ng-show="edit"><a class="circle" href="javascript:void(0)"><i class="fa fa-plus"></i></a><a href="javascript:void(0)"> Add Row</a></span>
-      </div>
-      <!-- END Tables -->
-
-      <div class="col-lg-12 text-center resetsave" ng-show="tables.edit">
-        <button class="btn btn-default" ng-click="reset('tables')">Cancel</button>
-        <button class="btn btn-primary" ng-disabled="tablesForm.$invalid" ng-click="save('tables')">Save</button>
+        <button class="btn btn-default" ng-show="tables.edit"><i class="fa fa-plus"></i> Add Row</button>
       </div>
     </form>
 

@@ -72,64 +72,69 @@ angular.module('userAdminApp')
     };
 
     // opening hours
-    $scope.timeFormat = "ampm";
-    $scope.weekdays = [{
-      name: "Monday",
-      open: true,
-      split: false,
-      start1: "09:00:00",
-      stop1: "18:00:00",
-      start2: "",
-      stop2: ""
-    }, {
-      name: "Tuesday",
-      open: true,
-      split: true,
-      start1: "09:00:00",
-      stop1: "12:00:00",
-      start2: "13:00:00",
-      stop2: "18:00:00"
-    }, {
-      name: "Wednesday",
-      open: true,
-      split: false,
-      start1: "09:00:00",
-      stop1: "12:00:00",
-      start2: "",
-      stop2: ""
-    }, {
-      name: "Thurday",
-      open: false,
-      split: false,
-      start1: "",
-      stop1: "",
-      start2: "",
-      stop2: ""
-    }, {
-      name: "Friday",
-      open: false,
-      split: false,
-      start1: "",
-      stop1: "",
-      start2: "",
-      stop2: ""
-    }, {
-      name: "Saturday",
-      open: false,
-      split: false,
-      start1: "",
-      stop1: "",
-      start2: "",
-      stop2: ""
-    }, {
-      name: "Sunday",
-      open: false,
-      split: false,
-      start1: "",
-      stop1: "",
-      start2: "",
-      stop2: ""
-    }];
+    $scope.openingMaster = {};
+    $scope.opening = {
+      edit: false,
+      timeFormat: "ampm",
+      weekdays: [{
+        name: "Monday",
+        open: true,
+        split: false,
+        start1: new Date(1970, 0, 1, 14, 57, 0),
+        stop1: new Date(1970, 0, 1, 14, 57, 0),
+        start2: "",
+        stop2: ""
+      }, {
+        name: "Tuesday",
+        open: true,
+        split: true,
+        start1: new Date(1970, 0, 1, 14, 57, 0),
+        stop1: new Date(1970, 0, 1, 14, 57, 0),
+        start2: new Date(1970, 0, 1, 14, 57, 0),
+        stop2: new Date(1970, 0, 1, 14, 57, 0)
+      }, {
+        name: "Wednesday",
+        open: true,
+        split: false,
+        start1: new Date(1970, 0, 1, 14, 57, 0),
+        stop1: new Date(1970, 0, 1, 14, 57, 0),
+        start2: new Date(1970, 0, 1, 14, 57, 0),
+        stop2: new Date(1970, 0, 1, 14, 57, 0)
+      }, {
+        name: "Thurday",
+        open: false,
+        split: false,
+        start1: new Date(1970, 0, 1, 14, 57, 0),
+        stop1: new Date(1970, 0, 1, 14, 57, 0),
+        start2: "",
+        stop2: ""
+      }, {
+        name: "Friday",
+        open: false,
+        split: false,
+        start1: new Date(1970, 0, 1, 14, 57, 0),
+        stop1: new Date(1970, 0, 1, 14, 57, 0),
+        start2: "",
+        stop2: ""
+      }, {
+        name: "Saturday",
+        open: false,
+        split: false,
+        start1: new Date(1970, 0, 1, 14, 57, 0),
+        stop1: new Date(1970, 0, 1, 14, 57, 0),
+        start2: "",
+        stop2: ""
+      }, {
+        name: "Sunday",
+        open: false,
+        split: false,
+        start1: new Date(1970, 0, 1, 14, 57, 0),
+        stop1: new Date(1970, 0, 1, 14, 57, 0),
+        start2: "",
+        stop2: ""
+      }]
+    };
+
 
     // saves & reset forms
     $scope.reset = function(section) {
@@ -146,6 +151,10 @@ angular.module('userAdminApp')
           $scope.owner = angular.copy($scope.ownerMaster);
           $scope.owner.edit = false;
           break;
+        case 'opening':
+          $scope.opening = angular.copy($scope.openingMaster);
+          $scope.opening.edit = false;
+          break;
       };
     };
     $scope.save = function(section) {
@@ -161,6 +170,10 @@ angular.module('userAdminApp')
         case 'owner':
           $scope.ownerMaster = angular.copy($scope.owner);
           $scope.owner.edit = false;
+          break;
+        case 'opening':
+          $scope.openingMaster = angular.copy($scope.opening);
+          $scope.opening.edit = false;
           break;
       };
     };

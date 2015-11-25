@@ -1,141 +1,161 @@
 <div class="col-md-6 col-md-offset-2 main content">
   <h1>Delivery</h1>
 
-  <div class="col-lg-12 checkbox hero-checkbox">
+  <div class="col-md-12 checkbox hero-checkbox">
     <label for="delivery" class="control-label">
       <input id="delivery" type="checkbox" ng-model="enabled" ng-checked="enabled"> Enable Delivery
     </label>
   </div>
 
-  <div ng-show="enabled">
+  <div ng-class="row" ng-show="enabled">
     <div class="googlemap">
       <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d58420.22179022014!2d-51.171596471397784!3d-30.028410566185656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1443130059406"></iframe>
       <div class="clearfix"></div>
     </div>
 
-    <div class="row">
+    <div class="col-md-12">
       <form name="requestsForm" class="custom-form text-input" novalidate>
-        <div class="col-lg-12">
-          <h2>Send Delivery Requests To <span class="pull-right" ng-click="requests.edit=true" ng-class="{gray: requests.edit}"><i class="fa fa-pencil"></i></span></h2>
-        </div>
-        <div class="col-lg-6">
-          <div class="checkbox checkbox-inverted">
-            <label for="" class="control-label"> Email <input type="checkbox" ng-model="requests.email.enabled" ng-show="requests.edit"></label>
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Send Delivery Requests To <span class="pull-right" ng-click="requests.edit=true" ng-class="{gray: requests.edit}"><i class="fa fa-pencil"></i></span></h2>
           </div>
-          <div class="form-group">
-            <input type="email" class="form-control" ng-readonly="!requests.edit || !requests.email.enabled" placeholder="Email to get requests" ng-required="requests.email.enabled" ng-model="requests.email.input">
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="checkbox checkbox-inverted">
-            <label for="" class="control-label"> Phone <input type="checkbox" ng-model="requests.phone.enabled" ng-show="requests.edit"></label>
-          </div>
-          <div class="form-group">
-            <input type="tel" class="form-control" ng-readonly="!requests.edit || !requests.phone.enabled" placeholder="Phone to get requests" ng-required="requests.phone.enabled" ng-model="requests.phone.input">
-          </div>
-        </div>
+        </div><!-- END .row -->
 
-        <div class="col-lg-12 text-center resetsave" ng-show="requests.edit">
-          <button class="btn btn-default" ng-click="reset('requests')">Cancel</button>
-          <button class="btn btn-primary" ng-click="save('requests')" ng-disabled="requestsForm.$invalid">Save</button>
-        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="checkbox checkbox-inverted">
+              <label for="" class="control-label"> Email <input type="checkbox" ng-model="requests.email.enabled" ng-show="requests.edit"></label>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" ng-readonly="!requests.edit || !requests.email.enabled" placeholder="Email to get requests" ng-required="requests.email.enabled" ng-model="requests.email.input">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="checkbox checkbox-inverted">
+              <label for="" class="control-label"> Phone <input type="checkbox" ng-model="requests.phone.enabled" ng-show="requests.edit"></label>
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-control" ng-readonly="!requests.edit || !requests.phone.enabled" placeholder="Phone to get requests" ng-required="requests.phone.enabled" ng-model="requests.phone.input">
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 text-center resetsave" ng-show="requests.edit">
+            <button class="btn btn-default" ng-click="reset('requests')">Cancel</button>
+            <button class="btn btn-primary" ng-click="save('requests')" ng-disabled="requestsForm.$invalid">Save</button>
+          </div>
+        </div><!-- END .row -->
       </form>
       <!-- END Send Delivery Requests To -->
 
-      <form name="deliveryForm" class="custom-form" novalidate>
-        <div class="col-lg-12 form-inline form-group">
-          <h2>Delivery Hours <span class="pull-right" ng-click="business.edit=true" ng-class="{gray: business.edit}"><i class="fa fa-pencil"></i></span></h2>
-          <!-- <label for="" class="control-label">Time Format:</label>
-          <div class="radio-inline">
-            <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" ng-model="timeFormat" value="ampm" checked> AM/PM</label>
-            <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" ng-model="timeFormat" value="24h"> 24 hours</label>
-          </div> -->
+      <form name="deliveryForm" class="custom-form text-input" novalidate>
+        <div class="row">
+          <div class="col-md-12 form-inline form-group">
+            <h2>Delivery Hours <span class="pull-right" ng-click="delivery.edit=true" ng-class="{gray: delivery.edit}"><i class="fa fa-pencil"></i></span></h2>
+            <!-- <label for="" class="control-label">Time Format:</label>
+            <div class="radio-inline">
+              <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" ng-model="delivery.timeFormat" value="ampm" checked> AM/PM</label>
+              <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" ng-model="delivery.timeFormat" value="24h"> 24 hours</label>
+            </div> -->
 
-          <table class="table timetable">
-            <thead>
-              <tr>
-                <th class="col-md-4">Open</th>
-                <th class="col-md-4">From</th>
-                <th class="col-md-4">To</th>
-                <th class="col-md-1">Split</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="day in weekdays" ng-class="{disabled: !day.open}">
-                <td>
-                  <div class="checkbox weekday">
-                    <label for="" class="control-label">
-                      <input type="checkbox" name="d" ng-model="day.open" ng-checked="day.open"> {{day.name}}
-                    </label>
-                  </div>
-                </td>
-                <td>
-                <div class="form-group">
-                  <input type="time" ng-value="day.start1" class="form-control" ng-show="day.open">
-                  <input type="time" ng-value="day.start2" class="form-control" ng-show="day.open && day.split">
-                  <span ng-show="!day.open">CLOSED</span>
-                </div>
-              </td>
-              <td>
-                <div class="form-group">
-                  <input type="time" ng-value="day.stop1" class="form-control" ng-show="day.open">
-                  <input type="time" ng-value="day.stop2" class="form-control" ng-show="day.open && day.split">
-                  <span ng-show="!day.open">CLOSED</span>
-                </div>
-              </td>
-              <td>
-                <div class="checkbox" ng-show="day.open"><input type="checkbox" ng-model="day.split" ng-checked="day.split"></div>
-              </td>
-              </tr>
-            </tbody>
-          </table><!-- END .timetable -->
-        </div><!-- END Delivery Hours -->
+            <table class="table timetable">
+              <thead>
+                <tr>
+                  <th class="col-md-4">Open</th>
+                  <th class="col-md-4">From</th>
+                  <th class="col-md-4">To</th>
+                  <th class="col-md-1" ng-show="delivery.edit">Split</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="day in delivery.weekdays" ng-class="{disabled: !day.open}">
+                  <td>
+                    <div class="checkbox weekday">
+                      <label for="" class="control-label">
+                        <input type="checkbox" name="open" ng-model="day.open" ng-checked="day.open" ng-show="delivery.edit"> {{day.name}}
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <input type="time" name="start1" ng-model="day.start1" class="form-control" ng-show="day.open" ng-readonly="!delivery.edit">
+                      <input type="time" name="start2" ng-model="day.start2" class="form-control" ng-show="day.open && day.split" ng-readonly="!delivery.edit">
+                      <span ng-show="!day.open">CLOSED</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <input type="time" name="stop1" ng-model="day.stop1" class="form-control" ng-show="day.open" ng-readonly="!delivery.edit">
+                      <input type="time" name="stop2" ng-model="day.stop2" class="form-control" ng-show="day.open && day.split" ng-readonly="!delivery.edit">
+                      <span ng-show="!day.open">CLOSED</span>
+                    </div>
+                  </td>
+                  <td ng-show="delivery.edit">
+                    <div class="checkbox" name="split" ng-show="day.open && delivery.edit"><input type="checkbox" ng-model="day.split" ng-checked="day.split"></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table><!-- END .timetable -->
+          </div><!-- END Delivery Hours -->
+        </div><!-- END .row -->
 
-        <div class="col-lg-12 text-center resetsave" ng-show="delivery.edit">
-          <button class="btn btn-default" ng-click="reset('delivery')">Cancel</button>
-          <button class="btn btn-primary" ng-click="save('delivery')" ng-disabled="deliveryForm.$invalid">Save</button>
-        </div>
+        <div class="row">
+          <div class="col-md-12 text-center resetsave" ng-show="delivery.edit">
+            <button class="btn btn-default" ng-click="reset('delivery')">Cancel</button>
+            <button class="btn btn-primary" ng-click="save('delivery')" ng-disabled="deliveryForm.$invalid">Save</button>
+          </div>
+        </div><!-- END .row -->
       </form>
 
 
 
       <form name="additionalForm" class="custom-form text-input" novalidate>
-        <div class="col-lg-12">
-          <h2>Additional Information <span class="pull-right" ng-click="additional.edit = true" ng-class="{gray: additional.edit}"><i class="fa fa-pencil"></i></span></h2>
-        </div>
-        <div class="col-lg-6">
-          <div class="checkbox checkbox-inverted">
-            <label for="" class="control-label"> Minimum Delivery Amount <input type="checkbox" ng-show="additional.edit" ng-model="additional.minimum.enabled"></label>
-          </div>
-          <div class="form-group">
-            <input type="number" class="form-control" ng-readonly="!additional.edit || !additional.minimum.enabled" ng-model="additional.minimum.input" placeholder="Minimum Amount">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Additional Information <span class="pull-right" ng-click="additional.edit = true" ng-class="{gray: additional.edit}"><i class="fa fa-pencil"></i></span></h2>
           </div>
         </div>
 
-        <div class="col-lg-6">
-          <div class="checkbox checkbox-inverted">
-            <label for="" class="control-label"> Delivery Surcharge <input type="checkbox" ng-show="additional.edit" ng-model="additional.surcharge.enabled"></label>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="checkbox checkbox-inverted">
+              <label for="" class="control-label"> Minimum Delivery Amount <input type="checkbox" ng-show="additional.edit" ng-model="additional.minimum.enabled"></label>
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" ng-readonly="!additional.edit || !additional.minimum.enabled" ng-model="additional.minimum.input" placeholder="Minimum Amount" ng-required="additional.minimum.enabled">
+            </div>
           </div>
-          <div class="form-group">
-            <input type="number" class="form-control" ng-readonly="!additional.edit || !additional.surcharge.enabled" ng-model="additional.surcharge.input" placeholder="Surcharge">
-          </div>
-        </div>
 
-        <div class="col-lg-12">
-          <div class="checkbox checkbox-inverted">
-            <label for="" class="control-label"> Delivery Instructions <input type="checkbox" ng-show="additional.edit" ng-model="additional.instructions.enabled"></label>
+          <div class="col-md-6">
+            <div class="checkbox checkbox-inverted">
+              <label for="" class="control-label"> Delivery Surcharge <input type="checkbox" ng-show="additional.edit" ng-model="additional.surcharge.enabled"></label>
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" ng-readonly="!additional.edit || !additional.surcharge.enabled" ng-model="additional.surcharge.input" placeholder="Surcharge" ng-required="additional.surcharge.enabled">
+            </div>
           </div>
-          <div class="form-group">
-            <input type="text" class="form-control" ng-readonly="!additional.edit || !additional.instructions.enabled" ng-model="additional.instructions.input" placeholder="Instructions">
-          </div>
-        </div>
-        <!-- END Additional Information -->
+        </div><!-- END .row -->
 
-        <div class="col-lg-12 text-center resetsave" ng-show="additional.edit">
-          <button class="btn btn-default" ng-click="reset('additional')">Cancel</button>
-          <button class="btn btn-primary" ng-click="save('additional')" ng-disabled="additionalForm.$invalid">Save</button>
-        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="checkbox checkbox-inverted">
+              <label for="" class="control-label"> Delivery Instructions <input type="checkbox" ng-show="additional.edit" ng-model="additional.instructions.enabled"></label>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" ng-readonly="!additional.edit || !additional.instructions.enabled" ng-model="additional.instructions.input" placeholder="Instructions" ng-required="additional.instructions.enabled">
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 text-center resetsave" ng-show="additional.edit">
+            <button class="btn btn-default" ng-click="reset('additional')">Cancel</button>
+            <button class="btn btn-primary" ng-click="save('additional')" ng-disabled="additionalForm.$invalid">Save</button>
+          </div>
+        </div><!-- END .row -->
       </form>
-    </div>
+    </div><!-- END Additional Information -->
   </div>
 </div>

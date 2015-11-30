@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('userAdminApp', [
+  'btford.socket-io',
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'btford.socket-io',
-  'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.router'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

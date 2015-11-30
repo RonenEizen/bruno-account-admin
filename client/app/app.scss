@@ -218,3 +218,15 @@ form.custom-form                {
 a.circle                        { border: 1px solid $blue; border-radius: 100%; color: $blue; display: inline-block; height: 20px; text-align: center; width: 20px;
   i                             {  }
 }
+
+// REPLACES TABLES
+.table                          { display: table;
+  .thead                        { display: table-header-group;
+    .tr .th                     { border-bottom-color: #050505; font-weight: bold; }
+  }
+  .tbody                        { display: table-row-group; }
+  .tfoot                        { display: table-footer-group; }
+  .tr                           { display: table-row;
+    .td, .th                    { border-bottom: 2px solid #ddd; display: table-cell; padding: 8px; vertical-align: middle; }
+  }
+}

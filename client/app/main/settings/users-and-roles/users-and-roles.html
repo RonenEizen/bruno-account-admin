@@ -1,219 +1,87 @@
 <div class="col-md-10 main content">
-  <h1>Edit Users and Roles</h1>
-  <form class="custom-form" action="">
-    <table class="table userroles">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Role</th>
-          <th>Access</th>
-          <th>Contact</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Blake Liveley</td>
-          <td>Owner</td>
-          <td>Full Access</td>
-          <td>
-            (917) 345-2680 <br>
-            <a href="mailto:bively@gmail.com">bively@gmail.com</a>
-          </td>
-          <td>
-            <fieldset disabled>
-              <select name="" id="" class="form-control">
-                <option value="">All Actions</option>
-                <option value="">Edit User</option>
-                <option value="">Remove User</option>
-                <option value="">Make Admin</option>
-                <option value="">Transfer Ownership</option>
-              </select>
-            </fieldset>
-          </td>
-        </tr>
-        <tr>
-          <td>Adam Greenberg</td>
-          <td>Admin</td>
-          <td>Full Access</td>
-          <td>
-            (917) 566-8746 <br>
-            <a href="mailto:adamgreen@gmail.com">adamgreen@gmail.com</a>
-          </td>
-          <td>
-            <fieldset disabled>
-              <select name="" id="" class="form-control">
-                <option value="">All Actions</option>
-                <option value="">Edit User</option>
-                <option value="">Remove User</option>
-                <option value="">Make Admin</option>
-                <option value="">Transfer Ownership</option>
-              </select>
-            </fieldset>
-          </td>
-        </tr>
-        <tr>
-          <td>Buddy J. Finston</td>
-          <td>Host</td>
-          <td>Reservations, Orders</td>
-          <td>
-            (347) 606-2600 <br>
-            <a href="mailto:finjlone@yahoo.com">finjlone@yahoo.com</a>
-          </td>
-          <td>
-            <fieldset>
-              <select name="" id="" class="form-control">
-                <option value="">All Actions</option>
-                <option value="">Edit User</option>
-                <option value="">Remove User</option>
-                <option value="">Make Admin</option>
-                <option value="">Transfer Ownership</option>
-              </select>
-            </fieldset>
-          </td>
-        </tr>
-        <tr>
-          <td>Rosa O'Bimbel</td>
-          <td>Chef</td>
-          <td>Orders</td>
-          <td>
-            (347) 222-3333 <br>
-            <a href="mailto:doej@gmail.com">doej@gmail.com</a>
-          </td>
-          <td>
-            <fieldset>
-              <select name="" id="" class="form-control">
-                <option value="">All Actions</option>
-                <option value="">Edit User</option>
-                <option value="">Remove User</option>
-                <option value="">Make Admin</option>
-                <option value="">Transfer Ownership</option>
-              </select>
-            </fieldset>
-          </td>
-        </tr>
-        <tr>
-          <td>Venik Gromofonov</td>
-          <td>Cook</td>
-          <td>Orders</td>
-          <td>
-            (347) 222-333 <br>
-            <a href="mailto:doej@gmail.com">doej@gmail.com</a>
-          </td>
-          <td>
-            <fieldset>
-              <select name="" id="" class="form-control">
-                <option value="">All Actions</option>
-                <option value="">Edit User</option>
-                <option value="">Remove User</option>
-                <option value="">Make Admin</option>
-                <option value="">Transfer Ownership</option>
-              </select>
-            </fieldset>
-          </td>
-        </tr>
-        <tr>
-          <td class="form-group">
-            <input type="text" class="form-control" placeholder="Name">
-          </td>
-          <td class="form-group">
-            <input type="text" class="form-control" placeholder="Role">
-          </td>
-          <td class="form-group">
-            <input type="text" class="form-control" placeholder="Access">
-          </td>
-          <td class="form-group">
-            <input type="tel" class="form-control" placeholder="Phone">
-            <input type="email" class="form-control" placeholder="Email">
-          </td>
-          <td class="form-group text-center">
-            <a class="circle" href="javascript:void(0)"><i class="fa fa-check"></i></a>
-            <a class="circle" href="javascript:void(0)"><i class="fa fa-times"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>Ty Robertson</td>
-          <td>Busboy</td>
-          <td>No Access</td>
-          <td>
-            (347) 222-3333 <br>
-            <a href="mailto:doej@gmail.com">doej@gmail.com</a>
-          </td>
-          <td>
-            <fieldset>
-              <select name="" id="" class="form-control">
-                <option value="">All Actions</option>
-                <option value="">Edit User</option>
-                <option value="">Remove User</option>
-                <option value="">Make Admin</option>
-                <option value="">Transfer Ownership</option>
-              </select>
-            </fieldset>
-          </td>
-        </tr>
-        <tr>
-          <td>Iskandr Babekov</td>
-          <td>Driver</td>
-          <td>Delivery Info</td>
-          <td>
-            (347) 222-3333 <br>
-            <a href="mailto:doej@gmail.com">doej@gmail.com</a>
-          </td>
-          <td>
-            <fieldset>
-              <select name="" id="" class="form-control">
-                <option value="">All Actions</option>
-                <option value="">Edit User</option>
-                <option value="">Remove User</option>
-                <option value="">Make Admin</option>
-                <option value="">Transfer Ownership</option>
-              </select>
-            </fieldset>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </form>
-  <a class="circle" href="javascript:void(0)"><i class="fa fa-plus"></i></a><a href="javascript:void(0)"> Add User</a>
+  <h1>Users and Roles</h1>
+  <div class="table userroles">
+    <div class="thead">
+      <div class="tr">
+        <div class="th twenty-perc">Name</div>
+        <div class="th twenty-perc">Role</div>
+        <div class="th twenty-perc">Access</div>
+        <div class="th twenty-perc">Contact</div>
+        <div class="th twenty-perc">Action</div>
+      </div><!-- END .tr -->
+    </div><!-- END .thead -->
+    <div class="tbody">
+      <form class="tr custom-form text-input" ng-repeat="user in users" novalidate>
+        <div class="td form-group"><input class="form-control" type="text" placeholder="Name" ng-model="user.name" ng-readonly="!user.edit" required></div>
+        <div class="td form-group">
+          <fieldset ng-disabled="!user.edit">
+            <select class="form-control" ng-model="user.role">
+              <option ng-repeat="role in roles" value="{{role.id}}">{{role.role}}</option>
+            </select>
+          </fieldset>
+        </div>
+        <div class="td form-group"><input class="form-control" type="text" ng-model="user.access" ng-readonly="!user.edit"></div>
+        <div class="td form-group">
+          <input class="form-control" type="text" ng-model="user.phone" ng-readonly="!user.edit" required>
+          <input class="form-control" type="text" ng-model="user.email" ng-readonly="!user.edit" required>
+        </div>
+        <div class="td form-group" ng-hide="user.edit">
+          <fieldset>
+            <select class="form-control" placeholder="Role" required>
+              <option ng-repeat="action in userActions" value="{{action.id}}">{{action.name}}</option>
+            </select>
+          </fieldset>
+        </div>
+        <div class="td form-group text-center" ng-show="user.edit">
+          <button class="btn btn-link" ng-click="updateUser(user)"><i class="fa fa-check"></i></button>
+          <button class="btn btn-link" ng-click="clear()"><i class="fa fa-times"></i></button>
+        </div>
+      </form><!-- END form.tr -->
+
+      <!-- add new user form -->
+      <form class="tr custom-form text-input" ng-show="addingUser" novalidate>
+        <div class="td form-group"><input class="form-control" type="text" placeholder="Name" ng-model="newName" required></div>
+        <div class="td form-group">
+          <fieldset>
+            <select class="form-control" ng-model="newRole" placeholder="Role" required>
+              <option ng-repeat="role in roles" value="{{role.id}}">{{role.role}}</option>
+            </select>
+          </fieldset>
+        </div>
+        <div class="td form-group"><input class="form-control" type="text" ng-model="newAccess" placeholder="Access"></div>
+        <div class="td form-group">
+          <input class="form-control" type="tel" ng-model="newPhone" placeholder="Phone" required>
+          <input class="form-control" type="email" ng-model="newEmail" placeholder="Email" required>
+        </div>
+        <div class="td form-group text-center">
+          <button class="btn btn-link" ng-click="addUser(newName, newRole, newAccess, newPhone, newEmail)"><i class="fa fa-check"></i></button>
+          <button class="btn btn-link" ng-click="clearUser()"><i class="fa fa-times"></i></button>
+        </div>
+      </form><!-- END form.tr -->
+      <!-- END add new user form -->
+
+    </div><!-- END .tbody -->
+  </div><!-- END .table -->
+  <button class="btn btn-default btn-block" ng-click="addingUser = true"><i class="fa fa-plus"></i> Add User</button>
 
   <h1>Roles</h1>
-  <form class="custom-form" action="">
-    <table class="table userroles">
-      <thead>
-        <tr>
-          <th class="col-md-4">Role</th>
-          <th class="col-md-3">Access</th>
-          <th class="col-md-4">Rights</th>
-          <th class="col-md-1"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Owner</td>
-          <td>Full Access</td>
-          <td>Edit User Access, Remove User, Transfer Ownership, Make Admin</td>
-          <td><a href="javascript:void(0)"><i class="fa fa-pencil"></i></a></td>
-        </tr>
-        <tr>
-          <td>Admin</td>
-          <td>Full Access</td>
-          <td>Edit User Access, Remove User, Make Admin</td>
-          <td><a href="javascript:void(0)"><i class="fa fa-pencil"></i></a></td>
-        </tr>
-        <tr>
-          <td>Host</td>
-          <td>Reservations, Orders</td>
-          <td>Edit Reservations, Edit Orders</td>
-          <td><a href="javascript:void(0)"><i class="fa fa-pencil"></i></a></td>
-        </tr>
-        <tr>
-          <td>Chef</td>
-          <td>Orders</td>
-          <td>N/A</td>
-          <td><a href="javascript:void(0)"><i class="fa fa-pencil"></i></a></td>
-        </tr>
-      </tbody>
-    </table>
-  </form>
-  <a class="circle" href="javascript:void(0)"><i class="fa fa-plus"></i></a><a href="javascript:void(0)"> Add Role</a>
+  <div class="table userroles">
+    <div class="thead">
+      <div class="tr">
+        <div class="th thirty-perc">Role</div>
+        <div class="th thirty-perc">Access</div>
+        <div class="th thirty-perc">Rights</div>
+        <div class="th ten-perc"></div>
+      </div><!-- END .tr -->
+    </div><!-- END .thead -->
+    <div class="tbody">
+      <form class="tr custom-form text-input" ng-repeat="role in roles" novalidate>
+        <div class="td"><input class="form-control" type="text" ng-model="role.role" ng-readonly="!role.edit"></div>
+        <div class="td"><span ng-repeat="access in role.access">{{access}}{{$last ? '' : ', '}}</span></div>
+        <div class="td"><span ng-repeat="right in role.rights">{{right}}{{$last ? '' : ', '}}</span></div>
+        <div class="td text-center"><a href="javascript:void(0)"><i class="fa fa-pencil"></i></a></div>
+      </form><!-- END form.tr -->
+    </div><!-- END .tbody -->
+  </div><!-- END .table -->
+  <button class="btn btn-default btn-block"><i class="fa fa-plus"></i> Add Role</button>
 </div>

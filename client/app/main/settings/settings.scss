@@ -53,8 +53,8 @@
       .tr .td                     { padding: 15px 10px; }
     }
     &.timetable                   { margin-top: 20px;
-      tr                          {
-        th, td                    { border: 0; }
+      .tr                         {
+        .th, .td                  { border: 0; }
         &:last-child              { border: 0; }
         &.disabled                {
           .weekday                { background: $lightgray1; }

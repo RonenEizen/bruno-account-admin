@@ -23,23 +23,23 @@
     </div>
 
     <div class="col-md-12">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Table Name</th>
-            <th>Table Capacity</th>
-            <th>Number of Tables</th>
-            <th>Mergeable</th>
-            <th ng-show="tables.edit"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="table in tables.sets">
-            <td>{{table.name}}</td>
-            <td>{{table.capacity}}</td>
-            <td>{{table.quantity}}</td>
-            <td>{{table.mergeable ? 'yes':'no'}}</td>
-            <td ng-show="tables.edit">
+      <div class="table">
+        <div class="thead">
+          <div class="tr">
+            <div class="th">Table Name</div>
+            <div class="th">Table Capacity</div>
+            <div class="th">Number of Tables</div>
+            <div class="th">Mergeable</div>
+            <div class="th" ng-show="tables.edit"></div>
+          </div><!-- END tr -->
+        </div><!-- END thead -->
+        <div class="tbody">
+          <div class="tr" ng-repeat="table in tables.sets">
+            <div class="td">{{table.name}}</div>
+            <div class="td">{{table.capacity}}</div>
+            <div class="td">{{table.quantity}}</div>
+            <div class="td">{{table.mergeable ? 'yes':'no'}}</div>
+            <div class="td" ng-show="tables.edit">
               <a ng-click="
                 tables.get(
                   table.name,
@@ -49,46 +49,44 @@
                   $index
                 )">
                 <span class="fa fa-pencil"></span></a>
-            </td>
-          </tr>
+            </div>
+          </div><!-- END tr -->
 
-          <form name="tablesForm" class="custom-form text-input">
-            <tr ng-show="tables.edit">
-              <td class="form-group"><input type="text" class="form-control" ng-model="tableName" name="tableName" required></td>
-              <td class="form-group"><input type="number" class="form-control" ng-model="tableCapacity" name="tableCapacity" required></td>
-              <td class="form-group"><input type="number" class="form-control" ng-model="tableQuantity" name="tableQuantity" required></td>
-              <td>
-                <div class="checkbox text-center">
-                  <label><input type="checkbox" ng-model="tableMergeable" name="tableMergeable"></label>
-                </div>
-              </td>
-              <td class="form-group" ng-show="tables.edit">
-                <a ng-show="!tables.editing" ng-click="
-                  tables.add({
-                    name: tableName,
-                    capacity: tableCapacity,
-                    quantity: tableQuantity,
-                    mergeable: tableMergeable
-                  })">
-                  <span class="fa fa-plus"></span>
-                </a>
+          <form name="tablesForm" class="tr custom-form text-input" ng-show="tables.edit">
+            <div class="td form-group"><input type="text" class="form-control" ng-model="tableName" name="tableName" required></div>
+            <div class="td form-group"><input type="number" class="form-control" ng-model="tableCapacity" name="tableCapacity" required></div>
+            <div class="td form-group"><input type="number" class="form-control" ng-model="tableQuantity" name="tableQuantity" required></div>
+            <div class="td">
+              <div class="checkbox text-center">
+                <label><input type="checkbox" ng-model="tableMergeable" name="tableMergeable"></label>
+              </div>
+            </div>
+            <div class="td form-group" ng-show="tables.edit">
+              <a ng-show="!tables.editing" ng-click="
+                tables.add({
+                  name: tableName,
+                  capacity: tableCapacity,
+                  quantity: tableQuantity,
+                  mergeable: tableMergeable
+                })">
+                <span class="fa fa-plus"></span>
+              </a>
 
-                <a ng-show="tables.editing" ng-click="
-                  tables.update({
-                    name: tableName,
-                    capacity: tableCapacity,
-                    quantity: tableQuantity,
-                    mergeable: tableMergeable
-                  },
-                    tableIndex
-                  )">
-                  <span class="fa fa-check"></span>
-                </a>
-              </td>
-            </tr>
-          </form>
-        </tbody>
-      </table>
+              <a ng-show="tables.editing" ng-click="
+                tables.update({
+                  name: tableName,
+                  capacity: tableCapacity,
+                  quantity: tableQuantity,
+                  mergeable: tableMergeable
+                },
+                  tableIndex
+                )">
+                <span class="fa fa-check"></span>
+              </a>
+            </div>
+          </div><!-- END tr -->
+        </div><!-- END tbody -->
+      </div><!-- END table -->
     </div>
 
     <div class="reservationintegrations">

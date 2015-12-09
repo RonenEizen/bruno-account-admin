@@ -60,44 +60,44 @@
               <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" ng-model="delivery.timeFormat" value="24h"> 24 hours</label>
             </div> -->
 
-            <table class="table timetable">
-              <thead>
-                <tr>
-                  <th class="col-md-4">Open</th>
-                  <th class="col-md-4">From</th>
-                  <th class="col-md-4">To</th>
-                  <th class="col-md-1" ng-show="delivery.edit">Split</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr ng-repeat="day in delivery.weekdays" ng-class="{disabled: !day.open}">
-                  <td>
+            <div class="table timetable">
+              <div class="thead">
+                <div class="tr">
+                  <div class="th thirty-perc">Open</div>
+                  <div class="th thirty-perc">From</div>
+                  <div class="th thirty-perc">To</div>
+                  <div class="th ten-perc" ng-show="delivery.edit">Split</div>
+                </div><!-- END .tr -->
+              </div><!-- END thead -->
+              <div class="tbody">
+                <div class="tr" ng-repeat="day in delivery.weekdays" ng-class="{disabled: !day.open}">
+                  <div class="td">
                     <div class="checkbox weekday">
                       <label for="" class="control-label">
                         <input type="checkbox" name="open" ng-model="day.open" ng-checked="day.open" ng-show="delivery.edit"> {{day.name}}
                       </label>
                     </div>
-                  </td>
-                  <td>
+                  </div>
+                  <div class="td">
                     <div class="form-group">
                       <input type="time" name="start1" ng-model="day.start1" class="form-control" ng-show="day.open" ng-readonly="!delivery.edit">
                       <input type="time" name="start2" ng-model="day.start2" class="form-control" ng-show="day.open && day.split" ng-readonly="!delivery.edit">
                       <span ng-show="!day.open">CLOSED</span>
                     </div>
-                  </td>
-                  <td>
+                  </div>
+                  <div class="td">
                     <div class="form-group">
                       <input type="time" name="stop1" ng-model="day.stop1" class="form-control" ng-show="day.open" ng-readonly="!delivery.edit">
                       <input type="time" name="stop2" ng-model="day.stop2" class="form-control" ng-show="day.open && day.split" ng-readonly="!delivery.edit">
                       <span ng-show="!day.open">CLOSED</span>
                     </div>
-                  </td>
-                  <td ng-show="delivery.edit">
+                  </div>
+                  <div class="td" ng-show="delivery.edit">
                     <div class="checkbox" name="split" ng-show="day.open && delivery.edit"><input type="checkbox" ng-model="day.split" ng-checked="day.split"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table><!-- END .timetable -->
+                  </div>
+                </div><!-- END .tr -->
+              </div><!-- END .tbody -->
+            </div><!-- END .table.timetable -->
           </div><!-- END Delivery Hours -->
         </div><!-- END .row -->
 

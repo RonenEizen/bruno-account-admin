@@ -1,128 +1,31 @@
-nav.sidenav, section.main {
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    transition-property: transform;
-    -webkit-transition-duration: 0.1s;
-    -moz-transition-duration: 0.1s;
-    transition-duration: 0.1s;
-    ms-overflow-style: none;
-    overflow: auto;
-    webkit-overflow-scrolling: touch;
+nav.sidenav                       { background-color: $darkergray; bottom: 0; padding-top: 80px;
+  ul                              { list-style: none; padding: 0;
+    li a                          { color: $beige; display: block; font: 110% $serif-font; height: 100%; width: 100%; text-decoration: none; padding: 12px 0px 12px 25px; }
+  }
 }
 
-nav.sidenav.revealed, section.main.slided {
-    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    -moz-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-transition-delay: 0.1s;
-    -moz-transition-delay: 0.1s;
-    transition-delay: 0.1s;
-    -webkit-transition-duration: 0.2s;
-    -moz-transition-duration: 0.2s;
-    transition-duration: 0.2s;
+.logo                             { display: block; position: absolute; top: 10px; left: 10px;
+  img                             { width: 50px; }
 }
 
-nav.sidenav.revealed, section.main {
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
+.hamburger                        { color: $beige; cursor: pointer; display: block; font-size: 28px; position: absolute; right: 25px; top: 10px; }
+
+#wrapper                          { padding-left: 0; -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease;
+  #sidebar-wrapper                { z-index: 1000; position: fixed; left: 240px; width: 0; height: 100%; margin-left: -240px; overflow-y: auto; -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; }
+  #page-content-wrapper           { width: 100%; position: absolute; padding: 15px; }
+  &.collapsed                     { padding-left: 240px;
+    #sidebar-wrapper              { width: 240px; }
+    #page-content-wrapper         { position: absolute; margin-right: -240px; }
+  }
 }
 
-section.main.slided {
-    -webkit-transform: translateX(-240px);
-    -moz-transform: translateX(-240px);
-    -ms-transform: translateX(-240px);
-    -o-transform: translateX(-240px);
-    transform: translateX(-240px);
-}
-
-section.main {
-    position: relative;
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-    width: 100%;
-}
-
-span.glyphicon-remove {
-    top: 30px;
-    right: 25px;
-}
-
-nav.sidenav {
-    width: 240px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    top: 0;
-    padding-top: 80px;
-    background-color: #f6f7f8;
-    border-left: solid 1px #e4e5e6;
-    -webkit-transform: translateX(240px);
-    -moz-transform: translateX(240px);
-    -ms-transform: translateX(240px);
-    -o-transform: translateX(240px);
-    transform: translateX(240px);
-}
-.logo {
-    display: block;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 999999;
-}
-.logo img {
-    width: 65px;
-}
-.hamburger{
-    display: block;
-    position: absolute;
-    width: 24px;
-    height: 16px;
-    right: 25px;
-    top: 35px;
-    z-index: 999999;
-    box-shadow: 0px 0px 10px #fff;
-    background-color: #fff;
-}
-
-span.glyphicon-remove {
-  font-size: x-large;
-  position: absolute;
-  display: block;
-  cursor: pointer;
-}
-
-
-nav.sidenav dt, nav.sidenav a {
-    color: #727272;
-    font-size: 110%;
-}
-
-nav.sidenav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav.sidenav a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
-    padding: 12px 0px 12px 25px;
-}
-
-.content {
-    overflow-y: auto;
-    overflow-x: hidden;
-    will-change: overflow;
+@media(min-width:768px)           {
+  #wrapper                        { padding-left: 240px;
+    #sidebar-wrapper              { width: 240px; }
+    #page-content-wrapper         { padding: 20px; position: relative; }
+    &.collapsed                   { padding-left: 0;
+      #sidebar-wrapper            { width: 0; }
+      #page-content-wrapper       { position: relative; margin-right: 0; }
+    }
+  }
 }

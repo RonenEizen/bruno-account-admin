@@ -21,13 +21,13 @@ $black:                         #050505;
 $blue:                          #0A55D0;
 $buttonblue:                    #0D5CD0;
 $darkgray:                      #535353;
+$darkergray:                    #191919;
 $lightgray:                     #D5D5D5;
 $lightgray1:                    #EAEAEA;
 $lightgray2:                    #C1C1C1;
 $orange:                        #FD9B26;
 $red:                           #ED4736;
 $white:                         #FFFFFF;
-$darkbrown:                     #222222;
 
 $title-font:                    Museo, "Open Sans", sans-serif;
 $serif-font:                    Museo, Oswald, serif;
@@ -143,12 +143,9 @@ html, body, div[ui-view]        { height: 100%; }
 }
 
 // HEADER
-header.header                   { border-bottom: 2px solid $darkbrown; margin-bottom: 15px;
+header.header                   { border-bottom: 2px solid $darkergray; margin-bottom: 15px;
   h1                            { color: $red; font: 300 36px $title-font; }
 }
-
-// SIDEBAR
-aside.sidebar                   { border-right: 1px solid $lightgray; padding-bottom: 5000px; margin-bottom: -5000px; }
 
 // MAIN
 .main                           {

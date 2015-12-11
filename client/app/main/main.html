@@ -1,31 +1,15 @@
-<nav class="sidenav" ng-class="{'revealed':isNavRevealed}">
-	<span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="isNavRevealed=false"></span>
-	<ul ng-click="isNavRevealed=false">
-		<li><a href="/">Overview</a></li>
-		<li><a href="/orders">Orders</a></li>
-		<li><a href="/reservations">Reservations</a></li>
-		<li><a href="/statistics">Statistics</a></li>
-		<li><a href="/campaigns">Campaigns</a></li>
-		<li><a href="/food-menus">Food Menus</a></li>
-		<li><a href="/customers">Customers</a></li>
-    <li><a href="/marketing-wizard">Marketing Wizard</a></li>
-		<li><a href="/site-builder">Site Builder</a></li>
-		<li><a href="/settings">Settings</a></li>
-		<li><a href="/login">Log Out</a></li>
-	</ul>
-</nav>
-<section  class="main" ng-class="{'slided':isNavRevealed}">
-  <a class="logo" href="/">
-      <img alt="Brand" src="assets/images/face.png">
-  </a>
-  <svg class="hamburger" viewBox="0 0 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ng-click="isNavRevealed=!isNavRevealed">
-      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g fill="#000">
-            <path d="M0,5 L18,5 L18,7 L0,7 L0,5 L0,5 Z"></path>
-            <path d="M0,10 L18,10 L18,12 L0,12 L0,10 L0,10 Z"></path>
-            <path d="M0,0 L18,0 L18,2 L0,2 L0,0 L0,0 Z"></path>
-        </g>
-      </g>
-  </svg>
-  <div ui-view class="content" ng-click="$parent.isNavRevealed=false"></div>
-</section>
+<main id="wrapper" ng-class="{'collapsed': !navRevealed}">
+  <nav id="sidebar-wrapper" class="sidenav">
+    <a class="logo" href="/"> <img alt="Brand" src="assets/images/face.png"></a>
+
+    <span class="hamburger" ng-click="!navRevealed">&#9776;</span>
+
+    <ul>
+      <li ng-repeat="item in menu"><a href="{{item.link}}">{{item.title}}</a></li>
+    </ul>
+  </nav>
+
+  <section id="page-content-wrapper" class="main">
+    <div ui-view></div>
+  </section>
+</main>

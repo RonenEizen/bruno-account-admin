@@ -7,15 +7,15 @@ angular.module('userAdminApp')
     $scope.businessMaster = {};
     $scope.business = {
       edit: false,
-      name: "",
-      email: "",
-      phone: "",
-      addr1: "",
-      addr2: "",
-      city: "",
-      state: "",
-      zip: "",
-      country: ""
+      name: "Sushi Place",
+      email: "sushi@sushi.com",
+      phone: "12345678910",
+      addr1: "3000 Ocean Pkwy",
+      addr2: "Suite 222",
+      city: "Brooklyn",
+      state: "NY",
+      zip: 11223,
+      country: "US"
     };
 
     // restaurant info
@@ -36,18 +36,20 @@ angular.module('userAdminApp')
 
     $scope.sameAsAbove = function() {
       if ($scope.restaurant.sameAsBusiness) {
-        $scope.restaurant.sameAsBusiness = true;
-        $scope.restaurant.edit = false;
-        $scope.restaurant.name = $scope.businessMaster.name;
-        $scope.restaurant.email = $scope.businessMaster.email;
-        $scope.restaurant.phone = $scope.businessMaster.phone;
-        $scope.restaurant.addr1 = $scope.businessMaster.addr1;
-        $scope.restaurant.addr2 = $scope.businessMaster.addr2;
-        $scope.restaurant.city = $scope.businessMaster.city;
-        $scope.restaurant.state = $scope.businessMaster.state;
-        $scope.restaurant.state = $scope.businessMaster.state;
-        $scope.restaurant.zip = $scope.businessMaster.zip;
-        $scope.restaurant.country = $scope.businessMaster.country;
+        $scope.restaurant = {
+          sameAsBusiness: true,
+          edit: false,
+          name: $scope.businessMaster.name,
+          email: $scope.businessMaster.email,
+          phone: $scope.businessMaster.phone,
+          addr1: $scope.businessMaster.addr1,
+          addr2: $scope.businessMaster.addr2,
+          city: $scope.businessMaster.city,
+          state: $scope.businessMaster.state,
+          state: $scope.businessMaster.state,
+          zip: $scope.businessMaster.zip,
+          country: $scope.businessMaster.country
+        }
       } else {
         $scope.restaurant = {};
       }

@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-12 form-group">
         <label class="control-label">Business Name</label>
-        <input name="name" ng-model="business.name" type="text" class="form-control" placeholder="Sushi House" ng-readonly="!business.edit" required>
+        <input name="name" ng-model="business.name" type="text" class="form-control" ng-readonly="!business.edit" required>
         <p ng-show="business.name.$invalid || (businessForm.name.$error.required && businessForm.name.$touched)" class="help-block">This is a required field.</p>
       </div>
     </div><!-- END .row -->
@@ -20,7 +20,7 @@
 
       <div class="col-md-6 form-group">
         <label class="control-label">Business Phone Number</label>
-        <input name="phone" ng-model="business.phone" type="tel" class="form-control" placeholder="917-678-9000" ng-readonly="!business.edit" ng-minlength="8" ng-maxlength="9" required>
+        <input name="phone" ng-model="business.phone" type="tel" class="form-control" ng-readonly="!business.edit" ng-minlength="8" ng-maxlength="9" required>
         <p ng-show="businessForm.phone.$error.minlength" class="help-block">Phone Number is too short.</p>
         <p ng-show="businessForm.phone.$error.maxlength" class="help-block">Phone Number is too long.</p>
         <p ng-show="business.phone.$invalid || (businessForm.phone.$error.required && businessForm.phone.$touched)" class="help-block">Make sure this is a valid phone number.</p>
@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col-md-12 form-group">
         <label class="control-label">Business Address Line 1</label>
-        <input name="addr1" ng-model="business.addr1" type="text" class="form-control" placeholder="3000 Oceanview" ng-readonly="!business.edit" required>
+        <input name="addr1" ng-model="business.addr1" type="text" class="form-control" ng-readonly="!business.edit" required>
         <p ng-show="business.addr1.$invalid || (businessForm.addr1.$error.required && businessForm.addr1.$touched)" class="help-block">This is a required field.</p>
       </div>
     </div><!-- END .row -->
@@ -38,14 +38,14 @@
     <div class="row">
       <div class="col-md-12 form-group">
         <label class="control-label">Business Address Line 2</label>
-        <input name="addr2" ng-model="business.addr2" type="text" class="form-control" placeholder="Sushi House" ng-readonly="!business.edit">
+        <input name="addr2" ng-model="business.addr2" type="text" class="form-control" ng-readonly="!business.edit">
       </div>
     </div><!-- END .row -->
 
     <div class="row">
       <div class="col-md-6 form-group">
         <label class="control-label">City</label>
-        <input name="city" ng-model="business.city" type="text" class="form-control" placeholder="City" ng-readonly="!business.edit" required>
+        <input name="city" ng-model="business.city" type="text" class="form-control" ng-readonly="!business.edit" required>
         <p ng-show="business.city.$invalid || (businessForm.city.$error.required && businessForm.city.$touched)" class="help-block">This is a required field.</p>
       </div>
 
@@ -65,7 +65,7 @@
     <div class="row">
       <div class="col-md-6 form-group">
         <label class="control-label">ZIP Code</label>
-        <input name="zip" ng-model="business.zip" type="number" class="form-control" placeholder="11235" ng-readonly="!business.edit" ng-minlength="5" ng-maxlength="5" required>
+        <input name="zip" ng-model="business.zip" type="number" class="form-control" ng-readonly="!business.edit" ng-minlength="5" ng-maxlength="5" required>
         <p ng-show="businessForm.zip.$error.minlength" class="help-block">Zip Code is too short.</p>
         <p ng-show="businessForm.zip.$error.maxlength" class="help-block">Zip Code is too long.</p>
         <p ng-show="businessForm.zip.$error.required && businessForm.zip.$touched" class="help-block">This is a required field.</p>

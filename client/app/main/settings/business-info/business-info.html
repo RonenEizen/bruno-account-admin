@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-md-6 form-group">
         <label class="control-label">Business Email</label>
-        <input name="email" ng-model="business.email" type="email" class="form-control" placeholder="info@sushihouse.rest" ng-readonly="!business.edit" required>
+        <input name="email" ng-model="business.email" type="email" class="form-control"  ng-readonly="!business.edit" required>
         <p ng-show="business.email.$invalid || (businessForm.email.$error.required && businessForm.email.$touched)" class="help-block">Make sure this is a valid email.</p>
       </div>
 
@@ -104,7 +104,7 @@
       <div class="row">
         <div class="col-md-12 form-group">
           <label class="control-label">Restaurant Name</label>
-          <input name="name" type="text" class="form-control" ng-model="restaurant.name" placeholder="Sushi House" ng-readonly="!restaurant.edit" required>
+          <input name="name" type="text" class="form-control" ng-model="restaurant.name"  ng-readonly="!restaurant.edit" required>
           <p ng-show="restaurant.name.$invalid || (restaurantForm.name.$error.required && restaurantForm.name.$touched)" class="help-block">This is a required field.</p>
         </div>
       </div><!-- END .row -->
@@ -112,13 +112,13 @@
       <div class="row">
         <div class="col-md-6 form-group">
           <label class="control-label">Restaurant Email</label>
-          <input name="email" type="email" class="form-control" ng-model="restaurant.email" placeholder="info@sushihouse.rest" ng-readonly="!restaurant.edit" required>
+          <input name="email" type="email" class="form-control" ng-model="restaurant.email"  ng-readonly="!restaurant.edit" required>
           <p ng-show="restaurant.email.$invalid || (restaurantForm.email.$error.required && restaurantForm.email.$touched)" class="help-block">Make sure this is a valid email.</p>
         </div>
 
         <div class="col-md-6 form-group">
           <label class="control-label">Restaurant Phone Number</label>
-          <input name="phone" type="tel" class="form-control" ng-model="restaurant.phone" placeholder="917-678-9000" ng-readonly="!restaurant.edit" ng-minlength="8" ng-maxlength="9" required>
+          <input name="phone" type="tel" class="form-control" ng-model="restaurant.phone"  ng-readonly="!restaurant.edit" ng-minlength="8" ng-maxlength="9" required>
           <p ng-show="restaurantForm.phone.$error.minlength" class="help-block">Phone Number is too short.</p>
           <p ng-show="restaurantForm.phone.$error.maxlength" class="help-block">Phone Number is too long.</p>
           <p ng-show="restaurant.phone.$invalid || (restaurantForm.phone.$error.required && restaurantForm.phone.$touched)" class="help-block">Make sure this is a valid phone number.</p>
@@ -128,7 +128,7 @@
       <div class="row">
         <div class="col-md-12 form-group">
           <label class="control-label">Restaurant Address Line 1</label>
-          <input name="addr1" type="text" class="form-control" ng-model="restaurant.addr1" placeholder="3000 Oceanview" ng-readonly="!restaurant.edit" required>
+          <input name="addr1" type="text" class="form-control" ng-model="restaurant.addr1"  ng-readonly="!restaurant.edit" required>
           <p ng-show="restaurant.addr1.$invalid || (restaurantForm.addr1.$error.required && restaurantForm.addr1.$touched)" class="help-block">This is a required field.</p>
         </div>
       </div><!-- END .row -->
@@ -136,14 +136,14 @@
       <div class="row">
         <div class="col-md-12 form-group">
           <label class="control-label">Restaurant Address Line 2</label>
-          <input name="addr2" type="text" class="form-control" ng-model="restaurant.addr2" placeholder="Sushi House" ng-readonly="!restaurant.edit">
+          <input name="addr2" type="text" class="form-control" ng-model="restaurant.addr2"  ng-readonly="!restaurant.edit">
         </div>
       </div><!-- END .row -->
 
       <div class="row">
         <div class="col-md-6 form-group">
           <label class="control-label">City</label>
-          <input name="city" type="text" class="form-control" ng-model="restaurant.city" placeholder="City" ng-readonly="!restaurant.edit" required>
+          <input name="city" type="text" class="form-control" ng-model="restaurant.city"  ng-readonly="!restaurant.edit" required>
           <p ng-show="restaurant.city.$invalid || (restaurantForm.city.$error.required && restaurantForm.city.$touched)" class="help-block">This is a required field.</p>
         </div>
 
@@ -163,7 +163,7 @@
       <div class="row">
         <div class="col-md-6 form-group">
           <label class="control-label">ZIP Code</label>
-          <input name="zip" type="number" class="form-control" placeholder="11235" ng-model="restaurant.zip" ng-readonly="!restaurant.edit" ng-minlength="5" ng-maxlength="5" required>
+          <input name="zip" type="number" class="form-control"  ng-model="restaurant.zip" ng-readonly="!restaurant.edit" ng-minlength="5" ng-maxlength="5" required>
           <p ng-show="restaurantForm.zip.$error.minlength" class="help-block">Zip Code is too short.</p>
           <p ng-show="restaurantForm.zip.$error.maxlength" class="help-block">Zip Code is too long.</p>
           <p ng-show="restaurant.zip.$invalid || (restaurantForm.zip.$error.required && restaurantForm.zip.$touched)" class="help-block">This is a required field.</p>
@@ -197,13 +197,13 @@
     <div class="row">
       <div class="col-md-6 form-group">
         <label class="control-label">First Name</label>
-        <input name="fname" type="text" class="form-control" placeholder="Laurance" ng-model="owner.fname" ng-readonly="!owner.edit" required>
+        <input name="fname" type="text" class="form-control"  ng-model="owner.fname" ng-readonly="!owner.edit" required>
         <p ng-show="owner.fname.$invalid || (ownerForm.fname.$error.required && ownerForm.fname.$touched)" class="help-block">This is a required field.</p>
       </div>
 
       <div class="col-md-6 form-group">
         <label class="control-label">Last Name</label>
-        <input name="lname" type="text" class="form-control" placeholder="Martell" ng-model="owner.lname" ng-readonly="!owner.edit" required>
+        <input name="lname" type="text" class="form-control"  ng-model="owner.lname" ng-readonly="!owner.edit" required>
         <p ng-show="owner.lname.$invalid || (ownerForm.lname.$error.required && ownerForm.lname.$touched)" class="help-block">This is a required field.</p>
       </div>
     </div><!-- END .row -->
@@ -217,7 +217,7 @@
 
       <div class="col-md-6 form-group">
         <label class="control-label">Social Security Number</label>
-        <input name="ssn" type="text" class="form-control" placeholder="111-22-5555" ng-model="owner.ssn" ng-readonly="!owner.edit" ng-minlength="10" ng-maxlength="10" required>
+        <input name="ssn" type="text" class="form-control"  ng-model="owner.ssn" ng-readonly="!owner.edit" ng-minlength="10" ng-maxlength="10" required>
         <p ng-show="ownerForm.phone.$error.minlength" class="help-block">Social Security Number is too short.</p>
         <p ng-show="ownerForm.phone.$error.maxlength" class="help-block">Social Security Number is too long.</p>
         <p ng-show="owner.ssn.$invalid || (ownerForm.ssn.$error.required && ownerForm.ssn.$touched)" class="help-block">This is a required field.</p>
@@ -227,13 +227,13 @@
     <div class="row">
       <div class="col-md-6 form-group">
         <label class="control-label">Email</label>
-        <input name="email" type="email" class="form-control" placeholder="lmartell75@gmail.com" ng-model="owner.email" ng-readonly="!owner.edit" required>
+        <input name="email" type="email" class="form-control"  ng-model="owner.email" ng-readonly="!owner.edit" required>
         <p ng-show="owner.email.$invalid || (ownerForm.email.$error.required && ownerForm.email.$touched)" class="help-block">Make sure this is a valid email.</p>
       </div>
 
       <div class="col-md-6 form-group">
         <label class="control-label">Phone Number</label>
-        <input name="phone" type="tel" class="form-control" placeholder="347-567-0908" ng-model="owner.phone" ng-readonly="!owner.edit" ng-minlength="8" ng-maxlength="9" required>
+        <input name="phone" type="tel" class="form-control"  ng-model="owner.phone" ng-readonly="!owner.edit" ng-minlength="8" ng-maxlength="9" required>
         <p ng-show="ownerForm.phone.$error.minlength" class="help-block">Phone Number is too short.</p>
         <p ng-show="ownerForm.phone.$error.maxlength" class="help-block">Phone Number is too long.</p>
         <p ng-show="owner.phone.$invalid || (ownerForm.phone.$error.required && ownerForm.phone.$touched)" class="help-block">Make sure this is a valid phone number.</p>
@@ -243,7 +243,7 @@
     <div class="row">
       <div class="col-md-12 form-group">
         <label class="control-label">Street Address 1</label>
-        <input name="addr1" type="text" class="form-control" placeholder="231 Oriental Blvd" ng-model="owner.addr1" ng-readonly="!owner.edit" required>
+        <input name="addr1" type="text" class="form-control"  ng-model="owner.addr1" ng-readonly="!owner.edit" required>
         <p ng-show="owner.addr1.$invalid || (ownerForm.addr1.$error.required && ownerForm.addr1.$touched)" class="help-block">This is a required field.</p>
       </div>
     </div><!-- END .row -->
@@ -251,14 +251,14 @@
     <div class="row">
       <div class="col-md-12 form-group">
         <label class="control-label">Street Address 2</label>
-        <input name="addr2" type="text" class="form-control" placeholder="231 Oriental Blvd" ng-model="owner.addr2" ng-readonly="!owner.edit">
+        <input name="addr2" type="text" class="form-control"  ng-model="owner.addr2" ng-readonly="!owner.edit">
       </div>
     </div><!-- END .row -->
 
     <div class="row">
       <div class="col-md-6 form-group">
         <label class="control-label">City</label>
-        <input name="city" type="text" class="form-control" placeholder="City" ng-model="owner.city" ng-readonly="!owner.edit" required>
+        <input name="city" type="text" class="form-control"  ng-model="owner.city" ng-readonly="!owner.edit" required>
         <p ng-show="owner.city.$invalid || (ownerForm.city.$error.required && ownerForm.city.$touched)" class="help-block">This is a required field.</p>
       </div>
 
@@ -278,7 +278,7 @@
     <div class="row">
       <div class="col-md-6 form-group">
         <label class="control-label">ZIP Code</label>
-        <input name="zip" type="number" class="form-control" placeholder="11235" ng-model="owner.zip" ng-readonly="!owner.edit" required>
+        <input name="zip" type="number" class="form-control"  ng-model="owner.zip" ng-readonly="!owner.edit" required>
         <p ng-show="ownerForm.zip.$error.minlength" class="help-block">Zip Code is too short.</p>
         <p ng-show="ownerForm.zip.$error.maxlength" class="help-block">Zip Code is too long.</p>
         <p ng-show="owner.zip.$invalid || (ownerForm.zip.$error.required && ownerForm.zip.$touched)" class="help-block">This is a required field.</p>

@@ -2,17 +2,17 @@ nav.sidenav                       { background-color: $darkergray; bottom: 0; pa
   ul                              { list-style: none; padding: 0;
     li a                          { color: $beige; display: block; font: 110% $serif-font; height: 100%; width: 100%; text-decoration: none; padding: 12px 0px 12px 25px; }
   }
+  .hamburger                      { color: $beige; cursor: pointer; display: block; font-size: 28px; position: absolute; right: 25px; top: 10px; }
 }
 
 .logo                             { display: block; position: absolute; top: 10px; left: 10px;
   img                             { width: 50px; }
 }
 
-.hamburger                        { color: $beige; cursor: pointer; display: block; font-size: 28px; position: absolute; right: 25px; top: 10px; }
 
 #wrapper                          { padding-left: 0; -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease;
   #sidebar-wrapper                { z-index: 1000; position: fixed; left: 240px; width: 0; height: 100%; margin-left: -240px; overflow-y: auto; -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; }
-  #page-content-wrapper           { width: 100%; position: absolute; padding: 15px; }
+  #page-content-wrapper           { width: 100%; position: absolute; padding: 0; }
   &.collapsed                     { padding-left: 240px;
     #sidebar-wrapper              { width: 240px; }
     #page-content-wrapper         { position: absolute; margin-right: -240px; }
@@ -22,7 +22,7 @@ nav.sidenav                       { background-color: $darkergray; bottom: 0; pa
 @media(min-width:768px)           {
   #wrapper                        { padding-left: 240px;
     #sidebar-wrapper              { width: 240px; }
-    #page-content-wrapper         { padding: 20px; position: relative; }
+    #page-content-wrapper         { padding: 0; position: relative; }
     &.collapsed                   { padding-left: 0;
       #sidebar-wrapper            { width: 0; }
       #page-content-wrapper       { position: relative; margin-right: 0; }

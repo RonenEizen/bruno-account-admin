@@ -106,7 +106,7 @@
 
         <div class="td">
           <!-- TODO: fix this filter to display rights based on role access -->
-          <span ng-repeat="access in accesses | filter:{name:'Full Access'}">{{access.rights}}{{$last ? '' : ', '}}</span>
+          <span ng-repeat="access in accesses | filter:{name:role.access}">{{access.rights}}{{$last ? '' : ', '}}</span>
         </div>
 
         <div class="td text-center">

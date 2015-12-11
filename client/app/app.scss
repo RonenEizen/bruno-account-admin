@@ -131,7 +131,7 @@ $sans-font:                     "Helvetica Neue", HelveticaNeue, Roboto, "Open S
  */
 
 //
-html, body                      { overflow: hidden; font-family: $sans-font; position: relative; width: 100%; }
+html, body                      { font-family: $sans-font; position: relative; width: 100%; }
 html, body, div[ui-view]        { height: 100%; }
 
 // GLOBAL CLASSES
@@ -143,8 +143,12 @@ html, body, div[ui-view]        { height: 100%; }
 }
 
 // HEADER
-header.header                   { border-bottom: 2px solid $darkergray; margin-bottom: 15px;
-  h1                            { color: $red; font: 300 36px $title-font; }
+header.top                    { background: $beige; border-bottom: 1px solid $lightgray; padding: 10px 20px;
+  h1                          { color: $red; font: 300 24px $title-font; float: left; margin: 0; text-align: left; }
+  .hamburger                  { color: $darkgray; float: left; padding: 10px; border-right: 1px solid $lightgray; font-size: 28px; margin: -10px 20px -10px -20px; padding: 5px 10px; }
+}
+header.header                 { border-bottom: 2px solid $darkergray; margin-bottom: 15px;
+  h1                          { color: $red; font: 300 36px $title-font; }
 }
 
 // MAIN

@@ -1,173 +1,35 @@
-<!-- THIS IS THE HEADER -->
-<div class="row">
-  <header class="col-md-12 header">
-    <h1>Orders</h1>
-  </header>
-</div>
 <!-- THIS IS THE MAIN CONTAINER -->
 <div class="row">
-  <div class="col-md-12 main content">
+  <div class="col-md-10 col-md-offset-1 main content">
       <form class="custom-form" action="">
         <div class="table orders">
+
           <div class="thead">
             <div class="tr">
-              <div class="th">Name</div>
+              <div class="th">Customer</div>
+              <div class="th">Type</div>
               <div class="th">Order Num</div>
-              <div class="th">Contact</div>
-              <div class="th">Address</div>
               <div class="th">Amount</div>
               <div class="th">Status</div>
               <div class="th">Details</div>
               <div class="th">Actions</div>
             </div><!-- END .tr -->
           </div><!-- END .thead -->
+
           <div class="tbody">
-            <div class="tr">
-              <div class="td">Blake Liveley</div>
-              <div class="td">038658</div>
-              <div class="td">(718) 566-7878</div>
-              <div class="td">1885 Crawford Dr. Pleasant Hill, CA 94113</div>
-              <div class="td">$191.67</div>
-              <div class="td status">New</div>
-              <div class="td"><a href="/orders/1">View &gt;</a></div>
+            <div class="tr" ng-repeat="order in orders">
+              <div class="td">{{order.customer}}</div>
+              <div class="td">{{order.type}}</div>
+              <div class="td">{{order.number}}</div>
+              <div class="td">{{order.amount | currency}}</div>
+              <div class="td status">{{order.status}}</div>
+              <div class="td"><a href="/orders/{{$index}}">View &gt;</a></div>
               <div class="td">
                 <fieldset>
-                  <select name="" id="" class="form-control">
-                    <option value="">All Actions</option>
-                    <option value="">Edit Order</option>
-                    <option value="">Start Progress</option>
-                    <option value="">Cancel Order</option>
-                    <option value="">Fulfill Order</option>
-                    <option value="">Add Customer</option>
-                  </select>
-                </fieldset>
-              </div>
-            </div><!-- END .tr -->
-            <div class="tr">
-              <div class="td form-group"><input type="text" class="form-control" placeholder="Name"></div>
-              <div class="td form-group"><input type="number" class="form-control" placeholder="Order Num"></div>
-              <div class="td form-group"><input type="tel" class="form-control" placeholder="Contact"></div>
-              <div class="td form-group"><input type="text" class="form-control" placeholder="Address"></div>
-              <div class="td form-group"><input type="number" class="form-control" placeholder="Amount"></div>
-              <div class="td form-group">
-                <fieldset>
-                  <select name="" id="" class="form-control">
-                    <option value="">Status</option>
-                    <option value="">New</option>
-                    <option value="">Waiting</option>
-                    <option value="">Fulfilled</option>
-                    <option value="">Cancelled</option>
-                  </select>
-                </fieldset>
-              </div>
-              <div class="td"><a href="/orders/1">View &gt;</a></div>
-              <div class="td form-group text-center">
-                <a class="circle" href="javascript:void(0)"><i class="fa fa-check"></i></a>
-                <a class="circle" href="javascript:void(0)"><i class="fa fa-times"></i></a>
-              </div>
-            </div><!-- END .tr -->
-            <div class="tr">
-              <div class="td">Blake Liveley</div>
-              <div class="td">038658</div>
-              <div class="td">(718) 566-7878</div>
-              <div class="td">1885 Crawford Dr. Pleasant Hill, CA 94113</div>
-              <div class="td">$191.67</div>
-              <div class="td status">In Progress</div>
-              <div class="td"><a href="/orders/1">View &gt;</a></div>
-              <div class="td">
-                <fieldset>
-                  <select name="" id="" class="form-control">
-                    <option value="">All Actions</option>
-                    <option value="">Edit Order</option>
-                    <option value="">Start Progress</option>
-                    <option value="">Cancel Order</option>
-                    <option value="">Fulfill Order</option>
-                    <option value="">Add Customer</option>
-                  </select>
-                </fieldset>
-              </div>
-            </div><!-- END .tr -->
-            <div class="tr">
-              <div class="td">Blake Liveley</div>
-              <div class="td">038658</div>
-              <div class="td">(718) 566-7878</div>
-              <div class="td">1885 Crawford Dr. Pleasant Hill, CA 94113</div>
-              <div class="td">$191.67</div>
-              <div class="td status">Cancelled</div>
-              <div class="td"><a href="/orders/1">View &gt;</a></div>
-              <div class="td">
-                <fieldset>
-                  <select name="" id="" class="form-control">
-                    <option value="">All Actions</option>
-                    <option value="">Edit Order</option>
-                    <option value="">Start Progress</option>
-                    <option value="">Cancel Order</option>
-                    <option value="">Fulfill Order</option>
-                    <option value="">Add Customer</option>
-                  </select>
-                </fieldset>
-              </div>
-            </div><!-- END .tr -->
-            <div class="tr">
-              <div class="td">Blake Liveley</div>
-              <div class="td">038658</div>
-              <div class="td">(718) 566-7878</div>
-              <div class="td">1885 Crawford Dr. Pleasant Hill, CA 94113</div>
-              <div class="td">$191.67</div>
-              <div class="td status">Cancelled</div>
-              <div class="td"><a href="/orders/1">View &gt;</a></div>
-              <div class="td">
-                <fieldset>
-                  <select name="" id="" class="form-control">
-                    <option value="">All Actions</option>
-                    <option value="">Edit Order</option>
-                    <option value="">Start Progress</option>
-                    <option value="">Cancel Order</option>
-                    <option value="">Fulfill Order</option>
-                    <option value="">Add Customer</option>
-                  </select>
-                </fieldset>
-              </div>
-            </div><!-- END .tr -->
-            <div class="tr">
-              <div class="td">Blake Liveley</div>
-              <div class="td">038658</div>
-              <div class="td">(718) 566-7878</div>
-              <div class="td">1885 Crawford Dr. Pleasant Hill, CA 94113</div>
-              <div class="td">$191.67</div>
-              <div class="td status">Cancelled</div>
-              <div class="td"><a href="/orders/1">View &gt;</a></div>
-              <div class="td">
-                <fieldset>
-                  <select name="" id="" class="form-control">
-                    <option value="">All Actions</option>
-                    <option value="">Edit Order</option>
-                    <option value="">Start Progress</option>
-                    <option value="">Cancel Order</option>
-                    <option value="">Fulfill Order</option>
-                    <option value="">Add Customer</option>
-                  </select>
-                </fieldset>
-              </div>
-            </div><!-- END .tr -->
-            <div class="tr fulfilled">
-              <div class="td">Blake Liveley</div>
-              <div class="td">038658</div>
-              <div class="td">(718) 566-7878</div>
-              <div class="td">1885 Crawford Dr. Pleasant Hill, CA 94113</div>
-              <div class="td">$191.67</div>
-              <div class="td status">Fulfilled</div>
-              <div class="td"><a href="/orders/1">View &gt;</a></div>
-              <div class="td">
-                <fieldset disabled>
-                  <select name="" id="" class="form-control">
-                    <option value="">All Actions</option>
-                    <option value="">Edit Order</option>
-                    <option value="">Start Progress</option>
-                    <option value="">Cancel Order</option>
-                    <option value="">Fulfill Order</option>
-                    <option value="">Add Customer</option>
-                  </select>
+                  <select
+                    class="form-control"
+                    ng-model="order.selection"
+                    ng-options="action.id as action.name for action in orderActions"></select>
                 </fieldset>
               </div>
             </div><!-- END .tr -->

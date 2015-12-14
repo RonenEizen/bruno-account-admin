@@ -19,31 +19,17 @@ angular.module('userAdminApp')
         $scope.tableMergeable = false;
       },
       // adds new entry
-      add: function (table) {
-        $scope.tables.sets.push(table);
-        $scope.tables.clear();
-      },
-      // set editing true/false to hide add new button
-      editing: false,
-      // copies varibles to inputs
-      get: function (name,capacity,quantity,mergeable,index) {
-        // gets params data to $scope
-        $scope.tableName = name;
-        $scope.tableCapacity = capacity;
-        $scope.tableQuantity = quantity;
-        $scope.tableMergeable = mergeable;
-        $scope.tableIndex = index;
-        // enables update icon
-        $scope.tables.editing = true;
-      },
-      // updates entry
-      update: function (table,index) {
-        $scope.tables.sets.splice(index,1,table);
-        $scope.tables.editing = false;
+      add: function (name, capacity, quantity, mergeable) {
+        $scope.tables.sets.push(
+          { edit: false, name: name, capacity: capacity, quantity: quantity, mergeable: mergeable }
+        );
         $scope.tables.clear();
       },
       // fake data
-      sets: [{ name: "Booth", capacity: 6, quantity: 5, mergeable: false },{ name: "Window", capacity: 2, quantity: 2, mergeable: true }]
+      sets: [
+        { edit: false, name: "Booth", capacity: 6, quantity: 5, mergeable: false },
+        { edit: false, name: "Window", capacity: 2, quantity: 2, mergeable: true }
+      ]
     };
 
     // saves & reset forms

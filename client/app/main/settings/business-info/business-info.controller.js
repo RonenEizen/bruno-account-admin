@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('BusinessInfoCtrl', function($scope, User, Auth, $log) {
+  .controller('BusinessInfoCtrl', function($scope, $log, titlebarService, User, Auth) {
+    // set page title
+    $scope.pageTitle = titlebarService.setPageTitle('Business Info');
+    $log.warn($scope.pageTitle);
+
     // form validation
     // business info
     $scope.businessMaster = {};

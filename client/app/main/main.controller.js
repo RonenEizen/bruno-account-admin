@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('MainCtrl', function ($scope, $location, Auth) {
+  .controller('MainCtrl', function ($scope, $location, titlebarService, Auth) {
+    $scope.pageTitle = titlebarService.getPageTitle();
+
     $scope.navRevealed = true;
 
     $scope.menu = [

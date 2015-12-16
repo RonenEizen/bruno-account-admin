@@ -2,5 +2,5 @@
 
 angular.module('userAdminApp')
   .controller('SiteBuilderCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    $scope.pageTitle = 'Site Builder';
   });

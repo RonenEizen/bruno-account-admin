@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('UsersAndRolesCtrl', function($scope, $log) {
+  .controller('SettingsUsersAndRolesCtrl', function($scope, $log) {
+    $scope.pageTitle = 'Users And Roles';
+
     // fake data
     $scope.usersTemp = [];
     $scope.users = [

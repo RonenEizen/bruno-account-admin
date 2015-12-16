@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('PaymentsCtrl', function ($scope) {
+  .controller('SettingsPaymentsCtrl', function ($scope) {
+    $scope.pageTitle = 'Payments';
+
     $scope.enabled = true;
     $scope.paymentsMaster = {};
     $scope.payments = {

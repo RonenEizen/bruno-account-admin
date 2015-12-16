@@ -1,9 +1,10 @@
-  <div class="container-fluid campaigns">
-    <div class="row">
-      <header class="col-md-12 header">
-        <h1>Campaigns</h1>
-      </header>
+<header class="top clearfix">
+  <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed">&#9776;</span>
+  <h1>{{pageTitle}}</h1>
+</header>
 
+<div class="container-fluid campaigns">
+    <div class="row">
       <aside class="col-md-4 sidebar">
         <a href="campaigns/new" class="new">+ Create New Campaign</a>
 

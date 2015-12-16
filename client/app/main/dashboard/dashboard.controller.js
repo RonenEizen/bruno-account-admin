@@ -2,6 +2,7 @@
 
 angular.module('userAdminApp')
   .controller('DashboardCtrl', function ($scope, $http, socket) {
+    $scope.pageTitle = 'Home';
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {

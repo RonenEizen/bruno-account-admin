@@ -2,5 +2,5 @@
 
 angular.module('userAdminApp')
   .controller('StatisticsCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    $scope.pageTitle = 'Statistics';
   });

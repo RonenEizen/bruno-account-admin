@@ -2,5 +2,5 @@
 
 angular.module('userAdminApp')
   .controller('ReservationsCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    $scope.pageTitle = 'Reservations';
   });

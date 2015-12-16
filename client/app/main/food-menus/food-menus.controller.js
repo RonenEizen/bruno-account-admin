@@ -2,5 +2,5 @@
 
 angular.module('userAdminApp')
   .controller('FoodMenusCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    $scope.pageTitle = 'Food Menus';
   });

@@ -2,6 +2,8 @@
 
 angular.module('userAdminApp')
   .controller('CustomersCtrl', function ($scope) {
+    $scope.pageTitle = 'Customers';
+
     $scope.clickedHeader = 'name';
 
     $scope.displayingCustomers = 3;

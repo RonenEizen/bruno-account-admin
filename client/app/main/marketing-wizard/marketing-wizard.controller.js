@@ -2,5 +2,5 @@
 
 angular.module('userAdminApp')
   .controller('MarketingWizardCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    $scope.pageTitle = 'Marketing Wizard';
   });

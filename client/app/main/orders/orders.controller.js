@@ -2,6 +2,7 @@
 
 angular.module('userAdminApp')
   .controller('OrdersCtrl', function ($scope) {
+    $scope.pageTitle = 'Orders';
     $scope.orders = [
       { customer: 'Blake Lively', type: 'Pickup', number: '123456', amount: 191.21, status: 'New', selection: '1' },
       { customer: 'Lacky Bively', type: 'Delivery', number: '321654', amount: 191.22, status: 'In Progress', selection: '1' },

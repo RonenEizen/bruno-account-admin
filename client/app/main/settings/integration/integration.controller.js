@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('IntegrationCtrl', function ($scope, $log) {
+  .controller('SettingsIntegrationCtrl', function ($scope, $log) {
+    $scope.pageTitle = 'Integrations';
+
     $scope.integrations = [{
       edit: false,
       collapsed: true,

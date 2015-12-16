@@ -7,10 +7,10 @@ angular.module('userAdminApp')
         abstract: true,
         url: '/campaigns',
         templateUrl: 'app/main/campaigns/campaigns.html',
+        controller: 'CampaignsCtrl'
       })
       .state('main.campaigns.new', {
         url: '/new',
-        // template: 'hi',
         templateUrl: 'app/main/campaigns/campaigns.new.html',
         controller: 'CampaignsCtrl'
       })

@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('DomainCtrl', function ($scope, $log) {
+  .controller('SettingsDomainCtrl', function ($scope) {
+    $scope.pageTitle = 'Domain';
+
     $scope.subdomainMaster = {};
     $scope.subdomain = {
       edit: false,

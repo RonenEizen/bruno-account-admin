@@ -11,37 +11,37 @@ angular.module('userAdminApp')
       .state('main.settings.business-info', {
         url: '/business-info',
         templateUrl: 'app/main/settings/business-info/business-info.html',
-        controller: 'BusinessInfoCtrl'
+        controller: 'SettingsBusinessInfoCtrl'
       })
       .state('main.settings.users-and-roles', {
         url: '/users-and-roles',
         templateUrl: 'app/main/settings/users-and-roles/users-and-roles.html',
-        controller: 'UsersAndRolesCtrl'
+        controller: 'SettingsUsersAndRolesCtrl'
       })
       .state('main.settings.delivery', {
         url: '/delivery',
         templateUrl: 'app/main/settings/delivery/delivery.html',
-        controller: 'DeliveryCtrl'
+        controller: 'SettingsDeliveryCtrl'
       })
       .state('main.settings.reservations',{
         url: '/reservations',
         templateUrl: 'app/main/settings/reservations/reservations.html',
-        controller: 'ReservationsCtrl'
+        controller: 'SettingsReservationsCtrl'
       })
       .state('main.settings.payments', {
         url: '/payments',
         templateUrl: 'app/main/settings/payments/payments.html',
-        controller: 'PaymentsCtrl'
+        controller: 'SettingsPaymentsCtrl'
       })
       .state('main.settings.domain', {
         url: '/domain',
         templateUrl: 'app/main/settings/domain/domain.html',
-        controller: 'DomainCtrl'
+        controller: 'SettingsDomainCtrl'
       })
       .state('main.settings.integration', {
         url: '/integration',
         templateUrl: 'app/main/settings/integration/integration.html',
-        controller: 'IntegrationCtrl'
+        controller: 'SettingsIntegrationCtrl'
       });
 
     $urlRouterProvider.when('/settings', '/settings/business-info');

@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('DeliveryCtrl', function($scope, $log) {
+  .controller('SettingsDeliveryCtrl', function($scope, $log) {
+    $scope.pageTitle = 'Delivery';
     $scope.enabled = true; // sets delivery enable
 
     $scope.requestsMaster = {};

@@ -1,40 +1,42 @@
-<!-- THIS IS THE MAIN CONTAINER -->
-<div class="row">
-  <div class="col-md-10 col-md-offset-1 main content">
-      <form class="custom-form" action="">
-        <div class="table orders">
+<header class="top clearfix">
+  <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed">&#9776;</span>
+  <h1>{{pageTitle}}</h1>
+</header>
 
-          <div class="thead">
-            <div class="tr">
-              <div class="th">Customer</div>
-              <div class="th">Type</div>
-              <div class="th">Order Num</div>
-              <div class="th">Amount</div>
-              <div class="th">Status</div>
-              <div class="th">Details</div>
-              <div class="th">Actions</div>
-            </div><!-- END .tr -->
-          </div><!-- END .thead -->
+<div class="col-md-10 col-md-offset-1 main content">
+  <form class="custom-form" action="">
+    <div class="table orders">
 
-          <div class="tbody">
-            <div class="tr" ng-repeat="order in orders">
-              <div class="td">{{order.customer}}</div>
-              <div class="td">{{order.type}}</div>
-              <div class="td">{{order.number}}</div>
-              <div class="td">{{order.amount | currency}}</div>
-              <div class="td status">{{order.status}}</div>
-              <div class="td"><a href="/orders/{{$index}}">View &gt;</a></div>
-              <div class="td">
-                <fieldset>
-                  <select
-                    class="form-control"
-                    ng-model="order.selection"
-                    ng-options="action.id as action.name for action in orderActions"></select>
-                </fieldset>
-              </div>
-            </div><!-- END .tr -->
-          </tbody>
-        </table>
-      </form>
-    </div><!-- END .main.col-md-12 -->
-  </div>
+      <div class="thead">
+        <div class="tr">
+          <div class="th">Customer</div>
+          <div class="th">Type</div>
+          <div class="th">Order Num</div>
+          <div class="th">Amount</div>
+          <div class="th">Status</div>
+          <div class="th">Details</div>
+          <div class="th">Actions</div>
+        </div><!-- END .tr -->
+      </div><!-- END .thead -->
+
+      <div class="tbody">
+        <div class="tr" ng-repeat="order in orders">
+          <div class="td">{{order.customer}}</div>
+          <div class="td">{{order.type}}</div>
+          <div class="td">{{order.number}}</div>
+          <div class="td">{{order.amount | currency}}</div>
+          <div class="td status">{{order.status}}</div>
+          <div class="td"><a href="/orders/{{$index}}">View &gt;</a></div>
+          <div class="td">
+            <fieldset>
+              <select
+              class="form-control"
+              ng-model="order.selection"
+              ng-options="action.id as action.name for action in orderActions"></select>
+            </fieldset>
+          </div>
+        </div><!-- END .tr -->
+      </tbody>
+    </table>
+  </form>
+</div><!-- END .main.col-md-12 -->

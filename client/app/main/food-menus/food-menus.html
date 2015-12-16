@@ -1,7 +1,11 @@
+<header class="top clearfix">
+  <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed">&#9776;</span>
+  <h1>{{pageTitle}}</h1>
+</header>
+
 <div class="container-fluid menu">
   <div class="row">
     <header class="col-md-12 header">
-      <h1>Food Menu</h1>
       <div class="menu-tabs">
         <div class="menu-tab">My Menu</div>
         <button class="btn btn-primary menu-add">Create New Menu</button>

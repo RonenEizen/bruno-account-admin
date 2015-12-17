@@ -25,7 +25,7 @@ angular.module('userAdminApp')
     };
 
     // Ordering columns by
-    $scope.clickedHeader = 'name';
+    $scope.clickedHeader = '';
 
     // Load More Rows
     $scope.displayingCustomers = 3; // sets the initial limit of displaying rows

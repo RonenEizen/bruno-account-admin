@@ -4,10 +4,10 @@
       .tr .td                     { padding: 15px 8px; }
     }
   }
-  .sortorder:after {
-    content: '\25b2';
-  }
-  .sortorder.reverse:after {
-    content: '\25bc';
+  .sortorder                      { vertical-align: baseline; }
+
+  .filter                         { display: inline; position: relative;
+    & > div                       { background: $beige; border: 1px solid $lightgray; padding: 10px; position: absolute; top: 25px; }
+    i.filtered                    { color: $red; }
   }
 }

@@ -1,47 +1,125 @@
 <header class="top clearfix">
   <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed">&#9776;</span>
   <h1>{{pageTitle}}</h1>
+  <button class="btn btn-primary center-block" ng-click="modal()">+ New Customer</button>
+  <div class="actions-right" ng-init="pickColumns=false">
+    <i class="fa fa-upload"></i>
+    <i class="fa fa-th" ng-click="pickColumns=!pickColumns"></i>
+    <ul ng-show="pickColumns">
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.name"> Name</label></li>
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.phone"> Phone</label></li>
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.email"> Email</label></li>
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.addr"> Address</label></li>
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.zip"> Zip Code</label></li>
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.city"> City</label></li>
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.workEmail"> Work Email</label></li>
+    </ul>
+  </div>
 </header>
+
 <div class="col-md-12 customers">
   <div class="row">
-    <!--
-      This should filter the table: <input type="text" ng-model="customersFilter">
-      TODO: move this to the title bar
-    -->
     <div class="table customers-table">
       <div class="thead">
         <div class="tr">
-          <div class="th" ng-click="clickedHeader='name'; reverse = !reverse">
-            Name
-            <span class="sortorder" ng-show="clickedHeader === 'name'" ng-class="{reverse:reverse}"></span>
+
+          <div class="th" ng-show="displayColumns.name">
+            <div class="filter">
+              <i class="fa fa-filter" ng-click="toggleFilter('name')"></i>
+              <div ng-show="openFilter.name">
+                <input type="text" ng-model="customersFilter.name">
+              </div>
+            </div>
+            <span ng-click="clickedHeader='name'; reverse = !reverse">Name
+             <i class="sortorder fa" ng-show="clickedHeader === 'name'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            </span>
           </div>
-          <div class="th" ng-click="clickedHeader='phone'; reverse = !reverse">
-            Phone
-            <span class="sortorder" ng-show="clickedHeader === 'phone'" ng-class="{reverse:reverse}"></span>
+
+          <div class="th" ng-show="displayColumns.phone">
+            <div class="filter">
+              <i class="fa fa-filter" ng-click="toggleFilter('phone')"></i>
+              <div ng-show="openFilter.phone">
+                <input type="text" ng-model="customersFilter.phone">
+              </div>
+            </div>
+            <span ng-click="clickedHeader='phone'; reverse = !reverse">Phone
+             <i class="sortorder fa" ng-show="clickedHeader === 'phone'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            </span>
           </div>
-          <div class="th" ng-click="clickedHeader='email'; reverse = !reverse">
-            Email
-            <span class="sortorder" ng-show="clickedHeader === 'email'" ng-class="{reverse:reverse}"></span>
+
+          <div class="th" ng-show="displayColumns.email">
+            <div class="filter">
+              <i class="fa fa-filter" ng-click="toggleFilter('email')"></i>
+              <div ng-show="openFilter.email">
+                <input type="text" ng-model="customersFilter.email">
+              </div>
+            </div>
+            <span ng-click="clickedHeader='email'; reverse = !reverse">Email
+             <i class="sortorder fa" ng-show="clickedHeader === 'email'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            </span>
           </div>
-          <div class="th" ng-click="clickedHeader='address'; reverse = !reverse">
-            Address
-            <span class="sortorder" ng-show="clickedHeader === 'address'" ng-class="{reverse:reverse}"></span>
+
+          <div class="th" ng-show="displayColumns.addr">
+            <div class="filter">
+              <i class="fa fa-filter" ng-click="toggleFilter('addr')"></i>
+              <div ng-show="openFilter.addr">
+                <input type="text" ng-model="customersFilter.addr">
+              </div>
+            </div>
+            <span ng-click="clickedHeader='address'; reverse = !reverse">Address
+             <i class="sortorder fa" ng-show="clickedHeader === 'address'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            </span>
           </div>
-          <div class="th" ng-click="clickedHeader='zip'; reverse = !reverse">
-            Zip Code
-            <span class="sortorder" ng-show="clickedHeader === 'zip'" ng-class="{reverse:reverse}"></span>
+
+          <div class="th" ng-show="displayColumns.zip">
+            <div class="filter">
+              <i class="fa fa-filter" ng-click="toggleFilter('zip')"></i>
+              <div ng-show="openFilter.zip">
+                <input type="text" ng-model="customersFilter.zip">
+              </div>
+            </div>
+            <span ng-click="clickedHeader='zip'; reverse = !reverse">Zip Code
+             <i class="sortorder fa" ng-show="clickedHeader === 'zip'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            </span>
           </div>
+
+          <div class="th" ng-show="displayColumns.city">
+            <div class="filter">
+              <i class="fa fa-filter" ng-click="toggleFilter('city')"></i>
+              <div ng-show="openFilter.city">
+                <input type="text" ng-model="customersFilter.city">
+              </div>
+            </div>
+            <span ng-click="clickedHeader='city'; reverse = !reverse">City
+             <i class="sortorder fa" ng-show="clickedHeader === 'city'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            </span>
+          </div>
+
+          <div class="th" ng-show="displayColumns.workEmail">
+            <div class="filter">
+              <i class="fa fa-filter" ng-click="toggleFilter('workEmail')"></i>
+              <div ng-show="openFilter.workEmail">
+                <input type="text" ng-model="customersFilter.workEmail">
+              </div>
+            </div>
+            <span ng-click="clickedHeader='workEmail'; reverse = !reverse">Work Email
+             <i class="sortorder fa" ng-show="clickedHeader === 'workEmail'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            </span>
+          </div>
+
           <div class="th">View Orders</div>
         </div>
-      </div>
+      </div><!-- END .thead -->
 
       <div class="tbody">
-        <div class="tr" ng-repeat="customer in customers | filter:customersFilter | orderBy:clickedHeader:reverse | limitTo:displayingCustomers" displayingCustomers>
-          <div class="td"><a href="javascript:void(0)">{{customer.name}}</a></div>
-          <div class="td">{{customer.phone}}</div>
-          <div class="td">{{customer.email}}</div>
-          <div class="td">{{customer.addr}}</div>
-          <div class="td">{{customer.zip}}</div>
+        <div class="tr" ng-repeat="customer in customers | filter:customersFilter | orderBy:clickedHeader:reverse | limitTo:displayingCustomers">
+          <div class="td" ng-show="displayColumns.name"><a href="javascript:void(0)">{{customer.name}}</a></div>
+          <div class="td" ng-show="displayColumns.phone">{{customer.phone}}</div>
+          <div class="td" ng-show="displayColumns.email">{{customer.email}}</div>
+          <div class="td" ng-show="displayColumns.addr">{{customer.addr}}</div>
+          <div class="td" ng-show="displayColumns.zip">{{customer.zip}}</div>
+          <div class="td" ng-show="displayColumns.city">{{customer.city}}</div>
+          <div class="td" ng-show="displayColumns.workEmail">{{customer.workEmail}}</div>
           <div class="td"><a href="javascript:void(0)">View</a></div>
         </div>
       </div><!-- END .tbody -->

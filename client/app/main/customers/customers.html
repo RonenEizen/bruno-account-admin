@@ -4,7 +4,7 @@
   <button class="btn btn-primary center-block" ng-click="modal()">+ New Customer</button>
   <div class="actions-right" ng-init="pickColumns=false">
     <i class="fa fa-upload"></i>
-    <i class="fa fa-th" ng-click="pickColumns=!pickColumns"></i>
+    <i class="fa fa-th" ng-click="showColumnPicker()"></i>
     <ul ng-show="pickColumns">
       <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.name"> Name</label></li>
       <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.phone"> Phone</label></li>
@@ -16,7 +16,7 @@
     </ul>
   </div>
 </header>
-
+<div ng-show="invisibleLayer" class="invisible-layer" ng-click="toggleFilter('');pickColumns=false;invisibleLayer=false;">&nbsp;</div>
 <div class="col-md-12 customers">
   <div class="row">
     <div class="table customers-table">

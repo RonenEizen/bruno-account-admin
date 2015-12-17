@@ -5,6 +5,10 @@ angular.module('userAdminApp')
     $scope.pageTitle = 'Customers';
 
     // Columns to be displayed
+    $scope.showColumnPicker = function () {
+      $scope.pickColumns = true;
+      $scope.invisibleLayer = true;
+    }
     $scope.displayColumns = { name: true, phone: true, email: true, addr: true, zip: true, city: false, workEmail: false };
 
     // Filters
@@ -15,9 +19,10 @@ angular.module('userAdminApp')
         $scope.openFilter[filterName] = false;
       } else {
         for (var x in $scope.openFilter) { $scope.openFilter[x] = false; };
+        $scope.invisibleLayer = true;
         $scope.openFilter[filterName] = true;
-      }
-    }
+      };
+    };
 
     // Ordering columns by
     $scope.clickedHeader = 'name';
@@ -31,8 +36,8 @@ angular.module('userAdminApp')
         $scope.displayingCustomers += increment;
         if ($scope.displayingCustomers >= $scope.customers.length) {
           $scope.loadMore = false;
-        }
-      }
+        };
+      };
     };
 
     // fake data

@@ -5,8 +5,7 @@
     }
   }
   .sortorder                      { vertical-align: baseline; }
-
-  .filter                         { display: inline; position: relative;
+  .filter                         { display: inline; position: relative; z-index: 100;
     & > div                       { background: $beige; border: 1px solid $lightgray; padding: 10px; position: absolute; top: 25px; }
     i.filtered                    { color: $red; }
   }

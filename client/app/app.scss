@@ -142,6 +142,21 @@ html, body, div[ui-view]          { height: 100%; }
   .icon-bar                       { border: 2px solid $lightgray; border-radius: 1px; margin-bottom: 3px; }
 }
 .invisible-layer                  { background: transparent; height: 100%; position: fixed; top: 0; left: 0; width: 100%; z-index: 50; }
+.text-input                       {
+  input[readonly],
+  fieldset[disabled] select       { background: transparent; box-shadow: none; border: none; cursor: default; color: $darkgray; font-size: 14px; height: auto; margin: 0; padding: 0;
+    &::-webkit-input-placeholder  { color: lighten($black, 90%); }
+    &::-moz-input-placeholder     { color: lighten($black, 90%); }
+    &:-moz-input-placeholder      { color: lighten($black, 90%); }
+    &:-ms-input-placeholder       { color: lighten($black, 90%); }
+    &:focus                       {
+      box-shadow: none;
+      outline: none;
+    }
+    & ~ p                         { display: none; }
+  }
+  fieldset[disabled] select       { -webkit-appearance: none; -moz-appearance: none; appearance: none; text-indent: 0.01px; text-overflow: ''; }
+}
 
 // HEADER
 header.top                        { background: $beige; border-bottom: 1px solid $lightgray; padding: 10px 20px; position: relative;

@@ -1,6 +1,7 @@
 .customers                        {
   .table                          {
     &.customers-table             {
+      .fa-sort                    { color: $lightgray2; }
       .tr .td                     { padding: 15px 8px; }
     }
   }
@@ -9,4 +10,7 @@
     & > div                       { background: $beige; border: 1px solid $lightgray; padding: 10px; position: absolute; top: 25px; }
     i.filtered                    { color: $red; }
   }
+}
+.customerFlyout                   { background: $white; height: 100%; position: fixed; top: 0; left: 0; width: 100%; z-index: 150;
+
 }

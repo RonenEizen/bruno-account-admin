@@ -22,22 +22,6 @@
   button.rounded                  { border: none; border-radius: 100%; font-family: $serif-font; height: 40px; width: 40px; padding: 0; text-transform: uppercase; text-shadow: none;
     &.btn-primary                 { background: $buttonblue; }
   }
-  .text-input                     {
-    input[readonly],
-    fieldset[disabled] select     { background: transparent; box-shadow: none; border: none; cursor: default; color: $darkgray; font-size: 14px; height: auto; margin: 0; padding: 0;
-      &::-webkit-input-placeholder{ color: lighten($black, 90%); }
-      &::-moz-input-placeholder   { color: lighten($black, 90%); }
-      &:-moz-input-placeholder    { color: lighten($black, 90%); }
-      &:-ms-input-placeholder     { color: lighten($black, 90%); }
-      &:focus {
-        box-shadow: none;
-        outline: none;
-      }
-      & ~ p                       { display: none; }
-    }
-    fieldset[disabled] select     { -webkit-appearance: none; -moz-appearance: none; appearance: none; text-indent: 0.01px; text-overflow: ''; }
-  }
-  // tbody tr:last-child             { border-bottom: 1px solid $lightgray; }
 
   .table                          {
     .form-group input + input     { margin-top: 5px; }

@@ -40,19 +40,32 @@ angular.module('userAdminApp')
       };
     };
 
+
+    // Customers Flyout
+    $scope.viewCustomer = false;
+    $scope.addCustomer = function() {
+      $scope.viewCustomer = true;
+    };
+    $scope.showCustomer = function(index) {
+      $scope.viewCustomer = true;
+    };
+
     // fake data
+    $scope.editing = {
+      edit: false, fname: 'Hucas', mname: '', lname: 'Engel', phone: 2555555555, mobile: '', email: 'hucasengel@gmail.com' , addr: '84th Visconde Duprat St.', zip: 54551, city: 'Lorto Alegre', workEmail: 'hucasengel@work.com'
+    }
     $scope.customers = [
-      { name: 'Hucas Engel', phone: 2555555555, email: 'hucasengel@gmail.com' , addr: '84th Visconde Duprat St.', zip: 54551, city: 'Lorto Alegre', workEmail: 'hucasengel@work.com' },
-      { name: 'Iucas Engel', phone: 3555555555, email: 'iucasengel@gmail.com' , addr: '85th Visconde Duprat St.', zip: 54552, city: 'Morto Alegre', workEmail: 'iucasengel@work.com' },
-      { name: 'Jucas Engel', phone: 4555555555, email: 'jucasengel@gmail.com' , addr: '86th Visconde Duprat St.', zip: 54553, city: 'Norto Alegre', workEmail: 'jucasengel@work.com' },
-      { name: 'Kucas Engel', phone: 5555555555, email: 'kucasengel@gmail.com' , addr: '87th Visconde Duprat St.', zip: 54554, city: 'Oorto Alegre', workEmail: 'kucasengel@work.com' },
-      { name: 'Lucas Engel', phone: 1555555555, email: 'lucasengel@gmail.com' , addr: '88th Visconde Duprat St.', zip: 54555, city: 'Porto Alegre', workEmail: 'lucasengel@work.com' },
-      { name: 'Mucas Engel', phone: 2555555555, email: 'mucasengel@gmail.com' , addr: '89th Visconde Duprat St.', zip: 54556, city: 'Qorto Alegre', workEmail: 'mucasengel@work.com' },
-      { name: 'Nucas Engel', phone: 3555555555, email: 'nucasengel@gmail.com' , addr: '90th Visconde Duprat St.', zip: 54557, city: 'Rorto Alegre', workEmail: 'nucasengel@work.com' },
-      { name: 'Oucas Engel', phone: 4555555555, email: 'oucasengel@gmail.com' , addr: '91th Visconde Duprat St.', zip: 54558, city: 'Sorto Alegre', workEmail: 'oucasengel@work.com' },
-      { name: 'Pucas Engel', phone: 5555555555, email: 'pucasengel@gmail.com' , addr: '92th Visconde Duprat St.', zip: 54559, city: 'Torto Alegre', workEmail: 'pucasengel@work.com' },
-      { name: 'Qucas Engel', phone: 6555555555, email: 'qucasengel@gmail.com' , addr: '93th Visconde Duprat St.', zip: 54550, city: 'Uorto Alegre', workEmail: 'qucasengel@work.com' },
-      { name: 'Yucas Engel', phone: 6555555555, email: 'yucasengel@gmail.com' , addr: '94th Visconde Duprat St.', zip: 54560, city: 'Vorto Alegre', workEmail: 'yucasengel@work.com' },
-      { name: 'Zucas Engel', phone: 1555555555, email: 'zucasengel@gmail.com' , addr: '95th Visconde Duprat St.', zip: 54561, city: 'Xorto Alegre', workEmail: 'zucasengel@work.com' }
+      { edit: false, fname: 'Hucas', mname: '', lname: 'Engel', phone: 2555555555, mobile: '', email: 'hucasengel@gmail.com' , addr: '84th Visconde Duprat St.', zip: 54551, city: 'Lorto Alegre', workEmail: 'hucasengel@work.com' },
+      { edit: false, fname: 'Iucas', mname: '', lname: 'Engel', phone: 3555555555, mobile: '', email: 'iucasengel@gmail.com' , addr: '85th Visconde Duprat St.', zip: 54552, city: 'Morto Alegre', workEmail: 'iucasengel@work.com' },
+      { edit: false, fname: 'Jucas', mname: '', lname: 'Engel', phone: 4555555555, mobile: '', email: 'jucasengel@gmail.com' , addr: '86th Visconde Duprat St.', zip: 54553, city: 'Norto Alegre', workEmail: 'jucasengel@work.com' },
+      { edit: false, fname: 'Kucas', mname: '', lname: 'Engel', phone: 5555555555, mobile: '', email: 'kucasengel@gmail.com' , addr: '87th Visconde Duprat St.', zip: 54554, city: 'Oorto Alegre', workEmail: 'kucasengel@work.com' },
+      { edit: false, fname: 'Lucas', mname: '', lname: 'Engel', phone: 1555555555, mobile: '', email: 'lucasengel@gmail.com' , addr: '88th Visconde Duprat St.', zip: 54555, city: 'Porto Alegre', workEmail: 'lucasengel@work.com' },
+      { edit: false, fname: 'Mucas', mname: '', lname: 'Engel', phone: 2555555555, mobile: '', email: 'mucasengel@gmail.com' , addr: '89th Visconde Duprat St.', zip: 54556, city: 'Qorto Alegre', workEmail: 'mucasengel@work.com' },
+      { edit: false, fname: 'Nucas', mname: '', lname: 'Engel', phone: 3555555555, mobile: '', email: 'nucasengel@gmail.com' , addr: '90th Visconde Duprat St.', zip: 54557, city: 'Rorto Alegre', workEmail: 'nucasengel@work.com' },
+      { edit: false, fname: 'Oucas', mname: '', lname: 'Engel', phone: 4555555555, mobile: '', email: 'oucasengel@gmail.com' , addr: '91th Visconde Duprat St.', zip: 54558, city: 'Sorto Alegre', workEmail: 'oucasengel@work.com' },
+      { edit: false, fname: 'Pucas', mname: '', lname: 'Engel', phone: 5555555555, mobile: '', email: 'pucasengel@gmail.com' , addr: '92th Visconde Duprat St.', zip: 54559, city: 'Torto Alegre', workEmail: 'pucasengel@work.com' },
+      { edit: false, fname: 'Qucas', mname: '', lname: 'Engel', phone: 6555555555, mobile: '', email: 'qucasengel@gmail.com' , addr: '93th Visconde Duprat St.', zip: 54550, city: 'Uorto Alegre', workEmail: 'qucasengel@work.com' },
+      { edit: false, fname: 'Yucas', mname: '', lname: 'Engel', phone: 6555555555, mobile: '', email: 'yucasengel@gmail.com' , addr: '94th Visconde Duprat St.', zip: 54560, city: 'Vorto Alegre', workEmail: 'yucasengel@work.com' },
+      { edit: false, fname: 'Zucas', mname: '', lname: 'Engel', phone: 1555555555, mobile: '', email: 'zucasengel@gmail.com' , addr: '95th Visconde Duprat St.', zip: 54561, city: 'Xorto Alegre', workEmail: 'zucasengel@work.com' }
     ];
   });

@@ -2,7 +2,7 @@
 
 angular.module('userAdminApp')
   .controller('SettingsPaymentsCtrl', function ($scope) {
-    $scope.pageTitle = 'Payments';
+    $scope.pageTitle = 'Online Payments';
 
     $scope.enabled = true;
     $scope.paymentsMaster = {};

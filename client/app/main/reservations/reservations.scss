@@ -1,0 +1,36 @@
+.reservations                     { height: 100%;
+  // top info
+  .btn-new                        { border: 0; background: none; color: $blue; font-size: 18px; margin: 0 20px 0; padding: 0; }
+  .btn-cust                       { vertical-align: middle; white-space: nowrap;
+    .btn                          { background: none; border: none; font-size: 18px; margin: 0; padding: 4px; }
+    .arrows                       { color: $blue; font-size: 22px; }
+    .today                        { color: $darkgray; font-weight: 700; letter-spacing: -1px; }
+  }
+
+  // body stuff
+  h2                              { font: 500 24px $serif-font; margin: 15px 0 10px; }
+  time                            { color: $darkgray; display: block; font: 300 24px $serif-font; margin: 15px 0; text-align: center; }
+  .calendar                       { background: $white; height: 100%; overflow: auto;
+  }
+
+  // DAY VIEW: tab specifics
+  .day-view                       { background: $beige; height: 100%;
+    .calendar                     {
+      h3                          { font: 500 16px $serif-font; margin: 0 0 10px; }
+    }
+    .sidebar                      { height: 100%; overflow: auto;
+      hr                          { border-top-color: $darkgray; }
+      h3.red                      { color: $red; margin-top: 0; }
+      time                        { margin-top: 55px; }
+      .status                     { border-radius: 100%; color: $white; font-size: 10px; line-height: 50px; text-align: center; width: 50px;
+        &.active                  { background: $green; }
+        &.closed                  { background: $lightgray; color: $darkgray; }
+        &.pending                 { background: $red; }
+      }
+    }
+  }
+  // WEEK VIEW: tab specifics
+  .week-view                      {}
+  // MONTH VIEW: tab specifics
+  .month-view                     {}
+}

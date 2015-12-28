@@ -7,7 +7,9 @@ angular.module('userAdminApp', [
   'ngSanitize',
   'ui.bootstrap',
   'ui.router',
-  'ui.mask'
+  'ui.mask',
+  'ui.calendar',
+  'mp.datePicker'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

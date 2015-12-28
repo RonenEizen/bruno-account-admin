@@ -18,16 +18,19 @@
         <div class="col-md-8 calendar">
           <h2>{{currentDate.now() | date: 'MMMM dd, yyyy'}}</h2>
           <h3>Tuesday, Week 46</h3>
-          <div class="legend">
+          <ul class="legend clearfix">
+            <li class="closed"><i></i> Closed</li>
+            <li class="pending"><i></i> Pending</li>
+            <li class="active"><i></i> Active</li>
+          </ul>
 
-          </div>
-
-          <div class="calendar-widget">horizontal-calendar</div>
+          <div ui-calendar id="calendar-day" ng-model="eventSources"></div>
         </div>
         <div class="col-md-4 sidebar">
           <div class="row">
             <div class="col-md-7 date-picker">
-              date picker widget
+              <date-picker ng-model="date"></date-picker>
+              <strong>date picked: {{date}}</strong>
             </div>
             <div class="col-md-5">
               <div class="btn-cust pull-right">
@@ -81,7 +84,7 @@
       </div><!-- END .row -->
       <div class="row">
         <div class="col-md-12">
-          vertical week calendar
+          <div ui-calendar class="calendar-widget" ng-model="eventSources"></div>
         </div>
       </div><!-- END .row -->
     </div><!-- END .week-view -->
@@ -104,7 +107,7 @@
       </div><!-- END .row -->
       <div class="row">
         <div class="col-md-12">
-          month calendar
+          <div ui-calendar class="calendar-widget" ng-model="eventSources"></div>
         </div>
       </div>
     </div><!-- END .month-view -->

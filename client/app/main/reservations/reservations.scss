@@ -1,17 +1,24 @@
 .reservations                     { height: 100%;
   // top info
-  .btn-new                        { border: 0; background: none; color: $blue; font-size: 18px; margin: 0 20px 0; padding: 0; }
+  .btn-new                        { background: none; border: 0; color: $blue; font-size: 18px; margin: 0 20px 0; padding: 0; }
   .btn-cust                       { vertical-align: middle; white-space: nowrap;
     .btn                          { background: none; border: none; font-size: 18px; margin: 0; padding: 4px; }
     .arrows                       { color: $blue; font-size: 22px; }
     .today                        { color: $darkgray; font-weight: 700; letter-spacing: -1px; }
   }
+  .legend                         { border-bottom: 1px solid $lightgray; list-style: none; padding: 0 0 10px; position: relative; top: -25px;
+    li                            { float: right; vertical-align: middle;
+      i                           { display: block; float: left; height: 15px; line-height: 15px;; margin: 0 5px 0 10px; width: 15px; }
+      &.active i                  { background: $green; }
+      &.closed i                  { background: $lightgray; }
+      &.pending i                 { background: $red; }
+    }
+  }
 
   // body stuff
   h2                              { font: 500 24px $serif-font; margin: 15px 0 10px; }
   time                            { color: $darkgray; display: block; font: 300 24px $serif-font; margin: 15px 0; text-align: center; }
-  .calendar                       { background: $white; height: 100%; overflow: auto;
-  }
+  .calendar                       { background: $white; height: 100%; overflow: auto; }
 
   // DAY VIEW: tab specifics
   .day-view                       { background: $beige; height: 100%;
@@ -27,6 +34,19 @@
         &.closed                  { background: $lightgray; color: $darkgray; }
         &.pending                 { background: $red; }
       }
+    }
+    .angular-date-picker          { background: none; border: none; color: $darkgray;
+      ._month                     { background: none; border: none; padding: 0; }
+      ._days                      { margin: 0; width: 100%;
+        ._day-of-week,
+        ._day                     { width: calc(100%/7); border-radius: 100%;
+          &.-padding              { color: $lightgray; }
+          &:hover,
+          &.-today                { background: $lightgray; border: 1px solid transparent; }
+          &.-selected             { background: $darkgray; color: $white; }
+        }
+      }
+
     }
   }
   // WEEK VIEW: tab specifics

@@ -5,9 +5,14 @@ angular.module('userAdminApp')
     $scope.user = {};
     $scope.errors = {};
 
+
+
     $scope.getPlaces = function(val) {
-      $http.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670,151.1957&radius=500&types=food&name=cruise&key=AIzaSyCgFtT6tgjUhjZxElvkxs35fxpDtWsUsRo")
-    }
+      $http.jsonp('https://maps.googleapis.com/maps/api/place/autocomplete/json?callback=JSON_CALLBACK&key=AIzaSyD9lsOgEk9lzW-AiQiKjgGIjwbM_ZFd1rA&radius=10000&input='+val)
+        .success(function(response){
+          console.log(response);
+        });
+      };
 
     $scope.register = function(form) {
       $scope.submitted = true;

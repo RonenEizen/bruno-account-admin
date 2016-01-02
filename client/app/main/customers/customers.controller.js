@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('CustomersCtrl', function ($scope, Modal) {
+  .controller('CustomersCtrl', function ($scope) {
     $scope.pageTitle = 'Customers';
 
     // Columns to be displayed
     $scope.showColumnPicker = function () {
       $scope.pickColumns = true;
       $scope.invisibleLayer = true;
-    }
+    };
     $scope.displayColumns = { name: true, phone: true, email: true, addr: true, zip: true, city: false, workEmail: false };
 
     // Filters
@@ -18,10 +18,10 @@ angular.module('userAdminApp')
       if ($scope.openFilter[filterName]) {
         $scope.openFilter[filterName] = false;
       } else {
-        for (var x in $scope.openFilter) { $scope.openFilter[x] = false; };
+        for (var x in $scope.openFilter) { $scope.openFilter[x] = false; }
         $scope.invisibleLayer = true;
         $scope.openFilter[filterName] = true;
-      };
+      }
     };
 
     // Ordering columns by
@@ -36,8 +36,8 @@ angular.module('userAdminApp')
         $scope.displayingCustomers += increment;
         if ($scope.displayingCustomers >= $scope.customers.length) {
           $scope.loadMore = false;
-        };
-      };
+        }
+      }
     };
 
 
@@ -46,14 +46,14 @@ angular.module('userAdminApp')
     $scope.addCustomer = function() {
       $scope.viewCustomer = true;
     };
-    $scope.showCustomer = function(index) {
+    $scope.showCustomer = function() {
       $scope.viewCustomer = true;
     };
 
     // fake data
     $scope.editing = {
       edit: false, fname: 'Hucas', mname: '', lname: 'Engel', phone: 2555555555, mobile: '', email: 'hucasengel@gmail.com' , addr: '84th Visconde Duprat St.', zip: 54551, city: 'Lorto Alegre', workEmail: 'hucasengel@work.com'
-    }
+    };
     $scope.customers = [
       { edit: false, fname: 'Hucas', mname: '', lname: 'Engel', phone: 2555555555, mobile: '', email: 'hucasengel@gmail.com' , addr: '84th Visconde Duprat St.', zip: 54551, city: 'Lorto Alegre', workEmail: 'hucasengel@work.com' },
       { edit: false, fname: 'Iucas', mname: '', lname: 'Engel', phone: 3555555555, mobile: '', email: 'iucasengel@gmail.com' , addr: '85th Visconde Duprat St.', zip: 54552, city: 'Morto Alegre', workEmail: 'iucasengel@work.com' },

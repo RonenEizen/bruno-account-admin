@@ -7,5 +7,5 @@ angular.module('userAdminApp')
         url: '/site-builder',
         templateUrl: 'app/main/site-builder/site-builder.html',
         controller: 'SiteBuilderCtrl'
-      })
+      });
   });

@@ -8,9 +8,9 @@ angular.module('userAdminApp')
     $scope.paymentsMaster = {};
     $scope.payments = {
       edit: false,
-      bankNo: "",
-      accountNo: ""
+      bankNo: '',
+      accountNo: ''
     };
-    $scope.reset = function () { $scope.payments = angular.copy($scope.paymentsMaster); $scope.payments.edit = false; }
-    $scope.save = function () { $scope.paymentsMaster = angular.copy($scope.payments); $scope.payments.edit = false; }
+    $scope.reset = function () { $scope.payments = angular.copy($scope.paymentsMaster); $scope.payments.edit = false; };
+    $scope.save = function () { $scope.paymentsMaster = angular.copy($scope.payments); $scope.payments.edit = false; };
   });

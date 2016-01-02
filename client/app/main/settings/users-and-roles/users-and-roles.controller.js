@@ -54,11 +54,11 @@ angular.module('userAdminApp')
         case '2': // edit - will copy fields to a temporary variable so they can be restored later
           if ($scope.usersTemp.length === 0) {
             $scope.usersTemp = angular.copy($scope.users);
-            $log.log('copying everything')
+            $log.log('copying everything');
           } else {
             $scope.usersTemp.splice(index,1,$scope.users[index]);
-            $log.log('copying one')
-          };
+            $log.log('copying one');
+          }
           $scope.users[index].edit = true;
           $log.log($scope.usersTemp);
           break;
@@ -76,7 +76,7 @@ angular.module('userAdminApp')
           break;
         default:
           break;
-      };
+      }
     };
 
     $scope.cancelUser = function (index) {
@@ -119,12 +119,12 @@ angular.module('userAdminApp')
 
     $scope.editRole = function (index) {
       if ($scope.rolesTemp.length === 0) {
-        $scope.rolesTemp = angular.copy($scope.roles)
+        $scope.rolesTemp = angular.copy($scope.roles);
       } else {
         $scope.rolesTemp.splice(index,1,$scope.roles[index]);
-      };
+      }
       $scope.roles[index].edit = true;
-    }
+    };
 
     $scope.cancelRole = function (index) {
       $scope.roles[index] = angular.copy($scope.rolesTemp[index]);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('SettingsIntegrationCtrl', function ($scope, $log) {
+  .controller('SettingsIntegrationCtrl', function ($scope) {
     $scope.pageTitle = 'Integrations';
 
     $scope.integrations = [{
@@ -63,9 +63,9 @@ angular.module('userAdminApp')
       if (!element.edit) {
         element.edit = true;
         element.collapsed = false;
-      };
+      }
     };
     $scope.save = function (element) {
       element.edit = false;
-    }
+    };
   });

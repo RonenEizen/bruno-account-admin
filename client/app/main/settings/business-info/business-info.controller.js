@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('SettingsBusinessInfoCtrl', function($scope) {
+  .controller('SettingsBusinessInfoCtrl', function($scope, Auth) {
     $scope.pageTitle = 'Business Info';
 
     // form validation
@@ -9,15 +9,15 @@ angular.module('userAdminApp')
     $scope.businessMaster = {};
     $scope.business = {
       edit: false,
-      name: "Sushi Place",
-      email: "sushi@sushi.com",
-      phone: "12345678910",
-      addr1: "3000 Ocean Pkwy",
-      addr2: "Suite 222",
-      city: "Brooklyn",
-      state: "NY",
+      name: 'Sushi Place',
+      email: 'sushi@sushi.com',
+      phone: '12345678910',
+      addr1: '3000 Ocean Pkwy',
+      addr2: 'Suite 222',
+      city: 'Brooklyn',
+      state: 'NY',
       zip: 11223,
-      country: "US"
+      country: 'US'
     };
 
     // restaurant info
@@ -25,15 +25,15 @@ angular.module('userAdminApp')
     $scope.restaurant = {
       sameAsBusiness: false,
       edit: false,
-      name: "",
-      email: "",
-      phone: "",
-      addr1: "",
-      addr2: "",
-      city: "",
-      state: "",
-      zip: "",
-      country: ""
+      name: '',
+      email: '',
+      phone: '',
+      addr1: '',
+      addr2: '',
+      city: '',
+      state: '',
+      zip: '',
+      country: ''
     };
 
     $scope.sameAsAbove = function() {
@@ -48,10 +48,9 @@ angular.module('userAdminApp')
           addr2: $scope.businessMaster.addr2,
           city: $scope.businessMaster.city,
           state: $scope.businessMaster.state,
-          state: $scope.businessMaster.state,
           zip: $scope.businessMaster.zip,
           country: $scope.businessMaster.country
-        }
+        };
       } else {
         $scope.restaurant = {};
       }
@@ -61,35 +60,35 @@ angular.module('userAdminApp')
     $scope.ownerMaster = {};
     $scope.owner = {
       edit: false,
-      fname: "",
-      lname: "",
-      bday: "",
-      ssn: "",
-      email: "",
-      phone: "",
-      addr1: "",
-      addr2: "",
-      city: "",
-      state: "",
-      zip: "",
-      country: ""
+      fname: '',
+      lname: '',
+      bday: '',
+      ssn: '',
+      email: '',
+      phone: '',
+      addr1: '',
+      addr2: '',
+      city: '',
+      state: '',
+      zip: '',
+      country: ''
     };
 
     // opening hours
     $scope.openingMaster = {};
     $scope.opening = {
       edit: false,
-      timeFormat: "ampm",
+      timeFormat: 'ampm',
       weekdays: [{
-        name: "Monday",
+        name: 'Monday',
         open: true,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
         stop1: new Date(1970, 0, 1, 14, 57, 0),
-        start2: "",
-        stop2: ""
+        start2: '',
+        stop2: ''
       }, {
-        name: "Tuesday",
+        name: 'Tuesday',
         open: true,
         split: true,
         start1: new Date(1970, 0, 1, 14, 57, 0),
@@ -97,7 +96,7 @@ angular.module('userAdminApp')
         start2: new Date(1970, 0, 1, 14, 57, 0),
         stop2: new Date(1970, 0, 1, 14, 57, 0)
       }, {
-        name: "Wednesday",
+        name: 'Wednesday',
         open: true,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
@@ -105,37 +104,37 @@ angular.module('userAdminApp')
         start2: new Date(1970, 0, 1, 14, 57, 0),
         stop2: new Date(1970, 0, 1, 14, 57, 0)
       }, {
-        name: "Thurday",
+        name: 'Thurday',
         open: false,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
         stop1: new Date(1970, 0, 1, 14, 57, 0),
-        start2: "",
-        stop2: ""
+        start2: '',
+        stop2: ''
       }, {
-        name: "Friday",
+        name: 'Friday',
         open: false,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
         stop1: new Date(1970, 0, 1, 14, 57, 0),
-        start2: "",
-        stop2: ""
+        start2: '',
+        stop2: ''
       }, {
-        name: "Saturday",
+        name: 'Saturday',
         open: false,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
         stop1: new Date(1970, 0, 1, 14, 57, 0),
-        start2: "",
-        stop2: ""
+        start2: '',
+        stop2: ''
       }, {
-        name: "Sunday",
+        name: 'Sunday',
         open: false,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
         stop1: new Date(1970, 0, 1, 14, 57, 0),
-        start2: "",
-        stop2: ""
+        start2: '',
+        stop2: ''
       }]
     };
 
@@ -159,7 +158,7 @@ angular.module('userAdminApp')
           $scope.opening = angular.copy($scope.openingMaster);
           $scope.opening.edit = false;
           break;
-      };
+      }
     };
     $scope.save = function(section) {
       switch (section) {
@@ -179,7 +178,7 @@ angular.module('userAdminApp')
           $scope.openingMaster = angular.copy($scope.opening);
           $scope.opening.edit = false;
           break;
-      };
+      }
     };
 
 

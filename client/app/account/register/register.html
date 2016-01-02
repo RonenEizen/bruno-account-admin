@@ -4,7 +4,7 @@
     <form class="form" name="form" ng-submit="register(form)" novalidate>
       <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,'has-error': form.name.$invalid && submitted }">
         <label>Find your business on the web</label>
-        <input type="text" class="form-control" ng-model="business" />
+        <input type="text" class="form-control" ng-model="business" placeholder="Start typing your business name..." typeahead-min-length="3" uib-typeahead="address for address in getPlaces($viewValue)" />
       </div>
       <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,'has-error': form.name.$invalid && submitted }">
         <label>Name</label>

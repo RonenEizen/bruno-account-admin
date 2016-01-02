@@ -7,7 +7,7 @@ angular.module('userAdminApp')
     $scope.subdomainMaster = {};
     $scope.subdomain = {
       edit: false,
-      subdomain: ""
+      subdomain: ''
     };
 
     $scope.save = function() {

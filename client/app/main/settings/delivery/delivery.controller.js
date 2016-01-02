@@ -10,11 +10,11 @@ angular.module('userAdminApp')
       edit: false,
       email: {
         enabled: true,
-        input: ""
+        input: ''
       },
       phone: {
         enabled: false,
-        input: ""
+        input: ''
       }
     };
 
@@ -23,15 +23,15 @@ angular.module('userAdminApp')
       edit: false,
       minimun: {
         enabled: false,
-        input: ""
+        input: ''
       },
       surcharge: {
         enabled: false,
-        input: ""
+        input: ''
       },
       instructions: {
         enabled: false,
-        input: ""
+        input: ''
       }
     };
 
@@ -39,17 +39,17 @@ angular.module('userAdminApp')
     $scope.deliveryMaster = {};
     $scope.delivery = {
       edit: false,
-      timeFormat: "ampm",
+      timeFormat: 'ampm',
       weekdays: [{
-        name: "Monday",
+        name: 'Monday',
         open: true,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
         stop1: new Date(1970, 0, 1, 14, 57, 0),
-        start2: "",
-        stop2: ""
+        start2: '',
+        stop2: ''
       }, {
-        name: "Tuesday",
+        name: 'Tuesday',
         open: true,
         split: true,
         start1: new Date(1970, 0, 1, 14, 57, 0),
@@ -57,7 +57,7 @@ angular.module('userAdminApp')
         start2: new Date(1970, 0, 1, 14, 57, 0),
         stop2: new Date(1970, 0, 1, 14, 57, 0)
       }, {
-        name: "Wednesday",
+        name: 'Wednesday',
         open: true,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
@@ -65,37 +65,37 @@ angular.module('userAdminApp')
         start2: new Date(1970, 0, 1, 14, 57, 0),
         stop2: new Date(1970, 0, 1, 14, 57, 0)
       }, {
-        name: "Thurday",
+        name: 'Thurday',
         open: false,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
         stop1: new Date(1970, 0, 1, 14, 57, 0),
-        start2: "",
-        stop2: ""
+        start2: '',
+        stop2: ''
       }, {
-        name: "Friday",
+        name: 'Friday',
         open: false,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
         stop1: new Date(1970, 0, 1, 14, 57, 0),
-        start2: "",
-        stop2: ""
+        start2: '',
+        stop2: ''
       }, {
-        name: "Saturday",
+        name: 'Saturday',
         open: false,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
         stop1: new Date(1970, 0, 1, 14, 57, 0),
-        start2: "",
-        stop2: ""
+        start2: '',
+        stop2: ''
       }, {
-        name: "Sunday",
+        name: 'Sunday',
         open: false,
         split: false,
         start1: new Date(1970, 0, 1, 14, 57, 0),
         stop1: new Date(1970, 0, 1, 14, 57, 0),
-        start2: "",
-        stop2: ""
+        start2: '',
+        stop2: ''
       }]
     };
 
@@ -114,7 +114,7 @@ angular.module('userAdminApp')
           $scope.additional = angular.copy($scope.additionalMaster);
           $scope.additional.edit = false;
           break;
-      };
+      }
     };
     $scope.save = function(section) {
       switch (section) {
@@ -131,6 +131,6 @@ angular.module('userAdminApp')
           $scope.additionalMaster = angular.copy($scope.additional);
           $scope.additional.edit = false;
           break;
-      };
+      }
     };
   });

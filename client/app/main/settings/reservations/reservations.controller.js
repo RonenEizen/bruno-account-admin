@@ -28,8 +28,8 @@ angular.module('userAdminApp')
       },
       // fake data
       sets: [
-        { edit: false, name: "Booth", capacity: 6, quantity: 5, mergeable: false },
-        { edit: false, name: "Window", capacity: 2, quantity: 2, mergeable: true }
+        { edit: false, name: 'Booth', capacity: 6, quantity: 5, mergeable: false },
+        { edit: false, name: 'Window', capacity: 2, quantity: 2, mergeable: true }
       ]
     };
 
@@ -44,7 +44,7 @@ angular.module('userAdminApp')
           $scope.tables = angular.copy($scope.tablesMaster);
           $scope.tables.edit = false;
           break;
-      };
+      }
     };
 
     $scope.save = function(section) {
@@ -57,6 +57,6 @@ angular.module('userAdminApp')
           $scope.tablesMaster = angular.copy($scope.tables);
           $scope.tables.edit = false;
           break;
-      };
+      }
     };
   });

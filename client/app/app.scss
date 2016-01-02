@@ -16,23 +16,23 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
-$beige:                         #F4F4E7;
-$black:                         #050505;
-$blue:                          #0A55D0;
-$buttonblue:                    #0D5CD0;
-$darkgray:                      #535353;
-$darkergray:                    #191919;
-$green:                         #1CD729;
-$lightgray:                     #D5D5D5;
-$lightgray1:                    #EAEAEA;
-$lightgray2:                    #C1C1C1;
-$orange:                        #FD9B26;
-$red:                           #ED4736;
-$white:                         #FFFFFF;
+$beige:                           #F4F4E7;
+$black:                           #050505;
+$blue:                            #0A55D0;
+$buttonblue:                      #0D5CD0;
+$darkgray:                        #535353;
+$darkergray:                      #191919;
+$green:                           #1CD729;
+$lightgray:                       #D5D5D5;
+$lightgray1:                      #EAEAEA;
+$lightgray2:                      #C1C1C1;
+$orange:                          #FD9B26;
+$red:                             #ED4736;
+$white:                           #FFFFFF;
 
-$title-font:                    Museo, "Open Sans", sans-serif;
-$serif-font:                    Museo, Oswald, serif;
-$sans-font:                     "Helvetica Neue", HelveticaNeue, Roboto, "Open Sans", sans;
+$title-font:                      Museo, "Open Sans", sans-serif;
+$serif-font:                      Museo, Oswald, serif;
+$sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open Sans", sans;
 
 @mixin desaturate($amount)        {-webkit-filter: grayscale($amount); -moz-filter: grayscale($amount); -ms-filter: grayscale($amount); -o-filter: grayscale($amount);}
 
@@ -202,20 +202,22 @@ form.custom-form                  {
   fieldset[disabled] select       { -webkit-appearance: none; -moz-appearance: none; appearance: none; text-indent: 0.01px; text-overflow: ''; }
 }
 .tabs-group                       { border-bottom: 1px solid $lightgray; color: $darkgray; font: 12px $serif-font; margin-top: 10px;
-  .tab                            { background: $beige; border: 1px solid $lightgray; float: left; padding: 8px 30px; margin: 0 -1px -1px 0; text-transform: uppercase;
-    &.active                      { background: $white; border-bottom-color: $white; }
+  a                               { color: inherit; float: left; margin: 0 -1px -1px 0;
     &:first-child                 { margin-left: 20px; }
+    &:focus,
+    &:hover                       { text-decoration: none; }
+    .tab                          { background: $beige; border: 1px solid $lightgray; cursor: pointer; float: left; padding: 8px 30px; text-transform: uppercase;
+      &.active                    { background: $white; border-bottom-color: $white; }
+    }
   }
 }
 
 // REPLACES TABLES
 .table                            { display: table;
-  .thead                          { display: table-header-group;
-    .tr .th                       { border-bottom-color: #050505; font-weight: bold; }
-  }
+  .thead                          { display: table-header-group; }
   .tbody                          { display: table-row-group; }
   .tfoot                          { display: table-footer-group; }
-  .tr                             { display: table-row;
-    .td, .th                      { border-bottom: 2px solid #ddd; display: table-cell; padding: 8px; vertical-align: middle; }
-  }
+  .tr                             { display: table-row; }
+  .th                             { border-bottom-color: #050505; font-weight: bold; }
+  .td, .th                        { border-bottom: 1px solid #ddd; display: table-cell; padding: 8px; vertical-align: middle; }
 }

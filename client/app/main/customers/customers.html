@@ -1,4 +1,4 @@
-<header class="top clearfix">
+<header class="top clearfix" ng-class="{expanded: !navRevealed}">
   <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed">&#9776;</span>
   <h1>{{pageTitle}}</h1>
   <button class="btn btn-primary center-block" ng-click="addCustomer()">+ New Customer</button>

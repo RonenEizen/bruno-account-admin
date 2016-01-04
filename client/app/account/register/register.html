@@ -1,31 +1,28 @@
 <div class="container">
-  <div class="row"><a href="/login">Return to Login Page</a></div>
+  <div class="row"><h1>Create An Account</h1></div>
   <div class="row">
     <form class="form" name="form" ng-submit="register(form)" novalidate>
-      <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,'has-error': form.name.$invalid && submitted }">
-        <label>Find your business on the web</label>
+<!--       <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,'has-error': form.name.$invalid && submitted }">
+        <label>Business Name</label>
         <input type="text" class="form-control" ng-model="business" placeholder="Start typing your business name..." typeahead-min-length="3" uib-typeahead="address for address in getPlaces($viewValue)" />
-      </div>
-      <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,'has-error': form.name.$invalid && submitted }">
-        <label>Name</label>
+      </div> -->
+<!--       <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,'has-error': form.name.$invalid && submitted }">
         <div class="row">
         <div class="col-sm-6">
-          <input type="text" name="firstname" placeholder="First Name" class="form-control" ng-model="user.firstname" required/>
-          <p class="help-block" ng-show="form.name.$error.required && submitted">A first name is required</p>
+          <label>First Name</label>
+          <input type="text" name="firstname" class="form-control" ng-model="user.firstname" required/>
         </div>
         <div class="col-sm-6">
-          <input type="text" name="lastname" placeholder="Last Name" class="form-control" ng-model="user.lastname" required/>
-          <p class="help-block" ng-show="form.name.$error.required && submitted">A first name is required</p>
+          <label>Last Name</label>
+          <input type="text" name="lastname" class="form-control" ng-model="user.lastname" required/>
         </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,'has-error': form.email.$invalid && submitted }">
         <label>Email</label>
 
         <input type="email" name="email" class="form-control" ng-model="user.email" required mongoose-error/>
-        <p class="help-block" ng-show="form.email.$error.email && submitted">Doesn't look like a valid email.</p>
-        <p class="help-block" ng-show="form.email.$error.required && submitted">What's your email address?</p>
         <p class="help-block" ng-show="form.email.$error.mongoose">{{ errors.email }}</p>
       </div>
 
@@ -33,15 +30,26 @@
         <label>Password</label>
 
         <input type="password" name="password" class="form-control" ng-model="user.password"
-               ng-minlength="3"
+               ng-minlength="6"
                required
                mongoose-error/>
-        <p class="help-block" ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">Password must be at least 3 characters.</p>
+        <p class="help-block" ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">Password must be at least 6 characters.</p>
+        <p class="help-block" ng-show="form.password.$error.mongoose">{{ errors.password }}</p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,'has-error': form.password.$invalid && submitted }">
+        <label>Confirm Password</label>
+
+        <input type="password" name="password" class="form-control" ng-model="user.password"
+               ng-minlength="6"
+               required
+               mongoose-error/>
+        <p class="help-block" ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">Password must be at least 6 characters.</p>
         <p class="help-block" ng-show="form.password.$error.mongoose">{{ errors.password }}</p>
       </div>
 
       <div>
-        <button class="btn btn-inverse btn-lg btn-login" type="submit">Register</button>
+        <a href="/login" class="btn btn-default btn-lg btn-register">Cancel</a>
+        <button class="btn btn-inverse btn-lg btn-login" type="submit">Next</button>
       </div>
     </form>
   </div>

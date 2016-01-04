@@ -43,6 +43,9 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
+@import 'account/register/business/business.scss';
+@import 'account/register/owner/owner.scss';
+@import 'account/register/register.scss';
 @import 'admin/admin.scss';
 @import 'main/admin/admin.scss';
 @import 'main/campaigns/campaigns.scss';

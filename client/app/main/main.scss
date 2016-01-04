@@ -1,11 +1,29 @@
 #wrapper                          { display: -webkit-flex; display: flex; height: 100%;
   #sidebar-wrapper                { max-width: 240px; min-width: 240px; height: 100%; position: relative; padding-top: 80px; background-color: $darkergray; -webkit-flex: 1; flex: 1; overflow: auto; -webkit-transition: margin-left 0.5s ease; -moz-transition: margin-left 0.5s ease; -o-transition: margin-left 0.5s ease; transition: margin-left 0.5s ease;
     ul                            { list-style: none; padding: 0;
-      li a                        { color: $beige; display: block; font: 110% $serif-font; height: 100%; width: 100%; text-decoration: none; padding: 12px 0px 12px 25px; }
+      li                          {
+        &.selected,
+        &:hover,
+        &.expanded                { background: $darkgray2; }
+        a                         { color: $beige; display: block; font: 110% $serif-font; height: 100%; width: 100%; text-decoration: none; padding: 12px 25px; position: relative; }
+        span                      { color: $lightgray; font-size: 80%; position: absolute; left: 10px; top: 14px; }
+        ul                        { background: $darkgray2;
+          li                      {
+            &.selected,
+            &:hover               { background: $darkgray1; }
+            a                     { font-size: 90%; padding: 5px 0 10px 40px; }
+          }
+        }
+      }
     }
     .hamburger                    { color: $beige; cursor: pointer; display: block; font-size: 28px; position: absolute; right: 25px; top: 10px; }
     .logo                         { display: block; position: absolute; top: 10px; left: 10px;
       img                         { width: 50px; }
+    }
+    .profile                      { color: $darkgray1; font: 16px $serif-font; margin-top: 40px; text-align: center;
+      img                         { border-radius: 100%; width: 70px; }
+      p                           { padding: 10px 0 0;}
+      .btn                        { background: $darkgray1; border: none; border-radius: 0; color: $white; padding: 5px 40px; }
     }
   }
   #page-content-wrapper           { position: relative; height: 100%; overflow: hidden; -webkit-flex: 1; flex: 1; }

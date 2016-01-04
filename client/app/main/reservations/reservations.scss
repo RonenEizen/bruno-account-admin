@@ -1,56 +1,122 @@
 .reservations                     { height: 100%;
   // top info
   .btn-new                        { background: none; border: 0; color: $blue; font-size: 18px; margin: 0 20px 0; padding: 0; }
-  .btn-cust                       { vertical-align: middle; white-space: nowrap;
+  .btn-cust                       { margin-top: 5px; vertical-align: middle; white-space: nowrap;
     .btn                          { background: none; border: none; font-size: 18px; margin: 0; padding: 4px; }
     .arrows                       { color: $blue; font-size: 22px; }
     .today                        { color: $darkgray; font-weight: 700; letter-spacing: -1px; }
   }
-  .legend                         { border-bottom: 1px solid $lightgray; list-style: none; padding: 0 0 10px; position: relative; top: -25px;
-    li                            { float: right; vertical-align: middle;
-      i                           { display: block; float: left; height: 15px; line-height: 15px;; margin: 0 5px 0 10px; width: 15px; }
-      &.active i                  { background: $green; }
-      &.closed i                  { background: $lightgray; }
-      &.pending i                 { background: $red; }
+
+  // body stuff
+  .calendar                       { background: $white; height: 100%; overflow: auto;
+    h2                            { font: 500 24px $serif-font; margin: 15px 0 10px; }
+    h3                            { font: 500 16px $serif-font; margin: 0 0 10px; }
+    time                          { color: $darkgray; display: block; font: 300 24px $serif-font; margin: 15px 0; text-align: center; }
+    .heading                      { height: 115px; }
+    .legend                       { list-style: none; padding: 0 0 5px; position: relative; top: -25px;
+      li                          { float: right; vertical-align: middle;
+        i                         { display: inline-block; float: left; height: 15px; line-height: 15px; margin: 0 5px 0 10px; width: 15px; }
+        &.active i                { background: $red; }
+        &.closed i                { background: $lightgray; }
+        &.pending i               { background: $green; }
+      }
+    }
+  }
+  .angular-date-picker            { background: none; border: none; color: $darkgray; margin-top: 15px;
+    ._month                       { background: none; border: none; padding: 0; }
+    ._days                        { margin: 0; width: 100%;
+      ._day-of-week,
+      ._day                       { width: calc(100%/7); border-radius: 100%;
+        &.-padding                { color: $lightgray;
+          &:hover                 { color: $white; }
+        }
+        &:hover,
+        &.-today                  { background: $lightgray; border: 1px solid transparent; }
+        &.-selected               { background: $darkgray; color: $white; }
+      }
     }
   }
 
-  // body stuff
-  h2                              { font: 500 24px $serif-font; margin: 15px 0 10px; }
-  time                            { color: $darkgray; display: block; font: 300 24px $serif-font; margin: 15px 0; text-align: center; }
-  .calendar                       { background: $white; height: 100%; overflow: auto; }
+  // CALENDAR WIDGET
+  .calendar-widget                { height: calc(100% - 115px);
+    .booked                       {
+      &.active                    { background: $red; color: $white; }
+      &.closed                    { background: $lightgray; color: $darkgray; }
+      &.pending                   { background: $green; color: $white; }
+    }
+  }
 
   // DAY VIEW: tab specifics
   .day-view                       { background: $beige; height: 100%;
-    .calendar                     {
-      h3                          { font: 500 16px $serif-font; margin: 0 0 10px; }
+    .heading                      {
+      & ~ .row                    { overflow: auto; }
+      .legend                     { border-bottom: 1px solid $lightgray; }
     }
-    .sidebar                      { height: 100%; overflow: auto;
-      hr                          { border-top-color: $darkgray; }
-      h3.red                      { color: $red; margin-top: 0; }
-      time                        { margin-top: 55px; }
-      .status                     { border-radius: 100%; color: $white; font-size: 10px; line-height: 50px; text-align: center; width: 50px;
-        &.active                  { background: $green; }
-        &.closed                  { background: $lightgray; color: $darkgray; }
-        &.pending                 { background: $red; }
-      }
-    }
-    .angular-date-picker          { background: none; border: none; color: $darkgray;
-      ._month                     { background: none; border: none; padding: 0; }
-      ._days                      { margin: 0; width: 100%;
-        ._day-of-week,
-        ._day                     { width: calc(100%/7); border-radius: 100%;
-          &.-padding              { color: $lightgray; }
-          &:hover,
-          &.-today                { background: $lightgray; border: 1px solid transparent; }
-          &.-selected             { background: $darkgray; color: $white; }
+    .calendar-widget              { color: $lightgray; position: relative; width: 6300px;
+      .cal-row                    { border-bottom: 1px solid $lightgray; height: 35px; line-height: 35px; position: relative;
+        .booked                   { padding: 4px; height: 34px; position: absolute; top: 0;
+          span                    { display: block; line-height: 26px; text-align: center; }
+          &.selected              {
+            span                  { background: rgba(51,51,51,.15); }
+          }
         }
       }
-
+      .ruler                      { border-left: 1px solid $red; height: calc(35px * 8); position: absolute; top: 54px; width: 0; z-index: 100;
+        time                      { color: $red; font-size: 12px; font-weight: 700; left: 5px; position: absolute; top: -23px; width: 60px; }
+        i                         { background: $red; border-radius: 100%; display: block; height: 9px; left: -5px; position: absolute; top: -5px; width: 9px; }
+      }
+      ul.cal-row                  { border-top: 1px solid $lightgray; color: $lightgray2; display: flex; font-weight: 700; justify-content: space-between; list-style: none; margin: 0; padding: 0;
+        li                        { white-space: nowrap; }
+      }
+    }
+    .sidebar                      { box-shadow: 0 0 10px rgba(0,0,0,.2); height: 100%; overflow: auto;
+      hr                          { border-top-color: $darkgray; }
+      h3.red                      { color: $red; margin-top: 0; }
+      time                        { color: $darkgray; display: block; font: 300 24px $serif-font; margin: 55px 0 15px; text-align: center; }
+      .status                     { border-radius: 100%; color: $white; font-size: 10px; line-height: 50px; text-align: center; width: 50px;
+        &.active                  { background: $red; }
+        &.closed                  { background: $lightgray; color: $darkgray; }
+        &.pending                 { background: $green; }
+      }
     }
   }
   // WEEK VIEW: tab specifics
-  .week-view                      {}
+  .week-view                      {
+    .overflow                     { height: 400px; overflow: auto; } // TODO: set flexible height
+    .table                        { color: $lightgray; margin-bottom: 0; position: relative;
+      .th, .td                    { border-bottom: 1px solid $lightgray; border-right: 1px solid $lightgray; height: 35px; padding: 0;
+        &:first-child             { padding-right: 8px; text-align: right; width: 60px; }
+        &:last-child              { border-right: none; }
+      }
+
+      .thead                      {
+        .tr                       {
+          &:first-child           { color: $darkgray; font: 300 16px $serif-font;
+            .th                   { border-right: none; padding: 8px; text-align: center; }
+          }
+          &:nth-child(2)          {
+            .th                   { border-bottom-width: 2px; }
+          }
+          .th:first-child         { border-right: none; }
+        }
+      }
+
+      .tbody                      { overflow: auto;
+        .tr                       {
+          .td                     {
+            &:first-child         { border: none;
+              span                { font-weight: bold; position: relative; top: 17px; }
+            }
+          }
+        }
+        .booked                   { position: absolute; width: 19px; }
+      }
+      .ruler                      { border-top: 1px solid $red; height: 1px; position: absolute; left: 60px; top: 185px; z-index: 100;
+        time                      { color: $red; font-size: 12px; font-weight: 700; left: -65px; position: absolute; top: -23px; width: 60px; }
+        i                         { background: $red; border-radius: 100%; display: block; height: 9px; position: absolute; top: -5px; width: 9px; }
+      }
+    }
+  }
   // MONTH VIEW: tab specifics
   .month-view                     {}
 }

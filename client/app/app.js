@@ -8,7 +8,6 @@ angular.module('userAdminApp', [
   'ui.bootstrap',
   'ui.router',
   'ui.mask',
-  'ui.calendar',
   'mp.datePicker'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {

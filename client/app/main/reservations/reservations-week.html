@@ -1,0 +1,111 @@
+<div class="col-md-12 week-view calendar">
+  <div class="row heading">
+    <div class="col-md-4">
+      <h2>{{currentDate.now() | date: 'MMMM dd, yyyy'}}</h2>
+      <h3>{{currentDate.now() | date: 'EEEE'}}, Week {{currentDate.now() | date: 'w'}}</h3>
+    </div>
+    <div class="col-md-4 text-center">
+      <time>{{(currentDate.now() | date: 'h:mm a').toLowerCase()}}</time>
+    </div>
+    <div class="col-md-4 text-right">
+      <div class="btn-cust">
+        <button class="btn arrows btn-primary fa fa-angle-left"></button>
+        <button class="btn today btn-default">TODAY</button>
+        <button class="btn arrows btn-primary fa fa-angle-right"></button>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <ul class="legend clearfix">
+        <li class="closed"><i></i> Closed</li>
+        <li class="pending"><i></i> Pending</li>
+        <li class="active"><i></i> Active</li>
+      </ul>
+    </div>
+  </div><!-- END .row.heading -->
+
+  <div class="row calendar-widget">
+    <div class="col-md-12 full-height">
+      <div class="table">
+        <div class="thead">
+          <div class="tr">
+            <div class="th"></div>
+            <div class="th" ng-style="{ width: colWidth }">Sun 03</div>
+            <div class="th" ng-style="{ width: colWidth }">Mon 04</div>
+            <div class="th" ng-style="{ width: colWidth }">Tue 05</div>
+            <div class="th" ng-style="{ width: colWidth }">Wed 06</div>
+            <div class="th" ng-style="{ width: colWidth }">Thu 07</div>
+            <div class="th" ng-style="{ width: colWidth }">Fri 08</div>
+            <div class="th" ng-style="{ width: colWidth }">Sat 09</div>
+          </div><!-- END .tr -->
+          <div class="tr">
+            <div class="th">all day</div>
+            <div class="th" ng-style="{ width: colWidth }"></div>
+            <div class="th" ng-style="{ width: colWidth }"></div>
+            <div class="th" ng-style="{ width: colWidth }"></div>
+            <div class="th" ng-style="{ width: colWidth }"></div>
+            <div class="th" ng-style="{ width: colWidth }"></div>
+            <div class="th" ng-style="{ width: colWidth }"></div>
+            <div class="th" ng-style="{ width: colWidth }"></div>
+          </div><!-- END .tr -->
+        </div><!-- END .thead -->
+      </div><!-- END .table -->
+
+
+      <div class="overflow">
+        <div class="table">
+          <div class="ruler" ng-style="{ width: tableWidth }">
+            <i ng-style="{ left: rulerPos }"></i>
+            <time>{{(currentDate.now() | date: 'h:mm a').toLowerCase()}}</time>
+          </div>
+          <div class="tbody">
+            <div class="tr" ng-repeat="hour in hours track by $index">
+              <div class="td"><span>{{hour}}</span></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+            </div><!-- END .tr -->
+            <div class="tr">
+              <div class="td"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }"></div>
+            </div><!-- END .tr -->
+
+            <!-- BOOKINGS -->
+            <!--                                                                      left: timeCol + (colWidth * weekdays['mon'] - colWidth) + offset } -->
+            <div class="booked closed" style="height: 90px; top: 35px;"   ng-style="{ left: 60      + (colWidth * weekdays['mon'] - colWidth) + 0      }"></div>
+            <div class="booked closed" style="height: 90px; top: 70px;"   ng-style="{ left: 60      + (colWidth * weekdays['mon'] - colWidth) + 20     }"></div>
+            <div class="booked closed" style="height: 90px; top: 105px;"  ng-style="{ left: 60      + (colWidth * weekdays['mon'] - colWidth) + 40     }"></div>
+            <div class="booked closed" style="height: 90px; top: 140px;"  ng-style="{ left: 60      + (colWidth * weekdays['mon'] - colWidth) + 60     }"></div>
+            <div class="booked closed" style="height: 90px; top: 175px;"  ng-style="{ left: 60      + (colWidth * weekdays['mon'] - colWidth) + 80     }"></div>
+            <div class="booked closed" style="height: 90px; top: 210px;"  ng-style="{ left: 60      + (colWidth * weekdays['mon'] - colWidth) + 100    }"></div>
+
+            <div class="booked closed" style="height: 90px; top: 35px;"   ng-style="{ left: 60      + (colWidth * weekdays['tue'] - colWidth) + 0      }"></div>
+            <div class="booked closed" style="height: 90px; top: 70px;"   ng-style="{ left: 60      + (colWidth * weekdays['tue'] - colWidth) + 20     }"></div>
+            <div class="booked active" style="height: 90px; top: 105px;"  ng-style="{ left: 60      + (colWidth * weekdays['tue'] - colWidth) + 40     }"></div>
+            <div class="booked active" style="height: 90px; top: 140px;"  ng-style="{ left: 60      + (colWidth * weekdays['tue'] - colWidth) + 60     }"></div>
+            <div class="booked active" style="height: 90px; top: 175px;"  ng-style="{ left: 60      + (colWidth * weekdays['tue'] - colWidth) + 80     }"></div>
+            <div class="booked pending" style="height: 90px; top: 210px;" ng-style="{ left: 60      + (colWidth * weekdays['tue'] - colWidth) + 100    }"></div>
+
+            <div class="booked pending" style="height: 90px; top: 35px;"  ng-style="{ left: 60      + (colWidth * weekdays['wed'] - colWidth) + 0      }"></div>
+            <div class="booked pending" style="height: 90px; top: 70px;"  ng-style="{ left: 60      + (colWidth * weekdays['wed'] - colWidth) + 20     }"></div>
+            <div class="booked pending" style="height: 90px; top: 105px;" ng-style="{ left: 60      + (colWidth * weekdays['wed'] - colWidth) + 40     }"></div>
+            <div class="booked pending" style="height: 90px; top: 140px;" ng-style="{ left: 60      + (colWidth * weekdays['wed'] - colWidth) + 60     }"></div>
+            <div class="booked pending" style="height: 90px; top: 175px;" ng-style="{ left: 60      + (colWidth * weekdays['wed'] - colWidth) + 80     }"></div>
+            <div class="booked pending" style="height: 90px; top: 210px;" ng-style="{ left: 60      + (colWidth * weekdays['wed'] - colWidth) + 100    }"></div>
+            <!-- END BOOKINGS -->
+
+          </div><!-- END .tbody -->
+        </div><!-- END .table -->
+      </div><!-- END .overflow -->
+    </div><!-- END .col-md-12 -->
+  </div><!-- END .row.calendar-widget -->
+</div><!-- END .week-view -->

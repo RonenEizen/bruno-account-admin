@@ -1,0 +1,91 @@
+<div class="col-md-12 day-view">
+  <div class="row full-height">
+    <div class="col-md-8 calendar">
+      <div class="row heading">
+        <div class="col-md-4">
+          <h2>{{currentDate.now() | date: 'MMMM dd, yyyy'}}</h2>
+          <h3>{{currentDate.now() | date: 'EEEE'}}, Week {{currentDate.now() | date: 'w'}}</h3>
+        </div>
+        <div class="col-md-12">
+          <ul class="legend clearfix">
+            <li class="closed"><i></i> Closed</li>
+            <li class="pending"><i></i> Pending</li>
+            <li class="active"><i></i> Active</li>
+          </ul>
+        </div>
+      </div><!-- END .row.heading -->
+
+      <div class="row">
+        <div class="calendar-widget">
+          <div class="col-md-12">
+            <div class="ruler" ng-style="{left: leftPos}">
+              <i></i>
+              <time>{{(currentDate.now() | date: 'h:mm a').toLowerCase()}}</time>
+            </div>
+            <div>all day</div>
+            <ul class="cal-row">
+              <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
+            </ul>
+            <div class="cal-row">
+              <div class="booked pending" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
+            </div>
+            <div class="cal-row">
+              <div class="booked active selected" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
+            </div>
+            <div class="cal-row">
+              <div class="booked closed" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
+              <div class="booked pending" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
+            </div>
+            <div class="cal-row">
+              <div class="booked active" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
+            </div>
+            <div class="cal-row">
+              <div class="booked active" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
+            </div>
+            <div class="cal-row">
+              <div class="booked pending" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
+            </div>
+            <div class="cal-row"></div>
+            <div class="cal-row"></div>
+          </div>
+        </div><!-- END .calendar-widget -->
+      </div><!-- END .row -->
+    </div><!-- END .calendar -->
+
+    <div class="col-md-4 sidebar">
+      <div class="row">
+        <div class="col-md-7 date-picker">
+          <date-picker ng-model="date"></date-picker>
+          <strong>date picked: {{date}}</strong>
+        </div>
+        <div class="col-md-5">
+          <div class="btn-cust pull-right">
+            <button class="btn arrows btn-primary fa fa-angle-left"></button>
+            <button class="btn today btn-default">TODAY</button>
+            <button class="btn arrows btn-primary fa fa-angle-right"></button>
+          </div>
+          <time>{{(currentDate.now() | date: 'h:mm a').toLowerCase()}}</time>
+        </div>
+      </div><!-- END .row -->
+      <hr>
+
+      <div class="row">
+        <div class="col-md-9">
+          <h3 class="red">Table for 6</h3>
+          <p>
+            <strong>Tuesday, Nov 11</strong><br>
+            <strong>6pm to 7:30pm</strong>
+          </p>
+          <p>Jarred Leto<br>(347) 578-9001</p>
+          <p><small>NOTE: would like a table by the window, gluten free, pays with Discover</small></p>
+          <button class="btn btn-primary">ACTIONS</button>
+        </div>
+        <div class="col-md-3">
+          <div class="status pending">Pending</div>
+          <!-- <div class="status active">Active</div>
+          <div class="status closed">Closed</div> -->
+        </div>
+      </div><!-- END .row -->
+    </div><!-- END .sidebar -->
+  </div><!-- END .row -->
+</div><!-- END .day-view -->

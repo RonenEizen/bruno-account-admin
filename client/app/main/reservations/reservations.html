@@ -6,110 +6,13 @@
 <div class="container-fluid reservations">
 
   <div class="row tabs-group">
-    <div class="tab" ng-class="{active: view === 'day'}" ng-click="view = 'day'">Day View</div>
-    <div class="tab" ng-class="{active: view === 'week'}" ng-click="view = 'week'">Week View</div>
-    <div class="tab" ng-class="{active: view === 'month'}" ng-click="view = 'month'">Month View</div>
+    <a href="/reservations/day"><div class="tab" ng-class="{active: view === 'day'}">Day View</div></a>
+    <a href="/reservations/week"><div class="tab" ng-class="{active: view === 'week'}">Week View</div></a>
+    <a href="/reservations/month"><div class="tab" ng-class="{active: view === 'month'}">Month View</div></a>
     <button class="pull-right btn-new">+ Create a New Reservation</button>
   </div>
 
   <div class="row full-height">
-    <div class="col-md-12 day-view" ng-show="view === 'day'">
-      <div class="row full-height">
-        <div class="col-md-8 calendar">
-          <h2>{{currentDate.now() | date: 'MMMM dd, yyyy'}}</h2>
-          <h3>Tuesday, Week 46</h3>
-          <ul class="legend clearfix">
-            <li class="closed"><i></i> Closed</li>
-            <li class="pending"><i></i> Pending</li>
-            <li class="active"><i></i> Active</li>
-          </ul>
-
-          <div ui-calendar id="calendar-day" ng-model="eventSources"></div>
-        </div>
-        <div class="col-md-4 sidebar">
-          <div class="row">
-            <div class="col-md-7 date-picker">
-              <date-picker ng-model="date"></date-picker>
-              <strong>date picked: {{date}}</strong>
-            </div>
-            <div class="col-md-5">
-              <div class="btn-cust pull-right">
-                <button class="btn arrows btn-primary fa fa-angle-left"></button>
-                <button class="btn today btn-default">TODAY</button>
-                <button class="btn arrows btn-primary fa fa-angle-right"></button>
-              </div>
-              <time>{{(currentDate.now() | date: 'h:mm a').toLowerCase()}}</time>
-            </div>
-          </div><!-- END .row -->
-          <hr>
-
-          <div class="row">
-            <div class="col-md-9">
-              <h3 class="red">Table for 6</h4>
-              <p>
-                <strong>Tuesday, Nov 11</strong><br>
-                <strong>6pm to 7:30pm</strong>
-              </p>
-              <p>Jarred Leto<br>(347) 578-9001</p>
-              <p><small>NOTE: would like a table by the window, gluten free, pays with Discover</small></p>
-              <button class="btn btn-primary">ACTIONS</button>
-            </div>
-            <div class="col-md-3">
-              <div class="status pending">Pending</div>
-              <!-- <div class="status active">Active</div>
-              <div class="status closed">Closed</div> -->
-            </div>
-          </div><!-- END .row -->
-
-        </div><!-- END .sidebar -->
-      </div><!-- END .row -->
-
-    </div><!-- END .day-view -->
-
-    <div class="col-md-12 week-view" ng-show="view === 'week'">
-      <div class="row">
-        <div class="col-md-4">
-          <h2>{{currentDate.now() | date: 'MMMM dd, yyyy'}}</h2> <br>
-        </div>
-        <div class="col-md-4 text-center">
-          <time>{{(currentDate.now() | date: 'h:mma').toLowerCase()}}</time>
-        </div>
-        <div class="col-md-4 text-right">
-          <div class="btn-cust">
-            <button class="btn arrows btn-primary fa fa-angle-left"></button>
-            <button class="btn today btn-default">TODAY</button>
-            <button class="btn arrows btn-primary fa fa-angle-right"></button>
-          </div>
-        </div>
-      </div><!-- END .row -->
-      <div class="row">
-        <div class="col-md-12">
-          <div ui-calendar class="calendar-widget" ng-model="eventSources"></div>
-        </div>
-      </div><!-- END .row -->
-    </div><!-- END .week-view -->
-
-    <div class="col-md-12 month-view" ng-show="view === 'month'">
-      <div class="row">
-        <div class="col-md-4">
-          <h2>{{currentDate.now() | date: 'MMMM dd, yyyy'}}</h2> <br>
-        </div>
-        <div class="col-md-4 text-center">
-          <time>{{(currentDate.now() | date: 'h:mma').toLowerCase()}}</time>
-        </div>
-        <div class="col-md-4 text-right">
-          <div class="btn-cust">
-            <button class="btn arrows btn-primary fa fa-angle-left"></button>
-            <button class="btn today btn-default">TODAY</button>
-            <button class="btn arrows btn-primary fa fa-angle-right"></button>
-          </div>
-        </div>
-      </div><!-- END .row -->
-      <div class="row">
-        <div class="col-md-12">
-          <div ui-calendar class="calendar-widget" ng-model="eventSources"></div>
-        </div>
-      </div>
-    </div><!-- END .month-view -->
-  </div><!-- END .row -->
+    <div class="full-height" data-ui-view></div>
+  </div><!-- END .row.full-height -->
 </div><!-- END .container-fluid -->

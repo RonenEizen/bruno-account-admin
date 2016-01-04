@@ -21,6 +21,8 @@ $black:                           #050505;
 $blue:                            #0A55D0;
 $buttonblue:                      #0D5CD0;
 $darkgray:                        #535353;
+$darkgray1:                       #464646;
+$darkgray2:                       #343434;
 $darkergray:                      #191919;
 $green:                           #1CD729;
 $lightgray:                       #D5D5D5;
@@ -147,8 +149,7 @@ html, body, div[ui-view]          { height: 100%; }
 .full-height                      { height: 100%; }
 
 // HEADER
-header.top                        { background: $beige; border-bottom: 1px solid $lightgray; padding: 10px 20px; position: fixed; transition: width 0.5s ease; top: 0; width: calc(100% - 240px); z-index: 10;
-  &.expanded                      { width: 100%; }
+header.top                        { background: $beige; border-bottom: 1px solid $lightgray; padding: 10px 20px; position: fixed; top: 0; width: 100%; z-index: 10;
   h1                              { color: $red; font: 300 24px $title-font; float: left; margin: 0; text-align: left; }
   .hamburger                      { color: $darkgray; float: left; padding: 10px; border-right: 1px solid $lightgray; font-size: 28px; margin: -10px 20px -10px -20px; padding: 5px 10px; }
   .actions-right                  { padding: 10px 20px; position: absolute; right: 0; top: 0; line-height: 34px;

@@ -16,7 +16,7 @@ angular.module('userAdminApp')
       angular.extend(modalScope, scope);
 
       return $modal.open({
-        templateUrl: 'components/modal/modal.html',
+        templateUrl: 'components/modal/flyout.html',
         windowClass: modalClass,
         scope: modalScope
       });
@@ -24,6 +24,7 @@ angular.module('userAdminApp')
 
     // Public API here
     return {
+      flyout: openModal,
 
       /* Confirmation modals */
       confirm: {

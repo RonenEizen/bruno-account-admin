@@ -18,7 +18,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 $beige:                           #F4F4E7;
 $black:                           #050505;
-$blue:                            #0A55D0;
+$blue:                            #0B5CD0;
 $buttonblue:                      #0D5CD0;
 $darkgray:                        #535353;
 $darkgray1:                       #464646;
@@ -29,7 +29,7 @@ $lightgray:                       #D5D5D5;
 $lightgray1:                      #EAEAEA;
 $lightgray2:                      #C1C1C1;
 $orange:                          #FD9B26;
-$red:                             #ED4736;
+$red:                             #E30A11;
 $white:                           #FFFFFF;
 
 $title-font:                      Museo, "Open Sans", sans-serif;
@@ -158,7 +158,7 @@ header.top                        { background: $beige; border-bottom: 1px solid
   .hamburger                      { color: $darkgray; float: left; padding: 10px; border-right: 1px solid $lightgray; font-size: 28px; margin: -10px 20px -10px -20px; padding: 5px 10px; }
   .actions-right                  { padding: 10px 20px; position: absolute; right: 0; top: 0; line-height: 34px;
     > i                           { font-size: 24px; margin: 0 10px; vertical-align: middle; }
-    ul                            { background: $beige; border: 1px solid $lightgray; padding: 10px 20px; position: absolute; right: 15px; top: 40px; width: 160px; z-index: 100;
+    ul                            { background: $beige; border: 1px solid $lightgray; border-radius: 3px; padding: 10px 20px; position: absolute; right: 15px; top: 40px; width: 160px; z-index: 100;
       li                          { list-style: none; margin: 0; }
     }
   }
@@ -182,7 +182,8 @@ form.custom-form                  {
   select,
   textarea                        { /*border: none;*/ border-radius: 0; box-shadow: none; font-size: 16px; }
   .resetsave                      { margin: 30px 0 20px;
-    button                        { border: none; font-family: $serif-font; padding: 12px 50px; text-transform: uppercase; text-shadow: none;
+    button                        { border: none; border-radius: 3px; font-family: $serif-font; padding: 8px 35px; text-shadow: none;
+      &.btn-danger                { background: $red; }
       &.btn-default               { background: $lightgray; color: $darkgray; }
       &.btn-primary               { background: $buttonblue; }
     }

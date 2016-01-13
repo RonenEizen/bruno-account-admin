@@ -1,5 +1,17 @@
 .modal-dialog                     { border-radius: 0; height: 100%; margin: 0; width: 100%; }
-.flyout                           { background: $white; height: 100%; position: fixed; top: 0; left: 0; width: 100%;
+.flyout                           { background: $white; height: 100%; overflow: auto; position: fixed; top: 0; left: 0; width: 100%;
   h1                              { font: 300 4rem $serif-font; margin: 40px 0; }
   .close                          { font-weight: lighter; line-height: 1rem; padding: 10px; }
+  .status                         {
+    &.cancelled                   { color: $red; }
+    &.fulfilled                   { color: $lightgray; }
+    &.inprogress                  { color: $orange; }
+    &.new                         { color: $green1; }
+  }
+  .table                          { margin-top: 20px;
+    .tr                           {
+      .td, .th                    { padding: 15px 0; }
+      .th                         { border-bottom: 2px solid $black; padding: 5px 0; }
+    }
+  }
 }

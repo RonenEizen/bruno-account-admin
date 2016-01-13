@@ -1,21 +1,17 @@
-.orders                         {
-  table                           {
-    &.table                       {
-      tr td                       { vertical-align: middle; }
-      .form-group input + input   { margin-top: 5px; }
-    }
-    &.orders                      {
-      tr                          {
-        &.fulfilled               {
-          td                      { color: $lightgray; }
-          .status                 { color: lighten($orange, 20%); }
-        }
-        th                        { border-bottom-color: $black; font-size: 13px; }
-        td                        { padding: 15px 10px;
-          &.status                { color: $orange; }
-          a                       { color: $blue; }
-        }
+.orders                           {
+  &.table                         {
+    .tr                           {
+      &.new                       {
+        .status                   { color: $green1; }
       }
+      &.inprogress                {
+        .status                   { color: $orange; }
+      }
+      &.cancelled                 {
+        .status                   { color: $red; }
+      }
+      &.fulfilled                 { color: $lightgray; }
+      .td                         { padding: 15px 8px; }
     }
   }
   .order-details                  { margin-top: 80px;

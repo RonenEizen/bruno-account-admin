@@ -25,6 +25,7 @@ $darkgray1:                       #464646;
 $darkgray2:                       #343434;
 $darkergray:                      #191919;
 $green:                           #1CD729;
+$green1:                          #00AB2E;
 $lightgray:                       #D5D5D5;
 $lightgray1:                      #EAEAEA;
 $lightgray2:                      #C1C1C1;
@@ -152,14 +153,14 @@ html, body, div[ui-view]          { height: 100%; }
 .full-height                      { height: 100%; }
 
 // HEADER
-header.top                        { background: $beige; border-bottom: 1px solid $lightgray; padding: 10px 20px; position: fixed; transition: width 0.5s ease; top: 0; width: calc(100% - 240px); z-index: 50;
+header.top                        { background: $beige; border-bottom: 1px solid $lightgray; height: 50px; padding: 10px 20px; position: fixed; transition: width 0.5s ease; top: 0; width: calc(100% - 240px); z-index: 50;
   &.expanded                      { width: 100%; }
   h1                              { color: $red; font: 300 24px $title-font; float: left; margin: 0; text-align: left; }
   .hamburger                      { color: $darkgray; float: left; padding: 10px; border-right: 1px solid $lightgray; font-size: 28px; margin: -10px 20px -10px -20px; padding: 5px 10px; }
-  .actions-right                  { padding: 10px 20px; position: absolute; right: 0; top: 0; line-height: 34px;
-    > i                           { font-size: 24px; margin: 0 10px; vertical-align: middle; }
+  .actions-right                  { padding: 0 20px; position: absolute; right: 0; top: 0;
+    & > i                         { font-size: 24px; line-height: 50px; margin: 0 10px; vertical-align: middle; }
     ul                            { background: $beige; border: 1px solid $lightgray; border-radius: 3px; padding: 10px 20px; position: absolute; right: 15px; top: 40px; width: 160px; z-index: 100;
-      li                          { list-style: none; margin: 0; }
+      li                          { list-style: none; margin: 0; padding: 5px 0; }
     }
   }
 }
@@ -181,17 +182,19 @@ form.custom-form                  {
   input,
   select,
   textarea                        { /*border: none;*/ border-radius: 0; box-shadow: none; font-size: 16px; }
-  .resetsave                      { margin: 30px 0 20px;
-    button                        { border: none; border-radius: 3px; font-family: $serif-font; padding: 8px 35px; text-shadow: none;
-      &.btn-danger                { background: $red; }
-      &.btn-default               { background: $lightgray; color: $darkgray; }
-      &.btn-primary               { background: $buttonblue; }
-    }
-  }
+  .resetsave                      { margin: 30px 0 20px; }
   .taggroup                       { border: 1px solid $lightgray; padding: 6px 12px;
     .newtag                       { border: none; }
   }
   .label                          { background: $lightgray; border-radius: 0; color: $darkgray; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
+}
+button,
+.btn                              { border: none; border-radius: 3px; font-family: $serif-font; padding: 8px 25px; text-shadow: none;
+  &.btn-danger                    { background: $red; }
+  &.btn-default                   { background: $lightgray; color: $darkgray; }
+  &.btn-primary                   { background: $buttonblue; }
+  &.btn-success                   { background: $green1; }
+  &.btn-warning                   { background: $orange; }
 }
 .text-input                       {
   input[readonly],
@@ -231,6 +234,6 @@ form.custom-form                  {
   .tbody                          { display: table-row-group; }
   .tfoot                          { display: table-footer-group; }
   .tr                             { display: table-row; }
-  .th                             { border-bottom-color: #050505; font-weight: bold; }
+  .th                             { border-bottom-color: #050505; font-weight: bold; font-family: $serif-font; }
   .td, .th                        { border-bottom: 1px solid #ddd; display: table-cell; padding: 8px; vertical-align: middle; }
 }

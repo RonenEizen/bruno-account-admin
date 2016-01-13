@@ -1,42 +1,230 @@
 <header class="top clearfix" ng-class="{expanded: !navRevealed}">
   <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed">&#9776;</span>
   <h1>{{pageTitle}}</h1>
+  <button class="btn btn-primary center-block">+ New Order</button>
+  <div class="actions-right" ng-init="pickColumns=false">
+    <i class="fa fa-upload"></i>
+    <i class="fa fa-th" ng-click="showColumnPicker()"></i>
+    <ul ng-show="pickColumns">
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.number"> Order Num</label></li>
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.customer"> Customer</label></li>
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.type"> Type</label></li>
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.amount"> Amount</label></li>
+      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.status"> Status</label></li>
+    </ul>
+  </div>
+  <div
+    class="invisible-layer"
+    ng-show="invisibleLayer"
+    ng-click="toggleFilter('');pickColumns=false;invisibleLayer=false;">
+    &nbsp;
+  </div>
 </header>
 
-<div class="col-md-10 col-md-offset-1 main content">
-  <form class="custom-form" action="">
-    <div class="table orders">
+<div class="col-md-12 main content">
+  <div class="table orders">
 
-      <div class="thead">
-        <div class="tr">
-          <div class="th">Customer</div>
-          <div class="th">Type</div>
-          <div class="th">Order Num</div>
-          <div class="th">Amount</div>
-          <div class="th">Status</div>
-          <div class="th">Details</div>
-          <div class="th">Actions</div>
-        </div><!-- END .tr -->
-      </div><!-- END .thead -->
+    <div class="thead">
+      <div class="tr">
 
-      <div class="tbody">
-        <div class="tr" ng-repeat="order in orders">
-          <div class="td">{{order.customer}}</div>
-          <div class="td">{{order.type}}</div>
-          <div class="td">{{order.number}}</div>
-          <div class="td">{{order.amount | currency}}</div>
-          <div class="td status">{{order.status}}</div>
-          <div class="td"><a href="/orders/{{$index}}">View &gt;</a></div>
-          <div class="td">
-            <fieldset>
-              <select
-              class="form-control"
-              ng-model="order.selection"
-              ng-options="action.id as action.name for action in orderActions"></select>
-            </fieldset>
+        <div class="th" ng-show="displayColumns.name">
+          <div class="filter">
+            <i class="fa fa-filter" ng-click="toggleFilter('name')"></i>
+            <div ng-show="openFilter.name">
+              <input type="text" ng-model="ordersFilter.name">
+            </div>
           </div>
-        </div><!-- END .tr -->
-      </tbody>
-    </table>
-  </form>
+          <span ng-click="clickedHeader='name'; reverse = !reverse">Name
+            <i class="sortorder fa" ng-show="clickedHeader === 'name'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'name'"></i>
+          </span>
+        </div>
+
+        <div class="th" ng-show="displayColumns.number">
+          <div class="filter">
+            <i class="fa fa-filter" ng-click="toggleFilter('number')"></i>
+            <div ng-show="openFilter.number">
+              <input type="text" ng-model="ordersFilter.number">
+            </div>
+          </div>
+          <span ng-click="clickedHeader='number'; reverse = !reverse">Order Num
+            <i class="sortorder fa" ng-show="clickedHeader === 'number'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'number'"></i>
+          </span>
+        </div>
+        <div class="th" ng-show="displayColumns.customer">
+          <div class="filter">
+            <i class="fa fa-filter" ng-click="toggleFilter('customer')"></i>
+            <div ng-show="openFilter.customer">
+              <input type="text" ng-model="ordersFilter.customer">
+            </div>
+          </div>
+          <span ng-click="clickedHeader='customer'; reverse = !reverse">Customer
+            <i class="sortorder fa" ng-show="clickedHeader === 'customer'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'customer'"></i>
+          </span>
+        </div>
+        <div class="th" ng-show="displayColumns.type">
+          <div class="filter">
+            <i class="fa fa-filter" ng-click="toggleFilter('type')"></i>
+            <div ng-show="openFilter.type">
+              <input type="text" ng-model="ordersFilter.type">
+            </div>
+          </div>
+          <span ng-click="clickedHeader='type'; reverse = !reverse">Type
+            <i class="sortorder fa" ng-show="clickedHeader === 'type'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'type'"></i>
+          </span>
+        </div>
+        <div class="th" ng-show="displayColumns.amount">
+          <div class="filter">
+            <i class="fa fa-filter" ng-click="toggleFilter('amount')"></i>
+            <div ng-show="openFilter.amount">
+              <input type="text" ng-model="ordersFilter.amount">
+            </div>
+          </div>
+          <span ng-click="clickedHeader='amount'; reverse = !reverse">Amount
+            <i class="sortorder fa" ng-show="clickedHeader === 'amount'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'amount'"></i>
+          </span>
+        </div>
+        <div class="th" ng-show="displayColumns.status">
+          <div class="filter">
+            <i class="fa fa-filter" ng-click="toggleFilter('status')"></i>
+            <div ng-show="openFilter.status">
+              <input type="text" ng-model="ordersFilter.status">
+            </div>
+          </div>
+          <span ng-click="clickedHeader='status'; reverse = !reverse">Status
+            <i class="sortorder fa" ng-show="clickedHeader === 'status'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'status'"></i>
+          </span>
+        </div>
+      </div><!-- END .tr -->
+    </div><!-- END .thead -->
+
+    <div class="tbody">
+      <div
+        class="tr"
+        ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders"
+        ng-class="setStatus(order.status)">
+        <div ng-show="displayColumns.number" class="td"><a ng-click="customModal('modalOrder.html', editing)">{{order.number}}</a></div>
+        <div ng-show="displayColumns.customer" class="td">{{order.customer}}</div>
+        <div ng-show="displayColumns.type" class="td">{{order.type}}</div>
+        <div ng-show="displayColumns.amount" class="td">{{order.amount | currency}}</div>
+        <div ng-show="displayColumns.status" class="td status">{{orderStatus[order.status]}}</div>
+      </div><!-- END .tr -->
+    </div><!-- END .tbody -->
+  </div><!-- END .table.orders -->
+  <button class="btn btn-flat center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
 </div><!-- END .main.col-md-12 -->
+
+<script type="text/ng-template" id="modalOrder.html">
+  <div class="container custom-form">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center"><span ng-show="modal.object.edit">Edit</span> Order No. {{modal.object.number}}</h1>
+          </div>
+        </div><!-- END .row -->
+        <div class="row">
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Customer</strong><br>
+            <span>{{modal.object.customer}}</span>
+          </div>
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Home Phone</strong><br>
+            <span>{{modal.object.homePhone}}</span>
+          </div>
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Mobile Phone</strong><br>
+            <span>{{modal.object.mobilePhone}}</span>
+          </div>
+        </div><!-- END .row -->
+        <div class="row">
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Address</strong><br>
+            <span>{{modal.object.addr}}</span>
+          </div>
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Personal Email</strong><br>
+            <span><a href="mailto:{{modal.object.email}}">{{modal.object.email}}</a></span>
+          </div>
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Work Email</strong><br>
+            <span><a href="mailto:{{modal.object.workEmail}}">{{modal.object.workEmail}}</a></span>
+          </div>
+        </div><!-- END .row -->
+        <div class="row">
+          <div class="col-md-4 form-group" ng-switch="{{modal.object.type}}">
+            <strong class="control-label">Type</strong><br>
+            <span ng-switch-when="0">Pickup</span>
+            <span ng-switch-when="1">Delivery</span>
+          </div>
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Amount</strong><br>
+            <span>{{modal.object.amount | currency}}</span>
+          </div>
+          <div class="col-md-4 form-group" ng-switch="modal.object.status">
+            <strong class="control-label">Status</strong><br>
+            <span class="status cancelled" ng-switch-when="0">Cancelled</span>
+            <span class="status new" ng-switch-when="1">New</span>
+            <span class="status inprogress" ng-switch-when="2">In Progress</span>
+            <span class="status fulfilled" ng-switch-when="3">Fulfilled</span>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table">
+              <div class="thead">
+                <div class="tr">
+                  <div class="th">Food Item</div>
+                  <div class="th">Category</div>
+                  <div class="th">Quantity</div>
+                  <div class="th text-right">Price</div>
+                </div>
+              </div><!-- END .tbody -->
+              <div class="tbody">
+                <div class="tr">
+                  <div class="td">Coke</div>
+                  <div class="td">Beverage</div>
+                  <div class="td">2</div>
+                  <div class="td text-right">2 x $1.00</div>
+                </div>
+                <div class="tr">
+                  <div class="td">French Onion Soup</div>
+                  <div class="td">Soup</div>
+                  <div class="td">2</div>
+                  <div class="td text-right">2 x $9.00</div>
+                </div>
+                <div class="tr">
+                  <div class="td">Mozarella w/ Walnut</div>
+                  <div class="td">Appetizer</div>
+                  <div class="td">1</div>
+                  <div class="td text-right">$7.00</div>
+                </div>
+              </div><!-- END .thead -->
+            </div><!-- END .table -->
+          </div><!-- END .col-md-12 -->
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave">
+            <div class="pull-left">
+              <button class="btn btn-default" ng-click="$dismiss()">Back</button>
+              <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Edit</button>
+            </div><!-- END .pull-left -->
+            <div class="pull-right">
+              <button class="btn btn-danger"  ng-hide="{{modal.object.status === 0}}" ng-click="modal.object.status = 0; $dismiss()">Cancel Order</button>
+              <button class="btn btn-default" ng-show="{{modal.object.status === 0}}" ng-click="modal.object.status = 1; $dismiss()">Reopen Order</button>
+              <button class="btn btn-success" ng-show="{{modal.object.status === 1}}" ng-click="modal.object.status = 2; $dismiss()">Start Progress</button>
+              <button class="btn btn-warning" ng-show="{{modal.object.status === 2}}" ng-click="modal.object.status = 3; $dismiss()">Fulfill Order</button>
+            </div><!-- END .pull-right -->
+          </div><!-- END .resetsave -->
+        </div><!-- END .row -->
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</script>

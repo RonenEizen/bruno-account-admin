@@ -1,13 +1,7 @@
 .customers                        {
   .table                          {
     &.customers-table             {
-      .fa-sort                    { color: $lightgray2; }
       .tr .td                     { padding: 15px 8px; }
     }
-  }
-  .sortorder                      { vertical-align: baseline; }
-  .filter                         { display: inline; position: relative; z-index: 100;
-    & > div                       { background: $beige; border: 1px solid $lightgray; border-radius: 3px; padding: 10px; position: absolute; top: 25px; }
-    i.filtered                    { color: $red; }
   }
 }

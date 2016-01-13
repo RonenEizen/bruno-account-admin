@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('CustomersCtrl', function ($scope, Modal) {
+  .controller('CustomersCtrl', function ($scope) {
     $scope.pageTitle = 'Customers';
 
     // Columns to be displayed
@@ -40,24 +40,20 @@ angular.module('userAdminApp')
       }
     };
 
-
-    // CUSTOMERS FLYOUT
-    $scope.modal = Modal.flyout;
-
-    // calls the modal with the html template and user index
-    $scope.modalCustomer = function (html, index) {
-      var customerModal = {
-        modal: {
-          dismissable: true,
-          html: html
-        }
-      };
-      return $scope.modal(customerModal);
-    };
-
     // FAKE DATA
     $scope.editing = {
-      edit: false, delete: false, fname: 'Hucas', mname: '', lname: 'Engel', phone: 2555555555, homePhone: '2555555555', email: 'hucasengel@gmail.com' , addr: '84th Visconde Duprat St.', zip: 54551, city: 'Lorto Alegre', workEmail: 'hucasengel@work.com'
+      edit: false,
+      delete: false,
+      fname: 'Hucas',
+      mname: '',
+      lname: 'Engel',
+      phone: 2555555555,
+      homePhone: '2555555555',
+      email: 'hucasengel@gmail.com',
+      addr: '84th Visconde Duprat St.',
+      zip: 54551,
+      city: 'Lorto Alegre',
+      workEmail: 'hucasengel@work.com'
     };
     $scope.customers = [
       { edit: false, fname: 'Hucas', mname: '', lname: 'Engel', phone: 2555555555, homePhone: '2555555555', email: 'hucasengel@gmail.com' , addr: '84th Visconde Duprat St.', zip: 54551, city: 'Lorto Alegre', workEmail: 'hucasengel@work.com' },

@@ -1,7 +1,6 @@
 'use strict';
 
 angular.module('userAdminApp', [
-  'btford.socket-io',
   'ngCookies',
   'ngResource',
   'ngSanitize',

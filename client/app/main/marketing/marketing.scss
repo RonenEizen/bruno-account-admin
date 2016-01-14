@@ -1,0 +1,19 @@
+.marketing                        {
+  .campaigns                      {
+    .channel                      { border: 1px solid $blue; display: inline-block; height: 30px; margin-right: 5px; width: 30px;
+      &.enabled                   { color: $blue; }
+      &.disabled                  { color: $lightgray; }
+      &.fb                        { background: yellow; }
+      &.tw                        { background: yellow; }
+      &.ga                        { background: yellow; }
+      &.em                        { background: yellow; }
+      &.bn                        { background: yellow; }
+    }
+    .status                       {
+      &.cancelled                 { color: $red; }
+      &.current                   { color: $green1; }
+      &.expired                   { color: $lightgray; }
+      &.expiring                  { color: $orange; }
+    }
+  }
+}

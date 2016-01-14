@@ -1,0 +1,209 @@
+<header class="top clearfix" ng-class="{expanded: !navRevealed}">
+  <div class="row">
+    <div class="col-md-5">
+      <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed">&#9776;</span>
+      <h1>{{pageTitle}}</h1>
+    </div><!-- END .col-md-5 -->
+    <div class="col-md-2">
+      <button class="btn btn-primary center-block">+ New Campaign</button>
+    </div><!-- END .col-md-2 -->
+    <div class="col-md-5">
+      <div class="actions-right" ng-init="pickColumns=false">
+        <i class="fa fa-upload"></i>
+        <i class="fa fa-th" ng-click="showColumnPicker()"></i>
+        <ul ng-show="pickColumns">
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.number"> Order Num</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.customer"> Customer</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.type"> Type</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.amount"> Amount</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.status"> Status</label></li>
+        </ul>
+      </div>
+      <form class="form-group has-feedback">
+        <input type="search" class="form-control" ng-model="campaignsFilter" placeholder="Find a campaign">
+        <span class="fa fa-search form-control-feedback"></span>
+      </form>
+    </div><!-- END .col-md-5 -->
+  </div><!-- END .row -->
+  <div
+    class="invisible-layer"
+    ng-show="invisibleLayer"
+    ng-click="toggleFilter('');pickColumns=false;invisibleLayer=false;">
+    &nbsp;
+  </div>
+</header>
+
+<div class="col-md-12 main marketing">
+  <div class="table campaigns">
+    <div class="thead">
+      <div class="tr">
+
+        <div class="th" ng-show="displayColumns.campaign">
+          <div class="filter">
+            <i class="fa fa-filter" ng-click="toggleFilter('campaign')"></i>
+            <div ng-show="openFilter.campaign">
+              <input type="text" ng-model="campaignsFilter.campaign">
+            </div>
+          </div>
+          <span ng-click="clickedHeader='campaign'; reverse = !reverse">Campaign
+            <i class="sortorder fa" ng-show="clickedHeader === 'campaign'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'campaign'"></i>
+          </span>
+        </div>
+
+        <div class="th" ng-show="displayColumns.enabled">
+          <span>Enabled Channels</span>
+        </div>
+
+        <div class="th" ng-show="displayColumns.disabled">
+          <span>Disabled Channels</span>
+        </div>
+
+        <div class="th" ng-show="displayColumns.status">
+          <span ng-click="clickedHeader='status'; reverse = !reverse">Status
+            <i class="sortorder fa" ng-show="clickedHeader === 'status'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'status'"></i>
+          </span>
+        </div>
+
+      </div><!-- END .tr -->
+    </div><!-- END .thead -->
+
+    <div class="tbody">
+      <div
+        class="tr"
+        ng-repeat="campaign in campaigns | filter:campaignsFilter | orderBy:clickedHeader:reverse | limitTo:displayingCampaigns">
+        <div ng-show="displayColumns.campaign" class="td">
+          <a ng-click="customModal('modalCampain.html', editing)">{{campaign.name}}</a>
+        </div>
+        <div ng-show="displayColumns.enabled" class="td"><i class="channel enabled {{social}}" ng-repeat="social in campaign.enabled"></i></div>
+        <div ng-show="displayColumns.disabled" class="td"><i class="channel disabled {{social}}" ng-repeat="social in campaign.disabled"></i></div>
+        <div ng-show="displayColumns.status" ng-switch="campaign.status" class="td">
+          <span class="status cancelled" ng-switch-when="0">Cancelled</span>
+          <span class="status current" ng-switch-when="1">Current</span>
+          <span class="status expiring" ng-switch-when="2">Expiring</span>
+          <span class="status expired" ng-switch-when="3">Expired</span>
+        </div>
+      </div><!-- END .tr -->
+    </div><!-- END .tbody -->
+  </div><!-- END .table -->
+  <button class="btn btn-flat center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
+</div><!-- END .main.col-md-12 -->
+
+
+
+
+
+
+
+
+<script type="text/ng-template" id="modalCampain.html">
+  <div class="container custom-form">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center"><span ng-show="modal.object.edit">Edit</span> Order No. {{modal.object.number}}</h1>
+          </div>
+        </div><!-- END .row -->
+        <div class="row">
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Customer</strong><br>
+            <span>{{modal.object.customer}}</span>
+          </div>
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Home Phone</strong><br>
+            <span>{{modal.object.homePhone}}</span>
+          </div>
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Mobile Phone</strong><br>
+            <span>{{modal.object.mobilePhone}}</span>
+          </div>
+        </div><!-- END .row -->
+        <div class="row">
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Address</strong><br>
+            <span>{{modal.object.addr}}</span>
+          </div>
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Personal Email</strong><br>
+            <span><a href="mailto:{{modal.object.email}}">{{modal.object.email}}</a></span>
+          </div>
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Work Email</strong><br>
+            <span><a href="mailto:{{modal.object.workEmail}}">{{modal.object.workEmail}}</a></span>
+          </div>
+        </div><!-- END .row -->
+        <div class="row">
+          <div class="col-md-4 form-group" ng-switch="{{modal.object.type}}">
+            <strong class="control-label">Type</strong><br>
+            <span ng-switch-when="0">Pickup</span>
+            <span ng-switch-when="1">Delivery</span>
+          </div>
+          <div class="col-md-4 form-group">
+            <strong class="control-label">Amount</strong><br>
+            <span>{{modal.object.amount | currency}}</span>
+          </div>
+          <div class="col-md-4 form-group" ng-switch="modal.object.status">
+            <strong class="control-label">Status</strong><br>
+            <span class="status cancelled" ng-switch-when="0">Cancelled</span>
+            <span class="status new" ng-switch-when="1">New</span>
+            <span class="status inprogress" ng-switch-when="2">In Progress</span>
+            <span class="status fulfilled" ng-switch-when="3">Fulfilled</span>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table">
+              <div class="thead">
+                <div class="tr">
+                  <div class="th">Food Item</div>
+                  <div class="th">Category</div>
+                  <div class="th">Quantity</div>
+                  <div class="th text-right">Price</div>
+                </div>
+              </div><!-- END .tbody -->
+              <div class="tbody">
+                <div class="tr">
+                  <div class="td">Coke</div>
+                  <div class="td">Beverage</div>
+                  <div class="td">2</div>
+                  <div class="td text-right">2 x $1.00</div>
+                </div>
+                <div class="tr">
+                  <div class="td">French Onion Soup</div>
+                  <div class="td">Soup</div>
+                  <div class="td">2</div>
+                  <div class="td text-right">2 x $9.00</div>
+                </div>
+                <div class="tr">
+                  <div class="td">Mozarella w/ Walnut</div>
+                  <div class="td">Appetizer</div>
+                  <div class="td">1</div>
+                  <div class="td text-right">$7.00</div>
+                </div>
+              </div><!-- END .thead -->
+            </div><!-- END .table -->
+          </div><!-- END .col-md-12 -->
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave">
+            <div class="pull-left">
+              <button class="btn btn-default" ng-click="$dismiss()">Back</button>
+              <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Edit</button>
+            </div><!-- END .pull-left -->
+            <div class="pull-right">
+              <button class="btn btn-danger"  ng-hide="{{modal.object.status === 0}}" ng-click="modal.object.status = 0; $dismiss()">Cancel Order</button>
+              <button class="btn btn-default" ng-show="{{modal.object.status === 0}}" ng-click="modal.object.status = 1; $dismiss()">Reopen Order</button>
+              <button class="btn btn-success" ng-show="{{modal.object.status === 1}}" ng-click="modal.object.status = 2; $dismiss()">Start Progress</button>
+              <button class="btn btn-warning" ng-show="{{modal.object.status === 2}}" ng-click="modal.object.status = 3; $dismiss()">Fulfill Order</button>
+            </div><!-- END .pull-right -->
+          </div><!-- END .resetsave -->
+        </div><!-- END .row -->
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</script>
+

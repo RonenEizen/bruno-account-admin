@@ -1,13 +1,12 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('DashboardCtrl', function ($scope, $http, socket) {
+  .controller('DashboardCtrl', function ($scope, $http) {
     $scope.pageTitle = 'Home';
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
-      socket.syncUpdates('thing', $scope.awesomeThings);
     });
 
     $scope.addThing = function() {
@@ -21,8 +20,4 @@ angular.module('userAdminApp')
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
     };
-
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('thing');
-    });
   });

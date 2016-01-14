@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row"><h1>Business Owner Info</h1></div>
+  <div class="row"><p>This form is uptional. You can provide this information later.</p></div>
   <div class="row">
     <form class="form" name="form" ng-submit="updateOwner(form)" novalidate>
       <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,'has-error': form.name.$invalid && submitted }">
@@ -44,8 +45,10 @@
       </div>
       <div>
         <a href="/login" class="btn btn-default btn-lg btn-register">Cancel</a>
-        <button class="btn btn-inverse btn-lg btn-login" type="submit">Next</button>
+        <a href="/register/business" class="btn btn-default btn-lg btn-register">Skip</a>
+        <button class="btn btn-inverse btn-lg btn-login" type="submit">Save | Next: Business Info</button>
       </div>
     </form>
   </div>
+  <div class="row"><p><sup>*</sup> We will never share your information with third parties.</p></div>
 </div>

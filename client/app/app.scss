@@ -49,12 +49,10 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 @import 'account/register/register.scss';
 @import 'admin/admin.scss';
 @import 'main/admin/admin.scss';
-@import 'main/campaigns/campaigns.scss';
 @import 'main/customers/customers.scss';
 @import 'main/dashboard/dashboard.scss';
 @import 'main/food-menus/food-menus.scss';
 @import 'main/main.scss';
-@import 'main/marketing-wizard/marketing-wizard.scss';
 @import 'main/marketing/marketing.scss';
 @import 'main/orders/orders.scss';
 @import 'main/reservations/reservations.scss';
@@ -66,7 +64,6 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 @import 'main/settings/reservations/reservations.scss';
 @import 'main/settings/settings.scss';
 @import 'main/settings/users-and-roles/users-and-roles.scss';
-@import 'main/site-builder/site-builder.scss';
 @import 'main/statistics/statistics.scss';
 @import 'modal/modal.scss';
 // endinjector
@@ -107,19 +104,6 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 }
 
 /**
- * Bootstrap Icon Font
- */
-
-@font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url('/bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot');
-    src: url('/bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-    url('/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'),
-    url('/bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
-    url('/bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
-
-/**
  *Font Awesome Fonts
  */
 
@@ -156,10 +140,17 @@ html, body, div[ui-view]          { height: 100%; }
 // HEADER
 header.top                        { background: $beige; border-bottom: 1px solid $lightgray; height: 50px; padding: 10px 20px; position: fixed; transition: width 0.5s ease; top: 0; width: calc(100% - 240px); z-index: 50;
   &.expanded                      { width: 100%; }
+  .row                            { overflow: visible; }
   h1                              { color: $red; font: 300 24px $title-font; float: left; margin: 0; text-align: left; }
   .hamburger                      { color: $darkgray; float: left; padding: 10px; border-right: 1px solid $lightgray; font-size: 28px; margin: -10px 20px -10px -20px; padding: 5px 10px; }
-  .actions-right                  { padding: 0 20px; position: absolute; right: 0; top: 0;
-    & > i                         { font-size: 24px; line-height: 50px; margin: 0 10px; vertical-align: middle; }
+  form                            { float: right;
+    .form-control                 { border-radius: 2px; border: 1px solid $lightgray;
+      &:focus                     { box-shadow: none; }
+    }
+    .form-control-feedback        { color: $darkgray; top: 10px; }
+  }
+  .actions-right                  { float: right; padding: 0 10px 0 0;
+    & > i                         { font-size: 24px; line-height: 30px; margin-left: 15px; vertical-align: middle; }
     ul                            { background: $beige; border: 1px solid $lightgray; border-radius: 3px; padding: 10px 20px; position: absolute; right: 15px; top: 40px; width: 160px; z-index: 100;
       li                          { list-style: none; margin: 0; padding: 5px 0; }
     }
@@ -189,8 +180,7 @@ form.custom-form                  {
   }
   .label                          { background: $lightgray; border-radius: 0; color: $darkgray; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
 }
-button,
-.btn                              { border: none; border-radius: 3px; font-family: $serif-font; padding: 8px 25px; text-shadow: none;
+button.btn                        { border: none; border-radius: 3px; font-family: $serif-font; padding: 8px 25px; text-shadow: none;
   &.btn-danger                    { background: $red; }
   &.btn-default                   { background: $lightgray; color: $darkgray; }
   &.btn-primary                   { background: $buttonblue; }
@@ -222,7 +212,7 @@ button,
     }
   }
 }
-.filter                           { display: inline; position: relative;
+.filter                           { display: inline; position: relative; font-family: $sans-font;
   & > div                         { background: $beige; border: 1px solid $lightgray; border-radius: 3px; padding: 10px; position: absolute; top: 25px; z-index: 50; }
   i.filtered                      { color: $red; }
 }

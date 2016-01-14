@@ -4,12 +4,12 @@ angular.module('userAdminApp')
   .controller('OrdersCtrl', function ($scope, $log) {
     $scope.pageTitle = 'Orders';
 
-    // Columns to be displayed
+    // Columns
+    $scope.displayColumns = { number: true, customer: true, type: true, amount: true, status: true };
     $scope.showColumnPicker = function () {
       $scope.pickColumns = true;
       $scope.invisibleLayer = true;
     };
-    $scope.displayColumns = { number: true, customer: true, type: true, amount: true, status: true };
 
     // Filters
     $scope.openFilter = { number: false, customer: false, type: false, amount: false, status: false };

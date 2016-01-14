@@ -2,7 +2,7 @@
   // top info
   .btn-new                        { background: none; border: 0; color: $blue; font-size: 18px; margin: 0 20px 0; padding: 0; }
   .btn-cust                       { margin-top: 5px; vertical-align: middle; white-space: nowrap;
-    .btn                          { background: none; border: none; font-size: 18px; margin: 0; padding: 4px; }
+    button                        { background: none; border: none; font-size: 18px; margin: 0; padding: 4px; }
     .arrows                       { color: $blue; font-size: 22px; }
     .today                        { color: $darkgray; font-weight: 700; letter-spacing: -1px; }
   }

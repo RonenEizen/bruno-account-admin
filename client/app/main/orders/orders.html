@@ -1,23 +1,31 @@
 <header class="top clearfix" ng-class="{expanded: !navRevealed}">
-  <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed">&#9776;</span>
-  <h1>{{pageTitle}}</h1>
-  <button class="btn btn-primary center-block">+ New Order</button>
-  <div class="actions-right" ng-init="pickColumns=false">
-    <i class="fa fa-upload"></i>
-    <i class="fa fa-th" ng-click="showColumnPicker()"></i>
-    <ul ng-show="pickColumns">
-      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.number"> Order Num</label></li>
-      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.customer"> Customer</label></li>
-      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.type"> Type</label></li>
-      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.amount"> Amount</label></li>
-      <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.status"> Status</label></li>
-    </ul>
-  </div>
-  <div
-    class="invisible-layer"
-    ng-show="invisibleLayer"
-    ng-click="toggleFilter('');pickColumns=false;invisibleLayer=false;">
-    &nbsp;
+  <div class="row">
+    <div class="col-md-5">
+      <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed">&#9776;</span>
+      <h1>{{pageTitle}}</h1>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary">+ New Order</button>
+    </div>
+    <div class="col-md-5">
+      <div class="actions-right" ng-init="pickColumns=false">
+        <i class="fa fa-upload"></i>
+        <i class="fa fa-th" ng-click="showColumnPicker()"></i>
+        <ul ng-show="pickColumns">
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.number"> Order Num</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.customer"> Customer</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.type"> Type</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.amount"> Amount</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.status"> Status</label></li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="invisible-layer"
+      ng-show="invisibleLayer"
+      ng-click="toggleFilter('');pickColumns=false;invisibleLayer=false;">
+      &nbsp;
+    </div>
   </div>
 </header>
 

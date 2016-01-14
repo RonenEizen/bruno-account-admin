@@ -10,13 +10,17 @@ angular.module('userAdminApp', [
   'ui.mask',
   'mp.datePicker'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  .config([
+    '$stateProvider', 
+    '$urlRouterProvider', 
+    '$locationProvider',
+    '$httpProvider',
+    function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
       .otherwise('/dashboard');
-
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
-  })
+  }])
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {

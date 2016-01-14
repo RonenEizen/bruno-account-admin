@@ -5,10 +5,10 @@ angular.module('userAdminApp')
     $scope.$parent.pageTitle = 'Reservations';
 
     // sets current tab
-    $scope.$parent.view = $location.$$url.replace("/reservations/", "");
+    $scope.$parent.view = $location.$$url.replace('/reservations/', '');
     $scope.setView = function (view) {
       $scope.$parent.view = view;
-      $location.$$url = "/reservations/" + view;
+      $location.$$url = '/reservations/' + view;
     };
 
     // set and update time every second
@@ -21,14 +21,13 @@ angular.module('userAdminApp')
 
     // WEEK VIEW
     // set column width
-    $scope.tableWidth;
     if (document.getElementsByClassName('table').length > 0) {
-      $scope.tableWidth = document.querySelectorAll(".table")[0].clientWidth;
-    };
+      $scope.tableWidth = document.querySelectorAll('.table')[0].clientWidth;
+    }
 
     $scope.colWidth = Math.round((($scope.tableWidth - 60)/7));
     $scope.weekdays = { sun: 1, mon: 2, tue: 3, wed: 4, thu:5, fri: 6, sat: 7 };
-    $scope.rulerPos = ($scope.colWidth * $scope.weekdays['mon']) - ($scope.colWidth + 6);
+    $scope.rulerPos = ($scope.colWidth * $scope.weekdays.mon) - ($scope.colWidth + 6);
 
     // calendar
     $scope.hours = ['12 AM', '1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM', '10 PM', '11 PM', '12 AM' ];

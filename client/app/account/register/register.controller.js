@@ -1,18 +1,26 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('RegisterCtrl', function ($scope, Auth, $location, $http) {
+  .controller('RegisterCtrl', function ($window, $scope, Auth, $location, $http, $timeout) {
     $scope.user = {};
     $scope.errors = {};
-
-
-
-    $scope.getPlaces = function(val) {
-      $http.jsonp('https://maps.googleapis.com/maps/api/place/autocomplete/json?callback=JSON_CALLBACK&key=AIzaSyD9lsOgEk9lzW-AiQiKjgGIjwbM_ZFd1rA&radius=10000&input='+val)
-        .success(function(response){
-          console.log(response);
-        });
-      };
+    $scope.selected = undefined;
+    var _service = new $window.google.maps.places.AutocompleteService();
+    
+    $scope.getPlaces = function(value) {
+      var _predictions;
+      _service.getPlacePredictions({
+        input: value,
+        types: ['establishment']
+      }, function(predictions, status) {
+        _predictions = predictions;
+      });
+      return $timeout(function() {
+        if(_predictions) {
+          return _predictions;
+        }
+      }, 100);
+    };
 
     $scope.register = function(form) {
       $scope.submitted = true;

@@ -1,13 +1,14 @@
 .marketing                        {
-  .campaigns                      {
-    .channel                      { border: 1px solid $blue; display: inline-block; height: 30px; margin-right: 5px; width: 30px;
+  .table.campaigns                {
+    .td                           { padding: 15px 8px;}
+    .channel                      { font: normal normal normal 25px 'BrunoSocial' !important; speak: none; line-height: 1; margin-right: 15px; text-transform: none; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale;
       &.enabled                   { color: $blue; }
       &.disabled                  { color: $lightgray; }
-      &.fb                        { background: yellow; }
-      &.tw                        { background: yellow; }
-      &.ga                        { background: yellow; }
-      &.em                        { background: yellow; }
-      &.bn                        { background: yellow; }
+      &.bn:before                 { content: "\e900"; }
+      &.em:before                 { content: "\e903"; }
+      &.fb:before                 { content: "\e901"; }
+      &.ga:before                 { content: "\e902"; }
+      &.tw:before                 { content: "\e904"; }
     }
     .status                       {
       &.cancelled                 { color: $red; }

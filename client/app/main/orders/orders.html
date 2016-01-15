@@ -1,7 +1,7 @@
 <header class="top clearfix" ng-class="{expanded: !navRevealed}">
   <div class="row">
     <div class="col-md-5">
-      <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed">&#9776;</span>
+      <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed"><i class="icon-hamburger_menu"></i></span>
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
@@ -9,8 +9,8 @@
     </div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
-        <i class="fa fa-upload"></i>
-        <i class="fa fa-th" ng-click="showColumnPicker()"></i>
+        <i class="icon-export_data"></i>
+        <i class="icon-grid" ng-click="showColumnPicker()"></i>
         <ul ng-show="pickColumns">
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.number"> Order Num</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.customer"> Customer</label></li>
@@ -37,7 +37,7 @@
 
         <div class="th" ng-show="displayColumns.name">
           <div class="filter">
-            <i class="fa fa-filter" ng-click="toggleFilter('name')"></i>
+            <i class="icon-filter" ng-click="toggleFilter('name')"></i>
             <div ng-show="openFilter.name">
               <input type="text" ng-model="ordersFilter.name">
             </div>
@@ -50,7 +50,7 @@
 
         <div class="th" ng-show="displayColumns.number">
           <div class="filter">
-            <i class="fa fa-filter" ng-click="toggleFilter('number')"></i>
+            <i class="icon-filter" ng-click="toggleFilter('number')"></i>
             <div ng-show="openFilter.number">
               <input type="text" ng-model="ordersFilter.number">
             </div>
@@ -62,7 +62,7 @@
         </div>
         <div class="th" ng-show="displayColumns.customer">
           <div class="filter">
-            <i class="fa fa-filter" ng-click="toggleFilter('customer')"></i>
+            <i class="icon-filter" ng-click="toggleFilter('customer')"></i>
             <div ng-show="openFilter.customer">
               <input type="text" ng-model="ordersFilter.customer">
             </div>
@@ -74,7 +74,7 @@
         </div>
         <div class="th" ng-show="displayColumns.type">
           <div class="filter">
-            <i class="fa fa-filter" ng-click="toggleFilter('type')"></i>
+            <i class="icon-filter" ng-click="toggleFilter('type')"></i>
             <div ng-show="openFilter.type">
               <input type="text" ng-model="ordersFilter.type">
             </div>
@@ -86,7 +86,7 @@
         </div>
         <div class="th" ng-show="displayColumns.amount">
           <div class="filter">
-            <i class="fa fa-filter" ng-click="toggleFilter('amount')"></i>
+            <i class="icon-filter" ng-click="toggleFilter('amount')"></i>
             <div ng-show="openFilter.amount">
               <input type="text" ng-model="ordersFilter.amount">
             </div>
@@ -98,7 +98,7 @@
         </div>
         <div class="th" ng-show="displayColumns.status">
           <div class="filter">
-            <i class="fa fa-filter" ng-click="toggleFilter('status')"></i>
+            <i class="icon-filter" ng-click="toggleFilter('status')"></i>
             <div ng-show="openFilter.status">
               <input type="text" ng-model="ordersFilter.status">
             </div>

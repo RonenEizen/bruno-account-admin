@@ -16,22 +16,25 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
+// shades of gray
+$white:                           #FFFFFF;
 $beige:                           #F4F4E7;
-$black:                           #050505;
-$blue:                            #0B5CD0;
-$buttonblue:                      #0D5CD0;
+$lightgray1:                      #EAEAEA;
+$lightgray:                       #D5D5D5;
+$lightgray2:                      #C1C1C1;
 $darkgray:                        #535353;
 $darkgray1:                       #464646;
 $darkgray2:                       #343434;
 $darkergray:                      #191919;
+$black:                           #050505;
+
+// colors
+$blue:                            #428BCA;
+$buttonblue:                      #0D5CD0;
 $green:                           #1CD729;
 $green1:                          #00AB2E;
-$lightgray:                       #D5D5D5;
-$lightgray1:                      #EAEAEA;
-$lightgray2:                      #C1C1C1;
 $orange:                          #FD9B26;
 $red:                             #E30A11;
-$white:                           #FFFFFF;
 
 $title-font:                      Museo, "Open Sans", sans-serif;
 $serif-font:                      Museo, Oswald, serif;
@@ -111,12 +114,61 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
     font-family: 'FontAwesome';
     src: url('/bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.1.0');
     src: url('/bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
-    url('/bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),
-    url('/bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
-    url('/bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+         url('/bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),
+         url('/bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
+         url('/bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
+
+/**
+ * Bruno Fonts
+ */
+
+@font-face {
+    font-family: 'BrunoSocial';
+    src: url('/assets/fonts/bruno-social.eot?wzed0l');
+    src: url('/assets/fonts/bruno-social.eot?wzed0l#iefix') format('embedded-opentype'),
+         url('/assets/fonts/bruno-social.ttf?wzed0l') format('truetype'),
+         url('/assets/fonts/bruno-social.woff?wzed0l') format('woff'),
+         url('/assets/fonts/bruno-social.svg?wzed0l#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BrunoIcons';
+    src: url('/assets/fonts/bruno-icons.eot?wzed0l');
+    src: url('/assets/fonts/bruno-icons.eot?wzed0l#iefix') format('embedded-opentype'),
+         url('/assets/fonts/bruno-icons.ttf?wzed0l') format('truetype'),
+         url('/assets/fonts/bruno-icons.woff?wzed0l') format('woff'),
+         url('/assets/fonts/bruno-icons.svg?wzed0l#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"]                 { font-family: 'BrunoIcons' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale; }
+[class^="social-"],
+[class*=" icon-"]                 { font-family: 'BrunoSocial' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale; }
+.icon-close_delete:before         { content: "\e900"; }
+.icon-edit_pencil:before          { content: "\e901"; }
+.icon-export_data:before          { content: "\e902"; }
+.icon-grid:before                 { content: "\e903"; }
+.icon-hamburger_menu:before       { content: "\e904"; }
+.icon-filter:before               { content: "\e905"; }
+.icon-link_out:before             { content: "\e906"; }
+.icon-preview:before              { content: "\e907"; }
+.icon-search:before               { content: "\e908"; }
+.icon-triangle_up:before          { content: "\e909"; }
+.icon-triangle_down:before        { content: "\e90a"; }
+.social-Banner:before             { content: "\e900"; }
+.social-Facebook:before           { content: "\e901"; }
+.social-GooglePlus:before         { content: "\e902"; }
+.social-Newsletter:before         { content: "\e903"; }
+.social-Twitter:before            { content: "\e904"; }
+
+
 
 /**
  * App-wide Styles
@@ -142,15 +194,17 @@ header.top                        { background: $beige; border-bottom: 1px solid
   &.expanded                      { width: 100%; }
   .row                            { overflow: visible; }
   h1                              { color: $red; font: 300 24px $title-font; float: left; margin: 0; text-align: left; }
-  .hamburger                      { color: $darkgray; float: left; padding: 10px; border-right: 1px solid $lightgray; font-size: 28px; margin: -10px 20px -10px -20px; padding: 5px 10px; }
+  .hamburger                      { color: $darkgray; float: left; border-right: 1px solid $lightgray; display: table-cell; font-size: 18px; height: 50px; margin: -10px 20px -10px -20px; padding: 10px;
+    i                             { vertical-align: middle; }
+  }
   form                            { float: right;
     .form-control                 { border-radius: 2px; border: 1px solid $lightgray;
       &:focus                     { box-shadow: none; }
     }
     .form-control-feedback        { color: $darkgray; top: 10px; }
   }
-  .actions-right                  { float: right; padding: 0 10px 0 0;
-    & > i                         { font-size: 24px; line-height: 30px; margin-left: 15px; vertical-align: middle; }
+  .actions-right                  { float: right;
+    & > i                         { font-size: 18px; line-height: 32px; margin-left: 20px; vertical-align: middle; }
     ul                            { background: $beige; border: 1px solid $lightgray; border-radius: 3px; padding: 10px 20px; position: absolute; right: 15px; top: 40px; width: 160px; z-index: 100;
       li                          { list-style: none; margin: 0; padding: 5px 0; }
     }

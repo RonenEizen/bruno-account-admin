@@ -1,9 +1,7 @@
-
-$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
-$fa-font-path: "/bower_components/font-awesome/fonts";
-
-@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
-@import 'font-awesome/scss/font-awesome';
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+$fa-font-path: "../bower_components/font-awesome/fonts";
+@import '../bower_components/font-awesome/scss/font-awesome';
 
 /**
  * App-wide Styles
@@ -68,7 +66,8 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 @import 'main/settings/settings.scss';
 @import 'main/settings/users-and-roles/users-and-roles.scss';
 @import 'main/statistics/statistics.scss';
-@import 'modal/modal.scss';
+@import '../components/footer/footer.scss';
+@import '../components/modal/modal.scss';
 // endinjector
 
 /**

@@ -43,7 +43,6 @@
   // ga('create', 'UA-XXXXX-X');
   // ga('send', 'pageview');
   </script>
-  <script src="socket.io-client/socket.io.js"></script>
 
   <!--[if lt IE 9]>
   <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -61,21 +60,24 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-ui-mask/dist/mask.js"></script>
     <script src="bower_components/angular-date-picker/angular-date-picker.js"></script>
+    <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
     <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:js({.tmp,client}) app/app.js -->
   <script src="app/app.js"></script>
     <!-- injector:js -->
-    <script src="app/account/account.js"></script>
-    <script src="app/account/login/login.controller.js"></script>
-    <script src="app/account/register/business/business.controller.js"></script>
-    <script src="app/account/register/business/business.js"></script>
+    <script src="app/admin/admin.module.js"></script>
+    <script src="components/auth/auth.module.js"></script>
+    <script src="components/util/util.module.js"></script>
+    <script src="app/main/orders/orders.js"></script>
     <script src="app/account/register/owner/owner.controller.js"></script>
     <script src="app/account/register/owner/owner.js"></script>
     <script src="app/account/register/register.controller.js"></script>
     <script src="app/admin/admin.controller.js"></script>
-    <script src="app/admin/admin.js"></script>
+    <script src="app/account/account.js"></script>
+    <script src="app/admin/admin.route.js"></script>
+    <script src="app/app.constant.js"></script>
     <script src="app/main/admin/admin.controller.js"></script>
     <script src="app/main/admin/admin.js"></script>
     <script src="app/main/customers/customers.controller.js"></script>
@@ -89,7 +91,7 @@
     <script src="app/main/marketing/marketing.controller.js"></script>
     <script src="app/main/marketing/marketing.js"></script>
     <script src="app/main/orders/orders.controller.js"></script>
-    <script src="app/main/orders/orders.js"></script>
+    <script src="app/account/login/login.controller.js"></script>
     <script src="app/main/reservations/reservations.controller.js"></script>
     <script src="app/main/reservations/reservations.js"></script>
     <script src="app/main/settings/business-info/business-info.controller.js"></script>
@@ -102,11 +104,18 @@
     <script src="app/main/settings/users-and-roles/users-and-roles.controller.js"></script>
     <script src="app/main/statistics/statistics.controller.js"></script>
     <script src="app/main/statistics/statistics.js"></script>
+    <script src="app/account/register/business/business.controller.js"></script>
     <script src="components/auth/auth.service.js"></script>
+    <script src="components/auth/interceptor.service.js"></script>
+    <script src="components/auth/router.decorator.js"></script>
     <script src="components/auth/user.service.js"></script>
+    <script src="components/footer/footer.directive.js"></script>
     <script src="components/modal/modal.service.js"></script>
     <script src="components/mongoose-error/mongoose-error.directive.js"></script>
-    <script src="components/socket/socket.service.js"></script>
+    <script src="components/navbar/navbar.controller.js"></script>
+    <script src="components/navbar/navbar.directive.js"></script>
+    <script src="app/account/register/business/business.js"></script>
+    <script src="components/util/util.service.js"></script>
     <!-- endinjector -->
   <!-- endbuild -->
   <!-- third party scripts -->

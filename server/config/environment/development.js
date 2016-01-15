@@ -3,10 +3,13 @@
 // Development specific configuration
 // ==================================
 module.exports = {
+
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/useradmin-dev'
+    uri: 'mongodb://localhost/workspace-dev'
   },
 
+  // Seed database on startup
   seedDB: true
+
 };

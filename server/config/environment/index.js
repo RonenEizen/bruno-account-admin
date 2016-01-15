@@ -4,7 +4,7 @@ var path = require('path');
 var _ = require('lodash');
 
 function requiredProcessEnv(name) {
-  if(!process.env[name]) {
+  if (!process.env[name]) {
     throw new Error('You must set the ' + name + ' environment variable');
   }
   return process.env[name];
@@ -29,11 +29,8 @@ var all = {
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
-    session: 'user-admin-secret'
+    session: 'workspace-secret'
   },
-
-  // List of user roles
-  userRoles: ['guest', 'user', 'admin'],
 
   // MongoDB connection options
   mongo: {
@@ -42,12 +39,12 @@ var all = {
         safe: true
       }
     }
-  },
-
+  }
 };
 
 // Export the config object based on the NODE_ENV
 // ==============================================
 module.exports = _.merge(
   all,
+  require('./shared'),
   require('./' + process.env.NODE_ENV + '.js') || {});

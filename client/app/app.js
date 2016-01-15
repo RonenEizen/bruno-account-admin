@@ -1,13 +1,17 @@
 'use strict';
 
 angular.module('userAdminApp', [
+  'userAdminApp.auth',
+  'userAdminApp.admin',
+  'userAdminApp.constants',
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ui.bootstrap',
   'ui.router',
   'ui.mask',
-  'mp.datePicker'
+  'mp.datePicker',
+  'validation.match'
 ])
   .config([
     '$stateProvider', 
@@ -50,7 +54,7 @@ angular.module('userAdminApp', [
   .run(function ($rootScope, $location, Auth) {
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$stateChangeStart', function (event, next) {
-      Auth.isLoggedInAsync(function(loggedIn) {
+      Auth.isLoggedIn(function(loggedIn) {
         if (next.authenticate && !loggedIn) {
           // event.preventDefault();
           $location.path('/login');

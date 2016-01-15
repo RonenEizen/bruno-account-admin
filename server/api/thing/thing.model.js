@@ -1,12 +1,11 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 
-var ThingSchema = new Schema({
+var ThingSchema = new mongoose.Schema({
   name: String,
   info: String,
   active: Boolean
 });
 
-module.exports = mongoose.model('Thing', ThingSchema);
+export default mongoose.model('Thing', ThingSchema);

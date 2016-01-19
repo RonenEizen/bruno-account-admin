@@ -1,7 +1,7 @@
 .marketing                        {
   .table.campaigns                {
     .td                           { padding: 15px 8px;}
-    .channel                      { font: normal normal normal 25px 'BrunoSocial' !important; speak: none; line-height: 1; margin-right: 15px; text-transform: none; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale;
+    .channel                      { font: normal normal normal 25px 'BrunoIcons' !important; speak: none; line-height: 1; margin-right: 15px; text-transform: none; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale;
       &.enabled                   { color: $blue; }
       &.disabled                  { color: $lightgray; }
       &.bn:before                 { content: "\e900"; }

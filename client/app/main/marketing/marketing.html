@@ -212,16 +212,16 @@
 
 
 <script type="text/ng-template" id="channelsCampaign.html">
-  <div class="container" ng-init="channelTab = 'facebook'">
+  <div class="container" ng-init="channelTab = 'newsletter'">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="channel-heading">Edit Marketing Channels – 
-        <strong ng-show="channelTab === 'facebook'">Facebook Ads</strong>
-        <strong ng-show="channelTab === 'twitter'">Twitter</strong>
-        <strong ng-show="channelTab === 'googleplus'">Google Adwords</strong>
-        <strong ng-show="channelTab === 'newsletter'">Newsletter</strong>
-        <strong ng-show="channelTab === 'banner'">Site Banner</strong>
-      </h1>
+          <strong ng-show="channelTab === 'facebook'">Facebook Ads</strong>
+          <strong ng-show="channelTab === 'twitter'">Twitter</strong>
+          <strong ng-show="channelTab === 'googleads'">Google Adwords</strong>
+          <strong ng-show="channelTab === 'newsletter'">Newsletter</strong>
+          <strong ng-show="channelTab === 'banner'">Site Banner</strong>
+        </h1>
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->
@@ -235,8 +235,8 @@
         <li ng-class="{active: channelTab === 'twitter'}">
           <a ng-click="channelTab = 'twitter'"><i class="icon-Twitter"></i></a>
         </li>
-        <li ng-class="{active: channelTab === 'googleplus'}">
-          <a ng-click="channelTab = 'googleplus'"><i class="icon-GooglePlus"></i></a>
+        <li ng-class="{active: channelTab === 'googleads'}">
+          <a ng-click="channelTab = 'googleads'"><i class="icon-GooglePlus"></i></a>
         </li>
         <li ng-class="{active: channelTab === 'newsletter'}">
           <a ng-click="channelTab = 'newsletter'"><i class="icon-Newsletter"></i></a>
@@ -247,7 +247,7 @@
       </ul>
     </div><!-- END .row -->
   </div><!-- END .container-fluid -->
-    
+
   <form class="custom-form" ng-show="channelTab === 'facebook'">
     <div class="container">
       <div class="row">
@@ -417,25 +417,244 @@
                 </div>
               </div>
             </div><!-- END .row -->
-      
-            <div class="row">
-              <div class="col-md-12 resetsave">
-                <div class="pull-left">
-                  <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-                  <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
-                </div><!-- END .pull-left -->
-                <div class="pull-right">
-                  <button class="btn btn-primary" ng-click="$dismiss()"><strong>Next</strong> | Twitter</button>
-                  <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
-                </div><!-- END .pull-right -->
-              </div><!-- END .resetsave -->
-            </div><!-- END .row -->
-          </div><!-- END toggle visibility -->
+          </div><!-- END toggle facebook visibility -->
+
+          <div class="row">
+            <div class="col-md-12 resetsave">
+              <div class="pull-left">
+                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+                <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+              </div><!-- END .pull-left -->
+              <div class="pull-right">
+                <button class="btn btn-primary" ng-click="channelTab = 'twitter'"><strong>Next</strong> | Twitter</button>
+                <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
+              </div><!-- END .pull-right -->
+            </div><!-- END .resetsave -->
+          </div><!-- END .row -->
+
         </div><!-- END .col-md-6 -->
       </div><!-- END .row -->
     </div><!-- END .container -->
   </form><!-- END .custom-form -->
 
+
+  <form class="custom-form" ng-show="channelTab === 'twitter'">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="checkbox toggle-channel">
+                <label>
+                  <input type="checkbox" ng-model="enableTwitter" ng-init="enableTwitter = true"> Enable Channel
+                </label>
+              </div>
+            </div>
+          </div><!-- END .row -->
+          <div ng-show="enableTwitter">
+            <div class="row">
+              <div class="col-md-12">
+                content here
+              </div>
+            </div><!-- END .row -->
+          </div><!-- END  -->
+
+          <div class="row">
+            <div class="col-md-12 resetsave">
+              <div class="pull-left">
+                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+                <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+              </div><!-- END .pull-left -->
+              <div class="pull-right">
+                <button class="btn btn-primary" ng-click="channelTab = 'googleads'"><strong>Next</strong> | Google</button>
+                <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
+              </div><!-- END .pull-right -->
+            </div><!-- END .resetsave -->
+          </div><!-- END .row -->
+
+        </div><!-- END .col-md-6 -->
+      </div><!-- END .row -->
+    </div><!-- END .container -->
+  </form><!-- END .custom-form -->
+
+
+  <form class="custom-form" ng-show="channelTab === 'googleads'">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="checkbox toggle-channel">
+                <label>
+                  <input type="checkbox" ng-model="enableGoogleplus" ng-init="enableGoogleplus = true"> Enable Channel
+                </label>
+              </div>
+            </div>
+          </div><!-- END .row -->
+          <div ng-show="enableGoogleplus">
+            <div class="row">
+              <div class="col-md-12">
+                content here
+              </div>
+            </div><!-- END .row -->
+          </div><!-- END  -->
+
+          <div class="row">
+            <div class="col-md-12 resetsave">
+              <div class="pull-left">
+                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+                <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+              </div><!-- END .pull-left -->
+              <div class="pull-right">
+                <button class="btn btn-primary" ng-click="channelTab = 'newsletter'"><strong>Next</strong> | Newsletter</button>
+                <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
+              </div><!-- END .pull-right -->
+            </div><!-- END .resetsave -->
+          </div><!-- END .row -->
+
+        </div><!-- END .col-md-6 -->
+      </div><!-- END .row -->
+    </div><!-- END .container -->
+  </form><!-- END .custom-form -->
+
+
+  <form class="custom-form" ng-show="channelTab === 'newsletter'">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="checkbox toggle-channel">
+                <label>
+                  <input type="checkbox" ng-model="enableNewsletter" ng-init="enableNewsletter = true"> Enable Channel
+                </label>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div ng-show="enableNewsletter">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="control-label">Subject</label>
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div><!-- END .row -->
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="control-label">Email Body</label>
+                  <textarea type="text" class="form-control"></textarea><!-- TODO: add WYSIWYG --> 
+                </div>
+              </div>
+            </div><!-- END .row -->
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="control-label">Lauch Date</label>
+                  <input type="text" class="form-control" /><!-- TODO: add datepicker --> 
+                </div>
+              </div>
+              <div class="col-md-4 col-md-offset-4">
+                <div class="form-group">
+                  <label class="control-label">Frequency</label>
+                  <select class="form-control">
+                    <option value="1">Daily</option>
+                    <option value="2">Once a Week</option>
+                    <option value="3">Once a Month</option>
+                  </select>
+                </div>
+              </div>
+            </div><!-- END .row -->
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="control-label">Redemption URL</label>
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div><!-- END .row -->
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="control-label">Redemption Code</label>
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div><!-- END .row -->
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="control-label">Terms & Conditions</label>
+                  <textarea type="text" class="form-control"></textarea>
+                </div>
+              </div>
+            </div><!-- END .row -->
+
+          </div><!-- END  -->
+
+          <div class="row">
+            <div class="col-md-12 resetsave">
+              <div class="pull-left">
+                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+                <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+              </div><!-- END .pull-left -->
+              <div class="pull-right">
+                <button class="btn btn-primary" ng-click="channelTab = 'banner'"><strong>Next</strong> | Site Banner</button>
+                <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
+              </div><!-- END .pull-right -->
+            </div><!-- END .resetsave -->
+          </div><!-- END .row -->
+
+        </div><!-- END .col-md-6 -->
+      </div><!-- END .row -->
+    </div><!-- END .container -->
+  </form><!-- END .custom-form -->
+
+
+  <form class="custom-form" ng-show="channelTab === 'banner'">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="checkbox toggle-channel">
+                <label>
+                  <input type="checkbox" ng-model="enableBanner" ng-init="enableBanner = true"> Enable Channel
+                </label>
+              </div>
+            </div>
+          </div><!-- END .row -->
+          <div ng-show="enableBanner">
+            <div class="row">
+              <div class="col-md-12">
+                content here
+              </div>
+            </div><!-- END .row -->
+          </div><!-- END  -->
+
+          <div class="row">
+            <div class="col-md-12 resetsave">
+              <div class="pull-left">
+                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+                <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+              </div><!-- END .pull-left -->
+              <div class="pull-right">
+                <button class="btn btn-primary" ng-click="$dismiss()"><strong>Next</strong> | Review</button>
+              </div><!-- END .pull-right -->
+            </div><!-- END .resetsave -->
+          </div><!-- END .row -->
+
+        </div><!-- END .col-md-6 -->
+      </div><!-- END .row -->
+    </div><!-- END .container -->
+  </form><!-- END .custom-form -->
 </script>
 
 
@@ -466,11 +685,11 @@
 
         <div class="row">
           <div class="col-md-6">
-            <button class="btn btn-default">Cancel</button>
-            <button class="btn btn-primary">Save</button>
+            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+            <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
           </div>
           <div class="col-md-6 text-right">
-            <button class="btn btn-primary"><strong>Next</strong> | Channels</button>
+            <button class="btn btn-primary" ng-click="$dismiss()"><strong>Next</strong> | Channels</button>
           </div>
         </div><!-- END .row -->
 

@@ -6,12 +6,15 @@
         &:hover,
         &.expanded                { background: $darkgray2; }
         a                         { color: $beige; display: block; font: 110% $serif-font; height: 100%; width: 100%; text-decoration: none; padding: 12px 25px; position: relative; }
-        span                      { color: $lightgray; font-size: 80%; position: absolute; left: 10px; top: 14px; }
+        span                      { color: $lightgray; font-size: 80%; position: absolute;
+          &.icon-triangle_up      { font-size: 7px; left: 10px; top: 14px; }
+          &.icon-triangle_right   { font-size: 9px; left: 13px; top: 16px; }
+        }
         ul                        { background: $darkgray2;
           li                      {
             &.selected,
             &:hover               { background: $darkgray1; }
-            a                     { font-size: 90%; padding: 5px 0 10px 40px; }
+            a                     { font-size: 90%; font-weight: 300; padding: 5px 0 10px 40px; }
           }
         }
       }

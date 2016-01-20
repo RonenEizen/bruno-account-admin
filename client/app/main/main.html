@@ -14,7 +14,7 @@
         <li ng-class="{expanded: settingsOpen}">
           <a ng-click="settingsOpen=!settingsOpen">
             Settings
-            <span ng-class="{'icon-triangle_right': !settingsOpen, 'icon-triangle_up': settingsOpen}"></span>
+            <span class="submenu-arrow" ng-class="{'icon-triangle_right': !settingsOpen, 'icon-triangle_up': settingsOpen}"></span>
           </a>
           <ul ng-show="settingsOpen">
             <li><a href="/settings/business-info">Business Info</a></li>

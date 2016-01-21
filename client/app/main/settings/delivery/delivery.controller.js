@@ -10,11 +10,11 @@ angular.module('userAdminApp')
       edit: false,
       email: {
         enabled: true,
-        input: ''
+        input: 'blabber@gmail.com'
       },
       phone: {
         enabled: false,
-        input: ''
+        input: '(555) 123-4567'
       }
     };
 
@@ -23,15 +23,15 @@ angular.module('userAdminApp')
       edit: false,
       minimun: {
         enabled: false,
-        input: ''
+        input: '12'
       },
       surcharge: {
         enabled: false,
-        input: ''
+        input: '5'
       },
       instructions: {
         enabled: false,
-        input: ''
+        input: 'should be delivered to the neighbor next door'
       }
     };
 

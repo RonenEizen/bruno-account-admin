@@ -1,6 +1,6 @@
 .modal-dialog                     { border-radius: 0; height: 100%; margin: 0; width: 100%; }
 .flyout                           { background: $white; height: 100%; overflow: auto; position: fixed; top: 0; left: 0; width: 100%;
-  h1                              { font: 300 4rem $serif-font; margin: 40px 0; position: relative;
+  h1                              { font: 300 3.6rem $serif-font; margin: 40px 0; position: relative;
     &.channel-heading             { font-size: 2.3rem; text-align: center; }
     button.btn                    { background: none; bottom: 10px; color: $blue; font-size: 2rem; line-height: 3rem; padding: 0; position: absolute; right: 0; }
   }
@@ -24,7 +24,6 @@
       a                           { background: $beige; border: 1px solid $lightgray; border-bottom: 1px solid $blue; border-radius: 0; font-size: 3rem; margin: 0; }
     }
   }
-  .toggle-channel                 { background: $lightgray; display: inline-block; padding: 10px 30px; }
   .wider-row                      { margin-left: -45px; margin-right: -45px; }
   .googlemap                      { margin-bottom: 10px; position: relative;
     iframe                        { border: none; height: 350px; width: 100%; }

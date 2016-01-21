@@ -189,6 +189,8 @@ html, body, div[ui-view]          { height: 100%; }
 .invisible-layer                  { background: transparent; height: 100%; position: fixed; top: 0; left: 0; width: 100%; z-index: 50; }
 .row                              { overflow: hidden; }
 .full-height                      { height: 100%; }
+.toggle-checkbox                  { background: $lightgray; display: inline-block; padding: 10px 30px; }
+.optional                         { color: $lightgray; font:300 1.5rem $sans-font; }
 
 // HEADER
 header.top                        { background: $beige; border-bottom: 1px solid $lightgray; height: 50px; padding: 10px 20px; position: fixed; transition: width 0.5s ease; top: 0; width: calc(100% - 240px); z-index: 50;
@@ -219,8 +221,8 @@ header.header                     { border-bottom: 2px solid $darkergray; margin
 .main                             {
   p                               { margin: 0; }
   h1                              { color: $red; font: 100 40px $title-font; margin-bottom: 10px; text-align: center; }
-  h2                              { border-bottom: 2px solid $black; color: $red; font: 300 2rem $title-font; margin: 40px 0 20px;
-    span                          { color: $blue; font: 1.5rem $sans-font; }
+  h2                              { border-bottom: 2px solid $black; color: $red; font: 300 2rem $title-font; margin: 20px 0 20px;
+    span.pull-right               { color: $blue; font: 1.5rem $sans-font; }
   }
 }
 form.custom-form                  {

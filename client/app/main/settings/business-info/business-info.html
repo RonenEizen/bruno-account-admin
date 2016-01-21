@@ -59,7 +59,7 @@
 
 <div class="col-md-6 main content">
   <div class="row">
-    <div class="col-md-12 business-owner">
+    <div class="col-md-12 paragraph-margin">
       <h2>Business Owner Info <span class="pull-right" ng-click="customModal('ownerForm.html')">Edit</span></h2>
       <p><strong>Name</strong><br>
       {{owner.fname}} {{owner.lname}}</p>
@@ -134,7 +134,7 @@
 
     <div class="row">
       <div class="col-md-12 form-group">
-        <label class="control-label">Business Address Line 2</label>
+        <label class="control-label">Business Address Line 2 <span class="optional">(optional)<span></label>
         <input name="addr2" ng-model="business.addr2" type="text" class="form-control">
       </div>
     </div><!-- END .row -->
@@ -254,7 +254,7 @@
 
     <div class="row">
       <div class="col-md-12 form-group">
-        <label class="control-label">Restaurant Address Line 2</label>
+        <label class="control-label">Restaurant Address Line 2 <span class="optional">(optional)<span></label>
         <input name="addr2" type="text" class="form-control" ng-model="restaurant.addr2">
       </div>
     </div><!-- END .row -->
@@ -337,7 +337,7 @@
       </div>
 
       <div class="col-md-12 text-center">
-        <div class="checkbox toggle-channel">
+        <div class="checkbox toggle-checkbox">
           <label>
             <input type="checkbox" ng-model="twentyFourSeven" ng-init="twentyFourSeven = true"> Enable Channel
           </label>
@@ -484,7 +484,7 @@
 
   <div class="row">
     <div class="col-md-12 form-group">
-      <label class="control-label">Street Address 2</label>
+      <label class="control-label">Street Address 2 <span class="optional">(optional)<span></label>
       <input name="addr2" type="text" class="form-control" ng-model="owner.addr2">
     </div>
   </div><!-- END .row -->

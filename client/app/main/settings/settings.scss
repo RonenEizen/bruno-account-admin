@@ -22,7 +22,8 @@
   button.rounded                  { border: none; border-radius: 100%; font-family: $serif-font; height: 40px; width: 40px; padding: 0; text-transform: uppercase; text-shadow: none;
     &.btn-primary                 { background: $buttonblue; }
   }
-
+  .paragraph-margin p             { margin-bottom: 20px; }
+  
   .table                          {
     .form-group input + input     { margin-top: 5px; }
     input.form-control,
@@ -61,7 +62,6 @@
   }
 
   // BUSINESS INFO
-  .business-owner p               { margin-bottom: 20px; }
   .table.opening-hours            {
     .tr                           {
       .td                         { border: none; padding: 5px 0;

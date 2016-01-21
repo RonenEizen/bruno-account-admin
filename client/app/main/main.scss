@@ -6,7 +6,7 @@
         &:hover,
         &.expanded                { background: $darkgray2; }
         a                         { color: $beige; display: block; font: 110% $serif-font; height: 100%; width: 100%; text-decoration: none; padding: 12px 25px; position: relative; }
-        span                      { color: $lightgray; font-size: 80%; position: absolute;
+        span.submenu-arrow        { color: $lightgray; font-size: 80%; position: absolute;
           &.icon-triangle_up      { font-size: 7px; left: 10px; top: 14px; }
           &.icon-triangle_right   { font-size: 9px; left: 13px; top: 16px; }
         }

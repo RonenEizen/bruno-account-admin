@@ -2,7 +2,7 @@
 
 angular.module('userAdminApp')
   .controller('SettingsBusinessInfoCtrl', function($scope, Auth) {
-    $scope.pageTitle = 'Business Info';
+    $scope.pageTitle = 'General Business Info';
 
     // form validation
     // business info
@@ -25,15 +25,15 @@ angular.module('userAdminApp')
     $scope.restaurant = {
       sameAsBusiness: false,
       edit: false,
-      name: '',
-      email: '',
-      phone: '',
-      addr1: '',
-      addr2: '',
-      city: '',
-      state: '',
-      zip: '',
-      country: ''
+      name: 'Temaki Place',
+      email: 'sushi@temaki.com',
+      phone: '10987654321',
+      addr1: '0003 Pkwy Ocean',
+      addr2: 'Apartment 222',
+      city: 'New York City',
+      state: 'NY',
+      zip: 11225,
+      country: 'US'
     };
 
     $scope.sameAsAbove = function() {
@@ -60,24 +60,25 @@ angular.module('userAdminApp')
     $scope.ownerMaster = {};
     $scope.owner = {
       edit: false,
-      fname: '',
-      lname: '',
-      bday: '',
-      ssn: '',
-      email: '',
-      phone: '',
-      addr1: '',
-      addr2: '',
-      city: '',
-      state: '',
-      zip: '',
-      country: ''
+      fname: 'Blake',
+      lname: 'Lively',
+      bday: new Date(1986, 3, 10, 0, 0, 0),
+      ssn: '12345',
+      email: 'blake@lively.com',
+      phone: '12345678910',
+      addr1: '3000 Ocean Pkwy',
+      addr2: 'Suite 222',
+      city: 'Brooklyn',
+      state: 'NY',
+      zip: 11223,
+      country: 'US'
     };
 
     // opening hours
     $scope.openingMaster = {};
     $scope.opening = {
       edit: false,
+      twentyFourSeven: false,
       timeFormat: 'ampm',
       weekdays: [{
         name: 'Monday',

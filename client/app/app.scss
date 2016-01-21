@@ -238,6 +238,7 @@ form.custom-form                  {
     .newtag                       { border: none; }
   }
   .label                          { background: $lightgray; border-radius: 0; color: $darkgray; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
+  .form-control-feedback          { top: 10px; }
 }
 button.btn                        { border: none; border-radius: 3px; font-family: $serif-font; padding: 8px 25px; text-shadow: none;
   &.btn-danger                    { background: $red; }

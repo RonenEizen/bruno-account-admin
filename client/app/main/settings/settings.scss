@@ -23,7 +23,7 @@
     &.btn-primary                 { background: $buttonblue; }
   }
   .paragraph-margin p             { margin-bottom: 20px; }
-  
+
   .table                          {
     .form-group input + input     { margin-top: 5px; }
     input.form-control,
@@ -86,15 +86,11 @@
 
   // INTEGRATION
   .nomargin                       { margin-bottom: 0; }
-  .appintegration                 { border-bottom: 1px solid $lightgray; padding: 20px 0;
-    img                           { width: 200px; }
-    p                             { margin-top: 10px; }
-    .form-inline                  { margin-top: 10px; }
+  .appintegration                 {
+    .td                           { height: 80px; }
+    img                           { max-height: 50px; max-width: 150px; }
     &.inactive                    {
       img                         { @include desaturate(100%); opacity: .5; }
-    }
-    .pull-right i                 { color: $buttonblue;
-      &.gray                      { color: $lightgray; }
     }
   }
 }

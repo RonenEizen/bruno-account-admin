@@ -196,7 +196,7 @@ html, body, div[ui-view]          { height: 100%; }
 header.top                        { background: $beige; border-bottom: 1px solid $lightgray; height: 50px; padding: 10px 20px; position: fixed; transition: width 0.5s ease; top: 0; width: calc(100% - 240px); z-index: 50;
   &.expanded                      { width: 100%; }
   .row                            { overflow: visible; }
-  h1                              { color: $red; font: 300 24px $title-font; float: left; margin: 0; text-align: left; }
+  h1                              { color: $red; font: 500 24px $title-font; float: left; margin: 0; text-align: left; }
   .hamburger                      { color: $darkgray; float: left; border-right: 1px solid $lightgray; display: table-cell; font-size: 18px; height: 50px; margin: -10px 20px -10px -20px; padding: 10px;
     i                             { vertical-align: middle; }
   }
@@ -221,8 +221,8 @@ header.header                     { border-bottom: 2px solid $darkergray; margin
 .main                             {
   p                               { margin: 0; }
   h1                              { color: $red; font: 100 40px $title-font; margin-bottom: 10px; text-align: center; }
-  h2                              { border-bottom: 2px solid $black; color: $red; font: 300 2rem $title-font; margin: 20px 0 20px;
-    span.pull-right               { color: $blue; font: 1.5rem $sans-font; }
+  h2                              { border-bottom: 2px solid $black; color: $red; font: 300 2rem $title-font; margin: 20px 0 20px; padding-bottom: 5px;
+    span.pull-right               { color: $blue; font: 1.5rem $sans-font; position: relative; top: 5px; }
   }
 }
 form.custom-form                  {

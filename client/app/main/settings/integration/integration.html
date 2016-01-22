@@ -2,52 +2,83 @@
   <div class="row">
     <div class="col-md-5">
       <span class="hamburger" ng-click="$parent.$parent.navRevealed=true" ng-show="!navRevealed"><i class="icon-hamburger_menu"></i></span>
-      <h1><span>Settings &gt;</span> {{pageTitle}}</h1>
+      <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2"></div>
     <div class="col-md-5"></div>
   </div>
 </header>
 
-<div class="col-md-6 col-md-offset-3 main content">
+<div class="col-md-12 main">
+
   <div class="row">
-    <div class="col-md-12">
+
+    <div class="col-md-6">
       <h2 class="nomargin">Reservation &amp; Online Ordering</h2>
 
-      <div ng-repeat="integration in integrations" class="appintegration" ng-class="{inactive: !integration.apiKey}">
-        <div class="pull-right">
-          <i ng-click="toggle(integration)" class="fa" ng-class="{'fa-chevron-down': integration.collapsed, 'fa-chevron-up': !integration.collapsed}"></i>
-          <i ng-click="edit(integration)" class="fa fa-pencil" ng-class="{gray: integration.edit}"></i>
-        </div>
-        <img src="{{integration.imgUrl}}" alt="{{integration.name}}" title="{{integration.name}}">
-        <div class="form-inline" ng-show="!integration.collapsed">
-          <form name="integrationForm" class="custom-form form-group text-input">
-            <input type="text" class="form-control" placeholder="Enter {{integration.name}} ID" ng-readonly="!integration.edit" ng-model="integration.apiKey">
-            <button class="btn btn-primary rounded" ng-show="integration.edit" ng-click="save(integration)">OK</button>
-          </form>
+      <div class="table integrations">
+        <div ng-repeat="integration in integrations" class="tr appintegration" ng-class="{inactive: !integration.apiKey}">
+          <div class="td">
+            <img src="{{integration.imgUrl}}" alt="{{integration.name}}" title="{{integration.name}}">
+          </div>
+          <div class="td text-right">
+            <a ng-click="customModal('integrationForm.html')">{{integration.apiKey || 'Enter ' + integration.name + ' ID'}}</a>
+          </div>
         </div>
       </div>
-
     </div>
-    <!-- END Reservation & Online Ordering -->
 
-    <div class="col-md-12">
+    <div class="col-md-6">
       <h2 class="nomargin">Social Reviews</h2>
 
-      <div ng-repeat="review in reviews" class="appintegration" ng-class="{inactive: !review.apiKey}">
-        <div class="pull-right">
-          <i ng-click="toggle(review)" class="fa" ng-class="{'fa-chevron-down': review.collapsed, 'fa-chevron-up': !review.collapsed}"></i>
-          <i ng-click="edit(review)" class="fa fa-pencil" ng-class="{gray: review.edit}"></i>
-        </div>
-        <img src="{{review.imgUrl}}" alt="{{review.name}}" title="{{review.name}}">
-        <div class="form-inline" ng-show="!review.collapsed">
-          <form name="reviewForm" class="custom-form form-group text-input">
-            <input type="text" class="form-control" placeholder="Enter {{review.name}} ID" ng-readonly="!review.edit" ng-model="review.apiKey">
-            <button class="btn btn-primary rounded" ng-show="review.edit" ng-click="save(review)">OK</button>
-          </form>
+      <div class="table integrations">
+        <div ng-repeat="review in reviews" class="tr appintegration" ng-class="{inactive: !review.apiKey}">
+          <div class="td">
+            <img src="{{review.imgUrl}}" alt="{{review.name}}" title="{{review.name}}">
+          </div>
+          <div class="td text-right">
+            <a ng-click="customModal('integrationForm.html')">{{review.apiKey || 'Enter ' + review.name + ' ID'}}</a>
+          </div>
         </div>
       </div>
-
     </div>
-  </div>
-</div>
+
+  </div><!-- END .row -->
+</div><!-- END .col-md-12 -->
+
+
+
+
+
+
+<script type="text/ng-template" id="integrationForm.html">
+<div class="container custom-form">
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+  <form name="integrationForm" class="custom-form form-group">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Edit ID</h1>
+
+        <img class="integration-image" src="http://d1zwyexo3ug1ac.cloudfront.net/revision-e6148ed/images/pages/bookatable_logo.jpg" alt="Bookatable">
+
+        <div class="form-group">
+          <input type="text" name="integration" ng-model="integration.integration" class="form-control" placeholder="Enter Bookatable ID" required>
+          <p ng-show="integration.integration.$invalid || (integrationForm.integration.$error.required && integrationForm.integration.$touched)" class="help-block">This is a required field.</p>
+        </div>
+      </div>
+    </div><!-- END .row -->
+
+    <div class="row">
+      <div class="col-md-12 text-center resetsave">
+        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+        <button class="btn btn-primary" ng-click="save('integration')" ng-disabled="integrationForm.$invalid">Save</button>
+      </div>
+    </div><!-- END .row -->
+  </form>
+
+</div><!-- END .col-md-6 -->
+</div><!-- END .row -->
+</div><!-- END .container -->
+</script>

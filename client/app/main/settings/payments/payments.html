@@ -2,67 +2,123 @@
   <div class="row">
     <div class="col-md-5">
       <span class="hamburger" ng-click="$parent.$parent.navRevealed=true" ng-show="!navRevealed"><i class="icon-hamburger_menu"></i></span>
-      <h1><span>Settings &gt;</span> {{pageTitle}}</h1>
+      <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2"></div>
     <div class="col-md-5"></div>
   </div>
 </header>
 
-<div class="col-md-6 col-md-offset-3 main">
+<div class="col-md-12 main">
 
-  <div class="col-lg-12 checkbox hero-checkbox">
-    <label for="" class="control-label">
-      <input type="checkbox" ng-model="enabled" ng-checked="enabled"> Enable Online Payments
-    </label>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="toggle-checkbox checkbox">
+        <label for="" class="control-label">
+          <input type="checkbox" ng-model="enabled" ng-checked="enabled"> Enable Payments
+        </label>
+      </div>
+    </div>
   </div>
 
-  <div ng-show="enabled">
-    <div class="col-lg-6">
-      <h2>Business Owner Info</h2>
-      <p>John Mendelau</p>
-      <p>300 Ocean View</p>
-      <p>Berkeley, CA 94111</p>
-      <br>
-      <p>(415) 576-9000</p>
-      <p>jmenel@gmail.com</p>
-    </div>
-    <div class="col-lg-6">
-      <h2>Business Info</h2>
-      <p>Rodeo BBQ</p>
-      <p>1227 Oxford Ave</p>
-      <p>Berkeley, CA 94111</p>
-      <br>
-      <p>(415) 661-4132</p>
-      <p>info@rodeobbq.com</p>
-    </div>
+  <div class="row" ng-show="enabled">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Business Owner Info</h2>
+          <p>John Mendelau</p>
+          <p>300 Ocean View</p>
+          <p>Berkeley, CA 94111</p>
+          <br>
+          <p>(415) 576-9000</p>
+          <p>jmenel@gmail.com</p>
+        </div>
+      </div><!-- END .row -->
+      
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Business Info</h2>
+          <p>Rodeo BBQ</p>
+          <p>1227 Oxford Ave</p>
+          <p>Berkeley, CA 94111</p>
+          <br>
+          <p>(415) 661-4132</p>
+          <p>info@rodeobbq.com</p>
+        </div>
+      </div><!-- END .row -->
+    </div><!-- END .col-md-6 -->
 
-    <form name="paymentsForm" class="custom-form text-input">
-      <div class="col-lg-12">
-        <h2>Bank Information <span class="pull-right" ng-click="payments.edit=true" ng-class="{gray: payments.edit}"><i class="fa fa-pencil"></i></span></h2>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12 paragraph-margin">
+          <h2>Business Info <span class="pull-right" ng-click="customModal('paymentsForm.html')">Edit</span></h2>
+          <p>
+            <strong>Name</strong><br>
+            {{payments.bankName}}
+          </p>
+          <p>
+            <strong>Routing Number</strong><br>
+            {{payments.bankNo}}
+          </p>
+          <p>
+            <strong>Account Number</strong><br>
+            {{payments.accountNo}}
+          </p>
+        </div>
+      </div><!-- END .row -->
+    </div><!-- END .col-md-6 -->
+
+  </div><!-- END .row -->
+</div><!-- END .main.col-md-12 -->
+
+
+
+
+
+<script type="text/ng-template" id="paymentsForm.html">
+<div class="container custom-form">
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+  <form name="paymentsForm" novalidate class="custom-form text-input">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Edit Business Info</h1>
       </div>
+    </div><!-- END .row -->
+    <div class="row">
+      <div class="col-md-12 form-group">
+        <label class="control-label">Bank Name</label>
+        <input name="bankName" ng-model="payments.bankName" type="text" class="form-control" required>
+        <p ng-show="payments.bankName.$invalid || (paymentsForm.bankName.$error.required && paymentsForm.bankName.$touched)" class="help-block">Make sure this is valid.</p>
+      </div>
+    </div><!-- END .row -->
 
-      <div class="col-lg-12 form-group">
+    <div class="row">
+      <div class="col-md-6 form-group">
         <label class="control-label">Bank Routing Number</label>
-        <input name="bankNo" ng-model="payments.bankNo" type="number" class="form-control" value="123456789" ng-readonly="!payments.edit" ng-minlength="5" ng-maxlength="5" required>
-        <p ng-show="payments.bankNo.$invalid || (paymentsForm.bankNo.$error.required && paymentsForm.bankNo.$touched)" class="help-block">This is a required field.</p>
-        <p ng-show="paymentsForm.bankNo.$error.minlength" class="help-block">Bank Number is too short.</p>
-        <p ng-show="paymentsForm.bankNo.$error.maxlength" class="help-block">Bank Number is too long.</p>
+        <input name="bankNo" ng-model="payments.bankNo" type="number" class="form-control"  required>
+        <p ng-show="payments.bankNo.$invalid || (paymentsForm.bankNo.$error.required && paymentsForm.bankNo.$touched)" class="help-block">Make sure this is valid.</p>
       </div>
 
-      <div class="col-lg-12 form-group">
+      <div class="col-md-6 form-group">
         <label class="control-label">Account Number</label>
-        <input name="accountNo" ng-model="payments.accountNo" type="number" class="form-control" value="123456789" ng-readonly="!payments.edit" ng-minlength="5" ng-maxlength="5" required>
-        <p ng-show="payments.accountNo.$invalid || (paymentsForm.accountNo.$error.required && paymentsForm.accountNo.$touched)" class="help-block">This is a required field.</p>
+        <input name="accountNo" ng-model="payments.accountNo" type="number" class="form-control"" minlength="8" ng-maxlength="9" required>
         <p ng-show="paymentsForm.accountNo.$error.minlength" class="help-block">Account Number is too short.</p>
         <p ng-show="paymentsForm.accountNo.$error.maxlength" class="help-block">Account Number is too long.</p>
+        <p ng-show="payments.accountNo.$invalid || (paymentsForm.accountNo.$error.required && paymentsForm.accountNo.$touched)" class="help-block">Make sure this is valid.</p>
       </div>
+    </div><!-- END .row -->
 
-      <div class="col-lg-12 text-center resetsave" ng-show="payments.edit">
-        <button class="btn btn-default" ng-click="reset()">Cancel</button>
-        <button class="btn btn-primary" ng-click="save()" ng-disabled="paymentsForm.$invalid">Save</button>
+    <div class="row">
+      <div class="col-md-12 text-center resetsave">
+        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+        <button class="btn btn-primary" ng-disabled="paymentsForm.$invalid" ng-click="save('payments')">Save</button>
       </div>
+    </div><!-- END .row -->
+  </form><!-- END Business Info -->
 
-    </form>
-  </div>
-</div><!-- END .main.col-md-6 -->
+</div><!-- END .col-md-6 -->
+</div><!-- END .row -->
+</div><!-- END .container -->
+</script>

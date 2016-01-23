@@ -78,10 +78,16 @@
   }
 
   // RESERVATION
-  .reservationintegrations        {
-    .col-lg-12                    { margin: 30px 0 10px; }
-    p                             { font-size: 20px; }
-    img                           { width: 100%; @include desaturate(100%); filter: gray; }
+  .reservations-heading           { border: none; margin-bottom: 0; }
+  .reservations-table             {
+    .th                           { border-bottom: 2px solid $black; padding: 8px 8px 0; white-space: nowrap; }
+    .tr:last-child                {
+      .td                         { border: none; }
+    }
+  }
+  .reservation-integrations       { border-top: 1px solid $lightgray; margin-top: 30px; padding-top: 20px;
+    .col-xs-3                     { display: table-cell; margin-top: 20px; vertical-align: middle; }
+    img                           { width: 100%; @include desaturate(100%); opacity: .5; }
   }
 
   // INTEGRATION

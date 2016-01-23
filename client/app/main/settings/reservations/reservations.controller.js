@@ -7,7 +7,7 @@ angular.module('userAdminApp')
     $scope.seatingMaster = {};
     $scope.seating = {
       edit: false,
-      capacity: ''
+      capacity: 60
     };
     $scope.tablesMaster = {};
     $scope.tables = {

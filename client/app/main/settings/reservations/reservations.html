@@ -2,107 +2,253 @@
   <div class="row">
     <div class="col-md-5">
       <span class="hamburger" ng-click="$parent.$parent.navRevealed=true" ng-show="!navRevealed"><i class="icon-hamburger_menu"></i></span>
-      <h1><span>Settings &gt;</span> {{pageTitle}}</h1>
+      <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2"></div>
     <div class="col-md-5"></div>
   </div>
 </header>
 
-<div class="col-md-6 col-md-offset-3 main">
+<div class="col-md-12 main">
 
   <div class="row">
-    <form name="seatingForm" class="custom-form text-input">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="reservations-heading">Tables</h2>
+        </div>
+        <div class="col-md-12">
+          <div class="table reservations-table">
+            <div class="thead">
+              <div class="tr">
+                <div class="th">Table Name</div>
+                <div class="th">Table Capacity</div>
+                <div class="th">Number of Tables</div>
+                <div class="th">Mergeable</div>
+              </div><!-- END .tr -->
+            </div><!-- END .thead -->
+        
+            <div class="tbody">
+              <div class="tr" ng-repeat="table in tables.sets">
+                <div class="td">
+                  <a ng-click="customModal('tableForm.html')">{{table.name}}</a>
+                </div>
+                <div class="td">
+                  {{table.capacity}}
+                </div>
+                <div class="td">
+                  {{table.quantity}}
+                </div>
+                <div class="td">
+                  {{table.mergeable ? 'yes':'no'}}
+                </div>
+              </div><!-- END .tr -->
+
+              <div class="tr">
+                <div class="td">
+                  <a ng-click="customModal('newTableForm.html')">+ Add Table</a>
+                </div>
+              </div><!-- END .tr -->
+
+            </div><!-- END .tbody -->
+          </div><!-- END .table -->
+        </div><!-- END .col-md-12 -->
+      </div><!-- END .row -->
+
+    </div><!-- END .col-md-6 -->
+
+    <div class="col-md-6">
+      <h2>Seating<span ng-click="customModal('seatingForm.html')" class="pull-right">Edit</span></h2>
+      <p>
+        <strong>Maximun Seating Capacity</strong><br>
+        {{seating.capacity}} people
+      </p>
+    </div>
+  </div><!-- END .row -->
+
+  <div class="row reservation-integrations">
+    <div class="col-md-6 col-md-offset-3 text-center">
+      <p>Please go to <a href="/settings/integration">Integration</a> settings to connect to online reservation services.</p>
+      <div class="col-xs-3">
+        <img src="http://borntocoupon.com/wp-content/uploads/2015/02/Seamless-logo.png" alt="Seamless">
+      </div>
+      <div class="col-xs-3">
+        <img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt="seatme">
+      </div>
+      <div class="col-xs-3">
+        <img src="http://www.pricelinegroup.com/wp-content/uploads/2014/07/1_Brand_logo-435x110_x2-435x110@2x.png" alt="OpenTable">
+      </div>
+      <div class="col-xs-3">
+        <img src="https://snowulf.com/wp-content/uploads/2015/11/grubhub.png" alt="grubHub">
+      </div>
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+
+</div><!-- END .col-md-12 -->
+
+
+
+
+
+<script type="text/ng-template" id="tableForm.html">
+<div class="container custom-form">
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+  <form name="tableForm" class="custom-form form-group">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Edit Table</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Table Name</label>
+          <input type="text" ng-model="table.name" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Table Capacity</label>
+          <input type="number" ng-model="table.capacity" class="form-control" required>
+        </div>
+      </div>
+    </div><!-- END .row -->
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Number of Tables</label>
+          <input type="number" ng-model="table.quantity" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Mergeable</label>
+          <fieldset>
+            <select ng-model="table.mergeable" class="form-control" required>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </fieldset>
+        </div>
+      </div>
+    </div><!-- END .row -->
+
+    <div class="row">
+      <div class="col-md-12 text-center resetsave">
+        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+        <button class="btn btn-primary" ng-click="save('table')" ng-disabled="tableForm.$invalid">Save</button>
+      </div>
+    </div><!-- END .row -->
+  </form>
+
+</div><!-- END .col-md-6 -->
+</div><!-- END .row -->
+</div><!-- END .container -->
+</script>
+
+
+
+
+
+<script type="text/ng-template" id="newTableForm.html">
+<div class="container custom-form">
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+  <form name="newTableForm" class="custom-form form-group">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Add Table</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Table Name</label>
+          <input type="text" ng-model="table.name" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Table Capacity</label>
+          <input type="number" ng-model="table.capacity" class="form-control" required>
+        </div>
+      </div>
+    </div><!-- END .row -->
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Number of Tables</label>
+          <input type="number" ng-model="table.quantity" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Mergeable</label>
+          <fieldset>
+            <select ng-model="table.mergeable" class="form-control" required>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </fieldset>
+        </div>
+      </div>
+    </div><!-- END .row -->
+
+    <div class="row">
+      <div class="col-md-12 text-center resetsave">
+        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+        <button class="btn btn-primary" ng-click="save('table')" ng-disabled="newTableForm.$invalid">Save</button>
+      </div>
+    </div><!-- END .row -->
+  </form>
+
+</div><!-- END .col-md-6 -->
+</div><!-- END .row -->
+</div><!-- END .container -->
+</script>
+
+
+
+
+
+<script type="text/ng-template" id="seatingForm.html">
+<div class="container custom-form">
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+  <form name="seatingForm" class="custom-form form-group">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Edit Seating</h1>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col-md-12">
-        <h2>Seating <span class="pull-right" ng-click="seating.edit=true" ng-class="{gray: seating.edit}"><i class="fa fa-pencil"></i></span></h2>
+        <div class="form-group">
+          <label class="control-label">Maximum Seating Capacity</label>
+          <input type="number" name="seating" ng-model="seating.capacity" class="form-control" required>
+          <p ng-show="seating.capacity.$invalid || (seatingForm.seating.$error.required && seatingForm.seating.$touched)" class="help-block">This is a required field.</p>
+        </div>
       </div>
-      <div class="col-md-12 form-group">
-        <label class="control-label">Maximum Seating Capacity</label>
-        <input name="capacity" ng-model="seating.capacity" type="number" class="form-control" placeholder="60" ng-readonly="!seating.edit">
+    </div><!-- END .row -->
+
+    <div class="row">
+      <div class="col-md-12 text-center resetsave">
+        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+        <button class="btn btn-primary" ng-click="save('seating')" ng-disabled="seatingForm.$invalid">Save</button>
       </div>
+    </div><!-- END .row -->
+  </form>
 
-      <div class="col-md-12 text-center resetsave" ng-show="seating.edit">
-        <button class="btn btn-default" ng-click="reset('seating')">Cancel</button>
-        <button class="btn btn-primary" ng-disabled="seatingForm.$invalid" ng-click="save('seating')">Save</button>
-      </div>
-    </form>
-    <!-- END Seating -->
-
-    <div class="col-md-12">
-      <h2>Tables <span class="pull-right" ng-click="tables.edit=true" ng-class="{gray: tables.edit}"><i class="fa fa-pencil"></i></span></h2>
-    </div>
-
-    <div class="col-md-12">
-      <div class="table">
-        <div class="thead">
-          <div class="tr">
-            <div class="th">Table Name</div>
-            <div class="th">Table Capacity</div>
-            <div class="th">Number of Tables</div>
-            <div class="th">Mergeable</div>
-            <div class="th" ng-show="tables.edit"></div>
-          </div><!-- END .tr -->
-        </div><!-- END .thead -->
-
-        <div class="tbody">
-          <form class="tr text-input custom-form" ng-repeat="table in tables.sets">
-            <div class="td form-group">
-              <input type="text" class="form-control" ng-model="table.name" ng-readonly="!table.edit">
-            </div>
-            <div class="td form-group">
-              <input type="number" class="form-control" ng-model="table.capacity" ng-readonly="!table.edit">
-            </div>
-            <div class="td form-group">
-              <input type="number" class="form-control" ng-model="table.quantity" ng-readonly="!table.edit">
-            </div>
-            <div class="td form-group text-center">
-              <input ng-show="table.edit" type="checkbox" ng-model="table.mergeable">
-              <span ng-show="!table.edit">{{table.mergeable ? 'yes':'no'}}</span>
-            </div>
-            <div class="td" ng-show="tables.edit">
-              <a ng-show="!table.edit" ng-click="table.edit = true"><span class="fa fa-pencil"></span></a>
-              <a ng-show="table.edit" ng-click="table.edit = false"><span class="fa fa-check"></span></a>
-            </div>
-          </form><!-- END form.tr -->
-
-          <form name="tablesForm" class="tr custom-form text-input" ng-show="tables.edit">
-            <div class="td form-group"><input type="text" class="form-control" ng-model="tableName" name="tableName" required></div>
-            <div class="td form-group"><input type="number" class="form-control" ng-model="tableCapacity" name="tableCapacity" required></div>
-            <div class="td form-group"><input type="number" class="form-control" ng-model="tableQuantity" name="tableQuantity" required></div>
-            <div class="td">
-              <div class="checkbox text-center">
-                <label><input type="checkbox" ng-model="tableMergeable" name="tableMergeable"></label>
-              </div>
-            </div>
-
-            <div class="td form-group" ng-show="tables.edit">
-              <a ng-click="
-                tables.add(tableName, tableCapacity, tableQuantity, tableMergeable)">
-                <span class="fa fa-plus"></span>
-              </a>
-            </div>
-          </form><!-- END form.tr -->
-        </div><!-- END .tbody -->
-      </div><!-- END .table -->
-    </div>
-
-    <div class="reservationintegrations">
-      <div class="col-md-12">
-        <p>Please go to <a href="settings/integration">Integration</a> settings to connect to online reservation services.</p>
-      </div>
-      <div class="col-xs-3">
-        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
-      </div>
-      <div class="col-xs-3">
-        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
-      </div>
-      <div class="col-xs-3">
-        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
-      </div>
-      <div class="col-xs-3">
-        <a href="javascript:void(0)"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt=""></a>
-      </div>
-    </div>
-
-  </div>
-</div>
+</div><!-- END .col-md-6 -->
+</div><!-- END .row -->
+</div><!-- END .container -->
+</script>

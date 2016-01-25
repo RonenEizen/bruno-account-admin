@@ -5,7 +5,7 @@
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
-      <button class="btn btn-primary center-block" ng-click="customModal('addCustomer.html')">+ New Customer</button>
+      <button class="btn btn-primary center-block" ng-click="customModal('addCustomerModal.html')">+ New Customer</button>
     </div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -149,7 +149,7 @@
     <div class="tbody">
       <div class="tr" ng-repeat="customer in customers | filter:customersFilter | orderBy:clickedHeader:reverse | limitTo:displayingCustomers">
         <div class="td" ng-show="displayColumns.name">
-          <a ng-click="customModal('modalCustomer.html', editing)">{{customer.fname + ' ' + customer.lname}}</a>
+          <a ng-click="customModal('customerModal.html', editing)">{{customer.fname + ' ' + customer.lname}}</a>
         </div>
         <div class="td" ng-show="displayColumns.phone">{{customer.phone}}</div>
         <div class="td" ng-show="displayColumns.email">{{customer.email}}</div>
@@ -170,7 +170,7 @@
 
 
 
-<script type="text/ng-template" id="modalCustomer.html">
+<script type="text/ng-template" id="customerModal.html">
   <form class="container custom-form" ng-show="modal.object.delete">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
@@ -183,8 +183,8 @@
         </div>
         <div class="row">
           <div class="col-md-12 resetsave text-center">
-            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-            <button class="btn btn-danger" ng-click="$dismiss()">Confirm</button>
+            <button class="btn btn-default" ng-click="modal.object.delete = !modal.object.delete">Cancel</button>
+            <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Confirm</button>
           </div>
         </div><!-- END .row -->
       </div>
@@ -198,7 +198,6 @@
           <div class="col-md-12">
             <h1 class="text-center" ng-show="!modal.object.edit">View Customer</h1>
             <h1 class="text-center" ng-show="modal.object.edit">Edit Customer</h1>
-            <h1 class="text-center" ng-show="modal.object.edit && modal.object.new">New Customer</h1>
           </div>
         </div><!-- END .row -->
         <div class="row">
@@ -279,7 +278,7 @@
   </form><!-- END .container -->
 </script>
 
-<script type="text/ng-template" id="addCustomer.html">
+<script type="text/ng-template" id="addCustomerModal.html">
   <form class="container custom-form">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">

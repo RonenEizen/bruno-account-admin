@@ -42,7 +42,6 @@ angular.module('userAdminApp')
 
 
     // fake data
-
     $scope.rolesTemp = [];
     $scope.roles = [
       { edit: false, role: 'Owner', access: ['Full Access'] },

@@ -43,13 +43,13 @@ angular.module('userAdminApp')
     // fake data
     $scope.usersTemp = [];
     $scope.users = [
-      { edit: false, name: 'Blake Liveley', role: 'Owner', phone: 9173452680, email: 'bively@gmail.com', selection: '1' },
-      { edit: false, name: 'Adam Greenberg', role: 'Admin', phone: 9175668746, email: 'adamgreen@gmail.com', selection: '1' },
-      { edit: false, name: 'Buddy J. Finston', role: 'Host', phone: 3476062600, email: 'finjlone@yahoo.com', selection: '1' },
-      { edit: false, name: 'Rosa O\' Bimbel', role: 'Chef', phone: 3472223333, email: 'doej@gmail.com', selection: '1' },
-      { edit: false, name: 'Venik Gromofonov', role: 'Cook', phone: 3472223333, email: 'doej@gmail.com', selection: '1' },
-      { edit: false, name: 'Ty Robertson', role: 'Busboy', phone: 3472223333, email: 'doej@gmail.com', selection: '1' },
-      { edit: false, name: 'Iskandr Babekov', role: 'Driver', phone: 3472223333, email: 'doej@gmail.com', selection: '1' }
+      { edit: false, fname: 'Blake', mname: '', lname: 'Liveley', role: 'Owner', phone: 9173452680, email: 'bively@gmail.com' },
+      { edit: false, fname: 'Adam', mname: '', lname: 'Greenberg', role: 'Admin', phone: 9175668746, email: 'adamgreen@gmail.com' },
+      { edit: false, fname: 'Buddy', mname: 'J.', lname: ' Finston', role: 'Host', phone: 3476062600, email: 'finjlone@yahoo.com' },
+      { edit: false, fname: 'Rosa', mname: '', lname: 'O\'Bimbel', role: 'Chef', phone: 3472223333, email: 'doej@gmail.com' },
+      { edit: false, fname: 'Venik', mname: '', lname: 'Gromofonov', role: 'Cook', phone: 3472223333, email: 'doej@gmail.com' },
+      { edit: false, fname: 'Ty', mname: '', lname: 'Robertson', role: 'Busboy', phone: 3472223333, email: 'doej@gmail.com' },
+      { edit: false, fname: 'Iskandr', mname: '', lname: 'Babekov', role: 'Driver', phone: 3472223333, email: 'doej@gmail.com' }
     ];
 
 

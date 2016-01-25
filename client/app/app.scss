@@ -63,8 +63,9 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 @import 'main/settings/integration/integration.scss';
 @import 'main/settings/payments/payments.scss';
 @import 'main/settings/reservations/reservations.scss';
+@import 'main/settings/roles/roles.scss';
 @import 'main/settings/settings.scss';
-@import 'main/settings/users-and-roles/users-and-roles.scss';
+@import 'main/settings/users/users.scss';
 @import 'main/statistics/statistics.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';

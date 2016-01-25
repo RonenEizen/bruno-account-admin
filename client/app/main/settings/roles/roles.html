@@ -1,0 +1,121 @@
+<header class="top clearfix" ng-class="{expanded: !navRevealed}">
+  <div class="row">
+    <div class="col-md-5">
+      <span class="hamburger" ng-click="$parent.$parent.navRevealed=true" ng-show="!navRevealed"><i class="icon-hamburger_menu"></i></span>
+      <h1>{{pageTitle}}</h1>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary" ng-click="customModal('newRoleModal.html')">+ New Role</button>
+    </div>
+    <div class="col-md-5">
+      <div class="actions-right" ng-init="pickColumns=false">
+        <i class="icon-export_data"></i>
+        <i class="icon-grid" ng-click="showColumnPicker()"></i>
+        <ul ng-show="pickColumns">
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.role"> Role</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.access"> Access</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.rights"> Rights</label></li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="invisible-layer"
+      ng-show="invisibleLayer"
+      ng-click="toggleFilter('');pickColumns=false;invisibleLayer=false;">
+      &nbsp;
+    </div>
+  </div>
+</header>
+
+<div class="col-md-12 main">
+  <div class="table userroles">
+    <div class="thead">
+      <div class="tr">
+
+        <div class="th" ng-show="displayColumns.role">
+          <div class="filter">
+            <i class="icon-filter" ng-click="toggleFilter('role')"></i>
+            <div ng-show="openFilter.role">
+              <input type="text" ng-model="rolesFilter.role">
+            </div>
+          </div>
+          <span ng-click="clickedHeader='role'; reverse = !reverse">Role
+            <i class="sortorder fa" ng-show="clickedHeader === 'role'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'role'"></i>
+          </span>
+        </div>
+
+        <div class="th" ng-show="displayColumns.access">
+          <div class="filter">
+            <i class="icon-filter" ng-click="toggleFilter('access')"></i>
+            <div ng-show="openFilter.access">
+              <input type="text" ng-model="rolesFilter.access">
+            </div>
+          </div>
+          <span ng-click="clickedHeader='access'; reverse = !reverse">Access
+            <i class="sortorder fa" ng-show="clickedHeader === 'access'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'access'"></i>
+          </span>
+        </div>
+
+        <div class="th" ng-show="displayColumns.rights">
+          <div class="filter">
+            <i class="icon-filter" ng-click="toggleFilter('rights')"></i>
+            <div ng-show="openFilter.rights">
+              <input type="text" ng-model="rolesFilter.rights">
+            </div>
+          </div>
+          <span ng-click="clickedHeader='rights'; reverse = !reverse">Rights
+            <i class="sortorder fa" ng-show="clickedHeader === 'rights'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'rights'"></i>
+          </span>
+        </div>
+
+      </div><!-- END .tr -->
+    </div><!-- END .thead -->
+    <div class="tbody">
+      <div
+        class="tr"
+        ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingRoles
+      ">
+        <div class="td" ng-show="displayColumns.role">
+          <a ng-click="customModal('roleModal.html')">{{role.role}}</a>
+        </div>
+
+        <div class="td" ng-show="displayColumns.access">
+          <span ng-show="!role.edit" ng-repeat="access in role.access">{{access}}{{$last ? '' : ', '}}</span>
+        </div>
+
+        <div class="td" ng-show="displayColumns.rights">
+          <!-- TODO: fix this filter to display rights based on role access -->
+          <span ng-repeat="access in accesses | filter:{name:role.access}">{{access.rights}}{{$last ? '' : ', '}}</span>
+        </div>
+      </div><!-- END .tr -->
+
+    </div><!-- END .tbody -->
+  </div><!-- END .table -->
+  <button class="btn btn-flat center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
+</div>
+
+
+
+<script type="text/ng-template" id="roleModal.html">
+  <div class="container custom-form">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        roleModal
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</script>
+
+
+<script type="text/ng-template" id="newRoleModal.html">
+  <div class="container custom-form">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        newRoleModal
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</script>

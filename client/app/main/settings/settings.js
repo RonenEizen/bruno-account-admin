@@ -13,10 +13,15 @@ angular.module('userAdminApp')
         templateUrl: 'app/main/settings/business-info/business-info.html',
         controller: 'SettingsBusinessInfoCtrl'
       })
-      .state('main.settings.users-and-roles', {
-        url: '/users-and-roles',
-        templateUrl: 'app/main/settings/users-and-roles/users-and-roles.html',
-        controller: 'SettingsUsersAndRolesCtrl'
+      .state('main.settings.users', {
+        url: '/users',
+        templateUrl: 'app/main/settings/users/users.html',
+        controller: 'SettingsUsersCtrl'
+      })
+      .state('main.settings.roles', {
+        url: '/roles',
+        templateUrl: 'app/main/settings/roles/roles.html',
+        controller: 'SettingsRolesCtrl'
       })
       .state('main.settings.delivery', {
         url: '/delivery',

@@ -49,9 +49,9 @@
   // DAY VIEW: tab specifics
   .day-view                       { background: $beige; height: 100%;
     .heading                      {
-      & ~ .row                    { overflow: auto; }
       .legend                     { border-bottom: 1px solid $lightgray; }
     }
+    .calendar-overflow            { overflow: auto; }
     .calendar-widget              { color: $lightgray; position: relative; width: 6300px;
       .cal-row                    { border-bottom: 1px solid $lightgray; height: 35px; line-height: 35px; position: relative;
         .booked                   { padding: 4px; height: 34px; position: absolute; top: 0;

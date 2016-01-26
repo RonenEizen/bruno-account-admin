@@ -16,8 +16,8 @@
       </div><!-- END .row.heading -->
 
       <div class="row">
-        <div class="calendar-widget">
-          <div class="col-md-12">
+        <div class="col-md-12 calendar-overflow">
+          <div class="calendar-widget">
             <div class="ruler" ng-style="{left: leftPos}">
               <i></i>
               <time>{{(currentDate.now() | date: 'h:mm a').toLowerCase()}}</time>
@@ -47,8 +47,8 @@
             </div>
             <div class="cal-row"></div>
             <div class="cal-row"></div>
-          </div>
-        </div><!-- END .calendar-widget -->
+          </div><!-- END .calendar-widget -->
+        </div>
       </div><!-- END .row -->
     </div><!-- END .calendar -->
 

@@ -22,10 +22,10 @@ angular.module('userAdminApp')
     // WEEK VIEW
     // set column width
     if (document.getElementsByClassName('table').length > 0) {
-      $scope.tableWidth = document.querySelectorAll('.table')[0].clientWidth;
+      $scope.tableWidth = document.querySelectorAll('.table')[0].clientWidth - 60; // 60px is the width of the first column
     }
 
-    $scope.colWidth = Math.round((($scope.tableWidth - 60)/7));
+    $scope.colWidth = Math.round((($scope.tableWidth)/7));
     $scope.weekdays = { sun: 1, mon: 2, tue: 3, wed: 4, thu:5, fri: 6, sat: 7 };
     $scope.rulerPos = ($scope.colWidth * $scope.weekdays.mon) - ($scope.colWidth + 6);
 

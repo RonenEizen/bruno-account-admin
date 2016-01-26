@@ -188,7 +188,6 @@ html, body, div[ui-view]          { height: 100%; }
   .icon-bar                       { border: 2px solid $lightgray; border-radius: 1px; margin-bottom: 3px; }
 }
 .invisible-layer                  { background: transparent; height: 100%; position: fixed; top: 0; left: 0; width: 100%; z-index: 50; }
-.row                              { overflow: hidden; }
 .full-height                      { height: 100%; }
 .toggle-checkbox                  { background: $lightgray; display: inline-block; padding: 10px 30px; }
 .optional                         { color: $lightgray; font:300 1.5rem $sans-font; }

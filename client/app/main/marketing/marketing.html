@@ -12,10 +12,9 @@
         <i class="icon-export_data"></i>
         <i class="icon-grid" ng-click="showColumnPicker()"></i>
         <ul ng-show="pickColumns">
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.number"> Order Num</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.customer"> Customer</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.type"> Type</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.amount"> Amount</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.campaign"> Campaign</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.enabled"> Enabled</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.disabled"> Disabled</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.status"> Status</label></li>
         </ul>
       </div>
@@ -215,7 +214,7 @@
   <div class="container" ng-init="channelTab = 'newsletter'">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h1 class="channel-heading">Edit Marketing Channels – 
+        <h1 class="channel-heading">Edit Marketing Channels –
           <strong ng-show="channelTab === 'facebook'">Facebook Ads</strong>
           <strong ng-show="channelTab === 'twitter'">Twitter</strong>
           <strong ng-show="channelTab === 'googleads'">Google Adwords</strong>
@@ -225,7 +224,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->
-  
+
   <div class="container-fluid channel-nav">
     <div class="row">
       <ul class="col-md-8 col-md-offset-2 nav nav-tabs">
@@ -274,11 +273,11 @@
                     <option value="3">Reach living beings outside earth</option>
                   </select>
                 </div>
-      
+
                 <h4>Who would ike to see your ads?</h4>
               </div>
             </div><!-- END .row -->
-      
+
             <div class="wider-row">
               <div class="googlemap">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d58420.22179022014!2d-51.171596471397784!3d-30.028410566185656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1443130059406"></iframe>
@@ -290,7 +289,7 @@
                 <div class="clearfix"></div>
               </div>
             </div><!-- END .wider-row -->
-      
+
             <div class="row">
               <div class="col-md-8 form-group">
                 <label class="control-label">Street Address</label>
@@ -307,7 +306,7 @@
                 </div>
               </div>
             </div><!-- END .row -->
-      
+
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -328,7 +327,7 @@
                 </div>
               </div>
             </div><!-- END .row -->
-      
+
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -341,7 +340,7 @@
                 </div>
               </div>
             </div><!-- END .row -->
-      
+
             <div class="row">
               <div class="col-md-12">
                 <h4>How much would you like to spend?</h4>
@@ -367,19 +366,19 @@
                 </div>
               </div>
             </div><!-- END .row -->
-      
+
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="control-label">Schedule</label>
-      
+
                   <div class="radio">
                     <label>
                       <input type="radio" value="1" checked>
                       Run this ad constinuosly starting today
                     </label>
                   </div>
-      
+
                   <div class="radio">
                     <label>
                       <input type="radio" value="2">
@@ -389,7 +388,7 @@
                 </div>
               </div>
             </div><!-- END .row -->
-      
+
             <div class="row campaign-image">
               <div class="col-md-5">
                 <label class="control-label">Campaign Image</label>
@@ -403,7 +402,7 @@
                 </ul>
               </div>
             </div><!-- END .row -->
-      
+
             <div class="row">
               <div class="col-md-12">
                 <h4>What text do you want to use?</h4>
@@ -546,7 +545,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="control-label">Email Body</label>
-                  <textarea type="text" class="form-control"></textarea><!-- TODO: add WYSIWYG --> 
+                  <textarea type="text" class="form-control"></textarea><!-- TODO: add WYSIWYG -->
                 </div>
               </div>
             </div><!-- END .row -->
@@ -555,7 +554,7 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label class="control-label">Lauch Date</label>
-                  <input type="text" class="form-control" /><!-- TODO: add datepicker --> 
+                  <input type="text" class="form-control" /><!-- TODO: add datepicker -->
                 </div>
               </div>
               <div class="col-md-4 col-md-offset-4">
@@ -702,5 +701,5 @@
       </div><!-- END .col-md-6 -->
     </form><!-- END .row -->
   </div><!-- END .container -->
-  
+
 </script>

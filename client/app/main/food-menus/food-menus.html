@@ -4,13 +4,126 @@
       <span class="hamburger" ng-click="$parent.navRevealed=true" ng-show="!navRevealed"><i class="icon-hamburger_menu"></i></span>
       <h1>{{pageTitle}}</h1>
     </div>
-    <div class="col-md-2"></div>
-    <div class="col-md-5"></div>
+    <div class="col-md-2">
+      <button class="btn btn-primary">+ New Food Menu</button>
+    </div>
+    <div class="col-md-5">
+      <div class="actions-right" ng-init="pickColumns=false">
+        <i class="icon-export_data"></i>
+        <i class="icon-grid" ng-click="showColumnPicker()"></i>
+        <ul ng-show="pickColumns">
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.col1"> col 1</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.col2"> col 2</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.col3"> col 3</label></li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="invisible-layer"
+      ng-show="invisibleLayer"
+      ng-click="toggleFilter('');pickColumns=false;invisibleLayer=false;">
+      &nbsp;
+    </div>
   </div>
 </header>
 
 <div class="container-fluid menu">
   <div class="row">
+    <div class="col-md-12 menu-container">
+      <header>
+        <h2>My Menu</h2>
+        <a href="javascript:void(0)">Edit</a>
+        <i class="fa fa-chevron-up pull-right"></i>
+      </header>
+
+      <div class="row menu-category-container">
+        <div class="col-md-12">
+          <header>
+            <h3>Appetizers</h3>
+            <a href="javascript:void(0)" class="pull-right">Edit</a>
+          </header>
+        </div>
+        <div class="col-md-12">
+          <div class="table">
+            <div class="tbody">
+              <div class="tr">
+                <div class="td"><a href="javascript:void(0)">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="javascript:void(0)">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="javascript:void(0)">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="javascript:void(0)">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+            </div>
+          </div><!-- END .table -->
+        </div>
+        <div class="col-md-12 border-top">
+          <a href="javascript:void(0)" class="add-something">+ Add Food Item</a>
+        </div>
+      </div><!-- END .menu-category-container -->
+
+      <div class="row menu-category-container">
+        <div class="col-md-12">
+          <header>
+            <h3>Salads</h3>
+            <a href="javascript:void(0)" class="pull-right">Edit</a>
+          </header>
+        </div>
+        <div class="col-md-12">
+          <div class="table">
+            <div class="tbody">
+              <div class="tr">
+                <div class="td"><a href="javascript:void(0)">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="javascript:void(0)">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="javascript:void(0)">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="javascript:void(0)">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+            </div>
+          </div><!-- END .table -->
+        </div>
+        <div class="col-md-12  border-top">
+          <a href="javascript:void(0)" class="add-something">+ Add Food Item</a>
+        </div>
+      </div><!-- END .menu-category-container -->
+
+      <div class="row menu-category-container">
+        <div class="col-md-12">
+          <a href="javascript:void(0)" class="add-something">+ Add Category</a>
+        </div>
+      </div><!-- END .menu-category-container -->
+
+
+
+    </div><!-- END .menu-container -->
+  </div><!-- END .row -->
+
+  <div class="row" style="display: none;">
     <header class="col-md-12 header">
       <div class="menu-tabs">
         <div class="menu-tab">My Menu</div>

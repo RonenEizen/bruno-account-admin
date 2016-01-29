@@ -1,19 +1,21 @@
 .menu                             { padding: 20px 35px;
-  .menu-container                 { background: $beige; border: 1px solid $lightgray; padding: 20px 35px;
+  .menu-container                 { background: $beige; border: 1px solid $lightgray; margin-bottom: 20px; padding: 20px 35px;
     header                        { margin-left: -15px;
-      h2                          { color: $blue; display: inline-block; font-size: 18px; margin: 0 10px 30px 0; }
-      .edit                       {}
-      .pull-right                 {}
+      h2                          { display: inline-block; font-size: 18px; margin: 0 10px 0 0; }
     }
   }
   .menu-category-container        { background: $white; border: 1px solid $lightgray; margin-bottom: 20px;
+    &:first-child                 { margin-top: 20px; }
     &:last-child                  { margin-bottom: 0; }
     header                        { border-bottom: 1px solid $lightgray; margin-left: -15px; margin-right: -15px; padding: 20px 15px;
-      h3                          { color: $blue; display: inline-block; font-size: 16px; margin: 0; }
+      h3                          { display: inline-block; font-size: 16px; margin: 0; }
       .pull-right                 { }
     }
     .table                        { margin: 0;
-      .td                         { padding: 15px 0; }
+      .td                         { padding: 15px 8px;
+        &:first-child             { padding-left: 0; }
+        &:last-child              { padding-right: 0; }
+      }
       .tr:last-child              {
         .td                       { border-bottom: none; }
       }
@@ -21,57 +23,4 @@
     .border-top                   { border-top: 1px solid $lightgray; }
     .add-something                { display: inline-block; padding: 15px 0; }
   }
-
-//   header                          {
-//     h1                            { margin-bottom: 20px; }
-//     .menu-tabs                    {
-//       .menu-tab                   { border: 1px solid $black; border-bottom: 1px solid $white; display: inline-block; font: 400 1.6rem $serif-font; margin-bottom: -1px; padding: 10px 45px; }
-//       .menu-add                   { background: $blue; border: none; border-radius: 2px; box-shadow: none; font: 400 1.6rem $serif-font; margin-left: 10px; padding: 5px 20px; position: relative; text-shadow: none; top: -3px; }
-//     }
-//   }
-//   .additem                        { clear: both; list-style: none; margin-top: 80px; padding: 0; width: 100%;
-//     li                            { padding: 15px 0;
-//       &:hover                     { background: $lightgray1;
-//         h2                        { font-weight: 600; }
-//         p                         { color: $black; }
-//       }
-//       h2                          { font-family: $title-font; margin-top: 0; }
-//       p                           { color: $lightgray2; }
-//     }
-//   }
-//   .close                          { text-align: right; float: none; margin: 10px 30px 0 0 ; }
-//   .expand-collapse                { padding: 10px 30px 0 0; text-align: right;
-//     a                             { margin-left: 10px;
-//       &.disabled                  { color: $lightgray; }
-//     }
-//   }
-//   .menu-panel                     { background: $beige; padding: 0 0 30px; margin-bottom: 30px;
-//     h1                            { background: $white; color: $lightgray; font-family: $title-font; margin: 0; padding: 10px 0; }
-//     h2                            { font-family: $serif-font; font-weight: 400; margin-left: 30px; }
-//     & > .large-link               { color: $blue; font-size: 2rem; margin-left: 30px; }
-//   }
-//   .menu-options                   { background: $white; border-top: 1px solid $lightgray; margin: 0 30px 30px; padding: 0;
-//     header                        { border: 1px solid $lightgray; padding: 5px; border-top: 0;
-//       .drag                       { float: left; margin: 8px 5px; }
-//       .title                      { float: left; font: 400 1.8rem $serif-font; margin: 5px 15px; }
-//       .price                      { font-size: 1.8rem; margin: 5px 15px; }
-//       .actions                    { font-size: 1.8rem; padding: 5px 15px; }
-//     }
-//     .content                      { border: 1px solid $lightgray; padding: 10px 30px; border-top: 0; position: relative;
-//       img                         { width: 160px; margin-bottom: 10px; margin-right: 20px; }
-//       p                           { font-size: 1.6rem; width: 60%; }
-//       dt                          { text-align: left; }
-//       dd                          { color: $lightgray2; }
-//       .description-row            { margin-bottom: 20px; }
-//       .corner-action              { font-size: 1.8rem; position: absolute; top: 10px; right: 30px; }
-//     }
-//   }
-//   .fancy-button                   { background: $blue; border-radius: 5px; color: white; display: inline-block; font-size: 1.4em; margin-left: 30px; padding: 10px 20px;
-//     &:hover > .hidden-link        { display: block; }
-//     a                             { color: $white; }
-//     .hidden-link                  { display: none; margin-top: 10px; }
-//   }
-//   #create-category                { margin-bottom: 0; padding: 30px 0 100px;
-//     .large-link                   { font-family: $serif-font; }
-//   }
 }

@@ -5,6 +5,7 @@
     button.btn                    { background: none; bottom: 10px; color: $blue; font-size: 2rem; line-height: 3rem; padding: 0; position: absolute; right: 0; }
   }
   h4                              { font: 300 1.8rem $sans-font; margin-top: 30px; }
+  .image                          { width: 100%; }
   .close                          { font-size: 18px; padding: 10px; }
   .status                         {
     &.cancelled                   { color: $red; }
@@ -57,4 +58,16 @@
     }
   }
   .integration-image              { margin-bottom: 40px; max-height: 50px; max-width: 200px; }
+  .top-instructions               { border-bottom: 1px solid $lightgray; font-size: 18px; margin-bottom: 30px; text-align: center; }
+  .shadowed                       { background: $beige; border: 1px solid $lightgray; margin-bottom: 20px; padding: 15px;
+    &:last-child                  { margin-bottom: 0; }
+  }
+  .options-line                   { margin-bottom: 10px;
+    .icon-close                   { position: relative; left: -10px; top: 10px; }
+  }
+  .dragable                       { list-style: none; margin: 0; padding: 0;
+    li                            { background: $white; border: 1px solid $lightgray; margin-bottom: 10px; padding: 10px;
+      &:last-child                { margin-bottom: 0; }
+    }
+  }
 }

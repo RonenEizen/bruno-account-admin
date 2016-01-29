@@ -4,11 +4,11 @@
     .channel                      { font: normal normal normal 25px 'BrunoIcons' !important; speak: none; line-height: 1; margin-right: 15px; text-transform: none; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale;
       &.enabled                   { color: $blue; }
       &.disabled                  { color: $lightgray; }
-      &.bn:before                 { content: "\e900"; }
-      &.em:before                 { content: "\e903"; }
-      &.fb:before                 { content: "\e901"; }
-      &.ga:before                 { content: "\e902"; }
-      &.tw:before                 { content: "\e904"; }
+      &.bn:before                 { content: "\e90c"; }
+      &.em:before                 { content: "\e90b"; }
+      &.fb:before                 { content: "\e908"; }
+      &.ga:before                 { content: "\e90a"; }
+      &.tw:before                 { content: "\e909"; }
     }
     .status                       {
       &.cancelled                 { color: $red; }

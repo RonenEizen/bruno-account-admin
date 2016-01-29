@@ -149,25 +149,26 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 
 [class^="icon-"],
 [class*=" icon-"]                 { font-family: 'BrunoIcons' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale; }
-.icon-Banner:before               { content: "\e900"; }
-.icon-Facebook:before             { content: "\e901"; }
-.icon-GooglePlus:before           { content: "\e902"; }
-.icon-Newsletter:before           { content: "\e903"; }
-.icon-Twitter:before              { content: "\e904"; }
-.icon-close:before                { content: "\e910"; }
-.icon-triangle_right:before       { content: "\e911"; }
-.icon-sort_up_down:before         { content: "\e912"; }
-.icon-close_delete:before         { content: "\e90f"; }
-.icon-edit_pencil:before          { content: "\e90e"; }
-.icon-export_data:before          { content: "\e90d"; }
-.icon-grid:before                 { content: "\e905"; }
-.icon-hamburger_menu:before       { content: "\e906"; }
-.icon-filter:before               { content: "\e907"; }
-.icon-link_out:before             { content: "\e90b"; }
-.icon-preview:before              { content: "\e90c"; }
-.icon-search:before               { content: "\e908"; }
-.icon-triangle_up:before          { content: "\e909"; }
-.icon-triangle_down:before        { content: "\e90a"; }
+.icon-search:before               { content: "\e905"; }
+.icon-hamburger_menu:before       { content: "\e900"; }
+.icon-chevron_right:before        { content: "\e901"; }
+.icon-chevron_down:before         { content: "\e902"; }
+.icon-export:before               { content: "\e903"; }
+.icon-link_out:before             { content: "\e904"; }
+.icon-close_sm:before             { content: "\e906"; }
+.icon-edit_pencil:before          { content: "\e907"; }
+.icon-Facebook:before             { content: "\e908"; }
+.icon-Twitter:before              { content: "\e909"; }
+.icon-GooglePlus:before           { content: "\e90a"; }
+.icon-Newsletter:before           { content: "\e90b"; }
+.icon-Banner:before               { content: "\e90c"; }
+.icon-grid:before                 { content: "\e90d"; }
+.icon-filter:before               { content: "\e90e"; }
+.icon-preview_eye:before          { content: "\e90f"; }
+.icon-sort_triangles:before       { content: "\e910"; }
+.icon-triangle_down_bg:before     { content: "\e911"; }
+.icon-triangle_up_big:before      { content: "\e912"; }
+.icon-triangle_right_sm:before    { content: "\e913"; }
 
 
 

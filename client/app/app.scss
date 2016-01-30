@@ -155,7 +155,7 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 .icon-chevron_down:before         { content: "\e902"; }
 .icon-export:before               { content: "\e903"; }
 .icon-link_out:before             { content: "\e904"; }
-.icon-close_sm:before             { content: "\e906"; }
+.icon-close:before                { content: "\e906"; }
 .icon-edit_pencil:before          { content: "\e907"; }
 .icon-Facebook:before             { content: "\e908"; }
 .icon-Twitter:before              { content: "\e909"; }
@@ -183,7 +183,7 @@ html, body, div[ui-view]          { height: 100%; }
 
 // GLOBAL CLASSES
 .bold                             { font-weight: 600; }
-.circle                           { border: 1px solid $blue; border-radius: 100%; color: $blue; display: inline-block; height: 20px; text-align: center; width: 20px; }
+.add-something                    { display: inline-block; padding: 15px 0; }
 .close                            { clear: both; color: $darkgray; font-size: 4rem; opacity: 1; }
 .drag                             { margin-right: 10px; width: 25px;
   .icon-bar                       { border: 2px solid $lightgray; border-radius: 1px; margin-bottom: 3px; }
@@ -192,6 +192,7 @@ html, body, div[ui-view]          { height: 100%; }
 .full-height                      { height: 100%; }
 .toggle-checkbox                  { background: $lightgray; display: inline-block; padding: 10px 30px; }
 .optional                         { color: $lightgray; font:300 1.5rem $sans-font; }
+.mandatory                        { color: $red; }
 
 // HEADER
 header.top                        { background: $beige; border-bottom: 1px solid $lightgray; height: 50px; padding: 10px 20px; position: fixed; transition: width 0.5s ease; top: 0; width: calc(100% - 240px); z-index: 50;

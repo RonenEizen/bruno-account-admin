@@ -47,12 +47,23 @@
     }
   }
   .table                          { margin-top: 20px;
+    &.order-table                 {
+      .tr                         {
+        .th                       { width: 19%;
+          &:last-child            { width: 5%; }
+        }
+        .td                       { padding-right: 10px;
+          &:last-child            { padding-right: 0; text-align: center; }
+        }
+      }
+    }
     .tr                           {
       &.no-border                 {
         .th                       { border: none; font: 300 1.8rem $sans-font; }
       }
       .td, .th                    { padding: 15px 0;
         button                    { background: none; border: none; color: $blue; font-size: 2rem; padding: 0; }
+        .form-group               { margin: 0; }
       }
       .th                         { border-bottom: 2px solid $black; padding: 5px 0; }
     }

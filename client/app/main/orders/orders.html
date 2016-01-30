@@ -5,7 +5,7 @@
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
-      <button class="btn btn-primary">+ New Order</button>
+      <button class="btn btn-primary" ng-click="customModal('addOrderModal.html')">+ New Order</button>
     </div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -128,110 +128,527 @@
 </div><!-- END .main.col-md-12 -->
 
 <script type="text/ng-template" id="modalOrder.html">
-  <div class="container custom-form">
+  <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <div class="row">
-          <div class="col-md-12">
-            <h1 class="text-center"><span ng-show="modal.object.edit">Edit</span> Order No. {{modal.object.number}}</h1>
-          </div>
-        </div><!-- END .row -->
-        <div class="row">
-          <div class="col-md-4 form-group">
-            <strong class="control-label">Customer</strong><br>
-            <span>{{modal.object.customer}}</span>
-          </div>
-          <div class="col-md-4 form-group">
-            <strong class="control-label">Home Phone</strong><br>
-            <span>{{modal.object.homePhone}}</span>
-          </div>
-          <div class="col-md-4 form-group">
-            <strong class="control-label">Mobile Phone</strong><br>
-            <span>{{modal.object.mobilePhone}}</span>
-          </div>
-        </div><!-- END .row -->
-        <div class="row">
-          <div class="col-md-4 form-group">
-            <strong class="control-label">Address</strong><br>
-            <span>{{modal.object.addr}}</span>
-          </div>
-          <div class="col-md-4 form-group">
-            <strong class="control-label">Personal Email</strong><br>
-            <span><a href="mailto:{{modal.object.email}}">{{modal.object.email}}</a></span>
-          </div>
-          <div class="col-md-4 form-group">
-            <strong class="control-label">Work Email</strong><br>
-            <span><a href="mailto:{{modal.object.workEmail}}">{{modal.object.workEmail}}</a></span>
-          </div>
-        </div><!-- END .row -->
-        <div class="row">
-          <div class="col-md-4 form-group" ng-switch="{{modal.object.type}}">
-            <strong class="control-label">Type</strong><br>
-            <span ng-switch-when="0">Pickup</span>
-            <span ng-switch-when="1">Delivery</span>
-          </div>
-          <div class="col-md-4 form-group">
-            <strong class="control-label">Amount</strong><br>
-            <span>{{modal.object.amount | currency}}</span>
-          </div>
-          <div class="col-md-4 form-group" ng-switch="modal.object.status">
-            <strong class="control-label">Status</strong><br>
-            <span class="status cancelled" ng-switch-when="0">Cancelled</span>
-            <span class="status new" ng-switch-when="1">New</span>
-            <span class="status inprogress" ng-switch-when="2">In Progress</span>
-            <span class="status fulfilled" ng-switch-when="3">Fulfilled</span>
-          </div>
-        </div><!-- END .row -->
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="table">
-              <div class="thead">
-                <div class="tr">
-                  <div class="th">Food Item</div>
-                  <div class="th">Category</div>
-                  <div class="th">Quantity</div>
-                  <div class="th text-right">Price</div>
-                </div>
-              </div><!-- END .tbody -->
-              <div class="tbody">
-                <div class="tr">
-                  <div class="td">Coke</div>
-                  <div class="td">Beverage</div>
-                  <div class="td">2</div>
-                  <div class="td text-right">2 x $1.00</div>
-                </div>
-                <div class="tr">
-                  <div class="td">French Onion Soup</div>
-                  <div class="td">Soup</div>
-                  <div class="td">2</div>
-                  <div class="td text-right">2 x $9.00</div>
-                </div>
-                <div class="tr">
-                  <div class="td">Mozarella w/ Walnut</div>
-                  <div class="td">Appetizer</div>
-                  <div class="td">1</div>
-                  <div class="td text-right">$7.00</div>
-                </div>
-              </div><!-- END .thead -->
-            </div><!-- END .table -->
-          </div><!-- END .col-md-12 -->
-        </div><!-- END .row -->
+        <div ng-show="!modal.object.edit">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center">Order No. {{modal.object.number}}</h1>
+            </div>
+          </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <strong class="control-label">Customer</strong><br>
+              <span>{{modal.object.customer}}</span>
+            </div>
+            <div class="col-md-4 form-group">
+              <strong class="control-label">Home Phone</strong><br>
+              <span>{{modal.object.homePhone}}</span>
+            </div>
+            <div class="col-md-4 form-group">
+              <strong class="control-label">Mobile Phone</strong><br>
+              <span>{{modal.object.mobilePhone}}</span>
+            </div>
+          </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <strong class="control-label">Address</strong><br>
+              <span>{{modal.object.addr}}</span>
+            </div>
+            <div class="col-md-4 form-group">
+              <strong class="control-label">Personal Email</strong><br>
+              <span><a href="mailto:{{modal.object.email}}">{{modal.object.email}}</a></span>
+            </div>
+            <div class="col-md-4 form-group">
+              <strong class="control-label">Work Email</strong><br>
+              <span><a href="mailto:{{modal.object.workEmail}}">{{modal.object.workEmail}}</a></span>
+            </div>
+          </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-4 form-group" ng-switch="{{modal.object.type}}">
+              <strong class="control-label">Type</strong><br>
+              <span ng-switch-when="0">Pickup</span>
+              <span ng-switch-when="1">Delivery</span>
+            </div>
+            <div class="col-md-4 form-group">
+              <strong class="control-label">Amount</strong><br>
+              <span>{{modal.object.amount | currency}}</span>
+            </div>
+            <div class="col-md-4 form-group" ng-switch="modal.object.status">
+              <strong class="control-label">Status</strong><br>
+              <span class="status cancelled" ng-switch-when="0">Cancelled</span>
+              <span class="status new" ng-switch-when="1">New</span>
+              <span class="status inprogress" ng-switch-when="2">In Progress</span>
+              <span class="status fulfilled" ng-switch-when="3">Fulfilled</span>
+            </div>
+          </div><!-- END .row -->
 
-        <div class="row">
-          <div class="col-md-12 resetsave">
-            <div class="pull-left">
-              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-              <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Edit</button>
-            </div><!-- END .pull-left -->
-            <div class="pull-right">
-              <button class="btn btn-danger"  ng-hide="{{modal.object.status === 0}}" ng-click="modal.object.status = 0; $dismiss()">Cancel Order</button>
-              <button class="btn btn-default" ng-show="{{modal.object.status === 0}}" ng-click="modal.object.status = 1; $dismiss()">Reopen Order</button>
-              <button class="btn btn-success" ng-show="{{modal.object.status === 1}}" ng-click="modal.object.status = 2; $dismiss()">Start Progress</button>
-              <button class="btn btn-warning" ng-show="{{modal.object.status === 2}}" ng-click="modal.object.status = 3; $dismiss()">Fulfill Order</button>
-            </div><!-- END .pull-right -->
-          </div><!-- END .resetsave -->
-        </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table">
+                <div class="thead">
+                  <div class="tr">
+                    <div class="th">Food Item</div>
+                    <div class="th">Category</div>
+                    <div class="th">Quantity</div>
+                    <div class="th text-right">Price</div>
+                  </div>
+                </div><!-- END .tbody -->
+                <div class="tbody">
+                  <div class="tr">
+                    <div class="td">Coke</div>
+                    <div class="td">Beverage</div>
+                    <div class="td">2</div>
+                    <div class="td text-right">2 x $1.00</div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">French Onion Soup</div>
+                    <div class="td">Soup</div>
+                    <div class="td">2</div>
+                    <div class="td text-right">2 x $9.00</div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">Mozarella w/ Walnut</div>
+                    <div class="td">Appetizer</div>
+                    <div class="td">1</div>
+                    <div class="td text-right">$7.00</div>
+                  </div>
+                </div><!-- END .thead -->
+              </div><!-- END .table -->
+            </div><!-- END .col-md-12 -->
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12 resetsave">
+              <div class="pull-left">
+                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+                <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Edit</button>
+              </div><!-- END .pull-left -->
+              <div class="pull-right">
+                <button class="btn btn-danger"  ng-hide="{{modal.object.status === 0}}" ng-click="modal.object.status = 0; $dismiss()">Cancel Order</button>
+                <button class="btn btn-default" ng-show="{{modal.object.status === 0}}" ng-click="modal.object.status = 1; $dismiss()">Reopen Order</button>
+                <button class="btn btn-success" ng-show="{{modal.object.status === 1}}" ng-click="modal.object.status = 2; $dismiss()">Start Progress</button>
+                <button class="btn btn-warning" ng-show="{{modal.object.status === 2}}" ng-click="modal.object.status = 3; $dismiss()">Fulfill Order</button>
+              </div><!-- END .pull-right -->
+            </div><!-- END .resetsave -->
+          </div><!-- END .row -->
+        </div>
+
+        <form class="custom-form" ng-show="modal.object.edit">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center">Edit Order No. {{modal.object.number}}</h1>
+            </div>
+          </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Customer</label>
+                <fieldset>
+                  <select class="form-control">
+                    <option value="1">New Customer</option>
+                    <option value="2">Blake Lively</option>
+                    <option value="3">Lucas Engel</option>
+                  </select>
+                </fieldset>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Type</label>
+                <fieldset>
+                  <select class="form-control">
+                    <option value="">Pickup</option>
+                    <option value="">Delivery</option>
+                  </select>
+                </fieldset>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div ng-show="newCustomer" ng-init="newCustomer = true">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label class="control-label">First Name</label> <span class="mandatory">*</span>
+                  <input type="text" class="form-control"/>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <label class="control-label">MI</label>
+                  <input type="text" class="form-control"/>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label class="control-label">Last Name</label> <span class="mandatory">*</span>
+                  <input type="text" class="form-control"/>
+                </div>
+              </div>
+            </div><!-- END .row -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Home Phone</label> <span class="mandatory">*</span>
+                  <input type="tel" class="form-control"/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Mobile Phone</label>
+                  <input type="tel" class="form-control"/>
+                </div>
+              </div>
+            </div><!-- END .row -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Personal Email</label> <span class="mandatory">*</span>
+                  <input type="email" class="form-control"/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Work Email</label>
+                  <input type="email" class="form-control"/>
+                </div>
+              </div>
+            </div><!-- END .row -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="control-label">Street Address</label> <span class="mandatory">*</span>
+                  <input type="text" class="form-control"/>
+                </div>
+              </div>
+            </div><!-- END .row -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">City</label> <span class="mandatory">*</span>
+                  <input type="text" class="form-control"/>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <label class="control-label">State</label> <span class="mandatory">*</span>
+                  <fieldset>
+                    <select class="form-control">
+                      <option value="ca">CA</option>
+                      <option value="fl">FL</option>
+                      <option value="ny">NY</option>
+                    </select>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="control-label">Zip</label>
+                  <input type="number" class="form-control"/>
+                </div>
+              </div>
+            </div><!-- END .row -->
+          </div><!-- END newCustomer -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table order-table">
+                <div class="thead">
+                  <div class="tr">
+                    <div class="th">Food Item</div>
+                    <div class="th">Category</div>
+                    <div class="th">Quantity</div>
+                    <div class="th">Price</div>
+                    <div class="th"></div>
+                  </div>
+                </div><!-- END .thead -->
+
+                <div class="tbody">
+                  <div class="tr">
+                    <div class="td">
+                      <div class="form-group">
+                        <fieldset>
+                          <select class="form-control">
+                            <option value="1">Vodka</option>
+                            <option value="2">Beer</option>
+                            <option value="3">Cachaça</option>
+                          </select>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="td">Beverage</div>
+                    <div class="td">
+                      <div class="form-group">
+                        <input type="number" class="form-control" ng-model="quantity" ng-init="quantity = 1"/>
+                      </div>
+                    </div>
+                    <div class="td text-right">{{quantity}} &times; 1.00</div>
+                    <div class="td"><i class="icon-close"></i></div>
+                  </div><!-- END .tr -->
+                  <div class="tr">
+                    <div class="td">
+                      <div class="form-group">
+                        <fieldset>
+                          <select class="form-control">
+                            <option value="1">Vodka</option>
+                            <option value="2">Beer</option>
+                            <option value="3">Cachaça</option>
+                          </select>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="td">Beverage</div>
+                    <div class="td">
+                      <div class="form-group">
+                        <input type="number" class="form-control" ng-model="quantity" />
+                      </div>
+                    </div>
+                    <div class="td text-right">{{quantity}} &times; 1.00</div>
+                    <div class="td"><i class="icon-close"></i></div>
+                  </div><!-- END .tr -->
+                  <div class="tr">
+                    <div class="td">
+                      <div class="form-group">
+                        <fieldset>
+                          <select class="form-control">
+                            <option value="1">Vodka</option>
+                            <option value="2">Beer</option>
+                            <option value="3">Cachaça</option>
+                          </select>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="td">Beverage</div>
+                    <div class="td">
+                      <div class="form-group">
+                        <input type="number" class="form-control" ng-model="quantity" />
+                      </div>
+                    </div>
+                    <div class="td text-right">{{quantity}} &times; 1.00</div>
+                    <div class="td"><i class="icon-close"></i></div>
+                  </div><!-- END .tr -->
+                  <div class="tr">
+                    <div class="td">
+                      <div class="form-group">
+                        <fieldset>
+                          <select class="form-control">
+                            <option value="1">Vodka</option>
+                            <option value="2">Beer</option>
+                            <option value="3">Cachaça</option>
+                          </select>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="td">Beverage</div>
+                    <div class="td">
+                      <div class="form-group">
+                        <input type="number" class="form-control" ng-model="quantity" />
+                      </div>
+                    </div>
+                    <div class="td text-right">{{quantity}} &times; 1.00</div>
+                    <div class="td"><i class="icon-close"></i></div>
+                  </div><!-- END .tr -->
+                </div><!-- END .tbody -->
+              </div><!-- END .table -->
+              <div class="pull-left">
+                <a href="javascript:void(0)" class="add-somehting">+ Add Item</a>
+              </div>
+              <div class="pull-right">Total amount: $27.00</div>
+            </div>
+          </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="resetsave text-center">
+                <button class="btn btn-default" ng-click="modal.object.edit = !modal.object.edit">Cancel</button>
+                <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Save</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</script>
+
+<script type="text/ng-template" id="addOrderModal.html">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+
+        <form class="custom-form">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center">Add Order</h1>
+            </div>
+          </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Customer</label>
+                <fieldset>
+                  <select class="form-control">
+                    <option value="1">New Customer</option>
+                    <option value="2">Blake Lively</option>
+                    <option value="3">Lucas Engel</option>
+                  </select>
+                </fieldset>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Type</label>
+                <fieldset>
+                  <select class="form-control">
+                    <option value="">Pickup</option>
+                    <option value="">Delivery</option>
+                  </select>
+                </fieldset>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div ng-show="newCustomer" ng-init="newCustomer = true">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label class="control-label">First Name</label> <span class="mandatory">*</span>
+                  <input type="text" class="form-control"/>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <label class="control-label">MI</label>
+                  <input type="text" class="form-control"/>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label class="control-label">Last Name</label> <span class="mandatory">*</span>
+                  <input type="text" class="form-control"/>
+                </div>
+              </div>
+            </div><!-- END .row -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Home Phone</label> <span class="mandatory">*</span>
+                  <input type="tel" class="form-control"/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Mobile Phone</label>
+                  <input type="tel" class="form-control"/>
+                </div>
+              </div>
+            </div><!-- END .row -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Personal Email</label> <span class="mandatory">*</span>
+                  <input type="email" class="form-control"/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Work Email</label>
+                  <input type="email" class="form-control"/>
+                </div>
+              </div>
+            </div><!-- END .row -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="control-label">Street Address</label> <span class="mandatory">*</span>
+                  <input type="text" class="form-control"/>
+                </div>
+              </div>
+            </div><!-- END .row -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">City</label> <span class="mandatory">*</span>
+                  <input type="text" class="form-control"/>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <label class="control-label">State</label> <span class="mandatory">*</span>
+                  <fieldset>
+                    <select class="form-control">
+                      <option value="ca">CA</option>
+                      <option value="fl">FL</option>
+                      <option value="ny">NY</option>
+                    </select>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="control-label">Zip</label>
+                  <input type="number" class="form-control"/>
+                </div>
+              </div>
+            </div><!-- END .row -->
+          </div><!-- END newCustomer -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table order-table">
+                <div class="thead">
+                  <div class="tr">
+                    <div class="th">Food Item</div>
+                    <div class="th">Category</div>
+                    <div class="th">Quantity</div>
+                    <div class="th">Price</div>
+                    <div class="th"></div>
+                  </div>
+                </div><!-- END .thead -->
+
+                <div class="tbody">
+                  <div class="tr">
+                    <div class="td">
+                      <div class="form-group">
+                        <fieldset>
+                          <select class="form-control">
+                            <option value="1">Vodka</option>
+                            <option value="2">Beer</option>
+                            <option value="3">Cachaça</option>
+                          </select>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="td"></div>
+                    <div class="td">
+                      <div class="form-group">
+                        <input type="number" class="form-control" ng-model="quantity" />
+                      </div>
+                    </div>
+                    <div class="td text-right">{{quantity}} &times;</div>
+                    <div class="td"><i class="icon-close"></i></div>
+                  </div><!-- END .tr -->
+                </div><!-- END .tbody -->
+              </div><!-- END .table -->
+              <div class="pull-left">
+                <a href="javascript:void(0)" class="add-somehting">+ Add Item</a>
+              </div>
+              <div class="pull-right">Total amount: $27.00</div>
+            </div>
+          </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="resetsave text-center">
+                <button class="btn btn-default" ng-click="modal.object.edit = !modal.object.edit">Cancel</button>
+                <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Save</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->

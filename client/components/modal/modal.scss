@@ -47,6 +47,13 @@
     }
   }
   .table                          { margin-top: 20px;
+    &.customer-orders-table       { position: relative;
+      .td                         { position: relative;
+        i                         { position: absolute; left: -15px; font-size: 8px; top: 20px;
+          &.icon-triangle_up      { font-size: 6px; }
+        }
+      }
+    }
     &.order-table                 {
       .tr                         {
         .th                       { width: 19%;
@@ -68,6 +75,7 @@
       .th                         { border-bottom: 2px solid $black; padding: 5px 0; }
     }
   }
+  .customer-orders                { background: $beige; }
   .integration-image              { margin-bottom: 40px; max-height: 50px; max-width: 200px; }
   .top-instructions               { border-bottom: 1px solid $lightgray; font-size: 18px; margin-bottom: 30px; text-align: center; }
   .shadowed                       { background: $beige; border: 1px solid $lightgray; margin-bottom: 20px; padding: 15px;

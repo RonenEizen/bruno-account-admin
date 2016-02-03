@@ -198,10 +198,12 @@ html, body, div[ui-view]          { height: 100%; }
 header.top                        { background: $beige; border-bottom: 1px solid $lightgray; height: 50px; padding: 10px 20px; position: fixed; transition: width 0.5s ease; top: 0; width: calc(100% - 240px); z-index: 50;
   &.expanded                      { width: 100%; }
   .row                            { overflow: visible; }
-  h1                              { color: $red; font: 500 24px $title-font; float: left; margin: 0; text-align: left; }
+  h1                              { color: $red; font: 500 2.5rem $title-font; display: inline-block; margin: 0; }
+  time                            { color: $lightgray2; font: 1.6rem $serif-font; margin-left: 1rem; }
   .hamburger                      { color: $darkgray; float: left; border-right: 1px solid $lightgray; display: table-cell; font-size: 18px; height: 50px; margin: -10px 20px -10px -20px; padding: 10px;
     i                             { vertical-align: middle; }
   }
+  .col-md-2                       { text-align: center; }
   form                            { float: right;
     .form-control                 { border-radius: 2px; border: 1px solid $lightgray;
       &:focus                     { box-shadow: none; }
@@ -210,7 +212,7 @@ header.top                        { background: $beige; border-bottom: 1px solid
   }
   .actions-right                  { float: right;
     & > i                         { font-size: 18px; line-height: 32px; margin-left: 20px; vertical-align: middle; }
-    ul                            { background: $beige; border: 1px solid $lightgray; border-radius: 3px; padding: 10px 20px; position: absolute; right: 15px; top: 40px; width: 160px; z-index: 100;
+    ul                            { background: $beige; border: 1px solid $lightgray; border-radius: 3px; padding: 10px 20px; position: absolute; right: 15px; top: 40px; width: 200px; z-index: 100;
       li                          { list-style: none; margin: 0; padding: 5px 0; }
     }
   }
@@ -280,6 +282,30 @@ button.btn                        { border: none; border-radius: 3px; font-famil
 }
 .fa-sort                          { color: $lightgray2; }
 .sortorder                        { vertical-align: baseline; }
+
+.shadowed-container             { background: $beige; border: 1px solid $lightgray; margin-bottom: 20px; padding: 20px 35px;
+  header                        { margin-left: -15px; margin-right: -15px;
+    h2                          { color: $blue; display: inline-block; font: 1.8rem $serif-font; margin: 0 10px 0 0; }
+    i.pull-right                { color: $lightgray2; }
+  }
+}
+.shadowed-subcontainer          { background: $white; border: 1px solid $lightgray; margin-bottom: 20px;
+  &:first-child                 { margin-top: 20px; }
+  &:last-child                  { margin-bottom: 0; }
+  header                        { border-bottom: 1px solid $lightgray; margin-left: -15px; margin-right: -15px; padding: 20px 15px;
+    h3                          { display: inline-block; font-size: 16px; margin: 0; }
+  }
+  .table                        { margin: 0;
+    .td                         { padding: 15px 8px;
+      &:first-child             { padding-left: 0; }
+      &:last-child              { padding-right: 0; }
+    }
+    .tr:last-child              {
+      .td                       { border-bottom: none; }
+    }
+  }
+  .border-top                   { border-top: 1px solid $lightgray; }
+}
 
 // REPLACES TABLES
 .table                            { display: table;

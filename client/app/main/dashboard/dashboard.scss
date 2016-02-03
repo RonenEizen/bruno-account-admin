@@ -1,3 +1,43 @@
+.dashboard                        { padding: 20px;
+  .bottom-link                    {
+    .text-right                   { padding-right: 0; }
+  }
+  .shadowed-container             { margin-bottom: 30px; }
+  .table                          {
+    .tr                           {
+      .th,
+      .td                         { height: 50px; padding: 0 8px;
+        &:first-child             { padding-left: 8px; }
+        &:last-child              { padding-right: 8px; }
+      }
+    }
+    .status                       {
+      &.new,
+      &.current                   { color: $green; }
+      &.inprogress,
+      &.expiring                  { color: $orange; }
+      &.cancelled                 { color: $red; }
+      &.fulfilled,
+      &.expired                   { color: $lightgray; }
+    }
+  }
+  .calendar-overflow              { overflow: auto; }
+  .calendar-widget                { color: $lightgray; position: relative; width: 6300px;
+    .cal-row                      { border-bottom: 1px solid $lightgray; height: calc(200px / 6); position: relative;
+      &:last-child                { border-bottom: none; }
+      .booked                     { padding: 4px; height: 98%; position: absolute; top: 0;
+        span                      { display: block; line-height: 26px; text-align: center; }
+        &.active                  { background: $red; color: $white; }
+        &.closed                  { background: $lightgray; color: $darkgray; }
+        &.pending                 { background: $green; color: $white; }
+      }
+    }
+    ul.cal-row                    { color: $black; display: table; font: 700 14px $serif-font; list-style: none; margin: 0; padding: 0; width: 100%;
+      li                          { display: table-cell; height: 50px; vertical-align: middle; text-align: center; white-space: nowrap; }
+    }
+  }
+}
+
 /*.thing-form {
     margin: 20px 0;
 }

@@ -237,6 +237,13 @@ form.custom-form                  {
   input,
   select,
   textarea                        { /*border: none;*/ border-radius: 0; box-shadow: none; font-size: 16px; }
+  input,
+  textarea                        { border: 1px solid $lightgray; }
+  fieldset                        { border: 1px solid $lightgray;
+    select                        { border: none; border-radius: 0;
+      &:focus                     { box-shadow: none; }
+    }
+  }
   .resetsave                      { margin: 30px 0 20px; }
   .taggroup                       { border: 1px solid $lightgray; padding: 6px 12px;
     .newtag                       { border: none; }
@@ -264,7 +271,9 @@ button.btn                        { border: none; border-radius: 3px; font-famil
     }
     & ~ p                         { display: none; }
   }
-  fieldset[disabled] select       { -webkit-appearance: none; -moz-appearance: none; appearance: none; text-indent: 0.01px; text-overflow: ''; }
+  fieldset[disabled]              { border: none;
+    select                        { -webkit-appearance: none; -moz-appearance: none; appearance: none; text-indent: 0.01px; text-overflow: ''; }
+  }
 }
 .tabs-group                       { border-bottom: 1px solid $lightgray; color: $darkgray; font: 12px $serif-font; margin-top: 10px;
   a                               { color: inherit; float: left; margin: 0 -1px -1px 0;

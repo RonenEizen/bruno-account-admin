@@ -1,4 +1,4 @@
-// Generated on 2016-01-14 using generator-angular-fullstack 3.3.0-beta.0
+// Generated on 2016-02-04 using generator-angular-fullstack 3.3.0
 'use strict';
 
 module.exports = function (grunt) {
@@ -137,7 +137,7 @@ module.exports = function (grunt) {
         },
         src: ['<%= yeoman.server %>/**/*.{spec,integration}.js']
       },
-      all: ['<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock).js'],
+      all: ['<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock|app.constant).js'],
       test: {
         src: ['<%= yeoman.client %>/{app,components}/**/*.{spec,mock}.js']
       }
@@ -314,7 +314,7 @@ module.exports = function (grunt) {
     // `server/config/environment/shared.js`
     ngconstant: {
       options: {
-        name: 'userAdminApp.constants',
+        name: 'workspaceApp.constants',
         dest: '<%= yeoman.client %>/app/app.constant.js',
         deps: [],
         wrap: true,
@@ -333,7 +333,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: 'userAdminApp',
+        module: 'workspaceApp',
         htmlmin: {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
@@ -390,7 +390,8 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             'package.json',
-            '<%= yeoman.server %>/**/*'
+            '<%= yeoman.server %>/**/*',
+            '!<%= yeoman.server %>/config/local.env.sample.js'
           ]
         }]
       },
@@ -559,7 +560,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.server %>',
-          src: ['**/*.{js,json}'],
+          src: ['**/*.js'],
           dest: '<%= yeoman.dist %>/<%= yeoman.server %>'
         }]
       }
@@ -816,7 +817,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:tslint',
+    'newer:jshint',
     'test',
     'build'
   ]);

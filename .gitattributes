@@ -1,4 +1,3 @@
 * text eol=lf
-*.eof binary
+*.eot binary
 *.woff binary
-

@@ -292,28 +292,28 @@ button.btn                        { border: none; border-radius: 3px; font-famil
 .fa-sort                          { color: $lightgray2; }
 .sortorder                        { vertical-align: baseline; }
 
-.shadowed-container             { background: $beige; border: 1px solid $lightgray; margin-bottom: 20px; padding: 20px 35px;
-  header                        { margin-left: -15px; margin-right: -15px;
-    h2                          { color: $blue; display: inline-block; font: 1.8rem $serif-font; margin: 0 10px 0 0; }
-    i.pull-right                { color: $lightgray2; }
+.shadowed-container               { background: $beige; border: 1px solid $lightgray; margin-bottom: 20px; padding: 20px 35px;
+  header                          { margin-left: -15px; margin-right: -15px;
+    h2                            { color: $blue; display: inline-block; font: 1.8rem $serif-font; margin: 0 10px 0 0; }
+    i.pull-right                  { color: $lightgray2; }
   }
 }
-.shadowed-subcontainer          { background: $white; border: 1px solid $lightgray; margin-bottom: 20px;
-  &:first-child                 { margin-top: 20px; }
-  &:last-child                  { margin-bottom: 0; }
-  header                        { border-bottom: 1px solid $lightgray; margin-left: -15px; margin-right: -15px; padding: 20px 15px;
-    h3                          { display: inline-block; font-size: 16px; margin: 0; }
+.shadowed-subcontainer            { background: $white; border: 1px solid $lightgray; margin-bottom: 20px;
+  &:first-child                   { margin-top: 20px; }
+  &:last-child                    { margin-bottom: 0; }
+  header                          { border-bottom: 1px solid $lightgray; margin-left: -15px; margin-right: -15px; padding: 20px 15px;
+    h3                            { display: inline-block; font-size: 16px; margin: 0; }
   }
-  .table                        { margin: 0;
-    .td                         { padding: 15px 8px;
-      &:first-child             { padding-left: 0; }
-      &:last-child              { padding-right: 0; }
+  .table                          { margin: 0;
+    .td                           { padding: 15px 8px;
+      &:first-child               { padding-left: 0; }
+      &:last-child                { padding-right: 0; }
     }
-    .tr:last-child              {
-      .td                       { border-bottom: none; }
+    .tr:last-child                {
+      .td                         { border-bottom: none; }
     }
   }
-  .border-top                   { border-top: 1px solid $lightgray; }
+  .border-top                     { border-top: 1px solid $lightgray; }
 }
 
 // REPLACES TABLES
@@ -325,3 +325,11 @@ button.btn                        { border: none; border-radius: 3px; font-famil
   .th                             { border-bottom-color: #050505; font-weight: bold; font-family: $serif-font; }
   .td, .th                        { border-bottom: 1px solid #ddd; display: table-cell; padding: 8px; vertical-align: middle; }
 }
+
+
+// THIS FIXES UI.BOOTSTRAP CURSOR
+a[ng-click],
+.nav,
+.pagination,
+.carousel,
+.panel-title a                    { cursor: pointer; }

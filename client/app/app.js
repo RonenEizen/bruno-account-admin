@@ -1,21 +1,22 @@
 'use strict';
 
 angular.module('userAdminApp', [
-  'userAdminApp.auth',
-  'userAdminApp.admin',
-  'userAdminApp.constants',
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ui.bootstrap',
-  'ui.router',
-  'ui.mask',
-  'mp.datePicker',
-  'validation.match'
-])
+    'userAdminApp.auth',
+    'userAdminApp.admin',
+    'userAdminApp.constants',
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ui.bootstrap',
+    'ui.router',
+    'ui.mask',
+    'mp.datePicker',
+    'validation.match'
+  ])
+
   .config([
-    '$stateProvider', 
-    '$urlRouterProvider', 
+    '$stateProvider',
+    '$urlRouterProvider',
     '$locationProvider',
     '$httpProvider',
     function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {

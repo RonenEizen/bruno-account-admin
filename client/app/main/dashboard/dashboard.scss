@@ -2,7 +2,9 @@
   .bottom-link                    {
     .text-right                   { padding-right: 0; }
   }
-  .shadowed-container             { margin-bottom: 30px; }
+  .shadowed-container             { margin-bottom: 30px; position: relative;
+    .grayout                      { background: $beige; height: calc(100% - 50px); left: 0; opacity: .5; position: absolute; top: 50px; width: 100%; z-index: 10; }
+  }
   .table                          {
     .tr                           {
       .th,

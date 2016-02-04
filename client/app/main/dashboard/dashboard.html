@@ -16,7 +16,7 @@
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.campaigns">Current Campaign</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.updates">Settings Updates</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.trends">Trends</label></li>
-          <button class="btn btn-default">Change Positions</button>
+          <button class="btn btn-default" ng-click="rearranging=!rearranging">Change Positions</button>
         </ul>
       </div>
     </div>
@@ -30,16 +30,26 @@
 </header>
 
 <div class="container-fluid dashboard">
+
+  <!-- TODO: setup ui-bootstrap to display alerts -->
+  <!-- <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert> -->
+
+  <div class="alert alert-warning" role="alert" ng-show="rearranging">Drag the areas below to change positions.
+    <div class="pull-right"><button class="btn btn-primary" ng-click="rearranging=false">Finish And Save</button></div>
+  </div>
+
   <div class="row">
     <div class="col-md-12">
       <div class="row">
         <div class="col-md-6" ng-show="displayColumns.orders">
           <div class="shadowed-container">
+            <div class="grayout" ng-show="rearranging"></div>
             <header>
               <h2>Recent Orders</h2>
-              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed, 'fa-chevron-down': collapsed}" ng-click="collapsed = !collapsed"></i>
+              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orders, 'fa-chevron-down': collapsed.orders}" ng-click="collapsed.orders = !collapsed.orders" ng-show="!rearranging"></i>
+              <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
             </header>
-            <div class="collapsable" ng-show="!collapsed">
+            <div class="collapsable" ng-show="!collapsed.orders">
               <div class="row shadowed-subcontainer">
                 <div class="table">
                   <div class="thead">
@@ -91,11 +101,13 @@
 
         <div class="col-md-6" ng-show="displayColumns.reservations">
           <div class="shadowed-container">
+            <div class="grayout" ng-show="rearranging"></div>
             <header>
               <h2>Recent Reservations</h2>
-              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed, 'fa-chevron-down': collapsed}" ng-click="collapsed = !collapsed"></i>
+              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservations, 'fa-chevron-down': collapsed.reservations}" ng-click="collapsed.reservations = !collapsed.reservations" ng-show="!rearranging"></i>
+              <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
             </header>
-            <div class="collapsable" ng-show="!collapsed">
+            <div class="collapsable" ng-show="!collapsed.reservations">
               <div class="row shadowed-subcontainer">
                 <div class="calendar-overflow">
                   <div class="calendar-widget">
@@ -103,23 +115,23 @@
                       <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
                     </ul>
                     <div class="cal-row">
-                      <div class="booked pending" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
+                      <div class="booked pending" ng-click="customModal('tableModal.html')" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
                     </div>
                     <div class="cal-row">
-                      <div class="booked active" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
+                      <div class="booked active" ng-click="customModal('tableModal.html')" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
                     </div>
                     <div class="cal-row">
-                      <div class="booked closed" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
-                      <div class="booked pending" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
+                      <div class="booked closed" ng-click="customModal('tableModal.html')" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
+                      <div class="booked pending" ng-click="customModal('tableModal.html')" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
                     </div>
                     <div class="cal-row">
-                      <div class="booked active" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
+                      <div class="booked active" ng-click="customModal('tableModal.html')" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
                     </div>
                     <div class="cal-row">
-                      <div class="booked active" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
+                      <div class="booked active" ng-click="customModal('tableModal.html')" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
                     </div>
                     <div class="cal-row">
-                      <div class="booked pending" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
+                      <div class="booked pending" ng-click="customModal('tableModal.html')" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
                     </div>
                   </div><!-- END .calendar-widget -->
                 </div>
@@ -137,11 +149,13 @@
 
         <div class="col-md-6" ng-show="displayColumns.campaigns">
           <div class="shadowed-container">
+            <div class="grayout" ng-show="rearranging"></div>
             <header>
               <h2>Current Campaigns</h2>
-              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed, 'fa-chevron-down': collapsed}" ng-click="collapsed = !collapsed"></i>
+              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.campaigns, 'fa-chevron-down': collapsed.campaigns}" ng-click="collapsed.campaigns = !collapsed.campaigns" ng-show="!rearranging"></i>
+              <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
             </header>
-            <div class="collapsable" ng-show="!collapsed">
+            <div class="collapsable" ng-show="!collapsed.campaigns">
               <div class="row shadowed-subcontainer">
                 <div class="table">
                   <div class="thead">
@@ -207,11 +221,13 @@
 
         <div class="col-md-6" ng-show="displayColumns.updates">
           <div class="shadowed-container">
+            <div class="grayout" ng-show="rearranging"></div>
             <header>
               <h2>Settings Updates</h2>
-              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed, 'fa-chevron-down': collapsed}" ng-click="collapsed = !collapsed"></i>
+              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.updates, 'fa-chevron-down': collapsed.updates}" ng-click="collapsed.updates = !collapsed.updates" ng-show="!rearranging"></i>
+              <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
             </header>
-            <div class="collapsable" ng-show="!collapsed">
+            <div class="collapsable" ng-show="!collapsed.updates">
               <div class="row shadowed-subcontainer">
                 <div class="table">
                   <div class="thead">
@@ -243,7 +259,7 @@
 
               <div class="row bottom-link">
                 <div class="col-md-6 col-md-offset-6 text-right">
-                  <a href="javascript:void(0)">All Settings Updates ›</a>
+                  <a ng-click="customModal('updatesModal.html')">All Settings Updates ›</a>
                 </div>
               </div><!-- END .row -->
 
@@ -253,11 +269,13 @@
 
         <div class="col-md-12" ng-show="displayColumns.trends">
           <div class="shadowed-container">
+            <div class="grayout" ng-show="rearranging"></div>
             <header>
               <h2>Order Trends</h2>
-              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed, 'fa-chevron-down': collapsed}" ng-click="collapsed = !collapsed"></i>
+              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.trends, 'fa-chevron-down': collapsed.trends}" ng-click="collapsed.trends = !collapsed.trends" ng-show="!rearranging"></i>
+              <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
             </header>
-            <div class="collapsable" ng-show="!collapsed">
+            <div class="collapsable" ng-show="!collapsed.trends">
               <div class="row shadowed-subcontainer">
                 <div class="table">
                   <div class="thead">
@@ -295,3 +313,127 @@
     </div>
   </div><!-- END .row -->
 </div><!-- END .container-fluid -->
+
+
+
+<script type="text/ng-template" id="tableModal.html">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <form class="custom-form text-input">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center">Table for 2</h1>
+            </div>
+          </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Date</strong><br>
+                Tuesday, Nov 11, 5pm to 6pm</p>
+            </div>
+            <div class="col-md-6">
+              <p><strong>Status</strong><br>
+                <span class="status pending">Pending</span></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Name</strong><br>
+                Jarret Leto</p>
+            </div>
+            <div class="col-md-6">
+              <p><strong>Phone</strong><br>
+                (347) 578-9001</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Notes</strong><br>
+                would like a table by the window, gluten free, payes with Discovery</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 resetsave text-center">
+              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+              <button class="btn btn-primary" ng-click="$dismiss()">Edit</button>
+            </div>
+          </div><!-- END .row -->
+        </form>
+      </div>
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</script>
+
+
+<script type="text/ng-template" id="updatesModal.html">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <form class="custom-form text-input">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center">Settings Updates</h1>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table">
+                <div class="thead">
+                  <div class="tr">
+                    <div class="th">Section</div>
+                    <div class="th">Action</div>
+                    <div class="th">Date</div>
+                  </div>
+                </div>
+                <div class="tbody">
+                  <div class="tr">
+                    <div class="td"><a href="/settings/roles">Roles</a></div>
+                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
+                    <div class="td">January 17, 2016, 10:41 AM</div>
+                  </div>
+                  <div class="tr">
+                    <div class="td"><a href="/settings/roles">Roles</a></div>
+                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
+                    <div class="td">January 17, 2016, 10:41 AM</div>
+                  </div>
+                  <div class="tr">
+                    <div class="td"><a href="/settings/roles">Roles</a></div>
+                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
+                    <div class="td">January 17, 2016, 10:41 AM</div>
+                  </div>
+                  <div class="tr">
+                    <div class="td"><a href="/settings/roles">Roles</a></div>
+                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
+                    <div class="td">January 17, 2016, 10:41 AM</div>
+                  </div>
+                  <div class="tr">
+                    <div class="td"><a href="/settings/roles">Roles</a></div>
+                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
+                    <div class="td">January 17, 2016, 10:41 AM</div>
+                  </div>
+                  <div class="tr">
+                    <div class="td"><a href="/settings/roles">Roles</a></div>
+                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
+                    <div class="td">January 17, 2016, 10:41 AM</div>
+                  </div>
+                  <div class="tr">
+                    <div class="td"><a href="/settings/roles">Roles</a></div>
+                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
+                    <div class="td">January 17, 2016, 10:41 AM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12 resetsave text-center">
+              <button class="btn btn-default" ng-click="$dismiss()">Back</button>
+            </div>
+          </div><!-- END .row -->
+        </form>
+      </div>
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</script>

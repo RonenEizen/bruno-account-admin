@@ -22,6 +22,9 @@ angular.module('userAdminApp')
     // Dashboard alerts
     $scope.alerts = [
       { type: 'warning', msg: 'Your domain <strong>rodeo.chefbr.uno</strong> is expiring. Visit <a href="/settings/domain">Domain</a> to update it.' },
+      { type: 'danger', msg: 'Your domain <strong>rodeo.chefbr.uno</strong> is expiring. Visit <a href="/settings/domain">Domain</a> to update it.' },
+      { type: 'success', msg: 'Your domain <strong>rodeo.chefbr.uno</strong> is expiring. Visit <a href="/settings/domain">Domain</a> to update it.' },
+      { type: 'info', msg: 'Your domain <strong>rodeo.chefbr.uno</strong> is expiring. Visit <a href="/settings/domain">Domain</a> to update it.' },
     ];
     $scope.closeAlert = function(index) { $scope.alerts.splice(index, 1); };
 

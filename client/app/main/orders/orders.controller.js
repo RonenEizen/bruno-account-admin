@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('OrdersCtrl', function ($scope, $log) {
+  .controller('OrdersCtrl', function ($scope) {
     $scope.pageTitle = 'Orders';
 
     // Columns

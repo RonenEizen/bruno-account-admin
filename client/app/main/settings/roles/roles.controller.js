@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('userAdminApp')
-  .controller('SettingsRolesCtrl', function($scope, $log) {
+  .controller('SettingsRolesCtrl', function($scope) {
     $scope.pageTitle = 'Roles';
 
     // Columns

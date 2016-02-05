@@ -12,7 +12,7 @@ angular.module('userAdminApp')
       _service.getPlacePredictions({
         input: value,
         types: ['establishment']
-      }, function(predictions, status) {
+      }, function(predictions) {
         _predictions = predictions;
       });
       return $timeout(function() {

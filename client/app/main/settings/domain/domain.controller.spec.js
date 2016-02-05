@@ -1,21 +1,21 @@
-'use strict';
+// 'use strict';
 
-describe('Controller: DomainCtrl', function () {
+// describe('Controller: DomainCtrl', function () {
 
-  // load the controller's module
-  beforeEach(module('userAdminApp'));
+//   // load the controller's module
+//   beforeEach(module('userAdminApp'));
 
-  var DomainCtrl, scope;
+//   var DomainCtrl, scope;
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    DomainCtrl = $controller('DomainCtrl', {
-      $scope: scope
-    });
-  }));
+//   // Initialize the controller and a mock scope
+//   beforeEach(inject(function ($controller, $rootScope) {
+//     scope = $rootScope.$new();
+//     DomainCtrl = $controller('DomainCtrl', {
+//       $scope: scope
+//     });
+//   }));
 
-  it('should ...', function () {
-    expect(1).toEqual(1);
-  });
-});
+//   it('should ...', function () {
+//     expect(1).toEqual(1);
+//   });
+// });

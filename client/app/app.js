@@ -2,7 +2,6 @@
 
 angular.module('userAdminApp', [
     'userAdminApp.auth',
-    'userAdminApp.admin',
     'userAdminApp.constants',
     'ngCookies',
     'ngResource',

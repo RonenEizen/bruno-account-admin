@@ -1,2 +1,11 @@
 .menu                             { padding: 20px 35px;
+  .btn-group                      {
+    &.open                        {
+      .btn-add-food               { border: 1px solid $lightgray; border: 1px solid $lightgray; box-shadow: none; color: $black; margin: 10px 0; padding: 8px 20px; }
+    }
+    .btn-add-food                 { background: $white; border-radius: 0; color: $blue; font: 14px $sans-font; padding: 15px 0; }
+    ul                            { border: 1px solid $lightgray; border-radius: 0; margin-top: -11px;
+      li a                        { color: $blue; }
+    }
+  }
 }

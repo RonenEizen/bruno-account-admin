@@ -11,7 +11,8 @@ angular.module('userAdminApp', [
     'ui.router',
     'ui.mask',
     'mp.datePicker',
-    'validation.match'
+    'validation.match',
+    'wu.mansory'
   ])
 
   .config([

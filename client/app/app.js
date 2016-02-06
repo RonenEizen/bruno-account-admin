@@ -1,17 +1,17 @@
 'use strict';
 
 angular.module('userAdminApp', [
-    'userAdminApp.auth',
-    'userAdminApp.constants',
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ui.bootstrap',
-    'ui.router',
-    'ui.mask',
-    'mp.datePicker',
-    'validation.match',
-    'wu.masonry'
+      'userAdminApp.auth'
+    , 'userAdminApp.constants'
+    , 'ngCookies'
+    , 'ngResource'
+    , 'ngSanitize'
+    , 'ui.bootstrap'
+    , 'ui.router'
+    , 'ui.mask'
+    , 'mp.datePicker'
+    , 'validation.match'
+    // , 'wu.masonry'
   ])
 
   .config([

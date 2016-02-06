@@ -39,13 +39,13 @@
 
   <div class="row">
     <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-6" ng-show="displayColumns.orders">
+      <div class="row" masonry="{ transitionDuration: '0.4s' }" reload-on-resize>
+        <div class="col-md-6" masonry-brick ng-show="displayColumns.orders">
           <div class="shadowed-container">
             <div class="grayout" ng-show="rearranging"></div>
             <header>
               <h2>Recent Orders</h2>
-              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orders, 'fa-chevron-down': collapsed.orders}" ng-click="collapsed.orders = !collapsed.orders" ng-show="!rearranging"></i>
+              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orders, 'fa-chevron-down': collapsed.orders}" ng-click="collapsed.orders = !collapsed.orders;msnry.layout()" ng-show="!rearranging"></i>
               <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
             </header>
             <div class="collapsable" ng-show="!collapsed.orders">
@@ -98,12 +98,12 @@
           </div><!-- END .shadowed-container -->
         </div>
 
-        <div class="col-md-6" ng-show="displayColumns.reservations">
+        <div class="col-md-6" masonry-brick ng-show="displayColumns.reservations">
           <div class="shadowed-container">
             <div class="grayout" ng-show="rearranging"></div>
             <header>
               <h2>Recent Reservations</h2>
-              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservations, 'fa-chevron-down': collapsed.reservations}" ng-click="collapsed.reservations = !collapsed.reservations" ng-show="!rearranging"></i>
+              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservations, 'fa-chevron-down': collapsed.reservations}" ng-click="collapsed.reservations = !collapsed.reservations;msnry.layout()" ng-show="!rearranging"></i>
               <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
             </header>
             <div class="collapsable" ng-show="!collapsed.reservations">
@@ -146,12 +146,12 @@
           </div><!-- END .shadowed-container -->
         </div>
 
-        <div class="col-md-6" ng-show="displayColumns.campaigns">
+        <div class="col-md-6" masonry-brick ng-show="displayColumns.campaigns">
           <div class="shadowed-container">
             <div class="grayout" ng-show="rearranging"></div>
             <header>
               <h2>Current Campaigns</h2>
-              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.campaigns, 'fa-chevron-down': collapsed.campaigns}" ng-click="collapsed.campaigns = !collapsed.campaigns" ng-show="!rearranging"></i>
+              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.campaigns, 'fa-chevron-down': collapsed.campaigns}" ng-click="collapsed.campaigns = !collapsed.campaigns;msnry.layout()" ng-show="!rearranging"></i>
               <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
             </header>
             <div class="collapsable" ng-show="!collapsed.campaigns">
@@ -218,12 +218,12 @@
           </div><!-- END .shadowed-container -->
         </div>
 
-        <div class="col-md-6" ng-show="displayColumns.updates">
+        <div class="col-md-6" masonry-brick ng-show="displayColumns.updates">
           <div class="shadowed-container">
             <div class="grayout" ng-show="rearranging"></div>
             <header>
               <h2>Settings Updates</h2>
-              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.updates, 'fa-chevron-down': collapsed.updates}" ng-click="collapsed.updates = !collapsed.updates" ng-show="!rearranging"></i>
+              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.updates, 'fa-chevron-down': collapsed.updates}" ng-click="collapsed.updates = !collapsed.updates;msnry.layout()" ng-show="!rearranging"></i>
               <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
             </header>
             <div class="collapsable" ng-show="!collapsed.updates">
@@ -266,12 +266,12 @@
           </div><!-- END .shadowed-container -->
         </div>
 
-        <div class="col-md-12" ng-show="displayColumns.trends">
+        <div class="col-md-12" masonry-brick ng-show="displayColumns.trends">
           <div class="shadowed-container">
             <div class="grayout" ng-show="rearranging"></div>
             <header>
               <h2>Order Trends</h2>
-              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.trends, 'fa-chevron-down': collapsed.trends}" ng-click="collapsed.trends = !collapsed.trends" ng-show="!rearranging"></i>
+              <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.trends, 'fa-chevron-down': collapsed.trends}" ng-click="collapsed.trends = !collapsed.trends;msnry.layout()" ng-show="!rearranging"></i>
               <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
             </header>
             <div class="collapsable" ng-show="!collapsed.trends">

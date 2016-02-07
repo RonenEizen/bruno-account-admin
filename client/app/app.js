@@ -11,7 +11,7 @@ angular.module('userAdminApp', [
     , 'ui.mask'
     , 'mp.datePicker'
     , 'validation.match'
-    // , 'wu.masonry'
+    , 'wu.masonry'
   ])
 
   .config([

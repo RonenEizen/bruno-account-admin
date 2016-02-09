@@ -233,7 +233,20 @@ module.exports = function (grunt) {
           /font-awesome\.css/,
           /bootstrap\.css/,
           /bootstrap-sass-official/
-        ]
+        ],
+        "overrides": {
+          "ev-emitter": {
+            "dependencies": {
+              "jquery-bridget": ">=2.0.0"
+            }
+          },
+          "outlayer": {
+            "main": [
+              "item.js",
+              "outlayer.js"
+            ]
+          }
+        }
       },
       client: {
         src: '<%= yeoman.client %>/index.html',

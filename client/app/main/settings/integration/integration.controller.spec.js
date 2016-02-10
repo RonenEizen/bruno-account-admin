@@ -3,7 +3,7 @@
 // describe('Controller: IntegrationCtrl', function () {
 
 //   // load the controller's module
-//   beforeEach(module('userAdminApp'));
+//   beforeEach(module('accountAdminApp'));
 
 //   var IntegrationCtrl, scope;
 

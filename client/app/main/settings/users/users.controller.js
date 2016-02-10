@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .controller('SettingsUsersCtrl', function($scope, $log) {
     $scope.pageTitle = 'Users';
 

@@ -1,11 +1,12 @@
 'use strict';
 
-angular.module('userAdminApp')
-  .config(function ($stateProvider) {
+angular.module('accountAdminApp')
+  .config(function($stateProvider) {
     $stateProvider
       .state('main', {
         abstract: true,
         templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainController',
+        controllerAs: 'main'
       });
   });

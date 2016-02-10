@@ -21,7 +21,7 @@ function UserResource($resource) {
   });
 }
 
-angular.module('userAdminApp.auth')
+angular.module('accountAdminApp.auth')
   .factory('User', UserResource);
 
 })();

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .controller('SettingsDeliveryCtrl', function($scope, $log) {
     $scope.pageTitle = 'Delivery';
     $scope.enabled = true; // sets delivery enable

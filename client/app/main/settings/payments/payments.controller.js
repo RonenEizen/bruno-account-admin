@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .controller('SettingsPaymentsCtrl', function ($scope) {
     $scope.pageTitle = 'Payments';
 

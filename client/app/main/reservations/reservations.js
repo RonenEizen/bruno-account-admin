@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('main.reservations', {

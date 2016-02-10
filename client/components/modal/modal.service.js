@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .factory('Modal', function ($rootScope, $uibModal) {
     /**
      * Opens a modal

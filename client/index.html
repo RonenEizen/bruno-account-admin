@@ -3,130 +3,130 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <base href="/">
-  <title>Chef Bruno</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/angular-date-picker/angular-date-picker.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,client}) app/app.css -->
+      <link rel="stylesheet" href="app/app.css">
+      <!-- injector:css -->
+      <link rel="stylesheet" href="components/animations.css">
+      <!-- endinjector -->
+    <!-- endbuild -->
+  </head>
+  <body ng-app="accountAdminApp">
+    <!--[if lt IE 7]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-  <!-- build:css(client) app/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/angular-date-picker/angular-date-picker.css" />
-    <!-- endbower -->
-  <!-- endbuild -->
+    <!-- Add your site or application content here -->
+    <navbar></navbar>
+    <div ui-view=""></div>
+    <footer></footer>
 
-  <!-- build:css({.tmp,client}) app/app.css -->
-  <link rel="stylesheet" href="app/app.css">
-    <!-- injector:css -->
-    <link rel="stylesheet" href="components/animations.css">
-    <!-- endinjector -->
-  <!-- endbuild -->
-</head>
-<body ng-app="userAdminApp">
-  <!--[if lt IE 7]>
-  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  <div ui-view=""></div>
+      // ga('create', 'UA-XXXXX-X');
+      // ga('send', 'pageview');
+    </script>
 
-  <script>
-  // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  // ga('create', 'UA-XXXXX-X');
-  // ga('send', 'pageview');
-  </script>
-
-  <!--[if lt IE 9]>
-  <script src="bower_components/es5-shim/es5-shim.js"></script>
-  <script src="bower_components/json3/lib/json3.min.js"></script>
-  <![endif]-->
-
-  <!-- build:js({client,node_modules}) app/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-date-picker/angular-date-picker.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
-    <script src="bower_components/angular-ui-mask/dist/mask.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/lodash/lodash.js"></script>
-    <script src="bower_components/get-size/get-size.js"></script>
-    <script src="bower_components/jquery-bridget/jquery-bridget.js"></script>
-    <script src="bower_components/ev-emitter/ev-emitter.js"></script>
-    <script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
-    <script src="bower_components/fizzy-ui-utils/utils.js"></script>
-    <script src="bower_components/outlayer/item.js"></script>
-    <script src="bower_components/outlayer/outlayer.js"></script>
-    <script src="bower_components/masonry/masonry.js"></script>
-    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
-    <script src="bower_components/angular-masonry/angular-masonry.js"></script>
-    <!-- endbower -->
-  <!-- endbuild -->
-
-
-  <!-- build:js({.tmp,client}) app/app.js -->
-  <script src="app/app.js"></script>
-    <!-- injector:js -->
-    <script src="components/auth/auth.module.js"></script>
-    <script src="components/util/util.module.js"></script>
-    <script src="app/main/reservations/reservations.controller.js"></script>
-    <script src="app/account/register/business/business.js"></script>
-    <script src="app/account/register/owner/owner.controller.js"></script>
-    <script src="app/account/register/owner/owner.js"></script>
-    <script src="app/account/register/register.controller.js"></script>
-    <script src="app/app.constant.js"></script>
-    <script src="app/main/admin/admin.controller.js"></script>
-    <script src="app/main/admin/admin.js"></script>
-    <script src="app/main/customers/customers.controller.js"></script>
-    <script src="app/main/customers/customers.js"></script>
-    <script src="app/main/dashboard/dashboard.controller.js"></script>
-    <script src="app/main/dashboard/dashboard.js"></script>
-    <script src="app/main/food-menus/food-menus.controller.js"></script>
-    <script src="app/main/food-menus/food-menus.js"></script>
-    <script src="app/main/main.controller.js"></script>
-    <script src="app/main/main.js"></script>
-    <script src="app/main/marketing/marketing.controller.js"></script>
-    <script src="app/main/marketing/marketing.js"></script>
-    <script src="app/main/orders/orders.controller.js"></script>
-    <script src="app/main/orders/orders.js"></script>
-    <script src="app/account/login/login.controller.js"></script>
-    <script src="app/main/reservations/reservations.js"></script>
-    <script src="app/main/settings/business-info/business-info.controller.js"></script>
-    <script src="app/main/settings/delivery/delivery.controller.js"></script>
-    <script src="app/main/settings/domain/domain.controller.js"></script>
-    <script src="app/main/settings/integration/integration.controller.js"></script>
-    <script src="app/main/settings/payments/payments.controller.js"></script>
-    <script src="app/main/settings/reservations/reservations.controller.js"></script>
-    <script src="app/main/settings/roles/roles.controller.js"></script>
-    <script src="app/main/settings/settings.js"></script>
-    <script src="app/main/settings/users/users.controller.js"></script>
-    <script src="app/main/statistics/statistics.controller.js"></script>
-    <script src="app/main/statistics/statistics.js"></script>
-    <script src="app/account/account.js"></script>
-    <script src="components/auth/auth.service.js"></script>
-    <script src="components/auth/interceptor.service.js"></script>
-    <script src="components/auth/router.decorator.js"></script>
-    <script src="components/auth/user.service.js"></script>
-    <script src="components/footer/footer.directive.js"></script>
-    <script src="components/modal/modal.service.js"></script>
-    <script src="components/mongoose-error/mongoose-error.directive.js"></script>
-    <script src="app/account/register/business/business.controller.js"></script>
-    <script src="components/util/util.service.js"></script>
-    <!-- endinjector -->
-  <!-- endbuild -->
-  <!-- third party scripts -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgFtT6tgjUhjZxElvkxs35fxpDtWsUsRo&libraries=places"></script>
-  <!-- end of third party scripts -->
-</body>
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/lodash/lodash.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-date-picker/angular-date-picker.js"></script>
+      <script src="bower_components/angular-ui-mask/dist/mask.js"></script>
+      <script src="bower_components/get-size/get-size.js"></script>
+      <script src="bower_components/jquery-bridget/jquery-bridget.js"></script>
+      <script src="bower_components/ev-emitter/ev-emitter.js"></script>
+      <script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
+      <script src="bower_components/fizzy-ui-utils/utils.js"></script>
+      <script src="bower_components/outlayer/item.js"></script>
+      <script src="bower_components/outlayer/outlayer.js"></script>
+      <script src="bower_components/masonry/masonry.js"></script>
+      <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+      <script src="bower_components/angular-masonry/angular-masonry.js"></script>
+      <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js(.tmp) app/app.js -->
+      <script src="app/app.js"></script>
+      <!-- injector:js -->
+      <script src="app/admin/admin.module.js"></script>
+      <script src="components/auth/auth.module.js"></script>
+      <script src="components/util/util.module.js"></script>
+      <script src="app/main/marketing/marketing.js"></script>
+      <script src="app/account/register/owner/owner.controller.js"></script>
+      <script src="app/account/register/owner/owner.js"></script>
+      <script src="app/account/register/register.controller.js"></script>
+      <script src="app/account/settings/settings.controller.js"></script>
+      <script src="app/account/signup/signup.controller.js"></script>
+      <script src="app/admin/admin.controller.js"></script>
+      <script src="app/account/account.js"></script>
+      <script src="app/admin/admin.router.js"></script>
+      <script src="app/app.constant.js"></script>
+      <script src="app/main/admin/admin.controller.js"></script>
+      <script src="app/main/admin/admin.js"></script>
+      <script src="app/main/customers/customers.controller.js"></script>
+      <script src="app/main/customers/customers.js"></script>
+      <script src="app/main/dashboard/dashboard.controller.js"></script>
+      <script src="app/main/dashboard/dashboard.js"></script>
+      <script src="app/main/food-menus/food-menus.controller.js"></script>
+      <script src="app/main/food-menus/food-menus.js"></script>
+      <script src="app/main/main.controller.js"></script>
+      <script src="app/main/main.js"></script>
+      <script src="app/main/marketing/marketing.controller.js"></script>
+      <script src="app/account/login/login.controller.js"></script>
+      <script src="app/main/orders/orders.controller.js"></script>
+      <script src="app/main/orders/orders.js"></script>
+      <script src="app/main/reservations/reservations.controller.js"></script>
+      <script src="app/main/reservations/reservations.js"></script>
+      <script src="app/main/settings/business-info/business-info.controller.js"></script>
+      <script src="app/main/settings/delivery/delivery.controller.js"></script>
+      <script src="app/main/settings/domain/domain.controller.js"></script>
+      <script src="app/main/settings/integration/integration.controller.js"></script>
+      <script src="app/main/settings/payments/payments.controller.js"></script>
+      <script src="app/main/settings/reservations/reservations.controller.js"></script>
+      <script src="app/main/settings/roles/roles.controller.js"></script>
+      <script src="app/main/settings/settings.js"></script>
+      <script src="app/main/settings/users/users.controller.js"></script>
+      <script src="app/main/statistics/statistics.controller.js"></script>
+      <script src="app/main/statistics/statistics.js"></script>
+      <script src="app/account/register/business/business.controller.js"></script>
+      <script src="components/auth/auth.service.js"></script>
+      <script src="components/auth/interceptor.service.js"></script>
+      <script src="components/auth/router.decorator.js"></script>
+      <script src="components/auth/user.service.js"></script>
+      <script src="components/modal/modal.service.js"></script>
+      <script src="components/mongoose-error/mongoose-error.directive.js"></script>
+      <script src="app/account/register/business/business.js"></script>
+      <script src="components/util/util.service.js"></script>
+      <!-- endinjector -->
+    <!-- endbuild -->
+  </body>
 </html>

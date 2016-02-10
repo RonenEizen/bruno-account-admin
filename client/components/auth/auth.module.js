@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('userAdminApp.auth', [
-  'userAdminApp.constants',
-  'userAdminApp.util',
+angular.module('accountAdminApp.auth', [
+  'accountAdminApp.constants',
+  'accountAdminApp.util',
   'ngCookies',
   'ui.router'
 ])

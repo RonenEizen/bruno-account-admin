@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .controller('MarketingCtrl', function ($scope) {
     $scope.pageTitle = 'Marketing > Campaigns';
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .controller('FoodMenusCtrl', function ($scope) {
     $scope.pageTitle = 'Food Menus';
   });

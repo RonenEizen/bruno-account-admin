@@ -3,7 +3,7 @@
 describe('Controller: CustomersCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('userAdminApp'));
+  beforeEach(module('accountAdminApp'));
 
   var CustomersCtrl, scope;
 

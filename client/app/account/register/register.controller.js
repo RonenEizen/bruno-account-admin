@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .controller('RegisterCtrl', function ($window, $scope, Auth, $location, $http, $timeout) {
     $scope.user = {};
     $scope.errors = {};

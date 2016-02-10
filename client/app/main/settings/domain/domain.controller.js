@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .controller('SettingsDomainCtrl', function ($scope) {
     $scope.pageTitle = 'Domain';
 

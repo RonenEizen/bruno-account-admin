@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .controller('ReservationsCtrl', function ($scope, $interval, $log, $location) {
     $scope.$parent.pageTitle = 'Reservations';
 

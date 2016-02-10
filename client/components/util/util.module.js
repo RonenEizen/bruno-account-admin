@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('userAdminApp.util', []);
+angular.module('accountAdminApp.util', []);

@@ -3,7 +3,7 @@
 /**
  * Removes server error when user updates input
  */
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .directive('mongooseError', function() {
     return {
       restrict: 'A',

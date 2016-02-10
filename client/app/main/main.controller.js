@@ -1,36 +1,46 @@
 'use strict';
 
-angular.module('userAdminApp')
-  .controller('MainCtrl', function ($scope, $location, Modal, Auth) {
+(function() {
 
-    $scope.navRevealed = true;
-    $scope.settingsOpen = false;
+class MainController {
+
+  constructor(Modal, Auth) {
+    this.navRevealed = true;
+    this.settingsOpen = false;
 
     // FLYOUT
-    $scope.modal = Modal.flyout;
+    this.modal = Modal.flyout;
 
-    // calls the modal with the html template and user index
-    $scope.customModal = function (html, object) {
-      var modalContent = {
-        modal: {
-          dismissable: true,
-          html: html,
-          object: object
-        }
-      };
-      return $scope.modal(modalContent);
+    this.isLoggedIn = Auth.isLoggedIn;
+    this.isAdmin = Auth.isAdmin;
+    this.getCurrentUser = Auth.getCurrentUser;
+  }
+
+  // calls the modal with the html template and user index
+  customModal(html, object) {
+    var modalContent = {
+      modal: {
+        dismissable: true,
+        html: html,
+        object: object
+      }
     };
+    return this.modal(modalContent);
+  }
 
-    $scope.isLoggedIn = Auth.isLoggedIn;
-    $scope.isAdmin = Auth.isAdmin;
-    $scope.getCurrentUser = Auth.getCurrentUser;
+  // need to refer to $location
 
-    $scope.logout = function() {
-      Auth.logout();
-      $location.path('/login');
-    };
+  logout() {
+    // Auth.logout();
+    // $location.path('/login');
+  }
 
-    $scope.isActive = function(route) {
-      return route === $location.path();
-    };
-  });
+  isActive() {
+    // return route === $location.path();
+  }
+}
+
+angular.module('accountAdminApp')
+  .controller('MainController', MainController);
+
+})();

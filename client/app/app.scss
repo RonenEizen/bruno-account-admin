@@ -1,5 +1,5 @@
-$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-@import '../bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
 
@@ -48,6 +48,7 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 @import 'account/register/business/business.scss';
 @import 'account/register/owner/owner.scss';
 @import 'account/register/register.scss';
+@import 'admin/admin.scss';
 @import 'main/admin/admin.scss';
 @import 'main/customers/customers.scss';
 @import 'main/dashboard/dashboard.scss';
@@ -66,7 +67,6 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 @import 'main/settings/settings.scss';
 @import 'main/settings/users/users.scss';
 @import 'main/statistics/statistics.scss';
-@import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';
 // endinjector
 

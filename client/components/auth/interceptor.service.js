@@ -26,7 +26,7 @@ function authInterceptor($rootScope, $q, $cookies, $injector, Util) {
   };
 }
 
-angular.module('userAdminApp.auth')
+angular.module('accountAdminApp.auth')
   .factory('authInterceptor', authInterceptor);
 
 })();

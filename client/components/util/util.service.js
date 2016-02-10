@@ -59,7 +59,7 @@ function UtilService($window) {
   return Util;
 }
 
-angular.module('userAdminApp.util')
+angular.module('accountAdminApp.util')
   .factory('Util', UtilService);
 
 })();

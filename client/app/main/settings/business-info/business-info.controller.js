@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .controller('SettingsBusinessInfoCtrl', function($scope, Auth) {
     $scope.pageTitle = 'General Business Info';
 

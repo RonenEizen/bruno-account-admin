@@ -3,7 +3,7 @@
 // describe('Controller: DashboardCtrl', function () {
 
 //   // load the controller's module
-//   beforeEach(module('userAdminApp'));
+//   beforeEach(module('accountAdminApp'));
 //   beforeEach(module('socketMock'));
 
 //   var MainCtrl,

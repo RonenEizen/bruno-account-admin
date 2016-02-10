@@ -183,7 +183,7 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
   return Auth;
 }
 
-angular.module('userAdminApp.auth')
+angular.module('accountAdminApp.auth')
   .factory('Auth', AuthService);
 
 })();

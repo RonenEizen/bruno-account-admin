@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('userAdminApp')
+angular.module('accountAdminApp')
   .controller('SettingsRolesCtrl', function($scope) {
     $scope.pageTitle = 'Roles';
 

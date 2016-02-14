@@ -15,8 +15,7 @@ angular.module('accountAdminApp', [
   , 'wu.masonry'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
-    $urlRouterProvider
-      .otherwise('/');
+    $urlRouterProvider.otherwise('/dashboard');
 
     $locationProvider.html5Mode(true);
   });

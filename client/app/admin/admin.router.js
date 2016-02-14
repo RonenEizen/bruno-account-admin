@@ -7,7 +7,6 @@ angular.module('accountAdminApp.admin')
         url: '/admin',
         templateUrl: 'app/admin/admin.html',
         controller: 'AdminController',
-        controllerAs: 'admin',
-        authenticate: 'admin'
+        controllerAs: 'admin'
       });
   });

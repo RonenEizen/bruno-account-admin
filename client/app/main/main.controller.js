@@ -10,7 +10,7 @@ class MainController {
 
     // FLYOUT
     this.modal = Modal.flyout;
-
+    this.Auth = Auth;
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
@@ -28,11 +28,8 @@ class MainController {
     return this.modal(modalContent);
   }
 
-  // need to refer to $location
-
   logout() {
-    // Auth.logout();
-    // $location.path('/login');
+     this.Auth.logout();
   }
 
   isActive() {

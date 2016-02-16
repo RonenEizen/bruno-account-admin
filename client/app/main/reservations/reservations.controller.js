@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('ReservationsCtrl', function ($scope, $interval, $log, $location) {
+  .controller('ReservationsCtrl', function ($scope, $interval, $log, $location, Auth) {
     $scope.$parent.pageTitle = 'Reservations';
 
     // sets current tab

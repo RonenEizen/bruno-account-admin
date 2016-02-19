@@ -1,100 +1,106 @@
 <div class="col-md-12 day-view">
-  <div class="row full-height">
-    <div class="col-md-8 calendar">
-      <div class="row heading">
-        <div class="col-md-4">
-          <h2>{{currentDate.now() | date: 'MMMM dd, yyyy'}}</h2>
-          <h3>{{currentDate.now() | date: 'EEEE'}}, Week {{currentDate.now() | date: 'w'}}</h3>
-        </div>
-        <div class="col-md-12">
-          <ul class="legend clearfix">
-            <li class="closed"><i></i> Closed</li>
-            <li class="pending"><i></i> Pending</li>
-            <li class="active"><i></i> Active</li>
-          </ul>
-        </div>
-      </div><!-- END .row.heading -->
+  <div class="row">
+    <div class="top-info">
+      <div class="col-md-6 top-info-segment">
+        <h2>{{currentDate.now() | date: 'MMMM dd, yyyy'}} <span>{{currentDate.now() | date: 'EEEE'}}, Week {{currentDate.now() | date: 'w'}}</span></h2>
+      </div>
+      <div class="col-md-6 top-info-segment">
+        <ul class="legend clearfix">
+          <li class="closed"><i></i> Closed</li>
+          <li class="pending"><i></i> Pending</li>
+          <li class="active"><i></i> Active</li>
+        </ul><!-- END .legend -->
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .heading -->
+  </div><!-- END .row -->
 
-      <div class="row">
-        <div class="col-md-12 calendar-overflow">
-          <div class="calendar-widget">
-            <div class="ruler" ng-style="{left: leftPos}">
-              <i></i>
-              <time>{{(currentDate.now() | date: 'h:mm a').toLowerCase()}}</time>
-            </div>
-            <div>all day</div>
-            <ul class="cal-row">
-              <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
-            </ul>
-            <div class="cal-row">
-              <div class="booked pending" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
-            </div>
-            <div class="cal-row">
-              <div class="booked active selected" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
-            </div>
-            <div class="cal-row">
-              <div class="booked closed" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
-              <div class="booked pending" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
-            </div>
-            <div class="cal-row">
-              <div class="booked active" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
-            </div>
-            <div class="cal-row">
-              <div class="booked active" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
-            </div>
-            <div class="cal-row">
-              <div class="booked pending" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
-            </div>
-            <div class="cal-row"></div>
-            <div class="cal-row"></div>
-          </div><!-- END .calendar-widget -->
-        </div>
-      </div><!-- END .row -->
-    </div><!-- END .calendar -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-12 shadowed-container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="calendar-side">
+              <div class="col-md-12">
+                <header class="all-day">
+                  all day
+                </header>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="calendar-overflow">
+                    <div class="calendar-widget">
+                      <div class="ruler" ng-style="{left: leftPos}">
+                        <i></i>
+                        <!-- <time>{{(currentDate.now() | date: 'h:mm a').toLowerCase()}}</time> -->
+                      </div>
+                      <ul class="cal-row">
+                        <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
+                      </ul>
+                      <div class="cal-row">
+                        <div class="booked closed" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
+                      </div>
+                      <div class="cal-row">
+                        <div class="booked active" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
+                      </div>
+                      <div class="cal-row">
+                        <div class="booked active" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
+                      </div>
+                      <div class="cal-row">
+                        <div class="booked active selected" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
+                      </div>
+                      <div class="cal-row">
+                        <div class="booked pending" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
+                      </div>
+                      <div class="cal-row">
+                        <div class="booked pending" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
+                      </div>
+                      <div class="cal-row">
+                        <div class="booked pending" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
+                      </div>
+                      <div class="cal-row"></div>
+                    </div><!-- END .calendar-widget -->
+                  </div><!-- END .calendar-overflow -->
+                </div><!-- END .col-md-12 -->
+              </div><!-- END .row -->
+            </div><!-- END .calendar-side -->
+          </div><!-- END .calendar -->
 
-    <div class="col-md-4 sidebar">
-      <div class="row">
-        <div class="col-md-7 date-picker">
-          <date-picker ng-model="date"></date-picker>
-          <strong>date picked: {{date}}</strong>
-        </div>
-        <div class="col-md-5">
-          <div class="btn-cust pull-right">
-            <button class="arrows btn-primary fa fa-angle-left"></button>
-            <button class="today btn-default">TODAY</button>
-            <button class="arrows btn-primary fa fa-angle-right"></button>
-          </div>
-          <time>{{(currentDate.now() | date: 'h:mm a').toLowerCase()}}</time>
-        </div>
-      </div><!-- END .row -->
-      <hr>
+          <div class="col-md-3 sidebar">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="btn-cust">
+                  <button class="arrows btn-primary fa fa-angle-left"></button>
+                  <button class="today btn-default">Today</button>
+                  <button class="arrows btn-primary fa fa-angle-right"></button>
+                </div>
+              </div>
 
-      <div class="row">
-        <div class="col-md-9">
-          <h3 class="red">Table for 6</h3>
-          <p>
-            <strong>Tuesday, Nov 11</strong><br>
-            <strong>6pm to 7:30pm</strong>
-          </p>
-          <p>Jarred Leto<br>(347) 578-9001</p>
-          <p><small>NOTE: would like a table by the window, gluten free, pays with Discover</small></p>
+              <div class="col-md-12 col-sm-6">
+                <uib-datepicker ng-model="datepicked" class="date-picker" show-weeks="false" format-day-header="EEE"></uib-datepicker>
+              </div>
 
-          <div class="btn-group" uib-dropdown>
-            <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle>
-              Actions <span class="caret"></span>
-            </button>
-            <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-              <li role="menuitem"><a ng-click="customModal()">Action 1</a></li>
-              <li role="menuitem"><a ng-click="customModal()">Action 2</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="status pending">Pending</div>
-          <!-- <div class="status active">Active</div>
-          <div class="status closed">Closed</div> -->
-        </div>
-      </div><!-- END .row -->
-    </div><!-- END .sidebar -->
+              <div class="col-md-12 col-sm-6">
+                <div class="table-info">
+                  <h3>Table for 6
+                    <span class="status pull-right active">Active</span>
+                    <!--
+                    <span class="status pull-right pending">Pending</span>
+                    <span class="status pull-right closed">Closed</span>
+                    -->
+                  </h3>
+                  <p>
+                    <strong>Tuesday, Nov 11</strong><br>
+                    <strong>6pm to 7:30pm</strong>
+                  </p>
+                  <p>Jarred Leto<br>(347) 578-9001</p>
+                  <p><small>NOTE: would like a table by the window, gluten free, pays with Discover</small></p>
+                  <button class="btn btn-primary">Edit</button>
+                </div>
+              </div>
+            </div><!-- END .row -->
+          </div><!-- END .sidebar -->
+        </div><!-- END .row -->
+      </div><!-- END .col-md-12.shadowed-container -->
+    </div><!-- END .col-md-12 -->
   </div><!-- END .row -->
 </div><!-- END .day-view -->

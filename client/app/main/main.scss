@@ -10,6 +10,7 @@
           &.icon-triangle_up      { font-size: 7px; left: 10px; top: 14px; }
           &.icon-triangle_right   { font-size: 9px; left: 13px; top: 16px; }
         }
+        .badge                    { background: $red; border-radius: 100%; color: $white; margin-left: 10px; padding: 5px; }
         ul                        { background: $darkgray2;
           li                      {
             &.selected,

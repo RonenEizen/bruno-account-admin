@@ -1,7 +1,7 @@
-<header class="top clearfix" ng-class="{expanded: !navRevealed}">
+<header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
-      <span class="hamburger" ng-click="$parent.$parent.navRevealed=true" ng-show="!navRevealed"><i class="icon-hamburger_menu"></i></span>
+      <span class="hamburger" ng-click="main.navRevealed=true" ng-show="!main.navRevealed"><i class="icon-hamburger_menu"></i></span>
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2"></div>
@@ -27,7 +27,7 @@
                 <div class="th">Mergeable</div>
               </div><!-- END .tr -->
             </div><!-- END .thead -->
-        
+
             <div class="tbody">
               <div class="tr" ng-repeat="table in tables.sets">
                 <div class="td">

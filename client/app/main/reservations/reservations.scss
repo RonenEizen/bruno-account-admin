@@ -1,45 +1,42 @@
 .reservations                     { height: 100%;
-  // top info
-  .btn-new                        { background: none; border: 0; color: $blue; font-size: 18px; margin: 0 20px 0; padding: 0; }
-  .btn-cust                       { margin-top: 5px; vertical-align: middle; white-space: nowrap;
-    button                        { background: none; border: none; font-size: 18px; margin: 0; padding: 4px; }
-    .arrows                       { color: $blue; font-size: 22px; }
-    .today                        { color: $darkgray; font-weight: 700; letter-spacing: -1px; }
-  }
-  .reservations-body              { height: calc(100% - 43px); }
-
-  // body stuff
-  .calendar                       { background: $white; height: 100%; overflow: auto;
-    h2                            { font: 500 24px $serif-font; margin: 15px 0 10px; }
-    h3                            { font: 500 16px $serif-font; margin: 0 0 10px; }
-    time                          { color: $darkgray; display: block; font: 300 24px $serif-font; margin: 15px 0; text-align: center; }
-    .heading                      { height: 115px; }
-    .legend                       { list-style: none; padding: 0 0 5px; position: relative; top: -25px;
-      li                          { float: right; vertical-align: middle;
-        i                         { display: inline-block; float: left; height: 15px; line-height: 15px; margin: 0 5px 0 10px; width: 15px; }
-        &.active i                { background: $red; }
-        &.closed i                { background: $lightgray; }
-        &.pending i               { background: $green; }
+  // TOP INFO
+  .tab-group                      { color: $darkgray; font: 12px $serif-font; height: 32px; margin-top: 8px;
+    a                             { color: inherit; float: left;
+      &:focus,
+      &:hover                     { text-decoration: none; }
+      .tab                        { border: 1px solid $lightgray; cursor: pointer; float: left; padding: 8px 30px;
+        &.active                  { background: $darkgray; border-color: $darkgray; color: $white; }
       }
     }
+    .current-time                 { font: 16px $sans-font;
+      time                        { font-weight: 700; }
+    }
   }
-  .angular-date-picker            { background: none; border: none; color: $darkgray; margin-top: 15px;
-    ._month                       { background: none; border: none; padding: 0; }
-    ._days                        { margin: 0; width: 100%;
-      ._day-of-week,
-      ._day                       { width: calc(100%/7); border-radius: 100%;
-        &.-padding                { color: $lightgray;
-          &:hover                 { color: $white; }
+  .btn-new                        { background: none; border: 0; color: $blue; font-size: 18px; margin: 0 20px 0; padding: 0; }
+  .btn-cust                       { display: flex; justify-content: space-between; vertical-align: middle; white-space: nowrap;
+    button                        { background: $lightgray; border: none; border-radius: 3px; color: $darkgray; flex-grow: 1; font-size: 18px; margin: 0; padding: 4px; }
+    .today                        { flex-grow: 6; font-family: $serif-font; margin: 0 5px; }
+  }
+  .reservations-body              { height: calc(100% - 40px);
+    .top-info                     { display: table; margin-bottom: 10px; width: 100%;
+      .top-info-segment           { float: none; height: 50px; display: table-cell; vertical-align: bottom; }
+      .btn-cust                   { float: right; margin-left: 20px; width: 200px; }
+      h2                          { font: 500 24px $sans-font; margin: 0;
+        span                      { font: 300 18px $sans-font; padding-left: 10px; }
+      }
+      .legend                     { float: right; font-family: $serif-font; list-style: none; padding: 0 0 5px;
+        li                        { float: right; vertical-align: middle;
+          i                       { display: inline-block; float: left; height: 15px; line-height: 15px; margin: 0 5px 0 20px; width: 15px; }
+          &.active i              { background: $red; }
+          &.closed i              { background: $lightgray; }
+          &.pending i             { background: $green; }
         }
-        &:hover,
-        &.-today                  { background: $lightgray; border: 1px solid transparent; }
-        &.-selected               { background: $darkgray; color: $white; }
       }
     }
   }
 
   // CALENDAR WIDGET
-  .calendar-widget                { height: calc(100% - 115px);
+  .calendar-widget                { height: calc(100% - 60px);
     .booked                       {
       &.active                    { background: $red; color: $white; }
       &.closed                    { background: $lightgray; color: $darkgray; }
@@ -48,43 +45,55 @@
   }
 
   // DAY VIEW: tab specifics
-  .day-view                       { background: $beige; height: 100%;
-    .heading                      {
-      .legend                     { border-bottom: 1px solid $lightgray; }
-    }
+  .day-view                       {
+    .shadowed-container           { padding-bottom: 20px; padding-top: 20px; }
+    .calendar-side                { background: $white; border: 1px solid $lightgray;}
+    .all-day                      { border-bottom: 2px solid $lightgray; font-weight: 700; font-family: $serif-font; line-height: 48px; padding: 0 15px; }
     .calendar-overflow            { overflow: auto; }
-    .calendar-widget              { color: $lightgray; position: relative; width: 6300px;
+    .calendar-widget              { color: $black; font-family: $serif-font; position: relative; width: 6300px;
+      ul.cal-row                  { color: $black; display: flex; font-weight: 700; justify-content: space-between; list-style: none; margin: 0; padding: 0;
+        li                        { white-space: nowrap; }
+      }
       .cal-row                    { border-bottom: 1px solid $lightgray; height: 35px; line-height: 35px; position: relative;
+        &:last-child              { border: none; }
         .booked                   { padding: 4px; height: 34px; position: absolute; top: 0;
           span                    { display: block; line-height: 26px; text-align: center; }
           &.selected              {
-            span                  { background: rgba(51,51,51,.15); }
+            span                  { background: rgba(51,51,51,.4); }
           }
         }
       }
-      .ruler                      { border-left: 1px solid $red; height: calc(35px * 8); position: absolute; top: 54px; width: 0; z-index: 100;
+      .ruler                      { border-left: 1px solid $black; height: calc(35px * 8); position: absolute; top: 35px; width: 0; z-index: 100;
         time                      { color: $red; font-size: 12px; font-weight: 700; left: 5px; position: absolute; top: -23px; width: 60px; }
-        i                         { background: $red; border-radius: 100%; display: block; height: 9px; left: -5px; position: absolute; top: -5px; width: 9px; }
-      }
-      ul.cal-row                  { border-top: 1px solid $lightgray; color: $lightgray2; display: flex; font-weight: 700; justify-content: space-between; list-style: none; margin: 0; padding: 0;
-        li                        { white-space: nowrap; }
+        i                         { background: $black; border-radius: 100%; display: block; height: 11px; left: -6px; position: absolute; top: -6px; width: 11px; }
       }
     }
-    .sidebar                      { box-shadow: 0 0 10px rgba(0,0,0,.2); height: 100%; overflow: auto;
-      hr                          { border-top-color: $darkgray; }
-      h3.red                      { color: $red; margin-top: 0; }
-      time                        { color: $darkgray; display: block; font: 300 24px $serif-font; margin: 55px 0 15px; text-align: center; }
-      .status                     { border-radius: 100%; color: $white; font-size: 10px; line-height: 50px; text-align: center; width: 50px;
-        &.active                  { background: $red; }
-        &.closed                  { background: $lightgray; color: $darkgray; }
-        &.pending                 { background: $green; }
+    .sidebar                      { height: 100%;
+      .date-picker                { background: $white; border: 1px solid $lightgray; margin-top: 20px; padding: 10px;
+        .uib-daypicker            { width: 100%; }
+        button                    {
+          &.btn                   { background: none; padding: 5px 0; width: 100%; }
+          &.active                { background: none; box-shadow: none;
+            span                  { background: $lightgray; border-radius: 100%; padding: 6px; }
+          }
+        }
+      }
+      .table-info                 { background: $lightgray; border-top: 2px solid $red; margin-top: 20px; padding: 20px;
+        h3                        { font: 700 18px $sans-font; margin: 0; margin-bottom: 10px;
+          .status                 { font-size: 12px; vertical-align: bottom;
+            &.active              { color: $red; }
+            &.closed              { color: $darkgray; }
+            &.pending             { color: $green; }
+          }
+        }
       }
     }
   }
+
   // WEEK VIEW: tab specifics
-  .week-view                      {
+  .week-view                      { height: 100%;
     .overflow                     { height: calc(100% - 71px); overflow: auto; }
-    .table                        { color: $lightgray; margin-bottom: 0; position: relative;
+    .table                        { color: $black; font-family: $serif-font; margin-bottom: 0; position: relative;
       .th, .td                    { border-bottom: 1px solid $lightgray; border-right: 1px solid $lightgray; height: 35px; padding: 0;
         &:first-child             { padding-right: 8px; text-align: right; width: 60px; }
         &:last-child              { border-right: none; }
@@ -92,7 +101,7 @@
 
       .thead                      {
         .tr                       {
-          &:first-child           { color: $darkgray; font: 300 16px $serif-font;
+          &:first-child           { font: 300 16px $serif-font;
             .th                   { border-right: none; padding: 8px; text-align: center; }
           }
           &:nth-child(2)          {
@@ -112,12 +121,10 @@
         }
         .booked                   { position: absolute; width: 19px; }
       }
-      .ruler                      { border-top: 1px solid $red; height: 1px; position: absolute; left: 60px; top: 185px; z-index: 100;
-        time                      { color: $red; font-size: 12px; font-weight: 700; left: -65px; position: absolute; top: -23px; width: 60px; }
-        i                         { background: $red; border-radius: 100%; display: block; height: 9px; position: absolute; top: -5px; width: 9px; }
+      .ruler                      { border-top: 1px solid $black; height: 1px; position: absolute; left: 0px; top: 185px; z-index: 100;
+        time                      { color: $black; display: none; font-size: 12px; font-weight: 700; left: -65px; position: absolute; top: -23px; width: 60px; }
+        i                         { background: $black; border-radius: 100%; display: block; height: 11px; position: absolute; top: -6px; width: 11px; }
       }
     }
   }
-  // MONTH VIEW: tab specifics
-  .month-view                     {}
 }

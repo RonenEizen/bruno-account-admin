@@ -6,7 +6,8 @@ angular.module('accountAdminApp')
       .state('main.reservations', {
         abstract: true,
         url: '/reservations',
-        templateUrl: 'app/main/reservations/reservations.html'
+        templateUrl: 'app/main/reservations/reservations.html',
+        controller: 'ReservationsCtrl'
       })
       .state('main.reservations.day', {
         url: '/day',
@@ -18,10 +19,5 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/reservations/reservations-week.html',
         controller: 'ReservationsCtrl'
       })
-      .state('main.reservations.month', {
-        url: '/month',
-        templateUrl: 'app/main/reservations/reservations-month.html',
-        controller: 'ReservationsCtrl'
-      });
     $urlRouterProvider.when('/reservations', '/reservations/day');
   });

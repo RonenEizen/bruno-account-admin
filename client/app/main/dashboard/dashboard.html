@@ -107,23 +107,23 @@
                   <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
                 </ul>
                 <div class="cal-row">
-                  <div class="booked pending" ng-click="customModal('tableModal.html')" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
+                  <div class="booked pending" ng-click="main.customModal('tableModal.html')" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
                 </div>
                 <div class="cal-row">
-                  <div class="booked active" ng-click="customModal('tableModal.html')" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
+                  <div class="booked active" ng-click="main.customModal('tableModal.html')" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
                 </div>
                 <div class="cal-row">
-                  <div class="booked closed" ng-click="customModal('tableModal.html')" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
-                  <div class="booked pending" ng-click="customModal('tableModal.html')" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
+                  <div class="booked closed" ng-click="main.customModal('tableModal.html')" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
+                  <div class="booked pending" ng-click="main.customModal('tableModal.html')" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
                 </div>
                 <div class="cal-row">
-                  <div class="booked active" ng-click="customModal('tableModal.html')" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
+                  <div class="booked active" ng-click="main.customModal('tableModal.html')" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
                 </div>
                 <div class="cal-row">
-                  <div class="booked active" ng-click="customModal('tableModal.html')" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
+                  <div class="booked active" ng-click="main.customModal('tableModal.html')" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
                 </div>
                 <div class="cal-row">
-                  <div class="booked pending" ng-click="customModal('tableModal.html')" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
+                  <div class="booked pending" ng-click="main.customModal('tableModal.html')" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
                 </div>
               </div><!-- END .calendar-widget -->
             </div>
@@ -241,7 +241,7 @@
             </div><!-- END .table -->
           </div><!-- END .row -->
           <div class="bottom-link text-right">
-            <a ng-click="customModal('updatesModal.html')">All Settings Updates ›</a>
+            <a ng-click="main.customModal('updatesModal.html')">All Settings Updates ›</a>
           </div><!-- END .row -->
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->

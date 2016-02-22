@@ -5,7 +5,7 @@
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="customModal('addOrderModal.html')">+ New Order</button>
+      <button class="btn btn-primary" ng-click="main.customModal('addOrderModal.html')">+ New Order</button>
     </div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -116,7 +116,7 @@
         class="tr"
         ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders"
         ng-class="setStatus(order.status)">
-        <div ng-show="displayColumns.number" class="td"><a ng-click="customModal('modalOrder.html', editing)">{{order.number}}</a></div>
+        <div ng-show="displayColumns.number" class="td"><a ng-click="main.customModal('modalOrder.html', editing)">{{order.number}}</a></div>
         <div ng-show="displayColumns.customer" class="td">{{order.customer}}</div>
         <div ng-show="displayColumns.type" class="td">{{order.type}}</div>
         <div ng-show="displayColumns.amount" class="td">{{order.amount | currency}}</div>

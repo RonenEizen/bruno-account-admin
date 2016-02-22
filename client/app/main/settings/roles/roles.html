@@ -5,7 +5,7 @@
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="customModal('addRoleModal.html')">+ New Role</button>
+      <button class="btn btn-primary" ng-click="main.customModal('addRoleModal.html')">+ New Role</button>
     </div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -79,7 +79,7 @@
         ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingRoles
       ">
         <div class="td" ng-show="displayColumns.role">
-          <a ng-click="customModal('roleModal.html')">{{role.role}}</a>
+          <a ng-click="main.customModal('roleModal.html')">{{role.role}}</a>
         </div>
 
         <div class="td" ng-show="displayColumns.access">

@@ -31,7 +31,7 @@
             <div class="tbody">
               <div class="tr" ng-repeat="table in tables.sets">
                 <div class="td">
-                  <a ng-click="customModal('tableForm.html')">{{table.name}}</a>
+                  <a ng-click="main.customModal('tableForm.html')">{{table.name}}</a>
                 </div>
                 <div class="td">
                   {{table.capacity}}
@@ -46,7 +46,7 @@
 
               <div class="tr">
                 <div class="td">
-                  <a ng-click="customModal('newTableForm.html')">+ Add Table</a>
+                  <a ng-click="main.customModal('newTableForm.html')">+ Add Table</a>
                 </div>
               </div><!-- END .tr -->
 
@@ -58,7 +58,7 @@
     </div><!-- END .col-md-6 -->
 
     <div class="col-md-6">
-      <h2>Seating<span ng-click="customModal('seatingForm.html')" class="pull-right">Edit</span></h2>
+      <h2>Seating<span ng-click="main.customModal('seatingForm.html')" class="pull-right">Edit</span></h2>
       <p>
         <strong>Maximun Seating Capacity</strong><br>
         {{seating.capacity}} people

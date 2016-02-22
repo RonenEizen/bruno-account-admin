@@ -24,7 +24,7 @@
   <div ng-show="enabled">
     <div class="row">
       <div class="col-md-12">
-        <h2>Delivery Radius <span class="pull-right" ng-click="customModal('radiusForm.html')">Edit</span></h2>
+        <h2>Delivery Radius <span class="pull-right" ng-click="main.customModal('radiusForm.html')">Edit</span></h2>
         <div class="googlemap">
           <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d58420.22179022014!2d-51.171596471397784!3d-30.028410566185656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1443130059406"></iframe>
           <div class="clearfix"></div>
@@ -36,7 +36,7 @@
       <div class="col-md-6">
         <div class="row">
           <div class="col-md-12 paragraph-margin">
-            <h2>Send Delivery Requests To <span class="pull-right" ng-click="customModal('requestsForm.html')">Edit</span></h2>
+            <h2>Send Delivery Requests To <span class="pull-right" ng-click="main.customModal('requestsForm.html')">Edit</span></h2>
             <p><strong>Email</strong><br>
             {{requests.email.input}}</p>
             <p><strong>Phone</strong><br>
@@ -46,7 +46,7 @@
 
         <div class="row">
           <div class="col-md-12">
-            <h2>Delivery Hours <span class="pull-right" ng-click="customModal('deliveryForm.html')">Edit</span></h2>
+            <h2>Delivery Hours <span class="pull-right" ng-click="main.customModal('deliveryForm.html')">Edit</span></h2>
             <span ng-show="opening.twentyFourSeven">Open 24/7</span>
             <div ng-show="!opening.twentyFourSeven" class="table opening-hours">
               <div class="tbody">
@@ -66,7 +66,7 @@
       <div class="col-md-6">
         <div class="row">
           <div class="col-md-12 paragraph-margin">
-            <h2>Additional Information <span class="optional">(optional)</span> <span class="pull-right" ng-click="customModal('additionalForm.html')">Edit</span></h2>
+            <h2>Additional Information <span class="optional">(optional)</span> <span class="pull-right" ng-click="main.customModal('additionalForm.html')">Edit</span></h2>
             <p><strong>Minimun Delivery Amount</strong><br>
             {{additional.minimun.input | currency}}</p>
             <p><strong>Delivery Surcharge</strong><br>

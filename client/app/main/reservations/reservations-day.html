@@ -20,11 +20,14 @@
         <div class="row">
           <div class="col-md-9">
             <div class="calendar-side">
-              <div class="col-md-12">
-                <header class="all-day">
-                  all day
-                </header>
-              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <header class="all-day">
+                    all day
+                  </header>
+                </div>
+              </div><!-- END .row -->
+
               <div class="row">
                 <div class="col-md-12">
                   <div class="calendar-overflow">
@@ -94,7 +97,7 @@
                   </p>
                   <p>Jarred Leto<br>(347) 578-9001</p>
                   <p><small>NOTE: would like a table by the window, gluten free, pays with Discover</small></p>
-                  <button class="btn btn-primary">Edit</button>
+                  <button class="btn btn-primary" ng-click="main.customModal('reservationModal.html')">Edit</button>
                 </div>
               </div>
             </div><!-- END .row -->

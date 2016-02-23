@@ -34,6 +34,8 @@ module.exports = function(config) {
       'client/bower_components/masonry/masonry.js',
       'client/bower_components/imagesloaded/imagesloaded.js',
       'client/bower_components/angular-masonry/angular-masonry.js',
+      'client/bower_components/Chart.js/Chart.js',
+      'client/bower_components/angular-chart.js/dist/angular-chart.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/app.js',

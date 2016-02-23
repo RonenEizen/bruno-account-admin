@@ -5,8 +5,8 @@ angular.module('accountAdminApp')
     $scope.pageTitle = 'Dashboard';
 
     // Columns
-    $scope.displayColumns = { orders: true, reservations: true, campaigns: true, updates: true, trends: true };
-    $scope.collapsed = { orders: false, reservations: false, campaigns: false, updates: false, trends: false };
+    $scope.displayColumns = { orders: true, reservations: true, campaigns: true, updates: true, reservationTrends: true, orderTrends: true };
+    $scope.collapsed = { orders: false, reservations: false, campaigns: false, updates: false, reservationTrends: false, orderTrends: false };
     $scope.showColumnPicker = function () {
       $scope.pickColumns = true;
       $scope.invisibleLayer = true;
@@ -35,4 +35,22 @@ angular.module('accountAdminApp')
     $scope.sort = function () {
 
     };
+
+
+    // Charts
+    $scope.labels = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'];
+    $scope.series = ['2015', '2016'];
+    $scope.data = [[65, 59, 80, 81, 56, 55, 40], [28, 48, 40, 19, 86, 27, 90] ];
+    $scope.onClick = function (points, evt) {
+      console.log(points, evt);
+    };
+    Chart.defaults.global.colours.splice(0,1,'#18ADA3');
+    $scope.chartOptions = {
+      scaleShowVerticalLines: false,
+      bezierCurve : false,
+      pointDotRadius : 0,
+      pointDotStrokeWidth: 0,
+      datasetStrokeWidth : 3,
+      datasetFill : false
+    }
   });

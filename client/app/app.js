@@ -13,6 +13,7 @@ angular.module('accountAdminApp', [
   , 'mp.datePicker'
   , 'validation.match'
   , 'wu.masonry'
+  , 'chart.js'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/dashboard');

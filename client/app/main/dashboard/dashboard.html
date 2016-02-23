@@ -15,7 +15,8 @@
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.reservations">Recent Reservations</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.campaigns">Current Campaign</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.updates">Settings Updates</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.trends">Trends</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.orderTrends">Order Trends</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.reservationTrends">ReservationTrends</label></li>
           <button class="btn btn-default" ng-click="rearranging=!rearranging">Change Positions</button>
         </ul>
       </div>
@@ -247,43 +248,34 @@
       </div><!-- END .shadowed-container -->
     </div>
 
-    <div class="col-md-6 masonry-item" ng-show="displayColumns.trends">
+    <div class="col-md-6 masonry-item" ng-show="displayColumns.orderTrends">
       <div class="shadowed-container">
         <div class="grayout" ng-show="rearranging"></div>
         <header>
           <h2>Order Trends</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.trends, 'fa-chevron-down': collapsed.trends}" ng-click="collapsed.trends = !collapsed.trends;msnry.layout()" ng-show="!rearranging"></i>
+          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orderTrends, 'fa-chevron-down': collapsed.orderTrends}" ng-click="collapsed.orderTrends = !collapsed.orderTrends;msnry.layout()" ng-show="!rearranging"></i>
           <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
         </header>
-        <div class="collapsable" ng-show="!collapsed.trends">
+        <div class="collapsable" ng-show="!collapsed.orderTrends">
           <div class="shadowed-subcontainer">
-            <div class="table">
-              <div class="thead">
-                <div class="tr">
-                  <div class="th"></div>
-                  <div class="th"></div>
-                  <div class="th"></div>
-                </div>
-              </div>
-              <div class="tbody">
-                <div class="tr">
-                  <div class="td"></div>
-                  <div class="td"></div>
-                  <div class="td"></div>
-                </div>
-                <div class="tr">
-                  <div class="td"></div>
-                  <div class="td"></div>
-                  <div class="td"></div>
-                </div>
-                <div class="tr">
-                  <div class="td"></div>
-                  <div class="td"></div>
-                  <div class="td"></div>
-                </div>
-              </div>
-            </div><!-- END .table -->
-          </div><!-- END .row -->
+            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-legend="true" chart-click="onClick" chart-options="chartOptions"></canvas>
+          </div><!-- END .shadowed-subcontainer -->
+        </div><!-- END .collapsable -->
+      </div><!-- END .shadowed-container -->
+    </div>
+
+    <div class="col-md-6 masonry-item" ng-show="displayColumns.reservationTrends">
+      <div class="shadowed-container">
+        <div class="grayout" ng-show="rearranging"></div>
+        <header>
+          <h2>Reservation Trends</h2>
+          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservationTrends, 'fa-chevron-down': collapsed.reservationTrends}" ng-click="collapsed.reservationTrends = !collapsed.reservationTrends;msnry.layout()" ng-show="!rearranging"></i>
+          <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
+        </header>
+        <div class="collapsable" ng-show="!collapsed.reservationTrends">
+          <div class="shadowed-subcontainer">
+            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-legend="true" chart-click="onClick" chart-options="chartOptions"></canvas>
+          </div><!-- END .shadowed-subcontainer -->
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->
     </div>

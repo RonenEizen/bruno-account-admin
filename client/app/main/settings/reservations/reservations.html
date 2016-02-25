@@ -31,7 +31,7 @@
             <div class="tbody">
               <div class="tr" ng-repeat="table in tables.sets">
                 <div class="td">
-                  <a ng-click="main.customModal('tableForm.html')">{{table.name}}</a>
+                  <a ng-click="main.customModal('tableModal.html')">{{table.name}}</a>
                 </div>
                 <div class="td">
                   {{table.capacity}}
@@ -46,7 +46,7 @@
 
               <div class="tr">
                 <div class="td">
-                  <a ng-click="main.customModal('newTableForm.html')">+ Add Table</a>
+                  <a ng-click="main.customModal('newTableModal.html')">+ Add Table</a>
                 </div>
               </div><!-- END .tr -->
 
@@ -58,7 +58,7 @@
     </div><!-- END .col-md-6 -->
 
     <div class="col-md-6">
-      <h2>Seating<span ng-click="main.customModal('seatingForm.html')" class="pull-right">Edit</span></h2>
+      <h2>Seating <a ng-click="main.customModal('seatingModal.html')" class="pull-right">Edit</a></h2>
       <p>
         <strong>Maximun Seating Capacity</strong><br>
         {{seating.capacity}} people
@@ -85,170 +85,3 @@
   </div><!-- END .row -->
 
 </div><!-- END .col-md-12 -->
-
-
-
-
-
-<script type="text/ng-template" id="tableForm.html">
-<div class="container custom-form">
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
-
-  <form name="tableForm" class="custom-form form-group">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>Edit Table</h1>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Table Name</label>
-          <input type="text" ng-model="table.name" class="form-control" required>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Table Capacity</label>
-          <input type="number" ng-model="table.capacity" class="form-control" required>
-        </div>
-      </div>
-    </div><!-- END .row -->
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Number of Tables</label>
-          <input type="number" ng-model="table.quantity" class="form-control" required>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Mergeable</label>
-          <fieldset>
-            <select ng-model="table.mergeable" class="form-control" required>
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </fieldset>
-        </div>
-      </div>
-    </div><!-- END .row -->
-
-    <div class="row">
-      <div class="col-md-12 text-center resetsave">
-        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-        <button class="btn btn-primary" ng-click="save('table')" ng-disabled="tableForm.$invalid">Save</button>
-      </div>
-    </div><!-- END .row -->
-  </form>
-
-</div><!-- END .col-md-6 -->
-</div><!-- END .row -->
-</div><!-- END .container -->
-</script>
-
-
-
-
-
-<script type="text/ng-template" id="newTableForm.html">
-<div class="container custom-form">
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
-
-  <form name="newTableForm" class="custom-form form-group">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>Add Table</h1>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Table Name</label>
-          <input type="text" ng-model="table.name" class="form-control" required>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Table Capacity</label>
-          <input type="number" ng-model="table.capacity" class="form-control" required>
-        </div>
-      </div>
-    </div><!-- END .row -->
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Number of Tables</label>
-          <input type="number" ng-model="table.quantity" class="form-control" required>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Mergeable</label>
-          <fieldset>
-            <select ng-model="table.mergeable" class="form-control" required>
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </fieldset>
-        </div>
-      </div>
-    </div><!-- END .row -->
-
-    <div class="row">
-      <div class="col-md-12 text-center resetsave">
-        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-        <button class="btn btn-primary" ng-click="save('table')" ng-disabled="newTableForm.$invalid">Save</button>
-      </div>
-    </div><!-- END .row -->
-  </form>
-
-</div><!-- END .col-md-6 -->
-</div><!-- END .row -->
-</div><!-- END .container -->
-</script>
-
-
-
-
-
-<script type="text/ng-template" id="seatingForm.html">
-<div class="container custom-form">
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
-
-  <form name="seatingForm" class="custom-form form-group">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>Edit Seating</h1>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="form-group">
-          <label class="control-label">Maximum Seating Capacity</label>
-          <input type="number" name="seating" ng-model="seating.capacity" class="form-control" required>
-          <p ng-show="seating.capacity.$invalid || (seatingForm.seating.$error.required && seatingForm.seating.$touched)" class="help-block">This is a required field.</p>
-        </div>
-      </div>
-    </div><!-- END .row -->
-
-    <div class="row">
-      <div class="col-md-12 text-center resetsave">
-        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-        <button class="btn btn-primary" ng-click="save('seating')" ng-disabled="seatingForm.$invalid">Save</button>
-      </div>
-    </div><!-- END .row -->
-  </form>
-
-</div><!-- END .col-md-6 -->
-</div><!-- END .row -->
-</div><!-- END .container -->
-</script>

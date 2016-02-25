@@ -22,7 +22,7 @@
             <img src="{{integration.imgUrl}}" alt="{{integration.name}}" title="{{integration.name}}">
           </div>
           <div class="td text-right">
-            <a ng-click="main.customModal('integrationForm.html')">{{integration.apiKey || 'Enter ' + integration.name + ' ID'}}</a>
+            <a ng-click="main.customModal('integrationModal.html')">{{integration.apiKey || 'Enter ' + integration.name + ' ID'}}</a>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
             <img src="{{review.imgUrl}}" alt="{{review.name}}" title="{{review.name}}">
           </div>
           <div class="td text-right">
-            <a ng-click="main.customModal('integrationForm.html')">{{review.apiKey || 'Enter ' + review.name + ' ID'}}</a>
+            <a ng-click="main.customModal('integrationModal.html')">{{review.apiKey || 'Enter ' + review.name + ' ID'}}</a>
           </div>
         </div>
       </div>
@@ -45,40 +45,3 @@
 
   </div><!-- END .row -->
 </div><!-- END .col-md-12 -->
-
-
-
-
-
-
-<script type="text/ng-template" id="integrationForm.html">
-<div class="container custom-form">
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
-
-  <form name="integrationForm" class="custom-form form-group">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>Edit ID</h1>
-
-        <img class="integration-image" src="http://d1zwyexo3ug1ac.cloudfront.net/revision-e6148ed/images/pages/bookatable_logo.jpg" alt="Bookatable">
-
-        <div class="form-group">
-          <input type="text" name="integration" ng-model="integration.integration" class="form-control" placeholder="Enter Bookatable ID" required>
-          <p ng-show="integration.integration.$invalid || (integrationForm.integration.$error.required && integrationForm.integration.$touched)" class="help-block">This is a required field.</p>
-        </div>
-      </div>
-    </div><!-- END .row -->
-
-    <div class="row">
-      <div class="col-md-12 text-center resetsave">
-        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-        <button class="btn btn-primary" ng-click="save('integration')" ng-disabled="integrationForm.$invalid">Save</button>
-      </div>
-    </div><!-- END .row -->
-  </form>
-
-</div><!-- END .col-md-6 -->
-</div><!-- END .row -->
-</div><!-- END .container -->
-</script>

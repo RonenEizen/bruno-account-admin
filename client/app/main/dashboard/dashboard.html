@@ -37,373 +37,249 @@
     <div class="pull-right"><button class="btn btn-primary" ng-click="rearranging=false">Finish And Save</button></div>
   </div>
 
-  <div class="row" masonry>
-    <div class="col-md-6 masonry-item" ng-show="displayColumns.orders">
-      <div class="shadowed-container">
-        <div class="grayout" ng-show="rearranging"></div>
-        <header>
-          <h2>Recent Orders</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orders, 'fa-chevron-down': collapsed.orders}" ng-click="collapsed.orders = !collapsed.orders;msnry.layout()" ng-show="!rearranging"></i>
-          <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
-        </header>
-        <div class="collapsable" ng-show="!collapsed.orders">
-          <div class="shadowed-subcontainer">
-            <div class="table">
-              <div class="thead">
-                <div class="tr">
-                  <div class="th">Order No</div>
-                  <div class="th">Time</div>
-                  <div class="th">Type</div>
-                  <div class="th">Status</div>
-                </div>
-              </div>
-              <div class="tbody">
-                <div class="tr">
-                  <div class="td"><a href="javascript:void(0)">037565</a></div>
-                  <div class="td">10:25 PM</div>
-                  <div class="td">Pickup</div>
-                  <div class="td status new">New</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="javascript:void(0)">037565</a></div>
-                  <div class="td">10:25 PM</div>
-                  <div class="td">Delivery</div>
-                  <div class="td status inprogress">In Progress</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="javascript:void(0)">037565</a></div>
-                  <div class="td">10:25 PM</div>
-                  <div class="td">Delivery</div>
-                  <div class="td status inprogress">In Progress</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="javascript:void(0)">037565</a></div>
-                  <div class="td">10:25 PM</div>
-                  <div class="td">Pickup</div>
-                  <div class="td status cancelled">Cancelled</div>
-                </div>
-              </div>
-            </div><!-- END .table -->
-          </div><!-- END .row -->
-          <div class="bottom-link text-right">
-            <a href="/orders">All Orders ›</a>
-          </div><!-- .row -->
-        </div><!-- END .collapsable -->
-      </div><!-- END .shadowed-container -->
-    </div>
-
-    <div class="col-md-6 masonry-item" ng-show="displayColumns.reservations">
-      <div class="shadowed-container">
-        <div class="grayout" ng-show="rearranging"></div>
-        <header>
-          <h2>Recent Reservations</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservations, 'fa-chevron-down': collapsed.reservations}" ng-click="collapsed.reservations = !collapsed.reservations;msnry.layout()" ng-show="!rearranging"></i>
-          <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
-        </header>
-        <div class="collapsable" ng-show="!collapsed.reservations">
-          <div class="shadowed-subcontainer">
-            <div class="calendar-overflow">
-              <div class="calendar-widget">
-                <ul class="cal-row">
-                  <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
-                </ul>
-                <div class="cal-row">
-                  <div class="booked pending" ng-click="main.customModal('tableModal.html')" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
-                </div>
-                <div class="cal-row">
-                  <div class="booked active" ng-click="main.customModal('tableModal.html')" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
-                </div>
-                <div class="cal-row">
-                  <div class="booked closed" ng-click="main.customModal('tableModal.html')" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
-                  <div class="booked pending" ng-click="main.customModal('tableModal.html')" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
-                </div>
-                <div class="cal-row">
-                  <div class="booked active" ng-click="main.customModal('tableModal.html')" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
-                </div>
-                <div class="cal-row">
-                  <div class="booked active" ng-click="main.customModal('tableModal.html')" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
-                </div>
-                <div class="cal-row">
-                  <div class="booked pending" ng-click="main.customModal('tableModal.html')" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
-                </div>
-              </div><!-- END .calendar-widget -->
-            </div>
-          </div><!-- END .row -->
-          <div class="bottom-link text-right">
-            <a href="/reservations">All Reservations ›</a>
-          </div><!-- .row -->
-        </div><!-- END .collapsable -->
-      </div><!-- END .shadowed-container -->
-    </div>
-
-    <div class="col-md-6 masonry-item" ng-show="displayColumns.campaigns">
-      <div class="shadowed-container">
-        <div class="grayout" ng-show="rearranging"></div>
-        <header>
-          <h2>Current Campaigns</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.campaigns, 'fa-chevron-down': collapsed.campaigns}" ng-click="collapsed.campaigns = !collapsed.campaigns;msnry.layout()" ng-show="!rearranging"></i>
-          <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
-        </header>
-        <div class="collapsable" ng-show="!collapsed.campaigns">
-          <div class="shadowed-subcontainer">
-            <div class="table">
-              <div class="thead">
-                <div class="tr">
-                  <div class="th">Campaign</div>
-                  <div class="th">Enabled Channels</div>
-                  <div class="th">Expiry Date</div>
-                </div>
-              </div>
-              <div class="tbody">
-                <div class="tr">
-                  <div class="td">Children Eat Free</div>
-                  <div class="td">
-                    <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
-                    <a href="javascript:void(0)"><i class="icon-Twitter"></i></a>
-                    <a href="javascript:void(0)"><i class="icon-GooglePlus"></i></a>
-                    <a href="javascript:void(0)"><i class="icon-Newsletter"></i></a>
-                    <a href="javascript:void(0)"><i class="icon-Banner"></i></a>
+  <div class="row">
+    <div class="masonry-container">
+      <div class="col-md-6 masonry-item" ng-show="displayColumns.orders">
+        <div class="shadowed-container">
+          <div class="grayout" ng-show="rearranging"></div>
+          <header>
+            <h2>Recent Orders</h2>
+            <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orders, 'fa-chevron-down': collapsed.orders}" ng-click="collapsed.orders = !collapsed.orders;msnry.layout()" ng-show="!rearranging"></i>
+            <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
+          </header>
+          <div class="collapsable" ng-show="!collapsed.orders">
+            <div class="shadowed-subcontainer">
+              <div class="table">
+                <div class="thead">
+                  <div class="tr">
+                    <div class="th">Order No</div>
+                    <div class="th">Time</div>
+                    <div class="th">Type</div>
+                    <div class="th">Status</div>
                   </div>
-                  <div class="td status expiring">Expiring Tomorrow</div>
                 </div>
-                <div class="tr">
-                  <div class="td">Lunch Special - 20% Off</div>
-                  <div class="td">
-                    <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
-                    <a href="javascript:void(0)"><i class="icon-Twitter"></i></a>
-                    <a href="javascript:void(0)"><i class="icon-Newsletter"></i></a>
+                <div class="tbody">
+                  <div class="tr">
+                    <div class="td"><a href="javascript:void(0)">037565</a></div>
+                    <div class="td">10:25 PM</div>
+                    <div class="td">Pickup</div>
+                    <div class="td status new">New</div>
                   </div>
-                  <div class="td status expiring">Expiring 01/20/2016</div>
-                </div>
-                <div class="tr">
-                  <div class="td">Free Cofee with Breakfast</div>
-                  <div class="td">
-                    <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
-                    <a href="javascript:void(0)"><i class="icon-GooglePlus"></i></a>
-                    <a href="javascript:void(0)"><i class="icon-Banner"></i></a>
+                  <div class="tr">
+                    <div class="td"><a href="javascript:void(0)">037565</a></div>
+                    <div class="td">10:25 PM</div>
+                    <div class="td">Delivery</div>
+                    <div class="td status inprogress">In Progress</div>
                   </div>
-                  <div class="td status">02/20/2016</div>
-                </div>
-                <div class="tr">
-                  <div class="td">Dinner Specials</div>
-                  <div class="td">
-                    <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
-                    <a href="javascript:void(0)"><i class="icon-Twitter"></i></a>
-                    <a href="javascript:void(0)"><i class="icon-Newsletter"></i></a>
-                    <a href="javascript:void(0)"><i class="icon-Banner"></i></a>
+                  <div class="tr">
+                    <div class="td"><a href="javascript:void(0)">037565</a></div>
+                    <div class="td">10:25 PM</div>
+                    <div class="td">Delivery</div>
+                    <div class="td status inprogress">In Progress</div>
                   </div>
-                  <div class="td status">02/20/2016</div>
+                  <div class="tr">
+                    <div class="td"><a href="javascript:void(0)">037565</a></div>
+                    <div class="td">10:25 PM</div>
+                    <div class="td">Pickup</div>
+                    <div class="td status cancelled">Cancelled</div>
+                  </div>
                 </div>
-              </div>
-            </div><!-- END .table -->
-          </div><!-- END .row -->
-          <div class="bottom-link text-right">
-            <a href="/marketing">All Campaigns ›</a>
-          </div><!-- .row -->
-        </div><!-- END .collapsable -->
-      </div><!-- END .shadowed-container -->
-    </div>
-
-    <div class="col-md-6 masonry-item" ng-show="displayColumns.updates">
-      <div class="shadowed-container">
-        <div class="grayout" ng-show="rearranging"></div>
-        <header>
-          <h2>Settings Updates</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.updates, 'fa-chevron-down': collapsed.updates}" ng-click="collapsed.updates = !collapsed.updates;msnry.layout()" ng-show="!rearranging"></i>
-          <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
-        </header>
-        <div class="collapsable" ng-show="!collapsed.updates">
-          <div class="shadowed-subcontainer">
-            <div class="table">
-              <div class="thead">
-                <div class="tr">
-                  <div class="th">Section</div>
-                  <div class="th">Action</div>
-                </div>
-              </div>
-              <div class="tbody">
-                <div class="tr">
-                  <div class="td"><a href="javscript:void(0)">Roles</a></div>
-                  <div class="td"><strong>Blake Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="javscript:void(0)">Payments</a></div>
-                  <div class="td"><strong>Blake Lively</strong> edited <strong>Bank Info</strong></div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="javscript:void(0)">Business Info</a></div>
-                  <div class="td"><strong>Blake Lively</strong> edited <strong>Restaurant Info</strong></div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="javscript:void(0)">Domain</a></div>
-                  <div class="td"><strong>Blake Lively</strong> edited <strong>Subdomain</strong></div>
-                </div>
-              </div>
-            </div><!-- END .table -->
-          </div><!-- END .row -->
-          <div class="bottom-link text-right">
-            <a ng-click="main.customModal('updatesModal.html')">All Settings Updates ›</a>
-          </div><!-- END .row -->
-        </div><!-- END .collapsable -->
-      </div><!-- END .shadowed-container -->
-    </div>
-
-    <div class="col-md-6 masonry-item" ng-show="displayColumns.orderTrends">
-      <div class="shadowed-container">
-        <div class="grayout" ng-show="rearranging"></div>
-        <header>
-          <h2>Order Trends</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orderTrends, 'fa-chevron-down': collapsed.orderTrends}" ng-click="collapsed.orderTrends = !collapsed.orderTrends;msnry.layout()" ng-show="!rearranging"></i>
-          <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
-        </header>
-        <div class="collapsable" ng-show="!collapsed.orderTrends">
-          <div class="shadowed-subcontainer">
-            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-legend="true" chart-click="onClick" chart-options="chartOptions"></canvas>
-          </div><!-- END .shadowed-subcontainer -->
-        </div><!-- END .collapsable -->
-      </div><!-- END .shadowed-container -->
-    </div>
-
-    <div class="col-md-6 masonry-item" ng-show="displayColumns.reservationTrends">
-      <div class="shadowed-container">
-        <div class="grayout" ng-show="rearranging"></div>
-        <header>
-          <h2>Reservation Trends</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservationTrends, 'fa-chevron-down': collapsed.reservationTrends}" ng-click="collapsed.reservationTrends = !collapsed.reservationTrends;msnry.layout()" ng-show="!rearranging"></i>
-          <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
-        </header>
-        <div class="collapsable" ng-show="!collapsed.reservationTrends">
-          <div class="shadowed-subcontainer">
-            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-legend="true" chart-click="onClick" chart-options="chartOptions"></canvas>
-          </div><!-- END .shadowed-subcontainer -->
-        </div><!-- END .collapsable -->
-      </div><!-- END .shadowed-container -->
-    </div>
-  </div><!-- END .row -->
-</div><!-- END .container-fluid -->
-
-
-
-
-
-<script type="text/ng-template" id="tableModal.html">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <form class="custom-form text-input">
-          <div class="row">
-            <div class="col-md-12">
-              <h1 class="text-center">Table for 2</h1>
-            </div>
-          </div><!-- END .row -->
-          <div class="row">
-            <div class="col-md-6">
-              <p><strong>Date</strong><br>
-                Tuesday, Nov 11, 5pm to 6pm</p>
-            </div>
-            <div class="col-md-6">
-              <p><strong>Status</strong><br>
-                <span class="status pending">Pending</span></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <p><strong>Name</strong><br>
-                Jarret Leto</p>
-            </div>
-            <div class="col-md-6">
-              <p><strong>Phone</strong><br>
-                (347) 578-9001</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <p><strong>Notes</strong><br>
-                would like a table by the window, gluten free, payes with Discovery</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 resetsave text-center">
-              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-              <button class="btn btn-primary" ng-click="$dismiss()">Edit</button>
-            </div>
-          </div><!-- END .row -->
-        </form>
+              </div><!-- END .table -->
+            </div><!-- END .row -->
+            <div class="bottom-link text-right">
+              <a href="/orders">All Orders ›</a>
+            </div><!-- .row -->
+          </div><!-- END .collapsable -->
+        </div><!-- END .shadowed-container -->
       </div>
-    </div><!-- END .row -->
-  </div><!-- END .container -->
-</script>
 
+      <div class="col-md-6 masonry-item" ng-show="displayColumns.reservations">
+        <div class="shadowed-container">
+          <div class="grayout" ng-show="rearranging"></div>
+          <header>
+            <h2>Recent Reservations</h2>
+            <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservations, 'fa-chevron-down': collapsed.reservations}" ng-click="collapsed.reservations = !collapsed.reservations;msnry.layout()" ng-show="!rearranging"></i>
+            <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
+          </header>
+          <div class="collapsable" ng-show="!collapsed.reservations">
+            <div class="shadowed-subcontainer">
+              <div class="calendar-overflow">
+                <div class="calendar-widget">
+                  <ul class="cal-row">
+                    <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
+                  </ul>
+                  <div class="cal-row">
+                    <div class="booked pending" ng-click="main.customModal('tableModal.html')" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
+                  </div>
+                  <div class="cal-row">
+                    <div class="booked active" ng-click="main.customModal('tableModal.html')" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
+                  </div>
+                  <div class="cal-row">
+                    <div class="booked closed" ng-click="main.customModal('tableModal.html')" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
+                    <div class="booked pending" ng-click="main.customModal('tableModal.html')" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
+                  </div>
+                  <div class="cal-row">
+                    <div class="booked active" ng-click="main.customModal('tableModal.html')" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
+                  </div>
+                  <div class="cal-row">
+                    <div class="booked active" ng-click="main.customModal('tableModal.html')" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
+                  </div>
+                  <div class="cal-row">
+                    <div class="booked pending" ng-click="main.customModal('tableModal.html')" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
+                  </div>
+                </div><!-- END .calendar-widget -->
+              </div>
+            </div><!-- END .row -->
+            <div class="bottom-link text-right">
+              <a href="/reservations">All Reservations ›</a>
+            </div><!-- .row -->
+          </div><!-- END .collapsable -->
+        </div><!-- END .shadowed-container -->
+      </div>
 
-<script type="text/ng-template" id="updatesModal.html">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <form class="custom-form text-input">
-          <div class="row">
-            <div class="col-md-12">
-              <h1 class="text-center">Settings Updates</h1>
-            </div>
-          </div><!-- END .row -->
+      <div class="col-md-6 masonry-item" ng-show="displayColumns.campaigns">
+        <div class="shadowed-container">
+          <div class="grayout" ng-show="rearranging"></div>
+          <header>
+            <h2>Current Campaigns</h2>
+            <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.campaigns, 'fa-chevron-down': collapsed.campaigns}" ng-click="collapsed.campaigns = !collapsed.campaigns;msnry.layout()" ng-show="!rearranging"></i>
+            <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
+          </header>
+          <div class="collapsable" ng-show="!collapsed.campaigns">
+            <div class="shadowed-subcontainer">
+              <div class="table">
+                <div class="thead">
+                  <div class="tr">
+                    <div class="th">Campaign</div>
+                    <div class="th">Enabled Channels</div>
+                    <div class="th">Expiry Date</div>
+                  </div>
+                </div>
+                <div class="tbody">
+                  <div class="tr">
+                    <div class="td">Children Eat Free</div>
+                    <div class="td">
+                      <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
+                      <a href="javascript:void(0)"><i class="icon-Twitter"></i></a>
+                      <a href="javascript:void(0)"><i class="icon-GooglePlus"></i></a>
+                      <a href="javascript:void(0)"><i class="icon-Newsletter"></i></a>
+                      <a href="javascript:void(0)"><i class="icon-Banner"></i></a>
+                    </div>
+                    <div class="td status expiring">Expiring Tomorrow</div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">Lunch Special - 20% Off</div>
+                    <div class="td">
+                      <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
+                      <a href="javascript:void(0)"><i class="icon-Twitter"></i></a>
+                      <a href="javascript:void(0)"><i class="icon-Newsletter"></i></a>
+                    </div>
+                    <div class="td status expiring">Expiring 01/20/2016</div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">Free Cofee with Breakfast</div>
+                    <div class="td">
+                      <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
+                      <a href="javascript:void(0)"><i class="icon-GooglePlus"></i></a>
+                      <a href="javascript:void(0)"><i class="icon-Banner"></i></a>
+                    </div>
+                    <div class="td status">02/20/2016</div>
+                  </div>
+                  <div class="tr">
+                    <div class="td">Dinner Specials</div>
+                    <div class="td">
+                      <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
+                      <a href="javascript:void(0)"><i class="icon-Twitter"></i></a>
+                      <a href="javascript:void(0)"><i class="icon-Newsletter"></i></a>
+                      <a href="javascript:void(0)"><i class="icon-Banner"></i></a>
+                    </div>
+                    <div class="td status">02/20/2016</div>
+                  </div>
+                </div>
+              </div><!-- END .table -->
+            </div><!-- END .row -->
+            <div class="bottom-link text-right">
+              <a href="/marketing">All Campaigns ›</a>
+            </div><!-- .row -->
+          </div><!-- END .collapsable -->
+        </div><!-- END .shadowed-container -->
+      </div>
 
-          <div class="row">
-            <div class="col-md-12">
+      <div class="col-md-6 masonry-item" ng-show="displayColumns.updates">
+        <div class="shadowed-container">
+          <div class="grayout" ng-show="rearranging"></div>
+          <header>
+            <h2>Settings Updates</h2>
+            <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.updates, 'fa-chevron-down': collapsed.updates}" ng-click="collapsed.updates = !collapsed.updates;msnry.layout()" ng-show="!rearranging"></i>
+            <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
+          </header>
+          <div class="collapsable" ng-show="!collapsed.updates">
+            <div class="shadowed-subcontainer">
               <div class="table">
                 <div class="thead">
                   <div class="tr">
                     <div class="th">Section</div>
                     <div class="th">Action</div>
-                    <div class="th">Date</div>
                   </div>
                 </div>
                 <div class="tbody">
                   <div class="tr">
-                    <div class="td"><a href="/settings/roles">Roles</a></div>
-                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
-                    <div class="td">January 17, 2016, 10:41 AM</div>
+                    <div class="td"><a href="javscript:void(0)">Roles</a></div>
+                    <div class="td"><strong>Blake Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
                   </div>
                   <div class="tr">
-                    <div class="td"><a href="/settings/roles">Roles</a></div>
-                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
-                    <div class="td">January 17, 2016, 10:41 AM</div>
+                    <div class="td"><a href="javscript:void(0)">Payments</a></div>
+                    <div class="td"><strong>Blake Lively</strong> edited <strong>Bank Info</strong></div>
                   </div>
                   <div class="tr">
-                    <div class="td"><a href="/settings/roles">Roles</a></div>
-                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
-                    <div class="td">January 17, 2016, 10:41 AM</div>
+                    <div class="td"><a href="javscript:void(0)">Business Info</a></div>
+                    <div class="td"><strong>Blake Lively</strong> edited <strong>Restaurant Info</strong></div>
                   </div>
                   <div class="tr">
-                    <div class="td"><a href="/settings/roles">Roles</a></div>
-                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
-                    <div class="td">January 17, 2016, 10:41 AM</div>
-                  </div>
-                  <div class="tr">
-                    <div class="td"><a href="/settings/roles">Roles</a></div>
-                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
-                    <div class="td">January 17, 2016, 10:41 AM</div>
-                  </div>
-                  <div class="tr">
-                    <div class="td"><a href="/settings/roles">Roles</a></div>
-                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
-                    <div class="td">January 17, 2016, 10:41 AM</div>
-                  </div>
-                  <div class="tr">
-                    <div class="td"><a href="/settings/roles">Roles</a></div>
-                    <div class="td"><strong>Black Lively</strong> changed the role of <strong>Adam Greenberg</strong> to <strong>Cook</strong></div>
-                    <div class="td">January 17, 2016, 10:41 AM</div>
+                    <div class="td"><a href="javscript:void(0)">Domain</a></div>
+                    <div class="td"><strong>Blake Lively</strong> edited <strong>Subdomain</strong></div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div><!-- END .row -->
-
-          <div class="row">
-            <div class="col-md-12 resetsave text-center">
-              <button class="btn btn-default" ng-click="$dismiss()">Back</button>
-            </div>
-          </div><!-- END .row -->
-        </form>
+              </div><!-- END .table -->
+            </div><!-- END .row -->
+            <div class="bottom-link text-right">
+              <a ng-click="main.customModal('updatesModal.html')">All Settings Updates ›</a>
+            </div><!-- END .row -->
+          </div><!-- END .collapsable -->
+        </div><!-- END .shadowed-container -->
       </div>
-    </div><!-- END .row -->
-  </div><!-- END .container -->
-</script>
+
+      <div class="col-md-6 masonry-item" ng-show="displayColumns.orderTrends">
+        <div class="shadowed-container">
+          <div class="grayout" ng-show="rearranging"></div>
+          <header>
+            <h2>Order Trends</h2>
+            <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orderTrends, 'fa-chevron-down': collapsed.orderTrends}" ng-click="collapsed.orderTrends = !collapsed.orderTrends;msnry.layout()" ng-show="!rearranging"></i>
+            <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
+          </header>
+          <div class="collapsable" ng-show="!collapsed.orderTrends">
+            <div class="shadowed-subcontainer">
+              <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-legend="true" chart-click="onClick" chart-options="chartOptions"></canvas>
+            </div><!-- END .shadowed-subcontainer -->
+          </div><!-- END .collapsable -->
+        </div><!-- END .shadowed-container -->
+      </div>
+
+      <div class="col-md-6 masonry-item" ng-show="displayColumns.reservationTrends">
+        <div class="shadowed-container">
+          <div class="grayout" ng-show="rearranging"></div>
+          <header>
+            <h2>Reservation Trends</h2>
+            <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservationTrends, 'fa-chevron-down': collapsed.reservationTrends}" ng-click="collapsed.reservationTrends = !collapsed.reservationTrends;msnry.layout()" ng-show="!rearranging"></i>
+            <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
+          </header>
+          <div class="collapsable" ng-show="!collapsed.reservationTrends">
+            <div class="shadowed-subcontainer">
+              <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-legend="true" chart-click="onClick" chart-options="chartOptions"></canvas>
+            </div><!-- END .shadowed-subcontainer -->
+          </div><!-- END .collapsable -->
+        </div><!-- END .shadowed-container -->
+      </div>
+    </div><!-- END .masonry-container -->
+  </div><!-- END .row -->
+</div><!-- END .container-fluid -->

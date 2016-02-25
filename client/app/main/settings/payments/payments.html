@@ -25,7 +25,7 @@
     <div class="col-md-6">
       <div class="row">
         <div class="col-md-12">
-          <h2>Business Owner Info</h2>
+          <h2>Business Owner Info <a class="pull-right" ng-click="main.customModal('ownerModal.html')">Edit</a></h2>
           <p>John Mendelau</p>
           <p>300 Ocean View</p>
           <p>Berkeley, CA 94111</p>
@@ -37,7 +37,7 @@
 
       <div class="row">
         <div class="col-md-12">
-          <h2>Business Info</h2>
+          <h2>Business Info <a class="pull-right" ng-click="main.customModal('businessModal.html')">Edit</a></h2>
           <p>Rodeo BBQ</p>
           <p>1227 Oxford Ave</p>
           <p>Berkeley, CA 94111</p>
@@ -51,7 +51,7 @@
     <div class="col-md-6">
       <div class="row">
         <div class="col-md-12 paragraph-margin">
-          <h2>Business Info <span class="pull-right" ng-click="main.customModal('paymentsForm.html')">Edit</span></h2>
+          <h2>Bank Info <a class="pull-right" ng-click="main.customModal('bankInfoModal.html')">Edit</a></h2>
           <p>
             <strong>Name</strong><br>
             {{payments.bankName}}
@@ -70,55 +70,3 @@
 
   </div><!-- END .row -->
 </div><!-- END .main.col-md-12 -->
-
-
-
-
-
-<script type="text/ng-template" id="paymentsForm.html">
-<div class="container custom-form">
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
-
-  <form name="paymentsForm" novalidate class="custom-form text-input">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>Edit Business Info</h1>
-      </div>
-    </div><!-- END .row -->
-    <div class="row">
-      <div class="col-md-12 form-group">
-        <label class="control-label">Bank Name</label>
-        <input name="bankName" ng-model="payments.bankName" type="text" class="form-control" required>
-        <p ng-show="payments.bankName.$invalid || (paymentsForm.bankName.$error.required && paymentsForm.bankName.$touched)" class="help-block">Make sure this is valid.</p>
-      </div>
-    </div><!-- END .row -->
-
-    <div class="row">
-      <div class="col-md-6 form-group">
-        <label class="control-label">Bank Routing Number</label>
-        <input name="bankNo" ng-model="payments.bankNo" type="number" class="form-control"  required>
-        <p ng-show="payments.bankNo.$invalid || (paymentsForm.bankNo.$error.required && paymentsForm.bankNo.$touched)" class="help-block">Make sure this is valid.</p>
-      </div>
-
-      <div class="col-md-6 form-group">
-        <label class="control-label">Account Number</label>
-        <input name="accountNo" ng-model="payments.accountNo" type="number" class="form-control"" minlength="8" ng-maxlength="9" required>
-        <p ng-show="paymentsForm.accountNo.$error.minlength" class="help-block">Account Number is too short.</p>
-        <p ng-show="paymentsForm.accountNo.$error.maxlength" class="help-block">Account Number is too long.</p>
-        <p ng-show="payments.accountNo.$invalid || (paymentsForm.accountNo.$error.required && paymentsForm.accountNo.$touched)" class="help-block">Make sure this is valid.</p>
-      </div>
-    </div><!-- END .row -->
-
-    <div class="row">
-      <div class="col-md-12 text-center resetsave">
-        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-        <button class="btn btn-primary" ng-disabled="paymentsForm.$invalid" ng-click="save('payments')">Save</button>
-      </div>
-    </div><!-- END .row -->
-  </form><!-- END Business Info -->
-
-</div><!-- END .col-md-6 -->
-</div><!-- END .row -->
-</div><!-- END .container -->
-</script>

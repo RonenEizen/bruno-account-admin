@@ -5,7 +5,7 @@
       <h1>{{pageTitle}}</h1>
     </div><!-- END .col-md-5 -->
     <div class="col-md-2">
-      <button class="btn btn-primary center-block" ng-click="main.customModal('newCampaign.html')">+ New Campaign</button>
+      <button class="btn btn-primary center-block" ng-click="main.customModal('newCampaignModal.html')">+ New Campaign</button>
     </div><!-- END .col-md-2 -->
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -73,7 +73,7 @@
         class="tr"
         ng-repeat="campaign in campaigns | filter:campaignsFilter | orderBy:clickedHeader:reverse | limitTo:displayingCampaigns">
         <div ng-show="displayColumns.campaign" class="td">
-          <a ng-click="main.customModal('modalCampaign.html', editing)">{{campaign.name}}</a>
+          <a ng-click="main.customModal('campaignModal.html', editing)">{{campaign.name}}</a>
         </div>
         <div ng-show="displayColumns.enabled" class="td">
           <i class="channel enabled {{social}}" ng-repeat="social in campaign.enabled" ng-click="main.customModal('channelsCampaign.html')"></i>

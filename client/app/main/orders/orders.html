@@ -116,7 +116,7 @@
         class="tr"
         ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders"
         ng-class="setStatus(order.status)">
-        <div ng-show="displayColumns.number" class="td"><a ng-click="main.customModal('modalOrder.html', editing)">{{order.number}}</a></div>
+        <div ng-show="displayColumns.number" class="td"><a ng-click="main.customModal('orderModal.html', editing)">{{order.number}}</a></div>
         <div ng-show="displayColumns.customer" class="td">{{order.customer}}</div>
         <div ng-show="displayColumns.type" class="td">{{order.type}}</div>
         <div ng-show="displayColumns.amount" class="td">{{order.amount | currency}}</div>

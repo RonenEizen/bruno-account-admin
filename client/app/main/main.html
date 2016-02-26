@@ -48,59 +48,58 @@
 
   THE ORDER IS AS FOLOWS:
 
-  GROUP                     MODAL NAME                        SCOPES                                   STATUS
+  GROUP                     MODAL NAME                        VALIDATION                               STATUS
 
-  DASHBOARD                 tableModal.html
-  DASHBOARD                 updatesModal.html
+  DASHBOARD                 viewTableModal.html               N/A
+  DASHBOARD                 updatesModal.html                 N/A
 
-  ORDERS                    modalOrder.html
+  ORDERS                    orderModal.html
   ORDERS                    addOrderModal.html
 
   RESERVATIONS              reservationModal.html
   RESERVATIONS              addReservationModal.html
 
-  FOOD MENU                 foodMenuModal.html                edit / remove Food Item                  Done
-  FOOD MENU                 addFoodMenuModal.html             add Food Item                            Done
-  FOOD MENU                 menuCategoryModal.html            edit / remove Food Category              TBD
-  FOOD MENU                 addMenuCategoryModal.html         add Food Category                        Done
-  FOOD MENU                 foodItemModal.html                view / edit / remove Food Item           Done
-  FOOD MENU                 addFoodItemModal.html             add Food Item                            Done
-  FOOD MENU                 addExistingFoodModal.html         add Existing Food Item                   Missing ui-select
+  FOOD MENU                 foodMenuModal.html                                                         Done - edit / remove Food Item
+  FOOD MENU                 addFoodMenuModal.html                                                      Done - add Food Item
+  FOOD MENU                 menuCategoryModal.html                                                     TBD - edit / remove Food Category
+  FOOD MENU                 addMenuCategoryModal.html                                                  Done - add Food Category
+  FOOD MENU                 foodItemModal.html                                                         Done - view / edit / remove Food Item
+  FOOD MENU                 addFoodItemModal.html                                                      Done - add Food Item
+  FOOD MENU                 addExistingFoodModal.html                                                  Missing ui-select - add Existing Food Item
 
   STATISTICS
 
-  MARKETING                 modalCampaign.html
+  MARKETING                 campaignModal.html
   MARKETING                 channelsCampaign.html
-  MARKETING                 newCampaign.html
+  MARKETING                 newCampaignModal.html
 
   CUSTOMERS                 customerModal.html
   CUSTOMERS                 addCustomerModal.html
   CUSTOMERS                 viewCustomerOrders.html
 
-  SETTINGS/Business         businessModal.html
-  SETTINGS/Business         restaurantModal.html
+  SETTINGS/Business         businessModal.html                Done
+  SETTINGS/Business         restaurantModal.html              Done
   SETTINGS/Business         openingModal.html
-  SETTINGS/Business         ownerModal.html
-  SETTINGS/Users            addUserModal.html
-  SETTINGS/Users            userModal.html
+  SETTINGS/Business         ownerModal.html                   Done
+  SETTINGS/Users            addUserModal.html                 Done
+  SETTINGS/Users            userModal.html                    Done
   SETTINGS/Roles            addRoleModal.html
   SETTINGS/Roles            roleModal.html
   SETTINGS/Delivery         radiusModal.html
-  SETTINGS/Delivery         requestsModal.html
-  SETTINGS/Delivery         deliveryModal.html
-  SETTINGS/Delivery         additionalModal.html
-  SETTINGS/Reservations     tableModal.html
-  SETTINGS/Reservations     newTableModal.html
-  SETTINGS/Reservations     seatingModal.html
-  SETTINGS/Online Payments  bankInfoModal.html
-  SETTINGS/Domain           subdomainModal.html
+  SETTINGS/Delivery         requestsModal.html                Done
+  SETTINGS/Delivery         deliveryModal.html                Done
+  SETTINGS/Delivery         additionalModal.html              Done
+  SETTINGS/Reservations     tableModal.html                   Done
+  SETTINGS/Reservations     newTableModal.html                Done
+  SETTINGS/Reservations     seatingModal.html                 Done
+  SETTINGS/Online Payments  bankInfoModal.html                Done
+  SETTINGS/Domain           subdomainModal.html               Done
   SETTINGS/Domain           domainModal.html
-  SETTINGS/Integrations     integrationModal.html
-
+  SETTINGS/Integrations     integrationModal.html             Done
 -->
 
 <!-- DASHBOARD -->
-<script type="text/ng-template" id="tableModal.html">
+<script type="text/ng-template" id="viewTableModal.html">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -146,7 +145,7 @@
       </div>
     </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END viewTableModal.html -->
 <script type="text/ng-template" id="updatesModal.html">
   <div class="container">
     <div class="row">
@@ -218,10 +217,10 @@
       </div>
     </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END updatesModal.html -->
 
 <!-- ORDERS -->
-<script type="text/ng-template" id="modalOrder.html">
+<script type="text/ng-template" id="orderModal.html">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -566,7 +565,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END modalOrder.html -->
 <script type="text/ng-template" id="addOrderModal.html">
   <div class="container">
     <div class="row">
@@ -745,7 +744,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END addOrderModal.html -->
 
 <!-- RESERVATIONS -->
 <script type="text/ng-template" id="reservationModal.html">
@@ -887,7 +886,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END reservationModal.html -->
 <script type="text/ng-template" id="addReservationModal.html">
   <div class="container">
     <div class="row">
@@ -970,7 +969,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END addReservationModal.html -->
 
 <!-- FOOD MENUS -->
 <script type="text/ng-template" id="foodMenuModal.html">
@@ -1039,7 +1038,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END foodMenuModal.html -->
 <script type="text/ng-template" id="addFoodMenuModal.html">
   <form name="addFoodMenuForm" class="container custom-form form-group">
   <div class="row">
@@ -1140,7 +1139,7 @@
 
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
-</script>
+</script><!-- END menuCategoryModal.html -->
 <script type="text/ng-template" id="addMenuCategoryModal.html">
   <form name="addMenuCategoryForm" class="container custom-form form-group">
   <div class="row">
@@ -1855,12 +1854,12 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </form><!-- END .container -->
-</script>
+</script><!-- END addExistingFoodModal.html -->
 
 <!-- STATISTICS -->
 
 <!-- MARKETING -->
-<script type="text/ng-template" id="modalCampaign.html">
+<script type="text/ng-template" id="campaignModal.html">
 
   <div class="container custom-form">
     <div class="row">
@@ -1968,7 +1967,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END modalCampaign.html -->
 <script type="text/ng-template" id="channelsCampaign.html">
   <div class="container" ng-init="channelTab = 'newsletter'">
     <div class="row">
@@ -2413,8 +2412,8 @@
       </div><!-- END .row -->
     </div><!-- END .container -->
   </form><!-- END .custom-form -->
-</script>
-<script type="text/ng-template" id="newCampaign.html">
+</script><!-- END channelsCampaign.html -->
+<script type="text/ng-template" id="newCampaignModal.html">
   <div class="container">
     <form class="custom-form row">
       <div class="col-md-6 col-md-offset-3">
@@ -2453,7 +2452,7 @@
       </div><!-- END .col-md-6 -->
     </form><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END newCampaign.html -->
 
 <!-- CUSTOMERS -->
 <script type="text/ng-template" id="customerModal.html">
@@ -2562,7 +2561,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END customerModal.html -->
 <script type="text/ng-template" id="addCustomerModal.html">
   <div class="container">
     <div class="row">
@@ -2643,7 +2642,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END addCustomerModal.html -->
 <script type="text/ng-template" id="viewCustomerOrders.html">
   <div class="container">
     <div class="row">
@@ -2726,7 +2725,7 @@
       </div>
     </div>
   </div><!-- END .container -->
-</script>
+</script><!-- END viewCustomerOrders.html -->
 
 
 <!-- SETTINGS -->
@@ -2746,7 +2745,7 @@
         <div class="col-md-12 form-group">
           <label class="control-label">Business Name</label> <span class="mandatory">*</span>
           <input name="name" ng-model="business.name" type="text" class="form-control" ng-required="true">
-          <p ng-show="business.name.$invalid || (businessForm.name.$error.required && businessForm.name.$touched)" class="help-block">This is a required field.</p>
+          <p ng-show="businessForm.name.$error.required && businessForm.name.$touched" class="help-block">This is a required field.</p>
         </div>
       </div><!-- END .row -->
 
@@ -2754,7 +2753,7 @@
         <div class="col-md-6 form-group">
           <label class="control-label">Business Email</label> <span class="mandatory">*</span>
           <input name="email" ng-model="business.email" type="email" class="form-control"  ng-required="true">
-          <p ng-show="business.email.$invalid || (businessForm.email.$error.required && businessForm.email.$touched)" class="help-block">Make sure this is a valid email.</p>
+          <p ng-show="businessForm.email.$error.required && businessForm.email.$touched" class="help-block">Make sure this is a valid email.</p>
         </div>
 
         <div class="col-md-6 form-group">
@@ -2762,7 +2761,7 @@
           <input name="phone" ng-model="business.phone" type="tel" class="form-control" minlength="8" ng-maxlength="9" ng-required="true">
           <p ng-show="businessForm.phone.$error.minlength" class="help-block">Phone Number is too short.</p>
           <p ng-show="businessForm.phone.$error.maxlength" class="help-block">Phone Number is too long.</p>
-          <p ng-show="business.phone.$invalid || (businessForm.phone.$error.required && businessForm.phone.$touched)" class="help-block">Make sure this is a valid phone number.</p>
+          <p ng-show="businessForm.phone.$error.required && businessForm.phone.$touched" class="help-block">Make sure this is a valid phone number.</p>
         </div>
       </div><!-- END .row -->
 
@@ -2770,7 +2769,7 @@
         <div class="col-md-12 form-group">
           <label class="control-label">Business Address Line 1</label> <span class="mandatory">*</span>
           <input name="addr1" ng-model="business.addr1" type="text" class="form-control" ng-required="true">
-          <p ng-show="business.addr1.$invalid || (businessForm.addr1.$error.required && businessForm.addr1.$touched)" class="help-block">This is a required field.</p>
+          <p ng-show="businessForm.addr1.$error.required && businessForm.addr1.$touched" class="help-block">This is a required field.</p>
         </div>
       </div><!-- END .row -->
 
@@ -2785,7 +2784,7 @@
         <div class="col-md-6 form-group">
           <label class="control-label">City</label> <span class="mandatory">*</span>
           <input name="city" ng-model="business.city" type="text" class="form-control" ng-required="true">
-          <p ng-show="business.city.$invalid || (businessForm.city.$error.required && businessForm.city.$touched)" class="help-block">This is a required field.</p>
+          <p ng-show="businessForm.city.$error.required && businessForm.city.$touched" class="help-block">This is a required field.</p>
         </div>
 
         <div class="col-md-6 form-group">
@@ -2797,7 +2796,7 @@
               <option value="FL">FL</option>
             </select>
           </fieldset>
-          <p ng-show="business.state.$invalid || (businessForm.state.$error.required && businessForm.state.$touched)" class="help-block">This is a required field.</p>
+          <p ng-show="businessForm.state.$error.required && businessForm.state.$touched" class="help-block">This is a required field.</p>
         </div>
       </div><!-- END .row -->
 
@@ -2818,7 +2817,7 @@
               <option value="BR">Brazil</option>
             </select>
           </fieldset>
-          <p ng-show="business.country.$invalid || (businessForm.country.$error.required && businessForm.country.$touched)" class="help-block">This is a required field.</p>
+          <p ng-show="businessForm.country.$error.required && businessForm.country.$touched" class="help-block">This is a required field.</p>
         </div>
       </div><!-- END .row -->
 
@@ -2833,7 +2832,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END businessModal.html -->
 <script type="text/ng-template" id="restaurantModal.html">
   <div class="container custom-form">
   <div class="row">
@@ -2854,33 +2853,33 @@
     <div ng-hide="restaurant.sameAsBusiness">
       <div class="row">
         <div class="col-md-12 form-group">
-          <label class="control-label">Restaurant Name</label>
+          <label class="control-label">Restaurant Name</label> <span class="mandatory">*</span>
           <input name="name" type="text" class="form-control" ng-model="restaurant.name" ng-required="true">
-          <p ng-show="restaurant.name.$invalid || (restaurantForm.name.$error.required && restaurantForm.name.$touched)" class="help-block">This is a required field.</p>
+          <p ng-show="restaurantForm.name.$error.required && restaurantForm.name.$touched" class="help-block">This is a required field.</p>
         </div>
       </div><!-- END .row -->
 
       <div class="row">
         <div class="col-md-6 form-group">
-          <label class="control-label">Restaurant Email</label>
+          <label class="control-label">Restaurant Email</label> <span class="mandatory">*</span>
           <input name="email" type="email" class="form-control" ng-model="restaurant.email" ng-required="true">
-          <p ng-show="restaurant.email.$invalid || (restaurantForm.email.$error.required && restaurantForm.email.$touched)" class="help-block">Make sure this is a valid email.</p>
+          <p ng-show="restaurantForm.email.$error.required && restaurantForm.email.$touched" class="help-block">Make sure this is a valid email.</p>
         </div>
 
         <div class="col-md-6 form-group">
-          <label class="control-label">Restaurant Phone Number</label>
+          <label class="control-label">Restaurant Phone Number</label> <span class="mandatory">*</span>
           <input name="phone" type="tel" class="form-control" ng-model="restaurant.phone" minlength="8" ng-maxlength="9" ng-required="true">
           <p ng-show="restaurantForm.phone.$error.minlength" class="help-block">Phone Number is too short.</p>
           <p ng-show="restaurantForm.phone.$error.maxlength" class="help-block">Phone Number is too long.</p>
-          <p ng-show="restaurant.phone.$invalid || (restaurantForm.phone.$error.required && restaurantForm.phone.$touched)" class="help-block">Make sure this is a valid phone number.</p>
+          <p ng-show="restaurantForm.phone.$error.required && restaurantForm.phone.$touched" class="help-block">Make sure this is a valid phone number.</p>
         </div>
       </div><!-- END .row -->
 
       <div class="row">
         <div class="col-md-12 form-group">
-          <label class="control-label">Restaurant Address Line 1</label>
+          <label class="control-label">Restaurant Address Line 1</label> <span class="mandatory">*</span>
           <input name="addr1" type="text" class="form-control" ng-model="restaurant.addr1" ng-required="true">
-          <p ng-show="restaurant.addr1.$invalid || (restaurantForm.addr1.$error.required && restaurantForm.addr1.$touched)" class="help-block">This is a required field.</p>
+          <p ng-show="restaurantForm.addr1.$error.required && restaurantForm.addr1.$touched" class="help-block">This is a required field.</p>
         </div>
       </div><!-- END .row -->
 
@@ -2893,13 +2892,13 @@
 
       <div class="row">
         <div class="col-md-6 form-group">
-          <label class="control-label">City</label>
+          <label class="control-label">City</label> <span class="mandatory">*</span>
           <input name="city" type="text" class="form-control" ng-model="restaurant.city" ng-required="true">
-          <p ng-show="restaurant.city.$invalid || (restaurantForm.city.$error.required && restaurantForm.city.$touched)" class="help-block">This is a required field.</p>
+          <p ng-show="restaurantForm.city.$error.required && restaurantForm.city.$touched" class="help-block">This is a required field.</p>
         </div>
 
         <div class="col-md-6 form-group">
-          <label class="control-label">State</label>
+          <label class="control-label">State</label> <span class="mandatory">*</span>
           <fieldset>
             <select name="state" class="form-control" ng-model="restaurant.state" ng-required="true">
               <option value=""></option>
@@ -2907,28 +2906,28 @@
               <option value="FL">FL</option>
             </select>
           </fieldset>
-          <p ng-show="restaurant.state.$invalid || (restaurantForm.state.$error.required && restaurantForm.state.$touched)" class="help-block">This is a required field.</p>
+          <p ng-show="restaurantForm.state.$error.required && restaurantForm.state.$touched" class="help-block">This is a required field.</p>
         </div>
       </div><!-- END .row -->
 
       <div class="row">
         <div class="col-md-6 form-group">
-          <label class="control-label">ZIP Code</label>
+          <label class="control-label">ZIP Code</label> <span class="mandatory">*</span>
           <input name="zip" type="number" class="form-control" ng-model="restaurant.zip" minlength="5" ng-maxlength="5" ng-required="true">
           <p ng-show="restaurantForm.zip.$error.minlength" class="help-block">Zip Code is too short.</p>
           <p ng-show="restaurantForm.zip.$error.maxlength" class="help-block">Zip Code is too long.</p>
-          <p ng-show="restaurant.zip.$invalid || (restaurantForm.zip.$error.required && restaurantForm.zip.$touched)" class="help-block">This is a required field.</p>
+          <p ng-show="restaurantForm.zip.$error.required && restaurantForm.zip.$touched" class="help-block">This is a required field.</p>
         </div>
 
         <div class="col-md-6 form-group">
-          <label class="control-label">Country</label>
+          <label class="control-label">Country</label> <span class="mandatory">*</span>
           <fieldset>
             <select name="country" class="form-control" ng-model="restaurant.country" ng-required="true">
               <option value="US">United States</option>
               <option value="BR">Brazil</option>
             </select>
           </fieldset>
-          <p ng-show="restaurant.country.$invalid || (restaurantForm.country.$error.required && restaurantForm.country.$touched)" class="help-block">This is a required field.</p>
+          <p ng-show="restaurantForm.country.$error.required && restaurantForm.country.$touched" class="help-block">This is a required field.</p>
         </div>
       </div><!-- END .row -->
 
@@ -2944,7 +2943,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END restaurantModal.html -->
 <script type="text/ng-template" id="openingModal.html">
   <div class="container custom-form">
   <div class="row">
@@ -3029,7 +3028,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END openingModal.html -->
 <script type="text/ng-template" id="ownerModal.html">
   <div class="container custom-form">
   <div class="row">
@@ -3043,13 +3042,13 @@
     </div>
     <div class="row">
       <div class="col-md-6 form-group">
-        <label class="control-label">First Name</label>
+        <label class="control-label">First Name</label> <span class="mandatory">*</span>
         <input name="fname" type="text" class="form-control" ng-model="owner.fname" ng-required="true">
         <p ng-show="ownerForm.fname.$error.required && ownerForm.fname.$touched" class="help-block">This is a required field.</p>
       </div>
 
       <div class="col-md-6 form-group">
-        <label class="control-label">Last Name</label>
+        <label class="control-label">Last Name</label> <span class="mandatory">*</span>
         <input name="lname" type="text" class="form-control" ng-model="owner.lname" ng-required="true">
         <p ng-show="ownerForm.lname.$error.required && ownerForm.lname.$touched" class="help-block">This is a required field.</p>
       </div>
@@ -3057,13 +3056,13 @@
 
     <div class="row">
       <div class="col-md-6 form-group">
-        <label class="control-label">Date of Birth</label>
+        <label class="control-label">Date of Birth</label> <span class="mandatory">*</span>
         <input name="bday" type="date" class="form-control" ng-model="owner.bday" ng-required="true">
         <p ng-show="ownerForm.bday.$error.required && ownerForm.bday.$touched" class="help-block">This is a required field.</p>
       </div>
 
       <div class="col-md-6 form-group">
-        <label class="control-label">Social Security Number</label>
+        <label class="control-label">Social Security Number</label> <span class="mandatory">*</span>
         <input name="ssn" type="text" class="form-control" ng-model="owner.ssn" minlength="10" ng-maxlength="10" ng-required="true">
         <p ng-show="ownerForm.phone.$error.minlength" class="help-block">Social Security Number is too short.</p>
         <p ng-show="ownerForm.phone.$error.maxlength" class="help-block">Social Security Number is too long.</p>
@@ -3073,13 +3072,13 @@
 
     <div class="row">
       <div class="col-md-6 form-group">
-        <label class="control-label">Email</label>
+        <label class="control-label">Email</label> <span class="mandatory">*</span>
         <input name="email" type="email" class="form-control" ng-model="owner.email" ng-required="true">
         <p ng-show="ownerForm.email.$error.required && ownerForm.email.$touched" class="help-block">Make sure this is a valid email.</p>
       </div>
 
       <div class="col-md-6 form-group">
-        <label class="control-label">Phone Number</label>
+        <label class="control-label">Phone Number</label> <span class="mandatory">*</span>
         <input name="phone" type="tel" class="form-control" ng-model="owner.phone" minlength="8" ng-maxlength="9" ng-required="true">
         <p ng-show="ownerForm.phone.$error.minlength" class="help-block">Phone Number is too short.</p>
         <p ng-show="ownerForm.phone.$error.maxlength" class="help-block">Phone Number is too long.</p>
@@ -3089,7 +3088,7 @@
 
     <div class="row">
       <div class="col-md-12 form-group">
-        <label class="control-label">Street Address 1</label>
+        <label class="control-label">Street Address 1</label> <span class="mandatory">*</span>
         <input name="addr1" type="text" class="form-control" ng-model="owner.addr1" ng-required="true">
         <p ng-show="ownerForm.addr1.$error.required && ownerForm.addr1.$touched" class="help-block">This is a required field.</p>
       </div>
@@ -3104,13 +3103,13 @@
 
     <div class="row">
       <div class="col-md-6 form-group">
-        <label class="control-label">City</label>
+        <label class="control-label">City</label> <span class="mandatory">*</span>
         <input name="city" type="text" class="form-control" ng-model="owner.city" ng-required="true">
         <p ng-show="ownerForm.city.$error.required && ownerForm.city.$touched" class="help-block">This is a required field.</p>
       </div>
 
       <div class="col-md-6 form-group">
-        <label class="control-label">State</label>
+        <label class="control-label">State</label> <span class="mandatory">*</span>
         <fieldset>
           <select name="state" ng-model="owner.state" class="form-control" ng-required="true">
             <option value=""></option>
@@ -3124,7 +3123,7 @@
 
     <div class="row">
       <div class="col-md-6 form-group">
-        <label class="control-label">ZIP Code</label>
+        <label class="control-label">ZIP Code</label> <span class="mandatory">*</span>
         <input name="zip" type="number" class="form-control" ng-model="owner.zip" ng-required="true">
         <p ng-show="ownerForm.zip.$error.minlength" class="help-block">Zip Code is too short.</p>
         <p ng-show="ownerForm.zip.$error.maxlength" class="help-block">Zip Code is too long.</p>
@@ -3132,7 +3131,7 @@
       </div>
 
       <div class="col-md-6 form-group">
-        <label class="control-label">Country</label>
+        <label class="control-label">Country</label> <span class="mandatory">*</span>
         <fieldset>
           <select name="country" ng-model="owner.country" class="form-control" ng-required="true">
             <option value="US">United States</option>
@@ -3154,13 +3153,11 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END ownerModal.html -->
 
 <!-- Settings/Users -->
 <script type="text/ng-template" id="addUserModal.html">
-  <form
-    class="container custom-form text-input"
-    name="addUserForm">
+  <form class="container custom-form text-input" name="addUserForm">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="row">
@@ -3218,7 +3215,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </form><!-- END .container -->
-</script>
+</script><!-- END addUserModal.html -->
 <script type="text/ng-template" id="userModal.html">
   <form
     class="container custom-form"
@@ -3336,7 +3333,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </form><!-- END .container -->
-</script>
+</script><!-- END userModal.html -->
 
 <!-- Settings/Roles -->
 <script type="text/ng-template" id="addRoleModal.html">
@@ -3381,7 +3378,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </form><!-- END .container -->
-</script>
+</script><!-- END addRoleModal.html -->
 <script type="text/ng-template" id="roleModal.html">
   <form class="container custom-form" ng-show="modal.object.delete">
     <div class="row">
@@ -3463,7 +3460,7 @@
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </form><!-- END .container -->
-</script>
+</script><!-- END roleModal.html -->
 
 <!-- Settings/Delivery -->
 <script type="text/ng-template" id="radiusModal.html">
@@ -3511,7 +3508,7 @@
       </div>
     </div><!-- END .row -->
   </form><!-- END .container -->
-</script>
+</script><!-- END radiusModal.html -->
 <script type="text/ng-template" id="requestsModal.html">
   <div class="container custom-form">
   <div class="row">
@@ -3532,7 +3529,8 @@
           </label>
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" ng-readonly="!requests.email.enabled" placeholder="Email to get requests" ng-required="requests.email.enabled" ng-model="requests.email.input">
+          <input type="email" name="email" class="form-control" ng-readonly="!requests.email.enabled" placeholder="Email to get requests" ng-required="requests.email.enabled" ng-model="requests.email.input">
+          <p ng-show="requests.email.enabled && requestsForm.email.$error.required && requestsForm.email.$touched" class="help-block">This is a required field.</p>
         </div>
       </div>
 
@@ -3543,7 +3541,8 @@
           </label>
         </div>
         <div class="form-group">
-          <input type="tel" class="form-control" ng-readonly="!requests.phone.enabled" placeholder="Phone to get requests" ng-required="requests.phone.enabled" ng-model="requests.phone.input">
+          <input type="tel" name="phone" class="form-control" ng-readonly="!requests.phone.enabled" placeholder="Phone to get requests" ng-required="requests.phone.enabled" ng-model="requests.phone.input">
+          <p ng-show="requests.phone.enabled && requestsForm.phone.$error.required && requestsForm.phone.$touched" class="help-block">This is a required field.</p>
         </div>
       </div>
     </div><!-- END .row -->
@@ -3559,7 +3558,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END requestsModal.html -->
 <script type="text/ng-template" id="deliveryModal.html">
   <div class="container custom-form">
   <div class="row">
@@ -3627,7 +3626,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END deliveryModal.html -->
 <script type="text/ng-template" id="additionalModal.html">
   <div class="container custom-form">
   <div class="row">
@@ -3648,7 +3647,8 @@
           </label>
         </div>
         <div class="form-group">
-          <input type="number" class="form-control" ng-readonly="!additional.minimum.enabled" ng-model="additional.minimum.input" placeholder="Minimum Amount" ng-required="additional.minimum.enabled">
+          <input type="number" name="minimum" class="form-control" ng-readonly="!additional.minimum.enabled" ng-model="additional.minimum.input" placeholder="Minimum Amount" ng-required="additional.minimum.enabled">
+          <p ng-show="additional.minimum.enabled && additionalForm.minimum.$error.required && additionalForm.minimum.$touched" class="help-block">This is a required field.</p>
         </div>
       </div>
 
@@ -3659,7 +3659,8 @@
           </label>
         </div>
         <div class="form-group">
-          <input type="number" class="form-control" ng-readonly="!additional.surcharge.enabled" ng-model="additional.surcharge.input" placeholder="Surcharge" ng-required="additional.surcharge.enabled">
+          <input type="number" name="surcharge" class="form-control" ng-readonly="!additional.surcharge.enabled" ng-model="additional.surcharge.input" placeholder="Surcharge" ng-required="additional.surcharge.enabled">
+          <p ng-show="additional.surcharge.enabled && additionalForm.surcharge.$error.required && additionalForm.surcharge.$touched" class="help-block">This is a required field.</p>
         </div>
       </div>
     </div><!-- END .row -->
@@ -3672,7 +3673,8 @@
           </label>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" ng-readonly="!additional.instructions.enabled" ng-model="additional.instructions.input" placeholder="Instructions" ng-required="additional.instructions.enabled">
+          <input type="text" name="instructions" class="form-control" ng-readonly="!additional.instructions.enabled" ng-model="additional.instructions.input" placeholder="Instructions" ng-required="additional.instructions.enabled">
+          <p ng-show="additional.instructions.enabled && additionalForm.instructions.$error.required && additionalForm.instructions.$touched" class="help-block">This is a required field.</p>
         </div>
       </div>
     </div><!-- END .row -->
@@ -3688,7 +3690,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END additionalModal.html -->
 
 <!-- Settings/Reservations -->
 <script type="text/ng-template" id="tableModal.html">
@@ -3707,13 +3709,15 @@
         <div class="col-md-6">
           <div class="form-group">
             <label class="control-label">Table Name</label>
-            <input type="text" ng-model="table.name" class="form-control" required>
+            <input type="text" name="name" ng-model="table.name" class="form-control" ng-required="true">
+            <p ng-show="tableForm.name.$error.required && tableForm.name.$touched" class="help-block">This is a required field.</p>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label class="control-label">Table Capacity</label>
-            <input type="number" ng-model="table.capacity" class="form-control" required>
+            <input type="number" name="capacity" ng-model="table.capacity" class="form-control" ng-required="true">
+            <p ng-show="tableForm.capacity.$error.required && tableForm.capacity.$touched" class="help-block">This is a required field.</p>
           </div>
         </div>
       </div><!-- END .row -->
@@ -3722,18 +3726,20 @@
         <div class="col-md-6">
           <div class="form-group">
             <label class="control-label">Number of Tables</label>
-            <input type="number" ng-model="table.quantity" class="form-control" required>
+            <input type="number" name="quantity" ng-model="table.quantity" class="form-control" ng-required="true">
+            <p ng-show="tableForm.quantity.$error.required && tableForm.quantity.$touched" class="help-block">This is a required field.</p>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label class="control-label">Mergeable</label>
             <fieldset>
-              <select ng-model="table.mergeable" class="form-control" required>
+              <select name="mergeable" ng-model="table.mergeable" class="form-control" ng-required="true">
                 <option value="0">No</option>
                 <option value="1">Yes</option>
               </select>
             </fieldset>
+            <p ng-show="tableForm.mergeable.$error.required && tableForm.mergeable.$touched" class="help-block">This is a required field.</p>
           </div>
         </div>
       </div><!-- END .row -->
@@ -3749,7 +3755,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END tableModal.html -->
 <script type="text/ng-template" id="newTableModal.html">
   <div class="container custom-form">
   <div class="row">
@@ -3766,13 +3772,15 @@
         <div class="col-md-6">
           <div class="form-group">
             <label class="control-label">Table Name</label>
-            <input type="text" ng-model="table.name" class="form-control" required>
+            <input type="text" name="name" ng-model="table.name" class="form-control" ng-required="true">
+            <p ng-show="newTableForm.name.$error.required && newTableForm.name.$touched" class="help-block">This is a required field.</p>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label class="control-label">Table Capacity</label>
-            <input type="number" ng-model="table.capacity" class="form-control" required>
+            <input type="number" name="capacity" ng-model="table.capacity" class="form-control" ng-required="true">
+            <p ng-show="newTableForm.capacity.$error.required && newTableForm.capacity.$touched" class="help-block">This is a required field.</p>
           </div>
         </div>
       </div><!-- END .row -->
@@ -3781,18 +3789,20 @@
         <div class="col-md-6">
           <div class="form-group">
             <label class="control-label">Number of Tables</label>
-            <input type="number" ng-model="table.quantity" class="form-control" required>
+            <input type="number" name="quantity" ng-model="table.quantity" class="form-control" ng-required="true">
+            <p ng-show="newTableForm.quantity.$error.required && newTableForm.quantity.$touched" class="help-block">This is a required field.</p>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label class="control-label">Mergeable</label>
             <fieldset>
-              <select ng-model="table.mergeable" class="form-control" required>
+              <select name="mergeable" ng-model="table.mergeable" class="form-control" ng-required="true">
                 <option value="0">No</option>
                 <option value="1">Yes</option>
               </select>
             </fieldset>
+            <p ng-show="newTableForm.mergeable.$error.required && newTableForm.mergeable.$touched" class="help-block">This is a required field.</p>
           </div>
         </div>
       </div><!-- END .row -->
@@ -3808,7 +3818,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END newTableModal.html -->
 <script type="text/ng-template" id="seatingModal.html">
   <div class="container custom-form">
   <div class="row">
@@ -3826,7 +3836,7 @@
           <div class="form-group">
             <label class="control-label">Maximum Seating Capacity</label>
             <input type="number" name="seating" ng-model="seating.capacity" class="form-control" required>
-            <p ng-show="seating.capacity.$invalid || (seatingForm.seating.$error.required && seatingForm.seating.$touched)" class="help-block">This is a required field.</p>
+            <p ng-show="seatingForm.seating.$error.required && seatingForm.seating.$touched" class="help-block">This is a required field.</p>
           </div>
         </div>
       </div><!-- END .row -->
@@ -3842,7 +3852,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END seatingModal.html -->
 
 <!-- Settings/Online Payments -->
 <script type="text/ng-template" id="bankInfoModal.html">
@@ -3858,7 +3868,7 @@
       </div><!-- END .row -->
       <div class="row">
         <div class="col-md-12 form-group">
-          <label class="control-label">Bank Name</label>
+          <label class="control-label">Bank Name</label> <span class="mandatory">*</span>
           <input name="bankName" ng-model="payments.bankName" type="text" class="form-control" ng-required="true">
           <p ng-show="payments.bankName.$invalid || (paymentsForm.bankName.$error.required && paymentsForm.bankName.$touched)" class="help-block">Make sure this is valid.</p>
         </div>
@@ -3866,13 +3876,13 @@
 
       <div class="row">
         <div class="col-md-6 form-group">
-          <label class="control-label">Bank Routing Number</label>
+          <label class="control-label">Bank Routing Number</label> <span class="mandatory">*</span>
           <input name="bankNo" ng-model="payments.bankNo" type="number" class="form-control"  ng-required="true">
           <p ng-show="payments.bankNo.$invalid || (paymentsForm.bankNo.$error.required && paymentsForm.bankNo.$touched)" class="help-block">Make sure this is valid.</p>
         </div>
 
         <div class="col-md-6 form-group">
-          <label class="control-label">Account Number</label>
+          <label class="control-label">Account Number</label> <span class="mandatory">*</span>
           <input name="accountNo" ng-model="payments.accountNo" type="number" class="form-control" minlength="8" ng-maxlength="9" ng-required="true">
           <p ng-show="paymentsForm.accountNo.$error.minlength" class="help-block">Account Number is too short.</p>
           <p ng-show="paymentsForm.accountNo.$error.maxlength" class="help-block">Account Number is too long.</p>
@@ -3891,7 +3901,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END bankInfoModal.html -->
 
 <!-- Settings/Domain -->
 <script type="text/ng-template" id="subdomainModal.html">
@@ -3925,7 +3935,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END subdomainModal.html -->
 <script type="text/ng-template" id="domainModal.html">
   <div class="container custom-form">
   <div class="row">
@@ -3943,7 +3953,7 @@
           <p>Search for a domain name you would like for your restaurant, without the extension - e.g “myrestaurant”. You will be presented with extension on the results page.</p>
 
           <div class="form-group has-feedback">
-            <input type="search" class="form-control domainsearch" ng-click="main.customModal('domainModal.html')" placeholder="Enter a domain name">
+            <input type="search" class="form-control domainsearch" placeholder="Enter a domain name">
             <span class="icon-search form-control-feedback"></span>
           </div>
 
@@ -4007,7 +4017,7 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
+</script><!-- END domainModal.html -->
 
 <!-- Settings/Integrations -->
 <script type="text/ng-template" id="integrationModal.html">
@@ -4040,5 +4050,4 @@
   </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
   </div><!-- END .container -->
-</script>
-
+</script><!-- END integrationModal.html -->

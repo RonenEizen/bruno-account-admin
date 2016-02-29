@@ -1,6 +1,6 @@
 'use strict';
 
-class SettingsController {
+class AccountController {
   constructor(Auth) {
     this.errors = {};
     this.submitted = false;
@@ -26,4 +26,4 @@ class SettingsController {
 }
 
 angular.module('accountAdminApp')
-  .controller('SettingsController', SettingsController);
+  .controller('AccountCtrl', AccountController);

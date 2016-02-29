@@ -45,8 +45,6 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
-@import 'account/register/business/business.scss';
-@import 'account/register/owner/owner.scss';
 @import 'account/register/register.scss';
 @import 'admin/admin.scss';
 @import 'main/admin/admin.scss';
@@ -66,6 +64,8 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open
 @import 'main/settings/roles/roles.scss';
 @import 'main/settings/settings.scss';
 @import 'main/settings/users/users.scss';
+@import 'main/setup/business/business.scss';
+@import 'main/setup/owner/owner.scss';
 @import 'main/statistics/statistics.scss';
 @import '../components/modal/modal.scss';
 // endinjector

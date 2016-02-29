@@ -10,7 +10,6 @@ angular.module('accountAdminApp', [
   , 'ui.bootstrap'
   , 'ui.router'
   , 'ui.mask'
-  , 'mp.datePicker'
   , 'validation.match'
   , 'wu.masonry'
   , 'chart.js'

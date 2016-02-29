@@ -34,7 +34,6 @@
         <button class="btn btn-default" ng-click="main.logout()">Logout</button>
       </div>
   </nav>
-
   <section id="page-content-wrapper">
     <div class="main-content" ui-view></div>
   </section>
@@ -48,7 +47,7 @@
 
   THE ORDER IS AS FOLOWS:
 
-  GROUP                     MODAL NAME                        VALIDATION                               STATUS
+  GROUP                     MODAL NAME                        VALIDATION
 
   DASHBOARD                 viewTableModal.html               N/A
   DASHBOARD                 updatesModal.html                 N/A
@@ -59,13 +58,13 @@
   RESERVATIONS              reservationModal.html             Done
   RESERVATIONS              addReservationModal.html          Done
 
-  FOOD MENU                 foodMenuModal.html                                                         Done - edit / remove Food Item
-  FOOD MENU                 addFoodMenuModal.html                                                      Done - add Food Item
-  FOOD MENU                 menuCategoryModal.html                                                     TBD - edit / remove Food Category
-  FOOD MENU                 addMenuCategoryModal.html                                                  Done - add Food Category
-  FOOD MENU                 foodItemModal.html                                                         Done - view / edit / remove Food Item
-  FOOD MENU                 addFoodItemModal.html                                                      Done - add Food Item
-  FOOD MENU                 addExistingFoodModal.html                                                  Missing ui-select - add Existing Food Item
+  FOOD MENU                 foodMenuModal.html
+  FOOD MENU                 addFoodMenuModal.html
+  FOOD MENU                 menuCategoryModal.html
+  FOOD MENU                 addMenuCategoryModal.html
+  FOOD MENU                 foodItemModal.html
+  FOOD MENU                 addFoodItemModal.html
+  FOOD MENU                 addExistingFoodModal.html
 
   STATISTICS
 
@@ -329,56 +328,61 @@
           </div><!-- END .row -->
         </div>
 
-        <form class="custom-form" ng-show="modal.object.edit">
+        <form name="orderForm" class="custom-form" ng-show="modal.object.edit" novalidate>
           <div class="row">
             <div class="col-md-12">
               <h1 class="text-center">Edit Order No. {{modal.object.number}}</h1>
             </div>
           </div><!-- END .row -->
+
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label class="control-label">Customer</label>
                 <fieldset>
-                  <select class="form-control">
-                    <option value="1">New Customer</option>
-                    <option value="2">Blake Lively</option>
-                    <option value="3">Lucas Engel</option>
+                  <select name="customer" class="form-control" ng-model="order.customer" ng-required="true">
+                    <option value="0">+ New Customer</option>
+                    <option value="1">Blake Lively</option>
+                    <option value="2">Lucas Engel</option>
                   </select>
                 </fieldset>
+                <p ng-show="orderForm.customer.$error.required && orderForm.customer.$touched" class="help-block">This is a required field.</p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label class="control-label">Type</label>
                 <fieldset>
-                  <select class="form-control">
-                    <option value="">Pickup</option>
-                    <option value="">Delivery</option>
+                  <select name="type" class="form-control" ng-model="order.type" ng-required="true">
+                    <option value="0">Pickup</option>
+                    <option value="1">Delivery</option>
                   </select>
                 </fieldset>
+                <p ng-show="orderForm.type.$error.required && orderForm.type.$touched" class="help-block">This is a required field.</p>
               </div>
             </div>
           </div><!-- END .row -->
 
-          <div ng-show="newCustomer" ng-init="newCustomer = true">
+          <div ng-show="order.customer == 0">
             <div class="row">
               <div class="col-md-5">
                 <div class="form-group">
                   <label class="control-label">First Name</label> <span class="mandatory">*</span>
-                  <input type="text" class="form-control"/>
+                  <input name="fname" type="text" ng-model="order.fname" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.fname.$error.required && orderForm.fname.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="form-group">
                   <label class="control-label">MI</label>
-                  <input type="text" class="form-control"/>
+                  <input name="mname" type="text" ng-model="order.mname" class="form-control" ng-required="order.customer == 0" maxlength="1">
                 </div>
               </div>
               <div class="col-md-5">
                 <div class="form-group">
                   <label class="control-label">Last Name</label> <span class="mandatory">*</span>
-                  <input type="text" class="form-control"/>
+                  <input name="lname" type="text" ng-model="order.lname" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.lname.$error.required && orderForm.lname.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
             </div><!-- END .row -->
@@ -386,13 +390,15 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label">Home Phone</label> <span class="mandatory">*</span>
-                  <input type="tel" class="form-control"/>
+                  <input name="homePhone" type="tel" ng-model="order.homePhone" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.homePhone.$error.required && orderForm.homePhone.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label class="control-label">Mobile Phone</label>
-                  <input type="tel" class="form-control"/>
+                  <label class="control-label">Mobile Phone</label> <span class="mandatory">*</span>
+                  <input name="mobilePhone" type="tel" ng-model="order.mobilePhone" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.mobilePhone.$error.required && orderForm.mobilePhone.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
             </div><!-- END .row -->
@@ -400,13 +406,15 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label">Personal Email</label> <span class="mandatory">*</span>
-                  <input type="email" class="form-control"/>
+                  <input name="email" type="email" ng-model="order.email" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.email.$error.required && orderForm.email.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label class="control-label">Work Email</label>
-                  <input type="email" class="form-control"/>
+                  <label class="control-label">Work Email</label> <span class="mandatory">*</span>
+                  <input name="workEmail" type="email" ng-model="order.workEmail" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.workEmail.$error.required && orderForm.workEmail.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
             </div><!-- END .row -->
@@ -414,7 +422,8 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="control-label">Street Address</label> <span class="mandatory">*</span>
-                  <input type="text" class="form-control"/>
+                  <input name="addr" type="text" ng-model="order.addr" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.addr.$error.required && orderForm.addr.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
             </div><!-- END .row -->
@@ -422,25 +431,28 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label">City</label> <span class="mandatory">*</span>
-                  <input type="text" class="form-control"/>
+                  <input name="city" type="text" ng-model="order.city" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.city.$error.required && orderForm.city.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="form-group">
                   <label class="control-label">State</label> <span class="mandatory">*</span>
                   <fieldset>
-                    <select class="form-control">
+                    <select name="state" ng-model="order.state" class="form-control" ng-required="order.customer == 0">
                       <option value="ca">CA</option>
                       <option value="fl">FL</option>
                       <option value="ny">NY</option>
                     </select>
                   </fieldset>
+                  <p ng-show="orderForm.state.$error.required && orderForm.state.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label class="control-label">Zip</label>
-                  <input type="number" class="form-control"/>
+                  <label class="control-label">Zip</label> <span class="mandatory">*</span>
+                  <input name="zip" type="number" ng-model="order.zip" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.zip.$error.required && orderForm.zip.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
             </div><!-- END .row -->
@@ -464,7 +476,7 @@
                     <div class="td">
                       <div class="form-group">
                         <fieldset>
-                          <select class="form-control">
+                          <select name="item" ng-model="order.items[0].id" class="form-control">
                             <option value="1">Vodka</option>
                             <option value="2">Beer</option>
                             <option value="3">Cachaça</option>
@@ -472,91 +484,29 @@
                         </fieldset>
                       </div>
                     </div>
-                    <div class="td">Beverage</div>
+                    <div class="td"></div>
                     <div class="td">
                       <div class="form-group">
-                        <input type="number" class="form-control" ng-model="quantity" ng-init="quantity = 1"/>
+                        <input type="number" ng-model="order.items[0].qty" class="form-control">
                       </div>
                     </div>
-                    <div class="td text-right">{{quantity}} &times; 1.00</div>
-                    <div class="td"><i class="icon-close"></i></div>
-                  </div><!-- END .tr -->
-                  <div class="tr">
-                    <div class="td">
-                      <div class="form-group">
-                        <fieldset>
-                          <select class="form-control">
-                            <option value="1">Vodka</option>
-                            <option value="2">Beer</option>
-                            <option value="3">Cachaça</option>
-                          </select>
-                        </fieldset>
-                      </div>
-                    </div>
-                    <div class="td">Beverage</div>
-                    <div class="td">
-                      <div class="form-group">
-                        <input type="number" class="form-control" ng-model="quantity" />
-                      </div>
-                    </div>
-                    <div class="td text-right">{{quantity}} &times; 1.00</div>
-                    <div class="td"><i class="icon-close"></i></div>
-                  </div><!-- END .tr -->
-                  <div class="tr">
-                    <div class="td">
-                      <div class="form-group">
-                        <fieldset>
-                          <select class="form-control">
-                            <option value="1">Vodka</option>
-                            <option value="2">Beer</option>
-                            <option value="3">Cachaça</option>
-                          </select>
-                        </fieldset>
-                      </div>
-                    </div>
-                    <div class="td">Beverage</div>
-                    <div class="td">
-                      <div class="form-group">
-                        <input type="number" class="form-control" ng-model="quantity" />
-                      </div>
-                    </div>
-                    <div class="td text-right">{{quantity}} &times; 1.00</div>
-                    <div class="td"><i class="icon-close"></i></div>
-                  </div><!-- END .tr -->
-                  <div class="tr">
-                    <div class="td">
-                      <div class="form-group">
-                        <fieldset>
-                          <select class="form-control">
-                            <option value="1">Vodka</option>
-                            <option value="2">Beer</option>
-                            <option value="3">Cachaça</option>
-                          </select>
-                        </fieldset>
-                      </div>
-                    </div>
-                    <div class="td">Beverage</div>
-                    <div class="td">
-                      <div class="form-group">
-                        <input type="number" class="form-control" ng-model="quantity" />
-                      </div>
-                    </div>
-                    <div class="td text-right">{{quantity}} &times; 1.00</div>
+                    <div class="td text-right">{{order.items[0].qty ? order.items[0].qty + ' &times; ' : ''}}</div>
                     <div class="td"><i class="icon-close"></i></div>
                   </div><!-- END .tr -->
                 </div><!-- END .tbody -->
               </div><!-- END .table -->
               <div class="pull-left">
-                <a href="javascript:void(0)" class="add-somehting">+ Add Item</a>
+                <a href="javascript:void(0)">+ Add Item</a>
               </div>
-              <div class="pull-right">Total amount: $27.00</div>
+              <div class="pull-right">Total amount: <strong>$27.00</strong></div>
             </div>
           </div><!-- END .row -->
+
           <div class="row">
             <div class="col-md-12">
               <div class="resetsave text-center">
                 <button class="btn btn-default" ng-click="modal.object.edit = !modal.object.edit">Cancel</button>
-                <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Save</button>
+                <button class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="modal.object.edit = !modal.object.edit">Save</button>
               </div>
             </div>
           </div>
@@ -571,56 +521,61 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
 
-        <form class="custom-form">
+        <form name="orderForm" class="custom-form" novalidate>
           <div class="row">
             <div class="col-md-12">
-              <h1 class="text-center">Add Order</h1>
+              <h1 class="text-center">New Order</h1>
             </div>
           </div><!-- END .row -->
+
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label class="control-label">Customer</label>
                 <fieldset>
-                  <select class="form-control">
-                    <option value="1">New Customer</option>
-                    <option value="2">Blake Lively</option>
-                    <option value="3">Lucas Engel</option>
+                  <select name="customer" class="form-control" ng-model="order.customer" ng-required="true">
+                    <option value="0">+ New Customer</option>
+                    <option value="1">Blake Lively</option>
+                    <option value="2">Lucas Engel</option>
                   </select>
                 </fieldset>
+                <p ng-show="orderForm.customer.$error.required && orderForm.customer.$touched" class="help-block">This is a required field.</p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label class="control-label">Type</label>
                 <fieldset>
-                  <select class="form-control">
-                    <option value="">Pickup</option>
-                    <option value="">Delivery</option>
+                  <select name="type" class="form-control" ng-model="order.type" ng-required="true">
+                    <option value="0">Pickup</option>
+                    <option value="1">Delivery</option>
                   </select>
                 </fieldset>
+                <p ng-show="orderForm.type.$error.required && orderForm.type.$touched" class="help-block">This is a required field.</p>
               </div>
             </div>
           </div><!-- END .row -->
 
-          <div ng-show="newCustomer" ng-init="newCustomer = true">
+          <div ng-show="order.customer == 0">
             <div class="row">
               <div class="col-md-5">
                 <div class="form-group">
                   <label class="control-label">First Name</label> <span class="mandatory">*</span>
-                  <input type="text" class="form-control"/>
+                  <input name="fname" type="text" ng-model="order.fname" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.fname.$error.required && orderForm.fname.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="form-group">
                   <label class="control-label">MI</label>
-                  <input type="text" class="form-control"/>
+                  <input name="mname" type="text" ng-model="order.mname" class="form-control" ng-required="order.customer == 0" maxlength="1">
                 </div>
               </div>
               <div class="col-md-5">
                 <div class="form-group">
                   <label class="control-label">Last Name</label> <span class="mandatory">*</span>
-                  <input type="text" class="form-control"/>
+                  <input name="lname" type="text" ng-model="order.lname" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.lname.$error.required && orderForm.lname.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
             </div><!-- END .row -->
@@ -628,13 +583,15 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label">Home Phone</label> <span class="mandatory">*</span>
-                  <input type="tel" class="form-control"/>
+                  <input name="homePhone" type="tel" ng-model="order.homePhone" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.homePhone.$error.required && orderForm.homePhone.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label class="control-label">Mobile Phone</label>
-                  <input type="tel" class="form-control"/>
+                  <label class="control-label">Mobile Phone</label> <span class="mandatory">*</span>
+                  <input name="mobilePhone" type="tel" ng-model="order.mobilePhone" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.mobilePhone.$error.required && orderForm.mobilePhone.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
             </div><!-- END .row -->
@@ -642,13 +599,15 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label">Personal Email</label> <span class="mandatory">*</span>
-                  <input type="email" class="form-control"/>
+                  <input name="email" type="email" ng-model="order.email" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.email.$error.required && orderForm.email.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label class="control-label">Work Email</label>
-                  <input type="email" class="form-control"/>
+                  <label class="control-label">Work Email</label> <span class="mandatory">*</span>
+                  <input name="workEmail" type="email" ng-model="order.workEmail" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.workEmail.$error.required && orderForm.workEmail.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
             </div><!-- END .row -->
@@ -656,7 +615,8 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label class="control-label">Street Address</label> <span class="mandatory">*</span>
-                  <input type="text" class="form-control"/>
+                  <input name="addr" type="text" ng-model="order.addr" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.addr.$error.required && orderForm.addr.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
             </div><!-- END .row -->
@@ -664,25 +624,28 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label">City</label> <span class="mandatory">*</span>
-                  <input type="text" class="form-control"/>
+                  <input name="city" type="text" ng-model="order.city" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.city.$error.required && orderForm.city.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
               <div class="col-md-2">
                 <div class="form-group">
                   <label class="control-label">State</label> <span class="mandatory">*</span>
                   <fieldset>
-                    <select class="form-control">
+                    <select name="state" ng-model="order.state" class="form-control" ng-required="order.customer == 0">
                       <option value="ca">CA</option>
                       <option value="fl">FL</option>
                       <option value="ny">NY</option>
                     </select>
                   </fieldset>
+                  <p ng-show="orderForm.state.$error.required && orderForm.state.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label class="control-label">Zip</label>
-                  <input type="number" class="form-control"/>
+                  <label class="control-label">Zip</label> <span class="mandatory">*</span>
+                  <input name="zip" type="number" ng-model="order.zip" class="form-control" ng-required="order.customer == 0">
+                  <p ng-show="orderForm.zip.$error.required && orderForm.zip.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
             </div><!-- END .row -->
@@ -717,28 +680,29 @@
                     <div class="td"></div>
                     <div class="td">
                       <div class="form-group">
-                        <input type="number" class="form-control" ng-model="quantity" />
+                        <input type="number" ng-model="order.items[0].qty" class="form-control">
                       </div>
                     </div>
-                    <div class="td text-right">{{quantity}} &times;</div>
+                    <div class="td text-right">{{order.items[0].qty ? order.items[0].qty + ' &times; ' : ''}}</div>
                     <div class="td"><i class="icon-close"></i></div>
                   </div><!-- END .tr -->
                 </div><!-- END .tbody -->
               </div><!-- END .table -->
               <div class="pull-left">
-                <a href="javascript:void(0)" class="add-somehting">+ Add Item</a>
+                <a href="javascript:void(0)">+ Add Item</a>
               </div>
-              <div class="pull-right">Total amount: $27.00</div>
+              <div class="pull-right">Total amount: <strong>$27.00</strong></div>
             </div>
           </div><!-- END .row -->
+
           <div class="row">
             <div class="col-md-12">
               <div class="resetsave text-center">
                 <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-                <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+                <button class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="$dismiss()">Save</button>
               </div>
             </div>
-          </div>
+          </div><!-- END .row -->
         </form>
 
       </div><!-- END .col-md-6 -->
@@ -751,7 +715,6 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-
         <form name="removeForm" class="custom-form" ng-show="modal.object.delete">
           <div class="row">
             <div class="col-md-12 text-center">
@@ -759,7 +722,7 @@
               <p><strong>Are you sure that you want to remove this reservation?</strong></p>
               <p>Table for 6</p>
             </div>
-          </div>
+          </div><!-- END .row -->
           <div class="row">
             <div class="col-md-12 resetsave text-center">
               <button class="btn btn-default" ng-click="modal.object.delete = !modal.object.delete">Cancel</button>
@@ -768,7 +731,7 @@
           </div><!-- END .row -->
         </form>
 
-        <form name="tableForm" class="custom-form" ng-hide="modal.object.delete">
+        <form name="reservationForm" class="custom-form" ng-hide="modal.object.delete">
           <div class="row">
             <div class="col-md-12 text-center">
               <h1 class="text-center" ng-show="!modal.object.edit">Table for 6</h1>
@@ -802,10 +765,9 @@
                 <p><strong>Status</strong><br><span class="status pending">Pending</span></p>
               </div>
             </div><!-- END .row -->
-          </div>
+          </div><!-- END [ng-show="!modal.object.edit"] -->
 
           <div ng-show="modal.object.edit">
-
             <div class="row">
               <div class="col-md-12">
                 <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
@@ -817,26 +779,13 @@
             <div class="row">
               <div class="col-md-6 form-group">
                 <label class="control-label">Number of Seats</label> <span class="mandatory">*</span>
-                <fieldset>
-                  <select name="seats" class="form-control" ng-model="table.seats" ng-required="true">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </fieldset>
-                <p ng-show="tableForm.seats.$error.required && tableForm.seats.$touched" class="help-block">This is a required field.</p>
+                <input name="seats" type="number" class="form-control" ng-model="table.seats" ng-required="true">
+                <p ng-show="reservationForm.seats.$error.required && reservationForm.seats.$touched" class="help-block">This is a required field.</p>
               </div>
               <div class="col-md-6 form-group">
                 <label class="control-label">Date</label> <span class="mandatory">*</span>
                 <input name="date" type="date" class="form-control" ng-model="table.date" ng-required="true">
-                <p ng-show="tableForm.date.$error.required && tableForm.date.$touched" class="help-block">This is a required field.</p>
+                <p ng-show="reservationForm.date.$error.required && reservationForm.date.$touched" class="help-block">This is a required field.</p>
               </div>
             </div><!-- END .row -->
 
@@ -844,12 +793,12 @@
               <div class="col-md-6 form-group">
                 <label class="control-label">Start Time</label> <span class="mandatory">*</span>
                 <input name="start" type="time" class="form-control" ng-model="table.start" ng-required="true">
-                <p ng-show="tableForm.start.$error.required && tableForm.start.$touched" class="help-block">This is a required field.</p>
+                <p ng-show="reservationForm.start.$error.required && reservationForm.start.$touched" class="help-block">This is a required field.</p>
               </div>
               <div class="col-md-6 form-group">
                 <label class="control-label">End Time</label> <span class="mandatory">*</span>
                 <input name="end" type="time" class="form-control" ng-model="table.end" ng-required="true">
-                <p ng-show="tableForm.end.$error.required && tableForm.end.$touched" class="help-block">This is a required field.</p>
+                <p ng-show="reservationForm.end.$error.required && reservationForm.end.$touched" class="help-block">This is a required field.</p>
               </div>
             </div><!-- END .row -->
 
@@ -857,12 +806,12 @@
               <div class="col-md-6 form-group">
                 <label class="control-label">Name</label> <span class="mandatory">*</span>
                 <input name="name" type="text" class="form-control" ng-model="table.name" ng-required="true">
-                <p ng-show="tableForm.name.$error.required && tableForm.name.$touched" class="help-block">This is a required field.</p>
+                <p ng-show="reservationForm.name.$error.required && reservationForm.name.$touched" class="help-block">This is a required field.</p>
               </div>
               <div class="col-md-6 form-group">
                 <label class="control-label">Phone</label> <span class="mandatory">*</span>
                 <input name="phone" type="text" class="form-control" ng-model="table.phone" ng-required="true">
-                <p ng-show="tableForm.phone.$error.required && tableForm.phone.$touched" class="help-block">This is a required field.</p>
+                <p ng-show="reservationForm.phone.$error.required && reservationForm.phone.$touched" class="help-block">This is a required field.</p>
               </div>
             </div><!-- END .row -->
 
@@ -872,7 +821,7 @@
                 <textarea name="notes" class="form-control" ng-model="table.notes"></textarea>
               </div>
             </div><!-- END .row -->
-          </div>
+          </div><!-- END [ng-show="modal.object.edit"] -->
 
           <div class="row">
             <div class="col-md-12 resetsave text-center" ng-hide="modal.object.edit">
@@ -881,14 +830,14 @@
               <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Edit</button>
             </div>
           </div><!-- END .row -->
+
           <div class="row">
             <div class="col-md-12 resetsave text-center" ng-show="modal.object.edit">
               <button class="btn btn-default" ng-click="modal.object.edit = !modal.object.edit">Cancel</button>
-              <button class="btn btn-primary" ng-disabled="tableForm.$invalid" ng-click="modal.object.edit = !modal.object.edit">Save</button>
+              <button class="btn btn-primary" ng-disabled="reservationForm.$invalid" ng-click="modal.object.edit = !modal.object.edit">Save</button>
             </div>
           </div><!-- END .row -->
         </form>
-
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->
@@ -897,7 +846,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <form name="tableForm" class="custom-form">
+        <form name="reservationForm" class="custom-form">
           <div class="row">
             <div class="col-md-12">
               <h1 class="text-center">Add Reservation</h1>
@@ -912,78 +861,64 @@
             </div>
           </div><!-- END .row -->
 
-            <div class="row">
-              <div class="col-md-12">
-                <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
-                  <span ng-bind-html="alert.msg"><span>
-                </uib-alert>
-              </div>
-            </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-12">
+              <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
+                <span ng-bind-html="alert.msg"><span>
+              </uib-alert>
+            </div>
+          </div><!-- END .row -->
 
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label class="control-label">Number of Seats</label> <span class="mandatory">*</span>
-                <fieldset>
-                  <select name="seats" class="form-control" ng-model="table.seats" ng-required="true">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </fieldset>
-                <p ng-show="tableForm.seats.$error.required && tableForm.seats.$touched" class="help-block">This is a required field.</p>
-              </div>
-              <div class="col-md-6 form-group">
-                <label class="control-label">Date</label> <span class="mandatory">*</span>
-                <input name="date" type="date" class="form-control" ng-model="table.date" ng-required="true">
-                <p ng-show="tableForm.date.$error.required && tableForm.date.$touched" class="help-block">This is a required field.</p>
-              </div>
-            </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label class="control-label">Number of Seats</label> <span class="mandatory">*</span>
+                <input name="seats" type="number" class="form-control" ng-model="table.seats" ng-required="true">
+              <p ng-show="reservationForm.seats.$error.required && reservationForm.seats.$touched" class="help-block">This is a required field.</p>
+            </div>
+            <div class="col-md-6 form-group">
+              <label class="control-label">Date</label> <span class="mandatory">*</span>
+              <input name="date" type="date" class="form-control" ng-model="table.date" ng-required="true">
+              <p ng-show="reservationForm.date.$error.required && reservationForm.date.$touched" class="help-block">This is a required field.</p>
+            </div>
+          </div><!-- END .row -->
 
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label class="control-label">Start Time</label> <span class="mandatory">*</span>
-                <input name="start" type="time" class="form-control" ng-model="table.start" ng-required="true">
-                <p ng-show="tableForm.start.$error.required && tableForm.start.$touched" class="help-block">This is a required field.</p>
-              </div>
-              <div class="col-md-6 form-group">
-                <label class="control-label">End Time</label> <span class="mandatory">*</span>
-                <input name="end" type="time" class="form-control" ng-model="table.end" ng-required="true">
-                <p ng-show="tableForm.end.$error.required && tableForm.end.$touched" class="help-block">This is a required field.</p>
-              </div>
-            </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label class="control-label">Start Time</label> <span class="mandatory">*</span>
+              <input name="start" type="time" class="form-control" ng-model="table.start" ng-required="true">
+              <p ng-show="reservationForm.start.$error.required && reservationForm.start.$touched" class="help-block">This is a required field.</p>
+            </div>
+            <div class="col-md-6 form-group">
+              <label class="control-label">End Time</label> <span class="mandatory">*</span>
+              <input name="end" type="time" class="form-control" ng-model="table.end" ng-required="true">
+              <p ng-show="reservationForm.end.$error.required && reservationForm.end.$touched" class="help-block">This is a required field.</p>
+            </div>
+          </div><!-- END .row -->
 
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label class="control-label">Name</label> <span class="mandatory">*</span>
-                <input name="name" type="text" class="form-control" ng-model="table.name" ng-required="true">
-                <p ng-show="tableForm.name.$error.required && tableForm.name.$touched" class="help-block">This is a required field.</p>
-              </div>
-              <div class="col-md-6 form-group">
-                <label class="control-label">Phone</label> <span class="mandatory">*</span>
-                <input name="phone" type="text" class="form-control" ng-model="table.phone" ng-required="true">
-                <p ng-show="tableForm.phone.$error.required && tableForm.phone.$touched" class="help-block">This is a required field.</p>
-              </div>
-            </div><!-- END .row -->
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label class="control-label">Name</label> <span class="mandatory">*</span>
+              <input name="name" type="text" class="form-control" ng-model="table.name" ng-required="true">
+              <p ng-show="reservationForm.name.$error.required && reservationForm.name.$touched" class="help-block">This is a required field.</p>
+            </div>
+            <div class="col-md-6 form-group">
+              <label class="control-label">Phone</label> <span class="mandatory">*</span>
+              <input name="phone" type="text" class="form-control" ng-model="table.phone" ng-required="true">
+              <p ng-show="reservationForm.phone.$error.required && reservationForm.phone.$touched" class="help-block">This is a required field.</p>
+            </div>
+          </div><!-- END .row -->
 
-            <div class="row">
-              <div class="col-md-12 form-group">
-                <label class="control-label">Notes <span class="optional">(optional)</span></label>
-                <textarea name="notes" class="form-control" ng-model="table.notes"></textarea>
-              </div>
-            </div><!-- END .row -->
-          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <label class="control-label">Notes <span class="optional">(optional)</span></label>
+              <textarea name="notes" class="form-control" ng-model="table.notes"></textarea>
+            </div>
+          </div><!-- END .row -->
 
           <div class="row">
             <div class="col-md-12 resetsave text-center">
               <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-              <button class="btn btn-primary" ng-disabled="tableForm.$invalid" ng-click="$dismiss()">Add Customer</button>
+              <button class="btn btn-primary" ng-disabled="reservationForm.$invalid" ng-click="$dismiss()">Add Reservation</button>
             </div>
           </div><!-- END .row -->
         </form>
@@ -1733,7 +1668,7 @@
         <div class="col-md-12">
           <div class="row">
             <div class="col-md-6">
-              <label class="control-label">Opion Name</label> <span class="optional">(ex: Extra Protein)</span>
+              <label class="control-label">Option Name</label> <span class="optional">(ex: Extra Protein)</span>
             </div>
             <div class="col-md-5">
               <label class="control-label">Price</label>
@@ -1881,7 +1816,6 @@
 
 <!-- MARKETING -->
 <script type="text/ng-template" id="campaignModal.html">
-
   <div class="container custom-form">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">

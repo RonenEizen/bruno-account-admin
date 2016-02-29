@@ -7,7 +7,8 @@ angular.module('accountAdminApp')
         url: '/login',
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        public: true
       })
       .state('logout', {
         url: '/logout?referrer',
@@ -25,14 +26,8 @@ angular.module('accountAdminApp')
         url: '/register',
         templateUrl: 'app/account/register/register.html',
         controller: 'RegisterController',
-        controllerAs: 'vm'
-      })
-      .state('settings', {
-        url: '/settings',
-        templateUrl: 'app/account/settings/settings.html',
-        controller: 'SettingsController',
         controllerAs: 'vm',
-        authenticate: true
+        public: true
       });
   })
   .run(function($rootScope) {

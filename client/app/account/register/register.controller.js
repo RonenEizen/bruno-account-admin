@@ -1,50 +1,54 @@
 'use strict';
 
-angular.module('accountAdminApp')
-  .controller('RegisterCtrl', function ($window, $scope, Auth, $location, $http, $timeout) {
-    $scope.user = {};
-    $scope.errors = {};
-    $scope.selected = undefined;
-    var _service = new $window.google.maps.places.AutocompleteService();
-    
-    $scope.getPlaces = function(value) {
-      var _predictions;
-      _service.getPlacePredictions({
-        input: value,
-        types: ['establishment']
-      }, function(predictions) {
-        _predictions = predictions;
-      });
-      return $timeout(function() {
-        if(_predictions) {
-          return _predictions;
-        }
-      }, 100);
-    };
+class RegisterController {
+  constructor($window, Auth, $timeout) {
+    this.user = {};
+    this.errors = {};
+    this.selected = undefined;
+    this.gMaps = new $window.google.maps;
+    this.timeout = $timeout;
+  }
 
-    $scope.register = function(form) {
-      $scope.submitted = true;
-
-      if(form.$valid) {
-        Auth.createUser({
-          email: $scope.user.email,
-          password: $scope.user.password
-        })
-        .then( function() {
-          // Account created, redirect to home
-          $location.path('/register/owner');
-        })
-        .catch( function(err) {
-          err = err.data;
-          $scope.errors = {};
-
-          // Update validity of form fields that match the mongoose errors
-          angular.forEach(err.errors, function(error, field) {
-            form[field].$setValidity('mongoose', false);
-            $scope.errors[field] = error.message;
-          });
-        });
+  getPlaces(value) {
+    var _predictions;
+    var _service = new this.gMaps.places.AutocompleteService();
+    _service.getPlacePredictions({
+      input: value,
+      types: ['establishment']
+    }, function(predictions) {
+      _predictions = predictions;
+    });
+    return timeout(function() {
+      if(_predictions) {
+        return _predictions;
       }
-    };
+    }, 100);
+  }
 
-  });
+  register(form) {
+    if(form.$valid) {
+      this.submitted = true;
+      Auth.createUser({
+        email: this.user.email,
+        password: this.user.password
+      })
+      .then( function() {
+        // Account created, redirect to home
+        this.location.path('/register/owner');
+      })
+      .catch( function(err) {
+        err = err.data;
+        this.errors = {};
+
+        // Update validity of form fields that match the mongoose errors
+        angular.forEach(err.errors, function(error, field) {
+          form[field].$setValidity('mongoose', false);
+          this.errors[field] = error.message;
+        });
+      });
+    }
+  }
+}
+
+angular.module('accountAdminApp')
+  .controller('RegisterCtrl', RegisterController);

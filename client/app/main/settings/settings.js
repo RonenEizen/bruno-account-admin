@@ -5,8 +5,14 @@ angular.module('accountAdminApp')
     $stateProvider
       .state('main.settings', {
         abstract: true,
-        url: '/settings',
-        templateUrl: 'app/main/settings/settings.html'
+        //url: '/settings',
+        templateUrl: 'app/main/settings/account/account.html'
+      })
+      .state('main.settings.account', {
+        url: '/account',
+        templateUrl: 'app/main/settings/account/account.html',
+        controller: 'AccountCtrl',
+        controllerAs: 'vm'
       })
       .state('main.settings.business-info', {
         url: '/business-info',
@@ -49,5 +55,5 @@ angular.module('accountAdminApp')
         controller: 'SettingsIntegrationCtrl'
       });
 
-    $urlRouterProvider.when('/settings', '/settings/business-info');
+    $urlRouterProvider.when('/settings', '/business-info');
   });

@@ -39,33 +39,4 @@ angular.module('accountAdminApp')
         }
       }
     };
-
-    // Sets class to rows based on order status
-    $scope.setStatus = function (index) {
-      return $scope.orderStatus[index].toLowerCase().replace(/\s+/g, '');
-    };
-
-    // FAKE DATA
-    $scope.editing = {
-      edit: false,
-      number: '037658',
-      customer: 'Blake Lively',
-      homePhone: '(718) 566-7878',
-      mobilePhone: '(718) 566-7878',
-      addr: '1885 Crawford Dr. Pleasant Hill, CA 94113',
-      email: 'bively@gmail.com',
-      workEmail: 'bively@yahoo.com',
-      type: 0,
-      amount: 191.21,
-      status: 2
-    };
-    $scope.orderType = [ 'Pickup', 'Delivery' ];
-    $scope.orderStatus = [ 'Cancelled', 'New', 'In Progress', 'Fulfilled' ];
-    $scope.orders = [
-      { customer: 'Blade Likely',   type: 'Pickup',    number: '654321',  amount: 191.23,  status: 0 },
-      { customer: 'Blase Vilely',   type: 'Pickup',    number: '456123',  amount: 191.24,  status: 0 },
-      { customer: 'Blake Lively',   type: 'Pickup',    number: '123456',  amount: 191.21,  status: 1 },
-      { customer: 'Lacky Bively',   type: 'Delivery',  number: '321654',  amount: 191.22,  status: 2 },
-      { customer: 'Drake Bravely',  type: 'Delivery',  number: '321456',  amount: 191.25,  status: 3 }
-    ];
   });

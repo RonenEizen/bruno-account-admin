@@ -1,0 +1,100 @@
+// SIDEBAR
+aside.sidebar                   { padding-left: 0; padding-right: 0; padding-top: 0;
+  li                            { text-transform: uppercase;
+    &.active                    {
+      a                         { background: $blue; color: $white; }
+    }
+    a                           { border-radius: 0; color: $blue; padding: 15px 20px; }
+  }
+}
+
+.help-block                     { color: $red; }
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched    { border: 1px solid $red; }
+
+// MAIN CONTENT
+.hero-checkbox                  { background: $red; color: $white; font: 300 18px $title-font; margin: 10px 0; padding: 25px 0px; text-align: center;
+  input[type="checkbox"]        {
+    &:checked                   { }
+  }
+}
+button.rounded                  { border: none; border-radius: 100%; font-family: $serif-font; height: 40px; width: 40px; padding: 0; text-transform: uppercase; text-shadow: none;
+  &.btn-primary                 { background: $buttonblue; }
+}
+.paragraph-margin p             { margin-bottom: 20px; }
+
+.table                          {
+  .form-group input + input     { margin-top: 5px; }
+  input.form-control,
+  select.form-control           { color: $darkgray; font-size: 14px; }
+  .th                           {
+    &.ten-perc                  { width: 10%; }
+    &.twenty-perc               { width: 20%; }
+    &.thirty-perc               { width: 30%; }
+  }
+  &.userroles                   {
+    .tr .th                     { border-bottom-color: $darkgray; font-size: 13px; }
+    .tr .td                     { padding: 15px 10px; }
+  }
+  &.timetable                   { margin-top: 20px;
+    .tr                         {
+      .th, .td                  { border: 0; }
+      &:last-child              { border: 0; }
+      &.disabled                {
+        .weekday                { background: $lightgray1; }
+        input.form-control      { border: none; }
+      }
+    }
+    .weekday                    { background: $lightgray2; color: $white; padding: 6px 15px; text-transform: uppercase; width: 100%;
+      label                     { font-size: 13px; padding: 0; }
+    }
+  }
+}
+
+// DELIVERY
+.checkbox-inverted              {
+  input[type="checkbox"]        { margin: 0 5px 0 0; position: relative; }
+  label                         { padding: 0; }
+}
+.googlemap                      { padding: 0; width: 100%;
+  iframe                        { border: 0; height: 400px; margin: 0 auto; width: 100%; }
+}
+
+// BUSINESS INFO
+.table.opening-hours            {
+  .tr                           {
+    .td                         { border: none; padding: 5px 0;
+      &:first-child             { font-weight: 700; text-transform: uppercase; width: 120px; }
+    }
+  }
+}
+
+// DOMAIN
+.domainpurchase                 {
+  p                             { margin-bottom: 10px; }
+  .domainsearch                 { margin: 20px 0; }
+  .hero-checkbox-small          { @extend .hero-checkbox; background-color: $darkgray; display: inline-block; margin: 0 5px 5px 0; padding: 8px 12px; width: auto; }
+}
+
+// RESERVATION
+.reservations-heading           { border: none; margin-bottom: 0; }
+.reservations-table             {
+  .th                           { border-bottom: 2px solid $black; padding: 8px 8px 0; white-space: nowrap; }
+  .tr:last-child                {
+    .td                         { border: none; }
+  }
+}
+.reservation-integrations       { border-top: 1px solid $lightgray; margin-top: 30px; padding-top: 20px;
+  .col-xs-3                     { display: table-cell; margin-top: 20px; vertical-align: middle; }
+  img                           { width: 100%; @include desaturate(100%); opacity: .5; }
+}
+
+// INTEGRATION
+.nomargin                       { margin-bottom: 0; }
+.appintegration                 {
+  .td                           { height: 80px; }
+  img                           { max-height: 50px; max-width: 150px; }
+  &.inactive                    {
+    img                         { @include desaturate(100%); opacity: .5; }
+  }
+}

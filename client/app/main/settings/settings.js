@@ -1,59 +1,60 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider) {
     $stateProvider
-      .state('main.settings', {
-        abstract: true,
-        //url: '/settings',
-        templateUrl: 'app/main/settings/account/account.html'
-      })
-      .state('main.settings.account', {
+      .state('main.accountSettings', {
         url: '/account',
         templateUrl: 'app/main/settings/account/account.html',
         controller: 'AccountCtrl',
         controllerAs: 'vm'
       })
-      .state('main.settings.business-info', {
+      .state('main.businessInfo', {
         url: '/business-info',
         templateUrl: 'app/main/settings/business-info/business-info.html',
-        controller: 'SettingsBusinessInfoCtrl'
+        controller: 'SettingsBusinessInfoCtrl',
+        controllerAs: 'vm'
       })
-      .state('main.settings.users', {
+      .state('main.users', {
         url: '/users',
         templateUrl: 'app/main/settings/users/users.html',
-        controller: 'SettingsUsersCtrl'
+        controller: 'SettingsUsersCtrl',
+        controllerAs: 'vm'
       })
-      .state('main.settings.roles', {
+      .state('main.roles', {
         url: '/roles',
         templateUrl: 'app/main/settings/roles/roles.html',
-        controller: 'SettingsRolesCtrl'
+        controller: 'SettingsRolesCtrl',
+        controllerAs: 'vm'
       })
-      .state('main.settings.delivery', {
+      .state('main.deliverySettings', {
         url: '/delivery',
         templateUrl: 'app/main/settings/delivery/delivery.html',
-        controller: 'SettingsDeliveryCtrl'
+        controller: 'SettingsDeliveryCtrl',
+        controllerAs: 'vm'
       })
-      .state('main.settings.reservations',{
+      .state('main.reservationsSettings',{
         url: '/reservations',
         templateUrl: 'app/main/settings/reservations/reservations.html',
-        controller: 'SettingsReservationsCtrl'
+        controller: 'SettingsReservationsCtrl',
+        controllerAs: 'vm'
       })
-      .state('main.settings.payments', {
+      .state('main.paymentsSettings', {
         url: '/payments',
         templateUrl: 'app/main/settings/payments/payments.html',
-        controller: 'SettingsPaymentsCtrl'
+        controller: 'SettingsPaymentsCtrl',
+        controllerAs: 'vm'
       })
-      .state('main.settings.domain', {
+      .state('main.domainSettings', {
         url: '/domain',
         templateUrl: 'app/main/settings/domain/domain.html',
-        controller: 'SettingsDomainCtrl'
+        controller: 'SettingsDomainCtrl',
+        controllerAs: 'vm'
       })
-      .state('main.settings.integration', {
+      .state('main.integration', {
         url: '/integration',
         templateUrl: 'app/main/settings/integration/integration.html',
-        controller: 'SettingsIntegrationCtrl'
+        controller: 'SettingsIntegrationCtrl',
+        controllerAs: 'vm'
       });
-
-    $urlRouterProvider.when('/settings', '/business-info');
   });

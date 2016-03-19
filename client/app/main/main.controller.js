@@ -8,8 +8,7 @@ class MainController {
     this.navRevealed = true;
     this.settingsOpen = false;
 
-    // FLYOUT
-    this.modal = Modal.flyout;
+    this.Modal = Modal;
     this.Auth = Auth;
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
@@ -44,7 +43,7 @@ class MainController {
         object: object
       }
     };
-    return this.modal(modalContent);
+    return this.Modal.openModal(modalContent);
   }
 
   itemPrice(prodId) {

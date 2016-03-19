@@ -24,7 +24,7 @@ angular.module('accountAdminApp')
 
     // Public API here
     return {
-      flyout: openModal,
+      openModal: openModal,
 
       /* Confirmation modals */
       confirm: {

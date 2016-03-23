@@ -1,16 +1,14 @@
 .orders                           {
   &.table                         {
     .tr                           {
-      &.new                       {
-        .status                   { color: $green1; }
+      .status                     {
+        span                      {
+          &.new                   { color: $green1; }
+          &.inprogress            { color: $orange; }
+          &.cancelled             { color: $red; }
+          &.fulfilled             { color: $lightgray; }
+        }
       }
-      &.inprogress                {
-        .status                   { color: $orange; }
-      }
-      &.cancelled                 {
-        .status                   { color: $red; }
-      }
-      &.fulfilled                 { color: $lightgray; }
       .td                         { padding: 15px 8px; }
     }
   }

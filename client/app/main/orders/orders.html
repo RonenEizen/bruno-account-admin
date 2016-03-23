@@ -4,9 +4,11 @@
       <span class="hamburger" ng-click="main.navRevealed=true" ng-show="!main.navRevealed"><i class="icon-hamburger_menu"></i></span>
       <h1>{{pageTitle}}</h1>
     </div>
+
     <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="main.customModal('addOrderModal.html', main.order)">+ New Order</button>
+      <button class="btn btn-primary" ng-click="createOrder()">+ New Order</button>
     </div>
+
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
         <i class="icon-export_data"></i>
@@ -28,10 +30,8 @@
     </div>
   </div>
 </header>
-
 <div class="col-md-12 main">
   <div class="table orders">
-
     <div class="thead">
       <div class="tr">
 
@@ -112,14 +112,23 @@
     </div><!-- END .thead -->
 
     <div class="tbody">
-      <div class="tr" ng-repeat="order in main.orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders" ng-class="main.setStatus(order.status)">
-        <div ng-show="displayColumns.number" class="td"><a ng-click="main.customModal('orderModal.html', order[$index])">{{order._id}}</a></div>
-        <div ng-show="displayColumns.customer" class="td">{{main.customers[order.owner].fname}}</div>
-        <div ng-show="displayColumns.type" class="td">{{main.orderType[order.type]}}</div>
+      <div class="tr" ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders" ng-class="main.setStatus(order.status)">
+        <div ng-show="displayColumns.number" class="td"><a ng-click="viewOrder($index)">{{order._id}}</a></div>
+        <div ng-show="displayColumns.customer" class="td" ng-bind="customerName(order.owner)"></div>
+        <div ng-show="displayColumns.type" class="td" ng-switch="order.type">
+          <span ng-switch-when="pickup">Pickup</span>
+          <span ng-switch-when="delivery">Delivery</span>
+        </div>
         <div ng-show="displayColumns.amount" class="td">{{order.total | currency}}</div>
-        <div ng-show="displayColumns.status" class="td status">{{main.orderStatus[order.status]}}</div>
+        <div ng-show="displayColumns.status" class="td status" ng-switch="order.status">
+          <span class="cancelled" ng-switch-when="cancelled">Cancelled</span>
+          <span class="new" ng-switch-when="new">New</span>
+          <span class="inprogress" ng-switch-when="inprogress">In Progress</span>
+          <span class="fulfilled" ng-switch-when="fulfilled">Fulfilled</span>
+        </div>
       </div><!-- END .tr -->
     </div><!-- END .tbody -->
   </div><!-- END .table.orders -->
+
   <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
 </div><!-- END .main.col-md-12 -->

@@ -5,7 +5,7 @@
     <span class="hamburger" ng-click="main.navRevealed=false"><i class="icon-hamburger_menu"></i></span>
       <ul>
         <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/orders">Orders <span class="badge">35</span></a></li>
+        <li><a href="/orders">Orders <span class="badge" ng-bind="main.countNewOrders()"></span></a></li>
         <li><a href="/reservations">Reservations <span class="badge">53</span></a></li>
         <li><a href="/food-menus">Food Menus</a></li>
         <li><a href="/statistics">Statistics</a></li>

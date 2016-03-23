@@ -25,6 +25,12 @@ class MainController {
       { _id: 457, name: 'Thai Chicken', description: 'food description', picture: [1234], price: 9.50 }
     ];
   }
+  countNewOrders() {
+    let counter = this.orders.filter(function (order) {
+      return order.status === 'new'
+    });
+    return counter.length;
+  }
 
   itemPrice(prodId) {
     let price;

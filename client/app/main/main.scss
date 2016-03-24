@@ -5,12 +5,12 @@
         &.selected,
         &:hover,
         &.expanded                { background: $darkgray2; }
-        a                         { color: $beige; display: block; font: 110% $serif-font; height: 100%; width: 100%; text-decoration: none; padding: 12px 25px; position: relative; }
+        a                         { color: $beige; display: block; font: 110% $serif-font; height: 40px; line-height: 40px; padding-left: 25px; position: relative; text-decoration: none; width: 100%; }
         span.submenu-arrow        { color: $lightgray; font-size: 80%; position: absolute;
           &.icon-triangle_up      { font-size: 7px; left: 10px; top: 14px; }
           &.icon-triangle_right   { font-size: 9px; left: 13px; top: 16px; }
         }
-        .badge                    { background: $red; border-radius: 100%; color: $white; margin-left: 10px; padding: 5px; }
+        .badge                    { background: $red; border-radius: 100%; color: $white; display: inline-block; height: 30px; line-height: 27px; margin-left: 10px; text-align: center; width: 30px; }
         ul                        { background: $darkgray2;
           li                      {
             &.selected,

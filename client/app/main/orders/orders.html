@@ -114,7 +114,7 @@
     <div class="tbody">
       <div class="tr" ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders" ng-class="main.setStatus(order.status)">
         <div ng-show="displayColumns.number" class="td"><a ng-click="viewOrder($index)">{{order._id}}</a></div>
-        <div ng-show="displayColumns.customer" class="td" ng-bind="customerName(order.owner)"></div>
+        <div ng-show="displayColumns.customer" class="td" ng-bind="customerData(order.owner, 'name')"></div>
         <div ng-show="displayColumns.type" class="td" ng-switch="order.type">
           <span ng-switch-when="pickup">Pickup</span>
           <span ng-switch-when="delivery">Delivery</span>

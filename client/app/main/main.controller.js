@@ -4,9 +4,11 @@
 
 class MainController {
 
-  constructor(Auth, OrderService, CustomerService) {
+  constructor(Auth, OrderService, CustomerService, Modal) {
     this.navRevealed = true;
     this.settingsOpen = false;
+
+    this.modal = Modal.openModal;
 
     this.Auth = Auth;
     this.isLoggedIn = Auth.isLoggedIn;
@@ -24,7 +26,9 @@ class MainController {
       { _id: 456, name: 'Pad Thai', description: 'food description', picture: [1234], price: 8.50 },
       { _id: 457, name: 'Thai Chicken', description: 'food description', picture: [1234], price: 9.50 }
     ];
+
   }
+
   countNewOrders() {
     let counter = this.orders.filter(function (order) {
       return order.status === 'new'

@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('OrdersCtrl', function($scope, Modal) {
+  .controller('OrdersCtrl', function($scope, OrderService) {
     $scope.pageTitle = 'Orders';
 
     $scope.orders = $scope.main.orders;
     $scope.customers = $scope.main.customers;
+    $scope.modal = $scope.main.modal;
 
     // ORDERS: Sets class to rows based on order status
     function setStatus(index) {
@@ -13,70 +14,66 @@ angular.module('accountAdminApp')
     };
 
     $scope.createOrder = function() {
-      var modalContent = {
-        modal: {
-          html: 'addOrderModal.html',
-          object: { owner: '', items: [] }
+      var scope = {
+          modal: {
+            html: 'addOrderModal.html',
+            object: { owner: '', items: [] }
         }
       };
 
-      Modal.openModal(modalContent).result.then(function(createdOrder) {
-        console.log('modal success', createdOrder); //run if save is hit
-        // should look like OrderService.add(createdOrder);
-        $scope.orders.push(createdOrder);
-      }, function() {
-        console.log('modal dismissed!'); //run if cancel is hit
-      });
+      $scope.modal(scope)
+        .result.then(function(newOrder) { // run if close is hit
+          console.log(newOrder);
+          OrderService.add(newOrder);
+        }, function(message) { //run if dismiss is hit
+          console.log(message);
+        });
     };
 
     $scope.viewOrder = function(index) {
-      var modalContent = {
+      var options = {
         modal: {
           html: 'orderModal.html',
-          object: $scope.orders[index]
+          object: angular.copy($scope.orders[index])
         }
       };
 
-      Modal.openModal(modalContent).result.then(function(createdOrder) {
-        console.log('modal success', createdOrder); //run if save is hit
-        // should look like OrderService.add(createdOrder);
-        $scope.orders.push(createdOrder);
-      }, function() {
-        console.log('modal dismissed!'); //run if cancel is hit
-      });
+      $scope.modal(options)
+        .result.then(function(createdOrder) {
+          console.log('modal success', createdOrder); //run if save is hit
+          // should look like OrderService.add(createdOrder);
+          $scope.orders.push(createdOrder);
+        }, function() {
+          console.log('modal dismissed!');
+        });
     };
 
-    $scope.customerName = function (ownerID) {
-      var name = '';
+    // this function gets data from a customer ID
+    $scope.customerData = function (ownerID, query) {
+      let q = query
+      let a
+
       $scope.main.customers.forEach(function (cust) {
         if (ownerID === cust._id) {
-          name = cust.fname + ' ' + cust.lname;
+          if (query === 'name')
+            a = cust.fname + ' ' + cust.lname;
+          else
+            a = cust[q]
         }
       })
-      return name;
+
+      return a
     }
 
     // Columns
-    $scope.displayColumns = {
-      number: true,
-      customer: true,
-      type: true,
-      amount: true,
-      status: true
-    };
+    $scope.displayColumns = { number: true, customer: true, type: true, amount: true, status: true };
     $scope.showColumnPicker = function() {
       $scope.pickColumns = true;
       $scope.invisibleLayer = true;
     };
 
     // Filters
-    $scope.openFilter = {
-      number: false,
-      customer: false,
-      type: false,
-      amount: false,
-      status: false
-    };
+    $scope.openFilter = { number: false, customer: false, type: false, amount: false, status: false };
     $scope.activeFilter = undefined;
     $scope.toggleFilter = function(filterName) {
       if ($scope.openFilter[filterName]) {

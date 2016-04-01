@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .config(function($stateProvider) {
+  .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('main.accountSettings', {
         url: '/settings/account',
@@ -57,4 +57,5 @@ angular.module('accountAdminApp')
         controller: 'SettingsIntegrationCtrl',
         controllerAs: 'vm'
       })
+    $urlRouterProvider.when('/settings', '/settings/business');
   });

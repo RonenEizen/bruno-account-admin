@@ -8,19 +8,46 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/food-menus/food-menus.html',
         controller: 'FoodMenusCtrl'
       })
-      .state('main.food-menus.preview', {
-        url: '/food-menus/preview',
-        templateUrl: 'app/main/food-menus/food-menus.preview.html',
-        controller: 'FoodMenusCtrl'
+      .state('main.food-menus.viewMenu', {
+        url: '/menu',
+        templateUrl: 'app/main/food-menus/viewFoodMenuModal.html',
+        controller: 'FoodMenusCtrl',
+        controllerAs: 'vm'
       })
-      .state('main.food-menus.new', {
-        url: '/food-menus/new',
-        templateUrl: 'app/main/food-menus/food-menus.new.html',
-        controller: 'FoodMenusCtrl'
+      .state('main.food-menus.createMenu', {
+        url: '/createMenu',
+        templateUrl: 'app/main/food-menus/createFoodMenuModal.html',
+        controller: 'FoodMenusCtrl',
+        controllerAs: 'vm'
       })
-      .state('main.food-menus.modal', {
-        url: '/food-menus/new',
-        templateUrl: 'app/main/food-menus/food-menus.modal.html',
-        controller: 'FoodMenusCtrl'
-      });
+      .state('main.food-menus.viewCategory', {
+        url: '/viewCategory',
+        templateUrl: 'app/main/food-menus/viewMenuCategoryModal.html',
+        controller: 'FoodMenusCtrl',
+        controllerAs: 'vm'
+      })
+      .state('main.food-menus.createCategory', {
+        url: '/createCategory',
+        templateUrl: 'app/main/food-menus/createMenuCategoryModal.html',
+        controller: 'FoodMenusCtrl',
+        controllerAs: 'vm'
+      })
+      .state('main.food-menus.viewFood', {
+        url: '/viewFood',
+        templateUrl: 'app/main/food-menus/viewFoodItemModal.html',
+        controller: 'FoodMenusCtrl',
+        controllerAs: 'vm'
+      })
+      .state('main.food-menus.createFood', {
+        url: '/createFood',
+        templateUrl: 'app/main/food-menus/createFoodItemModal.html',
+        controller: 'FoodMenusCtrl',
+        controllerAs: 'vm'
+      })
+      .state('main.food-menus.existingFood', {
+        url: '/existingFood',
+        templateUrl: 'app/main/food-menus/createExistingFoodModal.html',
+        controller: 'FoodMenusCtrl',
+        controllerAs: 'vm'
+      })
   });

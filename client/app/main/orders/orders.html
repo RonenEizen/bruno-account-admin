@@ -1,14 +1,13 @@
+<div ui-view></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
       <span class="hamburger" ng-click="main.navRevealed=true" ng-show="!main.navRevealed"><i class="icon-hamburger_menu"></i></span>
       <h1>{{pageTitle}}</h1>
     </div>
-
     <div class="col-md-2">
       <button class="btn btn-primary" ng-click="createOrder()">+ New Order</button>
     </div>
-
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
         <i class="icon-export_data"></i>
@@ -30,6 +29,7 @@
     </div>
   </div>
 </header>
+
 <div class="col-md-12 main">
   <div class="table orders">
     <div class="thead">

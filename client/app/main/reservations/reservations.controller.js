@@ -4,6 +4,10 @@ angular.module('accountAdminApp')
   .controller('ReservationsCtrl', function ($scope, $interval, $log, $location, Auth) {
     $scope.$parent.pageTitle = 'Reservations';
 
+    $scope.modal = $scope.main.modal;
+
+    // $scope.reservations = $scope.main.ReservationService.reservations;
+
     // sets current tab
     $scope.$parent.view = $location.$$url.replace('/reservations/', '');
     $scope.setView = function (view) {

@@ -15,7 +15,7 @@
           li                      {
             &.selected,
             &:hover               { background: $darkgray1; }
-            a                     { font-size: 90%; font-weight: 300; padding: 5px 0 10px 40px; }
+            a                     { font-size: 90%; font-weight: 300; padding: 0 0 0 40px; }
           }
         }
       }

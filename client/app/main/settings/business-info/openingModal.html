@@ -1,0 +1,86 @@
+<div class="flyout">
+  <div class="container custom-form">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+
+        <form name="openingForm" class="custom-form text-input" novalidate>
+          <div class="row">
+            <div class="col-md-12 form-inline form-group">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h1>Edit Opening Hours</h1>
+                </div>
+              </div>
+
+              <div class="col-md-12 text-center">
+                <div class="checkbox toggle-checkbox">
+                  <label>
+                    <input type="checkbox" ng-model="twentyFourSeven" ng-init="twentyFourSeven = true"> Enable Channel
+                  </label>
+                </div>
+              </div>
+
+              <!--
+                <label class="control-label">Time Format:</label>
+                <div class="radio-inline">
+                  <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" ng-model="opening.timeFormat" value="ampm" checked> AM/PM</label>
+                  <label for="timeformat" class="radio-inline"><input type="radio" name="timeformat" ng-model="opening.timeFormat" value="24h"> 24 hours</label>
+                </div>
+              -->
+
+              <div class="table timetable">
+                <div class="thead">
+                  <div class="tr">
+                    <div class="th thirty-perc">Open</div>
+                    <div class="th thirty-perc">From</div>
+                    <div class="th thirty-perc">To</div>
+                    <div class="th ten-perc">Split</div>
+                  </div>
+                </div><!-- END .thead -->
+                <div class="tbody">
+                  <div class="tr" ng-repeat="day in opening.weekdays" ng-class="{disabled: !day.open}">
+                    <div class="td">
+                      <div class="checkbox weekday">
+                        <label class="control-label">
+                          <input type="checkbox" name="open" ng-model="day.open" ng-checked="day.open"> {{day.name}}
+                        </label>
+                      </div>
+                    </div><!-- END .td -->
+
+                    <div class="td">
+                      <div class="form-group">
+                        <input type="time" name="start1" ng-model="day.start1" class="form-control" ng-show="day.open" ng-readonly="!opening.edit">
+                        <input type="time" name="start2" ng-model="day.start2" class="form-control" ng-show="day.open && day.split" ng-readonly="!opening.edit">
+                        <span ng-show="!day.open">CLOSED</span>
+                      </div>
+                    </div><!-- END .td -->
+
+                    <div class="td">
+                      <div class="form-group">
+                        <input type="time" name="stop1" ng-model="day.stop1" class="form-control" ng-show="day.open" ng-readonly="!opening.edit">
+                        <input type="time" name="stop2" ng-model="day.stop2" class="form-control" ng-show="day.open && day.split" ng-readonly="!opening.edit">
+                        <span ng-show="!day.open">CLOSED</span>
+                      </div>
+                    </div><!-- END .td -->
+
+                    <div class="td">
+                      <div class="checkbox" name="split" ng-show="day.open && opening.edit"><input type="checkbox" ng-model="day.split" ng-checked="day.split"></div>
+                    </div><!-- END .td -->
+                  </div><!-- END .tr -->
+                </div><!-- END .tbody -->
+              </div><!-- END .table.timetable -->
+            </div><!-- END opening Hours -->
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12 text-center resetsave">
+              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+              <button class="btn btn-primary" ng-click="save('opening')" ng-disabled="openingForm.$invalid">Save</button>
+            </div>
+          </div><!-- END .row -->
+        </form><!-- END Opening Hours -->
+
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</div><!-- END .flyout -->

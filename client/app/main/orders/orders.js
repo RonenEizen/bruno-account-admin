@@ -8,9 +8,16 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/orders/orders.html',
         controller: 'OrdersCtrl'
       })
-      .state('main.orders.modal', {
-        url: '/:orderId',
-        templateUrl: 'app/main/orders/orders.modal.html',
-        controller: 'OrdersCtrl'
-      });
+      .state('main.orders.view', {
+        url: '/view',
+        templateUrl: 'app/main/orders/viewOrderModal.html',
+        controller: 'OrdersCtrl',
+        controllerAs: 'vm'
+      })
+      .state('main.orders.create', {
+        url: '/create',
+        templateUrl: 'app/main/orders/createOrderModal.html',
+        controller: 'OrdersCtrl',
+        controllerAs: 'vm'
+      })
   });

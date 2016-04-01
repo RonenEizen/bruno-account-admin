@@ -1,0 +1,37 @@
+<div class="flyout">
+  <form name="addMenuCategoryForm" class="container custom-form form-group">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>Add Category</h1>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 top-instructions">
+            <p>Category will be added to <strong>My Menu</strong></p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label">Name</label>
+              <input type="text" class="form-control" required>
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 text-center resetsave">
+            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+            <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="addMenuCategoryForm.$invalid">Save</button>
+          </div>
+        </div><!-- END .row -->
+
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </form><!-- END .container -->
+</div><!-- END .flyout -->

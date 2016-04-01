@@ -4,7 +4,16 @@
 
 class MainController {
 
-  constructor(Auth, OrderService, CustomerService, Modal) {
+  constructor(
+        Auth
+      , CampaignService
+      , CustomerService
+      , DefaultsService
+      , MenuService
+      , OrderService
+      , ReservationService
+      , Modal
+    ) {
     this.navRevealed = true;
     this.settingsOpen = false;
 
@@ -15,19 +24,31 @@ class MainController {
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
 
+
     // SERVICES
+    // CampaignService
+    this.campaigns = CampaignService.campaigns;
+
+    // CustomerService
     this.customers = CustomerService.customers;
+
+    // DefaultsService
+    this.states = DefaultsService.states;
+
+    // MenuService
+    // this.menus = MenuService.menus;
+    // this.categories = MenuService.categories;
+    this.foodItems = MenuService.foodItems;
+
+    // OrderService
     this.orders = OrderService.orders;
     this.orderStatus = OrderService.orderStatus;
     this.orderType = OrderService.orderType;
 
-    this.foodItems = [
-      { _id: 455, name: 'Sample Food', description: 'food description', picture: [1234], price: 7.50 },
-      { _id: 456, name: 'Pad Thai', description: 'food description', picture: [1234], price: 8.50 },
-      { _id: 457, name: 'Thai Chicken', description: 'food description', picture: [1234], price: 9.50 }
-    ];
-
+    // ReservationService
+    this.reservations = ReservationService.reservations;
   }
+
 
   countNewOrders() {
     let counter = this.orders.filter(function (order) {

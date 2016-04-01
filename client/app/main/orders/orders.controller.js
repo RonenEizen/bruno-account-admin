@@ -7,6 +7,7 @@ angular.module('accountAdminApp')
     $scope.orders = $scope.main.orders;
     $scope.customers = $scope.main.customers;
     $scope.modal = $scope.main.modal;
+    $scope.states = $scope.main.states;
 
     // ORDERS: Sets class to rows based on order status
     function setStatus(index) {

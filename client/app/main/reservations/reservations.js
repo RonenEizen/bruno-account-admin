@@ -19,5 +19,25 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/reservations/reservations-week.html',
         controller: 'ReservationsCtrl'
       })
+      .state('main.reservations.view', {
+        url: '/view',
+        controller: 'ReservationsCtrl',
+        controllerAs: 'vm',
+        views: {
+          'modal': {
+            templateUrl: 'app/main/reservations/viewReservationModal.html'
+          }
+        }
+      })
+      .state('main.reservations.create', {
+        url: '/create',
+        controller: 'ReservationsCtrl',
+        controllerAs: 'vm',
+        views: {
+          'modal': {
+            templateUrl: 'app/main/reservations/createReservationModal.html'
+          }
+        }
+      })
     $urlRouterProvider.when('/reservations', '/reservations/day');
   });

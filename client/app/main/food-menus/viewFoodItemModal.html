@@ -1,0 +1,379 @@
+<div class="flyout">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <form class="custom-form" ng-show="modal.object.delete">
+          <div class="row text-center">
+            <div class="col-md-12">
+              <h1>Remove Food Item</h1>
+              <p><strong>Are you sure that you want to remove this Food Item?</strong></p>
+              <p>Vietnamese Pad Thai</p>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12 resetsave text-center">
+              <button class="btn btn-default" ng-click="modal.object.delete = !modal.object.delete">Cancel</button>
+              <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Confirm</button>
+            </div>
+          </div><!-- END .row -->
+        </form>
+
+        <form class="custom-form" ng-hide="modal.object.delete || modal.object.edit">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center">Vietnamese Pad Thai</h1>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-4">
+              <img class="image" src="http://cdn3.volusion.com/jwxkn.khzdw/v/vspfiles/photos/6oz.%20Filet%20Mignon-2.jpg?1345750845" alt="Vietnamese Pad Thai"/>
+            </div>
+            <div class="col-md-4">
+              <p>No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</p>
+              <p><strong>$8.50</strong></p>
+            </div>
+            <div class="col-md-4">
+              <p>
+                <strong>Food Menu</strong><br/>
+                My Menu
+              </p>
+              <p>
+                <strong>Category</strong><br/>
+                Appetizers
+              </p>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="table">
+                    <div class="thead">
+                      <div class="tr">
+                        <div class="th">Varieties</div>
+                      </div>
+                    </div>
+                    <div class="tbody">
+                      <div class="tr">
+                        <td><strong>Small Plate</strong></td>
+                        <td class="text-right">$6.00</td>
+                      </div>
+                      <div class="tr">
+                        <td><strong>Large Plate</strong></td>
+                        <td class="text-right">$8.00</td>
+                      </div>
+                    </div>
+                  </div><!-- END .table -->
+                </div>
+              </div><!-- END .row -->
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="table">
+                    <div class="thead">
+                      <div class="tr">
+                        <div class="th">Options</div>
+                      </div>
+                    </div>
+                    <div class="tbody">
+                      <div class="tr">
+                        <td><strong>Extra Protein</strong></td>
+                        <td class="text-right">$3.50</td>
+                      </div>
+                    </div>
+                  </div><!-- END .table -->
+                </div>
+              </div><!-- END .row -->
+            </div>
+
+            <div class="col-md-8">
+              <div class="table">
+                <div class="thead">
+                  <div class="tr">
+                    <div class="th">Choices</div>
+                  </div>
+                </div>
+                <div class="tbody">
+                  <div class="tr">
+                    <td><strong>Protein</strong></td>
+                    <td>Chicken, Beef, Shrimp, Tofu</td>
+                  </div>
+                  <div class="tr">
+                    <td><strong>Noodles</strong></td>
+                    <td>Rice, Egg, Potato</td>
+                  </div>
+                </div>
+              </div><!-- END .table -->
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12 resetsave text-center">
+              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+              <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Remove</button>
+              <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Edit</button>
+            </div>
+          </div><!-- END .row -->
+        </form>
+
+        <form class="custom-form" ng-show="modal.object.edit">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center">Edit Food Item</h1>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12 top-instructions">
+              <p>Item will be added to <strong>My Menu</strong></p>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="control-label">Category</label>
+                <fieldset>
+                  <select class="form-control" required>
+                    <option value="0">Appetizers</option>
+                    <option value="1">Salads</option>
+                  </select>
+                </fieldset>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="form-group">
+                <label class="control-label">Name</label>
+                <input type="number" class="form-control" required>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="control-label">Picture</label>
+                <img class="image" src="http://cdn3.volusion.com/jwxkn.khzdw/v/vspfiles/photos/6oz.%20Filet%20Mignon-2.jpg?1345750845" alt="Vietnamese Pad Thai"/>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="form-group">
+                <label class="control-label">Description</label>
+                <textarea class="form-control"></textarea>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="shadowed clearfix">
+            <div class="row">
+              <div class="col-md-6">
+                <div>
+                  <label class="control-label">Price Type</label>
+                </div>
+                <label class="radio-inline">
+                  <input type="radio" name="priceType" value="single" checked> Single
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="priceType" value="variety"> Variety
+                </label>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label class="control-label">Value</label>
+                  <input type="text" class="form-control" value="$10.00" required>
+                </div>
+              </div>
+            </div><!-- END .row -->
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label class="control-label">Variety Name</label> <span class="optional">(ex: Small Plate)</span>
+                  </div>
+                  <div class="col-md-5">
+                    <label class="control-label">Price</label>
+                  </div>
+                </div><!-- END .row -->
+
+                <div class="row options-line">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="Small Plate"/>
+                  </div>
+                  <div class="col-md-5">
+                    <input type="text" class="form-control" value="$6.00"/>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="javascript:void(0)">
+                      <i class="icon-close"></i>
+                    </a>
+                  </div>
+                </div><!-- END .row -->
+
+                <div class="row options-line">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="Small Plate"/>
+                  </div>
+                  <div class="col-md-5">
+                    <input type="text" class="form-control" value="$6.00"/>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="javascript:void(0)">
+                      <i class="icon-close"></i>
+                    </a>
+                  </div>
+                </div><!-- END .row -->
+
+                <div class="row options-line">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="Small Plate"/>
+                  </div>
+                  <div class="col-md-5">
+                    <input type="text" class="form-control" value="$6.00"/>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="javascript:void(0)">
+                      <i class="icon-close"></i>
+                    </a>
+                  </div>
+                </div><!-- END .row -->
+
+                <div class="row options-line">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="Small Plate"/>
+                  </div>
+                  <div class="col-md-5">
+                    <input type="text" class="form-control" value="$6.00"/>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="javascript:void(0)">
+                      <i class="icon-close"></i>
+                    </a>
+                  </div>
+                </div><!-- END .row -->
+              </div>
+            </div><!-- END .row -->
+
+            <div class="row">
+              <div class="col-md-12">
+                <a class="add-something">+ Add Variety</a>
+              </div>
+            </div><!-- END .row -->
+          </div><!-- END .shadowed -->
+
+
+          <div class="shadowed clearfix">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label class="control-label">Opion Name</label> <span class="optional">(ex: Extra Protein)</span>
+                  </div>
+                  <div class="col-md-5">
+                    <label class="control-label">Price</label>
+                  </div>
+                </div><!-- END .row -->
+
+                <div class="row options-line">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="Small Plate"/>
+                  </div>
+                  <div class="col-md-5">
+                    <input type="text" class="form-control" value="$6.00"/>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="javascript:void(0)">
+                      <i class="icon-close"></i>
+                    </a>
+                  </div>
+                </div><!-- END .row -->
+
+                <div class="row options-line">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" value="Small Plate"/>
+                  </div>
+                  <div class="col-md-5">
+                    <input type="text" class="form-control" value="$6.00"/>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="javascript:void(0)">
+                      <i class="icon-close"></i>
+                    </a>
+                  </div>
+                </div><!-- END .row -->
+              </div>
+            </div><!-- END .row -->
+
+            <div class="row">
+              <div class="col-md-12">
+                <a class="add-something">+ Add Option</a>
+              </div>
+            </div><!-- END .row -->
+          </div><!-- END .shadowed -->
+
+
+          <div class="shadowed clearfix">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label class="control-label">Choice Type Name</label> <span class="optional">(ex: Protein)</span>
+                  </div>
+                  <div class="col-md-7">
+                    <label class="control-label">Choices</label> <span class="optional">(ex: Chicken, Beef) (separate with commas)</span>
+                  </div>
+                </div><!-- END .row -->
+
+                <div class="row options-line">
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" value="Protein"/>
+                  </div>
+                  <div class="col-md-7">
+                    <input type="text" class="form-control" value="Chicken, Rice, Shrimp, Tofu"/>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="javascript:void(0)">
+                      <i class="icon-close"></i>
+                    </a>
+                  </div>
+                </div><!-- END .row -->
+
+                <div class="row options-line">
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" value="Noodles"/>
+                  </div>
+                  <div class="col-md-7">
+                    <input type="text" class="form-control" value="Rice, Egg, Potato"/>
+                  </div>
+                  <div class="col-md-1">
+                    <a href="javascript:void(0)">
+                      <i class="icon-close"></i>
+                    </a>
+                  </div>
+                </div><!-- END .row -->
+              </div>
+            </div><!-- END .row -->
+
+            <div class="row">
+              <div class="col-md-12">
+                <a class="add-something">+ Add Choice</a>
+              </div>
+            </div><!-- END .row -->
+          </div><!-- END .shadowed -->
+
+          <div class="row">
+            <div class="col-md-12 resetsave text-center">
+              <button class="btn btn-default" ng-click="modal.object.edit = !modal.object.edit">Cancel</button>
+              <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Save</button>
+            </div>
+          </div><!-- END .row -->
+        </form>
+
+
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</div><!-- END .flyout -->

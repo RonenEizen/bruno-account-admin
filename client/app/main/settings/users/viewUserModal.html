@@ -1,0 +1,116 @@
+<form
+  class="container custom-form"
+  ng-show="modal.object.delete">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Remove User</h1>
+          <p><strong>Are you sure that you want to remove this User?</strong></p>
+          <p>{{modal.object.fname + ' ' + modal.object.lname}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 resetsave text-center">
+          <button class="btn btn-default" ng-click="modal.object.delete = !modal.object.delete">Cancel</button>
+          <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Confirm</button>
+        </div>
+      </div><!-- END .row -->
+    </div>
+  </div><!-- END .row -->
+</form>
+
+<form
+  class="container custom-form"
+  name="userForm"
+  ng-hide="modal.object.delete"
+  ng-init="modal.object = { edit: false, fname: 'Blake', mname: '', lname: 'Liveley', role: 'Owner', phone: 9173452680, email: 'bively@gmail.com' }">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div  ng-hide="modal.object.edit">
+        <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center">{{modal.object.fname + ' ' + modal.object.lname}}</h1>
+        </div>
+      </div><!-- END .row -->
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>Role</strong><br>
+               {{modal.object.role}}</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Phone</strong><br>
+               {{modal.object.phone}}</p>
+          </div>
+        </div><!-- END .row -->
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>Email</strong><br>
+               {{modal.object.email}}</p>
+          </div>
+        </div><!-- END .row -->
+      </div>
+
+      <div ng-show="modal.object.edit">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">Edit User</h1>
+          </div>
+        </div><!-- END .row -->
+        <div class="row">
+          <div class="col-md-5 form-group">
+            <label class="control-label">First Name</label> <span class="mandatory">*</span>
+            <input type="text" name="fname" class="form-control" ng-model="modal.object.fname" ng-required="true">
+            <p ng-show="userForm.fname.$error.required && userForm.fname.$touched" class="help-block">This is a required field.</p>
+          </div>
+          <div class="col-md-2 form-group">
+            <label class="control-label">MI</label>
+            <input type="text" class="form-control" ng-model="modal.object.mname" maxlength="1">
+          </div>
+          <div class="col-md-5 form-group">
+            <label class="control-label">Last Name</label> <span class="mandatory">*</span>
+            <input type="text" name="lname" class="form-control" ng-model="modal.object.lname" ng-required="true">
+            <p ng-show="userForm.lname.$error.required && userForm.lname.$touched" class="help-block">This is a required field.</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label class="control-label">Role</label> <span class="mandatory">*</span>
+            <!-- TODO: make this input a select with available roles -->
+            <input type="text" name="role" class="form-control" ng-model="modal.object.role" ng-required="true">
+            <p ng-show="userForm.role.$error.required && userForm.role.$touched" class="help-block">This is a required field.</p>
+          </div>
+          <div class="col-md-6 form-group">
+            <label class="control-label">Phone</label> <span class="mandatory">*</span>
+            <input type="text" name="phone" class="form-control" ng-model="modal.object.phone" ng-required="true">
+            <p ng-show="userForm.phone.$error.required && userForm.phone.$touched" class="help-block">This is a required field.</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <label class="control-label">Email</label> <span class="mandatory">*</span>
+            <input type="email" name="email" class="form-control" ng-model="modal.object.email" ng-required="true">
+            <p ng-show="userForm.email.$error.required && userForm.email.$touched" class="help-block">This is a required field.</p>
+            <p ng-show="addUserForm.email.$error.email" class="help-block">This is not a valid email.</p>
+          </div>
+        </div><!-- END .row -->
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 resetsave text-center" ng-hide="modal.object.edit">
+          <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+          <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Remove</button>
+          <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Edit</button>
+        </div>
+      </div><!-- END .row -->
+      <div class="row">
+        <div class="col-md-12 resetsave text-center" ng-show="modal.object.edit">
+          <button class="btn btn-default" ng-click="modal.object.edit = !modal.object.edit">Cancel</button>
+          <button class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="modal.object.edit = !modal.object.edit">Save</button>
+        </div>
+      </div><!-- END .row -->
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</form><!-- END .container -->

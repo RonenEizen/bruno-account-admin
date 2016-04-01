@@ -7,8 +7,8 @@ angular.module('accountAdminApp')
       let defaults = {
         templateUrl: 'components/modal/flyout.html',
         scope: this.$new()
-      }
-      angular.extend(defaults.scope, scope)
+      };
+      angular.extend(defaults.scope, scope);
       return $uibModal.open(defaults);
     }
 

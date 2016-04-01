@@ -1,0 +1,69 @@
+<div class="flyout">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <form class="custom-form" ng-show="modal.object.delete">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h1>Remove Category</h1>
+            <p><strong>Are you sure that you want to remove this Category?</strong></p>
+            <p><strong>All its food items will be removed too.</strong></p>
+            <p>Appetizers</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave text-center">
+            <button class="btn btn-default" ng-click="modal.object.delete = !modal.object.delete">Cancel</button>
+            <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Confirm</button>
+          </div>
+        </div><!-- END .row -->
+      </form>
+
+      <form class="custom-form" ng-show="!modal.object.delete">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>Edit Category</h1>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label">Name</label>
+              <input type="text" class="form-control" value="Appetizers">
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <label class="control-label">Food Item Order</label> <span class="optional">(drag to edit)</span>
+            <div class="shadowed">
+              <ul class="dragable">
+                <li>Vietnamese Pad Thai
+                  <span class="pull-right fa fa-ellipsis-v"></span>
+                </li>
+                <li>Duck Dumplings
+                  <span class="pull-right fa fa-ellipsis-v"></span>
+                </li>
+                <li>Vegetable Spring Rolls
+                  <span class="pull-right fa fa-ellipsis-v"></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave text-center">
+            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+            <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Remove</button>
+            <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+          </div>
+        </div><!-- END .row -->
+      </form>
+
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</div><!-- END .flyout -->

@@ -5,8 +5,9 @@ class RegisterController {
     this.user = {};
     this.errors = {};
     this.selected = undefined;
-    this.gMaps = new $window.google.maps;
+    this.gMaps = new $window.google.maps();
     this.timeout = $timeout;
+    this.Auth = Auth;
   }
 
   getPlaces(value) {
@@ -18,7 +19,7 @@ class RegisterController {
     }, function(predictions) {
       _predictions = predictions;
     });
-    return timeout(function() {
+    return this.timeout(function() {
       if(_predictions) {
         return _predictions;
       }
@@ -28,7 +29,7 @@ class RegisterController {
   register(form) {
     if(form.$valid) {
       this.submitted = true;
-      Auth.createUser({
+      this.Auth.createUser({
         email: this.user.email,
         password: this.user.password
       })

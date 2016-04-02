@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('ReservationsCtrl', function ($scope, $interval, $log, $location, Auth) {
+  .controller('ReservationsCtrl', function ($scope, $interval, $log, $location) {
     $scope.$parent.pageTitle = 'Reservations';
 
     $scope.modal = $scope.main.modal;

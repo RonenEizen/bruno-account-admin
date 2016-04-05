@@ -44,7 +44,7 @@ angular.module('accountAdminApp')
     $scope.onClick = function (points, evt) {
       console.log(points, evt);
     };
-    Chart.defaults.global.colours.splice(0,1,'#18ADA3');
+    // $scope.Chart.defaults.global.colours.splice(0,1,'#18ADA3');
     $scope.chartOptions = {
       scaleShowVerticalLines: false,
       bezierCurve : false,
@@ -52,5 +52,5 @@ angular.module('accountAdminApp')
       pointDotStrokeWidth: 0,
       datasetStrokeWidth : 3,
       datasetFill : false
-    }
+    };
   });

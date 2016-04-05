@@ -34,7 +34,6 @@
   <div class="table orders">
     <div class="thead">
       <div class="tr">
-
         <div class="th" ng-show="displayColumns.name">
           <div class="filter">
             <i class="icon-filter" ng-click="toggleFilter('name')"></i>
@@ -60,6 +59,7 @@
             <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'number'"></i>
           </span>
         </div>
+
         <div class="th" ng-show="displayColumns.customer">
           <div class="filter">
             <i class="icon-filter" ng-click="toggleFilter('customer')"></i>
@@ -72,6 +72,7 @@
             <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'customer'"></i>
           </span>
         </div>
+
         <div class="th" ng-show="displayColumns.type">
           <div class="filter">
             <i class="icon-filter" ng-click="toggleFilter('type')"></i>
@@ -84,6 +85,7 @@
             <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'type'"></i>
           </span>
         </div>
+
         <div class="th" ng-show="displayColumns.amount">
           <div class="filter">
             <i class="icon-filter" ng-click="toggleFilter('amount')"></i>
@@ -96,6 +98,7 @@
             <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'amount'"></i>
           </span>
         </div>
+
         <div class="th" ng-show="displayColumns.status">
           <div class="filter">
             <i class="icon-filter" ng-click="toggleFilter('status')"></i>
@@ -113,7 +116,7 @@
 
     <div class="tbody">
       <div class="tr" ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders" ng-class="main.setStatus(order.status)">
-        <div ng-show="displayColumns.number" class="td"><a ng-click="viewOrder($index)">{{order._id}}</a></div>
+        <div ng-show="displayColumns.number" class="td"><a href="/orders/{{order._id}}">{{order._id}}</a></div>
         <div ng-show="displayColumns.customer" class="td" ng-bind="customerData(order.owner, 'name')"></div>
         <div ng-show="displayColumns.type" class="td" ng-switch="order.type">
           <span ng-switch-when="pickup">Pickup</span>

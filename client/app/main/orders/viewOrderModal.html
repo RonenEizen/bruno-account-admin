@@ -1,188 +1,93 @@
-<div class="flyout">
-  <button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1>Order No. {{modal.object._id}}</h1>
+  </div>
+</div><!-- END .row -->
 
-        <div ng-show="!modal.object.edit">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h1>Order No. {{modal.object._id}}</h1>
-            </div>
-          </div><!-- END .row -->
-          <div class="row">
-            <div class="col-md-4 form-group">
-              <strong class="control-label">Customer</strong><br>
-              <span ng-bind="customerData(modal.object.owner, 'name')"></span>
-            </div>
-            <div class="col-md-4 form-group">
-              <strong class="control-label">Home Phone</strong><br>
-              <span ng-bind="customerData(modal.object.owner, 'homePhone')"></span>
-            </div>
-            <div class="col-md-4 form-group">
-              <strong class="control-label">Mobile Phone</strong><br>
-              <span ng-bind="customerData(modal.object.owner, 'mobilePhone')"></span>
-            </div>
-          </div><!-- END .row -->
-          <div class="row">
-            <div class="col-md-4 form-group">
-              <strong class="control-label">Address</strong><br>
-              <span ng-bind="customerData(modal.object.owner, 'addr')"></span>
-            </div>
-            <div class="col-md-4 form-group">
-              <strong class="control-label">Personal Email</strong><br>
-              <span></span>
-              <span><a href="mailto:{{customerData(modal.object.owner, 'email')}}" ng-bind="customerData(modal.object.owner, 'email')"></a></span>
-            </div>
-            <div class="col-md-4 form-group">
-              <strong class="control-label">Work Email</strong><br>
-              <span><a href="mailto:{{customerData(modal.object.owner, 'workEmail')}}" ng-bind="customerData(modal.object.owner, 'workEmail')"></a></span>
-            </div>
-          </div><!-- END .row -->
-          <div class="row">
-            <div class="col-md-4 form-group" ng-switch="modal.object.type">
-              <strong class="control-label">Type</strong><br>
-              <span ng-switch-when="pickup">Pickup</span>
-              <span ng-switch-when="delivery">Delivery</span>
-            </div>
-            <div class="col-md-4 form-group">
-              <strong class="control-label">Amount</strong><br>
-              <span>{{modal.object.total | currency}}</span>
-            </div>
-            <div class="col-md-4 form-group" ng-switch="modal.object.status">
-              <strong class="control-label">Status</strong><br>
-              <span class="status cancelled" ng-switch-when="cancelled">Cancelled</span>
-              <span class="status new" ng-switch-when="new">New</span>
-              <span class="status inprogress" ng-switch-when="inprogress">In Progress</span>
-              <span class="status fulfilled" ng-switch-when="fulfilled">Fulfilled</span>
-            </div>
-          </div><!-- END .row -->
+<div class="row">
+  <div class="col-md-4 form-group">
+    <strong class="control-label">Customer</strong><br>
+    <span ng-bind="customerData(modal.object.owner, 'name')"></span>
+  </div>
+  <div class="col-md-4 form-group">
+    <strong class="control-label">Home Phone</strong><br>
+    <span ng-bind="customerData(modal.object.owner, 'homePhone')"></span>
+  </div>
+  <div class="col-md-4 form-group">
+    <strong class="control-label">Mobile Phone</strong><br>
+    <span ng-bind="customerData(modal.object.owner, 'mobilePhone')"></span>
+  </div>
+</div><!-- END .row -->
 
-          <div class="row">
-            <div class="col-md-12">
-              <div class="table">
-                <div class="thead">
-                  <div class="tr">
-                    <div class="th">Food Item</div>
-                    <div class="th">Category</div>
-                    <div class="th">Quantity</div>
-                    <div class="th text-right">Price</div>
-                  </div>
-                </div><!-- END .tbody -->
-                <div class="tbody">
-                  <div class="tr" ng-repeat="item in modal.object.items">
-                    <div class="td">{{item._id}}</div>
-                    <div class="td">Beverage</div>
-                    <div class="td">{{item.qty}}</div>
-                    <div class="td text-right">{{item.qty}} x foodItem.price</div>
-                  </div>
-                </div><!-- END .thead -->
-              </div><!-- END .table -->
-            </div><!-- END .col-md-12 -->
-          </div><!-- END .row -->
+<div class="row">
+  <div class="col-md-4 form-group">
+    <strong class="control-label">Address</strong><br>
+    <span ng-bind="customerData(modal.object.owner, 'addr')"></span>
+  </div>
+  <div class="col-md-4 form-group">
+    <strong class="control-label">Personal Email</strong><br>
+    <span></span>
+    <span><a href="mailto:{{customerData(modal.object.owner, 'email')}}" ng-bind="customerData(modal.object.owner, 'email')"></a></span>
+  </div>
+  <div class="col-md-4 form-group">
+    <strong class="control-label">Work Email</strong><br>
+    <span><a href="mailto:{{customerData(modal.object.owner, 'workEmail')}}" ng-bind="customerData(modal.object.owner, 'workEmail')"></a></span>
+  </div>
+</div><!-- END .row -->
 
-          <div class="row">
-            <div class="col-md-12 resetsave">
-              <div class="pull-left">
-                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-                <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Edit</button>
-              </div><!-- END .pull-left -->
-              <div class="pull-right">
-                <button class="btn btn-danger"  ng-hide="modal.object.status === 'cancelled'" ng-click="modal.object.status = 'cancelled'">Cancel Order</button>
-                <button class="btn btn-default" ng-show="modal.object.status === 'cancelled'" ng-click="modal.object.status = 'new'">Reopen Order</button>
-                <button class="btn btn-success" ng-show="modal.object.status === 'new'" ng-click="modal.object.status = 'inprogress'">Start Progress</button>
-                <button class="btn btn-warning" ng-show="modal.object.status === 'inprogress'" ng-click="modal.object.status = 'fulfilled'">Fulfill Order</button>
-              </div><!-- END .pull-right -->
-            </div><!-- END .resetsave -->
-          </div><!-- END .row -->
+<div class="row">
+  <div class="col-md-4 form-group" ng-switch="modal.object.type">
+    <strong class="control-label">Type</strong><br>
+    <span ng-switch-when="pickup">Pickup</span>
+    <span ng-switch-when="delivery">Delivery</span>
+  </div>
+  <div class="col-md-4 form-group">
+    <strong class="control-label">Amount</strong><br>
+    <span>{{modal.object.total | currency}}</span>
+  </div>
+  <div class="col-md-4 form-group" ng-switch="modal.object.status">
+    <strong class="control-label">Status</strong><br>
+    <span class="status cancelled" ng-switch-when="cancelled">Cancelled</span>
+    <span class="status new" ng-switch-when="new">New</span>
+    <span class="status inprogress" ng-switch-when="inprogress">In Progress</span>
+    <span class="status fulfilled" ng-switch-when="fulfilled">Fulfilled</span>
+  </div>
+</div><!-- END .row -->
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="table">
+      <div class="thead">
+        <div class="tr">
+          <div class="th">Food Item</div>
+          <div class="th">Category</div>
+          <div class="th">Quantity</div>
+          <div class="th text-right">Price</div>
         </div>
+      </div><!-- END .tbody -->
+      <div class="tbody">
+        <div class="tr" ng-repeat="item in modal.object.items">
+          <div class="td">{{item._id}}</div>
+          <div class="td">Beverage</div>
+          <div class="td">{{item.qty}}</div>
+          <div class="td text-right">{{item.qty}} x foodItem.price</div>
+        </div>
+      </div><!-- END .thead -->
+    </div><!-- END .table -->
+  </div><!-- END .col-md-12 -->
+</div><!-- END .row -->
 
-        <form name="orderForm" class="custom-form" ng-show="modal.object.edit" novalidate>
-          <div class="row">
-            <div class="col-md-12">
-              <h1 class="text-center">Edit Order No. {{modal.object._id}}</h1>
-            </div>
-          </div><!-- END .row -->
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label class="control-label">Customer</label>
-                <fieldset>
-                  <select name="customer" class="form-control" ng-model="modal.object.owner" ng-required="true" ng-options="customer._id as (customer.fname + ' ' +customer.lname) for customer in customers"></select>
-                </fieldset>
-                <p ng-show="orderForm.customer.$error.required && orderForm.customer.$touched" class="help-block">This is a required field.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label class="control-label">Type</label>
-                <fieldset>
-                  <select name="type" class="form-control" ng-model="modal.object.type" ng-required="true">
-                    <option value="pickup">Pickup</option>
-                    <option value="delivery">Delivery</option>
-                  </select>
-                </fieldset>
-                <p ng-show="orderForm.type.$error.required && orderForm.type.$touched" class="help-block">This is a required field.</p>
-              </div>
-            </div>
-          </div><!-- END .row -->
-
-          <div class="row">
-            <div class="col-md-12">
-              <div class="table order-table">
-                <div class="thead">
-                  <div class="tr">
-                    <div class="th">Food Item</div>
-                    <div class="th">Category</div>
-                    <div class="th">Quantity</div>
-                    <div class="th">Price</div>
-                    <div class="th"></div>
-                  </div>
-                </div><!-- END .thead -->
-
-                <div class="tbody">
-                  <div class="tr" ng-repeat="item in modal.object.items">
-                    <div class="td">
-                      <div class="form-group">
-                        <fieldset>
-                          <select name="item" ng-model="item._id" class="form-control">
-                            <option value="1">Vodka</option>
-                            <option value="2">Beer</option>
-                            <option value="3">Cachaça</option>
-                          </select>
-                        </fieldset>
-                      </div>
-                    </div>
-                    <div class="td"></div>
-                    <div class="td">
-                      <div class="form-group">
-                        <input type="number" ng-model="item.qty" class="form-control" min="1">
-                      </div>
-                    </div>
-                    <div class="td text-right">{{item.qty ? item.qty + ' &times; ' : ''}}</div>
-                    <div class="td"><i class="icon-close" ng-click="modal.object.items.splice(index,1)"></i></div>
-                  </div><!-- END .tr -->
-                </div><!-- END .tbody -->
-              </div><!-- END .table -->
-              <div class="pull-left">
-                <a ng-click="modal.object.items.push({qty: 1})">+ Add Item</a>
-              </div>
-              <div class="pull-right">Total amount: <strong>{{modal.object.total | currency}}</strong></div>
-            </div>
-          </div><!-- END .row -->
-
-          <div class="row">
-            <div class="col-md-12">
-              <div class="resetsave text-center">
-                <button class="btn btn-default" ng-click="modal.object.edit = !modal.object.edit">Cancel</button>
-                <button class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="modal.object.edit = !modal.object.edit">Save</button>
-              </div>
-            </div>
-          </div>
-        </form>
-
-      </div><!-- END .col-md-6 -->
-    </div><!-- END .row -->
-  </div><!-- END .container -->
-</div><!-- END .flyout -->
+<div class="row">
+  <div class="col-md-12 resetsave">
+    <div class="pull-left">
+      <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+      <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Edit</button>
+    </div><!-- END .pull-left -->
+    <div class="pull-right">
+      <button class="btn btn-danger"  ng-hide="modal.object.status === 'cancelled'" ng-click="modal.object.status = 'cancelled'">Cancel Order</button>
+      <button class="btn btn-default" ng-show="modal.object.status === 'cancelled'" ng-click="modal.object.status = 'new'">Reopen Order</button>
+      <button class="btn btn-success" ng-show="modal.object.status === 'new'" ng-click="modal.object.status = 'inprogress'">Start Progress</button>
+      <button class="btn btn-warning" ng-show="modal.object.status === 'inprogress'" ng-click="modal.object.status = 'fulfilled'">Fulfill Order</button>
+    </div><!-- END .pull-right -->
+  </div><!-- END .resetsave -->
+</div><!-- END .row -->

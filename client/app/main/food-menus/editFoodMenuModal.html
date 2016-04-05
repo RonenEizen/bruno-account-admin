@@ -1,0 +1,40 @@
+<form class="custom-form">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Edit Food Menu</h1>
+    </div>
+  </div><!-- END .row -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label class="control-label">Name</label>
+        <input type="text" class="form-control" value="My Menu">
+      </div>
+    </div>
+  </div><!-- END .row -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <label class="control-label">Categories Order</label> <span class="optional">(drag to edit)</span>
+      <div class="shadowed">
+        <ul class="dragable">
+          <li>Appetizers
+            <span class="pull-right fa fa-ellipsis-v"></span>
+          </li>
+          <li>Salads
+            <span class="pull-right fa fa-ellipsis-v"></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div><!-- END .row -->
+
+  <div class="row">
+    <div class="col-md-12 resetsave text-center">
+      <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+      <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Remove</button>
+      <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+    </div>
+  </div><!-- END .row -->
+</form>

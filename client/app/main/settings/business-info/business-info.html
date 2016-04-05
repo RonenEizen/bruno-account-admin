@@ -16,7 +16,7 @@
 <div class="col-md-6 main">
   <div class="row">
     <div class="col-md-12">
-      <h2>Business Info <a class="pull-right" ng-click="main.customModal('businessModal.html')">Edit</a></h2>
+      <h2>Business Info <a class="pull-right" ui-sref=".business">Edit</a></h2>
       <p><strong>{{business.name}}</strong></p>
       <p>{{business.email}}</p>
       <p>{{business.phone}}</p>
@@ -28,7 +28,7 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h2>Restaurant Info <a class="pull-right" ng-click="main.customModal('restaurantModal.html')">Edit</a></h2>
+      <h2>Restaurant Info <a class="pull-right" ui-sref=".restaurant">Edit</a></h2>
       <p><strong>{{restaurant.name}}</strong></p>
       <p>{{restaurant.email}}</p>
       <p>{{restaurant.phone}}</p>
@@ -40,7 +40,7 @@
 
   <div class="row">
     <div class="col-md-12">
-      <h2>Opening Hours <a class="pull-right" ng-click="main.customModal('openingModal.html')">Edit</a></h2>
+      <h2>Opening Hours <a class="pull-right" ui-sref=".opening">Edit</a></h2>
       <span ng-show="opening.twentyFourSeven">Open 24/7</span>
       <div ng-show="!opening.twentyFourSeven" class="table opening-hours">
         <div class="tbody">
@@ -61,7 +61,7 @@
 <div class="col-md-6 main">
   <div class="row">
     <div class="col-md-12 paragraph-margin">
-      <h2>Business Owner Info <a class="pull-right" ng-click="main.customModal('ownerModal.html')">Edit</a></h2>
+      <h2>Business Owner Info <a class="pull-right" ui-sref=".owner">Edit</a></h2>
       <p><strong>Name</strong><br>
       {{owner.fname}} {{owner.lname}}</p>
       <p><strong>Date of Birth</strong><br>

@@ -12,7 +12,9 @@ class MainController {
       , MenuService
       , OrderService
       , ReservationService
+      , SettingsService
       , Modal
+      , $state
     ) {
     this.navRevealed = true;
     this.settingsOpen = false;
@@ -47,6 +49,21 @@ class MainController {
 
     // ReservationService
     this.reservations = ReservationService.reservations;
+
+    // SettingsService
+    this.businessInfo = SettingsService.businessInfo;
+    this.users = SettingsService.users;
+    this.roles = SettingsService.roles;
+    this.accesses = SettingsService.accesses;
+    this.rights = SettingsService.rights;
+    this.delivery = SettingsService.delivery;
+    this.reservationSettings = SettingsService.reservations;
+    this.onlinePayments = SettingsService.onlinePayments;
+    this.domain = SettingsService.domain;
+    this.integrations = SettingsService.integrations;
+    this.reviews = SettingsService.reviews;
+
+    this.back = (dest) => { $state.go(dest = '^'); }
   }
 
 

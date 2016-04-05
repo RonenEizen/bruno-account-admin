@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <form name="customerForm" class="custom-form">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 class="text-center">Edit Customer</h1>
+        </div>
+      </div><!-- END .row -->
+      <div class="row">
+        <div class="col-md-5 form-group">
+          <label class="control-label">First Name</label> <span class="mandatory">*</span>
+          <input name="fname" type="text" class="form-control" ng-model="modal.editing.fname" ng-required="true">
+          <p class="help-block" ng-show="customerForm.fname.$error.required && customerForm.fname.$touched">This is a required field.</p>
+        </div>
+        <div class="col-md-2 form-group">
+          <label class="control-label">MI</label>
+          <input name="mname" type="text" class="form-control" ng-model="modal.editing.mname">
+        </div>
+        <div class="col-md-5 form-group">
+          <label class="control-label">Last Name</label> <span class="mandatory">*</span>
+          <input name="lname" type="text" class="form-control" ng-model="modal.editing.lname" ng-required="true">
+          <p class="help-block" ng-show="customerForm.lname.$error.required && customerForm.lname.$touched">This is a required field.</p>
+        </div>
+      </div><!-- END .row -->
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label class="control-label">Home Phone</label> <span class="mandatory">*</span>
+          <input name="homePhone" type="tel" class="form-control" ng-model="modal.editing.homePhone" ng-required="true">
+          <p class="help-block" ng-show="customerForm.homePhone.$error.required && customerForm.homePhone.$touched">This is a required field.</p>
+        </div>
+        <div class="col-md-6 form-group">
+          <label class="control-label">Mobile Phone</label> <span class="mandatory">*</span>
+          <input name="mobilePhone" type="tel" class="form-control" ng-model="modal.editing.mobilePhone" ng-required="true">
+          <p class="help-block" ng-show="customerForm.mobilePhone.$error.required && customerForm.mobilePhone.$touched">This is a required field.</p>
+        </div>
+      </div><!-- END .row -->
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label class="control-label">Personal Email</label> <span class="mandatory">*</span>
+          <input name="email" type="email" class="form-control" ng-model="modal.editing.email" ng-required="true">
+          <p class="help-block" ng-show="customerForm.email.$error.required && customerForm.email.$touched">This is a required field.</p>
+        </div>
+        <div class="col-md-6 form-group">
+          <label class="control-label">Work Email</label> <span class="mandatory">*</span>
+          <input name="workEmail" type="email" class="form-control" ng-model="modal.editing.workEmail" ng-required="true">
+          <p class="help-block" ng-show="customerForm.workEmail.$error.required && customerForm.workEmail.$touched">This is a required field.</p>
+        </div>
+      </div><!-- END .row -->
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <label class="control-label">Street Address</label> <span class="mandatory">*</span>
+          <input name="addr" type="text" class="form-control" ng-model="modal.editing.addr" ng-required="true">
+          <p class="help-block" ng-show="customerForm.addr.$error.required && customerForm.addr.$touched">This is a required field.</p>
+        </div>
+      </div><!-- END .row -->
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label class="control-label">City</label> <span class="mandatory">*</span>
+          <input name="city" type="text" class="form-control" ng-model="modal.editing.city" ng-required="true">
+          <p class="help-block" ng-show="customerForm.city.$error.required && customerForm.city.$touched">This is a required field.</p>
+        </div>
+        <div class="col-md-3 form-group">
+          <label class="control-label">State</label> <span class="mandatory">*</span>
+          <fieldset>
+            <select name="state" class="form-control" ng-model="modal.editing.state" ng-required="true">
+              <option value="1">RS</option>
+              <option value="2">SC</option>
+              <option value="3">PR</option>
+            </select>
+          </fieldset>
+          <p class="help-block" ng-show="customerForm.state.$error.required && customerForm.state.$touched">This is a required field.</p>
+        </div>
+        <div class="col-md-3 form-group">
+          <label class="control-label">Zip</label> <span class="mandatory">*</span>
+          <input name="zip" type="number" class="form-control" ng-model="modal.editing.zip" ng-required="true">
+          <p class="help-block" ng-show="customerForm.zip.$error.required && customerForm.zip.$touched">This is a required field.</p>
+        </div>
+      </div><!-- END .row -->
+      <div class="row">
+        <div class="col-md-12 resetsave text-center">
+          <button class="btn btn-default" ng-click="modal.object.edit = !modal.object.edit">Cancel</button>
+          <button class="btn btn-primary" ng-disabled="customerForm.$invalid" ng-click="save(modal.editing)">Save</button>
+        </div>
+      </div><!-- END .row -->
+    </form>
+  </div><!-- END .col-md-6 -->
+</div><!-- END .row -->

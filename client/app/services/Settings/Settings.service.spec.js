@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: Settings', function () {
+describe('Service: SettingsService', function () {
 
   // load the service's module
   beforeEach(module('accountAdminApp'));

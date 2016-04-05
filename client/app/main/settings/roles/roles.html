@@ -75,12 +75,11 @@
       </div><!-- END .tr -->
     </div><!-- END .thead -->
     <div class="tbody">
-      <div
-        class="tr"
+      <div class="tr"
         ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingRoles
       ">
         <div class="td" ng-show="displayColumns.role">
-          <a ng-click="main.customModal('roleModal.html')">{{role.role}}</a>
+          <a href="/settings/roles/{{role._id}}">{{role.role}}</a>
         </div>
 
         <div class="td" ng-show="displayColumns.access">

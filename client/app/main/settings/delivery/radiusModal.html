@@ -6,12 +6,12 @@
           <div class="col-md-12 text-center">
             <h1>Edit Delivery Radius</h1>
             <div class="form-group">
-              <strong for="distance" class="label-control">Distance Format: </strong>
+              <label class="label-control">Distance Format: </label>
               <label for="distance" class="radio-inline">
-                <input type="radio" name="distance" value="mi"> mi
+                <input type="radio" name="distance" ng-model="radius.unit" value="mi"> mi
               </label>
               <label for="distance" class="radio-inline">
-                <input type="radio" name="distance" value="km"> km
+                <input type="radio" name="distance" ng-model="radius.unit" value="km"> km
               </label>
             </div>
           </div>
@@ -31,14 +31,14 @@
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
         <div class="form-group">
-          <input type="range" class="form-control" min="1" max="20" ng-model="radius" ng-init="radius = 10">
+          <input type="range" class="form-control" min="1" max="20" ng-model="radius.radius">
         </div>
       </div>
     </div><!-- END .row -->
 
     <div class="row">
       <div class="col-md-12 text-center resetsave">
-        <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+        <button class="btn btn-default" ng-click="main.back()">Cancel</button>
         <button class="btn btn-primary" ng-click="save('radius')" ng-disabled="radiusForm.$invalid">Save</button>
       </div>
     </div><!-- END .row -->

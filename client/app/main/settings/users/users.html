@@ -93,7 +93,7 @@
         class="tr"
         ng-repeat="user in users | filter:usersFilter | orderBy:clickedHeader:reverse | limitTo:displayingUsers
       ">
-        <div class="td" ng-show="displayColumns.name"><a ng-click="main.customModal('userModal.html')">{{user.fname + ' ' + user.lname}}</a></div>
+        <div class="td" ng-show="displayColumns.name"><a href="/settings/users/{{user._id}}">{{user.fname + ' ' + user.lname}}</a></div>
         <div class="td" ng-show="displayColumns.role">{{user.role}}</div>
         <div class="td" ng-show="displayColumns.phone">{{user.phone}}</div>
         <div class="td" ng-show="displayColumns.email">{{user.email}}</div>

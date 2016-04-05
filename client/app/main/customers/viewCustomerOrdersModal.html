@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>View Orders</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 top-instructions">
+        <p>Showing all orders made by
+          <strong>Blake Lively</strong>
+        </p>
+      </div>
+    </div>
+  </div><!-- END .col-md-6 -->
+</div><!-- END .row -->
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="table customer-orders-table">
+      <div class="thead">
+        <div class="tr">
+          <div class="th">Order No.</div>
+          <div class="th">Date</div>
+          <div class="th">Time</div>
+          <div class="th">Type</div>
+          <div class="th">Amount</div>
+          <div class="th">Status</div>
+        </div>
+      </div><!-- END .thead -->
+
+      <div class="tbody">
+        <div class="tr">
+          <div class="td">
+            <i ng-class="{'icon-triangle_right': !openLine, 'icon-triangle_up': openLine}" ng-click="openLine = !openLine"></i>
+            123456
+          </div>
+          <div class="td">October 16, 2015</div>
+          <div class="td">1:47pm</div>
+          <div class="td">Pickup</div>
+          <div class="td">$191.67</div>
+          <div class="td">Fullfilled</div>
+        </div>
+      </div><!-- END .tbody -->
+    </div><!-- END .table -->
+  </div>
+</div><!-- END .row -->
+<div class="row">
+  <div class="col-md-10 customer-orders col-md-offset-1">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="table">
+          <div class="thead">
+            <div class="tr">
+              <div class="th">Food Item</div>
+              <div class="th">Category</div>
+              <div class="th">Quantity</div>
+              <div class="th">Price</div>
+            </div>
+          </div><!-- END .thead -->
+          <div class="tbody">
+            <div class="tr">
+              <div class="td">Vodka</div>
+              <div class="td">Beverage</div>
+              <div class="td">1</div>
+              <div class="td">1 &times; $2.00</div>
+            </div>
+          </div><!-- END .tbody -->
+        </div><!-- END .table -->
+      </div>
+    </div><!-- END .row -->
+  </div>
+</div><!-- END .customer-orders -->
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 resetsave text-center">
+    <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+  </div>
+</div>

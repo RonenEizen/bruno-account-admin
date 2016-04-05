@@ -16,35 +16,35 @@
     <div class="col-md-12">
       <div class="toggle-checkbox checkbox">
         <label for="" class="control-label">
-          <input type="checkbox" ng-model="enabled" ng-checked="enabled"> Enable Payments
+          <input type="checkbox" ng-model="payments.enabled" ng-checked="payments.enabled"> Enable Payments
         </label>
       </div>
     </div>
   </div>
 
-  <div class="row" ng-show="enabled">
+  <div class="row" ng-show="payments.enabled">
     <div class="col-md-6">
       <div class="row">
         <div class="col-md-12">
-          <h2>Business Owner Info <a class="pull-right" ng-click="main.customModal('ownerModal.html')">Edit</a></h2>
-          <p>John Mendelau</p>
-          <p>300 Ocean View</p>
-          <p>Berkeley, CA 94111</p>
+          <h2>Business Owner Info <a class="pull-right" ui-sref="main.businessInfo.owner">Edit</a></h2>
+          <p><strong>{{businessInfo.owner.fname + businessInfo.owner.lname}}</strong></p>
+          <p>{{businessInfo.owner.addr1}}</p>
+          <p>{{businessInfo.owner.city + ', ' + businessInfo.owner.state + ' ' + businessInfo.owner.zip}}</p>
           <br>
-          <p>(415) 576-9000</p>
-          <p>jmenel@gmail.com</p>
+          <p>{{businessInfo.owner.phone}}</p>
+          <p>{{businessInfo.owner.email}}</p>
         </div>
       </div><!-- END .row -->
 
       <div class="row">
         <div class="col-md-12">
-          <h2>Business Info <a class="pull-right" ng-click="main.customModal('businessModal.html')">Edit</a></h2>
-          <p>Rodeo BBQ</p>
-          <p>1227 Oxford Ave</p>
-          <p>Berkeley, CA 94111</p>
+          <h2>Business Info <a class="pull-right" ui-sref="main.businessInfo.business">Edit</a></h2>
+          <p><strong>{{businessInfo.business.name}}</strong></p>
+          <p>{{businessInfo.business.addr1}}</p>
+          <p>{{businessInfo.business.city + ', ' + businessInfo.business.state + ' ' + businessInfo.business.zip}}</p>
           <br>
-          <p>(415) 661-4132</p>
-          <p>info@rodeobbq.com</p>
+          <p>{{businessInfo.business.phone}}</p>
+          <p>{{businessInfo.business.email}}</p>
         </div>
       </div><!-- END .row -->
     </div><!-- END .col-md-6 -->
@@ -52,14 +52,14 @@
     <div class="col-md-6">
       <div class="row">
         <div class="col-md-12 paragraph-margin">
-          <h2>Bank Info <a class="pull-right" ng-click="main.customModal('bankInfoModal.html')">Edit</a></h2>
+          <h2>Bank Info <a class="pull-right" ui-sref=".bankInfo">Edit</a></h2>
           <p>
             <strong>Name</strong><br>
             {{payments.bankName}}
           </p>
           <p>
             <strong>Routing Number</strong><br>
-            {{payments.bankNo}}
+            {{payments.routingNo}}
           </p>
           <p>
             <strong>Account Number</strong><br>

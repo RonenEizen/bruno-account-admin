@@ -3,15 +3,6 @@
 angular.module('accountAdminApp')
   .controller('SettingsDomainCtrl', function ($scope) {
     $scope.pageTitle = 'Domain';
-
-    $scope.subdomainMaster = {};
-    $scope.subdomain = {
-      edit: false,
-      subdomain: 'rodeo'
-    };
-
-    $scope.save = function() {
-      $scope.subdomainMaster = angular.copy($scope.subdomain);
-      $scope.subdomain.edit = false;
-    };
+    $scope.domain = $scope.main.domain.domain;
+    $scope.subdomain = $scope.main.domain.subdomain;
   });

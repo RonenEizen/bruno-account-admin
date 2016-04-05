@@ -1,61 +1,63 @@
-<div class="container custom-form">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+<div class="flyout">
+  <div class="container custom-form">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
 
-      <form name="newTableForm" class="custom-form form-group">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1>Add Table</h1>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="control-label">Table Name</label>
-              <input type="text" name="name" ng-model="table.name" class="form-control" ng-required="true">
-              <p ng-show="newTableForm.name.$error.required && newTableForm.name.$touched" class="help-block">This is a required field.</p>
+        <form name="newTableForm" class="custom-form form-group">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1>Add Table</h1>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="control-label">Table Capacity</label>
-              <input type="number" name="capacity" ng-model="table.capacity" class="form-control" ng-required="true">
-              <p ng-show="newTableForm.capacity.$error.required && newTableForm.capacity.$touched" class="help-block">This is a required field.</p>
-            </div>
-          </div>
-        </div><!-- END .row -->
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="control-label">Number of Tables</label>
-              <input type="number" name="quantity" ng-model="table.quantity" class="form-control" ng-required="true">
-              <p ng-show="newTableForm.quantity.$error.required && newTableForm.quantity.$touched" class="help-block">This is a required field.</p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Table Name</label>
+                <input type="text" name="name" ng-model="table.name" class="form-control" ng-required="true">
+                <p ng-show="newTableForm.name.$error.required && newTableForm.name.$touched" class="help-block">This is a required field.</p>
+              </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="control-label">Mergeable</label>
-              <fieldset>
-                <select name="mergeable" ng-model="table.mergeable" class="form-control" ng-required="true">
-                  <option value="0">No</option>
-                  <option value="1">Yes</option>
-                </select>
-              </fieldset>
-              <p ng-show="newTableForm.mergeable.$error.required && newTableForm.mergeable.$touched" class="help-block">This is a required field.</p>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Table Capacity</label>
+                <input type="number" name="capacity" ng-model="table.capacity" class="form-control" ng-required="true">
+                <p ng-show="newTableForm.capacity.$error.required && newTableForm.capacity.$touched" class="help-block">This is a required field.</p>
+              </div>
             </div>
-          </div>
-        </div><!-- END .row -->
+          </div><!-- END .row -->
 
-        <div class="row">
-          <div class="col-md-12 text-center resetsave">
-            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-            <button class="btn btn-primary" ng-click="save('table')" ng-disabled="newTableForm.$invalid">Save</button>
-          </div>
-        </div><!-- END .row -->
-      </form>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Number of Tables</label>
+                <input type="number" name="quantity" ng-model="table.quantity" class="form-control" ng-required="true">
+                <p ng-show="newTableForm.quantity.$error.required && newTableForm.quantity.$touched" class="help-block">This is a required field.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Mergeable</label>
+                <fieldset>
+                  <select name="mergeable" ng-model="table.mergeable" class="form-control" ng-required="true">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                  </select>
+                </fieldset>
+                <p ng-show="newTableForm.mergeable.$error.required && newTableForm.mergeable.$touched" class="help-block">This is a required field.</p>
+              </div>
+            </div>
+          </div><!-- END .row -->
 
-    </div><!-- END .col-md-6 -->
-  </div><!-- END .row -->
-</div><!-- END .container -->
+          <div class="row">
+            <div class="col-md-12 text-center resetsave">
+              <button class="btn btn-default" ng-click="main.back()">Cancel</button>
+              <button class="btn btn-primary" ng-click="save('table')" ng-disabled="newTableForm.$invalid">Save</button>
+            </div>
+          </div><!-- END .row -->
+        </form>
+
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</div><!-- END .flyout -->

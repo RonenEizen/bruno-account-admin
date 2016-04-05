@@ -1,32 +1,34 @@
-<div class="container custom-form">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+<div class="flyout">
+  <div class="container custom-form">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
 
-      <form name="seatingForm" class="custom-form form-group">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1>Edit Seating</h1>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label class="control-label">Maximum Seating Capacity</label>
-              <input type="number" name="seating" ng-model="seating.capacity" class="form-control" required>
-              <p ng-show="seatingForm.seating.$error.required && seatingForm.seating.$touched" class="help-block">This is a required field.</p>
+        <form name="seatingForm" class="custom-form form-group">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h1>Edit Seating</h1>
             </div>
           </div>
-        </div><!-- END .row -->
 
-        <div class="row">
-          <div class="col-md-12 text-center resetsave">
-            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-            <button class="btn btn-primary" ng-click="save('seating')" ng-disabled="seatingForm.$invalid">Save</button>
-          </div>
-        </div><!-- END .row -->
-      </form>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Maximum Seating Capacity</label>
+                <input type="number" name="seating" ng-model="seating.capacity" class="form-control" required>
+                <p ng-show="seatingForm.seating.$error.required && seatingForm.seating.$touched" class="help-block">This is a required field.</p>
+              </div>
+            </div>
+          </div><!-- END .row -->
 
-    </div><!-- END .col-md-6 -->
-  </div><!-- END .row -->
-</div><!-- END .container -->
+          <div class="row">
+            <div class="col-md-12 text-center resetsave">
+              <button class="btn btn-default" ng-click="main.back()">Cancel</button>
+              <button class="btn btn-primary" ng-click="save('seating')" ng-disabled="seatingForm.$invalid">Save</button>
+            </div>
+          </div><!-- END .row -->
+        </form>
+
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</div><!-- END .flyout -->

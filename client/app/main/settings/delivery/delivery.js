@@ -9,8 +9,8 @@ angular.module('accountAdminApp')
         controller: 'SettingsDeliveryCtrl',
         controllerAs: 'vm'
       })
-      .state('main.deliverySettings.request', {
-        url: '/request',
+      .state('main.deliverySettings.requests', {
+        url: '/requests',
         templateUrl: 'app/main/settings/delivery/requestsModal.html',
         controller: 'SettingsDeliveryCtrl',
         controllerAs: 'vm'

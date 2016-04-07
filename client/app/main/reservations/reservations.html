@@ -6,7 +6,7 @@
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="main.customModal('addReservationModal.html')">+ New Reservation</button>
+      <button class="btn btn-primary" ng-click="main.go('main.reservations.create')">+ New Reservation</button>
     </div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -27,8 +27,8 @@
 
   <div class="row tab-group">
     <div class="col-md-6">
-      <a href="/reservations/day"><div class="tab" ng-class="{active: view === 'day'}">Day View</div></a>
-      <a href="/reservations/week"><div class="tab" ng-class="{active: view === 'week'}">Week View</div></a>
+      <a ui-sref=".day"><div class="tab" ng-class="{active: view === 'day'}">Day View</div></a>
+      <a ui-sref=".week"><div class="tab" ng-class="{active: view === 'week'}">Week View</div></a>
     </div>
     <div class="col-md-6 current-time text-right">
       <p>Current time: <time>{{(currentDate.now() | date: 'h:mma').toLowerCase()}}</time></p>

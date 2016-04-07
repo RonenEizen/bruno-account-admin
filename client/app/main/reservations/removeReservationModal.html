@@ -1,0 +1,16 @@
+<form name="removeForm" class="custom-form">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Remove Reservation</h1>
+      <p><strong>Are you sure that you want to remove this reservation?</strong></p>
+      <p>Table for 6</p>
+    </div>
+  </div><!-- END .row -->
+
+  <div class="row">
+    <div class="col-md-12 resetsave text-center">
+      <button class="btn btn-default" ng-click="main.go('^.view')">Cancel</button>
+      <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Confirm</button>
+    </div>
+  </div><!-- END .row -->
+</form>

@@ -9,6 +9,7 @@ class MainController {
       , CampaignService
       , CustomerService
       , DefaultsService
+      , MarketingService
       , MenuService
       , OrderService
       , ReservationService
@@ -42,6 +43,9 @@ class MainController {
     // this.categories = MenuService.categories;
     this.foodItems = MenuService.foodItems;
 
+    // MarketingService
+    this.campaigns = MarketingService.campaigns;
+
     // OrderService
     this.orders = OrderService.orders;
     this.orderStatus = OrderService.orderStatus;
@@ -63,7 +67,9 @@ class MainController {
     this.integrations = SettingsService.integrations;
     this.reviews = SettingsService.reviews;
 
-    this.back = (dest) => { $state.go(dest = '^'); }
+    // TODO: remove this
+    this.back = (dest = '^') => { $state.go(dest) }
+    this.go = (dest = '^') => { $state.go(dest) }
   }
 
 

@@ -1,131 +1,39 @@
-<div class="flyout">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <form name="removeForm" class="custom-form" ng-show="modal.object.delete">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h1>Remove Reservation</h1>
-              <p><strong>Are you sure that you want to remove this reservation?</strong></p>
-              <p>Table for 6</p>
-            </div>
-          </div><!-- END .row -->
-          <div class="row">
-            <div class="col-md-12 resetsave text-center">
-              <button class="btn btn-default" ng-click="modal.object.delete = !modal.object.delete">Cancel</button>
-              <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Confirm</button>
-            </div>
-          </div><!-- END .row -->
-        </form>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1 class="text-center">Table for 6</h1>
+  </div>
+</div><!-- END .row -->
 
-        <form name="reservationForm" class="custom-form" ng-hide="modal.object.delete">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h1 class="text-center" ng-show="!modal.object.edit">Table for 6</h1>
-              <h1 class="text-center" ng-show="modal.object.edit">Edit Reservation</h1>
-            </div>
-          </div><!-- END .row -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="top-instructions">
+      <p>Tuesday, November 11, 2016, 6pm to 7:30pm</p>
+    </div>
+  </div>
+</div><!-- END .row -->
 
-          <div ng-show="!modal.object.edit">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="top-instructions">
-                  <p>Tuesday, November 11, 2016, 6pm to 7:30pm</p>
-                </div>
-              </div>
-            </div><!-- END .row -->
+<div class="row">
+  <div class="col-md-6">
+    <p><strong>Name</strong><br>Jarret Leto</p>
+  </div>
+  <div class="col-md-6">
+    <p><strong>Phone</strong><br>(347) 578-9001</p>
+  </div>
+</div><!-- END .row -->
 
-            <div class="row">
-              <div class="col-md-6">
-                <p><strong>Name</strong><br>Jarret Leto</p>
-              </div>
-              <div class="col-md-6">
-                <p><strong>Phone</strong><br>(347) 578-9001</p>
-              </div>
-            </div><!-- END .row -->
+<div class="row">
+  <div class="col-md-6">
+    <p><strong>Notes</strong><br>would like a table by the window, gluten free, payes with Discover</p>
+  </div>
+  <div class="col-md-6">
+    <p><strong>Status</strong><br><span class="status pending">Pending</span></p>
+  </div>
+</div><!-- END .row -->
 
-            <div class="row">
-              <div class="col-md-6">
-                <p><strong>Notes</strong><br>would like a table by the window, gluten free, payes with Discover</p>
-              </div>
-              <div class="col-md-6">
-                <p><strong>Status</strong><br><span class="status pending">Pending</span></p>
-              </div>
-            </div><!-- END .row -->
-          </div><!-- END [ng-show="!modal.object.edit"] -->
-
-          <div ng-show="modal.object.edit">
-            <div class="row">
-              <div class="col-md-12">
-                <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
-                  <span ng-bind-html="alert.msg"><span>
-                </uib-alert>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label class="control-label">Number of Seats</label> <span class="mandatory">*</span>
-                <input name="seats" type="number" class="form-control" ng-model="table.seats" ng-required="true">
-                <p ng-show="reservationForm.seats.$error.required && reservationForm.seats.$touched" class="help-block">This is a required field.</p>
-              </div>
-              <div class="col-md-6 form-group">
-                <label class="control-label">Date</label> <span class="mandatory">*</span>
-                <input name="date" type="date" class="form-control" ng-model="table.date" ng-required="true">
-                <p ng-show="reservationForm.date.$error.required && reservationForm.date.$touched" class="help-block">This is a required field.</p>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label class="control-label">Start Time</label> <span class="mandatory">*</span>
-                <input name="start" type="time" class="form-control" ng-model="table.start" ng-required="true">
-                <p ng-show="reservationForm.start.$error.required && reservationForm.start.$touched" class="help-block">This is a required field.</p>
-              </div>
-              <div class="col-md-6 form-group">
-                <label class="control-label">End Time</label> <span class="mandatory">*</span>
-                <input name="end" type="time" class="form-control" ng-model="table.end" ng-required="true">
-                <p ng-show="reservationForm.end.$error.required && reservationForm.end.$touched" class="help-block">This is a required field.</p>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label class="control-label">Name</label> <span class="mandatory">*</span>
-                <input name="name" type="text" class="form-control" ng-model="table.name" ng-required="true">
-                <p ng-show="reservationForm.name.$error.required && reservationForm.name.$touched" class="help-block">This is a required field.</p>
-              </div>
-              <div class="col-md-6 form-group">
-                <label class="control-label">Phone</label> <span class="mandatory">*</span>
-                <input name="phone" type="text" class="form-control" ng-model="table.phone" ng-required="true">
-                <p ng-show="reservationForm.phone.$error.required && reservationForm.phone.$touched" class="help-block">This is a required field.</p>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-12 form-group">
-                <label class="control-label">Notes <span class="optional">(optional)</span></label>
-                <textarea name="notes" class="form-control" ng-model="table.notes"></textarea>
-              </div>
-            </div><!-- END .row -->
-          </div><!-- END [ng-show="modal.object.edit"] -->
-
-          <div class="row">
-            <div class="col-md-12 resetsave text-center" ng-hide="modal.object.edit">
-              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-              <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Remove</button>
-              <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Edit</button>
-            </div>
-          </div><!-- END .row -->
-
-          <div class="row">
-            <div class="col-md-12 resetsave text-center" ng-show="modal.object.edit">
-              <button class="btn btn-default" ng-click="modal.object.edit = !modal.object.edit">Cancel</button>
-              <button class="btn btn-primary" ng-disabled="reservationForm.$invalid" ng-click="modal.object.edit = !modal.object.edit">Save</button>
-            </div>
-          </div><!-- END .row -->
-        </form>
-      </div><!-- END .col-md-6 -->
-    </div><!-- END .row -->
-  </div><!-- END .container -->
-</div><!-- END .flyout -->
+<div class="row">
+  <div class="col-md-12 resetsave text-center">
+    <button class="btn btn-default" ng-click="main.go('main.reservations.day')">Cancel</button>
+    <button class="btn btn-danger" ng-click="main.go('^.remove')">Remove</button>
+    <button class="btn btn-primary" ng-click="main.go('^.edit')">Edit</button>
+  </div>
+</div><!-- END .row -->

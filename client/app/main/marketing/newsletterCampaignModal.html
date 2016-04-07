@@ -1,0 +1,134 @@
+<div class="container" ng-init="channelTab = 'facebook'">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="channel-heading">Edit Marketing Channels –
+        <strong ng-show="channelTab === 'facebook'">Facebook Ads</strong>
+        <strong ng-show="channelTab === 'twitter'">Twitter</strong>
+        <strong ng-show="channelTab === 'googleads'">Google Adwords</strong>
+        <strong ng-show="channelTab === 'newsletter'">Newsletter</strong>
+        <strong ng-show="channelTab === 'banner'">Site Banner</strong>
+      </h1>
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</div><!-- END .container -->
+
+<div class="container-fluid channel-nav">
+  <div class="row">
+    <ul class="col-md-8 col-md-offset-2 nav nav-tabs">
+      <li ng-class="{active: channelTab === 'facebook'}">
+        <a ng-click="channelTab = 'facebook'"><i class="icon-Facebook"></i></a>
+      </li>
+      <li ng-class="{active: channelTab === 'twitter'}">
+        <a ng-click="channelTab = 'twitter'"><i class="icon-Twitter"></i></a>
+      </li>
+      <li ng-class="{active: channelTab === 'googleads'}">
+        <a ng-click="channelTab = 'googleads'"><i class="icon-GooglePlus"></i></a>
+      </li>
+      <li ng-class="{active: channelTab === 'newsletter'}">
+        <a ng-click="channelTab = 'newsletter'"><i class="icon-Newsletter"></i></a>
+      </li>
+      <li ng-class="{active: channelTab === 'banner'}">
+        <a ng-click="channelTab = 'banner'"><i class="icon-Banner"></i></a>
+      </li>
+    </ul>
+  </div><!-- END .row -->
+</div><!-- END .container-fluid -->
+
+<form class="custom-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="checkbox toggle-checkbox">
+              <label>
+                <input type="checkbox" ng-model="enableNewsletter" ng-init="enableNewsletter = true"> Enable Channel
+              </label>
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div ng-show="enableNewsletter">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Subject</label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Email Body</label>
+                <textarea type="text" class="form-control"></textarea><!-- TODO: add WYSIWYG -->
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="control-label">Lauch Date</label>
+                <input type="text" class="form-control" /><!-- TODO: add datepicker -->
+              </div>
+            </div>
+            <div class="col-md-4 col-md-offset-4">
+              <div class="form-group">
+                <label class="control-label">Frequency</label>
+                <select class="form-control">
+                  <option value="1">Daily</option>
+                  <option value="2">Once a Week</option>
+                  <option value="3">Once a Month</option>
+                </select>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Redemption URL</label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Redemption Code</label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Terms & Conditions</label>
+                <textarea type="text" class="form-control"></textarea>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+        </div><!-- END  -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave">
+            <div class="pull-left">
+              <button class="btn btn-default" ui-sref="main.marketing">Cancel</button>
+              <button class="btn btn-primary" ui-sref="main.marketing">Save</button>
+            </div><!-- END .pull-left -->
+            <div class="pull-right">
+              <button class="btn btn-primary" ui-sref="^.banner"><strong>Next</strong> | Site Banner</button>
+              <button class="btn btn-default" ui-sref="^.banner">Skip</button>
+            </div><!-- END .pull-right -->
+          </div><!-- END .resetsave -->
+        </div><!-- END .row -->
+
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</form><!-- END .custom-form -->

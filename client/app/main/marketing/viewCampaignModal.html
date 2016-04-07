@@ -1,108 +1,106 @@
-<div class="flyout">
-  <div class="container custom-form">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
 
-        <div class="row">
-          <div class="col-md-12">
-            <h1 class="text-center">Lunch Special – 20% Off <button ng-hide="campaign.active" class="btn icon-edit_pencil"></button></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias excepturi quis sapiente, quia ab nulla dicta deserunt eos dignissimos perspiciatis sequi cumque magni ducimus maiores expedita! Aliquam, repellat in odit.</p>
-          </div>
-        </div><!-- END .row -->
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center">Lunch Special – 20% Off <button ng-hide="campaign.active" class="btn icon-edit_pencil" ui-sref="^.edit"></button></h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias excepturi quis sapiente, quia ab nulla dicta deserunt eos dignissimos perspiciatis sequi cumque magni ducimus maiores expedita! Aliquam, repellat in odit.</p>
+        </div>
+      </div><!-- END .row -->
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="table">
-              <div class="thead">
-                <div class="tr no-border">
-                  <div class="th">Enabled Channels</div>
-                  <div class="th" ng-show="campaign.active">Status</div>
-                  <div class="th"></div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table">
+            <div class="thead">
+              <div class="tr no-border">
+                <div class="th">Enabled Channels</div>
+                <div class="th" ng-show="campaign.active">Status</div>
+                <div class="th"></div>
+              </div>
+            </div>
+            <div class="tbody">
+              <div class="tr">
+                <div class="td">Facebook</div>
+                <div class="td status current" ng-show="campaign.active">Current</div>
+                <div class="td text-right">
+                  <button class="icon-preview"></button>
+                  <button class="icon-edit_pencil" ui-sref="^.facebook"></button>
                 </div>
               </div>
-              <div class="tbody">
-                <div class="tr">
-                  <div class="td">Facebook</div>
-                  <div class="td status current" ng-show="campaign.active">Current</div>
-                  <div class="td text-right">
-                    <button class="icon-preview"></button>
-                    <button class="icon-edit_pencil"></button>
-                  </div>
-                </div>
-                <div class="tr">
-                  <div class="td">Google</div>
-                  <div class="td status expiring" ng-show="campaign.active">Expiring</div>
-                  <div class="td text-right">
-                    <button class="icon-preview"></button>
-                    <button class="icon-edit_pencil"></button>
-                  </div>
-                </div>
-                <div class="tr">
-                  <div class="td">Twitter</div>
-                  <div class="td status cancelled" ng-show="campaign.active">Cancelled</div>
-                  <div class="td text-right">
-                    <button class="icon-preview"></button>
-                    <button class="icon-edit_pencil"></button>
-                  </div>
-                </div>
-                <div class="tr">
-                  <div class="td">Newsletter</div>
-                  <div class="td status expired" ng-show="campaign.active">Expired</div>
-                  <div class="td text-right">
-                    <button class="icon-preview"></button>
-                    <button class="icon-edit_pencil"></button>
-                  </div>
+              <div class="tr">
+                <div class="td">Google</div>
+                <div class="td status expiring" ng-show="campaign.active">Expiring</div>
+                <div class="td text-right">
+                  <button class="icon-preview"></button>
+                  <button class="icon-edit_pencil" ui-sref="^.google"></button>
                 </div>
               </div>
-            </div><!-- END .table -->
-          </div><!-- END .col-md-12 -->
-        </div><!-- END .row -->
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="table">
-              <div class="thead">
-                <div class="tr no-border">
-                  <div class="th">Disabled Channels</div>
-                  <div class="th"></div>
+              <div class="tr">
+                <div class="td">Twitter</div>
+                <div class="td status cancelled" ng-show="campaign.active">Cancelled</div>
+                <div class="td text-right">
+                  <button class="icon-preview"></button>
+                  <button class="icon-edit_pencil" ui-sref="^.twitter"></button>
                 </div>
               </div>
-              <div class="tbody">
-                <div class="tr">
-                  <div class="td">Twitter</div>
-                  <div class="td text-right">
-                    <button class="icon-edit_pencil"></button>
-                  </div>
-                </div>
-                <div class="tr">
-                  <div class="td">Google</div>
-                  <div class="td text-right">
-                    <button class="icon-edit_pencil"></button>
-                  </div>
-                </div>
-                <div class="tr">
-                  <div class="td">Site Banner</div>
-                  <div class="td text-right">
-                    <button class="icon-edit_pencil"></button>
-                  </div>
+              <div class="tr">
+                <div class="td">Newsletter</div>
+                <div class="td status expired" ng-show="campaign.active">Expired</div>
+                <div class="td text-right">
+                  <button class="icon-preview"></button>
+                  <button class="icon-edit_pencil" ui-sref="^.newsletter"></button>
                 </div>
               </div>
             </div>
-          </div><!-- END .col-md-12 -->
-        </div><!-- END .row -->
+          </div><!-- END .table -->
+        </div><!-- END .col-md-12 -->
+      </div><!-- END .row -->
 
-        <div class="row">
-          <div class="col-md-12 resetsave text-center" ng-hide="campaign.active">
-            <button class="btn btn-danger" ng-click="campaign.active = true">Launch Campaign</button>
-            <button class="btn btn-default" ng-click="$dismiss()">Not at this time</button>
-          </div><!-- END .resetsave -->
-          <div class="col-md-12 resetsave text-center" ng-show="campaign.active">
-            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-            <button class="btn btn-danger" ng-click="campaign.active = false">Halt Campaign</button>
-          </div><!-- END .resetsave -->
-        </div><!-- END .row -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table">
+            <div class="thead">
+              <div class="tr no-border">
+                <div class="th">Disabled Channels</div>
+                <div class="th"></div>
+              </div>
+            </div>
+            <div class="tbody">
+              <div class="tr">
+                <div class="td">Twitter</div>
+                <div class="td text-right">
+                  <button class="icon-edit_pencil" ui-sref="^.twitter"></button>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td">Google</div>
+                <div class="td text-right">
+                  <button class="icon-edit_pencil" ui-sref="^.google"></button>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td">Site Banner</div>
+                <div class="td text-right">
+                  <button class="icon-edit_pencil" ui-sref="^.banner"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- END .col-md-12 -->
+      </div><!-- END .row -->
 
-      </div><!-- END .col-md-6 -->
-    </div><!-- END .row -->
-  </div><!-- END .container -->
-</div><!-- END .flyout -->
+      <div class="row">
+        <div class="col-md-12 resetsave text-center" ng-hide="campaign.active">
+          <button class="btn btn-danger" ng-click="campaign.active = true">Launch Campaign</button>
+          <button class="btn btn-default" ui-sref="main.marketing">Not at this time</button>
+        </div><!-- END .resetsave -->
+        <div class="col-md-12 resetsave text-center" ng-show="campaign.active">
+          <button class="btn btn-default" ui-sref="main.marketing">Cancel</button>
+          <button class="btn btn-danger" ng-click="campaign.active = false">Halt Campaign</button>
+        </div><!-- END .resetsave -->
+      </div><!-- END .row -->
+
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</div><!-- END .container -->

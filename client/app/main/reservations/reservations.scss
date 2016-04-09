@@ -1,13 +1,6 @@
 .reservations                     { height: 100%;
   // TOP INFO
-  .tab-group                      { color: $darkgray; font: 12px $serif-font; height: 32px; margin-top: 8px;
-    a                             { color: inherit; float: left;
-      &:focus,
-      &:hover                     { text-decoration: none; }
-      .tab                        { border: 1px solid $lightgray; cursor: pointer; float: left; padding: 8px 30px;
-        &.active                  { background: $darkgray; border-color: $darkgray; color: $white; }
-      }
-    }
+  .tab-group                      {
     .current-time                 { font: 16px $sans-font;
       time                        { font-weight: 700; }
     }

@@ -255,23 +255,20 @@ button.btn                        { border: none; border-radius: 3px; font-famil
   &.btn-success                   { background: $green1; }
   &.btn-warning                   { background: $orange; }
 }
-.text-input                       {
-  input[readonly],
-  fieldset[disabled] select       { background: transparent; box-shadow: none; border: none; cursor: default; color: $darkgray; font-size: 14px; height: auto; margin: 0; padding: 0;
-    &::-webkit-input-placeholder  { color: lighten($black, 90%); }
-    &::-moz-input-placeholder     { color: lighten($black, 90%); }
-    &:-moz-input-placeholder      { color: lighten($black, 90%); }
-    &:-ms-input-placeholder       { color: lighten($black, 90%); }
-    &:focus                       {
-      box-shadow: none;
-      outline: none;
+
+.tab-group                        { color: $darkgray; font: 12px $serif-font; height: 32px; margin-top: 8px;
+  a                               { color: inherit; float: left;
+    &:focus,
+    &:hover                       { text-decoration: none; }
+    .tab                          { border: 1px solid $lightgray; border-right: 0; cursor: pointer; float: left; padding: 8px 30px;
+      &.active                    { background: $darkgray; border-color: $darkgray; color: $white; }
     }
-    & ~ p                         { display: none; }
-  }
-  fieldset[disabled]              { border: none;
-    select                        { -webkit-appearance: none; -moz-appearance: none; appearance: none; text-indent: 0.01px; text-overflow: ''; }
+    &:last-child                  {
+      .tab                        { border-right: 1px solid $lightgray; }
+    }
   }
 }
+
 .filter                           { display: inline; position: relative; font-family: $sans-font;
   & > div                         { background: $beige; border: 1px solid $lightgray; border-radius: 3px; padding: 10px; position: absolute; top: 25px; z-index: 50; }
   i.filtered                      { color: $red; }

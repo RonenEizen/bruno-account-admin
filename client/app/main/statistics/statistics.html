@@ -1,3 +1,4 @@
+<div ui-view></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
@@ -5,10 +6,379 @@
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2"></div>
-    <div class="col-md-5"></div>
+    <div class="col-md-5">
+      <div class="actions-right" ng-init="pickColumns=false">
+        <i class="icon-export_data"></i>
+        <i class="icon-grid" ng-click="showColumnPicker()"></i>
+        <ul ng-show="pickColumns">
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.orders">Orders</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.reservations">Reservations</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.payments">Payments</label></li>
+          <button class="btn btn-default" ng-click="rearranging=!rearranging">Change Positions</button>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="invisible-layer"
+      ng-show="invisibleLayer"
+      ng-click="toggleFilter('');pickColumns=false;invisibleLayer=false;">
+      &nbsp;
+    </div>
   </div>
 </header>
 
-<div class="col-md-12">
-This is the statistics view.
-</div>
+<div class="container-fluid statistics">
+  <div class="alert alert-warning" role="alert" ng-show="rearranging">Drag the areas below to change positions.
+    <div class="pull-right"><button class="btn btn-primary" ng-click="rearranging=false">Finish And Save</button></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <!-- ORDERS -->
+      <div class="shadowed-container" ng-show="displayColumns.orders">
+        <div class="grayout" ng-show="rearranging"></div>
+        <header>
+          <h2>Orders</h2>
+          <i class="fa pull-right" ng-class="{'fa-chevron-up': !boxes.orders.collapsed, 'fa-chevron-down': boxes.orders.collapsed}" ng-click="boxes.orders.collapsed = !boxes.orders.collapsed" ng-show="!rearranging"></i>
+          <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
+        </header>
+
+        <div class="collapsable" ng-hide="boxes.orders.collapsed">
+          <div class="shadowed-subcontainer">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="tab-group">
+                  <a ng-click="boxes.orders.currentTab = 'trends'"><div class="tab" ng-class="{active: boxes.orders.currentTab === 'trends'}">Trends</div></a>
+                  <a ng-click="boxes.orders.currentTab = 'time'"><div class="tab" ng-class="{active: boxes.orders.currentTab === 'time'}">Time of Day</div></a>
+                  <a ng-click="boxes.orders.currentTab = 'types'"><div class="tab" ng-class="{active: boxes.orders.currentTab === 'types'}">Types</div></a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <chart-legend>
+                  <ul class="line-legend text-right">
+                    <li><span style="background-color:rgba(151,187,205,1)"></span>2015</li>
+                    <li><span style="background-color:rgba(220,220,220,1)"></span>2016</li>
+                  </ul>
+                </chart-legend>
+              </div>
+            </div><!-- END .row -->
+
+            <div ng-show="boxes.orders.currentTab === 'trends'">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="btn-group pull-left" uib-dropdown>
+                    <button type="button" class="btn btn-add-food" uib-dropdown-toggle>
+                      6 months (Feb-Aug 2016)<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a ng-click="">6 months</a></li>
+                      <li role="menuitem"><a ng-click="">12 months</a></li>
+                    </ul>
+                  </div>
+
+                  <form class="form-inline pull-left">
+                    <div class="form-group">
+                      <label>Compare to:</label>
+                      <div class="checkbox">
+                        <label><input type="checkbox" checked> Prev year</label>
+                        <label><input type="checkbox"> 2014</label>
+                        <label><input type="checkbox"> 2013</label>
+                      </div>
+                    </div>
+                  </form>
+                </div><!-- END .col-md-8 -->
+
+                <div class="col-md-4 text-right">
+                  <p>Total Orders: <strong>76,034</strong></p>
+                  <p class="colorful">Total Change from 2015: <strong>+12.4%</strong></p>
+                </div><!-- END .col-md-4 -->
+              </div><!-- END .row -->
+
+              <canvas class="chart chart-line" chart-data="ordersStats.trends.data" chart-labels="ordersStats.trends.labels" chart-series="ordersStats.trends.series" chart-options="chartOptions"></canvas>
+            </div><!-- END  ng-show="boxes.orders.currentTab === 'trends'" -->
+
+            <div ng-show="boxes.orders.currentTab === 'time'">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="btn-group pull-left" uib-dropdown>
+                    <button type="button" class="btn btn-add-food" uib-dropdown-toggle>
+                      6 months (Feb-Aug 2016)<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a ng-click="">6 months</a></li>
+                      <li role="menuitem"><a ng-click="">12 months</a></li>
+                    </ul>
+                  </div>
+
+                  <form class="form-inline pull-left">
+                    <div class="form-group">
+                      <label>Compare to:</label>
+                      <div class="checkbox">
+                        <label><input type="checkbox" checked> Prev year</label>
+                        <label><input type="checkbox"> 2014</label>
+                        <label><input type="checkbox"> 2013</label>
+                      </div>
+                    </div>
+                  </form>
+                </div><!-- END .col-md-12 -->
+              </div><!-- END .row -->
+
+              <canvas class="chart chart-bar" chart-data="ordersStats.time.data" chart-labels="ordersStats.time.labels" chart-series="ordersStats.time.series" chart-options="chartOptions"></canvas>
+            </div><!-- END  ng-show="boxes.orders.currentTab === 'time'" -->
+
+            <div ng-show="boxes.orders.currentTab === 'types'">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="btn-group pull-left" uib-dropdown>
+                    <button type="button" class="btn btn-add-food" uib-dropdown-toggle>
+                      6 months (Feb-Aug 2016)<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a ng-click="">6 months</a></li>
+                      <li role="menuitem"><a ng-click="">12 months</a></li>
+                    </ul>
+                  </div>
+
+                  <form class="form-inline pull-left">
+                    <div class="form-group">
+                      <label>Compare to:</label>
+                      <div class="checkbox">
+                        <label><input type="checkbox" checked> Prev year</label>
+                        <label><input type="checkbox"> 2014</label>
+                        <label><input type="checkbox"> 2013</label>
+                      </div>
+                    </div>
+                  </form>
+
+                  <form class="form-inline pull-left">
+                    <div class="form-group">
+                      <label>Filter:</label>
+                      <div class="checkbox">
+                        <label><input type="checkbox" checked> Fullfilled</label>
+                        <label><input type="checkbox"> Cancelled</label>
+                      </div>
+                    </div>
+                  </form>
+                </div><!-- END .col-md-12 -->
+              </div><!-- END .row -->
+
+              <canvas class="chart chart-bar" chart-data="ordersStats.types.data" chart-labels="ordersStats.types.labels" chart-series="ordersStats.types.series" chart-options="chartOptions"></canvas>
+            </div><!-- END  ng-show="boxes.orders.currentTab === 'types'" -->
+          </div><!-- END .shadowed-subcontainer -->
+        </div><!-- END .collapsable -->
+      </div><!-- END .shadowed-container -->
+
+      <!-- RESERVATIONS -->
+      <div class="shadowed-container" ng-show="displayColumns.reservations">
+        <div class="grayout" ng-show="rearranging"></div>
+        <header>
+          <h2>Reservations</h2>
+          <i class="fa pull-right" ng-class="{'fa-chevron-up': !boxes.reservations.collapsed, 'fa-chevron-down': boxes.reservations.collapsed}" ng-click="boxes.reservations.collapsed = !boxes.reservations.collapsed" ng-show="!rearranging"></i>
+          <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
+        </header>
+
+        <div class="collapsable" ng-hide="boxes.reservations.collapsed">
+          <div class="shadowed-subcontainer">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="tab-group">
+                  <a ng-click="boxes.reservations.currentTab = 'trends'"><div class="tab" ng-class="{active: boxes.reservations.currentTab === 'trends'}">Trends</div></a>
+                  <a ng-click="boxes.reservations.currentTab = 'time'"><div class="tab" ng-class="{active: boxes.reservations.currentTab === 'time'}">Time of Day</div></a>
+                  <a ng-click="boxes.reservations.currentTab = 'seating'"><div class="tab" ng-class="{active: boxes.reservations.currentTab === 'seating'}">Seating</div></a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <chart-legend>
+                  <ul class="line-legend text-right">
+                    <li><span style="background-color:rgba(151,187,205,1)"></span>2016</li>
+                  </ul>
+                </chart-legend>
+              </div>
+            </div><!-- END .row -->
+
+            <div ng-show="boxes.reservations.currentTab === 'trends'">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="btn-group pull-left" uib-dropdown>
+                    <button type="button" class="btn btn-add-food" uib-dropdown-toggle>
+                      1 month (February 2016)<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a ng-click="">6 months</a></li>
+                      <li role="menuitem"><a ng-click="">12 months</a></li>
+                    </ul>
+                  </div>
+
+                  <form class="form-inline pull-left">
+                    <div class="form-group">
+                      <label>Compare to:</label>
+                      <div class="checkbox">
+                        <label><input type="checkbox"> Prev year</label>
+                        <label><input type="checkbox"> 2014</label>
+                        <label><input type="checkbox"> 2013</label>
+                      </div>
+                    </div>
+                  </form>
+                </div><!-- END .col-md-8 -->
+
+                <div class="col-md-4 text-right">
+                  <p>Total reservations: <strong>3,678</strong></p>
+                </div><!-- END .col-md-4 -->
+              </div><!-- END .row -->
+
+              <canvas class="chart chart-line" chart-data="reservationsStats.trends.data" chart-labels="reservationsStats.trends.labels" chart-series="reservationsStats.trends.series" chart-options="chartOptions"></canvas>
+            </div><!-- END  ng-show="boxes.reservations.currentTab === 'trends'" -->
+
+            <div ng-show="boxes.reservations.currentTab === 'time'">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="btn-group pull-left" uib-dropdown>
+                    <button type="button" class="btn btn-add-food" uib-dropdown-toggle>
+                      1 month (February 2016)<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a ng-click="">6 months</a></li>
+                      <li role="menuitem"><a ng-click="">12 months</a></li>
+                    </ul>
+                  </div>
+
+                  <form class="form-inline pull-left">
+                    <div class="form-group">
+                      <label>Compare to:</label>
+                      <div class="checkbox">
+                        <label><input type="checkbox"> Prev year</label>
+                        <label><input type="checkbox"> 2014</label>
+                        <label><input type="checkbox"> 2013</label>
+                      </div>
+                    </div>
+                  </form>
+                </div><!-- END .col-md-12 -->
+              </div><!-- END .row -->
+
+              <canvas class="chart chart-bar" chart-data="reservationsStats.time.data" chart-labels="reservationsStats.time.labels" chart-series="reservationsStats.time.series" chart-options="chartOptions"></canvas>
+            </div><!-- END  ng-show="boxes.reservations.currentTab === 'time'" -->
+
+            <div ng-show="boxes.reservations.currentTab === 'seating'">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="btn-group pull-left" uib-dropdown>
+                    <button type="button" class="btn btn-add-food" uib-dropdown-toggle>
+                      1 month (February 2016)<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a ng-click="">6 months</a></li>
+                      <li role="menuitem"><a ng-click="">12 months</a></li>
+                    </ul>
+                  </div>
+
+                  <form class="form-inline pull-left">
+                    <div class="form-group">
+                      <label>Compare to:</label>
+                      <div class="checkbox">
+                        <label><input type="checkbox"> Prev year</label>
+                        <label><input type="checkbox"> 2014</label>
+                        <label><input type="checkbox"> 2013</label>
+                      </div>
+                    </div>
+                  </form>
+                </div><!-- END .col-md-12 -->
+              </div><!-- END .row -->
+
+              <canvas class="chart chart-bar" chart-data="reservationsStats.seating.data" chart-labels="reservationsStats.seating.labels" chart-series="reservationsStats.seating.series" chart-options="chartOptions"></canvas>
+            </div><!-- END  ng-show="boxes.reservations.currentTab === 'seating'" -->
+          </div><!-- END .shadowed-subcontainer -->
+        </div><!-- END .collapsable -->
+      </div><!-- END .shadowed-container -->
+
+      <!-- PAYMENTS -->
+      <div class="shadowed-container" ng-show="displayColumns.payments">
+        <div class="grayout" ng-show="rearranging"></div>
+        <header>
+          <h2>Payments</h2>
+          <i class="fa pull-right" ng-class="{'fa-chevron-up': !boxes.payments.collapsed, 'fa-chevron-down': boxes.payments.collapsed}" ng-click="boxes.payments.collapsed = !boxes.payments.collapsed" ng-show="!rearranging"></i>
+          <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
+        </header>
+
+        <div class="collapsable" ng-hide="boxes.payments.collapsed">
+          <div class="shadowed-subcontainer">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="tab-group">
+                  <a ng-click="boxes.payments.currentTab = 'sources'"><div class="tab" ng-class="{active: boxes.payments.currentTab === 'sources'}">Sources</div></a>
+                  <a ng-click="boxes.payments.currentTab = 'types'"><div class="tab" ng-class="{active: boxes.payments.currentTab === 'types'}">Types</div></a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <chart-legend>
+                  <ul class="line-legend text-right">
+                    <li><span style="background-color:rgba(151,187,205,1)"></span>2016</li>
+                  </ul>
+                </chart-legend>
+              </div>
+            </div><!-- END .row -->
+
+            <div ng-show="boxes.payments.currentTab === 'sources'">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="btn-group pull-left" uib-dropdown>
+                    <button type="button" class="btn btn-add-food" uib-dropdown-toggle>
+                      1 month (February 2016)<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a ng-click="">6 months</a></li>
+                      <li role="menuitem"><a ng-click="">12 months</a></li>
+                    </ul>
+                  </div>
+
+                  <form class="form-inline pull-left">
+                    <div class="form-group">
+                      <label>Compare to:</label>
+                      <div class="checkbox">
+                        <label><input type="checkbox" checked> Prev year</label>
+                        <label><input type="checkbox" checked> 2014</label>
+                        <label><input type="checkbox" checked> 2013</label>
+                      </div>
+                    </div>
+                  </form>
+                </div><!-- END .col-md-12 -->
+              </div><!-- END .row -->
+
+              <canvas class="chart chart-bar" chart-data="paymentsStats.sources.data" chart-labels="paymentsStats.sources.labels" chart-series="paymentsStats.sources.series" chart-options="chartOptions"></canvas>
+            </div><!-- END  ng-show="boxes.payments.currentTab === 'sources'" -->
+
+            <div ng-show="boxes.payments.currentTab === 'types'">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="btn-group pull-left" uib-dropdown>
+                    <button type="button" class="btn btn-add-food" uib-dropdown-toggle>
+                      1 month (February 2016)<span class="caret"></span>
+                    </button>
+                    <ul uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a ng-click="">6 months</a></li>
+                      <li role="menuitem"><a ng-click="">12 months</a></li>
+                    </ul>
+                  </div>
+
+                  <form class="form-inline pull-left">
+                    <div class="form-group">
+                      <label>Compare to:</label>
+                      <div class="checkbox">
+                        <label><input type="checkbox"> Prev year</label>
+                        <label><input type="checkbox"> 2014</label>
+                        <label><input type="checkbox"> 2013</label>
+                      </div>
+                    </div>
+                  </form>
+                </div><!-- END .col-md-12 -->
+              </div><!-- END .row -->
+
+              <canvas class="chart chart-bar" chart-data="paymentsStats.types.data" chart-labels="paymentsStats.types.labels" chart-series="paymentsStats.types.series" chart-options="chartOptions"></canvas>
+            </div><!-- END  ng-show="boxes.payments.currentTab === 'types'" -->
+          </div><!-- END .shadowed-subcontainer -->
+        </div><!-- END .collapsable -->
+      </div><!-- END .shadowed-container -->
+
+    </div><!-- END .col-md-12 -->
+  </div><!-- END .row -->
+</div><!-- END .statistics -->

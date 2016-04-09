@@ -13,6 +13,7 @@ angular.module('accountAdminApp')
         url: '/menu/create',
         templateUrl: 'app/main/food-menus/createFoodMenuModal.html'
       })
+
       .state('main.food-menus.menu', {
         abstract: true,
         url: '/menu/:_id',

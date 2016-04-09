@@ -91,8 +91,8 @@
 
           <div class="row">
             <div class="col-md-12 text-center resetsave">
-              <button class="btn btn-default" ng-click="main.back()">Cancel</button>
-              <button class="btn btn-primary" ng-disabled="businessForm.$invalid" ng-click="save('business')">Save</button>
+              <button class="btn btn-default" ng-click="main.go()">Cancel</button>
+              <button class="btn btn-primary" ng-click="main.go()" ng-disabled="businessForm.$invalid">Save</button>
             </div>
           </div><!-- END .row -->
         </form><!-- END Business Info -->

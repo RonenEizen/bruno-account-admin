@@ -110,29 +110,29 @@
                     <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
                   </ul>
                   <div class="cal-row">
-                    <div class="booked pending" ng-click="main.customModal('viewTableModal.html')" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
+                    <div class="booked pending" ng-click="main.go('.table')" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked active" ng-click="main.customModal('viewTableModal.html')" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
+                    <div class="booked active" ng-click="main.go('.table')" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked closed" ng-click="main.customModal('viewTableModal.html')" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
-                    <div class="booked pending" ng-click="main.customModal('viewTableModal.html')" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
+                    <div class="booked closed" ng-click="main.go('.table')" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
+                    <div class="booked pending" ng-click="main.go('.table')" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked active" ng-click="main.customModal('viewTableModal.html')" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
+                    <div class="booked active" ng-click="main.go('.table')" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked active" ng-click="main.customModal('viewTableModal.html')" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
+                    <div class="booked active" ng-click="main.go('.table')" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked pending" ng-click="main.customModal('viewTableModal.html')" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
+                    <div class="booked pending" ng-click="main.go('.table')" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
                   </div>
                 </div><!-- END .calendar-widget -->
               </div>
             </div><!-- END .row -->
             <div class="bottom-link text-right">
-              <a href="/reservations">All Reservations ›</a>
+              <a ui-sref="main.reservations.day">All Reservations ›</a>
             </div><!-- .row -->
           </div><!-- END .collapsable -->
         </div><!-- END .shadowed-container -->
@@ -160,39 +160,39 @@
                   <div class="tr">
                     <div class="td">Children Eat Free</div>
                     <div class="td">
-                      <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
-                      <a href="javascript:void(0)"><i class="icon-Twitter"></i></a>
-                      <a href="javascript:void(0)"><i class="icon-GooglePlus"></i></a>
-                      <a href="javascript:void(0)"><i class="icon-Newsletter"></i></a>
-                      <a href="javascript:void(0)"><i class="icon-Banner"></i></a>
+                      <a href="/marketing/1/facebook"><i class="icon-Facebook"></i></a>
+                      <a href="/marketing/1/twitter"><i class="icon-Twitter"></i></a>
+                      <a href="/marketing/1/google"><i class="icon-GooglePlus"></i></a>
+                      <a href="/marketing/1/newsletter"><i class="icon-Newsletter"></i></a>
+                      <a href="/marketing/1/banner"><i class="icon-Banner"></i></a>
                     </div>
                     <div class="td status expiring">Expiring Tomorrow</div>
                   </div>
                   <div class="tr">
                     <div class="td">Lunch Special - 20% Off</div>
                     <div class="td">
-                      <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
-                      <a href="javascript:void(0)"><i class="icon-Twitter"></i></a>
-                      <a href="javascript:void(0)"><i class="icon-Newsletter"></i></a>
+                      <a href="/marketing/1/facebook"><i class="icon-Facebook"></i></a>
+                      <a href="/marketing/1/twitter"><i class="icon-Twitter"></i></a>
+                      <a href="/marketing/1/newsletter"><i class="icon-Newsletter"></i></a>
                     </div>
                     <div class="td status expiring">Expiring 01/20/2016</div>
                   </div>
                   <div class="tr">
                     <div class="td">Free Cofee with Breakfast</div>
                     <div class="td">
-                      <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
-                      <a href="javascript:void(0)"><i class="icon-GooglePlus"></i></a>
-                      <a href="javascript:void(0)"><i class="icon-Banner"></i></a>
+                      <a href="/marketing/1/facebook"><i class="icon-Facebook"></i></a>
+                      <a href="/marketing/1/google"><i class="icon-GooglePlus"></i></a>
+                      <a href="/marketing/1/banner"><i class="icon-Banner"></i></a>
                     </div>
                     <div class="td status">02/20/2016</div>
                   </div>
                   <div class="tr">
                     <div class="td">Dinner Specials</div>
                     <div class="td">
-                      <a href="javascript:void(0)"><i class="icon-Facebook"></i></a>
-                      <a href="javascript:void(0)"><i class="icon-Twitter"></i></a>
-                      <a href="javascript:void(0)"><i class="icon-Newsletter"></i></a>
-                      <a href="javascript:void(0)"><i class="icon-Banner"></i></a>
+                      <a href="/marketing/1/facebook"><i class="icon-Facebook"></i></a>
+                      <a href="/marketing/1/twitter"><i class="icon-Twitter"></i></a>
+                      <a href="/marketing/1/newsletter"><i class="icon-Newsletter"></i></a>
+                      <a href="/marketing/1/banner"><i class="icon-Banner"></i></a>
                     </div>
                     <div class="td status">02/20/2016</div>
                   </div>
@@ -200,7 +200,7 @@
               </div><!-- END .table -->
             </div><!-- END .row -->
             <div class="bottom-link text-right">
-              <a href="/marketing">All Campaigns ›</a>
+              <a ui-sref="main.marketing">All Campaigns ›</a>
             </div><!-- .row -->
           </div><!-- END .collapsable -->
         </div><!-- END .shadowed-container -->
@@ -244,7 +244,7 @@
               </div><!-- END .table -->
             </div><!-- END .row -->
             <div class="bottom-link text-right">
-              <a ng-click="main.customModal('updatesModal.html')">All Settings Updates ›</a>
+              <a ng-click="main.go('.updates')">All Settings Updates ›</a>
             </div><!-- END .row -->
           </div><!-- END .collapsable -->
         </div><!-- END .shadowed-container -->

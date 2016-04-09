@@ -65,8 +65,8 @@
 
           <div class="row">
             <div class="col-md-12 resetsave text-center">
-              <button class="btn btn-default" ng-click="main.go()">Cancel</button>
-              <button class="btn btn-primary" ng-disabled="reservationForm.$invalid" ng-click="$dismiss()">Add Reservation</button>
+              <button class="btn btn-default" ng-click="main.go('^.day')">Cancel</button>
+              <button class="btn btn-primary" ng-disabled="reservationForm.$invalid" ng-click="main.go('^.day')">Add Reservation</button>
             </div>
           </div><!-- END .row -->
         </form>

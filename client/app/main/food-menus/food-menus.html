@@ -6,7 +6,7 @@
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="main.customModal('addFoodMenuModal.html')">+ New Food Menu</button>
+      <button class="btn btn-primary" ng-click="main.go('.createMenu')">+ New Food Menu</button>
     </div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -33,7 +33,7 @@
     <div class="col-md-12 shadowed-container">
       <header>
         <h2>My Menu</h2>
-        <a ng-click="main.customModal('foodMenuModal.html')" ng-show="!collapsed">Edit</a>
+        <a href="/food-menus/menu/1/edit" ng-show="!collapsed">Edit</a>
         <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed, 'fa-chevron-down': collapsed}" ng-click="collapsed = !collapsed"></i>
       </header>
 
@@ -42,29 +42,29 @@
           <div class="col-md-12">
             <header>
               <h3>Appetizers</h3>
-              <a  ng-click="main.customModal('menuCategoryModal.html')" class="pull-right">Edit</a>
+              <a href="/food-menus/category/1/edit" class="pull-right">Edit</a>
             </header>
           </div>
           <div class="col-md-12">
             <div class="table">
               <div class="tbody">
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
@@ -77,8 +77,8 @@
                 + Add Food Item <span class="caret"></span>
               </button>
               <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                <li role="menuitem"><a ng-click="main.customModal('addFoodItemModal.html')">New Food Item</a></li>
-                <li role="menuitem"><a ng-click="main.customModal('addExistingFoodModal.html')">Existing Food Item</a></li>
+                <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
+                <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
               </ul>
             </div>
           </div>
@@ -95,22 +95,22 @@
             <div class="table">
               <div class="tbody">
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
@@ -123,8 +123,8 @@
                 + Add Food Item <span class="caret"></span>
               </button>
               <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                <li role="menuitem"><a ng-click="main.customModal('addFoodItemModal.html')">New Food Item</a></li>
-                <li role="menuitem"><a ng-click="main.customModal('addExistingFoodModal.html')">Existing Food Item</a></li>
+                <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
+                <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
               </ul>
             </div>
           </div>
@@ -132,7 +132,7 @@
 
         <div class="row shadowed-subcontainer">
           <div class="col-md-12">
-            <a ng-click="main.customModal('addMenuCategoryModal.html')" class="add-something">+ Add Category</a>
+            <a ng-click="main.go('.createCategory')" class="add-something">+ Add Category</a>
           </div>
         </div><!-- END .shadowed-subcontainer -->
       </div><!-- END .collapsable -->
@@ -145,7 +145,7 @@
     <div class="col-md-12 shadowed-container">
       <header>
         <h2>Old Menu</h2>
-        <a ng-click="main.customModal('foodMenuModal.html')" ng-show="!collapsed">Edit</a>
+        <a href="/food-menus/menu/1/edit" ng-show="!collapsed">Edit</a>
         <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed, 'fa-chevron-down': collapsed}" ng-click="collapsed = !collapsed"></i>
       </header>
 
@@ -154,29 +154,29 @@
           <div class="col-md-12">
             <header>
               <h3>Appetizers</h3>
-              <a  ng-click="main.customModal('menuCategoryModal.html')" class="pull-right">Edit</a>
+              <a href="/food-menus/category/1/edit" class="pull-right">Edit</a>
             </header>
           </div>
           <div class="col-md-12">
             <div class="table">
               <div class="tbody">
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
@@ -189,8 +189,8 @@
                 + Add Food Item <span class="caret"></span>
               </button>
               <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                <li role="menuitem"><a ng-click="main.customModal('addFoodItemModal.html')">New Food Item</a></li>
-                <li role="menuitem"><a ng-click="main.customModal('addExistingFoodModal.html')">Existing Food Item</a></li>
+                <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
+                <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
               </ul>
             </div>
           </div>
@@ -207,22 +207,22 @@
             <div class="table">
               <div class="tbody">
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('foodItemModal.html')">Vietnamise Pad Thai</a></div>
+                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
                   <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
                   <div class="td text-right">$8.50</div>
                 </div>
@@ -235,8 +235,8 @@
                 + Add Food Item <span class="caret"></span>
               </button>
               <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                <li role="menuitem"><a ng-click="main.customModal('addFoodItemModal.html')">New Food Item</a></li>
-                <li role="menuitem"><a ng-click="main.customModal('addExistingFoodModal.html')">Existing Food Item</a></li>
+                <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
+                <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
               </ul>
             </div>
           </div>
@@ -244,7 +244,7 @@
 
         <div class="row shadowed-subcontainer">
           <div class="col-md-12">
-            <a ng-click="main.customModal('addMenuCategoryModal.html')" class="add-something">+ Add Category</a>
+            <a ng-click="main.go('.createCategory')" class="add-something">+ Add Category</a>
           </div>
         </div><!-- END .shadowed-subcontainer -->
       </div><!-- END .collapsable -->

@@ -47,8 +47,8 @@
 
   <div class="row">
     <div class="col-md-12 resetsave text-center">
-      <button class="btn btn-default" ng-click="modal.object.edit = !modal.object.edit">Cancel</button>
-      <button class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="modal.object.edit = !modal.object.edit">Save</button>
+      <button class="btn btn-default" ng-click="main.go('^.view')">Cancel</button>
+      <button class="btn btn-primary" ng-click="main.go('main.users')" ng-disabled="userForm.$invalid">Save</button>
     </div>
   </div><!-- END .row -->
 </form>

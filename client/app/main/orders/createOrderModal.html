@@ -1,5 +1,5 @@
 <div class="flyout">
-  <button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+  <button class="close" ng-click="main.go()"><i class="icon-close"></i></button>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -178,8 +178,8 @@
           <div class="row">
             <div class="col-md-12">
               <div class="resetsave text-center">
-                <button class="btn btn-default" ng-click="$dismiss('bye modal')">Cancel</button>
-                <button class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="$close(modal.object)">Save</button>
+                <button class="btn btn-default" ng-click="main.go()">Cancel</button>
+                <button class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="main.go()">Save</button>
               </div>
             </div>
           </div><!-- END .row -->

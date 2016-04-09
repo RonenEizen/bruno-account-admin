@@ -67,8 +67,6 @@ class MainController {
     this.integrations = SettingsService.integrations;
     this.reviews = SettingsService.reviews;
 
-    // TODO: remove this
-    this.back = (dest = '^') => { $state.go(dest) }
     this.go = (dest = '^') => { $state.go(dest) }
   }
 

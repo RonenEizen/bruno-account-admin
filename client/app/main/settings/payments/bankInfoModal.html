@@ -35,8 +35,8 @@
 
           <div class="row">
             <div class="col-md-12 text-center resetsave">
-              <button class="btn btn-default" ng-click="main.back()">Cancel</button>
-              <button class="btn btn-primary" ng-disabled="paymentsForm.$invalid" ng-click="save('payments')">Save</button>
+              <button class="btn btn-default" ng-click="main.go('main.paymentsSettings')">Cancel</button>
+              <button class="btn btn-primary" ng-click="main.go('main.paymentsSettings')" ng-disabled="paymentsForm.$invalid">Save</button>
             </div>
           </div><!-- END .row -->
         </form><!-- END Business Info -->

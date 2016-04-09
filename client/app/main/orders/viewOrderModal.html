@@ -80,8 +80,8 @@
 <div class="row">
   <div class="col-md-12 resetsave">
     <div class="pull-left">
-      <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-      <button class="btn btn-primary" ng-click="modal.object.edit = !modal.object.edit">Edit</button>
+      <button class="btn btn-default" ng-click="main.go('^.^')">Cancel</button>
+      <button class="btn btn-primary" ng-click="main.go('^.edit')">Edit</button>
     </div><!-- END .pull-left -->
     <div class="pull-right">
       <button class="btn btn-danger"  ng-hide="modal.object.status === 'cancelled'" ng-click="modal.object.status = 'cancelled'">Cancel Order</button>

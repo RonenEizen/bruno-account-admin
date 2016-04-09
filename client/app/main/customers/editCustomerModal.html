@@ -78,8 +78,8 @@
       </div><!-- END .row -->
       <div class="row">
         <div class="col-md-12 resetsave text-center">
-          <button class="btn btn-default" ng-click="modal.object.edit = !modal.object.edit">Cancel</button>
-          <button class="btn btn-primary" ng-disabled="customerForm.$invalid" ng-click="save(modal.editing)">Save</button>
+          <button class="btn btn-default" ng-click="main.go('^.view')">Cancel</button>
+          <button class="btn btn-primary" ng-click="main.go('main.customers')" ng-disabled="customerForm.$invalid">Save</button>
         </div>
       </div><!-- END .row -->
     </form>

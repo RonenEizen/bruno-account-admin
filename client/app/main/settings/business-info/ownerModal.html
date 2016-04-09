@@ -113,8 +113,8 @@
 
           <div class="row">
             <div class="col-md-12 text-center resetsave">
-              <button class="btn btn-default" ng-click="main.back()">Cancel</button>
-              <button class="btn btn-primary" ng-disabled="ownerForm.$invalid" ng-click="save('owner')">Save</button>
+              <button class="btn btn-default" ng-click="main.go()">Cancel</button>
+              <button class="btn btn-primary" ng-click="main.go()" ng-disabled="ownerForm.$invalid">Save</button>
             </div>
           </div><!-- END .row -->
         </form><!-- END Business Owner Info -->

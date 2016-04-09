@@ -32,9 +32,9 @@
 
   <div class="row">
     <div class="col-md-12 resetsave text-center">
-      <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-      <button class="btn btn-danger" ng-click="modal.object.delete = !modal.object.delete">Remove</button>
-      <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+      <button class="btn btn-default" ng-click="main.go('main.food-menus')">Cancel</button>
+      <button class="btn btn-danger" ng-click="main.go('^.remove')">Remove</button>
+      <button class="btn btn-primary" ng-click="main.go('main.food-menus')">Save</button>
     </div>
   </div><!-- END .row -->
 </form>

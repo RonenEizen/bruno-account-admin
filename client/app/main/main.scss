@@ -5,7 +5,7 @@
         &.selected,
         &:hover,
         &.expanded                { background: $darkgray2; }
-        a                         { color: $beige; display: block; font: 110% $serif-font; height: 40px; line-height: 40px; padding-left: 25px; position: relative; text-decoration: none; width: 100%; }
+        a                         { color: $beige; display: block; font: 500 16px $serif-font; height: 40px; line-height: 40px; padding-left: 25px; position: relative; text-decoration: none; width: 100%; }
         span.submenu-arrow        { color: $lightgray; font-size: 80%; position: absolute;
           &.icon-triangle_up      { font-size: 7px; left: 10px; top: 14px; }
           &.icon-triangle_right   { font-size: 9px; left: 13px; top: 16px; }
@@ -15,7 +15,7 @@
           li                      {
             &.selected,
             &:hover               { background: $darkgray1; }
-            a                     { font-size: 90%; font-weight: 300; padding: 0 0 0 40px; }
+            a                     { font-size: 14px; font-weight: 300; padding: 0 0 0 40px; }
           }
         }
       }
@@ -31,7 +31,7 @@
     }
   }
   #page-content-wrapper           { position: relative; height: 100%; overflow: hidden; -webkit-flex: 1; flex: 1; }
-  .main-content                   { height: 100%; overflow: auto; padding-top: 50px; position: relative; }
+  .main-content                   { height: 100%; overflow: auto; padding-top: 55px; position: relative; }
   &.collapsed                     {
     #sidebar-wrapper              { margin-left: -240px;}
     #page-content-wrapper         { position: relative; }

@@ -10,63 +10,65 @@
   </div>
 </header>
 
-<div class="col-md-12 main">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 class="reservations-heading">Tables</h2>
-        </div>
-        <div class="col-md-12">
-          <div class="table reservations-table">
-            <div class="thead">
-              <div class="tr">
-                <div class="th">Table Name</div>
-                <div class="th">Table Capacity</div>
-                <div class="th">Number of Tables</div>
-                <div class="th">Mergeable</div>
-              </div><!-- END .tr -->
-            </div><!-- END .thead -->
+<div class="main">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="reservations-heading">Tables</h2>
+          </div>
+          <div class="col-md-12">
+            <div class="table reservations-table">
+              <div class="thead">
+                <div class="tr">
+                  <div class="th">Table Name</div>
+                  <div class="th">Table Capacity</div>
+                  <div class="th">Number of Tables</div>
+                  <div class="th">Mergeable</div>
+                </div><!-- END .tr -->
+              </div><!-- END .thead -->
 
-            <div class="tbody">
-              <div class="tr" ng-repeat="table in reservations.tables">
-                <div class="td">
-                  <a href="/settings/reservations/{{table._id}}">{{table.name}}</a>
-                </div>
-                <div class="td">{{table.capacity}}</div>
-                <div class="td">{{table.quantity}}</div>
-                <div class="td">{{table.mergeable ? 'yes':'no'}}</div>
-              </div><!-- END .tr -->
+              <div class="tbody">
+                <div class="tr" ng-repeat="table in reservations.tables">
+                  <div class="td">
+                    <a href="/settings/reservations/{{table._id}}">{{table.name}}</a>
+                  </div>
+                  <div class="td">{{table.capacity}}</div>
+                  <div class="td">{{table.quantity}}</div>
+                  <div class="td">{{table.mergeable ? 'yes':'no'}}</div>
+                </div><!-- END .tr -->
 
-              <div class="tr">
-                <div class="td">
-                  <a ui-sref=".create">+ Add Table</a>
-                </div>
-              </div><!-- END .tr -->
+                <div class="tr">
+                  <div class="td">
+                    <a ui-sref=".create">+ Add Table</a>
+                  </div>
+                </div><!-- END .tr -->
 
-            </div><!-- END .tbody -->
-          </div><!-- END .table -->
-        </div><!-- END .col-md-12 -->
-      </div><!-- END .row -->
+              </div><!-- END .tbody -->
+            </div><!-- END .table -->
+          </div><!-- END .col-md-12 -->
+        </div><!-- END .row -->
 
-    </div><!-- END .col-md-6 -->
+      </div><!-- END .col-md-6 -->
 
-    <div class="col-md-6">
-      <h2>Seating <a ui-sref=".seating" class="pull-right">Edit</a></h2>
-      <p>
-        <strong>Maximun Seating Capacity</strong><br>
-        {{reservations.seatings}} people
-      </p>
-    </div>
-  </div><!-- END .row -->
+      <div class="col-md-6">
+        <h2>Seating <a ui-sref=".seating" class="pull-right">Edit</a></h2>
+        <p>
+          <strong>Maximun Seating Capacity</strong><br>
+          {{reservations.seatings}} people
+        </p>
+      </div>
+    </div><!-- END .row -->
 
-  <div class="row reservation-integrations">
-    <div class="col-md-6 col-md-offset-3 text-center">
-      <p>Please go to <a href="/settings/integration">Integration</a> settings to connect to online reservation services.</p>
-      <div class="col-xs-3"><img src="http://borntocoupon.com/wp-content/uploads/2015/02/Seamless-logo.png" alt="Seamless"></div>
-      <div class="col-xs-3"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt="seatme"></div>
-      <div class="col-xs-3"><img src="http://www.pricelinegroup.com/wp-content/uploads/2014/07/1_Brand_logo-435x110_x2-435x110@2x.png" alt="OpenTable"></div>
-      <div class="col-xs-3"><img src="https://snowulf.com/wp-content/uploads/2015/11/grubhub.png" alt="grubHub"></div>
-    </div><!-- END .col-md-6 -->
-  </div><!-- END .row -->
-</div><!-- END .col-md-12 -->
+    <div class="reservation-integrations">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <p>Please go to <a href="/settings/integration">Integration</a> settings to connect to online reservation services.</p>
+        <div class="col-xs-3"><img src="http://borntocoupon.com/wp-content/uploads/2015/02/Seamless-logo.png" alt="Seamless"></div>
+        <div class="col-xs-3"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt="seatme"></div>
+        <div class="col-xs-3"><img src="http://www.pricelinegroup.com/wp-content/uploads/2014/07/1_Brand_logo-435x110_x2-435x110@2x.png" alt="OpenTable"></div>
+        <div class="col-xs-3"><img src="https://snowulf.com/wp-content/uploads/2015/11/grubhub.png" alt="grubHub"></div>
+      </div><!-- END .col-md-8 -->
+    </div><!-- END .reservation-integrations -->
+  </div><!-- END .col-md-12 -->
+</div><!-- END .main -->

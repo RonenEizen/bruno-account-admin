@@ -28,71 +28,73 @@
   </div>
 </header>
 
-<div class="col-md-12 main">
-  <div class="table userroles">
-    <div class="thead">
-      <div class="tr">
+<div class="main">
+  <div class="col-md-12">
+    <div class="table userroles">
+      <div class="thead">
+        <div class="tr">
 
-        <div class="th" ng-show="displayColumns.role">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('role')"></i>
-            <div ng-show="openFilter.role">
-              <input type="text" ng-model="rolesFilter.role">
+          <div class="th" ng-show="displayColumns.role">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('role')"></i>
+              <div ng-show="openFilter.role">
+                <input type="text" ng-model="rolesFilter.role">
+              </div>
             </div>
+            <span ng-click="clickedHeader='role'; reverse = !reverse">Role
+              <i class="sortorder fa" ng-show="clickedHeader === 'role'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'role'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='role'; reverse = !reverse">Role
-            <i class="sortorder fa" ng-show="clickedHeader === 'role'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'role'"></i>
-          </span>
-        </div>
 
-        <div class="th" ng-show="displayColumns.access">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('access')"></i>
-            <div ng-show="openFilter.access">
-              <input type="text" ng-model="rolesFilter.access">
+          <div class="th" ng-show="displayColumns.access">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('access')"></i>
+              <div ng-show="openFilter.access">
+                <input type="text" ng-model="rolesFilter.access">
+              </div>
             </div>
+            <span ng-click="clickedHeader='access'; reverse = !reverse">Access
+              <i class="sortorder fa" ng-show="clickedHeader === 'access'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'access'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='access'; reverse = !reverse">Access
-            <i class="sortorder fa" ng-show="clickedHeader === 'access'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'access'"></i>
-          </span>
-        </div>
 
-        <div class="th" ng-show="displayColumns.rights">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('rights')"></i>
-            <div ng-show="openFilter.rights">
-              <input type="text" ng-model="rolesFilter.rights">
+          <div class="th" ng-show="displayColumns.rights">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('rights')"></i>
+              <div ng-show="openFilter.rights">
+                <input type="text" ng-model="rolesFilter.rights">
+              </div>
             </div>
+            <span ng-click="clickedHeader='rights'; reverse = !reverse">Rights
+              <i class="sortorder fa" ng-show="clickedHeader === 'rights'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'rights'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='rights'; reverse = !reverse">Rights
-            <i class="sortorder fa" ng-show="clickedHeader === 'rights'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'rights'"></i>
-          </span>
-        </div>
 
-      </div><!-- END .tr -->
-    </div><!-- END .thead -->
-    <div class="tbody">
-      <div class="tr"
-        ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingRoles
-      ">
-        <div class="td" ng-show="displayColumns.role">
-          <a href="/settings/roles/{{role._id}}/view">{{role.role}}</a>
-        </div>
+        </div><!-- END .tr -->
+      </div><!-- END .thead -->
+      <div class="tbody">
+        <div class="tr"
+          ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingRoles
+        ">
+          <div class="td" ng-show="displayColumns.role">
+            <a href="/settings/roles/{{role._id}}/view">{{role.role}}</a>
+          </div>
 
-        <div class="td" ng-show="displayColumns.access">
-          <span ng-show="!role.edit" ng-repeat="access in role.access">{{access}}{{$last ? '' : ', '}}</span>
-        </div>
+          <div class="td" ng-show="displayColumns.access">
+            <span ng-show="!role.edit" ng-repeat="access in role.access">{{access}}{{$last ? '' : ', '}}</span>
+          </div>
 
-        <div class="td" ng-show="displayColumns.rights">
-          <!-- TODO: fix this filter to display rights based on role access -->
-          <span ng-repeat="access in accesses | filter:{name:role.access}">{{access.rights}}{{$last ? '' : ', '}}</span>
-        </div>
-      </div><!-- END .tr -->
+          <div class="td" ng-show="displayColumns.rights">
+            <!-- TODO: fix this filter to display rights based on role access -->
+            <span ng-repeat="access in accesses | filter:{name:role.access}">{{access.rights}}{{$last ? '' : ', '}}</span>
+          </div>
+        </div><!-- END .tr -->
 
-    </div><!-- END .tbody -->
-  </div><!-- END .table -->
-  <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
-</div>
+      </div><!-- END .tbody -->
+    </div><!-- END .table -->
+    <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
+  </div><!-- END .com-md-12 -->
+</div><!-- END .main -->

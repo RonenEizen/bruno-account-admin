@@ -29,76 +29,78 @@
   </div>
 </header>
 
-<div class="col-md-12 main">
-  <div class="table userroles">
-    <div class="thead">
-      <div class="tr">
+<div class="main">
+  <div class="col-md-12">
+    <div class="table userroles">
+      <div class="thead">
+        <div class="tr">
 
-        <div class="th" ng-show="displayColumns.name">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('name')"></i>
-            <div ng-show="openFilter.name">
-              <input type="text" ng-model="usersFilter.name">
+          <div class="th" ng-show="displayColumns.name">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('name')"></i>
+              <div ng-show="openFilter.name">
+                <input type="text" ng-model="usersFilter.name">
+              </div>
             </div>
+            <span ng-click="clickedHeader='name'; reverse = !reverse">Name
+              <i class="sortorder fa" ng-show="clickedHeader === 'name'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'name'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='name'; reverse = !reverse">Name
-            <i class="sortorder fa" ng-show="clickedHeader === 'name'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'name'"></i>
-          </span>
-        </div>
 
-        <div class="th" ng-show="displayColumns.role">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('role')"></i>
-            <div ng-show="openFilter.role">
-              <input type="text" ng-model="usersFilter.role">
+          <div class="th" ng-show="displayColumns.role">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('role')"></i>
+              <div ng-show="openFilter.role">
+                <input type="text" ng-model="usersFilter.role">
+              </div>
             </div>
+            <span ng-click="clickedHeader='role'; reverse = !reverse">Role
+              <i class="sortorder fa" ng-show="clickedHeader === 'role'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'role'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='role'; reverse = !reverse">Role
-            <i class="sortorder fa" ng-show="clickedHeader === 'role'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'role'"></i>
-          </span>
-        </div>
 
-        <div class="th" ng-show="displayColumns.phone">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('phone')"></i>
-            <div ng-show="openFilter.phone">
-              <input type="text" ng-model="usersFilter.phone">
+          <div class="th" ng-show="displayColumns.phone">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('phone')"></i>
+              <div ng-show="openFilter.phone">
+                <input type="text" ng-model="usersFilter.phone">
+              </div>
             </div>
+            <span ng-click="clickedHeader='phone'; reverse = !reverse">Phone
+              <i class="sortorder fa" ng-show="clickedHeader === 'phone'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'phone'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='phone'; reverse = !reverse">Phone
-            <i class="sortorder fa" ng-show="clickedHeader === 'phone'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'phone'"></i>
-          </span>
-        </div>
 
-        <div class="th" ng-show="displayColumns.email">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('email')"></i>
-            <div ng-show="openFilter.email">
-              <input type="text" ng-model="usersFilter.email">
+          <div class="th" ng-show="displayColumns.email">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('email')"></i>
+              <div ng-show="openFilter.email">
+                <input type="text" ng-model="usersFilter.email">
+              </div>
             </div>
+            <span ng-click="clickedHeader='email'; reverse = !reverse">Email
+              <i class="sortorder fa" ng-show="clickedHeader === 'email'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'email'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='email'; reverse = !reverse">Email
-            <i class="sortorder fa" ng-show="clickedHeader === 'email'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'email'"></i>
-          </span>
-        </div>
-      </div><!-- END .tr -->
-    </div><!-- END .thead -->
+        </div><!-- END .tr -->
+      </div><!-- END .thead -->
 
-    <div class="tbody">
-      <div
-        class="tr"
-        ng-repeat="user in users | filter:usersFilter | orderBy:clickedHeader:reverse | limitTo:displayingUsers
-      ">
-        <div class="td" ng-show="displayColumns.name"><a href="/settings/users/{{user._id}}">{{user.fname + ' ' + user.lname}}</a></div>
-        <div class="td" ng-show="displayColumns.role">{{user.role}}</div>
-        <div class="td" ng-show="displayColumns.phone">{{user.phone}}</div>
-        <div class="td" ng-show="displayColumns.email">{{user.email}}</div>
-      </div><!-- END .tr -->
-    </div><!-- END .tbody -->
-  </div><!-- END .table -->
-  <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
-</div><!-- END .col-md-12 -->
+      <div class="tbody">
+        <div
+          class="tr"
+          ng-repeat="user in users | filter:usersFilter | orderBy:clickedHeader:reverse | limitTo:displayingUsers
+        ">
+          <div class="td" ng-show="displayColumns.name"><a href="/settings/users/{{user._id}}">{{user.fname + ' ' + user.lname}}</a></div>
+          <div class="td" ng-show="displayColumns.role">{{user.role}}</div>
+          <div class="td" ng-show="displayColumns.phone">{{user.phone}}</div>
+          <div class="td" ng-show="displayColumns.email">{{user.email}}</div>
+        </div><!-- END .tr -->
+      </div><!-- END .tbody -->
+    </div><!-- END .table -->
+    <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
+  </div><!-- END .col-md-12 -->
+</div><!-- END .main -->

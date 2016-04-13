@@ -1,4 +1,4 @@
-.dashboard                        { padding: 20px;
+.dashboard                        { padding: 30px;
   .alert                          {
     .pull-right                   {
       .btn                        { position: relative; top: -8px; }
@@ -8,14 +8,28 @@
     .text-right                   { padding-right: 0; }
   }
   .shadowed-container             { margin-bottom: 30px; padding: 15px; position: relative;
-    .grayout                      { background: $beige; height: calc(100% - 50px); left: 0; opacity: .5; position: absolute; top: 50px; width: 100%; z-index: 10; }
+    &.campaigns                   {
+      .th                         {
+        &:nth-child(1)            { width: 45%; }
+        &:nth-child(2)            { width: 40%; }
+        &:nth-child(3)            { width: 15%; }
+      }
+    }
+    &.updates                     {
+      .th                         {
+        &:nth-child(1)            { width: 30%; }
+        &:nth-child(2)            { width: 70%; }
+      }
+    }
+    .grayout                      { background: $headerbg; height: calc(100% - 50px); left: 0; opacity: .5; position: absolute; top: 50px; width: 100%; z-index: 10; }
   }
   .table                          {
     .tr                           {
+      .th                         { font-size: 14px; }
       .th,
-      .td                         { height: 50px; padding: 0 8px;
-        &:first-child             { padding-left: 8px; }
-        &:last-child              { padding-right: 8px; }
+      .td                         { height: 65px; padding: 0 10px;
+        &:first-child             { padding-left: 20px; }
+        &:last-child              { padding-right: 20px; }
       }
     }
     .status                       {
@@ -30,52 +44,17 @@
   }
   .calendar-overflow              { overflow: auto; }
   .calendar-widget                { color: $lightgray; position: relative; width: 6300px;
-    .cal-row                      { border-bottom: 1px solid $lightgray; height: calc(200px / 6); position: relative;
+    .cal-row                      { border-bottom: 1px solid $lightgray; height: calc(260px / 6); position: relative;
       &:last-child                { border-bottom: none; }
-      .booked                     { padding: 4px; height: 98%; position: absolute; top: 0;
-        span                      { display: block; line-height: 26px; text-align: center; }
-        &.active                  { background: $red; color: $white; }
-        &.closed                  { background: $lightgray; color: $darkgray; }
-        &.pending                 { background: $green; color: $white; }
+      .booked                     { padding: 4px; height: 100%; position: absolute; top: 0px;
+        span                      { display: block; font-size: 14px; line-height: 36px; text-align: center; }
+        &.active                  { background: $reservation-active; color: $white; }
+        &.closed                  { background: $reservation-closed; color: $reservation-gray; }
+        &.pending                 { background: $reservation-pending; color: $white; }
       }
     }
-    ul.cal-row                    { color: $black; display: table; font: 700 14px $serif-font; list-style: none; margin: 0; padding: 0; width: 100%;
-      li                          { display: table-cell; height: 50px; vertical-align: middle; text-align: center; white-space: nowrap; }
+    ul.cal-row                    { color: $black; display: table; font: 500 14px $serif-font; list-style: none; margin: 0; padding: 0; width: 100%;
+      li                          { display: table-cell; height: 65px; vertical-align: middle; text-align: center; white-space: nowrap; }
     }
   }
 }
-
-/*.thing-form {
-    margin: 20px 0;
-}
-
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
-}
-
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
-.hero-unit {
-    position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
-}
-
-.footer {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 70px;
-    border-top: 1px solid #E5E5E5;
-}
-
-.navbar-text {
-    margin-left: 15px;
-}*/

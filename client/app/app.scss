@@ -27,11 +27,17 @@ $darkergray:                      #191919;
 // sketch colors
 $headerbg:                        #F8F8F8;
 $column-arrows:                   #666666;
+$border:                          #E5E5E5;
 
 $black:                           #000000;
 $gray:                            #666666;
 $blue:                            #0074D9;
 $white:                           #FFFFFF;
+
+$reservation-active:              #F35F45;
+$reservation-pending:             #00C511;
+$reservation-closed:              #E5E5E5;
+$reservation-gray:                #999999;
 
 $btn-danger:                      #121212;
 $btn-default:                     #E5E5E5;
@@ -213,7 +219,7 @@ header.top                        { background: $headerbg; border-bottom: 1px so
   .col-md-2                       { text-align: center; }
   .hamburger                      { opacity: 1; position: relative; left: -15px; }
   h1                              { color: $red; font: 500 24px $serif-font; display: inline; margin: 0; }
-  time                            { color: $lightgray2; font: 1.6rem $serif-font; margin-left: 10px; }
+  time                            { color: $lightgray2; font: 500 16px $serif-font; margin-left: 10px; }
   .actions-right                  { float: right;
     & > i                         { margin-left: 20px; }
     ul                            { background: $headerbg; border: 1px solid $lightgray; border-radius: 3px; padding: 10px 20px; position: absolute; right: 0; top: 40px; width: 200px; z-index: 100;
@@ -288,13 +294,13 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
 .fa-sort                          { color: $column-arrows; }
 .sortorder                        { vertical-align: baseline; }
 
-.shadowed-container               { background: $beige; border: 1px solid $lightgray; margin-bottom: 20px;
+.shadowed-container               { background: $headerbg; border: 1px solid $border; border-radius: 2px; margin-bottom: 20px;
   header                          {
-    h2                            { color: $blue; display: inline-block; font: 1.8rem $serif-font; margin: 0 10px 0 0; }
+    h2                            { color: $blue; display: inline-block; font: 500 20px $serif-font; margin: 0 10px 0 0; }
     i.pull-right                  { color: $lightgray2; }
   }
 }
-.shadowed-subcontainer            { background: $white; border: 1px solid $lightgray; margin-bottom: 20px;
+.shadowed-subcontainer            { background: $white; border: 1px solid $border; border-radius: 2px; margin-bottom: 20px;
   &:first-child                   { margin-top: 20px; }
   &:last-child                    { margin-bottom: 0; }
   header                          { border-bottom: 1px solid $lightgray; margin-left: -15px; margin-right: -15px; padding: 20px 15px;

@@ -13,6 +13,7 @@
         <i class="icon-export_data"></i>
         <i class="icon-grid" ng-click="showColumnPicker()"></i>
         <ul ng-show="pickColumns">
+          <span class="arrow"></span>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.number"> Order Num</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.customer"> Customer</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.type"> Type</label></li>
@@ -30,108 +31,110 @@
   </div>
 </header>
 
-<div class="col-md-12 main">
-  <div class="table orders">
-    <div class="thead">
-      <div class="tr">
-        <div class="th" ng-show="displayColumns.name">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('name')"></i>
-            <div ng-show="openFilter.name">
-              <input type="text" ng-model="ordersFilter.name">
+<div class="orders">
+  <div class="col-md-12">
+    <div class="table">
+      <div class="thead">
+        <div class="tr">
+          <div class="th" ng-show="displayColumns.name">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('name')"></i>
+              <div ng-show="openFilter.name">
+                <input type="text" ng-model="ordersFilter.name">
+              </div>
             </div>
+            <span ng-click="clickedHeader='name'; reverse = !reverse">Name
+              <i class="sortorder fa" ng-show="clickedHeader === 'name'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'name'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='name'; reverse = !reverse">Name
-            <i class="sortorder fa" ng-show="clickedHeader === 'name'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'name'"></i>
-          </span>
-        </div>
 
-        <div class="th" ng-show="displayColumns.number">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('number')"></i>
-            <div ng-show="openFilter.number">
-              <input type="text" ng-model="ordersFilter.number">
+          <div class="th" ng-show="displayColumns.number">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('number')"></i>
+              <div ng-show="openFilter.number">
+                <input type="text" ng-model="ordersFilter.number">
+              </div>
             </div>
+            <span ng-click="clickedHeader='number'; reverse = !reverse">Order Num
+              <i class="sortorder fa" ng-show="clickedHeader === 'number'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'number'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='number'; reverse = !reverse">Order Num
-            <i class="sortorder fa" ng-show="clickedHeader === 'number'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'number'"></i>
-          </span>
-        </div>
 
-        <div class="th" ng-show="displayColumns.customer">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('customer')"></i>
-            <div ng-show="openFilter.customer">
-              <input type="text" ng-model="ordersFilter.customer">
+          <div class="th" ng-show="displayColumns.customer">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('customer')"></i>
+              <div ng-show="openFilter.customer">
+                <input type="text" ng-model="ordersFilter.customer">
+              </div>
             </div>
+            <span ng-click="clickedHeader='customer'; reverse = !reverse">Customer
+              <i class="sortorder fa" ng-show="clickedHeader === 'customer'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'customer'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='customer'; reverse = !reverse">Customer
-            <i class="sortorder fa" ng-show="clickedHeader === 'customer'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'customer'"></i>
-          </span>
-        </div>
 
-        <div class="th" ng-show="displayColumns.type">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('type')"></i>
-            <div ng-show="openFilter.type">
-              <input type="text" ng-model="ordersFilter.type">
+          <div class="th" ng-show="displayColumns.type">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('type')"></i>
+              <div ng-show="openFilter.type">
+                <input type="text" ng-model="ordersFilter.type">
+              </div>
             </div>
+            <span ng-click="clickedHeader='type'; reverse = !reverse">Type
+              <i class="sortorder fa" ng-show="clickedHeader === 'type'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'type'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='type'; reverse = !reverse">Type
-            <i class="sortorder fa" ng-show="clickedHeader === 'type'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'type'"></i>
-          </span>
-        </div>
 
-        <div class="th" ng-show="displayColumns.amount">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('amount')"></i>
-            <div ng-show="openFilter.amount">
-              <input type="text" ng-model="ordersFilter.amount">
+          <div class="th" ng-show="displayColumns.amount">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('amount')"></i>
+              <div ng-show="openFilter.amount">
+                <input type="text" ng-model="ordersFilter.amount">
+              </div>
             </div>
+            <span ng-click="clickedHeader='amount'; reverse = !reverse">Amount
+              <i class="sortorder fa" ng-show="clickedHeader === 'amount'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'amount'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='amount'; reverse = !reverse">Amount
-            <i class="sortorder fa" ng-show="clickedHeader === 'amount'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'amount'"></i>
-          </span>
-        </div>
 
-        <div class="th" ng-show="displayColumns.status">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('status')"></i>
-            <div ng-show="openFilter.status">
-              <input type="text" ng-model="ordersFilter.status">
+          <div class="th" ng-show="displayColumns.status">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('status')"></i>
+              <div ng-show="openFilter.status">
+                <input type="text" ng-model="ordersFilter.status">
+              </div>
             </div>
+            <span ng-click="clickedHeader='status'; reverse = !reverse">Status
+              <i class="sortorder fa" ng-show="clickedHeader === 'status'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'status'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='status'; reverse = !reverse">Status
-            <i class="sortorder fa" ng-show="clickedHeader === 'status'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'status'"></i>
-          </span>
-        </div>
-      </div><!-- END .tr -->
-    </div><!-- END .thead -->
+        </div><!-- END .tr -->
+      </div><!-- END .thead -->
 
-    <div class="tbody">
-      <div class="tr" ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders" ng-class="main.setStatus(order.status)">
-        <div ng-show="displayColumns.number" class="td"><a href="/orders/{{order._id}}">{{order._id}}</a></div>
-        <div ng-show="displayColumns.customer" class="td" ng-bind="customerData(order.owner, 'name')"></div>
-        <div ng-show="displayColumns.type" class="td" ng-switch="order.type">
-          <span ng-switch-when="pickup">Pickup</span>
-          <span ng-switch-when="delivery">Delivery</span>
-        </div>
-        <div ng-show="displayColumns.amount" class="td">{{order.total | currency}}</div>
-        <div ng-show="displayColumns.status" class="td status" ng-switch="order.status">
-          <span class="cancelled" ng-switch-when="cancelled">Cancelled</span>
-          <span class="new" ng-switch-when="new">New</span>
-          <span class="inprogress" ng-switch-when="inprogress">In Progress</span>
-          <span class="fulfilled" ng-switch-when="fulfilled">Fulfilled</span>
-        </div>
-      </div><!-- END .tr -->
-    </div><!-- END .tbody -->
-  </div><!-- END .table.orders -->
+      <div class="tbody">
+        <div class="tr" ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders" ng-class="main.setStatus(order.status)">
+          <div ng-show="displayColumns.number" class="td"><a href="/orders/{{order._id}}">{{order._id}}</a></div>
+          <div ng-show="displayColumns.customer" class="td" ng-bind="customerData(order.owner, 'name')"></div>
+          <div ng-show="displayColumns.type" class="td" ng-switch="order.type">
+            <span ng-switch-when="pickup">Pickup</span>
+            <span ng-switch-when="delivery">Delivery</span>
+          </div>
+          <div ng-show="displayColumns.amount" class="td">{{order.total | currency}}</div>
+          <div ng-show="displayColumns.status" class="td status" ng-switch="order.status">
+            <span class="cancelled" ng-switch-when="cancelled">Cancelled</span>
+            <span class="new" ng-switch-when="new">New</span>
+            <span class="inprogress" ng-switch-when="inprogress">In Progress</span>
+            <span class="fulfilled" ng-switch-when="fulfilled">Fulfilled</span>
+          </div>
+        </div><!-- END .tr -->
+      </div><!-- END .tbody -->
+    </div><!-- END .table.orders -->
 
-  <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
-</div><!-- END .main.col-md-12 -->
+    <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
+  </div><!-- END .col-md-12 -->
+</div><!-- END .orders -->

@@ -1,7 +1,13 @@
-.customers                        {
+.customers                        { padding: 30px 15px;
   .table                          {
     &.customers-table             {
-      .tr .td                     { padding: 15px 8px; }
+      .tr                         {
+        .th                       { border-bottom-color: $darkgray; font-size: 13px; padding: 8px 0;
+          .filter                 { cursor: pointer; margin-left: -15px; }
+          span                    { cursor: pointer; }
+        }
+        .td                       { padding: 15px 0; }
+      }
     }
   }
 }

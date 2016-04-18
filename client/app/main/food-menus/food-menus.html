@@ -13,6 +13,7 @@
         <i class="icon-export_data"></i>
         <i class="icon-grid" ng-click="showColumnPicker()"></i>
         <ul ng-show="pickColumns">
+          <span class="arrow"></span>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.col1"> col 1</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.col2"> col 2</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.col3"> col 3</label></li>
@@ -28,228 +29,220 @@
   </div>
 </header>
 
-<div class="container-fluid menu" ng-init="collapsed = true">
-  <div class="row">
-    <div class="col-md-12 shadowed-container">
-      <header>
-        <h2>My Menu</h2>
-        <a href="/food-menus/menu/1/edit" ng-show="!collapsed">Edit</a>
-        <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed, 'fa-chevron-down': collapsed}" ng-click="collapsed = !collapsed"></i>
-      </header>
+<div class="menu">
+  <div class="col-md-12 shadowed-container">
+    <header>
+      <h2>My Menu</h2>
+      <a href="/food-menus/menu/1/edit" ng-show="!collapsed">Edit</a>
+      <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed, 'fa-chevron-down': collapsed}" ng-click="collapsed = !collapsed"></i>
+    </header>
 
-      <div class="collapsable" ng-show="!collapsed">
-        <div class="row shadowed-subcontainer">
-          <div class="col-md-12">
-            <header>
-              <h3>Appetizers</h3>
-              <a href="/food-menus/category/1/edit" class="pull-right">Edit</a>
-            </header>
-          </div>
-          <div class="col-md-12">
-            <div class="table">
-              <div class="tbody">
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
+    <div class="collapsable" ng-show="!collapsed">
+      <div class="row shadowed-subcontainer">
+        <div class="col-md-12">
+          <header>
+            <h3>Appetizers</h3>
+            <a href="/food-menus/category/1/edit" class="pull-right">Edit</a>
+          </header>
+        </div>
+        <div class="col-md-12">
+          <div class="table">
+            <div class="tbody">
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
               </div>
-            </div><!-- END .table -->
-          </div>
-          <div class="col-md-12 border-top">
-            <div class="btn-group" uib-dropdown>
-              <button id="single-button" type="button" class="btn btn-add-food" uib-dropdown-toggle>
-                + Add Food Item <span class="caret"></span>
-              </button>
-              <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
-                <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- END .shadowed-subcontainer -->
-
-        <div class="row shadowed-subcontainer">
-          <div class="col-md-12">
-            <header>
-              <h3>Salads</h3>
-              <a ng-click="main.customModal('menuCategoryModal.html')" class="pull-right">Edit</a>
-            </header>
-          </div>
-          <div class="col-md-12">
-            <div class="table">
-              <div class="tbody">
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
               </div>
-            </div><!-- END .table -->
-          </div>
-          <div class="col-md-12  border-top">
-            <div class="btn-group" uib-dropdown>
-              <button id="single-button" type="button" class="btn btn-add-food" uib-dropdown-toggle>
-                + Add Food Item <span class="caret"></span>
-              </button>
-              <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
-                <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- END .shadowed-subcontainer -->
-
-        <div class="row shadowed-subcontainer">
-          <div class="col-md-12">
-            <a ng-click="main.go('.createCategory')" class="add-something">+ Add Category</a>
-          </div>
-        </div><!-- END .shadowed-subcontainer -->
-      </div><!-- END .collapsable -->
-
-
-    </div><!-- END .shadowed-container -->
-
-
-
-    <div class="col-md-12 shadowed-container">
-      <header>
-        <h2>Old Menu</h2>
-        <a href="/food-menus/menu/1/edit" ng-show="!collapsed">Edit</a>
-        <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed, 'fa-chevron-down': collapsed}" ng-click="collapsed = !collapsed"></i>
-      </header>
-
-      <div class="collapsable" ng-show="!collapsed">
-        <div class="row shadowed-subcontainer">
-          <div class="col-md-12">
-            <header>
-              <h3>Appetizers</h3>
-              <a href="/food-menus/category/1/edit" class="pull-right">Edit</a>
-            </header>
-          </div>
-          <div class="col-md-12">
-            <div class="table">
-              <div class="tbody">
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
               </div>
-            </div><!-- END .table -->
-          </div>
-          <div class="col-md-12 border-top">
-            <div class="btn-group" uib-dropdown>
-              <button id="single-button" type="button" class="btn btn-add-food" uib-dropdown-toggle>
-                + Add Food Item <span class="caret"></span>
-              </button>
-              <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
-                <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- END .shadowed-subcontainer -->
-
-        <div class="row shadowed-subcontainer">
-          <div class="col-md-12">
-            <header>
-              <h3>Salads</h3>
-              <a ng-click="main.customModal('menuCategoryModal.html')" class="pull-right">Edit</a>
-            </header>
-          </div>
-          <div class="col-md-12">
-            <div class="table">
-              <div class="tbody">
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
-                <div class="tr">
-                  <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
-                  <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
-                  <div class="td text-right">$8.50</div>
-                </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
               </div>
-            </div><!-- END .table -->
-          </div>
-          <div class="col-md-12  border-top">
-            <div class="btn-group" uib-dropdown>
-              <button id="single-button" type="button" class="btn btn-add-food" uib-dropdown-toggle>
-                + Add Food Item <span class="caret"></span>
-              </button>
-              <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
-                <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
-              </ul>
             </div>
+          </div><!-- END .table -->
+        </div>
+        <div class="col-md-12 border-top">
+          <div class="btn-group" uib-dropdown>
+            <button type="button" class="btn btn-add-food" uib-dropdown-toggle>
+              + Add Food Item <span class="caret"></span>
+            </button>
+            <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+              <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
+              <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
+            </ul>
           </div>
-        </div><!-- END .shadowed-subcontainer -->
+        </div>
+      </div><!-- END .shadowed-subcontainer -->
 
-        <div class="row shadowed-subcontainer">
-          <div class="col-md-12">
-            <a ng-click="main.go('.createCategory')" class="add-something">+ Add Category</a>
+      <div class="row shadowed-subcontainer">
+        <div class="col-md-12">
+          <header>
+            <h3>Salads</h3>
+            <a ng-click="main.customModal('menuCategoryModal.html')" class="pull-right">Edit</a>
+          </header>
+        </div>
+        <div class="col-md-12">
+          <div class="table">
+            <div class="tbody">
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+            </div>
+          </div><!-- END .table -->
+        </div>
+        <div class="col-md-12  border-top">
+          <div class="btn-group" uib-dropdown>
+            <button type="button" class="btn btn-add-food" uib-dropdown-toggle>
+              + Add Food Item <span class="caret"></span>
+            </button>
+            <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+              <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
+              <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
+            </ul>
           </div>
-        </div><!-- END .shadowed-subcontainer -->
-      </div><!-- END .collapsable -->
+        </div>
+      </div><!-- END .shadowed-subcontainer -->
 
+      <div class="row shadowed-subcontainer">
+        <div class="col-md-12">
+          <a ng-click="main.go('.createCategory')" class="add-something">+ Add Category</a>
+        </div>
+      </div><!-- END .shadowed-subcontainer -->
+    </div><!-- END .collapsable -->
+  </div><!-- END .shadowed-container -->
 
-    </div><!-- END .shadowed-container -->
-  </div><!-- END .row -->
-</div><!-- END .container-fluid -->
+  <div class="col-md-12 shadowed-container">
+    <header>
+      <h2>Old Menu</h2>
+      <a href="/food-menus/menu/1/edit" ng-show="!collapsed">Edit</a>
+      <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed, 'fa-chevron-down': collapsed}" ng-click="collapsed = !collapsed"></i>
+    </header>
+
+    <div class="collapsable" ng-show="!collapsed">
+      <div class="row shadowed-subcontainer">
+        <div class="col-md-12">
+          <header>
+            <h3>Appetizers</h3>
+            <a href="/food-menus/category/1/edit" class="pull-right">Edit</a>
+          </header>
+        </div>
+        <div class="col-md-12">
+          <div class="table">
+            <div class="tbody">
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+            </div>
+          </div><!-- END .table -->
+        </div>
+        <div class="col-md-12 border-top">
+          <div class="btn-group" uib-dropdown>
+            <button id="single-button" type="button" class="btn btn-add-food" uib-dropdown-toggle>
+              + Add Food Item <span class="caret"></span>
+            </button>
+            <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+              <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
+              <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- END .shadowed-subcontainer -->
+
+      <div class="row shadowed-subcontainer">
+        <div class="col-md-12">
+          <header>
+            <h3>Salads</h3>
+            <a ng-click="main.customModal('menuCategoryModal.html')" class="pull-right">Edit</a>
+          </header>
+        </div>
+        <div class="col-md-12">
+          <div class="table">
+            <div class="tbody">
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+              <div class="tr">
+                <div class="td"><a href="/food-menus/food/1/view">Vietnamise Pad Thai</a></div>
+                <div class="td">No rice. Stir-fried rice noodles with shredded vegetables, egg and crushed peanut, served with nuoc cham sauce on side.</div>
+                <div class="td text-right">$8.50</div>
+              </div>
+            </div>
+          </div><!-- END .table -->
+        </div>
+        <div class="col-md-12  border-top">
+          <div class="btn-group" uib-dropdown>
+            <button id="single-button" type="button" class="btn btn-add-food" uib-dropdown-toggle>
+              + Add Food Item <span class="caret"></span>
+            </button>
+            <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
+              <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
+              <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- END .shadowed-subcontainer -->
+
+      <div class="row shadowed-subcontainer">
+        <div class="col-md-12">
+          <a ng-click="main.go('.createCategory')" class="add-something">+ Add Category</a>
+        </div>
+      </div><!-- END .shadowed-subcontainer -->
+    </div><!-- END .collapsable -->
+  </div><!-- END .shadowed-container -->
+</div><!-- END .menu -->

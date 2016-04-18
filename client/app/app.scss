@@ -26,6 +26,8 @@ $darkergray:                      #191919;
 
 // sketch colors
 $headerbg:                        #F8F8F8;
+$column-picker:                   #E5E5E5;
+$column-picker-bd:                #CCCCCC;
 $column-arrows:                   #666666;
 $border:                          #E5E5E5;
 
@@ -222,11 +224,15 @@ header.top                        { background: $headerbg; border-bottom: 1px so
   time                            { color: $lightgray2; font: 500 16px $serif-font; margin-left: 10px; }
   .actions-right                  { float: right;
     & > i                         { margin-left: 20px; }
-    ul                            { background: $headerbg; border: 1px solid $lightgray; border-radius: 3px; padding: 10px 20px; position: absolute; right: 0; top: 40px; width: 200px; z-index: 100;
-      li                          { list-style: none; line-height: 1; padding: 5px 0;
+    ul                            { background: $column-picker; border: 1px solid $column-picker-bd; border-radius: 2px; padding: 10px; position: absolute; right: 5px; top: 47px; z-index: 100;
+      .arrow                      { border-width: 10px; border-style: solid; border-color: transparent transparent $column-picker-bd transparent; display: block; position: absolute; top: -20px; right: 7px;
+        &:before                  { border-width: 10px; border-style: solid; border-color: transparent transparent $column-picker transparent; content: ' '; display: block; position: absolute; top: -9px; right: -10px; }
+      }
+      li                          { list-style: none; font-size: 14px; line-height: normal; margin: 0 0 5px;
         input[type="checkbox"]    { margin: 0; margin-left: -20px; }
       }
     }
+    .btn-default                  { background: $white; color: $gray; margin: 0 auto; }
   }
   form                            { float: right; margin-top: 10px;
     .form-control                 { border-radius: 2px; border: 1px solid $lightgray;

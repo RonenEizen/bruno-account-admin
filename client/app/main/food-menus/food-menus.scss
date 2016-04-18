@@ -1,12 +1,25 @@
-.menu                             { padding: 20px 35px;
-  .shadowed-container             { padding: 20px 35px; }
-  .btn-group                      {
-    &.open                        {
-      .btn-add-food               { border: 1px solid $lightgray; border: 1px solid $lightgray; box-shadow: none; color: $black; margin: 10px 0; padding: 8px 20px; }
+.menu                             { padding: 30px;
+  .shadowed-container             { padding: 20px 35px;
+    header                        { margin-left: -15px; margin-right: -15px; }
+    h2                            { font: 500 18px $sans-font; }
+    .table                        { table-layout: fixed; width: 100%; // 'table-layout: fixed;' fixes the issue when nowrap enlarges the table
+      .td                         { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        &:nth-child(1)            { width: 20%; }
+        &:nth-child(2)            { width: 70%; }
+        &:nth-child(3)            { width: 10%; }
+      }
     }
-    .btn-add-food                 { background: $white; border-radius: 0; color: $blue; font: 14px $sans-font; padding: 15px 0; }
-    ul                            { border: 1px solid $lightgray; border-radius: 0; margin-top: -11px;
-      li a                        { color: $blue; }
+  }
+  .btn-group                      { background: $white; box-shadow: none; margin: 10px 0 10px -8px;
+    &.open                        {
+      .btn-add-food               { border: 1px solid $border; box-shadow: none; color: $black; }
+    }
+    .btn-add-food                 { background: $white;  border: 1px solid transparent; border-radius: 0; color: $blue; font: 16px $sans-font; padding: 8px 5px; text-align: left; width: 160px;
+      &:active                    { box-shadow: none; }
+    }
+    .caret                        { color: $gray; position: relative; left: 5px; }
+    ul                            { border: 1px solid $border; border-radius: 0; box-shadow: none; font-size: 16px; margin-top: -2px; width: 160px;
+      li a                        { color: $blue; padding: 3px 8px; }
     }
   }
 }

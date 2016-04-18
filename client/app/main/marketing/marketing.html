@@ -13,6 +13,7 @@
         <i class="icon-export_data"></i>
         <i class="icon-grid" ng-click="showColumnPicker()"></i>
         <ul ng-show="pickColumns">
+          <span class="arrow"></span>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.campaign"> Campaign</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.enabled"> Enabled</label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.disabled"> Disabled</label></li>
@@ -32,64 +33,65 @@
     &nbsp;
   </div>
 </header>
+<div class="marketing">
+  <div class="col-md-12">
+    <div class="table campaigns">
+      <div class="thead">
+        <div class="tr">
 
-<div class="col-md-12 main marketing">
-  <div class="table campaigns">
-    <div class="thead">
-      <div class="tr">
-
-        <div class="th" ng-show="displayColumns.campaign">
-          <div class="filter">
-            <i class="icon-filter" ng-click="toggleFilter('campaign')"></i>
-            <div ng-show="openFilter.campaign">
-              <input type="text" ng-model="campaignsFilter.campaign">
+          <div class="th" ng-show="displayColumns.campaign">
+            <div class="filter">
+              <i class="icon-filter" ng-click="toggleFilter('campaign')"></i>
+              <div ng-show="openFilter.campaign">
+                <input type="text" ng-model="campaignsFilter.campaign">
+              </div>
             </div>
+            <span ng-click="clickedHeader='campaign'; reverse = !reverse">Campaign
+              <i class="sortorder fa" ng-show="clickedHeader === 'campaign'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'campaign'"></i>
+            </span>
           </div>
-          <span ng-click="clickedHeader='campaign'; reverse = !reverse">Campaign
-            <i class="sortorder fa" ng-show="clickedHeader === 'campaign'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'campaign'"></i>
-          </span>
-        </div>
 
-        <div class="th" ng-show="displayColumns.enabled">
-          <span>Enabled Channels</span>
-        </div>
+          <div class="th" ng-show="displayColumns.enabled">
+            <span>Enabled Channels</span>
+          </div>
 
-        <div class="th" ng-show="displayColumns.disabled">
-          <span>Disabled Channels</span>
-        </div>
+          <div class="th" ng-show="displayColumns.disabled">
+            <span>Disabled Channels</span>
+          </div>
 
-        <div class="th" ng-show="displayColumns.status">
-          <span ng-click="clickedHeader='status'; reverse = !reverse">Status
-            <i class="sortorder fa" ng-show="clickedHeader === 'status'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-            <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'status'"></i>
-          </span>
-        </div>
+          <div class="th" ng-show="displayColumns.status">
+            <span ng-click="clickedHeader='status'; reverse = !reverse">Status
+              <i class="sortorder fa" ng-show="clickedHeader === 'status'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
+              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'status'"></i>
+            </span>
+          </div>
 
-      </div><!-- END .tr -->
-    </div><!-- END .thead -->
+        </div><!-- END .tr -->
+      </div><!-- END .thead -->
 
-    <div class="tbody">
-      <div
-        class="tr"
-        ng-repeat="campaign in campaigns | filter:campaignsFilter | orderBy:clickedHeader:reverse | limitTo:displayingCampaigns">
-        <div ng-show="displayColumns.campaign" class="td">
-          <a href="/marketing/{{campaign._id}}/view">{{campaign.name}}</a>
-        </div>
-        <div ng-show="displayColumns.enabled" class="td">
-          <i class="channel enabled {{social}}" ng-repeat="social in campaign.enabled"></i>
-        </div>
-        <div ng-show="displayColumns.disabled" class="td">
-          <i class="channel disabled {{social}}" ng-repeat="social in campaign.disabled"></i>
-        </div>
-        <div ng-show="displayColumns.status" ng-switch="campaign.status" class="td">
-          <span class="status cancelled" ng-switch-when="0">Cancelled</span>
-          <span class="status current" ng-switch-when="1">Current</span>
-          <span class="status expiring" ng-switch-when="2">Expiring</span>
-          <span class="status expired" ng-switch-when="3">Expired</span>
-        </div>
-      </div><!-- END .tr -->
-    </div><!-- END .tbody -->
-  </div><!-- END .table -->
-  <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
-</div><!-- END .main.col-md-12 -->
+      <div class="tbody">
+        <div
+          class="tr"
+          ng-repeat="campaign in campaigns | filter:campaignsFilter | orderBy:clickedHeader:reverse | limitTo:displayingCampaigns">
+          <div ng-show="displayColumns.campaign" class="td">
+            <a href="/marketing/{{campaign._id}}/view">{{campaign.name}}</a>
+          </div>
+          <div ng-show="displayColumns.enabled" class="td">
+            <i class="channel enabled {{social}}" ng-repeat="social in campaign.enabled"></i>
+          </div>
+          <div ng-show="displayColumns.disabled" class="td">
+            <i class="channel disabled {{social}}" ng-repeat="social in campaign.disabled"></i>
+          </div>
+          <div ng-show="displayColumns.status" ng-switch="campaign.status" class="td">
+            <span class="status cancelled" ng-switch-when="0">Cancelled</span>
+            <span class="status current" ng-switch-when="1">Current</span>
+            <span class="status expiring" ng-switch-when="2">Expiring</span>
+            <span class="status expired" ng-switch-when="3">Expired</span>
+          </div>
+        </div><!-- END .tr -->
+      </div><!-- END .tbody -->
+    </div><!-- END .table -->
+    <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
+  </div><!-- END .col-md-12 -->
+</div><!-- END .marketing -->

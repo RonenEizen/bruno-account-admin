@@ -14,5 +14,5 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/settings/domain/domainModal.html',
         controller: 'SettingsDomainCtrl',
         controllerAs: 'vm'
-      })
+      });
   });

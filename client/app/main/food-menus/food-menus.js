@@ -8,12 +8,10 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/food-menus/food-menus.html',
         controller: 'FoodMenusCtrl'
       })
-
       .state('main.food-menus.createMenu', {
         url: '/menu/create',
         templateUrl: 'app/main/food-menus/createFoodMenuModal.html'
       })
-
       .state('main.food-menus.menu', {
         abstract: true,
         url: '/menu/:_id',
@@ -49,7 +47,6 @@ angular.module('accountAdminApp')
         url: '/remove',
         templateUrl: 'app/main/food-menus/removeMenuCategoryModal.html'
       })
-
       .state('main.food-menus.createFood', {
         url: '/food/create',
         templateUrl: 'app/main/food-menus/createFoodItemModal.html'
@@ -70,10 +67,9 @@ angular.module('accountAdminApp')
       .state('main.food-menus.food.remove', {
         url: '/remove',
         templateUrl: 'app/main/food-menus/removeFoodItemModal.html'
-      })
-
+      });
     $urlRouterProvider
       .when('/food-menus/menu/:_id', '/food-menus/menu/:_id/edit')
       .when('/food-menus/category/:_id', '/food-menus/category/:_id/edit')
-      .when('/food-menus/food/:_id', '/food-menus/food/:_id/view')
+      .when('/food-menus/food/:_id', '/food-menus/food/:_id/view');
   });

@@ -14,5 +14,5 @@ angular.module('accountAdminApp')
       .state('main.reservationsSettings.table', {
         url: '/:_id',
         templateUrl: 'app/main/settings/reservations/tableModal.html'
-      })
+      });
   });

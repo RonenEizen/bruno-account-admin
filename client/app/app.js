@@ -11,7 +11,6 @@ angular.module('accountAdminApp', [
   , 'ui.router'
   , 'ui.mask'
   , 'validation.match'
-  , 'wu.masonry'
   , 'chart.js'
 ])
   .config(function($urlRouterProvider, $locationProvider) {

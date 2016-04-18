@@ -26,10 +26,10 @@ angular.module('accountAdminApp')
     this.update = (updatedCustomer) => {
       updatedCustomer.updatedAt = new Date();
       this.customers.forEach((cust) => {
-        if(cust._id = updatedCustomer._id){
-          console.log(cust)
+        if(cust._id === updatedCustomer._id){
+          console.log(cust);
         }
-      })
+      });
       // splice and add to index
-    }
+    };
   });

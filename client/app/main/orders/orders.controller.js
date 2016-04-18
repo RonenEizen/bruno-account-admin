@@ -10,9 +10,9 @@ angular.module('accountAdminApp')
     $scope.states = $scope.main.states;
 
     // ORDERS: Sets class to rows based on order status
-    function setStatus(index) {
-      return this.orderStatus[index].toLowerCase().replace(/\s+/g, '');
-    };
+    // function setStatus(index) {
+    //   return this.orderStatus[index].toLowerCase().replace(/\s+/g, '');
+    // }
 
     $scope.createOrder = function() {
       var scope = {
@@ -51,20 +51,17 @@ angular.module('accountAdminApp')
 
     // this function gets data from a customer ID
     $scope.customerData = function (ownerID, query) {
-      let q = query
-      let a
+      let q = query;
+      let a;
 
       $scope.main.customers.forEach(function (cust) {
         if (ownerID === cust._id) {
-          if (query === 'name')
-            a = cust.fname + ' ' + cust.lname;
-          else
-            a = cust[q]
+          if (query === 'name') { a = cust.fname + ' ' + cust.lname; }
+          else { a = cust[q]; }
         }
-      })
-
-      return a
-    }
+      });
+      return a;
+    };
 
     // Columns
     $scope.displayColumns = { number: true, customer: true, type: true, amount: true, status: true };

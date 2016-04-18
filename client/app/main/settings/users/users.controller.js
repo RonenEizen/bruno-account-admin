@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsUsersCtrl', function($scope, $log) {
+  .controller('SettingsUsersCtrl', function($scope) {
     $scope.pageTitle = 'Users';
     $scope.users = $scope.main.users;
 

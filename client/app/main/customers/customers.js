@@ -32,7 +32,7 @@ angular.module('accountAdminApp')
       .state('main.customers.cust.orders', {
         url: '/orders',
         templateUrl: 'app/main/customers/viewCustomerOrdersModal.html'
-      })
+      });
     $urlRouterProvider
-      .when('/customers/:_id', '/customers/:_id/view')
+      .when('/customers/:_id', '/customers/:_id/view');
   });

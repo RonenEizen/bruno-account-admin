@@ -24,7 +24,7 @@ angular.module('accountAdminApp')
       .state('main.orders.order.edit', {
         url: '/edit',
         templateUrl: 'app/main/orders/editOrderModal.html'
-      })
+      });
     $urlRouterProvider
-      .when('/orders/:_id', '/orders/:_id/view')
+      .when('/orders/:_id', '/orders/:_id/view');
   });

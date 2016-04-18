@@ -8,7 +8,7 @@ angular.module('accountAdminApp')
     $scope.modal = $scope.main.modal;
 
     // Columns
-    $scope.displayColumns = { name: true, homePhone: true, mobilePhone: false, email: true, addr: true, zip: true, city: false, homePhone: false, workEmail: false };
+    $scope.displayColumns = { name: true, homePhone: true, mobilePhone: false, email: true, addr: true, zip: true, city: false, workEmail: false };
     $scope.showColumnPicker = function () {
       $scope.pickColumns = true;
       $scope.invisibleLayer = true;

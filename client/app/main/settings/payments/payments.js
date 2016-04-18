@@ -8,5 +8,5 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/settings/payments/bankInfoModal.html',
         controller: 'SettingsPaymentsCtrl',
         controllerAs: 'vm'
-      })
+      });
   });

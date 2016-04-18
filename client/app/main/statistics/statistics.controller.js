@@ -8,7 +8,7 @@ angular.module('accountAdminApp')
       orders: { collapsed: true, currentTab: 'types' },
       reservations: { collapsed: true, currentTab: 'trends' },
       payments: { collapsed: true, currentTab: 'sources' }
-    }
+    };
 
     // Columns
     $scope.displayColumns = { orders: true, reservations: true, payments: true };
@@ -36,7 +36,7 @@ angular.module('accountAdminApp')
         series: ['2015', '2016'],
         data: [[20, 30, 50], [45, 25, 30]]
       }
-    }
+    };
 
     $scope.reservationsStats = {
       trends: {
@@ -54,7 +54,7 @@ angular.module('accountAdminApp')
         series: ['2016'],
         data: [[10, 15, 13, 11, 6, 3, 5, 10, 18, 23, 20, 15, 10, 8]]
       }
-    }
+    };
 
     $scope.paymentsStats = {
       sources: {
@@ -67,7 +67,7 @@ angular.module('accountAdminApp')
         series: ['2016'],
         data: [[106, 60, 43, 77]]
       }
-    }
+    };
 
     $scope.chartOptions = {
       scaleShowVerticalLines: false,
@@ -77,5 +77,5 @@ angular.module('accountAdminApp')
       datasetStrokeWidth: 3,
       datasetFill: false,
       barValueSpacing : 10
-    }
-  })
+    };
+  });

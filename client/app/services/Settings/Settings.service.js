@@ -50,7 +50,7 @@ angular.module('accountAdminApp')
           { name: 'Sunday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' }
         ]
       }
-    },
+    };
     this.users = [
       { _id: '1', fname: 'Lucas', mname: 'F', lname: 'Engel', role: '1', phone: 9999999999, email: 'lucasengel@gmail.com' },
       { _id: '2', fname: 'Blake', mname: '', lname: 'Liveley', role: '2', phone: 9173452680, email: 'bively@gmail.com' },
@@ -60,7 +60,7 @@ angular.module('accountAdminApp')
       { _id: '6', fname: 'Venik', mname: '', lname: 'Gromofonov', role: '6', phone: 3472223333, email: 'doej@gmail.com' },
       { _id: '7', fname: 'Ty', mname: '', lname: 'Robertson', role: '7', phone: 3472223333, email: 'doej@gmail.com' },
       { _id: '8', fname: 'Iskandr', mname: '', lname: 'Babekov', role: '7', phone: 3472223333, email: 'doej@gmail.com' }
-    ],
+    ];
     this.roles = [
       { _id: '1', role: 'Owner', access: ['Full Access'], singleton: true },
       { _id: '2', role: 'Admin', access: ['Full Access'], singleton: false },
@@ -69,19 +69,19 @@ angular.module('accountAdminApp')
       { _id: '5', role: 'Cook', access: ['Orders'], singleton: false },
       { _id: '6', role: 'Busboy', access: [], singleton: false },
       { _id: '7', role: 'Driver', access: ['Delivery Info'], singleton: false }
-    ],
+    ];
     this.accesses = [
       { _id: 2, name: 'Admin Access', roles: [1, 2, 3], rights: [1, 2, 3, 4] },
       { _id: '', name: 'Full Access', rights: ['Edit User Access', 'Remove User', 'Transfer Ownership', 'Make Admin'] },
       { _id: '', name: 'Reservations', rights: ['Edit Reservations'] },
       { _id: '', name: 'Orders', rights: ['Edit Orders'] },
       { _id: '', name: 'Delivery Info', rights: [] }
-    ],
+    ];
     this.rights = [
       { _id: '1', name: 'Edit Reservations', accesses: ['1', '2', '3'] },
       { _id: '2', name: 'Edit Settings', accesses: ['1', '2', '3'] },
       { _id: '3', name: 'Edit Orders', accesses: ['1', '2', '3'] }
-    ],
+    ];
     this.delivery = {
       enabled: true,
       radius: {
@@ -126,34 +126,34 @@ angular.module('accountAdminApp')
           { name: 'Sunday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' }
         ]
       }
-    },
+    };
     this.reservations = {
       tables: [
         { _id: '1', name: 'Booth', capacity: 6, quantity: 5, mergeable: false },
         { _id: '2', name: 'Window', capacity: 2, quantity: 2, mergeable: true }
       ],
       seatings: 52
-    },
+    };
     this.onlinePayments = {
       enabled: true,
       bankName: 'My Bank',
       routingNo: 1234,
       accountNo: 123456789
-    },
+    };
     this.domain = {
       subdomain: 'sushibar',
       domain: 'sushi.bar'
-    },
+    };
     this.integrations = {
       bookatable: { apiKey: '12345ABC&^', name: 'Bookatable', imgUrl: 'http://d1zwyexo3ug1ac.cloudfront.net/revision-e6148ed/images/pages/bookatable_logo.jpg' },
       seamless: { apiKey: '12345ABC&^', name: 'seamless', imgUrl: 'http://borntocoupon.com/wp-content/uploads/2015/02/Seamless-logo.png' },
       seatme: { apiKey: '', name: 'SeatMe', imgUrl: 'https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png' },
       opentable: { apiKey: '', name: 'OpenTable', imgUrl: 'http://www.pricelinegroup.com/wp-content/uploads/2014/07/1_Brand_logo-435x110_x2-435x110@2x.png' },
-      grubhub: { apiKey: '12345ABC&^', name: 'grubHub', imgUrl: 'https://snowulf.com/wp-content/uploads/2015/11/grubhub.png' },
-    }
+      grubhub: { apiKey: '12345ABC&^', name: 'grubHub', imgUrl: 'https://snowulf.com/wp-content/uploads/2015/11/grubhub.png' }
+    };
     this.reviews = {
       menupages: { apiKey: '12345ABC&^', name: 'MenuPages', imgUrl: 'http://culintro.com/media/files/page/menu-pages.png' },
       yelp: { apiKey: '12345ABC&^', name: 'yelp', imgUrl: 'http://static1.squarespace.com/static/54c8415ce4b0b5c877bc5bf9/55709f2ae4b0467afc6e7950/55709f59e4b00405e9c5b2e0/1433444338056/yelp.png' },
       tripadvisor: { apiKey: '', name: 'TripAdvisor', imgUrl: 'https://static.tacdn.com/img2/branding/TA_550x370.png' }
-    }
+    };
   });

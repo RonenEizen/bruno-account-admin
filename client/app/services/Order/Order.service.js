@@ -17,15 +17,15 @@ angular.module('accountAdminApp')
         status: 'new'
         // TODO: save current prices
         // TODO: set total
-      }
+      };
 
-      angular.extend(newOrder, newProps)
+      angular.extend(newOrder, newProps);
 
-      this.orders.push(newOrder)
-    }
-    this.update = (updatedOrder) => {
+      this.orders.push(newOrder);
+    };
+    // this.update = (updatedOrder) => {
       // find index by _id
       // change updatedAt to now
       // splice add using index
-    }
+    // };
   });

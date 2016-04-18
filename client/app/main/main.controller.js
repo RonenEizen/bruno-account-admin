@@ -14,13 +14,10 @@ class MainController {
       , OrderService
       , ReservationService
       , SettingsService
-      , Modal
       , $state
     ) {
     this.navRevealed = true;
     this.settingsOpen = false;
-
-    this.modal = Modal.openModal;
 
     this.Auth = Auth;
     this.isLoggedIn = Auth.isLoggedIn;
@@ -67,13 +64,13 @@ class MainController {
     this.integrations = SettingsService.integrations;
     this.reviews = SettingsService.reviews;
 
-    this.go = (dest = '^') => { $state.go(dest) }
+    this.go = (dest = '^') => { $state.go(dest); };
   }
 
 
   countNewOrders() {
     let counter = this.orders.filter(function (order) {
-      return order.status === 'new'
+      return order.status === 'new';
     });
     return counter.length;
   }
@@ -81,11 +78,10 @@ class MainController {
   itemPrice(prodId) {
     let price;
     this.foodItems.forEach(function (prod) {
-      if (prod._id === prodId)
-        price = prod.price;
+      if (prod._id === prodId) { price = prod.price; }
     });
     return price;
-  };
+  }
 
   logout() {
      this.Auth.logout();

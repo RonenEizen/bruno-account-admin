@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsDeliveryCtrl', function($scope, $log) {
+  .controller('SettingsDeliveryCtrl', function($scope) {
     $scope.pageTitle = 'Delivery';
 
     $scope.delivery = $scope.main.delivery;

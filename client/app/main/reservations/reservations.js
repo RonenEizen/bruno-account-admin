@@ -9,7 +9,6 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/reservations/reservations.html',
         controller: 'ReservationsCtrl'
       })
-
       .state('main.reservations.day', {
         url: '/day',
         templateUrl: 'app/main/reservations/reservations-day.html',
@@ -20,7 +19,6 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/reservations/reservations-week.html',
         controller: 'ReservationsCtrl'
       })
-
       .state('main.reservations.create', {
         url: '/create',
         views: {
@@ -49,9 +47,8 @@ angular.module('accountAdminApp')
       .state('main.reservations.reservation.remove', {
         url: '/remove',
         templateUrl: 'app/main/reservations/removeReservationModal.html'
-      })
-
+      });
     $urlRouterProvider
       .when('/reservations', '/reservations/day')
-      .when('/reservations/:_id', '/reservations/:_id/view')
-  })
+      .when('/reservations/:_id', '/reservations/:_id/view');
+  });

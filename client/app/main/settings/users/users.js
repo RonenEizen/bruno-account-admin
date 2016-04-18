@@ -23,7 +23,7 @@ angular.module('accountAdminApp')
       .state('main.users.user.remove', {
         url: '/remove',
         templateUrl: 'app/main/settings/users/removeUserModal.html'
-      })
+      });
     $urlRouterProvider
-      .when('/settings/users/:_id', '/settings/users/:_id/view')
-  })
+      .when('/settings/users/:_id', '/settings/users/:_id/view');
+  });

@@ -39,5 +39,5 @@ angular.module('accountAdminApp')
           $scope.loadMore = false;
         }
       }
-    }
-  })
+    };
+  });

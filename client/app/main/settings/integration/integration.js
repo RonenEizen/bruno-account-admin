@@ -8,5 +8,5 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/settings/integration/integrationModal.html',
         controller: 'SettingsIntegrationCtrl',
         controllerAs: 'vm'
-      })
+      });
   });

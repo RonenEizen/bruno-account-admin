@@ -23,7 +23,7 @@ angular.module('accountAdminApp')
       .state('main.roles.role.remove', {
         url: '/remove',
         templateUrl: 'app/main/settings/roles/removeRoleModal.html',
-      })
+      });
     $urlRouterProvider
-      .when('/settings/roles/:_id', '/settings/roles/:_id/view')
-  })
+      .when('/settings/roles/:_id', '/settings/roles/:_id/view');
+  });

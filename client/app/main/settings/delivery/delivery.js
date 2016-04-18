@@ -26,5 +26,5 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/settings/delivery/additionalModal.html',
         controller: 'SettingsDeliveryCtrl',
         controllerAs: 'vm'
-      })
+      });
   });

@@ -4,8 +4,8 @@ angular.module('accountAdminApp')
   .controller('MarketingCtrl', function ($scope) {
     $scope.pageTitle = 'Marketing > Campaigns';
 
-    $scope.campaignsStatus = ['Cancelled', 'Current', 'Expiring', 'Expired']
-    $scope.campaigns = $scope.main.campaigns
+    $scope.campaignsStatus = ['Cancelled', 'Current', 'Expiring', 'Expired'];
+    $scope.campaigns = $scope.main.campaigns;
 
     // Columns
     $scope.displayColumns = { campaign: true, enabled: true, disabled: true, status: true };
@@ -41,5 +41,5 @@ angular.module('accountAdminApp')
           $scope.loadMore = false;
         }
       }
-    }
-  })
+    };
+  });

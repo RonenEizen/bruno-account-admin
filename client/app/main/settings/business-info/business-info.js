@@ -26,5 +26,5 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/settings/business-info/ownerModal.html',
         controller: 'SettingsBusinessInfoCtrl',
         controllerAr: 'vm'
-      })
+      });
   });

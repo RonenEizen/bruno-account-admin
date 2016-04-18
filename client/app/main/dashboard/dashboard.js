@@ -19,5 +19,5 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/dashboard/viewUpdatesModal.html',
         controller: 'DashboardCtrl',
         controllerAs: 'vm'
-      })
+      });
   });

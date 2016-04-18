@@ -8,7 +8,7 @@ angular.module('accountAdminApp')
       {},
       {},
       {}
-    ]
-    this.add = () => {}
-    this.update = () => {}
+    ];
+    this.add = () => {};
+    this.update = () => {};
   });

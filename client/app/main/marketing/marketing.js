@@ -44,7 +44,7 @@ angular.module('accountAdminApp')
       .state('main.marketing.campaign.banner', {
         url: '/banner',
         templateUrl: 'app/main/marketing/bannerCampaignModal.html'
-      })
+      });
     $urlRouterProvider
-      .when('/marketing/:id', '/marketing/:id/view')
-  })
+      .when('/marketing/:id', '/marketing/:id/view');
+  });

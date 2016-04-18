@@ -56,6 +56,7 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/settings/integration/integration.html',
         controller: 'SettingsIntegrationCtrl',
         controllerAs: 'vm'
-      })
-    $urlRouterProvider.when('/settings', '/settings/business');
+      });
+    $urlRouterProvider
+      .when('/settings', '/settings/business');
   });

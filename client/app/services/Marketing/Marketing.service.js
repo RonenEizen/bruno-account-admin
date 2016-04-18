@@ -10,5 +10,5 @@ angular.module('accountAdminApp')
       { _id: '3', name: 'Free Coffee with Breakfast',  enabled: ['em', 'bn'],                    disabled: ['fb', 'tw', 'ga'],  status: 2 },
       { _id: '4', name: 'Dinner Specials',             enabled: ['tw', 'ga', 'em'],              disabled: ['fb', 'bn'],        status: 0 },
       { _id: '5', name: 'Brand Awareness',             enabled: ['fb', 'tw', 'ga', 'em', 'bn'],  disabled: [],                  status: 3 }
-    ]
+    ];
   });

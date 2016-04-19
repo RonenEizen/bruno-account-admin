@@ -36,18 +36,6 @@
     <div class="table">
       <div class="thead">
         <div class="tr">
-          <div class="th" ng-show="displayColumns.name">
-            <div class="filter">
-              <i class="icon-filter" ng-click="toggleFilter('name')"></i>
-              <div ng-show="openFilter.name">
-                <input type="text" ng-model="ordersFilter.name">
-              </div>
-            </div>
-            <span ng-click="clickedHeader='name'; reverse = !reverse">Name
-              <i class="sortorder fa" ng-show="clickedHeader === 'name'" ng-class="{'fa-sort-desc':reverse, 'fa-sort-asc':!reverse}"></i>
-              <i class="sortorder fa fa-sort" ng-hide="clickedHeader === 'name'"></i>
-            </span>
-          </div>
 
           <div class="th" ng-show="displayColumns.number">
             <div class="filter">

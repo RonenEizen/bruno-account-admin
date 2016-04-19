@@ -151,8 +151,8 @@
           <div class="td" ng-show="displayColumns.name">
             <a href="/customers/{{customer._id}}">{{customer.fname + ' ' + customer.lname}}</a>
           </div>
-          <div class="td" ng-show="displayColumns.homePhone">{{customer.homePhone}}</div>
-          <div class="td" ng-show="displayColumns.mobilePhone">{{customer.mobilePhone}}</div>
+          <div class="td" ng-show="displayColumns.homePhone">{{customer.homePhone | phone}}</div>
+          <div class="td" ng-show="displayColumns.mobilePhone">{{customer.mobilePhone | phone}}</div>
           <div class="td" ng-show="displayColumns.email">{{customer.email}}</div>
           <div class="td" ng-show="displayColumns.workEmail">{{customer.workEmail}}</div>
           <div class="td" ng-show="displayColumns.addr">{{customer.addr}}</div>

@@ -5,7 +5,7 @@
         &.selected,
         &:hover,
         &.expanded                { background: $darkgray2; }
-        a                         { color: $beige; display: block; font: 500 16px $serif-font; height: 40px; line-height: 40px; padding-left: 25px; position: relative; text-decoration: none; width: 100%; }
+        a                         { color: $white; display: block; font: 500 16px $serif-font; height: 40px; line-height: 40px; padding-left: 25px; position: relative; text-decoration: none; width: 100%; }
         span.submenu-arrow        { color: $lightgray; font-size: 80%; position: absolute;
           &.icon-triangle_up      { font-size: 7px; left: 10px; top: 14px; }
           &.icon-triangle_right   { font-size: 9px; left: 13px; top: 16px; }
@@ -20,7 +20,7 @@
         }
       }
     }
-    .hamburger                    { color: $beige; cursor: pointer; display: block; font-size: 18px; position: absolute; right: 20px; top: 10px; }
+    .hamburger                    { color: $headerbg; cursor: pointer; display: block; font-size: 18px; position: absolute; right: 20px; top: 10px; }
     .logo                         { display: block; position: absolute; top: 10px; left: 10px;
       img                         { width: 50px; }
     }

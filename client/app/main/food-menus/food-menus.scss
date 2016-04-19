@@ -9,17 +9,6 @@
         &:nth-child(3)            { width: 10%; }
       }
     }
-  }
-  .btn-group                      { background: $white; box-shadow: none; margin: 10px 0 10px -8px;
-    &.open                        {
-      .btn-add-food               { border: 1px solid $border; box-shadow: none; color: $black; }
-    }
-    .btn-add-food                 { background: $white;  border: 1px solid transparent; border-radius: 0; color: $blue; font: 16px $sans-font; padding: 8px 5px; text-align: left; width: 160px;
-      &:active                    { box-shadow: none; }
-    }
-    .caret                        { color: $gray; position: relative; left: 5px; }
-    ul                            { border: 1px solid $border; border-radius: 0; box-shadow: none; font-size: 16px; margin-top: -2px; width: 160px;
-      li a                        { color: $blue; padding: 3px 8px; }
-    }
+    .btn-group                    { margin: 10px 0 10px -8px; }
   }
 }

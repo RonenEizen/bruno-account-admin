@@ -5,9 +5,9 @@ angular.module('accountAdminApp')
     $scope.pageTitle = 'Statistics';
 
     $scope.boxes = {
-      orders: { collapsed: true, currentTab: 'types' },
-      reservations: { collapsed: true, currentTab: 'trends' },
-      payments: { collapsed: true, currentTab: 'sources' }
+      orders: { collapsed: false, currentTab: 'trends' },
+      reservations: { collapsed: false, currentTab: 'trends' },
+      payments: { collapsed: false, currentTab: 'sources' }
     };
 
     // Columns

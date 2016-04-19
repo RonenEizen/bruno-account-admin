@@ -720,23 +720,23 @@ module.exports = function (grunt) {
   grunt.registerTask('test', function(target, option) {
     if (target === 'server') {
       return grunt.task.run([
-        'env:all',
-        'env:test',
-        'mochaTest:unit',
-        'mochaTest:integration'
+        'env:all'
+        , 'env:test'
+        // , 'mochaTest:unit'
+        // , 'mochaTest:integration'
       ]);
     }
 
     else if (target === 'client') {
       return grunt.task.run([
-        'clean:server',
-        'env:all',
-        'concurrent:pre',
-        'concurrent:test',
-        'injector',
-        'postcss',
-        'wiredep:test',
-        'karma'
+        'clean:server'
+        , 'env:all',
+        , 'concurrent:pre'
+        , 'concurrent:test'
+        , 'injector'
+        , 'postcss'
+        , 'wiredep:test'
+        // , 'karma'
       ]);
     }
 

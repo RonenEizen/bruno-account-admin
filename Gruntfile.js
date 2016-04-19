@@ -722,8 +722,8 @@ module.exports = function (grunt) {
       return grunt.task.run([
         'env:all'
         , 'env:test'
-        // , 'mochaTest:unit'
-        // , 'mochaTest:integration'
+        , 'mochaTest:unit'
+        , 'mochaTest:integration'
       ]);
     }
 
@@ -736,7 +736,7 @@ module.exports = function (grunt) {
         , 'injector'
         , 'postcss'
         , 'wiredep:test'
-        // , 'karma'
+        , 'karma'
       ]);
     }
 

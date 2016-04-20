@@ -21,20 +21,22 @@ $lightgray2:                      #C1C1C1;
 $darkgray:                        #535353;
 $darkgray1:                       #464646;
 $darkgray2:                       #343434;
-$darkergray:                      #191919;
 
 // sketch colors
 $headerbg:                        #F8F8F8;
+$sidebarbg:                       #222222;
 $column-picker:                   #E5E5E5;
 $column-picker-bd:                #CCCCCC;
 $column-arrows:                   #666666;
 $border:                          #E5E5E5;
 
 $black:                           #000000;
-$gray:                            #666666;
 $blue:                            #0074D9;
-$teal:                            #07B9B3;
+$gray:                            #666666;
 $green:                           #00B30F;
+$red:                             #EB1713;
+$salmon:                          #FFF4E4;
+$teal:                            #07B9B3;
 $white:                           #FFFFFF;
 
 $reservation-active:              #F35F45;
@@ -52,10 +54,9 @@ $btn-warning:                     #121212;
 // accents
 // $blue:                            #428BCA;
 // $buttonblue:                      #0D5CD0;
-$green:                           #1CD729;
+// $green:                           #1CD729;
 $green1:                          #00AB2E;
 $orange:                          #FD9B26;
-$red:                             #EB1713;
 
 // fonts
 $serif-font:                      Museo, Oswald, serif;
@@ -204,8 +205,14 @@ html, body                        { color: $black; font-family: $sans-font; font
 strong                            { font-weight: 500; }
 
 // GLOBAL CLASSES
-.bold                             { font-weight: 600; }
+strong,
+.bold                             { font-weight: 500; }
 .add-something                    { display: inline-block; padding: 15px 0; }
+.alert                            { border-radius: 2px;
+  &.rearranging                   { background: $salmon; border-color: $border; color: $black;
+    .btn                          { margin: -8px 0; }
+  }
+}
 .drag                             { margin-right: 10px; width: 25px;
   .icon-bar                       { border: 2px solid $lightgray; border-radius: 1px; margin-bottom: 3px; }
 }
@@ -216,7 +223,7 @@ strong                            { font-weight: 500; }
 .mandatory                        { color: $red; }
 
 // HEADER
-header.top                        { background: $headerbg; border-bottom: 1px solid $black; height: 55px; line-height: 54px; padding-left: 30px; padding-right: 30px; position: fixed; top: 0; width: calc(100% - 240px); z-index: 50; -webkit-transition: width 0.5s ease; -moz-transition: width 0.5s ease; -o-transition: width 0.5s ease; transition: width 0.5s ease;
+header.top                        { background: $headerbg; border-bottom: 1px solid $black; height: 55px; line-height: 54px; padding-left: 30px; padding-right: 30px; position: fixed; top: 0; width: calc(100% - 240px); z-index: 50; transition: ease-in-out .5s all;
   &.expanded                      { width: 100%; }
   .col-md-2                       { text-align: center; }
   .hamburger                      { opacity: 1; position: relative; left: -15px; }
@@ -229,7 +236,10 @@ header.top                        { background: $headerbg; border-bottom: 1px so
         &:before                  { border-width: 10px; border-style: solid; border-color: transparent transparent $column-picker transparent; content: ' '; display: block; position: absolute; top: -9px; right: -10px; }
       }
       li                          { list-style: none; font-size: 14px; line-height: normal; margin: 0 0 5px;
-        input[type="checkbox"]    { margin: 0; margin-left: -20px; }
+        label                     { padding-left: 24px; }
+        input[type="checkbox"]    { margin: 0; top: 0;
+          &:before                { border-color: $column-picker-bd; }
+        }
       }
     }
     .btn-default                  { background: $white; color: $gray; margin: 0 auto; }
@@ -352,7 +362,7 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
     [type="checkbox"]             { left: 0; position: absolute; top: 6px;
       &:not(:checked),
       &:checked                   { appearance: none; position: absolute;
-        &:before                  { content: ''; display: block; border: 1px solid $border; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
+        &:before                  { background: $white; border: 1px solid $border; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
         &:after                   { color: $gray; content: '✔︎'; font-size: 12px; left: 3px; position: absolute; top: 0px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
       }
       &:not(:checked)             {

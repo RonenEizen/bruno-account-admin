@@ -58,7 +58,7 @@ angular.module('accountAdminApp')
 
     $scope.paymentsStats = {
       sources: {
-        labels: ['Restaurant Wbsite', 'In-person', 'Seamless', 'Grubhub'],
+        labels: ['Restaurant Website', 'In-person', 'Seamless', 'Grubhub'],
         series: ['2013', '2014', '2015', '2016'],
         data: [[165, 159, 180, 188], [165, 159, 180, 188], [165, 159, 180, 188], [165, 159, 180, 188]]
       },

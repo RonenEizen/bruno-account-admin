@@ -34,7 +34,7 @@
 
 <div class="dashboard">
   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.msg"></span></uib-alert>
-  <div class="alert alert-warning" role="alert" ng-show="rearranging">Drag the areas below to change positions.
+  <div class="alert rearranging alert-warning clearfix " role="alert" ng-show="rearranging">Drag the areas below to change positions.
     <div class="pull-right"><button class="btn btn-primary" ng-click="rearranging=false">Finish And Save</button></div>
   </div>
 

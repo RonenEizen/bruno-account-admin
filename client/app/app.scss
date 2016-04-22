@@ -295,7 +295,7 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
 }
 
 // cell-like tabs
-.tab-group                        { color: $darkgray; font: 12px $serif-font; height: 32px; margin-top: 8px;
+.tab-group                        { color: $darkgray; font: 12px $serif-font; height: 32px;
   a                               { color: inherit; float: left;
     &:focus,
     &:hover                       { text-decoration: none; }

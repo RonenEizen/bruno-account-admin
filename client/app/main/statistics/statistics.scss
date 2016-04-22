@@ -1,7 +1,7 @@
 .statistics                       { padding: 30px;
   .shadowed-container             { margin-bottom: 30px; padding: 15px; position: relative;
     .grayout                      { background: $headerbg; height: calc(100% - 50px); left: 0; opacity: .5; position: absolute; top: 50px; width: 100%; z-index: 10; }
-    .tab-group                    { margin: 0; }
+    .tab-group                    { margin-bottom: 10px; }
     .line-legend                  { margin-bottom: 0;
       li                          { color: $gray; margin: 0; padding: 0 0 0 20px; font-size: 16px; line-height: 16px; margin-left: 10px;
         span                      { border-radius: 50%; height: 14px; width: 14px; }

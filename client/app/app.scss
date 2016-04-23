@@ -221,7 +221,9 @@ strong,
 }
 .invisible-layer                  { background: transparent; height: 100%; position: fixed; top: 0; left: 0; width: 100%; z-index: 50; }
 .full-height                      { height: 100%; }
-.toggle-checkbox                  { background: $lightgray; display: inline-block; margin: 0 0 30px; padding: 10px 30px; }
+.toggle-checkbox                  { background: $border; display: inline-block; line-height: 48px; margin: 0 0 30px; padding: 0 35px;
+  .checkbox                       { margin: 0; }
+}
 .optional                         { color: $lightgray; font: 300 14px $sans-font; }
 .mandatory                        { color: $red; }
 

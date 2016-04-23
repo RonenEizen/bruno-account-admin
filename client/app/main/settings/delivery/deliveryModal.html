@@ -16,14 +16,16 @@
                   <div class="th thirty-perc">Open</div>
                   <div class="th thirty-perc">From</div>
                   <div class="th thirty-perc">To</div>
-                  <div class="th ten-perc">Split</div>
+                  <!-- <div class="th ten-perc">Split</div> -->
                 </div>
               </div><!-- END .thead -->
               <div class="tbody">
-                <div class="tr" ng-repeat="day in delivery.weekdays" ng-class="{disabled: !day.open}">
+                <div class="tr" ng-repeat="day in deliveryHours.weekdays" ng-class="{disabled: !day.open}">
                   <div class="td">
-                    <div class="checkbox weekday">
-                      <label class="control-label"><input type="checkbox" name="open" ng-model="day.open" ng-checked="day.open"> {{day.name}} <span></span></label>
+                    <div class="weekday">
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="open" ng-model="day.open" ng-checked="day.open"> {{day.name}} <span></span></label>
+                      </div>
                     </div>
                   </div><!-- END .td -->
 
@@ -43,11 +45,13 @@
                     <span ng-show="!day.open"  ng-switch-when="false">CLOSED</span>
                   </div><!-- END .td -->
 
+                  <!--
                   <div class="td">
-                    <div class="checkbox" ng-show="day.open">
-                      <label><input  name="split" type="checkbox" ng-model="day.split" ng-checked="day.split"> <span></span></label>
+                    <div class="checkbox" name="split" ng-show="day.open">
+                      <label><input type="checkbox" ng-model="day.split" ng-checked="day.split"> <span></span></label>
                     </div>
-                  </div><!-- END .td -->
+                  </div>
+                  --><!-- END .td -->
                 </div><!-- END .tr -->
               </div><!-- END .tbody -->
             </div><!-- END .table.timetable -->

@@ -42,7 +42,7 @@ angular.module('accountAdminApp')
         twentyFourSeven: false,
         weekdays: [
           { name: 'Monday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
-          { name: 'Tuesday', open: true, split: true, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: new Date(1970, 0, 1, 14, 57, 0), stop2: new Date(1970, 0, 1, 14, 57, 0) },
+          { name: 'Tuesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: new Date(1970, 0, 1, 14, 57, 0), stop2: new Date(1970, 0, 1, 14, 57, 0) },
           { name: 'Wednesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: new Date(1970, 0, 1, 14, 57, 0), stop2: new Date(1970, 0, 1, 14, 57, 0) },
           { name: 'Thurday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
           { name: 'Friday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
@@ -118,7 +118,7 @@ angular.module('accountAdminApp')
         twentyFourSeven: false,
         weekdays: [
           { name: 'Monday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
-          { name: 'Tuesday', open: true, split: true, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: new Date(1970, 0, 1, 14, 57, 0), stop2: new Date(1970, 0, 1, 14, 57, 0) },
+          { name: 'Tuesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: new Date(1970, 0, 1, 14, 57, 0), stop2: new Date(1970, 0, 1, 14, 57, 0) },
           { name: 'Wednesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: new Date(1970, 0, 1, 14, 57, 0), stop2: new Date(1970, 0, 1, 14, 57, 0) },
           { name: 'Thurday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
           { name: 'Friday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },

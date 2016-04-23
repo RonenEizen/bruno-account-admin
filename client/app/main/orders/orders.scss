@@ -1,7 +1,7 @@
 .orders                           { padding: 30px 15px;
   .table                          {
     .tr                           {
-      .th                         { border-bottom-color: $darkgray; font-size: 13px; padding: 8px 0;
+      .th                         { font-size: 13px; padding: 8px 0;
         .filter                   { cursor: pointer; margin-left: -15px; }
         span                      { cursor: pointer; }
       }

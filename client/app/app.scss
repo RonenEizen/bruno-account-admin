@@ -337,7 +337,7 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
 .sortorder                        { vertical-align: baseline; }
 
 // container with gray bg
-.shadowed-container               { background: $headerbg; border: 1px solid $border; border-radius: 2px; margin-bottom: 20px;
+.shadowed-container               { background: $headerbg; border: 1px solid $border; border-radius: 2px; margin-bottom: 20px; padding: 20px;
   header                          {
     h2                            { color: $blue; display: inline-block; font: 500 20px $serif-font; margin: 0 10px 0 0; }
     i.pull-right                  { color: $lightgray2; }
@@ -350,6 +350,7 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
     h3                            { display: inline-block; font-size: 16px; margin: 0; }
   }
   .table                          { margin: 0;
+    .th                           { border-bottom: 1px solid $border; }
     .td                           { padding: 15px 8px;
       &:first-child               { padding-left: 0; }
       &:last-child                { padding-right: 0; }
@@ -358,7 +359,7 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
       .td                         { border-bottom: none; }
     }
   }
-  .border-top                     { border-top: 1px solid $lightgray; }
+  .border-top                     { border-top: 1px solid $border; }
 }
 
 // RESTYLED CHECKBOXES
@@ -388,8 +389,9 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
   .tbody                          { display: table-row-group; }
   .tfoot                          { display: table-footer-group; }
   .tr                             { display: table-row; }
-  .th                             { border-bottom-color: #050505; font-weight: 500; font-family: $serif-font; }
-  .td, .th                        { border-bottom: 1px solid #ddd; display: table-cell; padding: 8px; vertical-align: middle; }
+  .td, .th                        { display: table-cell; padding: 8px; vertical-align: middle; }
+  .th                             { border-bottom: 2px solid $black; font-weight: 500; font-family: $serif-font; }
+  .td                             { border-bottom: 1px solid $border; }
 }
 
 // MODAL

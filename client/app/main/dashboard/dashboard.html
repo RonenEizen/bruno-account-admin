@@ -13,12 +13,12 @@
         <i class="icon-grid" ng-click="showColumnPicker()"></i>
         <ul ng-show="pickColumns">
           <span class="arrow"></span>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.orders">Recent Orders</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.reservations">Recent Reservations</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.campaigns">Current Campaign</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.updates">Settings Updates</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.orderTrends">Order Trends</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.reservationTrends">Reservation Trends</label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.orders">Recent Orders <span></span></label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.reservations">Recent Reservations <span></span></label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.campaigns">Current Campaign <span></span></label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.updates">Settings Updates <span></span></label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.orderTrends">Order Trends <span></span></label></li>
+          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.reservationTrends">Reservation Trends <span></span></label></li>
           <button class="btn btn-default" ng-click="rearranging=!rearranging">Change Positions</button>
         </ul>
       </div>
@@ -33,6 +33,7 @@
 </header>
 
 <div class="dashboard">
+
   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.msg"></span></uib-alert>
   <div class="alert rearranging alert-warning clearfix " role="alert" ng-show="rearranging">Drag the areas below to change positions.
     <div class="pull-right"><button class="btn btn-primary" ng-click="rearranging=false">Finish And Save</button></div>

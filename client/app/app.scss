@@ -30,6 +30,9 @@ $column-picker-bd:                #CCCCCC;
 $column-arrows:                   #666666;
 $border:                          #E5E5E5;
 
+$selectbg-start:                  #F8F8F8;
+$selectbg-stop:                   #EEEEEE;
+
 $black:                           #000000;
 $blue:                            #0074D9;
 $gray:                            #666666;
@@ -262,17 +265,19 @@ header.top                        { background: $headerbg; border-bottom: 1px so
 
 // styles forms
 form.custom-form                  {
-  label                           { font-size: 16px; font-family: $serif-font; }
+  label                           { font-size: 14px; font-family: $sans-font; }
   .radio                          {
     label                         { font: inherit; }
   }
-  input,
+  input:not([type="checkbox"]),
   select,
-  textarea                        { /*border: none;*/ border-radius: 0; box-shadow: none; font-size: 16px; }
-  input,
-  textarea                        { border: 1px solid $lightgray; }
-  fieldset                        { border: 1px solid $lightgray;
-    select                        { border: none; border-radius: 0;
+  textarea                        { box-shadow: none; font-size: 14px; height: 48px; }
+  fieldset,
+  input:not([type="checkbox"]),
+  textarea                        { border: 1px solid $column-picker-bd; border-radius: 2px; }
+  fieldset                        { position: relative;
+    &:before                      { color: $gray; content: '▼'; font-size: 12px; position: absolute; right: 6px; top: 18px; }
+    select                        { appearance: none; background: linear-gradient($selectbg-start, $selectbg-stop); border: none; border-radius: 0;
       &:focus                     { box-shadow: none; }
     }
   }
@@ -358,17 +363,17 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
 
 // RESTYLED CHECKBOXES
 .checkbox                         {
-  label                           { padding-left: 20px; position: relative;
-    [type="checkbox"]             { left: 0; position: absolute; top: 6px;
-      &:not(:checked),
-      &:checked                   { appearance: none; position: absolute;
+  label                           { line-height: 1; padding-left: 20px; position: relative;
+    [type="checkbox"]             { position: absolute; left: -9999px;
+      &:not(:checked) ~ span,
+      &:checked ~ span            { appearance: none; top: 0; left: 0; position: absolute;
         &:before                  { background: $white; border: 1px solid $border; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
-        &:after                   { color: $gray; content: '✔︎'; font-size: 12px; left: 3px; position: absolute; top: 0px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
+        &:after                   { color: $gray; content: '✔︎'; font-size: 12px; left: 3px; position: absolute; top: 2px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
       }
-      &:not(:checked)             {
+      &:not(:checked) ~ span      {
         &:after                   { opacity: 0; transform: scale(0); }
       }
-      &:checked                   {
+      &:checked ~ span            {
         &:after                   { opacity: 1; transform: scale(1); }
       }
     }
@@ -390,7 +395,7 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
 // MODAL
 .flyout                           { background: $white; height: 100%; overflow: auto; position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
   .close                          { clear: both; color: $darkgray; font-size: 4rem; opacity: 1; }
-  h1                              { font: 300 3.6rem $serif-font; margin: 40px 0; position: relative;
+  h1                              { font: 300 36px $serif-font; margin: 40px 0 30px; position: relative;
     &.channel-heading             { font-size: 2.3rem; text-align: center; }
     button.btn                    { background: none; bottom: 10px; color: $blue; font-size: 2rem; line-height: 3rem; padding: 0; position: absolute; right: 0; }
   }

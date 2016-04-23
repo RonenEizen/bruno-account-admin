@@ -12,9 +12,7 @@
           <div class="row">
             <div class="col-md-12 text-center">
               <div class="checkbox toggle-checkbox">
-                <label>
-                  <input type="checkbox" ng-model="twentyFourSeven" ng-init="twentyFourSeven = true"> Open 24/7
-                </label>
+                <label><input type="checkbox" ng-model="twentyFourSeven"> Open 24/7 <span></span></label>
               </div>
             </div>
           </div><!-- END .row -->
@@ -32,9 +30,7 @@
                 <div class="tr" ng-repeat="day in opening.weekdays" ng-class="{disabled: !day.open}">
                   <div class="td">
                     <div class="checkbox weekday">
-                      <label class="control-label">
-                        <input type="checkbox" name="open" ng-model="day.open" ng-checked="day.open"> {{day.name}}
-                      </label>
+                      <label><input type="checkbox" name="open" ng-model="day.open" ng-checked="day.open"> {{day.name}} <span></span></label>
                     </div>
                   </div><!-- END .td -->
 
@@ -55,7 +51,9 @@
                   </div><!-- END .td -->
 
                   <div class="td">
-                    <div class="checkbox" name="split" ng-show="day.open"><input type="checkbox" ng-model="day.split" ng-checked="day.split"></div>
+                    <div class="checkbox" name="split" ng-show="day.open">
+                      <label><input type="checkbox" ng-model="day.split" ng-checked="day.split"> <span></span></label>
+                    </div>
                   </div><!-- END .td -->
                 </div><!-- END .tr -->
               </div><!-- END .tbody -->

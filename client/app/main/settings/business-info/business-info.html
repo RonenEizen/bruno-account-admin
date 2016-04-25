@@ -21,7 +21,7 @@
         <p>
           <strong>{{business.name}}</strong><br>
           {{business.email}}<br>
-          {{business.phone}}<br>
+          {{business.phone | phone}}<br>
           {{business.addr1}}<br>
           {{business.addr2}}<br>
           {{business.city}}, {{business.state}}, {{business.zip}}
@@ -35,7 +35,7 @@
         <p>
           <strong>{{restaurant.name}}</strong><br>
           {{restaurant.email}}<br>
-          {{restaurant.phone}}<br>
+          {{restaurant.phone | phone}}<br>
           {{restaurant.addr1}}<br>
           {{restaurant.addr2}}<br>
           {{restaurant.city}}, {{restaurant.state}}, {{restaurant.zip}}
@@ -72,11 +72,11 @@
         <p><strong>Date of Birth</strong><br>
         {{owner.bday | date: 'MM/dd/yyyy'}}</p>
         <p><strong>Social Security Number</strong><br>
-        {{owner.ssn}}</p>
+        {{owner.ssn | ssn}}</p>
         <p><strong>Email</strong><br>
         {{owner.email}}</p>
         <p><strong>Phone Number</strong><br>
-        {{owner.phone}}</p>
+        {{owner.phone | phone}}</p>
         <p><strong>Address</strong><br>
         {{owner.addr1}}, {{owner.addr2}}, {{owner.city}}, {{owner.state}} {{owner.zip}}</p>
       </div>

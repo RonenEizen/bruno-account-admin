@@ -19,7 +19,7 @@
             <div class="row">
               <div class="col-md-12 form-group">
                 <label class="control-label">Restaurant Name</label> <span class="mandatory">*</span>
-                <input name="name" type="text" class="form-control" ng-model="restaurant.name" ng-required="true">
+                <input name="name" type="text" class="form-control" ng-model="restaurant.name" required>
                 <p ng-show="restaurantForm.name.$error.required && restaurantForm.name.$touched" class="help-block">This is a required field.</p>
               </div>
             </div><!-- END .row -->
@@ -27,13 +27,13 @@
             <div class="row">
               <div class="col-md-6 form-group">
                 <label class="control-label">Restaurant Email</label> <span class="mandatory">*</span>
-                <input name="email" type="email" class="form-control" ng-model="restaurant.email" ng-required="true">
+                <input name="email" type="email" class="form-control" ng-model="restaurant.email" required>
                 <p ng-show="restaurantForm.email.$error.required && restaurantForm.email.$touched" class="help-block">Make sure this is a valid email.</p>
               </div>
 
               <div class="col-md-6 form-group">
                 <label class="control-label">Restaurant Phone Number</label> <span class="mandatory">*</span>
-                <input name="phone" type="tel" class="form-control" ng-model="restaurant.phone" minlength="8" ng-maxlength="9" ng-required="true">
+                <input name="phone" type="tel" class="form-control" ng-model="restaurant.phone" minlength="14" maxlength="14" required  ui-mask="(999) 999-9999" ui-mask-placeholder ui-mask-placeholder-char="_">
                 <p ng-show="restaurantForm.phone.$error.minlength" class="help-block">Phone Number is too short.</p>
                 <p ng-show="restaurantForm.phone.$error.maxlength" class="help-block">Phone Number is too long.</p>
                 <p ng-show="restaurantForm.phone.$error.required && restaurantForm.phone.$touched" class="help-block">Make sure this is a valid phone number.</p>
@@ -43,7 +43,7 @@
             <div class="row">
               <div class="col-md-12 form-group">
                 <label class="control-label">Restaurant Address Line 1</label> <span class="mandatory">*</span>
-                <input name="addr1" type="text" class="form-control" ng-model="restaurant.addr1" ng-required="true">
+                <input name="addr1" type="text" class="form-control" ng-model="restaurant.addr1" required>
                 <p ng-show="restaurantForm.addr1.$error.required && restaurantForm.addr1.$touched" class="help-block">This is a required field.</p>
               </div>
             </div><!-- END .row -->
@@ -58,14 +58,14 @@
             <div class="row">
               <div class="col-md-6 form-group">
                 <label class="control-label">City</label> <span class="mandatory">*</span>
-                <input name="city" type="text" class="form-control" ng-model="restaurant.city" ng-required="true">
+                <input name="city" type="text" class="form-control" ng-model="restaurant.city" required>
                 <p ng-show="restaurantForm.city.$error.required && restaurantForm.city.$touched" class="help-block">This is a required field.</p>
               </div>
 
               <div class="col-md-6 form-group">
                 <label class="control-label">State</label> <span class="mandatory">*</span>
                 <fieldset>
-                  <select name="state" class="form-control" ng-model="restaurant.state" ng-required="true">
+                  <select name="state" class="form-control" ng-model="restaurant.state" required>
                     <option value=""></option>
                     <option value="NY">NY</option>
                     <option value="FL">FL</option>
@@ -78,7 +78,7 @@
             <div class="row">
               <div class="col-md-6 form-group">
                 <label class="control-label">ZIP Code</label> <span class="mandatory">*</span>
-                <input name="zip" type="number" class="form-control" ng-model="restaurant.zip" minlength="5" ng-maxlength="5" ng-required="true">
+                <input name="zip" type="number" class="form-control" ng-model="restaurant.zip" minlength="5" ng-maxlength="5" required>
                 <p ng-show="restaurantForm.zip.$error.minlength" class="help-block">Zip Code is too short.</p>
                 <p ng-show="restaurantForm.zip.$error.maxlength" class="help-block">Zip Code is too long.</p>
                 <p ng-show="restaurantForm.zip.$error.required && restaurantForm.zip.$touched" class="help-block">This is a required field.</p>
@@ -87,7 +87,7 @@
               <div class="col-md-6 form-group">
                 <label class="control-label">Country</label> <span class="mandatory">*</span>
                 <fieldset>
-                  <select name="country" class="form-control" ng-model="restaurant.country" ng-required="true">
+                  <select name="country" class="form-control" ng-model="restaurant.country" required>
                     <option value="US">United States</option>
                     <option value="BR">Brazil</option>
                   </select>

@@ -33,7 +33,7 @@
               {{businessInfo.owner.addr1}}<br>
               {{businessInfo.owner.city + ', ' + businessInfo.owner.state + ' ' + businessInfo.owner.zip}}<br>
               <br>
-              {{businessInfo.owner.phone}}<br>
+              {{businessInfo.owner.phone | phone}}<br>
               {{businessInfo.owner.email}}
             </p>
           </div>
@@ -47,7 +47,7 @@
               {{businessInfo.business.addr1}}<br>
               {{businessInfo.business.city + ', ' + businessInfo.business.state + ' ' + businessInfo.business.zip}}<br>
               <br>
-              {{businessInfo.business.phone}}<br>
+              {{businessInfo.business.phone | phone}}<br>
               {{businessInfo.business.email}}
             </p>
           </div>

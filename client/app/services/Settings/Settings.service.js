@@ -6,7 +6,7 @@ angular.module('accountAdminApp')
       business: {
         name: 'Sushi Place',
         email: 'sushi@sushi.com',
-        phone: '123456789',
+        phone: '5553214567',
         addr1: '3000 Ocean Pkwy',
         addr2: 'Suite 222',
         city: 'Brooklyn',
@@ -17,7 +17,7 @@ angular.module('accountAdminApp')
         sameAsBusiness: false,
         name: 'Sushi Place',
         email: 'sushi@sushi.com',
-        phone: '123456789',
+        phone: '5553214567',
         addr1: '3000 Ocean Pkwy',
         addr2: 'Suite 222',
         city: 'Brooklyn',
@@ -28,9 +28,9 @@ angular.module('accountAdminApp')
         fname: 'Blake',
         lname: 'Lively',
         bday: new Date(1986, 3, 10, 0, 0, 0),
-        ssn: '12345',
+        ssn: '123456789',
         email: 'blake@lively.com',
-        phone: '123456789',
+        phone: '5553214567',
         addr1: '3000 Ocean Pkwy',
         addr2: 'Suite 222',
         city: 'Brooklyn',
@@ -42,8 +42,8 @@ angular.module('accountAdminApp')
         twentyFourSeven: false,
         weekdays: [
           { name: 'Monday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
-          { name: 'Tuesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: new Date(1970, 0, 1, 14, 57, 0), stop2: new Date(1970, 0, 1, 14, 57, 0) },
-          { name: 'Wednesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: new Date(1970, 0, 1, 14, 57, 0), stop2: new Date(1970, 0, 1, 14, 57, 0) },
+          { name: 'Tuesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
+          { name: 'Wednesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
           { name: 'Thurday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
           { name: 'Friday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
           { name: 'Saturday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
@@ -52,14 +52,14 @@ angular.module('accountAdminApp')
       }
     };
     this.users = [
-      { _id: '1', fname: 'Lucas', mname: 'F', lname: 'Engel', role: '1', phone: 9999999999, email: 'lucasengel@gmail.com' },
-      { _id: '2', fname: 'Blake', mname: '', lname: 'Liveley', role: '2', phone: 9173452680, email: 'bively@gmail.com' },
-      { _id: '3', fname: 'Adam', mname: '', lname: 'Greenberg', role: '3', phone: 9175668746, email: 'adamgreen@gmail.com' },
-      { _id: '4', fname: 'Buddy', mname: 'J.', lname: ' Finston', role: '4', phone: 3476062600, email: 'finjlone@yahoo.com' },
-      { _id: '5', fname: 'Rosa', mname: '', lname: 'O\'Bimbel', role: '5', phone: 3472223333, email: 'doej@gmail.com' },
-      { _id: '6', fname: 'Venik', mname: '', lname: 'Gromofonov', role: '6', phone: 3472223333, email: 'doej@gmail.com' },
-      { _id: '7', fname: 'Ty', mname: '', lname: 'Robertson', role: '7', phone: 3472223333, email: 'doej@gmail.com' },
-      { _id: '8', fname: 'Iskandr', mname: '', lname: 'Babekov', role: '7', phone: 3472223333, email: 'doej@gmail.com' }
+      { _id: '1', fname: 'Lucas', mname: 'F', lname: 'Engel', role: '1', phone: '9999999999', email: 'lucasengel@gmail.com' },
+      { _id: '2', fname: 'Blake', mname: '', lname: 'Liveley', role: '2', phone: '9173452680', email: 'bively@gmail.com' },
+      { _id: '3', fname: 'Adam', mname: '', lname: 'Greenberg', role: '3', phone: '9175668746', email: 'adamgreen@gmail.com' },
+      { _id: '4', fname: 'Buddy', mname: 'J.', lname: ' Finston', role: '4', phone: '3476062600', email: 'finjlone@yahoo.com' },
+      { _id: '5', fname: 'Rosa', mname: '', lname: 'O\'Bimbel', role: '5', phone: '3472223333', email: 'doej@gmail.com' },
+      { _id: '6', fname: 'Venik', mname: '', lname: 'Gromofonov', role: '6', phone: '3472223333', email: 'doej@gmail.com' },
+      { _id: '7', fname: 'Ty', mname: '', lname: 'Robertson', role: '7', phone: '3472223333', email: 'doej@gmail.com' },
+      { _id: '8', fname: 'Iskandr', mname: '', lname: 'Babekov', role: '7', phone: '3472223333', email: 'doej@gmail.com' }
     ];
     this.roles = [
       { _id: '1', role: 'Owner', access: ['Full Access'], singleton: true },
@@ -97,7 +97,7 @@ angular.module('accountAdminApp')
         },
         phone: {
           enabled: false,
-          input: 5551234567
+          input: '5551234567'
         },
       },
       additional: {
@@ -118,8 +118,8 @@ angular.module('accountAdminApp')
         twentyFourSeven: false,
         weekdays: [
           { name: 'Monday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
-          { name: 'Tuesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: new Date(1970, 0, 1, 14, 57, 0), stop2: new Date(1970, 0, 1, 14, 57, 0) },
-          { name: 'Wednesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: new Date(1970, 0, 1, 14, 57, 0), stop2: new Date(1970, 0, 1, 14, 57, 0) },
+          { name: 'Tuesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
+          { name: 'Wednesday', open: true, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
           { name: 'Thurday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
           { name: 'Friday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },
           { name: 'Saturday', open: false, split: false, start1: new Date(1970, 0, 1, 14, 57, 0), stop1: new Date(1970, 0, 1, 14, 57, 0), start2: '', stop2: '' },

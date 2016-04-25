@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-md-5 form-group">
       <label class="control-label">First Name</label> <span class="mandatory">*</span>
-      <input type="text" name="fname" class="form-control" ng-model="modal.object.fname" ng-required="true">
+      <input type="text" name="fname" class="form-control" ng-model="modal.object.fname" required>
       <p ng-show="userForm.fname.$error.required && userForm.fname.$touched" class="help-block">This is a required field.</p>
     </div>
     <div class="col-md-2 form-group">
@@ -17,7 +17,7 @@
     </div>
     <div class="col-md-5 form-group">
       <label class="control-label">Last Name</label> <span class="mandatory">*</span>
-      <input type="text" name="lname" class="form-control" ng-model="modal.object.lname" ng-required="true">
+      <input type="text" name="lname" class="form-control" ng-model="modal.object.lname" required>
       <p ng-show="userForm.lname.$error.required && userForm.lname.$touched" class="help-block">This is a required field.</p>
     </div>
   </div><!-- END .row -->
@@ -25,13 +25,18 @@
   <div class="row">
     <div class="col-md-6 form-group">
       <label class="control-label">Role</label> <span class="mandatory">*</span>
-      <!-- TODO: make this input a select with available roles -->
-      <input type="text" name="role" class="form-control" ng-model="modal.object.role" ng-required="true">
+      <fieldset>
+        <select name="role" class="form-control" ng-model="modal.object.role" required>
+          <option value="0">Role 1</option>
+          <option value="1">Role 2</option>
+          <option value="2">Role 3</option>
+        </select>
+      </fieldset>
       <p ng-show="userForm.role.$error.required && userForm.role.$touched" class="help-block">This is a required field.</p>
     </div>
     <div class="col-md-6 form-group">
       <label class="control-label">Phone</label> <span class="mandatory">*</span>
-      <input type="text" name="phone" class="form-control" ng-model="modal.object.phone" ng-required="true">
+      <input type="text" name="phone" class="form-control" ng-model="modal.object.phone" ui-mask="(999) 999-9999" ui-mask-placeholder ui-mask-placeholder-char="_" required>
       <p ng-show="userForm.phone.$error.required && userForm.phone.$touched" class="help-block">This is a required field.</p>
     </div>
   </div><!-- END .row -->
@@ -39,7 +44,7 @@
   <div class="row">
     <div class="col-md-12 form-group">
       <label class="control-label">Email</label> <span class="mandatory">*</span>
-      <input type="email" name="email" class="form-control" ng-model="modal.object.email" ng-required="true">
+      <input type="email" name="email" class="form-control" ng-model="modal.object.email" required>
       <p ng-show="userForm.email.$error.required && userForm.email.$touched" class="help-block">This is a required field.</p>
       <p ng-show="addUserForm.email.$error.email" class="help-block">This is not a valid email.</p>
     </div>

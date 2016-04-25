@@ -20,12 +20,12 @@
           <div class="row">
             <div class="col-md-6 form-group">
               <label class="control-label">Number of Seats</label> <span class="mandatory">*</span>
-                <input name="seats" type="number" class="form-control" ng-model="table.seats" ng-required="true">
+                <input name="seats" type="number" class="form-control" ng-model="table.seats" required>
               <p ng-show="reservationForm.seats.$error.required && reservationForm.seats.$touched" class="help-block">This is a required field.</p>
             </div>
             <div class="col-md-6 form-group">
               <label class="control-label">Date</label> <span class="mandatory">*</span>
-              <input name="date" type="date" class="form-control" ng-model="table.date" ng-required="true">
+              <input name="date" type="date" class="form-control" ng-model="table.date" required>
               <p ng-show="reservationForm.date.$error.required && reservationForm.date.$touched" class="help-block">This is a required field.</p>
             </div>
           </div><!-- END .row -->
@@ -33,12 +33,12 @@
           <div class="row">
             <div class="col-md-6 form-group">
               <label class="control-label">Start Time</label> <span class="mandatory">*</span>
-              <input name="start" type="time" class="form-control" ng-model="table.start" ng-required="true">
+              <input name="start" type="time" class="form-control" ng-model="table.start" required>
               <p ng-show="reservationForm.start.$error.required && reservationForm.start.$touched" class="help-block">This is a required field.</p>
             </div>
             <div class="col-md-6 form-group">
               <label class="control-label">End Time</label> <span class="mandatory">*</span>
-              <input name="end" type="time" class="form-control" ng-model="table.end" ng-required="true">
+              <input name="end" type="time" class="form-control" ng-model="table.end" required>
               <p ng-show="reservationForm.end.$error.required && reservationForm.end.$touched" class="help-block">This is a required field.</p>
             </div>
           </div><!-- END .row -->
@@ -46,12 +46,14 @@
           <div class="row">
             <div class="col-md-6 form-group">
               <label class="control-label">Name</label> <span class="mandatory">*</span>
-              <input name="name" type="text" class="form-control" ng-model="table.name" ng-required="true">
+              <input name="name" type="text" class="form-control" ng-model="table.name" required>
               <p ng-show="reservationForm.name.$error.required && reservationForm.name.$touched" class="help-block">This is a required field.</p>
             </div>
             <div class="col-md-6 form-group">
               <label class="control-label">Phone</label> <span class="mandatory">*</span>
-              <input name="phone" type="text" class="form-control" ng-model="table.phone" ng-required="true">
+              <input name="phone" type="tel" class="form-control" ng-model="table.phone" minlength="14" maxlength="14" required ui-mask="(999) 999-9999" ui-mask-placeholder ui-mask-placeholder-char="_">
+              <p ng-show="reservationForm.phone.$error.minlength" class="help-block">Phone Number is too short.</p>
+              <p ng-show="reservationForm.phone.$error.maxlength" class="help-block">Phone Number is too long.</p>
               <p ng-show="reservationForm.phone.$error.required && reservationForm.phone.$touched" class="help-block">This is a required field.</p>
             </div>
           </div><!-- END .row -->

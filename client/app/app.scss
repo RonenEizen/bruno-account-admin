@@ -272,8 +272,8 @@ form.custom-form                  {
     label                         { font: inherit; }
   }
   input:not([type="checkbox"]),
-  select,
-  textarea                        { box-shadow: none; font-size: 14px; height: 48px; }
+  select                          { box-shadow: none; font-size: 14px; height: 48px; }
+  textarea                        { box-shadow: none; font-size: 14px; height: 110px; overflow: scroll; resize: none; }
   fieldset,
   input:not([type="checkbox"]),
   textarea                        { border: 1px solid $column-picker-bd; border-radius: 2px; }

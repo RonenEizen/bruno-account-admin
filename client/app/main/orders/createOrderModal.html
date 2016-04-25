@@ -15,7 +15,7 @@
               <div class="form-group">
                 <label class="control-label">Customer</label>
                 <fieldset>
-                  <select name="customer" class="form-control" ng-model="modal.object.owner" ng-required="true" ng-options="customer._id as (customer.fname + ' ' +customer.lname) for customer in customers">
+                  <select name="customer" class="form-control" ng-model="modal.object.owner" required ng-options="customer._id as (customer.fname + ' ' +customer.lname) for customer in customers">
                     <option value="">+ New Customer</option>
                   </select>
                 </fieldset>
@@ -26,7 +26,7 @@
               <div class="form-group">
                 <label class="control-label">Type</label>
                 <fieldset>
-                  <select name="type" class="form-control" ng-model="modal.object.type" ng-required="true">
+                  <select name="type" class="form-control" ng-model="modal.object.type" required>
                     <option value="pickup">Pickup</option>
                     <option value="delivery">Delivery</option>
                   </select>
@@ -63,14 +63,14 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label">Home Phone</label> <span class="mandatory">*</span>
-                  <input name="homePhone" type="tel" ng-model="newCustomer.homePhone" class="form-control" ng-required="!modal.object.owner">
+                  <input name="homePhone" type="tel" ng-model="newCustomer.homePhone" class="form-control" ng-required="!modal.object.owner" ui-mask="(999) 999-9999" ui-mask-placeholder ui-mask-placeholder-char="_">
                   <p ng-show="orderForm.homePhone.$error.required && orderForm.homePhone.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label">Mobile Phone</label> <span class="mandatory">*</span>
-                  <input name="mobilePhone" type="tel" ng-model="newCustomer.mobilePhone" class="form-control" ng-required="!modal.object.owner">
+                  <input name="mobilePhone" type="tel" ng-model="newCustomer.mobilePhone" class="form-control" ng-required="!modal.object.owner" ui-mask="(999) 999-9999" ui-mask-placeholder ui-mask-placeholder-char="_">
                   <p ng-show="orderForm.mobilePhone.$error.required && orderForm.mobilePhone.$touched" class="help-block">This is a required field.</p>
                 </div>
               </div>

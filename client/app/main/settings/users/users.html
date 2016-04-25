@@ -6,7 +6,7 @@
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="main.customModal('addUserModal.html')">+ New User</button>
+      <button class="btn btn-primary" ui-sref=".create">+ New User</button>
     </div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -97,7 +97,7 @@
         ">
           <div class="td" ng-show="displayColumns.name"><a href="/settings/users/{{user._id}}">{{user.fname + ' ' + user.lname}}</a></div>
           <div class="td" ng-show="displayColumns.role">{{user.role}}</div>
-          <div class="td" ng-show="displayColumns.phone">{{user.phone}}</div>
+          <div class="td" ng-show="displayColumns.phone">{{user.phone | phone}}</div>
           <div class="td" ng-show="displayColumns.email">{{user.email}}</div>
         </div><!-- END .tr -->
       </div><!-- END .tbody -->

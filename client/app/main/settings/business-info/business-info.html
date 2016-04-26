@@ -18,7 +18,10 @@
     <div class="row">
       <div class="col-md-12">
         <h2>Business Info <a class="pull-right" ui-sref=".business">Edit</a></h2>
+        <p ng-show="hideBusiness">
+          <a ui-sref=".business">Add Information</a>
         <p>
+        <p ng-show="!hideBusiness">
           <strong>{{business.name}}</strong><br>
           {{business.email}}<br>
           {{business.phone | phone}}<br>
@@ -32,7 +35,10 @@
     <div class="row">
       <div class="col-md-12">
         <h2>Restaurant Info <a class="pull-right" ui-sref=".restaurant">Edit</a></h2>
+        <p ng-show="hideRestaurant">
+          <a ui-sref=".restaurant">Add Information</a>
         <p>
+        <p ng-show="!hideRestaurant">
           <strong>{{restaurant.name}}</strong><br>
           {{restaurant.email}}<br>
           {{restaurant.phone | phone}}<br>
@@ -67,18 +73,33 @@
     <div class="row">
       <div class="col-md-12 paragraph-margin">
         <h2>Business Owner Info <a class="pull-right" ui-sref=".owner">Edit</a></h2>
-        <p><strong>Name</strong><br>
-        {{owner.fname}} {{owner.lname}}</p>
-        <p><strong>Date of Birth</strong><br>
-        {{owner.bday | date: 'MM/dd/yyyy'}}</p>
-        <p><strong>Social Security Number</strong><br>
-        {{owner.ssn | ssn}}</p>
-        <p><strong>Email</strong><br>
-        {{owner.email}}</p>
-        <p><strong>Phone Number</strong><br>
-        {{owner.phone | phone}}</p>
-        <p><strong>Address</strong><br>
-        {{owner.addr1}}, {{owner.addr2}}, {{owner.city}}, {{owner.state}} {{owner.zip}}</p>
+        <p ng-show="hideOwner">
+          <a ui-sref=".owner">Add Information</a>
+        <p>
+        <p ng-show="!hideOwner">
+          <strong>Name</strong><br>
+          {{owner.fname}} {{owner.lname}}
+        </p>
+        <p ng-show="!hideOwner">
+          <strong>Date of Birth</strong><br>
+          {{owner.bday | date: 'MM/dd/yyyy'}}
+        </p>
+        <p ng-show="!hideOwner">
+          <strong>Social Security Number</strong><br>
+          {{owner.ssn | ssn}}
+        </p>
+        <p ng-show="!hideOwner">
+          <strong>Email</strong><br>
+          {{owner.email}}
+        </p>
+        <p ng-show="!hideOwner">
+          <strong>Phone Number</strong><br>
+          {{owner.phone | phone}}
+        </p>
+        <p ng-show="!hideOwner">
+          <strong>Address</strong><br>
+          {{owner.addr1}}, {{owner.addr2}}, {{owner.city}}, {{owner.state}} {{owner.zip}}
+        </p>
       </div>
     </div><!-- END .row -->
   </div><!-- END .content -->

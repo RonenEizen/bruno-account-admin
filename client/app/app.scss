@@ -221,7 +221,7 @@ strong,
 }
 .invisible-layer                  { background: transparent; height: 100%; position: fixed; top: 0; left: 0; width: 100%; z-index: 50; }
 .full-height                      { height: 100%; }
-.toggle-checkbox                  { background: $border; display: inline-block; line-height: 48px; margin: 0 0 30px; padding: 0 35px;
+.toggle-checkbox                  { background: $border; display: inline-block; line-height: 48px; margin: 0 0 30px; padding: 0 30px;
   .checkbox                       { margin: 0; }
 }
 .optional                         { color: $lightgray; font: 300 14px $sans-font; }
@@ -253,7 +253,7 @@ header.top                        { background: $headerbg; border-bottom: 1px so
     .form-control                 { border-radius: 2px; border: 1px solid $lightgray;
       &:focus                     { box-shadow: none; }
     }
-    .form-control-feedback        { color: $darkgray; top: 10px; }
+    .form-control-feedback        { color: $reservation-gray; top: 10px; }
   }
 }
 
@@ -276,7 +276,9 @@ form.custom-form                  {
   textarea                        { box-shadow: none; font-size: 14px; height: 110px; overflow: scroll; resize: none; }
   fieldset,
   input:not([type="checkbox"]),
-  textarea                        { border: 1px solid $column-picker-bd; border-radius: 2px; }
+  textarea                        { border: 1px solid $column-picker-bd; border-radius: 2px;
+    &.ng-invalid.ng-touched       { border-color: $red; }
+  }
   fieldset                        { position: relative;
     &:before                      { color: $gray; content: '▼'; font-size: 12px; position: absolute; right: 6px; top: 18px; }
     select                        { appearance: none; background: linear-gradient($selectbg-start, $selectbg-stop); border: none; border-radius: 0;
@@ -288,12 +290,13 @@ form.custom-form                  {
     .newtag                       { border: none; }
   }
   .label                          { background: $lightgray; border-radius: 0; color: $darkgray; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
-  .form-control-feedback          { top: 10px; }
+  .form-control-feedback          { color: $reservation-gray; top: 16px; }
 }
 
 // default button settings
 a.btn,
-button.btn                        { border: none; border-radius: 2px; font: 500 14px $serif-font; padding: 8px 25px; text-shadow: none;
+button.btn                        { border: none; border-radius: 2px; font: 500 14px $serif-font; padding: 8px 30px; text-shadow: none;
+  &:hover                         { opacity: .7; }
   &.btn-danger                    { background: $red; }
   &.btn-default                   { background: $btn-default; color: $btn-default-color; }
   &.btn-primary                   { background: $blue; }
@@ -383,10 +386,17 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
   }
 }
 
-
-
 // REPLACES TABLES
-.table                            { display: table;
+.table                            { display: table; table-layout: fixed;
+  &.table-default                 {
+    .tr                           {
+      .td                         { padding: 15px 0; }
+      .th                         { border-bottom-color: $darkgray; font-size: 14px; padding: 8px 0;
+        .filter                   { cursor: pointer; margin-left: -15px; }
+        span                      { cursor: pointer; }
+      }
+    }
+  }
   .thead                          { display: table-header-group; }
   .tbody                          { display: table-row-group; }
   .tfoot                          { display: table-footer-group; }
@@ -467,11 +477,6 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
       &.no-border                 {
         .th                       { border: none; font: 300 1.8rem $sans-font; }
       }
-      // .td, .th                    { padding: 15px 0;
-      //   button                    { background: none; border: none; color: $blue; font-size: 2rem; padding: 0; }
-      //   .form-group               { margin: 0; }
-      // }
-      // .th                         { border-bottom: 2px solid $black; padding: 5px 0; }
     }
   }
   .customer-orders                { background: $headerbg; }

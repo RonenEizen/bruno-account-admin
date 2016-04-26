@@ -9,6 +9,10 @@ angular.module('accountAdminApp')
     $scope.owner = $scope.main.businessInfo.owner;
     $scope.opening = $scope.main.businessInfo.openingHours;
 
+    $scope.hideBusiness = _.isEmpty($scope.business);
+    $scope.hideRestaurant = _.isEmpty($scope.restaurant);
+    $scope.hideOwner = _.isEmpty($scope.owner);
+
     // $scope.sameAsAbove = function() {
     //   if ($scope.restaurant.sameAsBusiness) {
     //     $scope.restaurant = {

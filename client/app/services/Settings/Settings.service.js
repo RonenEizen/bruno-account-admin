@@ -86,9 +86,9 @@ angular.module('accountAdminApp')
       enabled: true,
       radius: {
         unit: 'km',
-        long: -51.2300,
-        latit: -30.0331,
-        radius: 5
+        long: -51.2300,  // these should be fetched
+        latit: -30.0331, // according to restaurant addr
+        radius: 5 // this should start blank
       },
       requests: {
         email: {

@@ -1,22 +1,13 @@
-// SIDEBAR
-aside.sidebar                   { padding-left: 0; padding-right: 0; padding-top: 0;
-  li                            { text-transform: uppercase;
-    &.active                    {
-      a                         { background: $blue; color: $white; }
-    }
-    a                           { border-radius: 0; color: $blue; padding: 15px 20px; }
-  }
-}
-
 .help-block                     { color: $red; }
-input.ng-invalid.ng-touched,
-select.ng-invalid.ng-touched    { border: 1px solid $red; }
 
 // MAIN CONTENT
-.column > .row                  { margin-top: 30px;
-  &:first-child                 { margin-top: 0; }
+.column                         {
+  &:first-child                 { padding-right: 20px; }
+  & ~ .column                   { padding-left: 20px; }
+  & > .row                      { margin-top: 30px;
+    &:first-child               { margin-top: 0; }
+  }
 }
-button.rounded                  { border: none; border-radius: 100%; font-family: $serif-font; height: 40px; width: 40px; padding: 0; text-transform: uppercase; text-shadow: none; }
 .paragraph-margin               {
   strong                        { font-weight: 500; }
   p                             { margin-bottom: 25px;
@@ -25,21 +16,7 @@ button.rounded                  { border: none; border-radius: 100%; font-family
 }
 
 .table                          {
-  .form-group input + input     { margin-top: 5px; }
-  input.form-control,
-  select.form-control           { color: $darkgray; font-size: 14px; }
-  .th                           {
-    &.ten-perc                  { width: 10%; }
-    &.twenty-perc               { width: 20%; }
-    &.thirty-perc               { width: 30%; }
-  }
-  &.userroles                   {
-    .tr .th                     { border-bottom-color: $darkgray; font-size: 13px; padding: 8px 0;
-      .filter                   { cursor: pointer; margin-left: -15px; }
-      span                      { cursor: pointer; }
-    }
-    .tr .td                     { padding: 15px 0; }
-  }
+  // .form-group input + input     { margin-top: 5px; } // only useful if split option is enabled
   &.timetable                   { margin-top: 20px;
     .tr                         {
       .th                       { border-bottom: none; font: 500 14px $sans-font;  margin: 0; }
@@ -60,10 +37,6 @@ button.rounded                  { border: none; border-radius: 100%; font-family
 }
 
 // DELIVERY
-.checkbox-inverted              {
-  input[type="checkbox"]        { margin: 0 5px 0 0; position: relative; }
-  label                         { padding: 0; }
-}
 .googlemap                      { padding: 0; width: 100%;
   iframe                        { border: 0; height: 400px; margin: 0 auto; width: 100%; }
 }
@@ -103,7 +76,6 @@ button.rounded                  { border: none; border-radius: 100%; font-family
 }
 
 // INTEGRATION
-.nomargin                       { margin-bottom: 0; }
 .appintegration                 {
   .td                           { height: 80px; }
   img                           { max-height: 50px; max-width: 150px; }

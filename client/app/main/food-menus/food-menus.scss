@@ -2,7 +2,7 @@
   .shadowed-container             { padding: 20px 35px;
     header                        { margin-left: -15px; margin-right: -15px; }
     h2                            { font: 500 18px $sans-font; }
-    .table                        { table-layout: fixed; width: 100%; // 'table-layout: fixed;' fixes the issue when nowrap enlarges the table
+    .table                        { width: 100%;
       .td                         { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         &:nth-child(1)            { width: 20%; }
         &:nth-child(2)            { width: 70%; }

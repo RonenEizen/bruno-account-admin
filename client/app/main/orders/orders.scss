@@ -1,22 +1,10 @@
 .orders                           { padding: 30px 15px;
-  .table                          {
-    .tr                           {
-      .th                         { font-size: 13px; padding: 8px 0;
-        .filter                   { cursor: pointer; margin-left: -15px; }
-        span                      { cursor: pointer; }
-      }
-      .status                     {
-        span                      {
-          &.new                   { color: $green1; }
-          &.inprogress            { color: $orange; }
-          &.cancelled             { color: $red; }
-          &.fulfilled             { color: $lightgray; }
-        }
-      }
-      .td                         { padding: 15px 0; }
+  .status                         {
+    span                          {
+      &.new                       { color: $green1; }
+      &.inprogress                { color: $orange; }
+      &.cancelled                 { color: $red; }
+      &.fulfilled                 { color: $lightgray; }
     }
-  }
-  .order-details                  { margin-top: 80px;
-    .order-summary                { margin-bottom: 20px; }
   }
 }

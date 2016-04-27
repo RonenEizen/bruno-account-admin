@@ -1,20 +1,26 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsIntegrationCtrl', function ($scope) {
+  .controller('SettingsIntegrationCtrl', function ($scope, $state) {
     $scope.pageTitle = 'Integrations';
 
     $scope.integrations = $scope.main.integrations;
     $scope.reviews = $scope.main.reviews;
 
-    $scope.toggle = function (element) { element.collapsed = !element.collapsed; };
-    $scope.edit = function (element) {
-      if (!element.edit) {
-        element.edit = true;
-        element.collapsed = false;
-      }
+    var getObject = () => {
+      let name = $state.params.name;
+      return $scope.integrations[name] || $scope.reviews[name];
     };
-    $scope.save = function (element) {
-      element.edit = false;
+    $scope.getName = () => {
+      let obj = getObject();
+      return obj.name;
+    };
+    $scope.getImg = () => {
+      let obj = getObject();
+      return obj.imgUrl;
+    };
+    $scope.getPlaceholder = () => {
+      let obj = getObject();
+      return 'Enter ' + obj.name + ' ID';
     };
   });

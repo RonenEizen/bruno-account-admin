@@ -1,12 +1,5 @@
 .marketing                        { padding: 30px 15px;
   .table.campaigns                {
-    .tr                           {
-      .th                         { border-bottom-color: $darkgray; font-size: 13px; padding: 8px 0;
-        .filter                   { cursor: pointer; margin-left: -15px; }
-        span                      { cursor: pointer; }
-      }
-      .td                         { padding: 15px 0;}
-    }
     .channel                      { font: normal normal normal 25px 'BrunoIcons' !important; speak: none; line-height: 1; margin-right: 15px; text-transform: none; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale;
       &.enabled                   { color: $blue; }
       &.disabled                  { color: $lightgray; }

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .config(function($stateProvider) {
+  .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('main.reservationsSettings.create', {
         url: '/create',
@@ -12,7 +12,9 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/settings/reservations/seatingModal.html'
       })
       .state('main.reservationsSettings.table', {
-        url: '/:_id',
+        url: '/:_id/edit',
         templateUrl: 'app/main/settings/reservations/tableModal.html'
       });
+    $urlRouterProvider
+      .when('/settings/reservations/1', '/settings/reservations/1/edit');
   });

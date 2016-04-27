@@ -91,12 +91,9 @@
       </div><!-- END .thead -->
 
       <div class="tbody">
-        <div
-          class="tr"
-          ng-repeat="user in users | filter:usersFilter | orderBy:clickedHeader:reverse | limitTo:displayingUsers
-        ">
+        <div class="tr" ng-repeat="user in users | filter:usersFilter | orderBy:clickedHeader:reverse | limitTo:displayingUsers">
           <div class="td" ng-show="displayColumns.name"><a href="/settings/users/{{user._id}}">{{user.fname + ' ' + user.lname}}</a></div>
-          <div class="td" ng-show="displayColumns.role">{{user.role}}</div>
+          <div class="td" ng-show="displayColumns.role" ng-bind="userRole(user.role)"></div>
           <div class="td" ng-show="displayColumns.phone">{{user.phone | phone}}</div>
           <div class="td" ng-show="displayColumns.email">{{user.email}}</div>
         </div><!-- END .tr -->

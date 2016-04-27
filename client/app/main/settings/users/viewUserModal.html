@@ -1,24 +1,24 @@
 <div class="row">
   <div class="col-md-12">
-    <h1 class="text-center">{{modal.object.fname + ' ' + modal.object.lname}}</h1>
+    <h1 class="text-center">{{getData(userId).fname + ' ' + getData(userId).lname}}</h1>
   </div>
 </div><!-- END .row -->
 
 <div class="row">
   <div class="col-md-6">
     <p><strong>Role</strong><br>
-       {{modal.object.role}}</p>
+       {{userRole(getData(userId).role)}}</p>
   </div>
   <div class="col-md-6">
     <p><strong>Phone</strong><br>
-       {{modal.object.phone | phone}}</p>
+       {{getData(userId).phone | phone}}</p>
   </div>
 </div><!-- END .row -->
 
 <div class="row">
   <div class="col-md-6">
     <p><strong>Email</strong><br>
-       {{modal.object.email}}</p>
+       {{getData(userId).email}}</p>
     </div>
   </div><!-- END .row -->
 </div>

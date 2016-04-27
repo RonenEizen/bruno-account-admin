@@ -65,8 +65,7 @@ $orange:                          #FD9B26;
 $serif-font:                      Museo, Oswald, serif;
 $sans-font:                       "Helvetica Neue", HelveticaNeue, Helvetica, Roboto, "Open Sans", sans;
 
-@mixin desaturate($amount)        { -webkit-filter: grayscale($amount); -moz-filter: grayscale($amount); -ms-filter: grayscale($amount); -o-filter: grayscale($amount); }
-
+@mixin desaturate($amount)        { filter: grayscale($amount); }
 
 
 // Component styles are injected through grunt
@@ -285,13 +284,13 @@ form.custom-form                  {
       &:focus                     { box-shadow: none; }
     }
   }
-  .resetsave                      { margin: 30px 0 20px; }
   .taggroup                       { border: 1px solid $lightgray; padding: 6px 12px;
     .newtag                       { border: none; }
   }
   .label                          { background: $lightgray; border-radius: 0; color: $darkgray; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
   .form-control-feedback          { color: $reservation-gray; top: 16px; }
 }
+.resetsave                        { margin: 30px 0 0; }
 
 // default button settings
 a.btn,
@@ -390,8 +389,11 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
 .table                            { display: table; table-layout: fixed;
   &.table-default                 {
     .tr                           {
-      .td                         { padding: 15px 0; }
-      .th                         { border-bottom-color: $darkgray; font-size: 14px; padding: 8px 0;
+      .td                         { padding: 15px 0;
+        &:last-child              { text-align: right; }
+      }
+      .th                         { padding: 8px 0;
+        &:last-child              { text-align: right; }
         .filter                   { cursor: pointer; margin-left: -15px; }
         span                      { cursor: pointer; }
       }
@@ -402,7 +404,7 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
   .tfoot                          { display: table-footer-group; }
   .tr                             { display: table-row; }
   .td, .th                        { display: table-cell; padding: 8px; vertical-align: middle; }
-  .th                             { border-bottom: 2px solid $black; font-weight: 500; font-family: $serif-font; }
+  .th                             { border-bottom: 2px solid $black; font: 500 14px $serif-font; }
   .td                             { border-bottom: 1px solid $border; }
 }
 

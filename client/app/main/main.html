@@ -1,5 +1,5 @@
-<main id="wrapper" ng-class="{'collapsed': !main.navRevealed}">
-  <nav id="sidebar-wrapper" class="sidenav">
+<main class="wrapper" ng-class="{'collapsed': !main.navRevealed}">
+  <nav class="sidebar-wrapper" class="sidenav">
     <a class="logo" href="/"> <img alt="Brand" src="assets/images/bruno_logo.svg"></a>
 
     <span class="hamburger" ng-click="main.navRevealed=false"><i class="icon-hamburger_menu"></i></span>
@@ -34,7 +34,7 @@
         <button class="btn btn-default" ng-click="main.logout()">Logout</button>
       </div>
   </nav>
-  <section id="page-content-wrapper">
+  <section class="page-content-wrapper">
     <div class="main-content" ui-view></div>
   </section>
 </main>

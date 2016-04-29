@@ -389,7 +389,7 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
 .table                            { display: table; table-layout: fixed;
   &.table-default                 {
     .tr                           {
-      .td                         { padding: 15px 0;
+      .td                         { height: 60px; padding: 0;
         &:last-child              { text-align: right; }
       }
       .th                         { padding: 8px 0;

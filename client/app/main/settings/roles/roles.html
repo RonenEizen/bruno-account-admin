@@ -77,20 +77,18 @@
         </div><!-- END .tr -->
       </div><!-- END .thead -->
       <div class="tbody">
-        <div class="tr"
-          ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingRoles
-        ">
+        <div class="tr" ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingRoles">
+
           <div class="td" ng-show="displayColumns.role">
-            <a href="/settings/roles/{{role._id}}">{{role.role}}</a>
+            <a href="/settings/roles/{{role._id}}">{{role.name}}</a>
           </div>
 
           <div class="td" ng-show="displayColumns.access">
-            <span ng-show="!role.edit" ng-repeat="access in role.access">{{access}}{{$last ? '' : ', '}}</span>
+            <span ng-repeat="access in role.accesses">{{access}}{{$last ? '' : ', '}}</span>
           </div>
 
           <div class="td" ng-show="displayColumns.rights">
-            <!-- TODO: fix this filter to display rights based on role access -->
-            <span ng-repeat="access in accesses | filter:{name:role.access}">{{access.rights}}{{$last ? '' : ', '}}</span>
+            <span ng-repeat="right in role.rights">{{right}}{{$last ? '' : ', '}}</span>
           </div>
         </div><!-- END .tr -->
 

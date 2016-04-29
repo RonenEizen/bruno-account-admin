@@ -62,25 +62,27 @@ angular.module('accountAdminApp')
       { _id: '8', fname: 'Iskandr', mname: '', lname: 'Babekov', role: '7', phone: '3472223333', email: 'doej@gmail.com' }
     ];
     this.roles = [
-      { _id: '1', role: 'Owner', access: ['Full Access'], singleton: true },
-      { _id: '2', role: 'Admin', access: ['Full Access'], singleton: false },
-      { _id: '3', role: 'Host', access: ['Reservations', 'Orders'], singleton: false },
-      { _id: '4', role: 'Chef', access: ['Orders'], singleton: false },
-      { _id: '5', role: 'Cook', access: ['Orders'], singleton: false },
-      { _id: '6', role: 'Busboy', access: [], singleton: false },
-      { _id: '7', role: 'Driver', access: ['Delivery Info'], singleton: false }
+      { _id: '1', name: 'Owner', accesses: ['1'], singleton: true },
+      { _id: '2', name: 'Admin', accesses: ['1'], singleton: false },
+      { _id: '3', name: 'Host', accesses: ['3', '4'], singleton: false },
+      { _id: '4', name: 'Chef', accesses: ['4'], singleton: false },
+      { _id: '5', name: 'Cook', accesses: ['4'], singleton: false },
+      { _id: '6', name: 'Busboy', accesses: [], singleton: false },
+      { _id: '7', name: 'Driver', accesses: ['5'], singleton: false }
     ];
     this.accesses = [
-      { _id: 2, name: 'Admin Access', roles: [1, 2, 3], rights: [1, 2, 3, 4] },
-      { _id: '', name: 'Full Access', rights: ['Edit User Access', 'Remove User', 'Transfer Ownership', 'Make Admin'] },
-      { _id: '', name: 'Reservations', rights: ['Edit Reservations'] },
-      { _id: '', name: 'Orders', rights: ['Edit Orders'] },
-      { _id: '', name: 'Delivery Info', rights: [] }
+      { _id: '1', name: 'Admin Access', roles: ['1', '2'], rights: ['1', '2', '3', '4', '5'] },
+      { _id: '2', name: 'Full Access', roles: ['1', '2', '3'], rights: ['1', '2', '3', '5'] },
+      { _id: '3', name: 'Reservations', roles: ['3'], rights: ['1'] },
+      { _id: '4', name: 'Orders', roles: ['3', '4', '5'], rights: ['3'] },
+      { _id: '5', name: 'Delivery Info', roles: ['7'], rights: ['1', '2', '3', '4'] }
     ];
     this.rights = [
       { _id: '1', name: 'Edit Reservations', accesses: ['1', '2', '3'] },
-      { _id: '2', name: 'Edit Settings', accesses: ['1', '2', '3'] },
-      { _id: '3', name: 'Edit Orders', accesses: ['1', '2', '3'] }
+      { _id: '2', name: 'Edit Settings', accesses: ['1', '2'] },
+      { _id: '3', name: 'Edit Orders', accesses: ['1', '2', '4'] },
+      { _id: '4', name: 'Edit Users', accesses: ['1', '2'] },
+      { _id: '5', name: 'View Roles', accesses: ['5'] }
     ];
     this.delivery = {
       enabled: true,

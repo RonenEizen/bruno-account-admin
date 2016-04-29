@@ -4,24 +4,11 @@ angular.module('accountAdminApp')
   .controller('SettingsUsersCtrl', function($scope, $state) {
     $scope.pageTitle = 'Users';
     $scope.users = $scope.main.users;
+    $scope.roles = $scope.main.roles;
 
     $scope.userId = $state.params._id;
-    $scope.getData = (id) => {
-      let match = _.findIndex($scope.users, (u) => {
-        return u._id == id;
-      });
-
-      return $scope.users[match];
-    };
-
-    $scope.userRole = (roleID) => {
-      let roles = $scope.main.roles;
-      let match = _.findIndex(roles, (r) => {
-        return r._id == roleID;
-      });
-
-      return (roles[match].role);
-    };
+    $scope.getUserData = (id) => _.find($scope.users, [ '_id', id.toString() ]);
+    $scope.userRole = (roleId) => _.find($scope.roles, ['_id', roleId.toString()]).name;
 
     // Columns
     $scope.displayColumns = {

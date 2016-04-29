@@ -1,16 +1,18 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsRolesCtrl', function($scope) {
+  .controller('SettingsRolesCtrl', function($scope, $state) {
     $scope.pageTitle = 'Roles';
     var roles = $scope.main.roles;
     var accesses = $scope.main.accesses;
     var rights = $scope.main.rights;
 
+    $scope.roleId = $state.params._id;
+    $scope.roleData = (roleId) => getRoleData(roleId);
 
     // this function gathers data to create the $scope.roles collection
     function getRoleData(id) {
-      let role = { id: '', name: '', accesses: [], rights: [] }
+      let role = { _id: '', name: '', accesses: [], rights: [] }
 
       // finds the role in roles Array
       let roleObj = _.find(roles, [ '_id', id.toString() ]);
@@ -31,17 +33,14 @@ angular.module('accountAdminApp')
         role.rights.push(right.name);
       });
 
-      role.id = id;
+      role._id = id;
       role.name = roleObj.name;
       return role;
-    }
+    };
 
     // list of roles that are used in the view
-    $scope.roles = []
-    _(roles).forEach(function (e) {
-      $scope.roles.push(getRoleData(e._id))
-    })
-    console.log(roles);
+    $scope.roles = [];
+    _(roles).forEach(function (e) { $scope.roles.push(getRoleData(e._id)) })
 
     // Columns
     $scope.displayColumns = { role: true, access: true, rights: true };

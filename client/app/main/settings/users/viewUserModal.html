@@ -1,24 +1,24 @@
 <div class="row">
   <div class="col-md-12">
-    <h1 class="text-center">{{getData(userId).fname + ' ' + getData(userId).lname}}</h1>
+    <h1 class="text-center">{{getUserData(userId).fname + ' ' + getUserData(userId).lname}}</h1>
   </div>
 </div><!-- END .row -->
 
 <div class="row">
   <div class="col-md-6">
     <p><strong>Role</strong><br>
-       {{userRole(getData(userId).role)}}</p>
+       {{userRole(getUserData(userId).role)}}</p>
   </div>
   <div class="col-md-6">
     <p><strong>Phone</strong><br>
-       {{getData(userId).phone | phone}}</p>
+       {{getUserData(userId).phone | phone}}</p>
   </div>
 </div><!-- END .row -->
 
 <div class="row">
   <div class="col-md-6">
     <p><strong>Email</strong><br>
-       {{getData(userId).email}}</p>
+       {{getUserData(userId).email}}</p>
     </div>
   </div><!-- END .row -->
 </div>

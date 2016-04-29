@@ -1,17 +1,17 @@
 <div class="row">
   <div class="col-md-12">
-    <h1 class="text-center">{{modal.object.name}}</h1>
+    <h1 class="text-center">{{roleData(roleId).name}}</h1>
   </div>
 </div><!-- END .row -->
 
 <div class="row">
   <div class="col-md-6">
     <p><strong>Access</strong><br>
-      {{modal.object.access}}</p>
+      <span ng-repeat="access in roleData(roleId).accesses">{{access}}{{$last ? '' : ', '}}</span></p>
   </div>
   <div class="col-md-6">
     <p><strong>Rights</strong><br>
-    {{modal.object.rights}}</p>
+    <span ng-repeat="right in roleData(roleId).rights">{{right}}{{$last ? '' : ', '}}</span></p>
   </div>
 </div><!-- END .row -->
 

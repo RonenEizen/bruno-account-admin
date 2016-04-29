@@ -6,7 +6,11 @@ angular.module('accountAdminApp')
     $scope.users = $scope.main.users;
     $scope.roles = $scope.main.roles;
 
-    $scope.userId = $state.params._id;
+    $scope.$watchCollection(
+      () => { return $state.params; },
+      () => { $scope.userId = $state.params._id; }
+    );
+
     $scope.getUserData = (id) => _.find($scope.users, [ '_id', id.toString() ]);
     $scope.userRole = (roleId) => _.find($scope.roles, ['_id', roleId.toString()]).name;
 

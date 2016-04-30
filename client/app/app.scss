@@ -267,14 +267,13 @@ header.top                        { background: $headerbg; border-bottom: 1px so
 // styles forms
 form.custom-form                  {
   label                           { font-size: 14px; font-family: $sans-font; }
-  .radio                          {
-    label                         { font: inherit; }
-  }
   input:not([type="checkbox"]),
+  input:not([type="radio"]),
   select                          { box-shadow: none; font-size: 14px; height: 48px; }
   textarea                        { box-shadow: none; font-size: 14px; height: 110px; overflow: scroll; resize: none; }
   fieldset,
   input:not([type="checkbox"]),
+  input:not([type="radio"]),
   textarea                        { border: 1px solid $column-picker-bd; border-radius: 2px;
     &.ng-invalid.ng-touched       { border-color: $red; }
   }
@@ -289,8 +288,43 @@ form.custom-form                  {
   }
   .label                          { background: $lightgray; border-radius: 0; color: $darkgray; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
   .form-control-feedback          { color: $reservation-gray; top: 16px; }
+
+  // RESTYLED CHECKBOXES
+  .checkbox                         {
+    label                           { line-height: 1; padding-left: 20px; position: relative;
+      [type="checkbox"]             { position: absolute; left: -9999px;
+        &:not(:checked) ~ span,
+        &:checked ~ span            { appearance: none; top: 0; left: 0; position: absolute;
+          &:before                  { background: $white; border: 1px solid $border; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
+          &:after                   { color: $gray; content: '✔︎'; font-size: 12px; left: 3px; position: absolute; top: 2px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
+        }
+        &:not(:checked) ~ span      {
+          &:after                   { opacity: 0; transform: scale(0); }
+        }
+        &:checked ~ span            {
+          &:after                   { opacity: 1; transform: scale(1); }
+        }
+      }
+    }
+  }
+  label.radio-inline              { line-height: 1; padding-left: 20px; position: relative;
+    [type="radio"]                { position: absolute; left: -9999px;
+      &:not(:checked) ~ span,
+      &:checked ~ span            { appearance: none; top: 0; left: 0; position: absolute;
+        &:before                  { background: $white; border: 1px solid $border; border-radius: 50%; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
+        &:after                   { color: $gray; content: '●'; font-size: 16px; left: 3px; position: absolute; top: -1px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
+      }
+      &:not(:checked) ~ span      {
+        &:after                   { opacity: 0; transform: scale(0); }
+      }
+      &:checked ~ span            { background: red;
+        &:after                   { opacity: 1; transform: scale(1); }
+      }
+    }
+  }
 }
 .resetsave                        { margin: 30px 0 0; }
+
 
 // default button settings
 a.btn,
@@ -364,25 +398,6 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
     }
   }
   .border-top                     { border-top: 1px solid $border; }
-}
-
-// RESTYLED CHECKBOXES
-.checkbox                         {
-  label                           { line-height: 1; padding-left: 20px; position: relative;
-    [type="checkbox"]             { position: absolute; left: -9999px;
-      &:not(:checked) ~ span,
-      &:checked ~ span            { appearance: none; top: 0; left: 0; position: absolute;
-        &:before                  { background: $white; border: 1px solid $border; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
-        &:after                   { color: $gray; content: '✔︎'; font-size: 12px; left: 3px; position: absolute; top: 2px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
-      }
-      &:not(:checked) ~ span      {
-        &:after                   { opacity: 0; transform: scale(0); }
-      }
-      &:checked ~ span            {
-        &:after                   { opacity: 1; transform: scale(1); }
-      }
-    }
-  }
 }
 
 // REPLACES TABLES

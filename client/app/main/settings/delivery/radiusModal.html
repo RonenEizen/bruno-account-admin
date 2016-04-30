@@ -5,13 +5,15 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <h1>Edit Delivery Radius</h1>
-            <div class="form-group">
+            <div class="form-group radius">
               <label class="label-control">Distance Format: </label>
-              <label for="distance" class="radio-inline">
+              <label class="radio-inline">
                 <input type="radio" name="distance" ng-model="radius.unit" value="mi"> mi
+                <span></span>
               </label>
-              <label for="distance" class="radio-inline">
+              <label class="radio-inline">
                 <input type="radio" name="distance" ng-model="radius.unit" value="km"> km
+                <span></span>
               </label>
             </div>
           </div>
@@ -30,9 +32,14 @@
 
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <div class="form-group">
+        <div class="form-group range-slider">
           <input type="range" class="form-control" min="1" max="20" ng-model="radius.radius">
         </div>
+      </div>
+      <div class="col-md-4">
+        <span>{{radius.radius}}</span>
+        <span ng-show="radius.unit === 'mi'">miles</span>
+        <span ng-show="radius.unit === 'km'">kilometers</span>
       </div>
     </div><!-- END .row -->
 

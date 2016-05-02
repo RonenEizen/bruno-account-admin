@@ -1,4 +1,10 @@
-#login-form { -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; transform-style: preserve-3d; height: 100%; }
-
-.main-container { position: relative; top: 50%; transform: translateY(-50%); width: 300px; margin: auto; }
-.logo-container { margin: auto; width: 250px; }
+.login-container                  { height: 560px; margin: -280px auto; position: relative; top: 50%; width: 280px;
+  .logo img                       { margin-left: -40px; }
+  .form                           { color: $reservation-gray; padding: 20px 0;
+    label                         { font: 500 14px $serif-font; }
+    .checkbox                     { margin: 3px 0 0;
+      label                       { color: $gray; font: normal 12px $sans-font; }
+    }
+  }
+  .login-forgot                   { border-top: 1px solid $gray; font: normal 12px $sans-font; margin-bottom: 50px; padding-top: 10px; }
+}

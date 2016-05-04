@@ -3,10 +3,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
 
-/**
- * App-wide Styles
- */
-
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -14,66 +10,138 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   padding: 0.2em 0;
 }
 
+// MUSEO FONT
+  @font-face {
+    font-family: 'Museo';
+    src: url('/assets/fonts/Museo-300.eot');
+    src: url('/assets/fonts/Museo-300.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/Museo-300.woff2') format('woff2'),
+         url('/assets/fonts/Museo-300.woff') format('woff'),
+         url('/assets/fonts/Museo-300.ttf') format('truetype'),
+         url('/assets/fonts/Museo-300.svg#Museo-300') format('svg');
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Museo';
+    src: url('/assets/fonts/Museo-500.eot');
+    src: url('/assets/fonts/Museo-500.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/Museo-500.woff2') format('woff2'),
+         url('/assets/fonts/Museo-500.woff') format('woff'),
+         url('/assets/fonts/Museo-500.ttf') format('truetype'),
+         url('/assets/fonts/Museo-500.svg#Museo-500') format('svg');
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Museo';
+    src: url('/assets/fonts/Museo-700.eot');
+    src: url('/assets/fonts/Museo-700.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/Museo-700.woff2') format('woff2'),
+         url('/assets/fonts/Museo-700.woff') format('woff'),
+         url('/assets/fonts/Museo-700.ttf') format('truetype'),
+         url('/assets/fonts/Museo-700.svg#Museo-700') format('svg');
+    font-weight: 700;
+  }
 
-/*
-  ====>
-  ====>         TODO: NORMALIZE ALL COLORS
-  ====>
-*/
+// FONT AWESOME FONTS
+  @font-face {
+      font-family: 'FontAwesome';
+      src: url('/bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.1.0');
+      src: url('/bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
+           url('/bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),
+           url('/bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
+           url('/bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
 
-// shades of gray
-$lightgray1:                      #EAEAEA;
-$lightgray:                       #D5D5D5;
-$lightgray2:                      #C1C1C1;
-$darkgray:                        #535353;
-$darkgray1:                       #464646;
-$darkgray2:                       #343434;
+  // BRUNO FONTS
+  @font-face {
+      font-family: 'BrunoSocial';
+      src: url('/assets/fonts/bruno-social.eot?wzed0l');
+      src: url('/assets/fonts/bruno-social.eot?wzed0l#iefix') format('embedded-opentype'),
+           url('/assets/fonts/bruno-social.ttf?wzed0l') format('truetype'),
+           url('/assets/fonts/bruno-social.woff?wzed0l') format('woff'),
+           url('/assets/fonts/bruno-social.svg?wzed0l#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: 'BrunoIcons';
+      src: url('/assets/fonts/bruno-icons.eot?wzed0l');
+      src: url('/assets/fonts/bruno-icons.eot?wzed0l#iefix') format('embedded-opentype'),
+           url('/assets/fonts/bruno-icons.ttf?wzed0l') format('truetype'),
+           url('/assets/fonts/bruno-icons.woff?wzed0l') format('woff'),
+           url('/assets/fonts/bruno-icons.svg?wzed0l#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+  [class^="icon-"],
+  [class*=" icon-"]                 { font-family: 'BrunoIcons' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale; }
+  .icon-search:before               { content: "\e905"; }
+  .icon-hamburger_menu:before       { content: "\e900"; }
+  .icon-chevron_right:before        { content: "\e901"; }
+  .icon-chevron_down:before         { content: "\e902"; }
+  .icon-export:before               { content: "\e903"; }
+  .icon-link_out:before             { content: "\e904"; }
+  .icon-close:before                { content: "\e906"; }
+  .icon-edit_pencil:before          { content: "\e907"; }
+  .icon-Facebook:before             { content: "\e908"; }
+  .icon-Twitter:before              { content: "\e909"; }
+  .icon-GooglePlus:before           { content: "\e90a"; }
+  .icon-Newsletter:before           { content: "\e90b"; }
+  .icon-Banner:before               { content: "\e90c"; }
+  .icon-grid:before                 { content: "\e90d"; }
+  .icon-filter:before               { content: "\e90e"; }
+  .icon-preview_eye:before          { content: "\e90f"; }
+  .icon-sort_triangles:before       { content: "\e910"; }
+  .icon-triangle_down:before        { content: "\e911"; }
+  .icon-triangle_up:before          { content: "\e912"; }
+  .icon-triangle_right:before       { content: "\e913"; }
 
-// sketch colors
-$headerbg:                        #F8F8F8;
-$sidebarbg:                       #222222;
-$column-picker:                   #E5E5E5;
-$column-picker-bd:                #CCCCCC;
-$column-arrows:                   #666666;
-$border:                          #E5E5E5;
-
-$selectbg-start:                  #F8F8F8;
-$selectbg-stop:                   #EEEEEE;
-
-$black:                           #000000;
-$blue:                            #0074D9;
-$gray:                            #666666;
-$green:                           #00B30F;
-$red:                             #EB1713;
-$salmon:                          #FFF4E4;
-$teal:                            #07B9B3;
-$white:                           #FFFFFF;
-
-$reservation-active:              #F35F45;
-$reservation-pending:             #00C511;
-$reservation-closed:              #E5E5E5;
-$reservation-gray:                #999999;
-
-$btn-danger:                      #121212;
-$btn-default:                     #E5E5E5;
-$btn-default-color:               #333333;
-$btn-primary:                     #0074D9;
-$btn-success:                     #121212;
-$btn-warning:                     #121212;
-
-// accents
-// $blue:                            #428BCA;
-// $buttonblue:                      #0D5CD0;
-// $green:                           #1CD729;
-$green1:                          #00AB2E;
-$orange:                          #FD9B26;
-
-// fonts
 $serif-font:                      Museo, Oswald, serif;
 $sans-font:                       "Helvetica Neue", HelveticaNeue, Helvetica, Roboto, "Open Sans", sans;
 
-@mixin desaturate($amount)        { filter: grayscale($amount); }
+// sketch colors
+  $headerbg:                        #F8F8F8;
+  $sidebarbg:                       #222222;
+  $column-picker:                   #E5E5E5;
+  $column-picker-bd:                #CCCCCC;
+  $column-arrows:                   #666666;
+  $border:                          #E5E5E5;
 
+  $selectbg-start:                  #F8F8F8;
+  $selectbg-stop:                   #EEEEEE;
+
+  $black:                           #000000;
+  $blue:                            #0074D9;
+  $gray:                            #666666;
+  $green:                           #00B30F;
+  $red:                             #EB1713;
+  $salmon:                          #FFF4E4;
+  $teal:                            #07B9B3;
+  $white:                           #FFFFFF;
+
+  $reservation-active:              #F35F45;
+  $reservation-pending:             #00C511;
+  $reservation-closed:              #E5E5E5;
+  $reservation-gray:                #999999;
+
+  $btn-danger:                      #121212;
+  $btn-default:                     #E5E5E5;
+  $btn-default-color:               #333333;
+  $btn-primary:                     #0074D9;
+  $btn-success:                     #121212;
+  $btn-warning:                     #121212;
+
+// TODO: GET RID OF THESE COLORS
+  $lightgray1:                      #EAEAEA;
+  $lightgray:                       #D5D5D5;
+  $lightgray2:                      #C1C1C1;
+  $darkgray:                        #535353;
+  $darkgray1:                       #464646;
+  $darkgray2:                       #343434;
+  $green1:                          #00AB2E;
+  $orange:                          #FD9B26;
 
 // Component styles are injected through grunt
 // injector
@@ -100,120 +168,16 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Helvetica, Ro
 @import 'main/setup/business/business.scss';
 @import 'main/setup/owner/owner.scss';
 @import 'main/statistics/statistics.scss';
+@import 'modal.scss';
 // endinjector
-
-/**
- * Museo Font
- */
-
-@font-face {
-  font-family: 'Museo';
-  src: url('/assets/fonts/Museo-300.eot');
-  src: url('/assets/fonts/Museo-300.eot?#iefix') format('embedded-opentype'),
-       url('/assets/fonts/Museo-300.woff2') format('woff2'),
-       url('/assets/fonts/Museo-300.woff') format('woff'),
-       url('/assets/fonts/Museo-300.ttf') format('truetype'),
-       url('/assets/fonts/Museo-300.svg#Museo-300') format('svg');
-  font-weight: 300;
-}
-@font-face {
-  font-family: 'Museo';
-  src: url('/assets/fonts/Museo-500.eot');
-  src: url('/assets/fonts/Museo-500.eot?#iefix') format('embedded-opentype'),
-       url('/assets/fonts/Museo-500.woff2') format('woff2'),
-       url('/assets/fonts/Museo-500.woff') format('woff'),
-       url('/assets/fonts/Museo-500.ttf') format('truetype'),
-       url('/assets/fonts/Museo-500.svg#Museo-500') format('svg');
-  font-weight: 500;
-}
-@font-face {
-  font-family: 'Museo';
-  src: url('/assets/fonts/Museo-700.eot');
-  src: url('/assets/fonts/Museo-700.eot?#iefix') format('embedded-opentype'),
-       url('/assets/fonts/Museo-700.woff2') format('woff2'),
-       url('/assets/fonts/Museo-700.woff') format('woff'),
-       url('/assets/fonts/Museo-700.ttf') format('truetype'),
-       url('/assets/fonts/Museo-700.svg#Museo-700') format('svg');
-  font-weight: 700;
-}
-
-/**
- * Font Awesome Fonts
- */
-
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('/bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.1.0');
-    src: url('/bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
-         url('/bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),
-         url('/bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
-         url('/bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/**
- * Bruno Fonts
- */
-
-@font-face {
-    font-family: 'BrunoSocial';
-    src: url('/assets/fonts/bruno-social.eot?wzed0l');
-    src: url('/assets/fonts/bruno-social.eot?wzed0l#iefix') format('embedded-opentype'),
-         url('/assets/fonts/bruno-social.ttf?wzed0l') format('truetype'),
-         url('/assets/fonts/bruno-social.woff?wzed0l') format('woff'),
-         url('/assets/fonts/bruno-social.svg?wzed0l#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'BrunoIcons';
-    src: url('/assets/fonts/bruno-icons.eot?wzed0l');
-    src: url('/assets/fonts/bruno-icons.eot?wzed0l#iefix') format('embedded-opentype'),
-         url('/assets/fonts/bruno-icons.ttf?wzed0l') format('truetype'),
-         url('/assets/fonts/bruno-icons.woff?wzed0l') format('woff'),
-         url('/assets/fonts/bruno-icons.svg?wzed0l#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-[class^="icon-"],
-[class*=" icon-"]                 { font-family: 'BrunoIcons' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale; }
-.icon-search:before               { content: "\e905"; }
-.icon-hamburger_menu:before       { content: "\e900"; }
-.icon-chevron_right:before        { content: "\e901"; }
-.icon-chevron_down:before         { content: "\e902"; }
-.icon-export:before               { content: "\e903"; }
-.icon-link_out:before             { content: "\e904"; }
-.icon-close:before                { content: "\e906"; }
-.icon-edit_pencil:before          { content: "\e907"; }
-.icon-Facebook:before             { content: "\e908"; }
-.icon-Twitter:before              { content: "\e909"; }
-.icon-GooglePlus:before           { content: "\e90a"; }
-.icon-Newsletter:before           { content: "\e90b"; }
-.icon-Banner:before               { content: "\e90c"; }
-.icon-grid:before                 { content: "\e90d"; }
-.icon-filter:before               { content: "\e90e"; }
-.icon-preview_eye:before          { content: "\e90f"; }
-.icon-sort_triangles:before       { content: "\e910"; }
-.icon-triangle_down:before        { content: "\e911"; }
-.icon-triangle_up:before          { content: "\e912"; }
-.icon-triangle_right:before       { content: "\e913"; }
-
 
 
 
 /**
  * App-wide Styles
  */
-
-//
 a                                 { color: $blue; }
 html, body                        { color: $black; font-family: $sans-font; font-size: 16px; height: 100%; position: relative; width: 100%; }
-strong                            { font-weight: 500; }
-
-// GLOBAL CLASSES
 strong,
 .bold                             { font-weight: 500; }
 .add-something                    { display: inline-block; padding: 15px 0; }
@@ -271,7 +235,7 @@ header.top                        { background: $headerbg; border-bottom: 1px so
   }
 }
 
-// styles forms
+// STYLES FORMS
 form.custom-form                  {
   label                           { font-size: 14px; font-family: $sans-font; }
   input:not([type="checkbox"]),
@@ -295,38 +259,37 @@ form.custom-form                  {
   }
   .label                          { background: $lightgray; border-radius: 0; color: $darkgray; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
   .form-control-feedback          { color: $reservation-gray; top: 16px; }
+}
 
-  // RESTYLED CHECKBOXES
-  .checkbox                         {
-    label                           { line-height: 1; padding-left: 20px; position: relative;
-      [type="checkbox"]             { position: absolute; left: -9999px;
-        &:not(:checked) ~ span,
-        &:checked ~ span            { appearance: none; top: 0; left: 0; position: absolute;
-          &:before                  { background: $white; border: 1px solid $border; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
-          &:after                   { color: $gray; content: '✔︎'; font-size: 12px; left: 3px; position: absolute; top: 2px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
-        }
-        &:not(:checked) ~ span      {
-          &:after                   { opacity: 0; transform: scale(0); }
-        }
-        &:checked ~ span            {
-          &:after                   { opacity: 1; transform: scale(1); }
-        }
-      }
+// RESTYLED CHECKBOXES
+.checkbox label                 { line-height: 1; padding-left: 20px; position: relative;
+  [type="checkbox"]             { position: absolute; left: -9999px;
+    &:not(:checked) ~ span,
+    &:checked ~ span            { appearance: none; top: 0; left: 0; position: absolute;
+      &:before                  { background: $white; border: 1px solid $border; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
+      &:after                   { color: $gray; content: '✔︎'; font-size: 12px; left: 3px; position: absolute; top: 2px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
+    }
+    &:not(:checked) ~ span      {
+      &:after                   { opacity: 0; transform: scale(0); }
+    }
+    &:checked ~ span            {
+      &:after                   { opacity: 1; transform: scale(1); }
     }
   }
-  label.radio-inline              { line-height: 1; padding-left: 20px; position: relative;
-    [type="radio"]                { position: absolute; left: -9999px;
-      &:not(:checked) ~ span,
-      &:checked ~ span            { appearance: none; top: 0; left: 0; position: absolute;
-        &:before                  { background: $white; border: 1px solid $border; border-radius: 50%; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
-        &:after                   { color: $gray; content: '●'; font-size: 16px; left: 3px; position: absolute; top: -1px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
-      }
-      &:not(:checked) ~ span      {
-        &:after                   { opacity: 0; transform: scale(0); }
-      }
-      &:checked ~ span            { background: red;
-        &:after                   { opacity: 1; transform: scale(1); }
-      }
+}
+// RESTYLED RADIOS
+label.radio-inline              { line-height: 20px; padding-left: 24px; position: relative;
+  [type="radio"]                { position: absolute; left: -9999px;
+    &:not(:checked) ~ span,
+    &:checked ~ span            { appearance: none; top: 0; left: 0; position: absolute;
+      &:before                  { background: $white; border: 1px solid $border; border-radius: 50%; content: ''; display: block; height: 20px; left: 0; position: absolute; top: 0; width: 20px; }
+      &:after                   { background: $gray; content: ''; border-radius: 50%; display: block; height: 10px; left: 5px; position: absolute; top: 5px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; width: 10px; }
+    }
+    &:not(:checked) ~ span      {
+      &:after                   { opacity: 0; transform: scale(0); }
+    }
+    &:checked ~ span            { background: red;
+      &:after                   { opacity: 1; transform: scale(1); }
     }
   }
 }
@@ -345,7 +308,7 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
 }
 
 // cell-like tabs
-.tab-group                        { color: $darkgray; font: 12px $serif-font; height: 32px;
+.tab-group                        { background: $white; color: $darkgray; float: left; font: 12px $serif-font; height: 32px; width: auto;
   a                               { color: inherit; float: left;
     &:focus,
     &:hover                       { text-decoration: none; }
@@ -373,14 +336,6 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
   }
 }
 
-// colum filter on table views
-.filter                           { display: inline; position: relative; font-family: $sans-font;
-  & > div                         { background: $headerbg; border: 1px solid $lightgray; border-radius: 3px; padding: 10px; position: absolute; top: 25px; z-index: 50; }
-  i.filtered                      { color: $red; }
-}
-.fa-sort                          { color: $column-arrows; }
-.sortorder                        { vertical-align: baseline; }
-
 // container with gray bg
 .shadowed-container               { background: $headerbg; border: 1px solid $border; border-radius: 2px; margin-bottom: 20px; padding: 20px;
   header                          {
@@ -407,6 +362,14 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
   .border-top                     { border-top: 1px solid $border; }
 }
 
+// colum filter on table views
+.filter                           { display: inline; position: relative; font-family: $sans-font;
+  & > div                         { background: $headerbg; border: 1px solid $lightgray; border-radius: 3px; padding: 10px; position: absolute; top: 25px; z-index: 50; }
+  i.filtered                      { color: $red; }
+}
+.fa-sort                          { color: $column-arrows; }
+.sortorder                        { vertical-align: baseline; }
+
 // REPLACES TABLES
 .table                            { display: table; table-layout: fixed;
   &.table-default                 {
@@ -429,96 +392,6 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
   .th                             { border-bottom: 2px solid $black; font: 500 14px $serif-font; }
   .td                             { border-bottom: 1px solid $border; }
 }
-
-// MODAL
-.flyout                           { background: $white; height: 100%; overflow: auto; position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
-  .close                          { clear: both; color: $darkgray; font-size: 4rem; opacity: 1; }
-  h1                              { font: 300 36px $serif-font; margin: 40px 0 30px; position: relative;
-    &.channel-heading             { font-size: 2.3rem; text-align: center; }
-    button.btn                    { background: none; bottom: 10px; color: $blue; font-size: 2rem; line-height: 3rem; padding: 0; position: absolute; right: 0; }
-  }
-  h4                              { font: 300 1.8rem $sans-font; margin-top: 30px; }
-  .image                          { width: 100%; }
-  .close                          { font-size: 18px; padding: 10px; }
-  .status                         {
-    &.cancelled                   { color: $red; }
-    &.expired,
-    &.fulfilled                   { color: $lightgray; }
-    &.expiring,
-    &.inprogress                  { color: $orange; }
-    &.current,
-    &.new                         { color: $green1; }
-  }
-  .channel-nav                    { border-bottom: 1px solid $blue; margin-bottom: 20px; }
-  .nav-tabs                       { border-bottom: none;
-    li                            { text-align: center; width: 20%;
-      &.active                    {
-        a                         { background: $white; border: 1px solid $blue; }
-      }
-      a                           { background: $headerbg; border: 1px solid $lightgray; border-bottom: 1px solid $blue; border-radius: 0; font-size: 3rem; margin: 0; }
-    }
-  }
-  .wider-row                      { margin-left: -45px; margin-right: -45px; }
-  .googlemap                      { margin-bottom: 10px; position: relative;
-    iframe                        { border: none; height: 350px; width: 100%; }
-    .reach                        { right: -220px; position: absolute; top: 0; width: 200px;
-      h4                          { color: $lightgray; font-size: 16px; font-weight: bold; margin: 0}
-      strong                      { color: $lightgray2; display: block; font-size: 16px; margin: 10px 0; }
-      p                           { color: $black; font-size: 13px; }
-    }
-  }
-  .age-range                      { vertical-align: middle;
-    select                        { display: inline-block; width: 100px; }
-  }
-  .campaign-image                 {
-    img                           { width: 100%; }
-    ul                            { color: $lightgray2; font-size: 1.3rem; margin-top: 20px; padding: 0; }
-  }
-  form.custom-form                {
-    .bottom-text                  { padding-top: 30px;
-      small                       { color: $lightgray; }
-    }
-  }
-  .table                          { margin-top: 20px;
-    &.customer-orders-table       { position: relative;
-      .td                         { position: relative;
-        i                         { position: absolute; left: -15px; font-size: 8px; top: 20px;
-          &.icon-triangle_up      { font-size: 6px; }
-        }
-      }
-    }
-    &.order-table                 {
-      .tr                         {
-        .th                       { width: 19%;
-          &:last-child            { width: 5%; }
-        }
-        .td                       { padding-right: 10px;
-          &:last-child            { padding-right: 0; text-align: center; }
-        }
-      }
-    }
-    .tr                           {
-      &.no-border                 {
-        .th                       { border: none; font: 300 1.8rem $sans-font; }
-      }
-    }
-  }
-  .customer-orders                { background: $headerbg; }
-  .integration-image              { margin-bottom: 40px; max-height: 50px; max-width: 200px; }
-  .top-instructions               { border-bottom: 1px solid $lightgray; font-size: 18px; margin-bottom: 30px; text-align: center; }
-  .shadowed                       { background: $headerbg; border: 1px solid $lightgray; margin-bottom: 20px; padding: 15px;
-    &:last-child                  { margin-bottom: 0; }
-  }
-  .options-line                   { margin-bottom: 10px;
-    .icon-close                   { position: relative; left: -10px; top: 10px; }
-  }
-  .dragable                       { list-style: none; margin: 0; padding: 0;
-    li                            { background: $white; border: 1px solid $lightgray; margin-bottom: 10px; padding: 10px;
-      &:last-child                { margin-bottom: 0; }
-    }
-  }
-}
-
 
 // THIS FIXES UI.BOOTSTRAP CURSOR
 a[ng-click],

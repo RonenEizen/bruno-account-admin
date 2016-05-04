@@ -3,12 +3,16 @@
     header                        { margin-left: -15px; margin-right: -15px; }
     h2                            { font: 500 18px $sans-font; }
     .table                        { width: 100%;
-      .td                         { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      .td                         { height: 65px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
         &:nth-child(1)            { width: 20%; }
         &:nth-child(2)            { width: 70%; }
         &:nth-child(3)            { width: 10%; }
       }
     }
-    .btn-group                    { margin: 10px 0 10px -8px; }
+    .tab-group                    {
+      & ~ a                       { line-height: 32px; margin-left: 20px; }
+    }
+    .border-top                   { height: 65px; }
+    .btn-group                    { margin: 15px 0 0 -8px; }
   }
 }

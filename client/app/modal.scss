@@ -1,0 +1,100 @@
+.flyout                           { background: $white; height: 100%; overflow: auto; position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+  .close                          { clear: both; color: $darkgray; font-size: 18px; opacity: 1; padding: 10px; }
+  h1                              { font: 300 36px $serif-font; margin: 40px 0 30px; position: relative;
+    &.channel-heading             { font-size: 2.3rem; text-align: center; }
+    button.btn                    { background: none; bottom: 10px; color: $blue; font-size: 2rem; line-height: 3rem; padding: 0; position: absolute; right: 0; }
+  }
+  h3                              { }
+  h4                              { font: medium 16px $sans-font;
+    &.table-title                 { border-bottom: 2px solid $black; font: 500 16px $sans-font; margin: 20px 0 0; }
+  }
+  .image                          { max-height: 170px; display: block; }
+  .status                         {
+    &.cancelled                   { color: $red; }
+    &.expired,
+    &.fulfilled                   { color: $lightgray; }
+    &.expiring,
+    &.inprogress                  { color: $orange; }
+    &.current,
+    &.new                         { color: $green1; }
+  }
+  .channel-nav                    { border-bottom: 1px solid $blue; margin-bottom: 20px; }
+  .nav-tabs                       { border-bottom: none;
+    li                            { text-align: center; width: 20%;
+      &.active                    {
+        a                         { background: $white; border: 1px solid $blue; }
+      }
+      a                           { background: $headerbg; border: 1px solid $lightgray; border-bottom: 1px solid $blue; border-radius: 0; font-size: 3rem; margin: 0; }
+    }
+  }
+  .wider-row                      { margin-left: -45px; margin-right: -45px; }
+  .googlemap                      { margin-bottom: 10px; position: relative;
+    iframe                        { border: none; height: 350px; width: 100%; }
+    .reach                        { right: -220px; position: absolute; top: 0; width: 200px;
+      h4                          { color: $lightgray; font-size: 16px; font-weight: bold; margin: 0}
+      strong                      { color: $lightgray2; display: block; font-size: 16px; margin: 10px 0; }
+      p                           { color: $black; font-size: 13px; }
+    }
+  }
+  .age-range                      { vertical-align: middle;
+    select                        { display: inline-block; width: 100px; }
+  }
+  .campaign-image                 {
+    img                           { width: 100%; }
+    ul                            { color: $lightgray2; font-size: 1.3rem; margin-top: 20px; padding: 0; }
+  }
+  form.custom-form                {
+    .bottom-text                  { padding-top: 30px;
+      small                       { color: $lightgray; }
+    }
+  }
+  .table                          {
+    &.customer-orders-table       { margin-top: 20px; position: relative;
+      .td                         { position: relative;
+        i                         { position: absolute; left: -15px; font-size: 8px; top: 20px;
+          &.icon-triangle_up      { font-size: 6px; }
+        }
+      }
+    }
+    &.order-table                 { margin-top: 20px;
+      .tr                         {
+        .th                       { width: 19%;
+          &:last-child            { width: 5%; }
+        }
+        .td                       { padding-right: 10px;
+          &:last-child            { padding-right: 0; text-align: center; }
+        }
+      }
+    }
+    &.food-item-table             { table-layout: auto; margin: 0;
+      .tbody                      { margin-top: 10px; }
+      .td                         { border: none; height: 30px; padding: 0; }
+    }
+    .tr                           {
+      &.no-border                 {
+        .th                       { border: none; font: 300 1.8rem $sans-font; }
+      }
+    }
+  }
+  .customer-orders                { background: $headerbg; }
+  .integration-image              { margin-bottom: 40px; max-height: 50px; max-width: 200px; }
+  .top-instructions               { border-bottom: 1px solid $lightgray; font-size: 18px; margin-bottom: 30px; text-align: center; }
+  .shadowed-container             {
+    &:last-child                  { margin-bottom: 0; }
+  }
+
+  // FOOD MENUS
+  .options-line                   { margin-bottom: 10px;
+    .icon-close                   { position: relative; left: -10px; top: 10px; }
+  }
+  .dragable                       { list-style: none; margin: 0; padding: 0;
+    li                            { background: $white; border: 1px solid $lightgray; font-size: 14px; height: 50px; line-height: 50px; margin-bottom: 20px; padding: 0 20px; position: relative;
+      .handle                     { color: $reservation-gray; cursor: grab; display: block; font-size: 28px; height: 100%; line-height: 50px; position: absolute; right: 0; text-align: center; top: 0; width: 40px; }
+      &:last-child                { margin-bottom: 0; }
+    }
+  }
+  .extra-margin                   { margin-bottom: 30px; }
+  form.food-item                  {
+    textarea                      { height: 170px; }
+  }
+}

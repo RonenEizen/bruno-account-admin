@@ -72,7 +72,7 @@
 }
 .reservation-integrations       { border-top: 1px solid $gray; color: $gray; margin-top: 30px; padding-top: 20px;
   .col-xs-3                     { display: table-cell; margin-top: 20px; vertical-align: middle; }
-  img                           { width: 100%; @include desaturate(100%); opacity: .5; }
+  img                           { width: 100%; filter: grayscale(100%); opacity: .5; }
 }
 
 // INTEGRATION
@@ -80,6 +80,6 @@
   .td                           { height: 80px; }
   img                           { max-height: 50px; max-width: 150px; }
   &.inactive                    {
-    img                         { @include desaturate(100%); opacity: .5; }
+    img                         { filter: grayscale(100%); opacity: .5; }
   }
 }

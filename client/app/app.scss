@@ -194,7 +194,7 @@ strong,
 .toggle-checkbox                  { background: $border; display: inline-block; line-height: 48px; margin: 0 0 30px; padding: 0 30px;
   .checkbox                       { margin: 0; }
 }
-.optional                         { color: $lightgray; font: 300 14px $sans-font; }
+.optional                         { color: $reservation-gray; font: 300 14px $sans-font; }
 .mandatory                        { color: $red; }
 
 // HEADER
@@ -262,35 +262,27 @@ form.custom-form                  {
 }
 
 // RESTYLED CHECKBOXES
-.checkbox label                 { line-height: 1; padding-left: 20px; position: relative;
-  [type="checkbox"]             { position: absolute; left: -9999px;
+.checkbox label                   { line-height: 1; padding-left: 20px; position: relative;
+  [type="checkbox"]               { position: absolute; left: -9999px;
     &:not(:checked) ~ span,
-    &:checked ~ span            { appearance: none; top: 0; left: 0; position: absolute;
-      &:before                  { background: $white; border: 1px solid $border; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
-      &:after                   { color: $gray; content: '✔︎'; font-size: 12px; left: 3px; position: absolute; top: 2px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
+    &:checked ~ span              { appearance: none; top: 0; left: 0; position: absolute;
+      &:before                    { background: $white; border: 1px solid $border; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
+      &:after                     { color: $gray; content: '✔︎'; font-size: 12px; left: 3px; position: absolute; top: 2px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
     }
-    &:not(:checked) ~ span      {
-      &:after                   { opacity: 0; transform: scale(0); }
-    }
-    &:checked ~ span            {
-      &:after                   { opacity: 1; transform: scale(1); }
-    }
+    &:not(:checked) ~ span:after  { opacity: 0; transform: scale(0); }
+    &:checked ~ span:after        { opacity: 1; transform: scale(1); }
   }
 }
 // RESTYLED RADIOS
-label.radio-inline              { line-height: 20px; padding-left: 24px; position: relative;
-  [type="radio"]                { position: absolute; left: -9999px;
+label.radio-inline                { line-height: 1; padding-left: 20px; position: relative;
+  [type="radio"]                  { position: absolute; left: -9999px;
     &:not(:checked) ~ span,
-    &:checked ~ span            { appearance: none; top: 0; left: 0; position: absolute;
-      &:before                  { background: $white; border: 1px solid $border; border-radius: 50%; content: ''; display: block; height: 20px; left: 0; position: absolute; top: 0; width: 20px; }
-      &:after                   { background: $gray; content: ''; border-radius: 50%; display: block; height: 10px; left: 5px; position: absolute; top: 5px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; width: 10px; }
+    &:checked ~ span              { appearance: none; top: 0; left: 0; position: absolute;
+      &:before                    { background: $white; border: 1px solid $border; border-radius: 50%; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
+      &:after                     { background: $gray; content: ''; border-radius: 50%; display: block; height: 8px; left: 4px; position: absolute; top: 4px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; width: 8px; }
     }
-    &:not(:checked) ~ span      {
-      &:after                   { opacity: 0; transform: scale(0); }
-    }
-    &:checked ~ span            { background: red;
-      &:after                   { opacity: 1; transform: scale(1); }
-    }
+    &:not(:checked) ~ span:after  { opacity: 0; transform: scale(0); }
+    &:checked ~ span:after        { opacity: 1; transform: scale(1); }
   }
 }
 .resetsave                        { margin: 30px 0 0; }

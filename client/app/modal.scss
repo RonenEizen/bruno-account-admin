@@ -84,8 +84,15 @@
   }
 
   // FOOD MENUS
-  .options-line                   { margin-bottom: 10px;
-    .icon-close                   { position: relative; left: -10px; top: 10px; }
+  .option-line                    { margin-bottom: 10px;
+    > div                         {
+      &:nth-child(1)              { padding-right: 10px; }
+      &:nth-child(2)              { padding: 0 0 0 10px; }
+      &:nth-child(3)              { text-align: center; }
+    }
+    .icon-close                   { color: $gray; font-size: 14px; line-height: 48px; opacity: 1; transition: 500ms ease all;
+      &:hover                     { color: $red; }
+    }
   }
   .dragable                       { list-style: none; margin: 0; padding: 0;
     li                            { background: $white; border: 1px solid $lightgray; font-size: 14px; height: 50px; line-height: 50px; margin-bottom: 20px; padding: 0 20px; position: relative;
@@ -96,5 +103,10 @@
   .extra-margin                   { margin-bottom: 30px; }
   form.food-item                  {
     textarea                      { height: 170px; }
+    .price-type                   {
+      .price-radio                { height: 48px; padding: 10px 0; }
+      .form-group                 { margin: 0; }
+    }
+    .add-something                { font-size: 14px; padding: 0; }
   }
 }

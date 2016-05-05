@@ -1,262 +1,177 @@
-<div class="flyout">
-  <form name="addFoodItemForm" class="container custom-form form-group">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+<form name="addFoodItemForm" class="custom-form food-item">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Add Food Item</h1>
+    </div>
+  </div><!-- END .row -->
 
+  <div class="row">
+    <div class="col-md-12 top-instructions">
+      <p>Item will be added to <strong>My Menu</strong></p>
+    </div>
+  </div><!-- END .row -->
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="control-label">Category</label>
+        <fieldset>
+          <select class="form-control" ng-options="cat._id as cat.name for cat in categories" ng-model="object.foodCategories" required></select>
+        </fieldset>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="form-group">
+        <label class="control-label">Name</label>
+        <input type="text" class="form-control" ng-model="object.name" required>
+      </div>
+    </div>
+  </div><!-- END .row -->
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="control-label">Picture</label>
+        <img class="image" src="http://lorempixel.com/230/170/food/" alt="Vietnamese Pad Thai"/>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="form-group">
+        <label class="control-label">Description</label>
+        <textarea class="form-control" ng-model="object.description"></textarea>
+      </div>
+    </div>
+  </div><!-- END .row -->
+
+  <div class="shadowed-container">
+    <div class="row price-type">
+      <div class="col-md-6">
+        <div>
+          <label class="control-label">Price Type</label>
+        </div>
+        <div class="price-radio">
+          <label class="radio-inline"><input type="radio" name="priceType" ng-model="object.priceType" value="single"> Single <span></span></label>
+          <label class="radio-inline"><input type="radio" name="priceType" ng-model="object.priceType" value="variety"> Variety <span></span></label>
+        </div>
+      </div>
+
+      <div class="col-md-5" ng-show="object.priceType === 'single'">
+        <div class="form-group">
+          <label class="control-label">Value</label>
+          <input type="text" class="form-control" ng-model="object.priceSingle" ng-required="object.priceType === 'single'">
+        </div>
+      </div><!-- END .col-md-5 -->
+    </div><!-- END .row.price-single -->
+
+    <div ng-show="object.priceType === 'variety' && object.varieties.length < 1">
+      <a ng-click="addVar()" class="add-something">Create Varieties</a>
+    </div>
+    <div class="row" ng-show="object.priceType === 'variety' && object.varieties.length > 0">
+      <div class="col-md-12">
         <div class="row">
-          <div class="col-md-12 text-center">
-            <h1>Add Food Item</h1>
+          <div class="col-md-6">
+            <label class="control-label">Variety Name</label> <span class="optional">(ex: Small Plate)</span>
+          </div>
+          <div class="col-md-5">
+            <label class="control-label">Price</label>
           </div>
         </div><!-- END .row -->
 
-        <div class="row">
-          <div class="col-md-12 top-instructions">
-            <p>Item will be added to <strong>My Menu</strong></p>
+        <div class="row option-line" ng-repeat="var in object.varieties">
+          <div class="col-md-6">
+            <input type="text" class="form-control" ng-model="var.name"/>
+          </div>
+          <div class="col-md-5">
+            <input type="text" class="form-control" ng-model="var.price" ng-required="object.priceType === 'variety'"/>
+          </div>
+          <div class="col-md-1">
+            <i class="icon-close" ng-click="removeVar($index)"></i>
           </div>
         </div><!-- END .row -->
+      </div>
 
-        <div class="row">
-          <div class="col-md-4">
-            <div class="form-group">
-              <label class="control-label">Category</label>
-              <fieldset>
-                <select class="form-control" required>
-                  <option value="0">Appetizers</option>
-                  <option value="1">Salads</option>
-                </select>
-              </fieldset>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="form-group">
-              <label class="control-label">Name</label>
-              <input type="number" class="form-control" required>
-            </div>
-          </div>
-        </div><!-- END .row -->
-
-        <div class="row">
-          <div class="col-md-4">
-            <div class="form-group">
-              <label class="control-label">Picture</label>
-              <img class="image" src="http://cdn3.volusion.com/jwxkn.khzdw/v/vspfiles/photos/6oz.%20Filet%20Mignon-2.jpg?1345750845" alt="Vietnamese Pad Thai"/>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="form-group">
-              <label class="control-label">Description</label>
-              <textarea class="form-control"></textarea>
-            </div>
-          </div>
-        </div><!-- END .row -->
-
-        <div class="shadowed clearfix">
-          <div class="row">
-            <div class="col-md-6">
-              <div>
-                <label class="control-label">Price Type</label>
-              </div>
-              <label class="radio-inline">
-                <input type="radio" name="priceType" value="single" checked> Single
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="priceType" value="variety"> Variety
-              </label>
-            </div>
-            <div class="col-md-5">
-              <div class="form-group">
-                <label class="control-label">Value</label>
-                <input type="text" class="form-control" value="$10.00" required>
-              </div>
-            </div>
-          </div><!-- END .row -->
-
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-md-6">
-                  <label class="control-label">Variety Name</label> <span class="optional">(ex: Small Plate)</span>
-                </div>
-                <div class="col-md-5">
-                  <label class="control-label">Price</label>
-                </div>
-              </div><!-- END .row -->
-
-              <div class="row options-line">
-                <div class="col-md-6">
-                  <input type="text" class="form-control" value="Small Plate"/>
-                </div>
-                <div class="col-md-5">
-                  <input type="text" class="form-control" value="$6.00"/>
-                </div>
-                <div class="col-md-1">
-                  <a href="javascript:void(0)">
-                    <i class="icon-close"></i>
-                  </a>
-                </div>
-              </div><!-- END .row -->
-
-              <div class="row options-line">
-                <div class="col-md-6">
-                  <input type="text" class="form-control" value="Small Plate"/>
-                </div>
-                <div class="col-md-5">
-                  <input type="text" class="form-control" value="$6.00"/>
-                </div>
-                <div class="col-md-1">
-                  <a href="javascript:void(0)">
-                    <i class="icon-close"></i>
-                  </a>
-                </div>
-              </div><!-- END .row -->
-
-              <div class="row options-line">
-                <div class="col-md-6">
-                  <input type="text" class="form-control" value="Small Plate"/>
-                </div>
-                <div class="col-md-5">
-                  <input type="text" class="form-control" value="$6.00"/>
-                </div>
-                <div class="col-md-1">
-                  <a href="javascript:void(0)">
-                    <i class="icon-close"></i>
-                  </a>
-                </div>
-              </div><!-- END .row -->
-
-              <div class="row options-line">
-                <div class="col-md-6">
-                  <input type="text" class="form-control" value="Small Plate"/>
-                </div>
-                <div class="col-md-5">
-                  <input type="text" class="form-control" value="$6.00"/>
-                </div>
-                <div class="col-md-1">
-                  <a href="javascript:void(0)">
-                    <i class="icon-close"></i>
-                  </a>
-                </div>
-              </div><!-- END .row -->
-            </div>
-          </div><!-- END .row -->
-
-          <div class="row">
-            <div class="col-md-12">
-              <a class="add-something">+ Add Variety</a>
-            </div>
-          </div><!-- END .row -->
-        </div><!-- END .shadowed -->
-
-
-        <div class="shadowed clearfix">
-
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-md-6">
-                  <label class="control-label">Option Name</label> <span class="optional">(ex: Extra Protein)</span>
-                </div>
-                <div class="col-md-5">
-                  <label class="control-label">Price</label>
-                </div>
-              </div><!-- END .row -->
-
-              <div class="row options-line">
-                <div class="col-md-6">
-                  <input type="text" class="form-control" value="Small Plate"/>
-                </div>
-                <div class="col-md-5">
-                  <input type="text" class="form-control" value="$6.00"/>
-                </div>
-                <div class="col-md-1">
-                  <a href="javascript:void(0)">
-                    <i class="icon-close"></i>
-                  </a>
-                </div>
-              </div><!-- END .row -->
-
-              <div class="row options-line">
-                <div class="col-md-6">
-                  <input type="text" class="form-control" value="Small Plate"/>
-                </div>
-                <div class="col-md-5">
-                  <input type="text" class="form-control" value="$6.00"/>
-                </div>
-                <div class="col-md-1">
-                  <a href="javascript:void(0)">
-                    <i class="icon-close"></i>
-                  </a>
-                </div>
-              </div><!-- END .row -->
-            </div>
-          </div><!-- END .row -->
-
-          <div class="row">
-            <div class="col-md-12">
-              <a class="add-something">+ Add Option</a>
-            </div>
-          </div><!-- END .row -->
-        </div><!-- END .shadowed -->
-
-
-        <div class="shadowed clearfix">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-md-4">
-                  <label class="control-label">Choice Type Name</label> <span class="optional">(ex: Protein)</span>
-                </div>
-                <div class="col-md-7">
-                  <label class="control-label">Choices</label> <span class="optional">(ex: Chicken, Beef) (separate with commas)</span>
-                </div>
-              </div><!-- END .row -->
-
-              <div class="row options-line">
-                <div class="col-md-4">
-                  <input type="text" class="form-control" value="Protein"/>
-                </div>
-                <div class="col-md-7">
-                  <input type="text" class="form-control" value="Chicken, Rice, Shrimp, Tofu"/>
-                </div>
-                <div class="col-md-1">
-                  <a href="javascript:void(0)">
-                    <i class="icon-close"></i>
-                  </a>
-                </div>
-              </div><!-- END .row -->
-
-              <div class="row options-line">
-                <div class="col-md-4">
-                  <input type="text" class="form-control" value="Noodles"/>
-                </div>
-                <div class="col-md-7">
-                  <input type="text" class="form-control" value="Rice, Egg, Potato"/>
-                </div>
-                <div class="col-md-1">
-                  <a href="javascript:void(0)">
-                    <i class="icon-close"></i>
-                  </a>
-                </div>
-              </div><!-- END .row -->
-            </div>
-          </div><!-- END .row -->
-
-          <div class="row">
-            <div class="col-md-12">
-              <a class="add-something">+ Add Choice</a>
-            </div>
-          </div><!-- END .row -->
-        </div><!-- END .shadowed -->
-
-
-        <div class="row">
-          <div class="col-md-12 text-center resetsave">
-            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-            <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="addFoodItemForm.$invalid">Save</button>
-          </div>
-        </div><!-- END .row -->
-
-      </div><!-- END .col-md-6 -->
+      <div class="col-md-12">
+        <a class="add-something" ng-click="addVar()">+ Add Variety</a>
+      </div>
     </div><!-- END .row -->
-  </form><!-- END .container -->
-</div><!-- END .flyout -->
+  </div><!-- END .shadowed -->
+
+
+  <div class="shadowed-container">
+    <div ng-show="object.options.length < 1">
+      <a ng-click="addOption()" class="add-something">Create Options</a>
+    </div>
+
+    <div class="row" ng-show="object.options.length > 0">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <label class="control-label">Option Name</label> <span class="optional">(ex: Extra Protein)</span>
+          </div>
+          <div class="col-md-5">
+            <label class="control-label">Price</label>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row option-line" ng-repeat="opt in object.options">
+          <div class="col-md-6">
+            <input type="text" class="form-control" ng-model="opt.name"/>
+          </div>
+          <div class="col-md-5">
+            <input type="text" class="form-control" ng-model="opt.price"/>
+          </div>
+          <div class="col-md-1">
+            <i class="icon-close" ng-click="removeOption($index)"></i>
+          </div>
+        </div><!-- END .row -->
+      </div>
+
+      <div class="col-md-12">
+        <a class="add-something" ng-click="addOption()">+ Add Option</a>
+      </div>
+    </div><!-- END .row -->
+  </div><!-- END .shadowed -->
+
+
+  <div class="shadowed-container">
+    <div ng-show="object.choices.length < 1">
+      <a ng-click="addChoice()" class="add-something">Create Choices</a>
+    </div>
+
+    <div class="row" ng-show="object.choices.length > 0">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-4">
+            <label class="control-label">Choice Type Name</label> <span class="optional">(ex: Protein)</span>
+          </div>
+          <div class="col-md-7">
+            <label class="control-label">Choices</label> <span class="optional">(ex: Chicken, Beef) (separate with commas)</span>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row option-line" ng-repeat="choice in object.choices">
+          <div class="col-md-4">
+            <input type="text" class="form-control" ng-model="choice.name"/>
+          </div>
+          <div class="col-md-7">
+            <input type="text" class="form-control" ng-model="choice.choices"/>
+          </div>
+          <div class="col-md-1">
+            <i class="icon-close" ng-click="removeChoice($index)"></i>
+          </div>
+        </div><!-- END .row -->
+      </div>
+
+      <div class="col-md-12">
+        <a class="add-something" ng-click="addChoice()">+ Add Choice</a>
+      </div>
+    </div><!-- END .row -->
+  </div><!-- END .shadowed -->
+
+  <div class="row">
+    <div class="col-md-12 text-center resetsave">
+      <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+      <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="addFoodItemForm.$invalid">Save</button>
+    </div>
+  </div><!-- END .row -->
+</form><!-- END .container -->

@@ -14,16 +14,18 @@
   <div class="row">
     <div class="col-md-4">
       <div class="form-group">
-        <label class="control-label">Category</label>
+        <label class="control-label">Category</label> <span class="mandatory">*</span>
         <fieldset>
-          <select class="form-control" ng-options="cat._id as cat.name for cat in categories" ng-model="object.foodCategories" required></select>
+          <select name="category" class="form-control" ng-options="cat._id as cat.name for cat in categories" ng-model="object.foodCategories" required></select>
         </fieldset>
+        <p ng-show="addFoodItemForm.category.$error.required && addFoodItemForm.category.$touched" class="help-block">This is a required field.</p>
       </div>
     </div>
     <div class="col-md-8">
       <div class="form-group">
-        <label class="control-label">Name</label>
-        <input type="text" class="form-control" ng-model="object.name" required>
+        <label class="control-label">Name</label> <span class="mandatory">*</span>
+        <input name="name" type="text" class="form-control" ng-model="object.name" required>
+        <p ng-show="addFoodItemForm.name.$error.required && addFoodItemForm.name.$touched" class="help-block">This is a required field.</p>
       </div>
     </div>
   </div><!-- END .row -->
@@ -57,8 +59,9 @@
 
       <div class="col-md-5" ng-show="object.priceType === 'single'">
         <div class="form-group">
-          <label class="control-label">Value</label>
-          <input type="text" class="form-control" ng-model="object.priceSingle" ng-required="object.priceType === 'single'">
+          <label class="control-label">Value</label> <span class="mandatory">*</span>
+          <input name="priceSingle" type="text" class="form-control" ng-model="object.priceSingle" ng-required="object.priceType === 'single'">
+          <p ng-show="addFoodItemForm.priceSingle.$error.required && addFoodItemForm.priceSingle.$touched" class="help-block">This is a required field.</p>
         </div>
       </div><!-- END .col-md-5 -->
     </div><!-- END .row.price-single -->
@@ -79,10 +82,12 @@
 
         <div class="row option-line" ng-repeat="var in object.varieties">
           <div class="col-md-6">
-            <input type="text" class="form-control" ng-model="var.name"/>
+            <input name="varname{{$index}}" type="text" class="form-control" ng-model="var.name" ng-required="object.priceType === 'variety'"/>
+            <p ng-show="addFoodItemForm.varname{{$index}}.$error.required && addFoodItemForm.varname{{$index}}.$touched" class="help-block">This is a required field.</p>
           </div>
           <div class="col-md-5">
-            <input type="text" class="form-control" ng-model="var.price" ng-required="object.priceType === 'variety'"/>
+            <input name="varprice{{$index}}" type="text" class="form-control" ng-model="var.price" ng-required="object.priceType === 'variety'"/>
+            <p ng-show="addFoodItemForm.varprice{{$index}}.$error.required && addFoodItemForm.varprice{{$index}}.$touched" class="help-block">This is a required field.</p>
           </div>
           <div class="col-md-1">
             <i class="icon-close" ng-click="removeVar($index)"></i>
@@ -115,10 +120,12 @@
 
         <div class="row option-line" ng-repeat="opt in object.options">
           <div class="col-md-6">
-            <input type="text" class="form-control" ng-model="opt.name"/>
+            <input name="optname{{$index}}" type="text" class="form-control" ng-model="opt.name" required />
+            <p ng-show="addFoodItemForm.optname{{$index}}.$error.required && addFoodItemForm.optname{{$index}}.$touched" class="help-block">This is a required field.</p>
           </div>
           <div class="col-md-5">
-            <input type="text" class="form-control" ng-model="opt.price"/>
+            <input name="optprice{{$index}}" type="text" class="form-control" ng-model="opt.price" required />
+            <p ng-show="addFoodItemForm.optprice{{$index}}.$error.required && addFoodItemForm.optprice{{$index}}.$touched" class="help-block">This is a required field.</p>
           </div>
           <div class="col-md-1">
             <i class="icon-close" ng-click="removeOption($index)"></i>
@@ -151,10 +158,12 @@
 
         <div class="row option-line" ng-repeat="choice in object.choices">
           <div class="col-md-4">
-            <input type="text" class="form-control" ng-model="choice.name"/>
+            <input name="choicename{{$index}}" type="text" class="form-control" ng-model="choice.name" required />
+            <p ng-show="addFoodItemForm.choicename{{$index}}.$error.required && addFoodItemForm.choicename{{$index}}.$touched" class="help-block">This is a required field.</p>
           </div>
           <div class="col-md-7">
-            <input type="text" class="form-control" ng-model="choice.choices"/>
+            <input name="choicechoices{{$index}}" type="text" class="form-control" ng-model="choice.choices" required />
+            <p ng-show="addFoodItemForm.choicechoices{{$index}}.$error.required && addFoodItemForm.choicechoices{{$index}}.$touched" class="help-block">This is a required field.</p>
           </div>
           <div class="col-md-1">
             <i class="icon-close" ng-click="removeChoice($index)"></i>

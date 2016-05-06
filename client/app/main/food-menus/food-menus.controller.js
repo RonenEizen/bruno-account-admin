@@ -46,9 +46,9 @@ angular.module('accountAdminApp')
       }]
     };
 
-    $scope.addVar = () => { $scope.object.varieties.push({}) }
-    $scope.addOption = () => { $scope.object.options.push({}) }
-    $scope.addChoice = () => { $scope.object.choices.push({}) }
+    $scope.addVar = () => { $scope.object.varieties.push({}) };
+    $scope.addOption = () => { $scope.object.options.push({}) };
+    $scope.addChoice = () => { $scope.object.choices.push({}) };
 
     $scope.removeVar = (i) => { $scope.object.varieties.splice(i,1) };
     $scope.removeOption = (i) => { $scope.object.options.splice(i,1) };

@@ -1,6 +1,6 @@
 .menu                             { padding: 30px;
   .shadowed-container             { padding: 20px 35px;
-    header                        { margin-left: -15px; margin-right: -15px; }
+    > header                      { margin: 0 -15px 20px; }
     h2                            { font: 500 18px $sans-font; }
     .table                        { width: 100%;
       .td                         { height: 65px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;

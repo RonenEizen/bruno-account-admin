@@ -16,7 +16,7 @@
       <div class="form-group has-feedback">
         <ui-select ng-model="selectedItem">
           <ui-select-match placeholder="Search by name">{{$select.selected.name}}</ui-select-match>
-          <ui-select-choices repeat="item in foodItems | filter: $select.search">
+          <ui-select-choices repeat="item in foodItems | filter: $select.search" position='down'>
             <strong ng-bind-html="item.name | highlight: $select.search"></strong><br>
             <small ng-bind-html="item.description | highlight: $select.search"></small>
           </ui-select-choices>

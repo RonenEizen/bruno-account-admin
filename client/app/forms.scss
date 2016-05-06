@@ -1,0 +1,100 @@
+// default button settings
+a.btn,
+button.btn                        { border: none; border-radius: 2px; font: 500 14px $serif-font; padding: 8px 30px; text-shadow: none;
+  &:hover                         { opacity: .7; }
+  &.btn-danger                    { background: $red; }
+  &.btn-default                   { background: $btn-default; color: $btn-default-color; }
+  &.btn-primary                   { background: $blue; }
+  &.btn-success                   { background: $green1; }
+  &.btn-warning                   { background: $orange; }
+}
+
+// STYLES FORMS
+form.custom-form                  {
+  label                           { font-size: 14px; font-family: $sans-font; }
+  input:not([type="checkbox"]),
+  input:not([type="radio"]),
+  select                          { box-shadow: none; font-size: 14px; height: 48px; }
+  textarea                        { box-shadow: none; font-size: 14px; height: 110px; overflow: scroll; resize: none; }
+  fieldset,
+  input:not([type="checkbox"]),
+  input:not([type="radio"]),
+  textarea                        { border: 1px solid $column-picker-bd; border-radius: 2px;
+    &.ng-invalid.ng-touched       { border-color: $red; }
+  }
+  fieldset                        { position: relative;
+    &:before                      { color: $gray; content: '▼'; font-size: 12px; position: absolute; right: 6px; top: 18px; }
+    select                        { appearance: none; background: linear-gradient($selectbg-start, $selectbg-stop); border: none; border-radius: 0;
+      &:focus                     { box-shadow: none; }
+    }
+  }
+  .taggroup                       { border: 1px solid $lightgray; padding: 6px 12px;
+    .newtag                       { border: none; }
+  }
+  .label                          { background: $lightgray; border-radius: 0; color: $darkgray; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
+  .form-control-feedback          { color: $reservation-gray; top: 16px; }
+}
+
+// RESTYLED CHECKBOXES
+.checkbox label                   { line-height: 1; padding-left: 20px; position: relative;
+  [type="checkbox"]               { position: absolute; left: -9999px;
+    &:not(:checked) ~ span,
+    &:checked ~ span              { appearance: none; top: 0; left: 0; position: absolute;
+      &:before                    { background: $white; border: 1px solid $border; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
+      &:after                     { color: $gray; content: '✔︎'; font-size: 12px; left: 3px; position: absolute; top: 2px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; }
+    }
+    &:not(:checked) ~ span:after  { opacity: 0; transform: scale(0); }
+    &:checked ~ span:after        { opacity: 1; transform: scale(1); }
+  }
+}
+
+// RESTYLED RADIOS
+label.radio-inline                { line-height: 1; padding-left: 20px; position: relative;
+  [type="radio"]                  { position: absolute; left: -9999px;
+    &:not(:checked) ~ span,
+    &:checked ~ span              { appearance: none; top: 0; left: 0; position: absolute;
+      &:before                    { background: $white; border: 1px solid $border; border-radius: 50%; content: ''; display: block; height: 16px; left: 0; position: absolute; top: 0; width: 16px; }
+      &:after                     { background: $gray; content: ''; border-radius: 50%; display: block; height: 8px; left: 4px; position: absolute; top: 4px; transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .5s all; width: 8px; }
+    }
+    &:not(:checked) ~ span:after  { opacity: 0; transform: scale(0); }
+    &:checked ~ span:after        { opacity: 1; transform: scale(1); }
+  }
+}
+
+// uib-dropdown
+.dropdown-menu                    { min-width: 100px; }
+.btn-group                        { background: $white; box-shadow: none;
+  &.open                          {
+    .dropdown-toggle              { border: 1px solid $border; box-shadow: none; color: $black; }
+  }
+  .dropdown-toggle                { background: $white;  border: 1px solid transparent; border-radius: 0; color: $blue; font: 16px $sans-font; padding: 8px 10px 8px 5px; text-align: left;
+    &:active                      { box-shadow: none; }
+  }
+  .caret                          { color: $gray; position: relative; left: 5px; }
+  ul                              { border: 1px solid $border; border-radius: 0; box-shadow: none; font-size: 16px; margin-top: -2px; width: 100%;
+    li a                          { color: $blue; font-size: 14px; padding: 3px 8px; }
+  }
+}
+
+// ui-select
+.ui-select-container              {
+  .ui-select-match                {
+    .btn-default                  { border-color: $border; border-radius: 2px; box-shadow: none; font-size: 14px; height: 48px; line-height: 34px; padding-bottom: 6px; padding-top: 6px;
+      &:active,
+      &:focus,
+      &:hover                     { background: inherit; }
+      .caret                      { display: none; }
+    }
+  }
+  .ui-select-choices              { border-color: $border; border-radius: 2px; box-shadow: none; margin-top: 20px; max-height: 400px; }
+  .ui-select-choices-row          {
+    &.active a                    { background: $blue;
+      strong                      { color: $white; }
+      small                       { color: $column-picker-bd; }
+    }
+    a                             { padding: 15px; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      strong                      { color: $blue; font-size: 16px; font-weight: normal; }
+      small                       { color: $reservation-gray; font-size: 14px; }
+    }
+  }
+}

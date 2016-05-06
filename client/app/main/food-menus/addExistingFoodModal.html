@@ -14,11 +14,21 @@
   <div class="row">
     <div class="col-md-12">
       <div class="form-group has-feedback">
-        <input type="search" class="form-control" placeholder="Seach by name">
+        <ui-select ng-model="selectedItem">
+          <ui-select-match placeholder="Search by name">{{$select.selected.name}}</ui-select-match>
+          <ui-select-choices repeat="item in foodItems | filter: $select.search" class="form-group has-feedback">
+            <div ng-bind-html="item.name | highlight: $select.search"></div>
+            <small ng-bind-html="item.description | highlight: $select.search"></small>
+          </ui-select-choices>
+          <span class="icon-search form-control-feedback"></span>
+        </ui-select>
         <span class="icon-search form-control-feedback"></span>
       </div>
+
     </div>
   </div><!-- END .row -->
+
+  {{selectedItem}}
 
   <div class="row">
     <div class="col-md-12 text-center resetsave">

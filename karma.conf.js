@@ -25,6 +25,7 @@ module.exports = function(config) {
       'client/bower_components/angular-ui-mask/dist/mask.js',
       'client/bower_components/Chart.js/Chart.js',
       'client/bower_components/angular-chart.js/dist/angular-chart.js',
+      'client/bower_components/ui-select/dist/select.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/app.js',

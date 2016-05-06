@@ -1,17 +1,18 @@
 'use strict';
 
 angular.module('accountAdminApp', [
-    'accountAdminApp.auth'
-  , 'accountAdminApp.admin'
+    'accountAdminApp.admin'
+  , 'accountAdminApp.auth'
   , 'accountAdminApp.constants'
+  , 'chart.js'
   , 'ngCookies'
   , 'ngResource'
   , 'ngSanitize'
   , 'ui.bootstrap'
-  , 'ui.router'
   , 'ui.mask'
+  , 'ui.router'
+  , 'ui.select'
   , 'validation.match'
-  , 'chart.js'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/dashboard');

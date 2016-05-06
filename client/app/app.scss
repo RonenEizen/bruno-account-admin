@@ -177,6 +177,7 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Helvetica, Ro
 /**
  * App-wide Styles
  */
+*                                 { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 a                                 { color: $blue; }
 html, body                        { color: $black; font-family: $sans-font; font-size: 16px; height: 100%; position: relative; width: 100%; }
 strong,
@@ -199,7 +200,7 @@ strong,
 .mandatory                        { color: $red; }
 
 // cell-like tabs
-.tab-group                        { background: $white; color: $darkgray; float: left; font: 12px $serif-font; height: 32px; width: auto;
+.tab-group                        { background: $white; color: $darkgray; float: left; font: 500 14px $serif-font; height: 32px; width: auto;
   a                               { color: inherit; float: left;
     &:focus,
     &:hover                       { text-decoration: none; }

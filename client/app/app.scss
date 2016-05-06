@@ -328,6 +328,29 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
   }
 }
 
+// ui-select
+.ui-select-container              {
+  .ui-select-match                {
+    .btn-default                  { border-color: $border; border-radius: 2px; box-shadow: none; font-size: 14px; height: 48px; line-height: 34px; padding-bottom: 6px; padding-top: 6px;
+      &:active,
+      &:focus,
+      &:hover                     { background: inherit; }
+      .caret                      { display: none; }
+    }
+  }
+  .ui-select-choices              { border-color: $border; border-radius: 2px; box-shadow: none; margin-top: 20px; max-height: 400px; }
+  .ui-select-choices-row          {
+    &.active a                    { background: $blue;
+      strong                      { color: $white; }
+      small                       { color: $column-picker-bd; }
+    }
+    a                             { padding: 15px; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      strong                      { color: $blue; font-size: 16px; font-weight: normal; }
+      small                       { color: $reservation-gray; font-size: 14px; }
+    }
+  }
+}
+
 // container with gray bg
 .shadowed-container               { background: $headerbg; border: 1px solid $border; border-radius: 2px; margin-bottom: 20px; padding: 20px;
   header                          {
@@ -354,7 +377,7 @@ button.btn                        { border: none; border-radius: 2px; font: 500 
   .border-top                     { border-top: 1px solid $border; }
 }
 
-// colum filter on table views
+// column filter on table views
 .filter                           { display: inline; position: relative; font-family: $sans-font;
   & > div                         { background: $headerbg; border: 1px solid $lightgray; border-radius: 3px; padding: 10px; position: absolute; top: 25px; z-index: 50; }
   i.filtered                      { color: $red; }

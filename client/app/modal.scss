@@ -109,5 +109,7 @@
     }
     .add-something                { font-size: 14px; padding: 0; }
   }
-  .resetsave                      { margin: 30px 0; }
+  .resetsave                      { margin: 30px 0;
+    .btn                          { margin: 0 5px; }
+  }
 }

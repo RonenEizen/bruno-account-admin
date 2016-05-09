@@ -14,7 +14,7 @@
   .reservations-body              { height: calc(100% - 40px);
     .top-info                     { display: table; margin-bottom: 25px; margin-top: 30px; width: 100%;
       .top-info-segment           { float: none; display: table-cell; vertical-align: bottom; }
-      .btn-cust                   { float: right; margin-left: 20px; margin-top: -8px; width: 200px;
+      .btn-cust                   { float: right; margin-left: 40px; margin-top: -8px; width: 200px;
         & ~ .legend               { padding-top: 8px; }
       }
       h2                          { font: 500 20px $sans-font; margin: 0;
@@ -22,6 +22,9 @@
       }
       .legend                     { float: right; font: 500 14px $serif-font; list-style: none; margin-bottom: 0; padding: 0;
         li                        { float: right; vertical-align: middle;
+          &:last-child            {
+            i                     { margin-left: 0; }
+          }
           i                       { display: inline-block; float: left; height: 14px; line-height: 14px; margin: 0 10px 0 30px; width: 15px; }
           &.active i              { background: $reservation-active; }
           &.closed i              { background: $reservation-closed; }

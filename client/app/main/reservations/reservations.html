@@ -5,22 +5,8 @@
       <span class="hamburger" ng-click="main.navRevealed=true" ng-show="!main.navRevealed"><i class="icon-hamburger_menu"></i></span>
       <h1>{{pageTitle}}</h1>
     </div>
-    <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="main.go('^.create')">+ New Reservation</button>
-    </div>
-    <div class="col-md-5">
-      <div class="actions-right" ng-init="pickColumns=false">
-        <i class="icon-grid" ng-click="showColumnPicker()"></i>
-        <ul ng-show="pickColumns">
-          <span class="arrow"></span>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.col1">Col 1</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.col2">Col 2</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.col3">Col 3</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.col4">Col 4</label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.col5">Col 5</label></li>
-        </ul>
-      </div>
-    </div>
+    <div class="col-md-2"><button class="btn btn-primary" ng-click="main.go('^.create')">+ New Reservation</button></div>
+    <div class="col-md-5"></div>
   </div>
 </header>
 

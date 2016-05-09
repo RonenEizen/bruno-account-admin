@@ -3,9 +3,9 @@
 angular.module('accountAdminApp')
   .service('MenuService', function () {
     this.menus = [
-      { _id: '1', name: 'Lunch Menu', foodCategories: ['1', '2', '4'] },
-      { _id: '2', name: 'Dinner Menu', foodCategories: ['1', '2', '4'] },
-      { _id: '2', name: 'Weekends Menu', foodCategories: ['1', '2', '4'] }
+      { _id: '1', active: true, name: 'Lunch Menu', foodCategories: ['1', '2', '4'] },
+      { _id: '2', active: false, name: 'Dinner Menu', foodCategories: ['1', '2', '4'] },
+      { _id: '2', active: false, name: 'Weekends Menu', foodCategories: ['1', '2', '4'] }
     ];
     this.categories = [
       { _id: '1', name: 'Beverages', foodItems: ['123', '124', '234'], foodMenus: ['1'] },

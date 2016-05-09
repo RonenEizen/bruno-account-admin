@@ -1,6 +1,10 @@
 .menu                             { padding: 30px;
+  > header                        { margin-bottom: 20px;
+    .tab-group                    {
+      & ~ a                       { line-height: 35px; margin-left: 20px; }
+    }
+  }
   .shadowed-container             { padding: 20px 35px;
-    > header                      { margin: 0 -15px 20px; }
     h2                            { font: 500 18px $sans-font; }
     .table                        { width: 100%;
       .td                         { height: 65px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
@@ -8,9 +12,6 @@
         &:nth-child(2)            { width: 70%; }
         &:nth-child(3)            { width: 10%; }
       }
-    }
-    .tab-group                    {
-      & ~ a                       { line-height: 32px; margin-left: 20px; }
     }
     .border-top                   { height: 65px; }
     .btn-group                    { margin: 15px 0 0 -8px; }

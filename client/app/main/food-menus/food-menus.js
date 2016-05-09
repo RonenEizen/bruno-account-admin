@@ -8,8 +8,11 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/food-menus/food-menus.html',
         controller: 'FoodMenusCtrl'
       })
+
+
+      // MENUS
       .state('main.food-menus.createMenu', {
-        url: '/menu/create',
+        url: '/createMenu',
         templateUrl: 'app/main/food-menus/createFoodMenuModal.html'
       })
       .state('main.food-menus.menu', {
@@ -25,13 +28,11 @@ angular.module('accountAdminApp')
         url: '/remove',
         templateUrl: 'app/main/food-menus/removeFoodMenuModal.html'
       })
-      .state('main.food-menus.menu.addFood', {
-        url: '/addFood',
-        templateUrl: 'app/main/food-menus/addExistingFoodModal.html'
-      })
 
+
+      // CATEGORIES
       .state('main.food-menus.createCategory', {
-        url: '/category/create',
+        url: '/createCategory',
         templateUrl: 'app/main/food-menus/createMenuCategoryModal.html'
       })
       .state('main.food-menus.category', {
@@ -47,8 +48,15 @@ angular.module('accountAdminApp')
         url: '/remove',
         templateUrl: 'app/main/food-menus/removeMenuCategoryModal.html'
       })
+
+
+      // FOOD ITEMS
+      .state('main.food-menus.addFood', {
+        url: '/addFood',
+        templateUrl: 'app/main/food-menus/addExistingFoodModal.html'
+      })
       .state('main.food-menus.createFood', {
-        url: '/food/create',
+        url: '/createFood',
         templateUrl: 'app/main/food-menus/createFoodItemModal.html'
       })
       .state('main.food-menus.food', {
@@ -68,6 +76,8 @@ angular.module('accountAdminApp')
         url: '/remove',
         templateUrl: 'app/main/food-menus/removeFoodItemModal.html'
       });
+
+
     $urlRouterProvider
       .when('/food-menus/menu/:_id', '/food-menus/menu/:_id/edit')
       .when('/food-menus/category/:_id', '/food-menus/category/:_id/edit')

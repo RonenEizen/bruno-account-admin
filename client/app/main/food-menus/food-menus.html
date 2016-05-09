@@ -11,30 +11,32 @@
   </div>
 </header>
 
+
 <div class="menu">
+  <header>
+    <div class="tab-group">
+      <a ng-click="" ng-repeat="menu in menus"><div class="tab" ng-class="{active: menu.active}">{{menu.name}}</div></a>
+    </div>
+    <a href="/food-menus/menu/1/edit">Edit</a>
+    <a href="/food-menus/menu/1/remove">Delete</a>
+    <a href="/food-menus/menu/1/duplicate">Duplicate</a>
+    <a href="/food-menus/menu/1/export">Export</a>
+  </header>
+
   <div class="col-md-12 shadowed-container">
-    <header>
-      <div class="tab-group">
-        <a ng-click="" ng-repeat="menu in menus"><div class="tab" ng-class="{active: true}">{{menu.name}}</div></a>
-      </div>
-      <a href="/food-menus/menu/1/edit">Edit</a>
-      <a href="/food-menus/menu/1/remove">Delete</a>
-      <a href="/food-menus/menu/1/duplicate">Duplicate</a>
-      <a href="/food-menus/menu/1/export">Export</a>
-    </header>
 
     <div class="row shadowed-subcontainer" ng-repeat="cat in categories">
       <div class="col-md-12">
         <header>
           <h3>{{cat.name}}</h3>
-          <a ng-click="main.customModal('menuCategoryModal.html')" class="pull-right">Edit</a>
+          <a href="/food-menus/category/{{cat._id}}" class="pull-right">Edit</a>
         </header>
       </div>
       <div class="col-md-12">
         <div class="table">
           <div class="tbody">
             <div class="tr" ng-repeat="item in foodItems">
-              <div class="td"><a href="/food-menus/food/{{food._id}}/view">{{item.name}}</a></div>
+              <div class="td"><a href="/food-menus/food/{{food._id}}">{{item.name}}</a></div>
               <div class="td">{{item.description}}</div>
               <div class="td text-right">{{item.priceSingle | currency}}</div>
             </div>
@@ -48,7 +50,7 @@
           </button>
           <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
             <li role="menuitem"><a ng-click="main.go('.createFood')">New Food Item</a></li>
-            <li role="menuitem"><a ng-click="main.go('.menu.addFood')">Existing Food Item</a></li>
+            <li role="menuitem"><a ng-click="main.go('.addFood')">Existing Food Item</a></li>
           </ul>
         </div>
       </div>

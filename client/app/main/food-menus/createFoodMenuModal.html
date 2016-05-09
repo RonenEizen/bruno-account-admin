@@ -1,8 +1,7 @@
 <div class="flyout">
-  <form name="addFoodMenuForm" class="container custom-form form-group">
+  <form name="addFoodMenuForm" class="custom-form container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-
         <div class="row">
           <div class="col-md-12 text-center">
             <h1>Add Food Menu</h1>
@@ -12,16 +11,17 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label class="control-label">Name</label>
-              <input type="text" class="form-control" required>
+              <label class="control-label">Name</label> <span class="mandatory">*</span>
+              <input name="name" type="text" ng-model="object.menuName" class="form-control" required>
+              <p ng-show="addFoodMenuForm.name.$error.required && addFoodMenuForm.name.$touched" class="help-block">This is a required field.</p>
             </div>
           </div>
         </div><!-- END .row -->
 
         <div class="row">
           <div class="col-md-12 text-center resetsave">
-            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-            <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="addFoodMenuForm.$invalid">Save</button>
+            <button class="btn btn-default" ng-click="main.go('main.food-menus')">Cancel</button>
+            <button class="btn btn-primary" ng-click="main.go('main.food-menus')" ng-disabled="addFoodMenuForm.$invalid">Save</button>
           </div>
         </div><!-- END .row -->
 

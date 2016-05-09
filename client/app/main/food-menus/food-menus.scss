@@ -5,6 +5,9 @@
     }
   }
   .shadowed-container             { padding: 20px 35px;
+    .shadowed-subcontainer        {
+      &:first-child               { margin-top: 0; }
+    }
     h2                            { font: 500 18px $sans-font; }
     .table                        { width: 100%;
       .td                         { height: 65px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;

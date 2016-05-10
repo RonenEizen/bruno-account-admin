@@ -276,14 +276,6 @@ header.top                        { background: $headerbg; border-bottom: 1px so
   }
 }
 
-// MAIN
-.main                             { padding: 30px 15px;
-  h1                              { color: $red; font: 100 40px $serif-font; margin-bottom: 10px; text-align: center; }
-  h2                              { border-bottom: 2px solid $black; color: $red; font: 300 20px $serif-font; line-height: 1; margin: 0 0 15px; padding-bottom: 10px;
-    a.pull-right                  { color: $blue; font: 16px $sans-font; position: relative; top: 5px; }
-  }
-}
-
 // REPLACES TABLES
 .table                            { display: table; table-layout: fixed;
   &.table-default                 {

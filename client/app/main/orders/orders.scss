@@ -1,10 +1,12 @@
 .orders                           { padding: 30px 15px;
-  .status                         {
-    span                          {
-      &.new                       { color: $green1; }
-      &.inprogress                { color: $orange; }
-      &.cancelled                 { color: $red; }
-      &.fulfilled                 { color: $lightgray; }
-    }
+  .cancelled                      {
+    .status                       { color: $red; }
   }
+  .new                            {
+    .status                       { color: $green1; }
+  }
+  .inprogress                     {
+    .status                       { color: $orange; }
+  }
+  .fulfilled                      { color: $reservation-gray; }
 }

@@ -1,53 +1,47 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('OrdersCtrl', function($scope, OrderService) {
+  .controller('OrdersCtrl', function($scope, OrderService, $filter) {
     $scope.pageTitle = 'Orders';
 
     $scope.orders = $scope.main.orders;
     $scope.customers = $scope.main.customers;
-    $scope.modal = $scope.main.modal;
     $scope.states = $scope.main.states;
 
+    // THIS OBJECT IS LOADED INTO MODALS
+    $scope.object = {
+      _id: '654321',
+      owner: '1',
+      createdAt: new Date('2016-05-01T10:41:00Z'),
+      updatedAt: new Date('2016-05-01T10:41:00Z'),
+      type: 'pickup',
+      status: 'new',
+      items: [{
+        _id: '1',
+        category: 'Beverages',
+        name: 'Coca-Cola',
+        qty: 2,
+        price: 1.10
+      }, {
+        _id: '2',
+        category: 'Hamburgers',
+        name: 'Big Burger',
+        qty: 3,
+        price: 5.5
+      }, {
+        _id: '3',
+        category: 'Snacks',
+        name: 'Fries',
+        qty: 5,
+        price: 2.15
+      }],
+      total: 29.45
+    }
+
     // ORDERS: Sets class to rows based on order status
-    // function setStatus(index) {
-    //   return this.orderStatus[index].toLowerCase().replace(/\s+/g, '');
-    // }
-
-    $scope.createOrder = function() {
-      var scope = {
-          modal: {
-            html: 'addOrderModal.html',
-            object: { owner: '', items: [] }
-        }
-      };
-
-      $scope.modal(scope)
-        .result.then(function(newOrder) { // run if close is hit
-          console.log(newOrder);
-          OrderService.add(newOrder);
-        }, function(message) { //run if dismiss is hit
-          console.log(message);
-        });
-    };
-
-    $scope.viewOrder = function(index) {
-      var options = {
-        modal: {
-          html: 'orderModal.html',
-          object: angular.copy($scope.orders[index])
-        }
-      };
-
-      $scope.modal(options)
-        .result.then(function(createdOrder) {
-          console.log('modal success', createdOrder); //run if save is hit
-          // should look like OrderService.add(createdOrder);
-          $scope.orders.push(createdOrder);
-        }, function() {
-          console.log('modal dismissed!');
-        });
-    };
+    $scope.setStatus = function (status) {
+      return status.toLowerCase().replace(/\s+/g, '');
+    }
 
     // this function gets data from a customer ID
     $scope.customerData = function (ownerID, query) {
@@ -56,7 +50,9 @@ angular.module('accountAdminApp')
 
       $scope.main.customers.forEach(function (cust) {
         if (ownerID === cust._id) {
-          if (query === 'name') { a = cust.fname + ' ' + cust.lname; }
+          if (q === 'name') { a = cust.fname + ' ' + cust.lname; }
+          else if (q === 'homePhone' || query === 'mobilePhone') { a = $filter('phone')(cust[q])}
+          else if (q === 'addr') { a = cust['addr'] + ', ' + cust['state'] + ' ' + cust['zip'] }
           else { a = cust[q]; }
         }
       });

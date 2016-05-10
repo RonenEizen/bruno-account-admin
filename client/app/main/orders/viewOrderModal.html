@@ -1,51 +1,51 @@
 <div class="row">
   <div class="col-md-12 text-center">
-    <h1>Order No. {{modal.object._id}}</h1>
+    <h1>Order No. {{object._id}}</h1>
   </div>
 </div><!-- END .row -->
 
-<div class="row">
-  <div class="col-md-4 form-group">
+<div class="row order-info">
+  <div class="col-md-4">
     <strong class="control-label">Customer</strong><br>
-    <span ng-bind="customerData(modal.object.owner, 'name')"></span>
+    <span ng-bind="customerData(object.owner, 'name')"></span>
   </div>
-  <div class="col-md-4 form-group">
+  <div class="col-md-4">
     <strong class="control-label">Home Phone</strong><br>
-    <span ng-bind="customerData(modal.object.owner, 'homePhone')"></span>
+    <span ng-bind="customerData(object.owner, 'homePhone')"></span>
   </div>
-  <div class="col-md-4 form-group">
+  <div class="col-md-4">
     <strong class="control-label">Mobile Phone</strong><br>
-    <span ng-bind="customerData(modal.object.owner, 'mobilePhone')"></span>
+    <span ng-bind="customerData(object.owner, 'mobilePhone')"></span>
   </div>
 </div><!-- END .row -->
 
-<div class="row">
-  <div class="col-md-4 form-group">
+<div class="row order-info">
+  <div class="col-md-4">
     <strong class="control-label">Address</strong><br>
-    <span ng-bind="customerData(modal.object.owner, 'addr')"></span>
+    <span ng-bind="customerData(object.owner, 'addr')"></span>
   </div>
-  <div class="col-md-4 form-group">
+  <div class="col-md-4">
     <strong class="control-label">Personal Email</strong><br>
     <span></span>
-    <span><a href="mailto:{{customerData(modal.object.owner, 'email')}}" ng-bind="customerData(modal.object.owner, 'email')"></a></span>
+    <span><a href="mailto:{{customerData(object.owner, 'email')}}" ng-bind="customerData(object.owner, 'email')"></a></span>
   </div>
-  <div class="col-md-4 form-group">
+  <div class="col-md-4">
     <strong class="control-label">Work Email</strong><br>
-    <span><a href="mailto:{{customerData(modal.object.owner, 'workEmail')}}" ng-bind="customerData(modal.object.owner, 'workEmail')"></a></span>
+    <span><a href="mailto:{{customerData(object.owner, 'workEmail')}}" ng-bind="customerData(object.owner, 'workEmail')"></a></span>
   </div>
 </div><!-- END .row -->
 
-<div class="row">
-  <div class="col-md-4 form-group" ng-switch="modal.object.type">
+<div class="row order-info">
+  <div class="col-md-4" ng-switch="object.type">
     <strong class="control-label">Type</strong><br>
     <span ng-switch-when="pickup">Pickup</span>
     <span ng-switch-when="delivery">Delivery</span>
   </div>
-  <div class="col-md-4 form-group">
+  <div class="col-md-4">
     <strong class="control-label">Amount</strong><br>
-    <span>{{modal.object.total | currency}}</span>
+    <span>{{object.total | currency}}</span>
   </div>
-  <div class="col-md-4 form-group" ng-switch="modal.object.status">
+  <div class="col-md-4" ng-switch="object.status">
     <strong class="control-label">Status</strong><br>
     <span class="status cancelled" ng-switch-when="cancelled">Cancelled</span>
     <span class="status new" ng-switch-when="new">New</span>
@@ -54,23 +54,30 @@
   </div>
 </div><!-- END .row -->
 
+<div class="row order-info">
+  <div class="col-md-4">
+    <strong>Date</strong><br>
+    <span>{{object.createdAt | date: 'MMMM d, yyyy, H:mm a'}}</span>
+  </div>
+</div><!-- END .row -->
+
 <div class="row">
   <div class="col-md-12">
-    <div class="table">
+    <div class="table table-default">
       <div class="thead">
         <div class="tr">
           <div class="th">Food Item</div>
           <div class="th">Category</div>
           <div class="th">Quantity</div>
-          <div class="th text-right">Price</div>
+          <div class="th">Price</div>
         </div>
       </div><!-- END .tbody -->
       <div class="tbody">
-        <div class="tr" ng-repeat="item in modal.object.items">
-          <div class="td">{{item._id}}</div>
-          <div class="td">Beverage</div>
+        <div class="tr" ng-repeat="item in object.items">
+          <div class="td">{{item.name}}</div>
+          <div class="td">{{item.category}}</div>
           <div class="td">{{item.qty}}</div>
-          <div class="td text-right">{{item.qty}} x foodItem.price</div>
+          <div class="td">{{item.qty}} x {{item.price | currency}}</div>
         </div>
       </div><!-- END .thead -->
     </div><!-- END .table -->
@@ -84,10 +91,10 @@
       <button class="btn btn-primary" ng-click="main.go('^.edit')">Edit</button>
     </div><!-- END .pull-left -->
     <div class="pull-right">
-      <button class="btn btn-danger"  ng-hide="modal.object.status === 'cancelled'" ng-click="modal.object.status = 'cancelled'">Cancel Order</button>
-      <button class="btn btn-default" ng-show="modal.object.status === 'cancelled'" ng-click="modal.object.status = 'new'">Reopen Order</button>
-      <button class="btn btn-success" ng-show="modal.object.status === 'new'" ng-click="modal.object.status = 'inprogress'">Start Progress</button>
-      <button class="btn btn-warning" ng-show="modal.object.status === 'inprogress'" ng-click="modal.object.status = 'fulfilled'">Fulfill Order</button>
+      <button class="btn btn-danger"  ng-hide="object.status === 'cancelled'" ng-click="object.status = 'cancelled'">Cancel Order</button>
+      <button class="btn btn-default" ng-show="object.status === 'cancelled'" ng-click="object.status = 'new'">Reopen Order</button>
+      <button class="btn btn-success" ng-show="object.status === 'new'" ng-click="object.status = 'inprogress'">Start Progress</button>
+      <button class="btn btn-warning" ng-show="object.status === 'inprogress'" ng-click="object.status = 'fulfilled'">Fulfill Order</button>
     </div><!-- END .pull-right -->
   </div><!-- END .resetsave -->
 </div><!-- END .row -->

@@ -56,16 +56,16 @@
         }
       }
     }
-    &.order-table                 { margin-top: 20px;
-      .tr                         {
-        .th                       { width: 19%;
-          &:last-child            { width: 5%; }
-        }
-        .td                       { padding-right: 10px;
-          &:last-child            { padding-right: 0; text-align: center; }
-        }
-      }
-    }
+    // &.order-table                 { margin-top: 20px;
+    //   .tr                         {
+    //     .th                       { width: 19%;
+    //       &:last-child            { width: 5%; }
+    //     }
+    //     .td                       { padding-right: 10px;
+    //       &:last-child            { padding-right: 0; text-align: center; }
+    //     }
+    //   }
+    // }
     &.food-item-table             { table-layout: auto; margin: 0;
       .tbody                      { margin-top: 10px; }
       .td                         { border: none; height: 30px; padding: 0; }
@@ -111,5 +111,10 @@
   }
   .resetsave                      { margin: 30px 0;
     .btn                          { margin: 0 5px; }
+  }
+
+  // ORDERS
+  .order-info                     { margin-bottom: 30px; line-height: 24px;
+    strong                        { font-weight: 500; }
   }
 }

@@ -105,7 +105,7 @@
       </div><!-- END .thead -->
 
       <div class="tbody">
-        <div class="tr" ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders" ng-class="main.setStatus(order.status)">
+        <div class="tr" ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders" ng-class="setStatus(order.status)">
           <div ng-show="displayColumns.number" class="td"><a href="/orders/{{order._id}}">{{order._id}}</a></div>
           <div ng-show="displayColumns.customer" class="td" ng-bind="customerData(order.owner, 'name')"></div>
           <div ng-show="displayColumns.type" class="td" ng-switch="order.type">
@@ -114,10 +114,10 @@
           </div>
           <div ng-show="displayColumns.amount" class="td">{{order.total | currency}}</div>
           <div ng-show="displayColumns.status" class="td status" ng-switch="order.status">
-            <span class="cancelled" ng-switch-when="cancelled">Cancelled</span>
-            <span class="new" ng-switch-when="new">New</span>
-            <span class="inprogress" ng-switch-when="inprogress">In Progress</span>
-            <span class="fulfilled" ng-switch-when="fulfilled">Fulfilled</span>
+            <span ng-switch-when="cancelled">Cancelled</span>
+            <span ng-switch-when="new">New</span>
+            <span ng-switch-when="inprogress">In Progress</span>
+            <span ng-switch-when="fulfilled">Fulfilled</span>
           </div>
         </div><!-- END .tr -->
       </div><!-- END .tbody -->

@@ -8,6 +8,9 @@
   h4                              { font: medium 16px $sans-font;
     &.table-title                 { border-bottom: 2px solid $black; font: 500 16px $sans-font; margin: 20px 0 0; }
   }
+  .icon-close                     { color: $gray; font-size: 14px; line-height: 48px; opacity: 1; transition: 500ms ease all;
+    &:hover                       { color: $red; }
+  }
   .image                          { max-height: 170px; display: block; }
   .status                         {
     &.cancelled                   { color: $red; }
@@ -18,6 +21,83 @@
     &.current,
     &.new                         { color: $green1; }
   }
+  .resetsave                      { margin: 30px 0;
+    .btn                          { margin: 0 5px; }
+  }
+  .dragable                       { list-style: none; margin: 0; padding: 0;
+    li                            { background: $white; border: 1px solid $lightgray; font-size: 14px; height: 50px; line-height: 50px; margin-bottom: 20px; padding: 0 20px; position: relative;
+      .handle                     { color: $reservation-gray; cursor: grab; display: block; font-size: 28px; height: 100%; line-height: 50px; position: absolute; right: 0; text-align: center; top: 0; width: 40px; }
+      &:last-child                { margin-bottom: 0; }
+    }
+  }
+  form.custom-form                {
+    .bottom-text                  { padding-top: 30px;
+      small                       { color: $lightgray; }
+    }
+  }
+  .top-instructions               { border-bottom: 1px solid $lightgray; font-size: 18px; margin-bottom: 30px; text-align: center; }
+  .shadowed-container             {
+    &:last-child                  { margin-bottom: 0; }
+  }
+
+
+  // ORDERS
+  .order-info                     { margin-bottom: 30px; line-height: 24px;
+    strong                        { font-weight: 500; }
+  }
+  .table                          {
+    &.food-item-table             { table-layout: auto; margin: 0;
+      .tbody                      { margin-top: 10px; }
+      .td                         { border: none; height: 30px; padding: 0; }
+    }
+  }
+
+
+  // FOOD MENUS
+  .option-line                    { margin-bottom: 10px;
+    > div                         {
+      &:nth-child(1)              { padding-right: 10px; }
+      &:nth-child(2)              { padding: 0 0 0 10px; }
+      &:nth-child(3)              { text-align: center; }
+    }
+  }
+  .extra-margin                   { margin-bottom: 30px; }
+  form.food-item                  {
+    textarea                      { height: 170px; }
+    .price-type                   {
+      .price-radio                { height: 48px; padding: 10px 0; }
+      .form-group                 { margin: 0; }
+    }
+    .add-something                { font-size: 14px; padding: 0; }
+  }
+  .table-view-order               { table-layout: auto;
+    .td, .th                      {
+      &:nth-child(1)              { width: 45%; }
+      &:nth-child(2)              { width: 25%; }
+      &:nth-child(3)              { width: 15%; }
+      &:nth-child(4)              { width: 15%; }
+    }
+  }
+  .table-edit-order               { table-layout: auto; margin-top: 30px;
+    .td, .th                      { padding: 0 15px;
+      &:nth-child(1)              { padding-left: 0; width: 40%; }
+      &:nth-child(2)              { width: 25%; }
+      &:nth-child(3)              { width: 10%; }
+      &:nth-child(4)              { text-align: right; width: 20%; }
+      &:nth-child(5)              { padding-right: 0; text-align: right; width: 5%; }
+    }
+    .tbody                        {
+      .td                         {
+        .form-group               { margin: 0; }
+        fieldset:before           { top: 15px; }
+        input,
+        select                    { height: 40px; }
+      }
+    }
+  }
+
+
+  // MARKETING
   .channel-nav                    { border-bottom: 1px solid $blue; margin-bottom: 20px; }
   .nav-tabs                       { border-bottom: none;
     li                            { text-align: center; width: 20%;
@@ -43,11 +123,10 @@
     img                           { width: 100%; }
     ul                            { color: $lightgray2; font-size: 1.3rem; margin-top: 20px; padding: 0; }
   }
-  form.custom-form                {
-    .bottom-text                  { padding-top: 30px;
-      small                       { color: $lightgray; }
-    }
-  }
+
+
+  // CUSTOMERS
+  .customer-orders                { background: $headerbg; }
   .table                          {
     &.customer-orders-table       { margin-top: 20px; position: relative;
       .td                         { position: relative;
@@ -56,65 +135,8 @@
         }
       }
     }
-    // &.order-table                 { margin-top: 20px;
-    //   .tr                         {
-    //     .th                       { width: 19%;
-    //       &:last-child            { width: 5%; }
-    //     }
-    //     .td                       { padding-right: 10px;
-    //       &:last-child            { padding-right: 0; text-align: center; }
-    //     }
-    //   }
-    // }
-    &.food-item-table             { table-layout: auto; margin: 0;
-      .tbody                      { margin-top: 10px; }
-      .td                         { border: none; height: 30px; padding: 0; }
-    }
-    .tr                           {
-      &.no-border                 {
-        .th                       { border: none; font: 300 1.8rem $sans-font; }
-      }
-    }
   }
-  .customer-orders                { background: $headerbg; }
+
+  // SETTINGS
   .integration-image              { margin-bottom: 40px; max-height: 50px; max-width: 200px; }
-  .top-instructions               { border-bottom: 1px solid $lightgray; font-size: 18px; margin-bottom: 30px; text-align: center; }
-  .shadowed-container             {
-    &:last-child                  { margin-bottom: 0; }
-  }
-
-  // FOOD MENUS
-  .option-line                    { margin-bottom: 10px;
-    > div                         {
-      &:nth-child(1)              { padding-right: 10px; }
-      &:nth-child(2)              { padding: 0 0 0 10px; }
-      &:nth-child(3)              { text-align: center; }
-    }
-    .icon-close                   { color: $gray; font-size: 14px; line-height: 48px; opacity: 1; transition: 500ms ease all;
-      &:hover                     { color: $red; }
-    }
-  }
-  .dragable                       { list-style: none; margin: 0; padding: 0;
-    li                            { background: $white; border: 1px solid $lightgray; font-size: 14px; height: 50px; line-height: 50px; margin-bottom: 20px; padding: 0 20px; position: relative;
-      .handle                     { color: $reservation-gray; cursor: grab; display: block; font-size: 28px; height: 100%; line-height: 50px; position: absolute; right: 0; text-align: center; top: 0; width: 40px; }
-      &:last-child                { margin-bottom: 0; }
-    }
-  }
-  .extra-margin                   { margin-bottom: 30px; }
-  form.food-item                  {
-    textarea                      { height: 170px; }
-    .price-type                   {
-      .price-radio                { height: 48px; padding: 10px 0; }
-      .form-group                 { margin: 0; }
-    }
-    .add-something                { font-size: 14px; padding: 0; }
-  }
-  .resetsave                      { margin: 30px 0;
-    .btn                          { margin: 0 5px; }
-  }
-
-  // ORDERS
-  .order-info                     { margin-bottom: 30px; line-height: 24px;
-    strong                        { font-weight: 500; }
-  }
 }

@@ -4,6 +4,7 @@ angular.module('accountAdminApp')
   .controller('OrdersCtrl', function($scope, OrderService, $filter) {
     $scope.pageTitle = 'Orders';
 
+    $scope.foodItems = $scope.main.foodItems;
     $scope.orders = $scope.main.orders;
     $scope.customers = $scope.main.customers;
     $scope.states = $scope.main.states;

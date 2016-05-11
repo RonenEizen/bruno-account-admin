@@ -1,7 +1,7 @@
 <form name="orderForm" class="custom-form" novalidate>
   <div class="row">
     <div class="col-md-12">
-      <h1 class="text-center">Edit Order No. {{modal.object._id}}</h1>
+      <h1 class="text-center">Edit Order No. {{object._id}}</h1>
     </div>
   </div><!-- END .row -->
 
@@ -10,7 +10,7 @@
       <div class="form-group">
         <label class="control-label">Customer</label>
         <fieldset>
-          <select name="customer" class="form-control" ng-model="modal.object.owner" required ng-options="customer._id as (customer.fname + ' ' +customer.lname) for customer in customers"></select>
+          <select name="customer" class="form-control" ng-model="object.owner" required ng-options="customer._id as (customer.fname + ' ' +customer.lname) for customer in customers"></select>
         </fieldset>
         <p ng-show="orderForm.customer.$error.required && orderForm.customer.$touched" class="help-block">This is a required field.</p>
       </div>
@@ -19,7 +19,7 @@
       <div class="form-group">
         <label class="control-label">Type</label>
         <fieldset>
-          <select name="type" class="form-control" ng-model="modal.object.type" required>
+          <select name="type" class="form-control" ng-model="object.type" required>
             <option value="pickup">Pickup</option>
             <option value="delivery">Delivery</option>
           </select>
@@ -31,7 +31,7 @@
 
   <div class="row">
     <div class="col-md-12">
-      <div class="table order-table">
+      <div class="table table-default table-edit-order">
         <div class="thead">
           <div class="tr">
             <div class="th">Food Item</div>
@@ -43,33 +43,28 @@
         </div><!-- END .thead -->
 
         <div class="tbody">
-          <div class="tr" ng-repeat="item in modal.object.items">
+          <div class="tr" ng-repeat="item in object.items">
             <div class="td">
               <div class="form-group">
                 <fieldset>
-                  <select name="item" ng-model="item._id" class="form-control">
-                    <option value="1">Vodka</option>
-                    <option value="2">Beer</option>
-                    <option value="3">Cachaça</option>
-                  </select>
+                  <select name="item" ng-model="item._id" class="form-control" ng-options="item._id as item.name for item in foodItems"></select>
                 </fieldset>
               </div>
             </div>
-            <div class="td"></div>
+            <div class="td">{{item.category}}</div>
             <div class="td">
               <div class="form-group">
                 <input type="number" ng-model="item.qty" class="form-control" min="1">
               </div>
             </div>
-            <div class="td text-right">{{item.qty ? item.qty + ' &times; ' : ''}}</div>
-            <div class="td"><i class="icon-close" ng-click="modal.object.items.splice(index,1)"></i></div>
+            <div class="td">{{item.qty ? item.qty + ' &times; ' + item.price : ''}}</div>
+            <div class="td"><i class="icon-close" ng-click="object.items.splice($index,1)"></i></div>
           </div><!-- END .tr -->
         </div><!-- END .tbody -->
       </div><!-- END .table -->
-      <div class="pull-left">
-        <a ng-click="modal.object.items.push({qty: 1})">+ Add Item</a>
-      </div>
-      <div class="pull-right">Total amount: <strong>{{modal.object.total | currency}}</strong></div>
+
+      <div class="pull-left"><a ng-click="object.items.push({qty: 1})">+ Add Item</a></div>
+      <div class="pull-right">Total amount: <strong>{{object.total | currency}}</strong></div>
     </div>
   </div><!-- END .row -->
 

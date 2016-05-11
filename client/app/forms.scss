@@ -16,7 +16,7 @@ form.custom-form                  {
   input:not([type="radio"]),
   select                          { box-shadow: none; font-size: 14px; height: 48px; }
   textarea                        { box-shadow: none; font-size: 14px; height: 110px; overflow: scroll; resize: none; }
-  fieldset,
+  select,
   input:not([type="checkbox"]),
   input:not([type="radio"]),
   textarea                        { border: 1px solid $column-picker-bd; border-radius: 2px;
@@ -24,8 +24,9 @@ form.custom-form                  {
   }
   fieldset                        { position: relative;
     &:before                      { color: $gray; content: '▼'; font-size: 12px; position: absolute; right: 6px; top: 18px; }
-    select                        { appearance: none; background: linear-gradient($selectbg-start, $selectbg-stop); border: none; border-radius: 0;
+    select                        { appearance: none; background: linear-gradient($selectbg-start, $selectbg-stop); border-radius: 0; padding-right: 20px;
       &:focus                     { box-shadow: none; }
+      &.ng-invalid.ng-touched     { border-color: $red; }
     }
   }
   .taggroup                       { border: 1px solid $lightgray; padding: 6px 12px;

@@ -5,56 +5,62 @@
           <h1 class="text-center">View Customer</h1>
         </div>
       </div><!-- END .row -->
-      <div class="row">
+
+      <div class="row row-info">
         <div class="col-md-6">
           <p><strong>First Name</strong><br>
-          {{modal.object.fname}}</p>
+          {{object.fname}}</p>
         </div>
         <div class="col-md-6">
           <p><strong>Last Name</strong><br>
-          {{modal.object.lname}}</p>
+          {{object.lname}}</p>
         </div>
       </div><!-- END .row -->
-      <div class="row">
+
+      <div class="row row-info">
         <div class="col-md-6">
           <p><strong>Home Phone</strong><br>
-          {{modal.object.homePhone}}</p>
+          {{object.homePhone | phone}}</p>
         </div>
         <div class="col-md-6">
           <p><strong>Mobile Phone</strong><br>
-          {{modal.object.mobilePhone}}</p>
+          {{object.mobilePhone | phone}}</p>
         </div>
       </div><!-- END .row -->
-      <div class="row">
+
+      <div class="row row-info">
         <div class="col-md-6">
           <p><strong>Personal Email</strong><br>
-          {{modal.object.email}}</p>
+          {{object.email}}</p>
         </div>
         <div class="col-md-6">
           <p><strong>Work Email</strong><br>
-          {{modal.object.workEmail}}</p>
+          {{object.workEmail}}</p>
         </div>
       </div><!-- END .row -->
-      <div class="row">
+
+      <div class="row row-info">
         <div class="col-md-12">
           <p><strong>Street Address</strong><br>
-          {{modal.object.addr}}</p>
+          {{object.addr}}</p>
         </div>
       </div><!-- END .row -->
-      <div class="row">
+
+      <div class="row row-info">
         <div class="col-md-6">
           <p><strong>City</strong><br>
-          {{modal.object.city}}</p>
+          {{object.city}}</p>
         </div>
         <div class="col-md-3">
           <p><strong>State</strong><br>
-          {{modal.object.state}}</p>
+          {{object.state}}</p>
         </div>
         <div class="col-md-3">
           <p><strong>ZIP</strong><br>
-          {{modal.object.zip}}</p>
+          {{object.zip}}</p>
         </div>
       </div><!-- END .row -->
+
       <div class="row">
         <div class="col-md-12 resetsave text-center">
           <button class="btn btn-default" ng-click="main.go('main.customers')">Cancel</button>

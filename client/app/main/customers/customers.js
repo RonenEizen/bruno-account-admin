@@ -8,14 +8,14 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/customers/customers.html',
         controller: 'CustomersCtrl'
       })
-      .state('main.customers.create', {
-        url: '/create',
+      .state('main.createCustomer', {
+        url: '/createCustomer',
         templateUrl: 'app/main/customers/createCustomerModal.html'
       })
       .state('main.customers.cust', {
         abstract: true,
         url: '/:_id',
-        templateUrl: 'app/main/customers/CustomerModal.html'
+        templateUrl: 'app/main/customers/customerModal.html'
       })
       .state('main.customers.cust.view', {
         url: '/view',

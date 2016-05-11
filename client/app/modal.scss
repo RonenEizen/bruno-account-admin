@@ -11,6 +11,9 @@
   .icon-close                     { color: $gray; font-size: 14px; line-height: 48px; opacity: 1; transition: 500ms ease all;
     &:hover                       { color: $red; }
   }
+  .row-info                       { margin-bottom: 30px; line-height: 24px;
+    strong                        { font-weight: 500; }
+  }
   .image                          { max-height: 170px; display: block; }
   .status                         {
     &.cancelled                   { color: $red; }
@@ -42,9 +45,6 @@
 
 
   // ORDERS
-  .order-info                     { margin-bottom: 30px; line-height: 24px;
-    strong                        { font-weight: 500; }
-  }
   .table                          {
     &.food-item-table             { table-layout: auto; margin: 0;
       .tbody                      { margin-top: 10px; }
@@ -71,7 +71,7 @@
     .add-something                { font-size: 14px; padding: 0; }
   }
   .table-view-order               { table-layout: auto;
-    .td, .th                      {
+    .th                           {
       &:nth-child(1)              { width: 45%; }
       &:nth-child(2)              { width: 25%; }
       &:nth-child(3)              { width: 15%; }

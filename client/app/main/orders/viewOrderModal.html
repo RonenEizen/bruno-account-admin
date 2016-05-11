@@ -4,7 +4,7 @@
   </div>
 </div><!-- END .row -->
 
-<div class="row order-info">
+<div class="row row-info">
   <div class="col-md-4">
     <strong class="control-label">Customer</strong><br>
     <span ng-bind="customerData(object.owner, 'name')"></span>
@@ -19,7 +19,7 @@
   </div>
 </div><!-- END .row -->
 
-<div class="row order-info">
+<div class="row row-info">
   <div class="col-md-4">
     <strong class="control-label">Address</strong><br>
     <span ng-bind="customerData(object.owner, 'addr')"></span>
@@ -35,7 +35,7 @@
   </div>
 </div><!-- END .row -->
 
-<div class="row order-info">
+<div class="row row-info">
   <div class="col-md-4" ng-switch="object.type">
     <strong class="control-label">Type</strong><br>
     <span ng-switch-when="pickup">Pickup</span>
@@ -54,7 +54,7 @@
   </div>
 </div><!-- END .row -->
 
-<div class="row order-info">
+<div class="row row-info">
   <div class="col-md-4">
     <strong>Date</strong><br>
     <span>{{object.createdAt | date: 'MMMM d, yyyy, H:mm a'}}</span>

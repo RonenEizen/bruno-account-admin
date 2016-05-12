@@ -136,7 +136,7 @@
       }
     }
     li                            { float: left; line-height: 60px; width: calc(100% / 6);
-      &:last-child                { text-align: right; }
+      &:nth-child(6)              { text-align: right; }
     }
     .order-details                { background: $selectbg-stop; clear: both; margin: 0; padding: 0 15%; position: relative;
       .icon-close                 { padding: 0; position: absolute; right: 20px; top: 20px; }

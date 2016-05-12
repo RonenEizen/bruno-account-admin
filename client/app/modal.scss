@@ -8,7 +8,7 @@
   h4                              { font: medium 16px $sans-font;
     &.table-title                 { border-bottom: 2px solid $black; font: 500 16px $sans-font; margin: 20px 0 0; }
   }
-  .icon-close                     { color: $gray; font-size: 14px; line-height: 48px; opacity: 1; transition: 500ms ease all;
+  .icon-close                     { color: $gray; font-size: 14px; opacity: 1; transition: 500ms ease all;
     &:hover                       { color: $red; }
   }
   .row-info                       { margin-bottom: 30px; line-height: 24px;
@@ -126,13 +126,29 @@
 
 
   // CUSTOMERS
-  .customer-orders                { background: $headerbg; }
-  .table                          {
-    &.customer-orders-table       { margin-top: 20px; position: relative;
-      .td                         { position: relative;
-        i                         { position: absolute; left: -15px; font-size: 8px; top: 20px;
-          &.icon-triangle_up      { font-size: 6px; }
+  .customer-orders-table          {
+    ul                            { list-style: none; border-bottom: 1px solid $border; margin: 0; padding: 0; position: relative;
+      &:first-child               { border-bottom: 2px solid $black; font: 500 14px $serif-font;
+        li                        { line-height: 1; padding-bottom: 5px; }
+      }
+      > span                      { padding: 5px; position: absolute; left: -20px; font-size: 8px; top: 20px;
+        &.icon-triangle_up        { font-size: 6px; }
+      }
+    }
+    li                            { float: left; line-height: 60px; width: calc(100% / 6);
+      &:last-child                { text-align: right; }
+    }
+    .order-details                { background: $selectbg-stop; clear: both; margin: 0; padding: 0 15%; position: relative;
+      .icon-close                 { padding: 0; position: absolute; right: 20px; top: 20px; }
+      .table                      { margin: 0; padding-top: 20px;
+        .tr:last-child .td        { border-bottom: 0; }
+        .th                       { padding: 0 0 5px;
+          &:nth-child(1)          { width: 45%; }
+          &:nth-child(2)          { width: 25%; }
+          &:nth-child(3)          { width: 15%; }
+          &:nth-child(4)          { width: 15%; }
         }
+        .td                       { border-color: $column-picker-bd; }
       }
     }
   }

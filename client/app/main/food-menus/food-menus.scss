@@ -10,7 +10,7 @@
     }
     h2                            { font: 500 18px $sans-font; }
     .table                        { width: 100%;
-      .td                         { height: 65px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      .td                         { height: 65px;
         &:nth-child(1)            { width: 20%; }
         &:nth-child(2)            { width: 70%; }
         &:nth-child(3)            { width: 10%; }

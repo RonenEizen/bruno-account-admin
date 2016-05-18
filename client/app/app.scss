@@ -79,12 +79,12 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
       font-style: normal;
   }
   [class^="icon-"],
-  [class*=" icon-"]                 { font-family: 'BrunoIcons' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale; }
+  [class*=" icon-"]                 { font-family: 'BrunoIcons' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; }
   .icon-search:before               { content: "\e905"; }
   .icon-hamburger_menu:before       { content: "\e900"; }
   .icon-chevron_right:before        { content: "\e901"; }
   .icon-chevron_down:before         { content: "\e902"; }
-  .icon-export:before               { content: "\e903"; }
+  .icon-export_data:before          { content: "\e903"; }
   .icon-link_out:before             { content: "\e904"; }
   .icon-close:before                { content: "\e906"; }
   .icon-edit_pencil:before          { content: "\e907"; }
@@ -95,7 +95,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   .icon-Banner:before               { content: "\e90c"; }
   .icon-grid:before                 { content: "\e90d"; }
   .icon-filter:before               { content: "\e90e"; }
-  .icon-preview_eye:before          { content: "\e90f"; }
+  .icon-preview:before              { content: "\e90f"; }
   .icon-sort_triangles:before       { content: "\e910"; }
   .icon-triangle_down:before        { content: "\e911"; }
   .icon-triangle_up:before          { content: "\e912"; }
@@ -143,8 +143,8 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Helvetica, Ro
   $darkgray:                        #535353;
   $darkgray1:                       #464646;
   $darkgray2:                       #343434;
-  $green1:                          #00AB2E;
-  $orange:                          #FD9B26;
+  $green1:                          #00A90E;
+  $orange:                          #FF9500;
 
 // Component styles are injected through grunt
 // injector
@@ -295,7 +295,7 @@ header.top                        { background: $headerbg; border-bottom: 1px so
     &:last-child                  { text-align: right; }
     .filter                       { cursor: pointer; margin-left: -15px; }
   }
-  .td                             { border-bottom: 1px solid $border; }
+  .td                             { border-bottom: 1px solid $border; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 }
 .table-default                    {
   .th                             { padding: 8px 0;

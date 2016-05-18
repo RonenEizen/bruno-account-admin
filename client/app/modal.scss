@@ -2,9 +2,9 @@
   .close                          { clear: both; color: $darkgray; font-size: 18px; opacity: 1; padding: 10px; }
   h1                              { font: 300 36px $serif-font; margin: 40px 0 30px; position: relative;
     &.channel-heading             { font-size: 2.3rem; text-align: center; }
-    button.btn                    { background: none; bottom: 10px; color: $blue; font-size: 2rem; line-height: 3rem; padding: 0; position: absolute; right: 0; }
+    button.btn                    { background: none; bottom: 8px; color: $blue; font-size: 16px; padding: 0; position: absolute; right: 0; }
   }
-  h3                              { }
+  h3                              { font: 300 16px $sans-font; }
   h4                              { font: medium 16px $sans-font;
     &.table-title                 { border-bottom: 2px solid $black; font: 500 16px $sans-font; margin: 20px 0 0; }
   }
@@ -35,7 +35,7 @@
   }
   form.custom-form                {
     .bottom-text                  { padding-top: 30px;
-      small                       { color: $lightgray; }
+      small                       { color: $reservation-gray; }
     }
   }
   .top-instructions               { border-bottom: 1px solid $lightgray; font-size: 18px; margin-bottom: 30px; text-align: center; }
@@ -98,26 +98,43 @@
 
 
   // MARKETING
-  .channel-nav                    { border-bottom: 1px solid $blue; margin-bottom: 20px; }
-  .nav-tabs                       { border-bottom: none;
-    li                            { text-align: center; width: 20%;
-      &.active                    {
-        a                         { background: $white; border: 1px solid $blue; }
-      }
-      a                           { background: $headerbg; border: 1px solid $lightgray; border-bottom: 1px solid $blue; border-radius: 0; font-size: 3rem; margin: 0; }
+  // view campaign
+  .table-campaign                 { margin-top: 35px;
+    .th                           { border: none; font: 300 16px $sans-font; }
+    .td                           { padding-bottom: 10px; vertical-align: bottom;
+      button                      { background: none; border: none; color: $blue; }
     }
   }
+
+  // channels header
+  .channel-nav                    { border-bottom: 1px solid $blue; margin-bottom: 20px; }
+  .nav-tabs                       { border-bottom: none;
+    li                            { font-size: 64px; text-align: center; width: 20%;
+      &.active                    {
+        a                         { background: $white; border: 1px solid $blue; border-bottom-color: $white;
+          &:hover                 { color: inherit; }
+        }
+      }
+      a                           { background: $column-picker; border: 1px solid $column-picker-bd; border-bottom: 1px solid $blue; border-radius: 0; line-height: 1; margin: 0; padding: 15px 0;
+        &:hover                   { color: lighten($blue, 10%); }
+      }
+    }
+  }
+
+  // facebook
   .wider-row                      { margin-left: -45px; margin-right: -45px; }
   .googlemap                      { margin-bottom: 10px; position: relative;
     iframe                        { border: none; height: 350px; width: 100%; }
     .reach                        { right: -220px; position: absolute; top: 0; width: 200px;
-      h4                          { color: $lightgray; font-size: 16px; font-weight: bold; margin: 0}
-      strong                      { color: $lightgray2; display: block; font-size: 16px; margin: 10px 0; }
-      p                           { color: $black; font-size: 13px; }
+      h3                          { color: $reservation-gray; font-size: 14px; font-weight: 500; margin: 0}
+      strong                      { color: $gray; display: block; font-size: 14px; margin: 10px 0; }
+      p                           { color: $black; font-size: 12px; }
     }
   }
-  .age-range                      { vertical-align: middle;
-    select                        { display: inline-block; width: 100px; }
+  .age-range                      { color: $reservation-gray; font-size: 14px; vertical-align: middle;
+    span                          { margin: 0 10px; }
+    fieldset                      { display: inline-block; }
+    select                        { width: 100px; }
   }
   .campaign-image                 {
     img                           { width: 100%; }

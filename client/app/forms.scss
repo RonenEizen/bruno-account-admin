@@ -24,7 +24,7 @@ form.custom-form                  {
   }
   fieldset                        { position: relative;
     &:before                      { color: $gray; content: '▼'; font-size: 12px; position: absolute; right: 6px; top: 18px; }
-    select                        { appearance: none; background: linear-gradient($selectbg-start, $selectbg-stop); border-radius: 0; padding-right: 20px;
+    select                        { appearance: none; background: linear-gradient($selectbg-start, $selectbg-stop); border-radius: 2px; color: $reservation-gray; padding-right: 20px;
       &:focus                     { box-shadow: none; }
       &.ng-invalid.ng-touched     { border-color: $red; }
     }
@@ -34,6 +34,14 @@ form.custom-form                  {
   }
   .label                          { background: $lightgray; border-radius: 0; color: $darkgray; font-size: 1.6rem; font-weight: 400; padding: 5px 10px; }
   .form-control-feedback          { color: $reservation-gray; top: 16px; }
+  .btn-group                      {
+    label                         { background: $column-picker; border-color: $column-picker-bd; color: $gray; font: 500 14px $serif-font;
+      &:active                    { box-shadow: none; }
+      &:hover                     { opacity: .7; }
+      &.active                    { background: $blue; border-color: $blue; box-shadow: none; color: $white; }
+
+    }
+  }
 }
 
 // RESTYLED CHECKBOXES
@@ -50,7 +58,8 @@ form.custom-form                  {
 }
 
 // RESTYLED RADIOS
-label.radio-inline                { line-height: 1; padding-left: 20px; position: relative;
+label.radio,
+label.radio-inline                { font-weight: normal; line-height: 1; padding-left: 20px; position: relative;
   [type="radio"]                  { position: absolute; left: -9999px;
     &:not(:checked) ~ span,
     &:checked ~ span              { appearance: none; top: 0; left: 0; position: absolute;

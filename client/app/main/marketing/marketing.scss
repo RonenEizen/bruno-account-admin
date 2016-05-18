@@ -1,8 +1,8 @@
 .marketing                        { padding: 30px 15px;
   .table.campaigns                {
-    .channel                      { font: normal normal normal 25px 'BrunoIcons' !important; speak: none; line-height: 1; margin-right: 15px; text-transform: none; -webkit-font-smoothing: antialiased; moz-osx-font-smoothing: grayscale;
+    .channel                      { font: normal normal normal 24px 'BrunoIcons' !important; speak: none; line-height: 1; margin-right: 20px; text-transform: none;
       &.enabled                   { color: $blue; }
-      &.disabled                  { color: $lightgray; }
+      &.disabled                  { color: $column-picker-bd; }
       &.bn:before                 { content: "\e90c"; }
       &.em:before                 { content: "\e90b"; }
       &.fb:before                 { content: "\e908"; }

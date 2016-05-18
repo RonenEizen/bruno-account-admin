@@ -1,11 +1,16 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('MarketingCtrl', function ($scope) {
+  .controller('MarketingCtrl', function ($scope, $state) {
     $scope.pageTitle = 'Marketing > Campaigns';
 
     $scope.campaignsStatus = ['Cancelled', 'Current', 'Expiring', 'Expired'];
     $scope.campaigns = $scope.main.campaigns;
+
+    $scope.$watchCollection(
+      () => { return $state.current.url; },
+      () => { $scope.channelTab = $state.current.url.slice(1); }
+    );
 
     // Columns
     $scope.displayColumns = { campaign: true, enabled: true, disabled: true, status: true };

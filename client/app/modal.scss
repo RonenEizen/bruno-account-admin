@@ -98,6 +98,10 @@
 
 
   // MARKETING
+  .map                            { margin-bottom: 10px; position: relative;
+    iframe                        { border: none; height: 350px; width: 100%; }
+  }
+
   // view campaign
   .table-campaign                 { margin-top: 35px;
     .th                           { border: none; font: 300 16px $sans-font; }
@@ -123,22 +127,32 @@
 
   // facebook
   .wider-row                      { margin-left: -45px; margin-right: -45px; }
-  .googlemap                      { margin-bottom: 10px; position: relative;
-    iframe                        { border: none; height: 350px; width: 100%; }
-    .reach                        { right: -220px; position: absolute; top: 0; width: 200px;
-      h3                          { color: $reservation-gray; font-size: 14px; font-weight: 500; margin: 0}
-      strong                      { color: $gray; display: block; font-size: 14px; margin: 10px 0; }
-      p                           { color: $black; font-size: 12px; }
-    }
-  }
   .age-range                      { color: $reservation-gray; font-size: 14px; vertical-align: middle;
     span                          { margin: 0 10px; }
     fieldset                      { display: inline-block; }
     select                        { width: 100px; }
   }
+  .facebook-reach                 { right: -220px; position: absolute; top: 0; width: 200px;
+    h3                            { color: $reservation-gray; font-size: 14px; font-weight: 500; margin: 0}
+    strong                        { color: $gray; display: block; font-size: 14px; margin: 10px 0; }
+    p                             { color: $black; font-size: 12px; }
+  }
   .campaign-image                 {
     img                           { width: 100%; }
     ul                            { color: $lightgray2; font-size: 1.3rem; margin-top: 20px; padding: 0; }
+  }
+
+  // google
+  .googlemap                      { border: 1px solid $border; border-radius: 2px; margin-bottom: 20px; padding-bottom: 10px; text-align: center;
+    strong                        { color: $gray; font-size: 14px; font-weight: 700; }
+    .range-slider                 { margin: 0 20px; }
+  }
+  .what-to-advertise              { padding-top: 20px; position: relative; }
+  .google-reach                   { border-left: 1px solid $border; color: $gray; right: -220px; padding-left: 20px; position: absolute; top: 40px; width: 200px;
+    h4                            { color: $reservation-gray; font-size: 14px; font-weight: 500; margin: 0; }
+    strong                        { display: block; font-size: 14px; margin: 10px 0 0; }
+    small                         { font-size: 12px; }
+    p                             { font-size: 12px; margin-top: 20px; }
   }
 
 

@@ -18,7 +18,58 @@
         <div ng-show="enableGoogleplus">
           <div class="row">
             <div class="col-md-12">
-              Google content here
+              <h3>Select your audience</h3>
+              <div class="form-group">
+                <label class="control-label">Locations</label>
+                <fieldset>
+                  <select class="form-control">
+                    <option value="1">Target by distance from business</option>
+                    <option value="2">Target by user position</option>
+                    <option value="3">Target by phone area code</option>
+                  </select>
+                </fieldset>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Where do you want your ad to appear?</label>
+                <input type="text" class="form-control" placeholder="6121 19th Avenue, Brooklyn, NY 11204-2339, United States" />
+              </div>
+
+              <div class="map googlemap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d58420.22179022014!2d-51.171596471397784!3d-30.028410566185656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1443130059406"></iframe>
+                <strong>Targetting radius</strong>
+                <div class="range-slider">
+                  <p>15 miles</p>
+                  <input type="range">
+                  <small>(TODO: style this slider)</small>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">What language do you want to advertise in?</label>
+                <fieldset>
+                  <select class="form-control">
+                    <option value="1">English</option>
+                    <option value="2">Portuguese</option>
+                    <option value="3">Russian</option>
+                  </select>
+                </fieldset>
+              </div>
+
+              <div class="what-to-advertise">
+                <h3>Select what you want to advertise</h3>
+                <div class="form-group">
+                  <label class="control-label">What product or service do you want to advertise?</label>
+                  <input type="text" class="form-control" placeholder="For example: Food Service" />
+                </div>
+
+                <div class="google-reach">
+                  <h4>Potential Audience</h4>
+                  <strong>1,018,782 people</strong>
+                  <small>could see your ad per month</small>
+                  <p>This is an estimate of how many people search for businesses like yours in the location you specified. Actual ad view may vary.</p>
+                </div>
+              </div>
             </div>
           </div><!-- END .row -->
         </div><!-- END  -->

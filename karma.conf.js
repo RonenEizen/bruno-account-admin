@@ -26,6 +26,8 @@ module.exports = function(config) {
       'client/bower_components/Chart.js/Chart.js',
       'client/bower_components/angular-chart.js/dist/angular-chart.js',
       'client/bower_components/ui-select/dist/select.js',
+      'client/bower_components/trix/dist/trix.js',
+      'client/bower_components/angular-trix/dist/angular-trix.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/app.js',

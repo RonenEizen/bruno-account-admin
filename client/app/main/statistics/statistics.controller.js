@@ -21,16 +21,29 @@ angular.module('accountAdminApp')
     $scope.rearranging = false;
 
     var chartOptions = {
+      tooltips: {
+        backgroundColor: 'rgba(7,185,179,1)',
+        titleFontSize: 14,
+        titleFontColor: '#666',
+        titleMarginBottom: 20,
+        bodyFontColor: '#999'
+      },
+      legend: {
+        display: false
+      },
       scales: {
         xAxes: [{
-          display: true
+          display: true,
+          gridLines: {
+            drawOnChartArea: false
+          }
         }],
         yAxes: [{
-          display: true
-        }],
-        gridLines: {
-          display: true
-        }
+          display: true,
+          gridLines: {
+            drawBorder: false
+          }
+        }]
       },
       elements: {
         line: {
@@ -39,19 +52,18 @@ angular.module('accountAdminApp')
           borderWidth: 3
         },
         point: {
-          borderWidth: 0,
+          radius: 0,
           hitRadius: 20,
-          hoverRadius: 0,
-          hoverBorderWidth: 1
+          hoverRadius: 0
         },
         rectangle: {
-          // backgroundColor: 'rgba(0,0,0,1)',
           borderWidth: 0
         }
       }
     }
-    var randomScalingFactor = () => Math.round(Math.random() * 100)
+    var randomScalingFactor = () => Math.floor((Math.random() + 1) * 100)
 
+    // setTimeout set to zero puts rendering to the bottom of the stack
     setTimeout(function(){
       var chartOrdersTrends = new Chart(document.getElementById('chart-orders-trends'), {
         type: 'line',
@@ -60,13 +72,14 @@ angular.module('accountAdminApp')
           datasets: [{
             label: '2015',
             data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-            backgroundColor: '#07B9B3',
-            borderColor: '#07B9B3'
+            backgroundColor: '#999999',
+            borderColor: '#999999',
+            borderDash: [2]
           },{
             label: '2016',
             data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-            backgroundColor: '#999999',
-            borderColor: '#999999'
+            backgroundColor: '#07B9B3',
+            borderColor: '#07B9B3',
           }]
         },
         options: chartOptions
@@ -78,13 +91,13 @@ angular.module('accountAdminApp')
           datasets: [{
             label: '2015',
             data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-            backgroundColor: '#07B9B3',
-            borderColor: '#07B9B3'
+            backgroundColor: '#999999',
+            borderColor: '#999999'
           },{
             label: '2016',
             data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-            backgroundColor: '#999999',
-            borderColor: '#999999'
+            backgroundColor: '#07B9B3',
+            borderColor: '#07B9B3'
           }]
         },
         options: chartOptions
@@ -101,8 +114,8 @@ angular.module('accountAdminApp')
           },{
             label: '2016',
             data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-            backgroundColor: '#999999',
-            borderColor: '#999999'
+            backgroundColor: '#07B9B3',
+            borderColor: '#07B9B3'
           }]
         },
         options: chartOptions
@@ -140,13 +153,13 @@ angular.module('accountAdminApp')
           datasets: [{
             label: '2015',
             data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-            backgroundColor: '#F44B99',
-            borderColor: '#F44B99'
+            backgroundColor: '#999999',
+            borderColor: '#999999'
           },{
             label: '2016',
             data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-            backgroundColor: '#999999',
-            borderColor: '#999999'
+            backgroundColor: '#F44B99',
+            borderColor: '#F44B99'
           }]
         },
         options: chartOptions
@@ -156,21 +169,15 @@ angular.module('accountAdminApp')
         data: {
           labels: ['Restaurant Website', 'In-person', 'Seamless', 'Grubhub'],
           datasets: [{
-            label: '2013',
-            data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-            backgroundColor: '#FF8300',
-            borderColor: '#FF8300'
-          },{
-            label: '2014',
+            label: '2015',
             data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
             backgroundColor: '#999999',
             borderColor: '#999999'
           },{
-            label: '2015',
-            data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-          },{
             label: '2016',
-            data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+            data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+            backgroundColor: '#FF8300',
+            borderColor: '#FF8300'
           }]
         },
         options: chartOptions

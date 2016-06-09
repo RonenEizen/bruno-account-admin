@@ -7,20 +7,26 @@
         span                      { border-radius: 50%; height: 14px; width: 14px; }
       }
     }
+    .legend                       { color: $gray; display: flex; flex-flow: row nowrap; justify-content: flex-end; list-style: none;
+      li                          { align-items: center; display: flex; justify-content: flex-end; width: 90px;
+        i                         { background: #999; border-radius: 50%; display: block; height: 14px; margin-right: 10px; width: 14px; }
+      }
+    }
   }
-  .shadowed-subcontainer        { margin-top: 6px; padding: 20px;
-    .info-right                 { padding-top: 10px; text-align: right;
-      p                         { margin: 0; }
-      .colorful                 { color: $teal;
-        strong                  { color: $green; }
+  .shadowed-subcontainer          { margin-top: 6px; padding: 20px;
+    .info-right                   { padding-top: 10px; text-align: right;
+      p                           { margin: 0; }
+      .colorful                   { color: $teal;
+        strong                    { color: $green; }
       }
     }
-    .btn-group                  { float: left; }
-    .form-inline                { float: left; line-height: 36px; margin-left: 15px;
-      label                     { font-weight: 500; margin-right: 15px; }
-      .checkbox                 {
-        label                   { color: $gray; font-weight: 300; margin-right: 10px; top: -2px; }
+    .btn-group                    { float: left; }
+    .form-inline                  { float: left; line-height: 36px; margin-left: 15px;
+      label                       { font-weight: 500; margin-right: 15px; }
+      .checkbox                   {
+        label                     { color: $gray; font-weight: 300; margin-right: 10px; top: -2px; }
       }
     }
+    canvas                        { margin-top: 20px; }
   }
 }

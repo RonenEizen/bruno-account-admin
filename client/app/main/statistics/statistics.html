@@ -24,6 +24,7 @@
 </header>
 
 <div class="statistics">
+
   <div class="alert rearranging alert-warning" role="alert" ng-show="rearranging">Drag the areas below to change positions.
     <div class="pull-right"><button class="btn btn-primary" ng-click="rearranging=false">Finish And Save</button></div>
   </div>
@@ -51,12 +52,7 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <chart-legend>
-                  <ul class="line-legend text-right">
-                    <li><span style="background-color:rgba(151,187,205,1)"></span>2015</li>
-                    <li><span style="background-color:rgba(220,220,220,1)"></span>2016</li>
-                  </ul>
-                </chart-legend>
+                here goes the legend
               </div>
             </div><!-- END .row -->
 
@@ -89,7 +85,8 @@
                 </div><!-- END .col-md-4 -->
               </div><!-- END .row -->
 
-              <canvas class="chart chart-line" chart-data="ordersStats.trends.data" chart-labels="ordersStats.trends.labels" chart-series="ordersStats.trends.series" chart-options="chartOptions"></canvas>
+              <canvas id="chart-orders-trends"></canvas>
+
             </div><!-- END  ng-show="boxes.orders.currentTab === 'trends'" -->
 
             <div ng-show="boxes.orders.currentTab === 'time'">
@@ -116,7 +113,7 @@
                 </div><!-- END .col-md-12 -->
               </div><!-- END .row -->
 
-              <canvas class="chart chart-bar" chart-data="ordersStats.time.data" chart-labels="ordersStats.time.labels" chart-series="ordersStats.time.series" chart-options="chartOptions"></canvas>
+              <canvas id="chart-orders-time"></canvas>
             </div><!-- END  ng-show="boxes.orders.currentTab === 'time'" -->
 
             <div ng-show="boxes.orders.currentTab === 'types'">
@@ -151,7 +148,7 @@
                 </div><!-- END .col-md-12 -->
               </div><!-- END .row -->
 
-              <canvas class="chart chart-bar" chart-data="ordersStats.types.data" chart-labels="ordersStats.types.labels" chart-series="ordersStats.types.series" chart-options="chartOptions"></canvas>
+              <canvas id="chart-orders-types"></canvas>
             </div><!-- END  ng-show="boxes.orders.currentTab === 'types'" -->
           </div><!-- END .shadowed-subcontainer -->
         </div><!-- END .collapsable -->
@@ -177,11 +174,7 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <chart-legend>
-                  <ul class="line-legend text-right">
-                    <li><span style="background-color:rgba(151,187,205,1)"></span>2016</li>
-                  </ul>
-                </chart-legend>
+                here goes the legend
               </div>
             </div><!-- END .row -->
 
@@ -213,7 +206,7 @@
                 </div><!-- END .col-md-4 -->
               </div><!-- END .row -->
 
-              <canvas class="chart chart-line" chart-data="reservationsStats.trends.data" chart-labels="reservationsStats.trends.labels" chart-series="reservationsStats.trends.series" chart-options="chartOptions"></canvas>
+              <canvas id="chart-reservations-trends"></canvas>
             </div><!-- END  ng-show="boxes.reservations.currentTab === 'trends'" -->
 
             <div ng-show="boxes.reservations.currentTab === 'time'">
@@ -240,7 +233,7 @@
                 </div><!-- END .col-md-12 -->
               </div><!-- END .row -->
 
-              <canvas class="chart chart-bar" chart-data="reservationsStats.time.data" chart-labels="reservationsStats.time.labels" chart-series="reservationsStats.time.series" chart-options="chartOptions"></canvas>
+              <canvas id="chart-reservations-time"></canvas>
             </div><!-- END  ng-show="boxes.reservations.currentTab === 'time'" -->
 
             <div ng-show="boxes.reservations.currentTab === 'seating'">
@@ -267,7 +260,7 @@
                 </div><!-- END .col-md-12 -->
               </div><!-- END .row -->
 
-              <canvas class="chart chart-bar" chart-data="reservationsStats.seating.data" chart-labels="reservationsStats.seating.labels" chart-series="reservationsStats.seating.series" chart-options="chartOptions"></canvas>
+              <canvas id="chart-reservations-seating"></canvas>
             </div><!-- END  ng-show="boxes.reservations.currentTab === 'seating'" -->
           </div><!-- END .shadowed-subcontainer -->
         </div><!-- END .collapsable -->
@@ -292,11 +285,7 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <chart-legend>
-                  <ul class="line-legend text-right">
-                    <li><span style="background-color:rgba(151,187,205,1)"></span>2016</li>
-                  </ul>
-                </chart-legend>
+                here goes the legend
               </div>
             </div><!-- END .row -->
 
@@ -324,7 +313,7 @@
                 </div><!-- END .col-md-12 -->
               </div><!-- END .row -->
 
-              <canvas class="chart chart-bar" chart-data="paymentsStats.sources.data" chart-labels="paymentsStats.sources.labels" chart-series="paymentsStats.sources.series" chart-options="chartOptions"></canvas>
+              <canvas id="chart-payments-sources"></canvas>
             </div><!-- END  ng-show="boxes.payments.currentTab === 'sources'" -->
 
             <div ng-show="boxes.payments.currentTab === 'types'">
@@ -351,7 +340,8 @@
                 </div><!-- END .col-md-12 -->
               </div><!-- END .row -->
 
-              <canvas class="chart chart-bar" chart-data="paymentsStats.types.data" chart-labels="paymentsStats.types.labels" chart-series="paymentsStats.types.series" chart-options="chartOptions"></canvas>
+              <canvas id="chart-payments-types"></canvas>
+
             </div><!-- END  ng-show="boxes.payments.currentTab === 'types'" -->
           </div><!-- END .shadowed-subcontainer -->
         </div><!-- END .collapsable -->

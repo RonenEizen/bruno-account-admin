@@ -18,6 +18,9 @@
     }
     .grayout                      { background: $headerbg; height: calc(100% - 50px); left: 0; opacity: .5; position: absolute; top: 50px; width: 100%; z-index: 10; }
   }
+  .shadowed-subcontainer          {
+    .chart                        { margin: 20px 20px 10px 10px; width: calc(100% - 30px); }
+  }
   .table                          {
     .tr                           {
       .th                         { font-size: 14px; }

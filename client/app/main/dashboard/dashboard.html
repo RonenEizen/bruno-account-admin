@@ -260,7 +260,9 @@
         </header>
         <div class="collapsable" ng-show="!collapsed.orderTrends">
           <div class="shadowed-subcontainer">
-            <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="chartOptions"></canvas>
+            <div class="chart">
+              <canvas id="chartOrderTrends"></canvas>
+            </div>
           </div><!-- END .shadowed-subcontainer -->
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->
@@ -276,7 +278,9 @@
         </header>
         <div class="collapsable" ng-show="!collapsed.reservationTrends">
           <div class="shadowed-subcontainer">
-            <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="chartOptions"></canvas>
+            <div class="chart">
+              <canvas id="chartReservationTrends"></canvas>
+            </div>
           </div><!-- END .shadowed-subcontainer -->
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->

@@ -15,8 +15,8 @@
   <div class="row">
     <div class="col-md-6">
       <div class="tab-group">
-        <a ui-sref=".day"><div class="tab" ng-class="{active: view === 'day'}">Day View</div></a>
-        <a ui-sref=".week"><div class="tab" ng-class="{active: view === 'week'}">Week View</div></a>
+        <a ui-sref=".day" ng-click="setView('day')"><div class="tab" ng-class="{active: view === 'day'}">Day View</div></a>
+        <a ui-sref=".week" ng-click="setView('week')"><div class="tab" ng-class="{active: view === 'week'}">Week View</div></a>
       </div><!-- END .tab-group -->
     </div>
     <div class="col-md-6 current-time text-right">

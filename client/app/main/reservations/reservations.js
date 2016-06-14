@@ -12,12 +12,12 @@ angular.module('accountAdminApp')
       .state('main.reservations.day', {
         url: '/day',
         templateUrl: 'app/main/reservations/reservations-day.html',
-        controller: 'ReservationsCtrl'
+        controller: 'ReservationsDayCtrl'
       })
       .state('main.reservations.week', {
         url: '/week',
         templateUrl: 'app/main/reservations/reservations-week.html',
-        controller: 'ReservationsCtrl'
+        controller: 'ReservationsWeekCtrl'
       })
       .state('main.reservations.create', {
         url: '/create',

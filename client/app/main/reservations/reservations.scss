@@ -48,7 +48,7 @@
     .shadowed-container           { padding: 20px; }
     .calendar-side                { background: $white; border: 1px solid $border; position: relative;
       .scroll-left,
-      .scroll-right               { background: $border; color: $gray; height: 70px; line-height: 70px; opacity: 0; position: absolute; text-align: center; top: 50%; width: 24px; transition: ease all 1s; }
+      .scroll-right               { background: $border; color: $gray; cursor: pointer; height: 70px; line-height: 70px; opacity: 0; position: absolute; text-align: center; top: 50%; width: 24px; transition: ease all 1s; }
       .scroll-left                { left: -20px; border-radius: 0 2px 2px 0; }
       .scroll-right               { right: -20px; border-radius: 2px 0 0 2px; }
       &:hover                     {
@@ -137,7 +137,7 @@
       .tbody                      { overflow: auto;
         .tr                       {
           .td                     {
-            &:first-child         { border: none;
+            &:first-child         { border: none; overflow: visible;
               span                { font-size: 14px; font-weight: 500; position: relative; top: 16px; }
             }
           }

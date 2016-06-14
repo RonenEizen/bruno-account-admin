@@ -48,11 +48,16 @@
     .shadowed-container           { padding: 20px; }
     .calendar-side                { background: $white; border: 1px solid $border; position: relative;
       .scroll-left,
-      .scroll-right               { background: $gray; display: none; height: 60px; line-height: 60px; opacity: .6; position: absolute; text-align: center; top: 50%; width: 20px; transition: ease all 500ms; }
-      .scroll-right               { right: 0; }
+      .scroll-right               { background: $border; color: $gray; height: 70px; line-height: 70px; opacity: 0; position: absolute; text-align: center; top: 50%; width: 24px; transition: ease all 1s; }
+      .scroll-left                { left: -20px; border-radius: 0 2px 2px 0; }
+      .scroll-right               { right: -20px; border-radius: 2px 0 0 2px; }
       &:hover                     {
         .scroll-left,
-        .scroll-right             { display: block; }
+        .scroll-right             { opacity: .3;
+          &:hover                 { opacity: .6; }
+        }
+        .scroll-left              { left: 0; }
+        .scroll-right             { right: 0; }
       }
     }
     .all-day                      { border-bottom: 2px solid $border; font: 700 14px $serif-font; line-height: 40px; padding: 0 15px; }

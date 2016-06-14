@@ -4,8 +4,6 @@ angular.module('accountAdminApp')
   .controller('ReservationsCtrl', function ($scope, $interval, $location) {
     $scope.$parent.pageTitle = 'Reservations';
 
-    $scope.modal = $scope.main.modal;
-
     // $scope.reservations = $scope.main.ReservationService.reservations;
 
     // sets current tab
@@ -31,17 +29,49 @@ angular.module('accountAdminApp')
         m = new Date().getMinutes(),
         t = h + (m / 60);
 
+    // ruler posiiton
     $scope.leftPos = mult * t + (65 / 2) + 'px'; // (65 / 2) is used to center the ruler in the cell
 
-    var calWidth;
-
+    var calWidth,
+        calOverflow;
     setTimeout(function () {
-      calWidth = document.querySelector('.calendar-overflow').clientWidth;
-      document.querySelector('.calendar-overflow').scrollLeft = $scope.leftPos.replace('px','') - (calWidth / 2);
+      calOverflow = document.querySelector('.calendar-overflow');
+      calWidth = calOverflow.clientWidth;
+      calOverflow.scrollLeft = $scope.leftPos.replace('px','') - (calWidth / 2);
     }, 0);
 
-    $scope.scrollLeft = () => document.querySelector('.calendar-overflow').scrollLeft -= calWidth
-    $scope.scrollRight = () => document.querySelector('.calendar-overflow').scrollLeft += calWidth
+    // ease
+    Math.easeInOutQuad = function (t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) {
+        return c / 2 * t * t + b;
+      }
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    };
+
+    // scrollTo
+    function scrollToAnimated(to) {
+      var start = calOverflow.scrollLeft,
+        change = to - start,
+        currentTime = 0,
+        increment = 20,
+        raf,
+        duration = 500;
+
+      (function animateScroll() {
+        currentTime += increment;
+        calOverflow.scrollLeft = Math.easeInOutQuad(currentTime, start, change, duration);
+        if (currentTime < duration) {
+          raf = requestAnimationFrame(animateScroll);
+        } else {
+          cancelAnimationFrame(raf);
+        }
+      })();
+    }
+
+    $scope.scrollLeft = () => scrollToAnimated(calOverflow.scrollLeft - calWidth);
+    $scope.scrollRight = () => scrollToAnimated(calOverflow.scrollLeft + calWidth);
 
     // WEEK VIEW
     // set column width

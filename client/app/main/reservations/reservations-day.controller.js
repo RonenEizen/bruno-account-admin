@@ -4,20 +4,20 @@ angular.module('accountAdminApp')
   .controller('ReservationsDayCtrl', function ($scope) {
     // set the ruler position according to time of day (0 to 6305px)
     // 97 quarters * 65px = 6305px
-    var mult = 65 * 4, // this is the cell-size (65px = 15 min) for an hour (* 4)
+    var mult = 65 * 4, // this is the cell-width (65px = 15 min) for an hour (* 4)
         h = new Date().getHours(),
         m = new Date().getMinutes(),
         t = h + (m / 60);
 
-    // ruler posiiton
-    $scope.leftPos = mult * t + (65 / 2) + 'px'; // (65 / 2) is used to center the ruler in the cell
+    // ruler position
+    $scope.rulerPosY = mult * t + (65 / 2) + 'px'; // (65 / 2) is used to center the ruler in the cell
 
     var calWidth,
         calOverflow;
     setTimeout(function () {
       calOverflow = document.querySelector('.calendar-overflow');
       calWidth = calOverflow.clientWidth;
-      calOverflow.scrollLeft = $scope.leftPos.replace('px','') - (calWidth / 2);
+      calOverflow.scrollLeft = $scope.rulerPosY.replace('px','') - (calWidth / 2);
     }, 0);
 
     // ease

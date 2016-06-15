@@ -49,8 +49,8 @@
 
       <div class="overflow">
         <div class="table" ng-style="{ width: tableWidth}">
-          <div class="ruler" ng-style="{ width: tableWidth, top: rulerYPos }">
-            <i ng-style="{ left: rulerXPos }"></i>
+          <div class="ruler" ng-style="{ width: tableWidth, top: rulerPos.y }">
+            <i ng-style="{ left: rulerPos.x }"></i>
             <time>{{(currentDate.now() | date: 'h:mm a').toLowerCase()}}</time>
           </div>
           <div class="tbody">

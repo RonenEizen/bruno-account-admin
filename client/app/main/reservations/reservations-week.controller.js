@@ -8,6 +8,23 @@ angular.module('accountAdminApp')
 
     $scope.weekdays = { sun: 1, mon: 2, tue: 3, wed: 4, thu:5, fri: 6, sat: 7 };
 
-    $scope.rulerXPos = $scope.firstColWidth + $scope.colWidth * $scope.weekdays.sat - $scope.colWidth - 5; // 5px get the circle centered
-    $scope.rulerYPos = 180
+    var mult = 35, // this is the cell-height for an hour
+        h = new Date().getHours(),
+        m = new Date().getMinutes(),
+        w = new Date().getDay() + 1,
+        t = h + (m / 60);
+
+    $scope.rulerPos = {
+      x: $scope.firstColWidth + $scope.colWidth * w - $scope.colWidth - 5, // 5px get the circle centered
+      y: mult * t + 35 + 'px' // 35px is the height is the first unused row
+    }
+
+    var calWeek = document.querySelector('div.overflow'),
+        calOverflowHeight = calWeek.clientHeight,
+        calHeight = document.querySelector('.overflow > .table').clientHeight;
+
+    setTimeout(function () {
+      calWeek.scrollTop = $scope.rulerPos.y.replace('px','') - (calOverflowHeight/2);
+    }, 0)
+
   });

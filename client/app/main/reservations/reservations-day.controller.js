@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('ReservationsDayCtrl', function ($scope, $interval, $location) {
+  .controller('ReservationsDayCtrl', function ($scope) {
     // set the ruler position according to time of day (0 to 6305px)
     // 97 quarters * 65px = 6305px
     var mult = 65 * 4, // this is the cell-size (65px = 15 min) for an hour (* 4)

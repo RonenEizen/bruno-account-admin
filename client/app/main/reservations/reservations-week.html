@@ -21,10 +21,10 @@
 
   <div class="row calendar-widget">
     <div class="col-md-12 full-height">
-      <div class="table">
+      <div class="table" ng-style="{ width: tableWidth}">
         <div class="thead">
           <div class="tr">
-            <div class="th"></div>
+            <div class="th" ng-style="{ width: firstColWidth }"></div>
             <div class="th" ng-style="{ width: colWidth }">Sun 03</div>
             <div class="th" ng-style="{ width: colWidth }">Mon 04</div>
             <div class="th" ng-style="{ width: colWidth }">Tue 05</div>
@@ -34,7 +34,7 @@
             <div class="th" ng-style="{ width: colWidth }">Sat 09</div>
           </div><!-- END .tr -->
           <div class="tr">
-            <div class="th">all day</div>
+            <div class="th" ng-style="{ width: firstColWidth }">all day</div>
             <div class="th" ng-style="{ width: colWidth }"></div>
             <div class="th" ng-style="{ width: colWidth }"></div>
             <div class="th" ng-style="{ width: colWidth }"></div>
@@ -48,14 +48,14 @@
 
 
       <div class="overflow">
-        <div class="table">
-          <div class="ruler" ng-style="{ width: tableWidth }">
-            <i ng-style="{ left: rulerHPos }"></i>
+        <div class="table" ng-style="{ width: tableWidth}">
+          <div class="ruler" ng-style="{ width: tableWidth, top: rulerYPos }">
+            <i ng-style="{ left: rulerXPos }"></i>
             <time>{{(currentDate.now() | date: 'h:mm a').toLowerCase()}}</time>
           </div>
           <div class="tbody">
             <div class="tr" ng-repeat="hour in hours track by $index">
-              <div class="td"><span>{{hour}}</span></div>
+              <div class="td" ng-style="{ width: firstColWidth }"><span>{{hour}}</span></div>
               <div class="td" ng-style="{ width: colWidth }"></div>
               <div class="td" ng-style="{ width: colWidth }"></div>
               <div class="td" ng-style="{ width: colWidth }"></div>
@@ -65,7 +65,7 @@
               <div class="td" ng-style="{ width: colWidth }"></div>
             </div><!-- END .tr -->
             <div class="tr">
-              <div class="td"></div>
+              <div class="td" ng-style="{ width: firstColWidth }"></div>
               <div class="td" ng-style="{ width: colWidth }"></div>
               <div class="td" ng-style="{ width: colWidth }"></div>
               <div class="td" ng-style="{ width: colWidth }"></div>

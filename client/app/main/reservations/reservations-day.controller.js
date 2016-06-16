@@ -52,4 +52,4 @@ angular.module('accountAdminApp')
 
     $scope.scrollLeft = () => scrollToAnimated(calOverflow.scrollLeft - calWidth);
     $scope.scrollRight = () => scrollToAnimated(calOverflow.scrollLeft + calWidth);
-  });
+  })

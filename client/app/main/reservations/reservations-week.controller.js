@@ -5,8 +5,8 @@ angular.module('accountAdminApp')
     $scope.tableWidth = document.querySelector('.calendar-widget').clientWidth - 30;
     $scope.firstColWidth = 68;
     $scope.colWidth = Math.floor(($scope.tableWidth - $scope.firstColWidth) / 7);
-
     $scope.weekdays = { sun: 1, mon: 2, tue: 3, wed: 4, thu:5, fri: 6, sat: 7 };
+    $scope.isToday = (day) => day === new Date().getDay();
 
     var mult = 35, // this is the cell-height for an hour
         h = new Date().getHours(),

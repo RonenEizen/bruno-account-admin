@@ -90,14 +90,21 @@
     }
 
     .sidebar                      { height: 100%;
-      .date-picker                { background: $white; border: 1px solid $border; margin-top: 20px; padding: 10px;
-        .uib-daypicker            { width: 100%; }
+      .date-picker                { background: $white; border: 1px solid $border; border-radius: 2px; margin-top: 20px; padding: 10px;
+        .uib-daypicker            { table-layout: fixed; width: 100%; }
         button                    {
-          &.btn                   { background: none; padding: 5px 0; width: 100%; }
+          &.btn                   { background: none; font: 400 14px $sans-font; padding: 5px 0; width: 100%; }
           &.active                { background: none; box-shadow: none;
             span                  { background: $border; border-radius: 100%; padding: 6px; }
           }
+          strong                  { font-weight: 400; }
+          i                       { color: $gray; }
         }
+        thead tr                  {
+          &:first-child th        { padding-bottom: 10px; }
+          &:nth-child(2) th       { font-weight: 500; }
+        }
+        tbody tr td               { padding-top: 3px; }
       }
       .table-info                 { background: $border; border-top: 2px solid $red; margin-top: 20px; padding: 15px;
         h3                        { font: 700 18px $sans-font; margin: 0; margin-bottom: 10px;
@@ -129,8 +136,10 @@
           }
           &:nth-child(2)          {
             .th                   { border-bottom-width: 2px; }
+            .th.today             { background: $headerbg; }
           }
           .th:first-child         { border-right: none; }
+          .th.today               { color: $red; }
         }
       }
 
@@ -140,6 +149,7 @@
             &:first-child         { border: none; overflow: visible;
               span                { font-size: 14px; font-weight: 500; position: relative; top: 16px; }
             }
+            &.today               { background: $headerbg; }
           }
         }
         .booked                   { position: absolute; width: 19px; }

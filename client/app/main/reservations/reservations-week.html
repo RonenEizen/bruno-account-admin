@@ -25,23 +25,23 @@
         <div class="thead">
           <div class="tr">
             <div class="th" ng-style="{ width: firstColWidth }"></div>
-            <div class="th" ng-style="{ width: colWidth }">Sun 03</div>
-            <div class="th" ng-style="{ width: colWidth }">Mon 04</div>
-            <div class="th" ng-style="{ width: colWidth }">Tue 05</div>
-            <div class="th" ng-style="{ width: colWidth }">Wed 06</div>
-            <div class="th" ng-style="{ width: colWidth }">Thu 07</div>
-            <div class="th" ng-style="{ width: colWidth }">Fri 08</div>
-            <div class="th" ng-style="{ width: colWidth }">Sat 09</div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(0)}">Sun 03</div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(1)}">Mon 04</div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(2)}">Tue 05</div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(3)}">Wed 06</div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(4)}">Thu 07</div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(5)}">Fri 08</div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(6)}">Sat 09</div>
           </div><!-- END .tr -->
           <div class="tr">
             <div class="th" ng-style="{ width: firstColWidth }">all day</div>
-            <div class="th" ng-style="{ width: colWidth }"></div>
-            <div class="th" ng-style="{ width: colWidth }"></div>
-            <div class="th" ng-style="{ width: colWidth }"></div>
-            <div class="th" ng-style="{ width: colWidth }"></div>
-            <div class="th" ng-style="{ width: colWidth }"></div>
-            <div class="th" ng-style="{ width: colWidth }"></div>
-            <div class="th" ng-style="{ width: colWidth }"></div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(0)}"></div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(1)}"></div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(2)}"></div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(3)}"></div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(4)}"></div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(5)}"></div>
+            <div class="th" ng-style="{ width: colWidth }" ng-class="{'today': isToday(6)}"></div>
           </div><!-- END .tr -->
         </div><!-- END .thead -->
       </div><!-- END .table -->
@@ -56,23 +56,23 @@
           <div class="tbody">
             <div class="tr" ng-repeat="hour in hours track by $index">
               <div class="td" ng-style="{ width: firstColWidth }"><span>{{hour}}</span></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(0)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(1)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(2)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(3)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(4)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(5)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(6)}"></div>
             </div><!-- END .tr -->
             <div class="tr">
               <div class="td" ng-style="{ width: firstColWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
-              <div class="td" ng-style="{ width: colWidth }"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(0)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(1)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(2)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(3)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(4)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(5)}"></div>
+              <div class="td" ng-style="{ width: colWidth }" ng-class="{'today': isToday(6)}"></div>
             </div><!-- END .tr -->
 
             <!-- BOOKINGS -->

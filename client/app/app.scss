@@ -219,7 +219,7 @@ strong,
 .shadowed-container               { background: $headerbg; border: 1px solid $border; border-radius: 2px; margin-bottom: 20px; padding: 20px;
   header                          {
     h2                            { color: $blue; display: inline-block; font: 500 20px $serif-font; margin: 0 10px 0 0; }
-    i.pull-right                  { color: $lightgray2; }
+    i.pull-right                  { color: $lightgray2; height: 20px; }
   }
 }
 .shadowed-subcontainer            { background: $white; border: 1px solid $border; border-radius: 2px; margin-bottom: 20px;

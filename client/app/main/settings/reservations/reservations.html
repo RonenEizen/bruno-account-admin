@@ -1,4 +1,4 @@
-<div ui-view></div>
+<div class="modal-animation" ui-view ng-animate></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
@@ -30,7 +30,7 @@
           </div><!-- END .thead -->
 
           <div class="tbody">
-            <div class="tr" ng-repeat="table in reservations.tables">
+            <div class="tr repeat-animation" ng-animate ng-repeat="table in reservations.tables">
               <div class="td">
                 <a href="/settings/reservations/{{table._id}}">{{table.name}}</a>
               </div>

@@ -1,4 +1,4 @@
-<div ui-view></div>
+<div class="modal-animation" ui-view ng-animate></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
@@ -71,9 +71,7 @@
       </div><!-- END .thead -->
 
       <div class="tbody">
-        <div
-          class="tr"
-          ng-repeat="campaign in campaigns | filter:campaignsFilter | orderBy:clickedHeader:reverse | limitTo:displayingCampaigns">
+        <div class="tr repeat-animation" ng-animate ng-repeat="campaign in campaigns | filter:campaignsFilter | orderBy:clickedHeader:reverse | limitTo:displayingCampaigns">
           <div ng-show="displayColumns.campaign" class="td">
             <a href="/marketing/{{campaign._id}}/view">{{campaign.name}}</a>
           </div>

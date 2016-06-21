@@ -1,4 +1,4 @@
-<div ui-view></div>
+<div class="modal-animation" ui-view ng-animate></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
@@ -35,7 +35,7 @@
       <div class="col-md-12">
         <div class="table">
           <div class="tbody">
-            <div class="tr" ng-repeat="item in foodItems">
+            <div class="tr repeat-animation" ng-animate ng-repeat="item in foodItems">
               <div class="td"><a href="/food-menus/food/{{food._id}}">{{item.name}}</a></div>
               <div class="td">{{item.description}}</div>
               <div class="td text-right">{{item.priceSingle | currency}}</div>

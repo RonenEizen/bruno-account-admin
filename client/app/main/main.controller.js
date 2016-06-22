@@ -17,6 +17,12 @@ class MainController {
       , $state
     ) {
     this.navRevealed = true;
+    this.toggleNav = () => {
+      var el = document.querySelector('.hamburger')
+      el.classList.toggle('open')
+      this.navRevealed = !this.navRevealed;
+    }
+
     this.settingsOpen = false;
 
     this.Auth = Auth;
@@ -82,6 +88,7 @@ class MainController {
     });
     return price;
   }
+
 
   logout() {
      this.Auth.logout();

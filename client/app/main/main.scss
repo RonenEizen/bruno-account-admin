@@ -2,7 +2,7 @@
   .sidebar-wrapper                { max-width: 240px; min-width: 240px; height: 100%; position: relative; padding-top: 80px; background-color: $sidebarbg; flex: 1; overflow: auto; transition: ease-in-out 500ms all;
     ul                            { list-style: none; padding: 0;
       li                          {
-        &.selected,
+        &.current,
         &:hover,
         &.expanded                { background: $darkgray2; }
         a                         { color: $white; display: block; font: 500 16px $serif-font; height: 40px; line-height: 40px; padding-left: 25px; position: relative; text-decoration: none; width: 100%; }
@@ -13,7 +13,7 @@
         .badge                    { background: $red; border-radius: 100%; color: $white; display: inline-block; height: 30px; font-weight: 300; line-height: 27px; margin-left: 10px; text-align: center; width: 30px; }
         ul                        { background: $darkgray2;
           li                      {
-            &.selected,
+            &.current,
             &:hover               { background: $darkgray1; }
             a                     { font-size: 14px; font-weight: 300; padding: 0 0 0 40px; }
           }

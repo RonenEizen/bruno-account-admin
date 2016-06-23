@@ -3,27 +3,27 @@
     <a class="logo" href="/"> <img alt="Brand" src="assets/images/bruno_logo.svg"></a>
 
     <ul>
-      <li><a ui-sref="main.dashboard">Dashboard</a></li>
-      <li><a ui-sref="main.orders">Orders <span class="badge" ng-bind="main.countNewOrders()"></span></a></li>
-      <li><a ui-sref="main.reservations.day">Reservations <span class="badge">53</span></a></li>
-      <li><a ui-sref="main.food-menus">Food Menus</a></li>
-      <li><a ui-sref="main.statistics">Statistics</a></li>
-      <li><a ui-sref="main.marketing">Marketing</a></li>
-      <li><a ui-sref="main.customers">Customers</a></li>
+      <li ui-sref-active="current"><a ui-sref="main.dashboard">Dashboard</a></li>
+      <li ui-sref-active="current"><a ui-sref="main.orders">Orders <span class="badge" ng-bind="main.countNewOrders()"></span></a></li>
+      <li ui-sref-active="current"><a ui-sref="main.reservations.day">Reservations <span class="badge">53</span></a></li>
+      <li ui-sref-active="current"><a ui-sref="main.food-menus">Food Menus</a></li>
+      <li ui-sref-active="current"><a ui-sref="main.statistics">Statistics</a></li>
+      <li ui-sref-active="current"><a ui-sref="main.marketing">Marketing</a></li>
+      <li ui-sref-active="current"><a ui-sref="main.customers">Customers</a></li>
       <li ng-class="{expanded: settingsOpen}">
         <a ng-click="settingsOpen=!settingsOpen">
           Settings
           <span class="submenu-arrow" ng-class="{'icon-triangle_right': !settingsOpen, 'icon-triangle_up': settingsOpen}"></span>
         </a>
         <ul ng-show="settingsOpen">
-          <li><a ui-sref="main.businessInfo">Business Info</a></li>
-          <li><a ui-sref="main.users">Users</a></li>
-          <li><a ui-sref="main.roles">Roles</a></li>
-          <li><a ui-sref="main.deliverySettings">Delivery</a></li>
-          <li><a ui-sref="main.reservationsSettings">Reservations</a></li>
-          <li><a ui-sref="main.paymentsSettings">Online Payments</a></li>
-          <li><a ui-sref="main.domainSettings">Domain</a></li>
-          <li><a ui-sref="main.integration">Integration</a></li>
+          <li ui-sref-active="current"><a ui-sref="main.businessInfo">Business Info</a></li>
+          <li ui-sref-active="current"><a ui-sref="main.users">Users</a></li>
+          <li ui-sref-active="current"><a ui-sref="main.roles">Roles</a></li>
+          <li ui-sref-active="current"><a ui-sref="main.deliverySettings">Delivery</a></li>
+          <li ui-sref-active="current"><a ui-sref="main.reservationsSettings">Reservations</a></li>
+          <li ui-sref-active="current"><a ui-sref="main.paymentsSettings">Online Payments</a></li>
+          <li ui-sref-active="current"><a ui-sref="main.domainSettings">Domain</a></li>
+          <li ui-sref-active="current"><a ui-sref="main.integration">Integration</a></li>
         </ul>
       </li>
     </ul>

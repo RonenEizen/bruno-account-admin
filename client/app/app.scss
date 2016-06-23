@@ -151,6 +151,7 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Helvetica, Ro
 @import 'account/login/login.scss';
 @import 'account/register/register.scss';
 @import 'admin/admin.scss';
+@import 'animations.scss';
 @import 'forms.scss';
 @import 'main/admin/admin.scss';
 @import 'main/customers/customers.scss';
@@ -219,7 +220,7 @@ strong,
 .shadowed-container               { background: $headerbg; border: 1px solid $border; border-radius: 2px; margin-bottom: 20px; padding: 20px;
   header                          {
     h2                            { color: $blue; display: inline-block; font: 500 20px $serif-font; margin: 0 10px 0 0; }
-    i.pull-right                  { color: $lightgray2; }
+    i.pull-right                  { color: $lightgray2; height: 20px; }
   }
 }
 .shadowed-subcontainer            { background: $white; border: 1px solid $border; border-radius: 2px; margin-bottom: 20px;
@@ -255,10 +256,28 @@ strong,
 .sortorder                        { vertical-align: baseline; }
 
 // HEADER
-header.top                        { background: $headerbg; border-bottom: 1px solid $black; height: 55px; line-height: 54px; padding-left: 30px; padding-right: 30px; position: fixed; top: 0; width: calc(100% - 240px); z-index: 50; transition: ease-in-out .5s all;
+header.top                        { background: $headerbg; border-bottom: 1px solid $black; height: 55px; line-height: 54px; padding-left: 30px; padding-right: 30px; position: fixed; top: 0; transition: ease-in-out 500ms all; width: calc(100% - 240px); z-index: 50;
   &.expanded                      { width: 100%; }
   .col-md-2                       { text-align: center; }
-  .hamburger                      { opacity: 1; position: relative; left: -15px; }
+  .toggle-nav                     { float: left; height: 55px; margin-left: -15px; position: relative; transition: ease-in-out 500ms all; width: 35px;
+    &.open                        { width: 0; }
+  }
+  .hamburger                      { cursor: pointer; display: block; height: 20px; left: 0; margin-top: 19px; position: absolute; transform: rotate(0deg); transition: ease-in-out 500ms all; width: 20px;
+    &.open                        { left: -50px;
+      span                        { background: $headerbg;
+        &:nth-child(1)            { left: 50%; top: 6px; width: 0%; }
+        &:nth-child(2)            { transform: rotate(45deg); }
+        &:nth-child(3)            { transform: rotate(-45deg); }
+        &:nth-child(4)            { left: 50%; top: 6px; width: 0%; }
+      }
+    }
+    span                          { display: block; height: 3px; background: $gray; border-radius: 2px; left: 0; opacity: 1; position: absolute; transform: rotate(0deg); transition: ease-in-out 500ms; width: 20px;
+      &:nth-child(1)              { top: 0px; }
+      &:nth-child(2),
+      &:nth-child(3)              { top: 6px; }
+      &:nth-child(4)              { top: 12px; }
+    }
+  }
   h1                              { color: $red; font: 500 24px $serif-font; display: inline; margin: 0; }
   time                            { color: $lightgray2; font: 500 16px $serif-font; margin-left: 10px; }
   .actions-right                  { float: right;
@@ -282,6 +301,7 @@ header.top                        { background: $headerbg; border-bottom: 1px so
     }
     .form-control-feedback        { color: $reservation-gray; top: 10px; }
   }
+
 }
 
 // REPLACES TABLES

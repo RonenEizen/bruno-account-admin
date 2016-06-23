@@ -17,6 +17,7 @@
     "Chart.js": "^2.1.4",
     "es5-shim": "~4.5.8",
     "font-awesome": ">=4.6.0",
+    "jquery-ui": "^1.11.4",
     "json3": "~3.3.1",
     "lodash": "^4.12.0",
     "ui-select": "angular-ui-select#^0.16.1"

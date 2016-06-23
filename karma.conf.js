@@ -25,6 +25,7 @@ module.exports = function(config) {
       'client/bower_components/angular-ui-router/release/angular-ui-router.js',
       'client/bower_components/angular-validation-match/dist/angular-validation-match.min.js',
       'client/bower_components/Chart.js/dist/Chart.js',
+      'client/bower_components/jquery-ui/jquery-ui.js',
       'client/bower_components/lodash/lodash.js',
       'client/bower_components/ui-select/dist/select.js',
       'client/bower_components/angular-mocks/angular-mocks.js',

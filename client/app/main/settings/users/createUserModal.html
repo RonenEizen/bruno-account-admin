@@ -29,7 +29,9 @@
           <div class="col-md-6 form-group">
             <label class="control-label">Role</label> <span class="mandatory">*</span>
             <fieldset>
-              <select name="role" class="form-control" ng-options="role._id as role.name for role in roles" ng-model="getUserData(userId).role" required></select>
+              <select name="role" class="form-control" ng-options="role._id as role.name for role in roles" ng-model="getUserData(userId).role" required>
+                <option value="">Pick one</option>
+              </select>
             </fieldset>
             <p ng-show="addUserForm.role.$error.required && addUserForm.role.$touched" class="help-block">This is a required field.</p>
           </div>

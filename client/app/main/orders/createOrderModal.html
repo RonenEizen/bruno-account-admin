@@ -27,6 +27,7 @@
                 <label class="control-label">Type</label>
                 <fieldset>
                   <select name="type" class="form-control" ng-model="modal.object.type" required>
+                    <option value="">Pick one</option>
                     <option value="pickup">Pickup</option>
                     <option value="delivery">Delivery</option>
                   </select>
@@ -113,6 +114,7 @@
                   <label class="control-label">State</label> <span class="mandatory">*</span>
                   <fieldset>
                     <select name="state" ng-model="newCustomer.state" class="form-control" ng-required="!modal.object.owner">
+                      <option value="">Pick</option>
                       <option value="ca">CA</option>
                       <option value="fl">FL</option>
                       <option value="ny">NY</option>
@@ -149,7 +151,9 @@
                     <div class="td">
                       <div class="form-group">
                         <fieldset>
-                          <select name="item" ng-model="item._id" class="form-control" ng-options="item._id as item.name for item in foodItems"></select>
+                          <select name="item" ng-model="item._id" class="form-control" ng-options="item._id as item.name for item in foodItems">
+                            <option value="">Pick one</option>
+                          </select>
                         </fieldset>
                       </div>
                     </div>

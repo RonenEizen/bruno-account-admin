@@ -1,8 +1,8 @@
 .wrapper                          { display: flex; height: 100%;
-  .sidebar-wrapper                { max-width: 240px; min-width: 240px; height: 100%; position: relative; padding-top: 80px; background-color: $sidebarbg; flex: 1; overflow: auto; transition: ease-in-out .5s all;
+  .sidebar-wrapper                { max-width: 240px; min-width: 240px; height: 100%; position: relative; padding-top: 80px; background-color: $sidebarbg; flex: 1; overflow: auto; transition: ease-in-out 500ms all;
     ul                            { list-style: none; padding: 0;
       li                          {
-        &.selected,
+        &.current,
         &:hover,
         &.expanded                { background: $darkgray2; }
         a                         { color: $white; display: block; font: 500 16px $serif-font; height: 40px; line-height: 40px; padding-left: 25px; position: relative; text-decoration: none; width: 100%; }
@@ -13,14 +13,13 @@
         .badge                    { background: $red; border-radius: 100%; color: $white; display: inline-block; height: 30px; font-weight: 300; line-height: 27px; margin-left: 10px; text-align: center; width: 30px; }
         ul                        { background: $darkgray2;
           li                      {
-            &.selected,
+            &.current,
             &:hover               { background: $darkgray1; }
             a                     { font-size: 14px; font-weight: 300; padding: 0 0 0 40px; }
           }
         }
       }
     }
-    .hamburger                    { color: $headerbg; cursor: pointer; display: block; font-size: 18px; position: absolute; right: 20px; top: 10px; }
     .logo                         { display: block; position: absolute; top: 10px; left: 10px;
       img                         { width: 50px; }
     }
@@ -30,21 +29,21 @@
       .btn                        { background: $darkgray1; border: none; border-radius: 0; color: $white; padding: 5px 40px; }
     }
   }
-  .page-content-wrapper           { position: relative; height: 100%; overflow: hidden; flex: 1; }
-  .main-content                   { height: 100%; overflow: auto; padding-top: 55px; position: relative; }
+  .page-content-wrapper           { height: 100%; overflow: hidden; flex: 1; }
+  .main-content                   { height: 100%; overflow: auto; padding-top: 55px; }
   &.collapsed                     {
     .sidebar-wrapper              { margin-left: -240px;}
-    .page-content-wrapper         { position: relative; }
+    .page-content-wrapper         { }
   }
 }
 
 @media(min-width:768px)           {
   .wrapper                        {
     .sidebar-wrapper              { width: 240px; }
-    .page-content-wrapper         { position: relative; }
+    .page-content-wrapper         { }
     &.collapsed                   {
       .sidebar-wrapper            { }
-      .page-content-wrapper       { position: relative; margin-right: 0; }
+      .page-content-wrapper       { margin-right: 0; }
     }
   }
 }

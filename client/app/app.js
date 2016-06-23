@@ -5,6 +5,7 @@ angular.module('accountAdminApp', [
   , 'accountAdminApp.auth'
   , 'accountAdminApp.constants'
   , 'angularTrix'
+  , 'ngAnimate'
   , 'ngCookies'
   , 'ngResource'
   , 'ngSanitize'

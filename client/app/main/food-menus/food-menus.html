@@ -1,8 +1,8 @@
-<div ui-view></div>
+<div class="modal-animation" ui-view ng-animate></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
-      <span class="hamburger" ng-click="main.navRevealed=true" ng-show="!main.navRevealed"><i class="icon-hamburger_menu"></i></span>
+      <div class="toggle-nav" ng-class="{open: main.navRevealed}"><div class="hamburger open" ng-click="main.toggleNav()"><span></span><span></span><span></span><span></span></div></div>
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2"><button class="btn btn-primary" ng-click="main.go('.createMenu')">+ New Food Menu</button></div>
@@ -35,7 +35,7 @@
       <div class="col-md-12">
         <div class="table">
           <div class="tbody">
-            <div class="tr" ng-repeat="item in foodItems">
+            <div class="tr repeat-animation" ng-animate ng-repeat="item in foodItems">
               <div class="td"><a href="/food-menus/food/{{food._id}}">{{item.name}}</a></div>
               <div class="td">{{item.description}}</div>
               <div class="td text-right">{{item.priceSingle | currency}}</div>

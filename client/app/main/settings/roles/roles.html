@@ -1,8 +1,8 @@
-<div ui-view></div>
+<div class="modal-animation" ui-view ng-animate></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
-      <span class="hamburger" ng-click="main.navRevealed=true" ng-show="!main.navRevealed"><i class="icon-hamburger_menu"></i></span>
+      <div class="toggle-nav" ng-class="{open: main.navRevealed}"><div class="hamburger open" ng-click="main.toggleNav()"><span></span><span></span><span></span><span></span></div></div>
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
@@ -14,8 +14,8 @@
         <i class="icon-grid" ng-click="showColumnPicker()"></i>
         <ul ng-show="pickColumns">
           <span class="arrow"></span>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.role"> Role <span></span></label></li>
-          <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.access"> Access <span></span></label></li>
+          <!-- <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.role"> Role <span></span></label></li> -->
+          <!-- <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.access"> Access <span></span></label></li> -->
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.rights"> Rights <span></span></label></li>
         </ul>
       </div>
@@ -77,7 +77,7 @@
         </div><!-- END .tr -->
       </div><!-- END .thead -->
       <div class="tbody">
-        <div class="tr" ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingRoles">
+        <div class="tr repeat-animation" ng-animate ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingRoles">
 
           <div class="td" ng-show="displayColumns.role">
             <a href="/settings/roles/{{role._id}}">{{role.name}}</a>

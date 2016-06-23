@@ -1,8 +1,8 @@
-<div ui-view></div>
+<div class="modal-animation" ui-view ng-animate></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
-      <span class="hamburger" ng-click="main.navRevealed=true" ng-show="!main.navRevealed"><i class="icon-hamburger_menu"></i></span>
+      <div class="toggle-nav" ng-class="{open: main.navRevealed}"><div class="hamburger open" ng-click="main.toggleNav()"><span></span><span></span><span></span><span></span></div></div>
       <h1>{{pageTitle}}</h1>
       <time datetime="{{currentDate.now() | date: 'yyyy-MM-dd hh:mm'}}">{{currentDate.now() | date: 'MMMM d, yyyy, h:mm'}} {{(currentDate.now() | date: 'a').toLowerCase()}}</time>
     </div>
@@ -19,7 +19,7 @@
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.updates">Settings Updates <span></span></label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.orderTrends">Order Trends <span></span></label></li>
           <li class="checkbox"><label><input type="checkbox" ng-model="displayColumns.reservationTrends">Reservation Trends <span></span></label></li>
-          <button class="btn btn-default" ng-click="rearranging=!rearranging">Change Positions</button>
+          <button class="btn btn-default" ng-click="rearrange()">Change Positions</button>
         </ul>
       </div>
     </div>
@@ -36,10 +36,10 @@
 
   <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.msg"></span></uib-alert>
   <div class="alert rearranging alert-warning clearfix " role="alert" ng-show="rearranging">Drag the areas below to change positions.
-    <div class="pull-right"><button class="btn btn-primary" ng-click="rearranging=false">Finish And Save</button></div>
+    <div class="pull-right"><button class="btn btn-primary" ng-click="rearrange()">Finish And Save</button></div>
   </div>
 
-  <div class="row">
+  <div class="row sortable" ng-class="{movable: rearranging}">
     <div class="col-md-6" ng-show="displayColumns.orders">
       <div class="shadowed-container">
         <div class="grayout" ng-show="rearranging"></div>
@@ -93,7 +93,6 @@
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->
     </div>
-
     <div class="col-md-6" ng-show="displayColumns.reservations">
       <div class="shadowed-container">
         <div class="grayout" ng-show="rearranging"></div>
@@ -104,40 +103,46 @@
         </header>
         <div class="collapsable" ng-show="!collapsed.reservations">
           <div class="shadowed-subcontainer">
-            <div class="calendar-overflow">
-              <div class="calendar-widget">
-                <ul class="cal-row">
-                  <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
-                </ul>
-                <div class="cal-row">
-                  <div class="booked pending" ng-click="main.go('.table')" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
-                </div>
-                <div class="cal-row">
-                  <div class="booked active" ng-click="main.go('.table')" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
-                </div>
-                <div class="cal-row">
-                  <div class="booked closed" ng-click="main.go('.table')" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
-                  <div class="booked pending" ng-click="main.go('.table')" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
-                </div>
-                <div class="cal-row">
-                  <div class="booked active" ng-click="main.go('.table')" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
-                </div>
-                <div class="cal-row">
-                  <div class="booked active" ng-click="main.go('.table')" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
-                </div>
-                <div class="cal-row">
-                  <div class="booked pending" ng-click="main.go('.table')" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
-                </div>
-              </div><!-- END .calendar-widget -->
+            <div class="calendar">
+              <div class="calendar-overflow">
+                <div class="calendar-widget">
+                  <div class="ruler" ng-style="{left: rulerPosY}">
+                    <i></i>
+                  </div>
+                  <ul class="cal-row">
+                    <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
+                  </ul>
+                  <div class="cal-row">
+                    <div class="booked pending" ng-click="main.go('.table')" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
+                  </div>
+                  <div class="cal-row">
+                    <div class="booked active" ng-click="main.go('.table')" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
+                  </div>
+                  <div class="cal-row">
+                    <div class="booked closed" ng-click="main.go('.table')" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
+                    <div class="booked pending" ng-click="main.go('.table')" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
+                  </div>
+                  <div class="cal-row">
+                    <div class="booked active" ng-click="main.go('.table')" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
+                  </div>
+                  <div class="cal-row">
+                    <div class="booked active" ng-click="main.go('.table')" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
+                  </div>
+                  <div class="cal-row">
+                    <div class="booked pending" ng-click="main.go('.table')" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
+                  </div>
+                </div><!-- END .calendar-widget -->
+              </div>
+              <span class="scroll-left" ng-click="scrollLeft()"><i class="fa fa-chevron-left"></i></span>
+              <span class="scroll-right" ng-click="scrollRight()"><i class="fa fa-chevron-right"></i></span>
             </div>
-          </div><!-- END .row -->
+          </div><!-- END .shadowed-subcontainer -->
           <div class="bottom-link text-right">
             <a ui-sref="main.reservations.day">All Reservations ›</a>
           </div><!-- .row -->
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->
     </div>
-
     <div class="col-md-6" ng-show="displayColumns.campaigns">
       <div class="shadowed-container campaigns">
         <div class="grayout" ng-show="rearranging"></div>
@@ -205,7 +210,6 @@
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->
     </div>
-
     <div class="col-md-6" ng-show="displayColumns.updates">
       <div class="shadowed-container updates">
         <div class="grayout" ng-show="rearranging"></div>
@@ -249,7 +253,6 @@
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->
     </div>
-
     <div class="col-md-6" ng-show="displayColumns.orderTrends">
       <div class="shadowed-container">
         <div class="grayout" ng-show="rearranging"></div>
@@ -267,7 +270,6 @@
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->
     </div>
-
     <div class="col-md-6" ng-show="displayColumns.reservationTrends">
       <div class="shadowed-container">
         <div class="grayout" ng-show="rearranging"></div>
@@ -285,5 +287,5 @@
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->
     </div>
-  </div><!-- END .row -->
+  </div><!-- END .row.sortable -->
 </div><!-- END .dashboard -->

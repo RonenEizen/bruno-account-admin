@@ -1,0 +1,33 @@
+.slide-animation                  {
+  &.ng-enter                      { opacity: 0; transition: 1s ease all; z-index: 100;
+    &.ng-enter-active             { opacity: 1; }
+  }
+  &.ng-leave                      { opacity: 0.5; transition: 0.5s ease all; z-index: 101;
+    &.ng-leave-active             { opacity: 0; }
+  }
+}
+
+.modal-animation                  {
+  &.ng-enter                      { height: 100%; opacity: 0; transition: 1s ease all; top: -100px;
+    &.ng-enter-active             { height: 100%; opacity: 1; top: -100px; }
+  }
+  &.ng-leave                      { height: 100%; opacity: 1; transition: 1s ease all; top: 0;
+    &.ng-leave-active             { height: 100%; opacity: 0; top: 100px; }
+  }
+}
+
+.repeat-animation                 {
+  &.ng-enter,
+  &.ng-leave,
+  &.ng-move                       { transition: 0.5s linear all; position: relative;
+    &.ng-enter                    { left: 10px; opacity: 0;
+      &.ng-enter-active           { left: 0; opacity: 1; }
+    }
+    &.ng-leave                    { left: 10px; opacity: 1;
+      &.ng-leave-active           { left: -10px; opacity: 0; }
+    }
+    &.ng-move                     { opacity: 0.5;
+      &.ng-move-active            { opacity: 1; }
+    }
+  }
+}

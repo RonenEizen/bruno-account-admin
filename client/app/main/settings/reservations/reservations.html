@@ -1,8 +1,8 @@
-<div ui-view></div>
+<div class="modal-animation" ui-view ng-animate></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
-      <span class="hamburger" ng-click="main.navRevealed=true" ng-show="!main.navRevealed"><i class="icon-hamburger_menu"></i></span>
+      <div class="toggle-nav" ng-class="{open: main.navRevealed}"><div class="hamburger open" ng-click="main.toggleNav()"><span></span><span></span><span></span><span></span></div></div>
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2"></div>
@@ -30,7 +30,7 @@
           </div><!-- END .thead -->
 
           <div class="tbody">
-            <div class="tr" ng-repeat="table in reservations.tables">
+            <div class="tr repeat-animation" ng-animate ng-repeat="table in reservations.tables">
               <div class="td">
                 <a href="/settings/reservations/{{table._id}}">{{table.name}}</a>
               </div>

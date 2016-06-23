@@ -23,7 +23,9 @@
                 <div class="form-group">
                   <label class="control-label">Category</label> <span class="mandatory">*</span>
                   <fieldset>
-                    <select name="category" class="form-control" ng-options="cat._id as cat.name for cat in categories" ng-model="object.foodCategories" required></select>
+                    <select name="category" class="form-control" ng-options="cat._id as cat.name for cat in categories" ng-model="object.foodCategories" required>
+                      <option value="">Pick one</option>
+                    </select>
                   </fieldset>
                   <p ng-show="addFoodItemForm.category.$error.required && addFoodItemForm.category.$touched" class="help-block">This is a required field.</p>
                 </div>

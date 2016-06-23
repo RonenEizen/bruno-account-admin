@@ -91,7 +91,7 @@
       </div><!-- END .thead -->
 
       <div class="tbody">
-        <div class="tr repeat-animation" ng-animate ng-repeat="user in users | filter:usersFilter | orderBy:clickedHeader:reverse | limitTo:displayingUsers">
+        <div class="tr repeat-animation" ng-animate ng-repeat="user in users | filter:usersFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
           <div class="td" ng-show="displayColumns.name"><a href="/settings/users/{{user._id}}">{{user.fname + ' ' + user.lname}}</a></div>
           <div class="td" ng-show="displayColumns.role" ng-bind="userRole(user.role)"></div>
           <div class="td" ng-show="displayColumns.phone">{{user.phone | phone}}</div>
@@ -99,6 +99,6 @@
         </div><!-- END .tr -->
       </div><!-- END .tbody -->
     </div><!-- END .table -->
-    <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
+    <button class="btn btn-default center-block" ng-hide="!moreToLoad" ng-click="loadMore()">Load More</button>
   </div><!-- END .col-md-12 -->
 </div><!-- END .main -->

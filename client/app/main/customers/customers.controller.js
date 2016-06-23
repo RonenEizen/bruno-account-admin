@@ -53,16 +53,19 @@ angular.module('accountAdminApp')
     $scope.clickedHeader = '';
 
     // Load More Rows
-    $scope.displayingCustomers = 3; // sets the initial limit of displaying rows
-    $scope.loadMore = true; // true if there're more rows to load
+    angular.element(document).ready(() => {
+      var winHeight = document.querySelector('.main-content').clientHeight;
+      $scope.displayingItems = Math.floor((winHeight - 130) / 60); // sets the initial limit of displaying rows
+      if ($scope.displayingItems < 3) { $scope.displayingItems = 3 }
+    });
     $scope.loadMore = () => {
-      var increment = 3;
-      if ($scope.displayingCustomers < $scope.customers.length) {
-        $scope.displayingCustomers += increment;
-        if ($scope.displayingCustomers >= $scope.customers.length) {
-          $scope.loadMore = false;
+      var increment = $scope.displayingItems;
+      if ($scope.displayingItems < $scope.customers.length) {
+        $scope.displayingItems += increment;
+        if ($scope.displayingItems >= $scope.customers.length) {
+          $scope.moreToLoad = false;
         }
       }
     };
-
+    $scope.moreToLoad = $scope.displayingItems < $scope.customers.length; // true if there're more rows to load
   });

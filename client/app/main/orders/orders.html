@@ -105,7 +105,7 @@
       </div><!-- END .thead -->
 
       <div class="tbody">
-        <div class="tr repeat-animation" ng-animate ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingOrders" ng-class="setStatus(order.status)">
+        <div class="tr repeat-animation" ng-animate ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems" ng-class="setStatus(order.status)">
           <div ng-show="displayColumns.number" class="td"><a href="/orders/{{order._id}}">{{order._id}}</a></div>
           <div ng-show="displayColumns.customer" class="td" ng-bind="customerData(order.owner, 'name')"></div>
           <div ng-show="displayColumns.type" class="td" ng-switch="order.type">
@@ -123,6 +123,6 @@
       </div><!-- END .tbody -->
     </div><!-- END .table.orders -->
 
-    <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
+    <button class="btn btn-default center-block" ng-hide="!moreToLoad" ng-click="loadMore()">Load More</button>
   </div><!-- END .col-md-12 -->
 </div><!-- END .orders -->

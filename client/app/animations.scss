@@ -8,10 +8,10 @@
 }
 
 .modal-animation                  {
-  &.ng-enter                      { height: 100%; opacity: 0; transition: 1s ease all; top: -100px;
+  &.ng-enter                      { height: 100%; opacity: 0; transition: 250ms ease all; top: -100px;
     &.ng-enter-active             { height: 100%; opacity: 1; top: -100px; }
   }
-  &.ng-leave                      { height: 100%; opacity: 1; transition: 1s ease all; top: 0;
+  &.ng-leave                      { height: 100%; opacity: 1; transition: 250ms ease all; top: 0;
     &.ng-leave-active             { height: 100%; opacity: 0; top: 100px; }
   }
 }

@@ -71,7 +71,7 @@
       </div><!-- END .thead -->
 
       <div class="tbody">
-        <div class="tr repeat-animation" ng-animate ng-repeat="campaign in campaigns | filter:campaignsFilter | orderBy:clickedHeader:reverse | limitTo:displayingCampaigns">
+        <div class="tr repeat-animation" ng-animate ng-repeat="campaign in campaigns | filter:campaignsFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
           <div ng-show="displayColumns.campaign" class="td">
             <a href="/marketing/{{campaign._id}}/view">{{campaign.name}}</a>
           </div>
@@ -90,6 +90,6 @@
         </div><!-- END .tr -->
       </div><!-- END .tbody -->
     </div><!-- END .table -->
-    <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
+    <button class="btn btn-default center-block" ng-hide="!moreToLoad" ng-click="loadMore()">Load More</button>
   </div><!-- END .col-md-12 -->
 </div><!-- END .marketing -->

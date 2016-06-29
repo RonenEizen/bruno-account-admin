@@ -77,7 +77,7 @@
         </div><!-- END .tr -->
       </div><!-- END .thead -->
       <div class="tbody">
-        <div class="tr repeat-animation" ng-animate ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingRoles">
+        <div class="tr repeat-animation" ng-animate ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
 
           <div class="td" ng-show="displayColumns.role">
             <a href="/settings/roles/{{role._id}}">{{role.name}}</a>
@@ -94,6 +94,6 @@
 
       </div><!-- END .tbody -->
     </div><!-- END .table -->
-    <button class="btn btn-default center-block" ng-hide="!loadMore" ng-click="loadMore()">Load More</button>
+    <button class="btn btn-default center-block" ng-hide="!moreToLoad" ng-click="loadMore()">Load More</button>
   </div><!-- END .com-md-12 -->
 </div><!-- END .main -->

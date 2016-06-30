@@ -59,7 +59,7 @@ angular.module('accountAdminApp')
 
     // Load More Rows
     angular.element(document).ready(() => {
-      var winHeight = document.querySelector('.main-content').clientHeight;
+      if (document.querySelector('.main-content')) var winHeight = document.querySelector('.main-content').clientHeight;
       $scope.displayingItems = Math.floor((winHeight - 130) / 60) ; // sets the initial limit of displaying rows
       if ($scope.displayingItems < 3) { $scope.displayingItems = 3 }
     });

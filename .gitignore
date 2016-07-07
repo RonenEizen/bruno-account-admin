@@ -4,9 +4,14 @@ public
 .sass-cache
 .idea
 .DS_Store
-*.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 client/bower_components
 dist
 /server/config/local.env.js
 npm-debug.log
 coverage
+ehthumbs.db
+Thumbs.db

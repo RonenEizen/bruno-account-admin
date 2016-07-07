@@ -1,13 +1,18 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('OrdersCtrl', function($scope, OrderService, $filter) {
+  .controller('OrdersCtrl', function($scope, CustomerService, DefaultsService, MenuService, OrderService, $filter, Modal) {
     $scope.pageTitle = 'Orders';
 
-    $scope.foodItems = $scope.main.foodItems;
-    $scope.orders = $scope.main.orders;
-    $scope.customers = $scope.main.customers;
-    $scope.states = $scope.main.states;
+    $scope.customers = CustomerService.customers;
+    $scope.foodItems = MenuService.foodItems;
+    $scope.orders = OrderService.orders;
+    $scope.states = DefaultsService.states;
+
+    // Modal calls
+    $scope.createOrderModal = Modal.createOrderModal;
+    $scope.viewOrderModal = Modal.viewOrderModal;
+    $scope.editOrderModal = Modal.editOrderModal;
 
     // THIS OBJECT IS LOADED INTO MODALS
     $scope.object = { _id: '654321', owner: '1', createdAt: new Date('2016-05-01T10:41:00Z'), updatedAt: new Date('2016-05-01T10:41:00Z'), type: 'pickup', status: 'new', items: [{ _id: '1', category: 'Beverages', name: 'Coca-Cola', qty: 2, price: 1.10 }, { _id: '2', category: 'Hamburgers', name: 'Big Burger', qty: 3, price: 5.5 }, { _id: '3', category: 'Snacks', name: 'Fries', qty: 5, price: 2.15 }], total: 29.45 }
@@ -21,7 +26,7 @@ angular.module('accountAdminApp')
       let q = query;
       let a;
 
-      $scope.main.customers.forEach((cust) => {
+      $scope.customers.forEach((cust) => {
         if (ownerID === cust._id) {
           if (q === 'name') { a = cust.fname + ' ' + cust.lname; }
           else if (q === 'homePhone' || query === 'mobilePhone') { a = $filter('phone')(cust[q])}

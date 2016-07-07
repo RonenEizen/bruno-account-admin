@@ -6,7 +6,7 @@
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="main.go('.create')">+ New Order</button>
+      <button class="btn btn-primary" ng-click="createOrderModal()">+ New Order</button>
     </div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -106,7 +106,7 @@
 
       <div class="tbody">
         <div class="tr repeat-animation" ng-animate ng-repeat="order in orders | filter:ordersFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems" ng-class="setStatus(order.status)">
-          <div ng-show="displayColumns.number" class="td"><a href="/orders/{{order._id}}">{{order._id}}</a></div>
+          <div ng-show="displayColumns.number" class="td"><a ng-click="viewOrderModal(order)">{{order._id}}</a></div>
           <div ng-show="displayColumns.customer" class="td" ng-bind="customerData(order.owner, 'name')"></div>
           <div ng-show="displayColumns.type" class="td" ng-switch="order.type">
             <span ng-switch-when="pickup">Pickup</span>

@@ -1,11 +1,19 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsRolesCtrl', function($scope, $state) {
+  .controller('SettingsRolesCtrl', function($scope, $state, SettingsService, Modal) {
     $scope.pageTitle = 'Roles';
-    var roles = $scope.main.roles;
-    var accesses = $scope.main.accesses;
-    var rights = $scope.main.rights;
+
+    // those are used internally only (no $scope here)
+    var roles = SettingsService.roles;
+    var accesses = SettingsService.accesses;
+    var rights = SettingsService.rights;
+
+    // Modal calls
+    $scope.createRoleModal = Modal.createRoleModal;
+    $scope.editRoleModal = Modal.editRoleModal;
+    $scope.removeRoleModal = Modal.removeRoleModal;
+    $scope.viewRoleModal = Modal.viewRoleModal;
 
     $scope.$watchCollection(
       () => { return $state.params; },
@@ -43,7 +51,7 @@ angular.module('accountAdminApp')
 
     // list of roles that are used in the view
     $scope.roles = [];
-    _(roles).forEach(function (e) { $scope.roles.push(getRoleData(e._id)) })
+    _(roles).forEach(function (e) { $scope.roles.push(getRoleData(e._id)) });
 
     // Columns
     $scope.displayColumns = { role: true, access: true, rights: true };

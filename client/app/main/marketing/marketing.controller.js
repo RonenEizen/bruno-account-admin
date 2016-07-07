@@ -1,11 +1,23 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('MarketingCtrl', function ($scope, $state) {
+  .controller('MarketingCtrl', function ($scope, $state, MarketingService, Modal) {
     $scope.pageTitle = 'Marketing > Campaigns';
 
     $scope.campaignsStatus = ['Cancelled', 'Current', 'Expiring', 'Expired'];
-    $scope.campaigns = $scope.main.campaigns;
+    $scope.campaigns = MarketingService.campaigns;
+
+    // Modal calls
+    $scope.createCampaignModal = Modal.createCampaignModal;
+    $scope.editCampaignModal = Modal.editCampaignModal;
+    $scope.viewCampaignModal = Modal.viewCampaignModal;
+
+    $scope.bannerCampaignModal = Modal.bannerCampaignModal;
+    $scope.channelsCampaign = Modal.channelsCampaign;
+    $scope.facebookCampaignModal = Modal.facebookCampaignModal;
+    $scope.googleCampaignModal = Modal.googleCampaignModal;
+    $scope.newsletterCampaignModal = Modal.newsletterCampaignModal;
+    $scope.twitterCampaignModal = Modal.twitterCampaignModal;
 
     $scope.$watchCollection(
       () => { return $state.current.url; },

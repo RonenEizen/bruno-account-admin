@@ -17,9 +17,9 @@
   <div class="col-md-6 column">
     <div class="row">
       <div class="col-md-12">
-        <h2>Business Info <a class="pull-right" ui-sref=".business">Edit</a></h2>
+        <h2>Business Info <a class="pull-right" ng-click="businessModal()">Edit</a></h2>
         <p ng-show="hideBusiness">
-          <a ui-sref=".business">Add Information</a>
+          <a ng-click="businessModal()">Add Information</a>
         <p>
         <p ng-show="!hideBusiness">
           <strong>{{business.name}}</strong><br>
@@ -34,9 +34,9 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2>Restaurant Info <a class="pull-right" ui-sref=".restaurant">Edit</a></h2>
+        <h2>Restaurant Info <a class="pull-right" ng-click="restaurantModal()">Edit</a></h2>
         <p ng-show="hideRestaurant">
-          <a ui-sref=".restaurant">Add Information</a>
+          <a ng-click="restaurantModal()">Add Information</a>
         <p>
         <p ng-show="!hideRestaurant">
           <strong>{{restaurant.name}}</strong><br>
@@ -51,7 +51,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2>Opening Hours <a class="pull-right" ui-sref=".opening">Edit</a></h2>
+        <h2>Opening Hours <a class="pull-right" ng-click="openingModal()">Edit</a></h2>
         <span ng-show="opening.twentyFourSeven">Open 24/7</span>
         <div ng-show="!opening.twentyFourSeven" class="table opening-hours">
           <div class="tbody">
@@ -72,9 +72,9 @@
   <div class="col-md-6 column">
     <div class="row">
       <div class="col-md-12 paragraph-margin">
-        <h2>Business Owner Info <a class="pull-right" ui-sref=".owner">Edit</a></h2>
+        <h2>Business Owner Info <a class="pull-right" ng-click="ownerModal()">Edit</a></h2>
         <p ng-show="hideOwner">
-          <a ui-sref=".owner">Add Information</a>
+          <a ng-click="ownerModal()">Add Information</a>
         <p>
         <p ng-show="!hideOwner">
           <strong>Name</strong><br>

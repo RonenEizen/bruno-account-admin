@@ -1,10 +1,17 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsUsersCtrl', function($scope, $state) {
+  .controller('SettingsUsersCtrl', function($scope, $state, SettingsService, Modal) {
     $scope.pageTitle = 'Users';
-    $scope.users = $scope.main.users;
-    $scope.roles = $scope.main.roles;
+
+    $scope.users = SettingsService.users;
+    $scope.roles = SettingsService.roles;
+
+    // Modal calls
+    $scope.createUserModal = Modal.createUserModal;
+    $scope.editUserModal = Modal.editUserModal;
+    $scope.removeUserModal = Modal.removeUserModal;
+    $scope.viewUserModal = Modal.viewUserModal;
 
     $scope.$watchCollection(
       () => { return $state.params; },

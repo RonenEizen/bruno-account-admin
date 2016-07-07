@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsDomainCtrl', function ($scope) {
+  .controller('SettingsDomainCtrl', function ($scope, SettingsService, Modal) {
     $scope.pageTitle = 'Domain';
-    $scope.domain = $scope.main.domain.domain;
-    $scope.subdomain = $scope.main.domain.subdomain;
+    $scope.domain = SettingsService.domain.domain;
+    $scope.subdomain = SettingsService.domain.subdomain;
+
+    // Modal calls
+    $scope.domainModal = Modal.domainModal;
+    $scope.subdomainModal = Modal.subdomainModal;
   });

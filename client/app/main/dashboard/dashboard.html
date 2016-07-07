@@ -61,25 +61,25 @@
               </div>
               <div class="tbody">
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('orderModal.html')">037565</a></div>
+                  <div class="td"><a ng-click="viewOrderModal()">037565</a></div>
                   <div class="td">10:25 PM</div>
                   <div class="td">Pickup</div>
                   <div class="td status new">New</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('orderModal.html')">037565</a></div>
+                  <div class="td"><a ng-click="viewOrderModal()">037565</a></div>
                   <div class="td">10:25 PM</div>
                   <div class="td">Delivery</div>
                   <div class="td status inprogress">In Progress</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('orderModal.html')">037565</a></div>
+                  <div class="td"><a ng-click="viewOrderModal()">037565</a></div>
                   <div class="td">10:25 PM</div>
                   <div class="td">Delivery</div>
                   <div class="td status inprogress">In Progress</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="main.customModal('orderModal.html')">037565</a></div>
+                  <div class="td"><a ng-click="viewOrderModal()">037565</a></div>
                   <div class="td">10:25 PM</div>
                   <div class="td">Pickup</div>
                   <div class="td status cancelled">Cancelled</div>
@@ -113,23 +113,23 @@
                     <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
                   </ul>
                   <div class="cal-row">
-                    <div class="booked pending" ng-click="main.go('.table')" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
+                    <div class="booked pending" ng-click="viewReservationModal()" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked active" ng-click="main.go('.table')" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
+                    <div class="booked active" ng-click="viewReservationModal()" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked closed" ng-click="main.go('.table')" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
-                    <div class="booked pending" ng-click="main.go('.table')" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
+                    <div class="booked closed" ng-click="viewReservationModal()" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
+                    <div class="booked pending" ng-click="viewReservationModal()" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked active" ng-click="main.go('.table')" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
+                    <div class="booked active" ng-click="viewReservationModal()" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked active" ng-click="main.go('.table')" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
+                    <div class="booked active" ng-click="viewReservationModal()" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked pending" ng-click="main.go('.table')" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
+                    <div class="booked pending" ng-click="viewReservationModal()" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
                   </div>
                 </div><!-- END .calendar-widget -->
               </div>
@@ -248,7 +248,7 @@
             </div><!-- END .table -->
           </div><!-- END .row -->
           <div class="bottom-link text-right">
-            <a ng-click="main.go('.updates')">All Settings Updates ›</a>
+            <a ng-click="viewUpdatesModal()">All Settings Updates ›</a>
           </div><!-- END .row -->
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->

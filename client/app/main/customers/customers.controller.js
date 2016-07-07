@@ -1,11 +1,17 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('CustomersCtrl', function ($scope) {
+  .controller('CustomersCtrl', function ($scope, CustomerService, Modal) {
     $scope.pageTitle = 'Customers';
 
-    $scope.customers = $scope.main.customers;
-    $scope.modal = $scope.main.modal;
+    $scope.customers = CustomerService.customers;
+
+    // Modal calls
+    $scope.createCustomerModal = Modal.createCustomerModal;
+    $scope.editCustomerModal = Modal.editCustomerModal;
+    $scope.removeCustomerModal = Modal.removeCustomerModal;
+    $scope.viewCustomerModal = Modal.viewCustomerModal;
+    $scope.viewCustomerOrdersModal = Modal.viewCustomerOrdersModal;
 
     $scope.object = {
       _id: '1',

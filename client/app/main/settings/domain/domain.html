@@ -17,7 +17,7 @@
       <div class="col-lg-6 column">
         <div class="row">
           <div class="col-md-12 paragraph-margin">
-            <h2>Subdomain <a class="pull-right" ui-sref=".subdomain">Edit</a></h2>
+            <h2>Subdomain <a class="pull-right" ng-click="subdomainModal()">Edit</a></h2>
             <p>{{subdomain}}.chefbr.uno</p>
           </div>
         </div>
@@ -40,7 +40,7 @@
         <p>Search for a domain name you would like for your restaurant, without the extension – e.g. "myrestaurant". You will be presented with extension on the results page.</p>
 
         <form class="custom-form form-group has-feedback">
-          <input type="search" class="form-control domainsearch" ui-sref=".domain" placeholder="Enter a domain name">
+          <input type="search" class="form-control domainsearch" ng-click="domainModal()" placeholder="Enter a domain name">
           <span class="icon-search form-control-feedback"></span>
         </form>
       </div>

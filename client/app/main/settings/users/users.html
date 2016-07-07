@@ -6,7 +6,7 @@
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
-      <button class="btn btn-primary" ui-sref=".create">+ New User</button>
+      <button class="btn btn-primary" ng-click="createUserModal()">+ New User</button>
     </div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -92,7 +92,7 @@
 
       <div class="tbody">
         <div class="tr repeat-animation" ng-animate ng-repeat="user in users | filter:usersFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
-          <div class="td" ng-show="displayColumns.name"><a href="/settings/users/{{user._id}}">{{user.fname + ' ' + user.lname}}</a></div>
+          <div class="td" ng-show="displayColumns.name"><a ng-click="viewUserModal(user)">{{user.fname + ' ' + user.lname}}</a></div>
           <div class="td" ng-show="displayColumns.role" ng-bind="userRole(user.role)"></div>
           <div class="td" ng-show="displayColumns.phone">{{user.phone | phone}}</div>
           <div class="td" ng-show="displayColumns.email">{{user.email}}</div>

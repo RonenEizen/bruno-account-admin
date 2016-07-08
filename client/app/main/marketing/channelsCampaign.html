@@ -1,447 +1,447 @@
-<div class="flyout">
-  <div class="container" ng-init="channelTab = 'facebook'">
+<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<div class="container" ng-init="channelTab = 'facebook'">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="channel-heading">Edit Marketing Channels –
+        <strong ng-show="channelTab === 'facebook'">Facebook Ads</strong>
+        <strong ng-show="channelTab === 'twitter'">Twitter</strong>
+        <strong ng-show="channelTab === 'googleads'">Google Adwords</strong>
+        <strong ng-show="channelTab === 'newsletter'">Newsletter</strong>
+        <strong ng-show="channelTab === 'banner'">Site Banner</strong>
+      </h1>
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</div><!-- END .container -->
+
+<div class="container-fluid channel-nav">
+  <div class="row">
+    <ul class="col-md-8 col-md-offset-2 nav nav-tabs">
+      <li ng-class="{active: channelTab === 'facebook'}">
+        <a ng-click="channelTab = 'facebook'"><i class="icon-Facebook"></i></a>
+      </li>
+      <li ng-class="{active: channelTab === 'twitter'}">
+        <a ng-click="channelTab = 'twitter'"><i class="icon-Twitter"></i></a>
+      </li>
+      <li ng-class="{active: channelTab === 'googleads'}">
+        <a ng-click="channelTab = 'googleads'"><i class="icon-GooglePlus"></i></a>
+      </li>
+      <li ng-class="{active: channelTab === 'newsletter'}">
+        <a ng-click="channelTab = 'newsletter'"><i class="icon-Newsletter"></i></a>
+      </li>
+      <li ng-class="{active: channelTab === 'banner'}">
+        <a ng-click="channelTab = 'banner'"><i class="icon-Banner"></i></a>
+      </li>
+    </ul>
+  </div><!-- END .row -->
+</div><!-- END .container-fluid -->
+
+<form class="custom-form" ng-show="channelTab === 'facebook'">
+  <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h1 class="channel-heading">Edit Marketing Channels –
-          <strong ng-show="channelTab === 'facebook'">Facebook Ads</strong>
-          <strong ng-show="channelTab === 'twitter'">Twitter</strong>
-          <strong ng-show="channelTab === 'googleads'">Google Adwords</strong>
-          <strong ng-show="channelTab === 'newsletter'">Newsletter</strong>
-          <strong ng-show="channelTab === 'banner'">Site Banner</strong>
-        </h1>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="checkbox toggle-checkbox">
+              <label>
+                <input type="checkbox" ng-model="enableFacebook" ng-init="enableFacebook = true"> Enable Channel
+              </label>
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div ng-show="enableFacebook">
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Campaign Objective</h4>
+              <div class="form-group">
+                <label class="control-label">Objective</label>
+                <select class="form-control">
+                  <option value="">Pick one</option>
+                  <option value="1">Reach people around your business</option>
+                  <option value="2">Reach people somewhere else</option>
+                  <option value="3">Reach living beings outside earth</option>
+                </select>
+              </div>
+
+              <h4>Who would ike to see your ads?</h4>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="wider-row">
+            <div class="googlemap">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d58420.22179022014!2d-51.171596471397784!3d-30.028410566185656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1443130059406"></iframe>
+              <div class="reach">
+                <h4>Potential Reach</h4>
+                <strong>125,000 people</strong>
+                <p>This is the total number of people in your selected audience who we estimate will be in your area based on their activity on Facebook.</p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div><!-- END .wider-row -->
+
+          <div class="row">
+            <div class="col-md-8 form-group">
+              <label class="control-label">Street Address</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="control-label">Radius</label>
+                <select class="form-control">
+                  <option value="">Pick one</option>
+                  <option value="1">5 miles</option>
+                  <option value="2">10 miles</option>
+                  <option value="3">15 miles</option>
+                </select>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Age</label>
+                <div class="age-range">
+                  <select class="form-control">
+                    <option value="">Pick</option>
+                    <option value="1">18</option>
+                    <option value="2">24</option>
+                    <option value="3">30</option>
+                  </select>
+                  <span>to</span>
+                  <select class="form-control">
+                    <option value="">Pick</option>
+                    <option value="1">35</option>
+                    <option value="2">40</option>
+                    <option value="3">50</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Gender</label><br>
+                <div class="btn-group">
+                  <label class="btn btn-primary" uib-btn-checkbox ng-model="gender">All</label>
+                  <label class="btn btn-primary" uib-btn-checkbox ng-model="gender">Men</label>
+                  <label class="btn btn-primary" uib-btn-checkbox ng-model="gender">Women</label>
+                </div>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <h4>How much would you like to spend?</h4>
+            </div>
+            <div class="col-md-8">
+              <div class="form-group">
+                <label class="control-label">Budget</label>
+                <select class="form-control">
+                  <option value="">Pick one</option>
+                  <option value="1">Lifetime Budget</option>
+                  <option value="2">Other Option 1</option>
+                  <option value="3">Other Option 2</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="control-label">&nbsp;</label>
+                <select class="form-control">
+                  <option value="">Pick one</option>
+                  <option value="1">$25.00</option>
+                  <option value="2">$50.00</option>
+                  <option value="3">$100.00</option>
+                </select>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Schedule</label>
+
+                <div class="radio">
+                  <label>
+                    <input type="radio" value="1" checked>
+                    Run this ad constinuosly starting today
+                  </label>
+                </div>
+
+                <div class="radio">
+                  <label>
+                    <input type="radio" value="2">
+                    Set a start and end date
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row campaign-image">
+            <div class="col-md-5">
+              <label class="control-label">Campaign Image</label>
+              <img src="http://lorempixel.com/600/314/food" class="campaign-img">
+            </div>
+            <div class="col-md-7">
+              <ul >
+                <li>Recommended image size is <strong>1200 x 628 pixels</strong></li>
+                <li>Image ratio <strong>1.91:1</strong></li>
+                <li>You image may not include <strong>more than 20% of text</strong></li>
+              </ul>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <h4>What text do you want to use?</h4>
+              <div class="form-group">
+                <label class="control-label">Text</label>
+                <textarea class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Headline</label>
+                <input class="form-control"></input>
+              </div>
+            </div>
+          </div><!-- END .row -->
+        </div><!-- END toggle facebook visibility -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave">
+            <div class="pull-left">
+              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+              <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+            </div><!-- END .pull-left -->
+            <div class="pull-right">
+              <button class="btn btn-primary" ng-click="channelTab = 'twitter'"><strong>Next</strong> | Twitter</button>
+              <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
+            </div><!-- END .pull-right -->
+          </div><!-- END .resetsave -->
+        </div><!-- END .row -->
       </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
   </div><!-- END .container -->
+</form><!-- END .custom-form -->
 
-  <div class="container-fluid channel-nav">
+<form class="custom-form" ng-show="channelTab === 'twitter'">
+  <div class="container">
     <div class="row">
-      <ul class="col-md-8 col-md-offset-2 nav nav-tabs">
-        <li ng-class="{active: channelTab === 'facebook'}">
-          <a ng-click="channelTab = 'facebook'"><i class="icon-Facebook"></i></a>
-        </li>
-        <li ng-class="{active: channelTab === 'twitter'}">
-          <a ng-click="channelTab = 'twitter'"><i class="icon-Twitter"></i></a>
-        </li>
-        <li ng-class="{active: channelTab === 'googleads'}">
-          <a ng-click="channelTab = 'googleads'"><i class="icon-GooglePlus"></i></a>
-        </li>
-        <li ng-class="{active: channelTab === 'newsletter'}">
-          <a ng-click="channelTab = 'newsletter'"><i class="icon-Newsletter"></i></a>
-        </li>
-        <li ng-class="{active: channelTab === 'banner'}">
-          <a ng-click="channelTab = 'banner'"><i class="icon-Banner"></i></a>
-        </li>
-      </ul>
+      <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="checkbox toggle-checkbox">
+              <label>
+                <input type="checkbox" ng-model="enableTwitter" ng-init="enableTwitter = true"> Enable Channel
+              </label>
+            </div>
+          </div>
+        </div><!-- END .row -->
+        <div ng-show="enableTwitter">
+          <div class="row">
+            <div class="col-md-12">
+              content here
+            </div>
+          </div><!-- END .row -->
+        </div><!-- END  -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave">
+            <div class="pull-left">
+              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+              <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+            </div><!-- END .pull-left -->
+            <div class="pull-right">
+              <button class="btn btn-primary" ng-click="channelTab = 'googleads'"><strong>Next</strong> | Google</button>
+              <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
+            </div><!-- END .pull-right -->
+          </div><!-- END .resetsave -->
+        </div><!-- END .row -->
+
+      </div><!-- END .col-md-6 -->
     </div><!-- END .row -->
-  </div><!-- END .container-fluid -->
+  </div><!-- END .container -->
+</form><!-- END .custom-form -->
 
-  <form class="custom-form" ng-show="channelTab === 'facebook'">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+<form class="custom-form" ng-show="channelTab === 'googleads'">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="checkbox toggle-checkbox">
+              <label>
+                <input type="checkbox" ng-model="enableGoogleplus" ng-init="enableGoogleplus = true"> Enable Channel
+              </label>
+            </div>
+          </div>
+        </div><!-- END .row -->
+        <div ng-show="enableGoogleplus">
           <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="checkbox toggle-checkbox">
-                <label>
-                  <input type="checkbox" ng-model="enableFacebook" ng-init="enableFacebook = true"> Enable Channel
-                </label>
+            <div class="col-md-12">
+              content here
+            </div>
+          </div><!-- END .row -->
+        </div><!-- END  -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave">
+            <div class="pull-left">
+              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+              <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+            </div><!-- END .pull-left -->
+            <div class="pull-right">
+              <button class="btn btn-primary" ng-click="channelTab = 'newsletter'"><strong>Next</strong> | Newsletter</button>
+              <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
+            </div><!-- END .pull-right -->
+          </div><!-- END .resetsave -->
+        </div><!-- END .row -->
+
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</form><!-- END .custom-form -->
+
+<form class="custom-form" ng-show="channelTab === 'newsletter'">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="checkbox toggle-checkbox">
+              <label>
+                <input type="checkbox" ng-model="enableNewsletter" ng-init="enableNewsletter = true"> Enable Channel
+              </label>
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div ng-show="enableNewsletter">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Subject</label>
+                <input type="text" class="form-control" />
               </div>
             </div>
           </div><!-- END .row -->
 
-          <div ng-show="enableFacebook">
-            <div class="row">
-              <div class="col-md-12">
-                <h4>Campaign Objective</h4>
-                <div class="form-group">
-                  <label class="control-label">Objective</label>
-                  <select class="form-control">
-                    <option value="">Pick one</option>
-                    <option value="1">Reach people around your business</option>
-                    <option value="2">Reach people somewhere else</option>
-                    <option value="3">Reach living beings outside earth</option>
-                  </select>
-                </div>
-
-                <h4>Who would ike to see your ads?</h4>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="wider-row">
-              <div class="googlemap">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d58420.22179022014!2d-51.171596471397784!3d-30.028410566185656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1443130059406"></iframe>
-                <div class="reach">
-                  <h4>Potential Reach</h4>
-                  <strong>125,000 people</strong>
-                  <p>This is the total number of people in your selected audience who we estimate will be in your area based on their activity on Facebook.</p>
-                </div>
-                <div class="clearfix"></div>
-              </div>
-            </div><!-- END .wider-row -->
-
-            <div class="row">
-              <div class="col-md-8 form-group">
-                <label class="control-label">Street Address</label>
-                <input type="text" class="form-control">
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="control-label">Radius</label>
-                  <select class="form-control">
-                    <option value="">Pick one</option>
-                    <option value="1">5 miles</option>
-                    <option value="2">10 miles</option>
-                    <option value="3">15 miles</option>
-                  </select>
-                </div>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="control-label">Age</label>
-                  <div class="age-range">
-                    <select class="form-control">
-                      <option value="">Pick</option>
-                      <option value="1">18</option>
-                      <option value="2">24</option>
-                      <option value="3">30</option>
-                    </select>
-                    <span>to</span>
-                    <select class="form-control">
-                      <option value="">Pick</option>
-                      <option value="1">35</option>
-                      <option value="2">40</option>
-                      <option value="3">50</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="control-label">Gender</label><br>
-                  <div class="btn-group">
-                    <label class="btn btn-primary" uib-btn-checkbox ng-model="gender">All</label>
-                    <label class="btn btn-primary" uib-btn-checkbox ng-model="gender">Men</label>
-                    <label class="btn btn-primary" uib-btn-checkbox ng-model="gender">Women</label>
-                  </div>
-                </div>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-12">
-                <h4>How much would you like to spend?</h4>
-              </div>
-              <div class="col-md-8">
-                <div class="form-group">
-                  <label class="control-label">Budget</label>
-                  <select class="form-control">
-                    <option value="">Pick one</option>
-                    <option value="1">Lifetime Budget</option>
-                    <option value="2">Other Option 1</option>
-                    <option value="3">Other Option 2</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="control-label">&nbsp;</label>
-                  <select class="form-control">
-                    <option value="">Pick one</option>
-                    <option value="1">$25.00</option>
-                    <option value="2">$50.00</option>
-                    <option value="3">$100.00</option>
-                  </select>
-                </div>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="control-label">Schedule</label>
-
-                  <div class="radio">
-                    <label>
-                      <input type="radio" value="1" checked>
-                      Run this ad constinuosly starting today
-                    </label>
-                  </div>
-
-                  <div class="radio">
-                    <label>
-                      <input type="radio" value="2">
-                      Set a start and end date
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row campaign-image">
-              <div class="col-md-5">
-                <label class="control-label">Campaign Image</label>
-                <img src="http://lorempixel.com/600/314/food" class="campaign-img">
-              </div>
-              <div class="col-md-7">
-                <ul >
-                  <li>Recommended image size is <strong>1200 x 628 pixels</strong></li>
-                  <li>Image ratio <strong>1.91:1</strong></li>
-                  <li>You image may not include <strong>more than 20% of text</strong></li>
-                </ul>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-12">
-                <h4>What text do you want to use?</h4>
-                <div class="form-group">
-                  <label class="control-label">Text</label>
-                  <textarea class="form-control"></textarea>
-                </div>
-                <div class="form-group">
-                  <label class="control-label">Headline</label>
-                  <input class="form-control"></input>
-                </div>
-              </div>
-            </div><!-- END .row -->
-          </div><!-- END toggle facebook visibility -->
-
           <div class="row">
-            <div class="col-md-12 resetsave">
-              <div class="pull-left">
-                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-                <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
-              </div><!-- END .pull-left -->
-              <div class="pull-right">
-                <button class="btn btn-primary" ng-click="channelTab = 'twitter'"><strong>Next</strong> | Twitter</button>
-                <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
-              </div><!-- END .pull-right -->
-            </div><!-- END .resetsave -->
-          </div><!-- END .row -->
-        </div><!-- END .col-md-6 -->
-      </div><!-- END .row -->
-    </div><!-- END .container -->
-  </form><!-- END .custom-form -->
-
-  <form class="custom-form" ng-show="channelTab === 'twitter'">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="checkbox toggle-checkbox">
-                <label>
-                  <input type="checkbox" ng-model="enableTwitter" ng-init="enableTwitter = true"> Enable Channel
-                </label>
-              </div>
-            </div>
-          </div><!-- END .row -->
-          <div ng-show="enableTwitter">
-            <div class="row">
-              <div class="col-md-12">
-                content here
-              </div>
-            </div><!-- END .row -->
-          </div><!-- END  -->
-
-          <div class="row">
-            <div class="col-md-12 resetsave">
-              <div class="pull-left">
-                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-                <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
-              </div><!-- END .pull-left -->
-              <div class="pull-right">
-                <button class="btn btn-primary" ng-click="channelTab = 'googleads'"><strong>Next</strong> | Google</button>
-                <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
-              </div><!-- END .pull-right -->
-            </div><!-- END .resetsave -->
-          </div><!-- END .row -->
-
-        </div><!-- END .col-md-6 -->
-      </div><!-- END .row -->
-    </div><!-- END .container -->
-  </form><!-- END .custom-form -->
-
-  <form class="custom-form" ng-show="channelTab === 'googleads'">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="checkbox toggle-checkbox">
-                <label>
-                  <input type="checkbox" ng-model="enableGoogleplus" ng-init="enableGoogleplus = true"> Enable Channel
-                </label>
-              </div>
-            </div>
-          </div><!-- END .row -->
-          <div ng-show="enableGoogleplus">
-            <div class="row">
-              <div class="col-md-12">
-                content here
-              </div>
-            </div><!-- END .row -->
-          </div><!-- END  -->
-
-          <div class="row">
-            <div class="col-md-12 resetsave">
-              <div class="pull-left">
-                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-                <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
-              </div><!-- END .pull-left -->
-              <div class="pull-right">
-                <button class="btn btn-primary" ng-click="channelTab = 'newsletter'"><strong>Next</strong> | Newsletter</button>
-                <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
-              </div><!-- END .pull-right -->
-            </div><!-- END .resetsave -->
-          </div><!-- END .row -->
-
-        </div><!-- END .col-md-6 -->
-      </div><!-- END .row -->
-    </div><!-- END .container -->
-  </form><!-- END .custom-form -->
-
-  <form class="custom-form" ng-show="channelTab === 'newsletter'">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="checkbox toggle-checkbox">
-                <label>
-                  <input type="checkbox" ng-model="enableNewsletter" ng-init="enableNewsletter = true"> Enable Channel
-                </label>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Email Body</label>
+                <textarea type="text" class="form-control"></textarea><!-- TODO: add WYSIWYG -->
               </div>
             </div>
           </div><!-- END .row -->
 
-          <div ng-show="enableNewsletter">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="control-label">Subject</label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="control-label">Email Body</label>
-                  <textarea type="text" class="form-control"></textarea><!-- TODO: add WYSIWYG -->
-                </div>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <label class="control-label">Lauch Date</label>
-                  <input type="text" class="form-control" /><!-- TODO: add datepicker -->
-                </div>
-              </div>
-              <div class="col-md-4 col-md-offset-4">
-                <div class="form-group">
-                  <label class="control-label">Frequency</label>
-                  <select class="form-control">
-                    <option value="">Pick one</option>
-                    <option value="1">Daily</option>
-                    <option value="2">Once a Week</option>
-                    <option value="3">Once a Month</option>
-                  </select>
-                </div>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="control-label">Redemption URL</label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="control-label">Redemption Code</label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-            </div><!-- END .row -->
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="control-label">Terms & Conditions</label>
-                  <textarea type="text" class="form-control"></textarea>
-                </div>
-              </div>
-            </div><!-- END .row -->
-
-          </div><!-- END  -->
-
           <div class="row">
-            <div class="col-md-12 resetsave">
-              <div class="pull-left">
-                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-                <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
-              </div><!-- END .pull-left -->
-              <div class="pull-right">
-                <button class="btn btn-primary" ng-click="channelTab = 'banner'"><strong>Next</strong> | Site Banner</button>
-                <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
-              </div><!-- END .pull-right -->
-            </div><!-- END .resetsave -->
-          </div><!-- END .row -->
-
-        </div><!-- END .col-md-6 -->
-      </div><!-- END .row -->
-    </div><!-- END .container -->
-  </form><!-- END .custom-form -->
-
-  <form class="custom-form" ng-show="channelTab === 'banner'">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <div class="checkbox toggle-checkbox">
-                <label>
-                  <input type="checkbox" ng-model="enableBanner" ng-init="enableBanner = true"> Enable Channel
-                </label>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="control-label">Lauch Date</label>
+                <input type="text" class="form-control" /><!-- TODO: add datepicker -->
+              </div>
+            </div>
+            <div class="col-md-4 col-md-offset-4">
+              <div class="form-group">
+                <label class="control-label">Frequency</label>
+                <select class="form-control">
+                  <option value="">Pick one</option>
+                  <option value="1">Daily</option>
+                  <option value="2">Once a Week</option>
+                  <option value="3">Once a Month</option>
+                </select>
               </div>
             </div>
           </div><!-- END .row -->
-          <div ng-show="enableBanner">
-            <div class="row">
-              <div class="col-md-12">
-                content here
-              </div>
-            </div><!-- END .row -->
-          </div><!-- END  -->
 
           <div class="row">
-            <div class="col-md-12 resetsave">
-              <div class="pull-left">
-                <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-                <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
-              </div><!-- END .pull-left -->
-              <div class="pull-right">
-                <button class="btn btn-primary" ng-click="$dismiss()"><strong>Next</strong> | Review</button>
-              </div><!-- END .pull-right -->
-            </div><!-- END .resetsave -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Redemption URL</label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
           </div><!-- END .row -->
 
-        </div><!-- END .col-md-6 -->
-      </div><!-- END .row -->
-    </div><!-- END .container -->
-  </form><!-- END .custom-form -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Redemption Code</label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Terms & Conditions</label>
+                <textarea type="text" class="form-control"></textarea>
+              </div>
+            </div>
+          </div><!-- END .row -->
+
+        </div><!-- END  -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave">
+            <div class="pull-left">
+              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+              <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+            </div><!-- END .pull-left -->
+            <div class="pull-right">
+              <button class="btn btn-primary" ng-click="channelTab = 'banner'"><strong>Next</strong> | Site Banner</button>
+              <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
+            </div><!-- END .pull-right -->
+          </div><!-- END .resetsave -->
+        </div><!-- END .row -->
+
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</form><!-- END .custom-form -->
+
+<form class="custom-form" ng-show="channelTab === 'banner'">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="checkbox toggle-checkbox">
+              <label>
+                <input type="checkbox" ng-model="enableBanner" ng-init="enableBanner = true"> Enable Channel
+              </label>
+            </div>
+          </div>
+        </div><!-- END .row -->
+        <div ng-show="enableBanner">
+          <div class="row">
+            <div class="col-md-12">
+              content here
+            </div>
+          </div><!-- END .row -->
+        </div><!-- END  -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave">
+            <div class="pull-left">
+              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+              <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+            </div><!-- END .pull-left -->
+            <div class="pull-right">
+              <button class="btn btn-primary" ng-click="$dismiss()"><strong>Next</strong> | Review</button>
+            </div><!-- END .pull-right -->
+          </div><!-- END .resetsave -->
+        </div><!-- END .row -->
+
+      </div><!-- END .col-md-6 -->
+    </div><!-- END .row -->
+  </div><!-- END .container -->
+</form><!-- END .custom-form -->
 </div><!-- END .flyout -->

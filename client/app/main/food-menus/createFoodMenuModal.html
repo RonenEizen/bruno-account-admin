@@ -1,4 +1,5 @@
 <div class="flyout">
+  <button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
   <form name="addFoodMenuForm" class="custom-form container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -20,8 +21,8 @@
 
         <div class="row">
           <div class="col-md-12 text-center resetsave">
-            <button class="btn btn-default" ng-click="main.go('main.food-menus')">Cancel</button>
-            <button class="btn btn-primary" ng-click="main.go('main.food-menus')" ng-disabled="addFoodMenuForm.$invalid">Save</button>
+            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+            <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="addFoodMenuForm.$invalid">Save</button>
           </div>
         </div><!-- END .row -->
 

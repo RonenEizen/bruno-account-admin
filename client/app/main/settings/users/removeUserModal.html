@@ -1,19 +1,26 @@
-<form class="custom-form">
+<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<div class="container">
   <div class="row">
-    <div class="col-md-12 text-center">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>Remove User</h1>
-          <p><strong>Are you sure that you want to remove this User?</strong></p>
-          <p>{{getUserData(userId).fname + ' ' + getUserData(userId).lname}}</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 resetsave text-center">
-          <button class="btn btn-default" ng-click="main.go('^.view')">Cancel</button>
-          <button class="btn btn-danger" ng-click="main.go('main.users')">Confirm</button>
-        </div>
-      </div><!-- END .row -->
-    </div>
+    <div class="col-md-6 col-md-offset-3">
+      <form class="custom-form">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Remove User</h1>
+                <p><strong>Are you sure that you want to remove this User?</strong></p>
+                <p>{{getUserData(userId).fname + ' ' + getUserData(userId).lname}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 resetsave text-center">
+                <button class="btn btn-default" ng-click="main.go('^.view')">Cancel</button>
+                <button class="btn btn-danger" ng-click="main.go('main.users')">Confirm</button>
+              </div>
+            </div><!-- END .row -->
+          </div>
+        </div><!-- END .row -->
+      </form>
+    </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
-</form>
+</div><!-- END .container -->

@@ -1,166 +1,169 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>View Orders</h1>
+<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>View Orders</h1>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 top-instructions">
-        <p>Showing all orders made by
-          <strong>Blake Lively</strong>
-        </p>
+      <div class="row">
+        <div class="col-md-12 top-instructions">
+          <p>Showing all orders made by
+            <strong>Blake Lively</strong>
+          </p>
+        </div>
       </div>
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="customer-orders-table">
+        <ul class="clearfix">
+          <li>Order No.</li>
+          <li>Date</li>
+          <li>Time</li>
+          <li>Type</li>
+          <li>Amount</li>
+          <li>Status</li>
+        </ul>
+        <ul class="clearfix">
+          <li><a ng-click="openLine = !openLine">123456</a></li>
+          <li>October 16, 2015</li>
+          <li>1:12 PM</li>
+          <li>Pickup</li>
+          <li>191.67</li>
+          <li>Fulfilled</li>
+          <span ng-class="{'icon-triangle_right': !openLine, 'icon-triangle_up': openLine}" ng-click="openLine = !openLine"></span>
+
+          <div class="order-details" ng-show="openLine">
+            <i class="icon-close" ng-click="openLine = !openLine"></i>
+            <div class="table table-default">
+              <div class="thead">
+                <div class="tr">
+                  <div class="th">Food Item</div>
+                  <div class="th">Category</div>
+                  <div class="th">Quantity</div>
+                  <div class="th">Price</div>
+                </div>
+              </div><!-- END .thead -->
+              <div class="tbody">
+                <div class="tr">
+                  <div class="td">Vodka</div>
+                  <div class="td">Beverage</div>
+                  <div class="td">1</div>
+                  <div class="td">1 &times; $2.00</div>
+                </div>
+                <div class="tr">
+                  <div class="td">Vodka</div>
+                  <div class="td">Beverage</div>
+                  <div class="td">1</div>
+                  <div class="td">1 &times; $2.00</div>
+                </div>
+                <div class="tr">
+                  <div class="td">Vodka</div>
+                  <div class="td">Beverage</div>
+                  <div class="td">1</div>
+                  <div class="td">1 &times; $2.00</div>
+                </div>
+              </div><!-- END .tbody -->
+            </div>
+          </div><!-- END .order-details -->
+        </ul>
+        <ul class="clearfix">
+          <li><a ng-click="openLine2 = !openLine2">123456</a></li>
+          <li>October 16, 2015</li>
+          <li>1:12 PM</li>
+          <li>Pickup</li>
+          <li>191.67</li>
+          <li>Fulfilled</li>
+          <span ng-class="{'icon-triangle_right': !openLine2, 'icon-triangle_up': openLine2}" ng-click="openLine2 = !openLine2"></span>
+
+          <div class="order-details" ng-show="openLine2">
+            <i class="icon-close" ng-click="openLine2 = !openLine2"></i>
+            <div class="table table-default">
+              <div class="thead">
+                <div class="tr">
+                  <div class="th">Food Item</div>
+                  <div class="th">Category</div>
+                  <div class="th">Quantity</div>
+                  <div class="th">Price</div>
+                </div>
+              </div><!-- END .thead -->
+              <div class="tbody">
+                <div class="tr">
+                  <div class="td">Vodka</div>
+                  <div class="td">Beverage</div>
+                  <div class="td">1</div>
+                  <div class="td">1 &times; $2.00</div>
+                </div>
+                <div class="tr">
+                  <div class="td">Vodka</div>
+                  <div class="td">Beverage</div>
+                  <div class="td">1</div>
+                  <div class="td">1 &times; $2.00</div>
+                </div>
+                <div class="tr">
+                  <div class="td">Vodka</div>
+                  <div class="td">Beverage</div>
+                  <div class="td">1</div>
+                  <div class="td">1 &times; $2.00</div>
+                </div>
+              </div><!-- END .tbody -->
+            </div>
+          </div><!-- END .order-details -->
+        </ul>
+        <ul class="clearfix">
+          <li><a ng-click="openLine3 = !openLine3">123456</a></li>
+          <li>October 16, 2015</li>
+          <li>1:12 PM</li>
+          <li>Pickup</li>
+          <li>191.67</li>
+          <li>Fulfilled</li>
+          <span ng-class="{'icon-triangle_right': !openLine3, 'icon-triangle_up': openLine3}" ng-click="openLine3 = !openLine3"></span>
+
+          <div class="order-details" ng-show="openLine3">
+            <i class="icon-close" ng-click="openLine3 = !openLine3"></i>
+            <div class="table table-default">
+              <div class="thead">
+                <div class="tr">
+                  <div class="th">Food Item</div>
+                  <div class="th">Category</div>
+                  <div class="th">Quantity</div>
+                  <div class="th">Price</div>
+                </div>
+              </div><!-- END .thead -->
+              <div class="tbody">
+                <div class="tr">
+                  <div class="td">Vodka</div>
+                  <div class="td">Beverage</div>
+                  <div class="td">1</div>
+                  <div class="td">1 &times; $2.00</div>
+                </div>
+                <div class="tr">
+                  <div class="td">Vodka</div>
+                  <div class="td">Beverage</div>
+                  <div class="td">1</div>
+                  <div class="td">1 &times; $2.00</div>
+                </div>
+                <div class="tr">
+                  <div class="td">Vodka</div>
+                  <div class="td">Beverage</div>
+                  <div class="td">1</div>
+                  <div class="td">1 &times; $2.00</div>
+                </div>
+              </div><!-- END .tbody -->
+            </div>
+          </div><!-- END .order-details -->
+        </ul>
+      </div><!-- END .view-orders -->
     </div>
-  </div><!-- END .col-md-6 -->
-</div><!-- END .row -->
+  </div><!-- END .row -->
 
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
-    <div class="customer-orders-table">
-      <ul class="clearfix">
-        <li>Order No.</li>
-        <li>Date</li>
-        <li>Time</li>
-        <li>Type</li>
-        <li>Amount</li>
-        <li>Status</li>
-      </ul>
-      <ul class="clearfix">
-        <li><a ng-click="openLine = !openLine">123456</a></li>
-        <li>October 16, 2015</li>
-        <li>1:12 PM</li>
-        <li>Pickup</li>
-        <li>191.67</li>
-        <li>Fulfilled</li>
-        <span ng-class="{'icon-triangle_right': !openLine, 'icon-triangle_up': openLine}" ng-click="openLine = !openLine"></span>
-
-        <div class="order-details" ng-show="openLine">
-          <i class="icon-close" ng-click="openLine = !openLine"></i>
-          <div class="table table-default">
-            <div class="thead">
-              <div class="tr">
-                <div class="th">Food Item</div>
-                <div class="th">Category</div>
-                <div class="th">Quantity</div>
-                <div class="th">Price</div>
-              </div>
-            </div><!-- END .thead -->
-            <div class="tbody">
-              <div class="tr">
-                <div class="td">Vodka</div>
-                <div class="td">Beverage</div>
-                <div class="td">1</div>
-                <div class="td">1 &times; $2.00</div>
-              </div>
-              <div class="tr">
-                <div class="td">Vodka</div>
-                <div class="td">Beverage</div>
-                <div class="td">1</div>
-                <div class="td">1 &times; $2.00</div>
-              </div>
-              <div class="tr">
-                <div class="td">Vodka</div>
-                <div class="td">Beverage</div>
-                <div class="td">1</div>
-                <div class="td">1 &times; $2.00</div>
-              </div>
-            </div><!-- END .tbody -->
-          </div>
-        </div><!-- END .order-details -->
-      </ul>
-      <ul class="clearfix">
-        <li><a ng-click="openLine2 = !openLine2">123456</a></li>
-        <li>October 16, 2015</li>
-        <li>1:12 PM</li>
-        <li>Pickup</li>
-        <li>191.67</li>
-        <li>Fulfilled</li>
-        <span ng-class="{'icon-triangle_right': !openLine2, 'icon-triangle_up': openLine2}" ng-click="openLine2 = !openLine2"></span>
-
-        <div class="order-details" ng-show="openLine2">
-          <i class="icon-close" ng-click="openLine2 = !openLine2"></i>
-          <div class="table table-default">
-            <div class="thead">
-              <div class="tr">
-                <div class="th">Food Item</div>
-                <div class="th">Category</div>
-                <div class="th">Quantity</div>
-                <div class="th">Price</div>
-              </div>
-            </div><!-- END .thead -->
-            <div class="tbody">
-              <div class="tr">
-                <div class="td">Vodka</div>
-                <div class="td">Beverage</div>
-                <div class="td">1</div>
-                <div class="td">1 &times; $2.00</div>
-              </div>
-              <div class="tr">
-                <div class="td">Vodka</div>
-                <div class="td">Beverage</div>
-                <div class="td">1</div>
-                <div class="td">1 &times; $2.00</div>
-              </div>
-              <div class="tr">
-                <div class="td">Vodka</div>
-                <div class="td">Beverage</div>
-                <div class="td">1</div>
-                <div class="td">1 &times; $2.00</div>
-              </div>
-            </div><!-- END .tbody -->
-          </div>
-        </div><!-- END .order-details -->
-      </ul>
-      <ul class="clearfix">
-        <li><a ng-click="openLine3 = !openLine3">123456</a></li>
-        <li>October 16, 2015</li>
-        <li>1:12 PM</li>
-        <li>Pickup</li>
-        <li>191.67</li>
-        <li>Fulfilled</li>
-        <span ng-class="{'icon-triangle_right': !openLine3, 'icon-triangle_up': openLine3}" ng-click="openLine3 = !openLine3"></span>
-
-        <div class="order-details" ng-show="openLine3">
-          <i class="icon-close" ng-click="openLine3 = !openLine3"></i>
-          <div class="table table-default">
-            <div class="thead">
-              <div class="tr">
-                <div class="th">Food Item</div>
-                <div class="th">Category</div>
-                <div class="th">Quantity</div>
-                <div class="th">Price</div>
-              </div>
-            </div><!-- END .thead -->
-            <div class="tbody">
-              <div class="tr">
-                <div class="td">Vodka</div>
-                <div class="td">Beverage</div>
-                <div class="td">1</div>
-                <div class="td">1 &times; $2.00</div>
-              </div>
-              <div class="tr">
-                <div class="td">Vodka</div>
-                <div class="td">Beverage</div>
-                <div class="td">1</div>
-                <div class="td">1 &times; $2.00</div>
-              </div>
-              <div class="tr">
-                <div class="td">Vodka</div>
-                <div class="td">Beverage</div>
-                <div class="td">1</div>
-                <div class="td">1 &times; $2.00</div>
-              </div>
-            </div><!-- END .tbody -->
-          </div>
-        </div><!-- END .order-details -->
-      </ul>
-    </div><!-- END .view-orders -->
+  <div class="row">
+    <div class="col-md-12 resetsave text-center">
+      <button class="btn btn-default" ng-click="$dismiss()">Back</button>
+    </div>
   </div>
-</div><!-- END .row -->
-
-<div class="row">
-  <div class="col-md-12 resetsave text-center">
-    <button class="btn btn-default" ng-click="main.go('main.customers')">Back</button>
-  </div>
-</div>
+</div><!-- END .container -->

@@ -1,3 +1,4 @@
+<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <channel-header ng-model="currentPage"></channel-header>
 
 <form class="custom-form">
@@ -88,12 +89,12 @@
         <div class="row">
           <div class="col-md-12 resetsave">
             <div class="pull-left">
-              <button class="btn btn-default" ui-sref="main.marketing">Cancel</button>
-              <button class="btn btn-primary" ui-sref="main.marketing">Save</button>
+              <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+              <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
             </div><!-- END .pull-left -->
             <div class="pull-right">
-              <button class="btn btn-primary" ui-sref="^.banner"><strong>Next</strong> | Site Banner</button>
-              <button class="btn btn-default" ui-sref="^.banner">Skip</button>
+              <button class="btn btn-primary" ng-click="$dismiss()"><strong>Next</strong> | Site Banner</button>
+              <button class="btn btn-default" ng-click="$dismiss()">Skip</button>
             </div><!-- END .pull-right -->
           </div><!-- END .resetsave -->
         </div><!-- END .row -->

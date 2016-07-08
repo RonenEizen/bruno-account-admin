@@ -1,18 +1,9 @@
 .slide-animation                  {
-  &.ng-enter                      { opacity: 0; transition: 1s ease all; z-index: 100;
+  &.ng-enter                      { opacity: 0; transition: 0.5s ease all; z-index: 100;
     &.ng-enter-active             { opacity: 1; }
   }
   &.ng-leave                      { opacity: 0.5; transition: 0.5s ease all; z-index: 101;
     &.ng-leave-active             { opacity: 0; }
-  }
-}
-
-.modal-animation                  {
-  &.ng-enter                      { height: 100%; opacity: 0; transition: 250ms ease all; top: -100px;
-    &.ng-enter-active             { height: 100%; opacity: 1; top: 0px; }
-  }
-  &.ng-leave                      { opacity: 1; transition: 250ms ease all; top: 0;
-    &.ng-leave-active             { opacity: 0; top: -100px; }
   }
 }
 

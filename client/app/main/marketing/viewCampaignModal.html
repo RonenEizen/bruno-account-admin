@@ -1,3 +1,4 @@
+<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -93,10 +94,10 @@
       <div class="row">
         <div class="col-md-12 resetsave text-center" ng-hide="campaign.active">
           <button class="btn btn-danger" ng-click="campaign.active = true">Launch Campaign</button>
-          <button class="btn btn-default" ui-sref="main.marketing">Not at this time</button>
+          <button class="btn btn-default" ng-click="$dismiss()">Not at this time</button>
         </div><!-- END .resetsave -->
         <div class="col-md-12 resetsave text-center" ng-show="campaign.active">
-          <button class="btn btn-default" ui-sref="main.marketing">Cancel</button>
+          <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
           <button class="btn btn-danger" ng-click="campaign.active = false">Halt Campaign</button>
         </div><!-- END .resetsave -->
       </div><!-- END .row -->

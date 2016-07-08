@@ -1,3 +1,4 @@
+<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <div class="container">
   <form class="custom-form row">
     <div class="col-md-6 col-md-offset-3">
@@ -21,11 +22,11 @@
 
       <div class="row">
         <div class="col-md-6">
-          <button class="btn btn-default" ui-sref="main.marketing">Cancel</button>
-          <button class="btn btn-primary" ui-sref="main.marketing">Save</button>
+          <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+          <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
         </div>
         <div class="col-md-6 text-right">
-          <button class="btn btn-primary" ui-sref="^.facebook"><strong>Next</strong> | Channels</button>
+          <button class="btn btn-primary" ng-click="$dismiss()"><strong>Next</strong> | Channels</button>
         </div>
       </div><!-- END .row -->
       <div class="row bottom-text">

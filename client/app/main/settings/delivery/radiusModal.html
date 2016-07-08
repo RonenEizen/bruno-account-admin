@@ -1,53 +1,52 @@
-<div class="flyout">
-  <form name="radiusForm" class="container custom-form" novalidate>
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1>Edit Delivery Radius</h1>
-            <div class="form-group radius">
-              <label class="label-control">Distance Format: </label>
-              <label class="radio-inline">
-                <input type="radio" name="distance" ng-model="radius.unit" value="mi"> mi
-                <span></span>
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="distance" ng-model="radius.unit" value="km"> km
-                <span></span>
-              </label>
-            </div>
+<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<form name="radiusForm" class="container custom-form" novalidate>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>Edit Delivery Radius</h1>
+          <div class="form-group radius">
+            <label class="label-control">Distance Format: </label>
+            <label class="radio-inline">
+              <input type="radio" name="distance" ng-model="radius.unit" value="mi"> mi
+              <span></span>
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="distance" ng-model="radius.unit" value="km"> km
+              <span></span>
+            </label>
           </div>
-        </div><!-- END .row -->
-      </div><!-- END .col-md-6 -->
-    </div><!-- END .row -->
-
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="googlemap">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d58420.22179022014!2d-51.171596471397784!3d-30.028410566185656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1443130059406"></iframe>
-          <div class="clearfix"></div>
-        </div><!-- END .googlemap -->
-      </div>
-    </div><!-- END .row -->
-
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <div class="form-group range-slider">
-          <input type="range" class="form-control" min="1" max="20" ng-model="radius.radius">
         </div>
-      </div>
-      <div class="col-md-4">
-        <span>{{radius.radius}}</span>
-        <span ng-show="radius.unit === 'mi'">miles</span>
-        <span ng-show="radius.unit === 'km'">kilometers</span>
-      </div>
-    </div><!-- END .row -->
+      </div><!-- END .row -->
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
 
-    <div class="row">
-      <div class="col-md-12 text-center resetsave">
-        <button class="btn btn-default" ng-click="main.go('main.deliverySettings')">Cancel</button>
-        <button class="btn btn-primary" ng-click="main.go('main.deliverySettings')" ng-disabled="radiusForm.$invalid">Save</button>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="googlemap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d58420.22179022014!2d-51.171596471397784!3d-30.028410566185656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1443130059406"></iframe>
+        <div class="clearfix"></div>
+      </div><!-- END .googlemap -->
+    </div>
+  </div><!-- END .row -->
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="form-group range-slider">
+        <input type="range" class="form-control" min="1" max="20" ng-model="radius.radius">
       </div>
-    </div><!-- END .row -->
-  </form><!-- END .container -->
-</div><!-- END .flyout -->
+    </div>
+    <div class="col-md-4">
+      <span>{{radius.radius}}</span>
+      <span ng-show="radius.unit === 'mi'">miles</span>
+      <span ng-show="radius.unit === 'km'">kilometers</span>
+    </div>
+  </div><!-- END .row -->
+
+  <div class="row">
+    <div class="col-md-12 text-center resetsave">
+      <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+      <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="radiusForm.$invalid">Save</button>
+    </div>
+  </div><!-- END .row -->
+</form><!-- END .container -->

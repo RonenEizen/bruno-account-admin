@@ -9,12 +9,12 @@ angular.module('accountAdminApp')
 
     // Modal calls
     $scope.createCampaignModal = Modal.createCampaignModal;
-    $scope.viewCampaignModal = Modal.campaignModal;
+    $scope.campaignModal = Modal.campaignModal;
 
-    $scope.$watchCollection(
-      () => { return $state.current.url; },
-      () => { $scope.channelTab = $state.current.url.slice(1); }
-    );
+    // $scope.$watchCollection(
+    //   () => { return $state.current.url; },
+    //   () => { $scope.channelTab = $state.current.url.slice(1); }
+    // );
 
     // Columns
     $scope.displayColumns = { campaign: true, enabled: true, disabled: true, status: true };

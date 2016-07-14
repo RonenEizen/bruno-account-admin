@@ -72,7 +72,7 @@
       <div class="tbody">
         <div class="tr repeat-animation" ng-animate ng-repeat="campaign in campaigns | filter:campaignsFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
           <div ng-show="displayColumns.campaign" class="td">
-            <a ng-click="viewCampaignModal(campaign)">{{campaign.name}}</a>
+            <a ng-click="campaignModal(campaign)">{{campaign.name}}</a>
           </div>
           <div ng-show="displayColumns.enabled" class="td">
             <i class="channel enabled {{social}}" ng-repeat="social in campaign.enabled"></i>

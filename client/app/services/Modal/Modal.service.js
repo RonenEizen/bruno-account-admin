@@ -45,15 +45,8 @@ angular.module('accountAdminApp')
     var _viewFoodItem = (modalObject) => openModal('app/main/food-menus/foodItemModal.html', 'FoodMenusCtrl', modalObject);
 
     // MARKETING
-    var _bannerCampaign = (modalObject) => openModal('app/main/marketing/bannerCampaignModal.html', 'MarketingCtrl', modalObject);
-    var _channelsCampaign = (modalObject) => openModal('app/main/marketing/channelsCampaign.html', 'MarketingCtrl', modalObject);
     var _createCampaign = () => openModal('app/main/marketing/createCampaignModal.html', 'MarketingCtrl');
-    var _editCampaign = (modalObject) => openModal('app/main/marketing/editCampaignModal.html', 'MarketingCtrl', modalObject);
-    var _facebookCampaign = (modalObject) => openModal('app/main/marketing/facebookCampaignModal.html', 'MarketingCtrl', modalObject);
-    var _googleCampaign = (modalObject) => openModal('app/main/marketing/googleCampaignModal.html', 'MarketingCtrl', modalObject);
-    var _newsletterCampaign = (modalObject) => openModal('app/main/marketing/newsletterCampaignModal.html', 'MarketingCtrl', modalObject);
-    var _twitterCampaign = (modalObject) => openModal('app/main/marketing/twitterCampaignModal.html', 'MarketingCtrl', modalObject);
-    var _viewCampaign = (modalObject) => openModal('app/main/marketing/viewCampaignModal.html', 'MarketingCtrl', modalObject);
+    var _viewCampaign = (modalObject) => openModal('app/main/marketing/campaignModal.html', 'MarketingCtrl', modalObject);
 
     // CUSTOMERS
     var _createCustomer = () => openModal('app/main/customers/createCustomerModal.html', 'CustomersCtrl');
@@ -110,15 +103,8 @@ angular.module('accountAdminApp')
       createFoodItemModal: _createFoodItem,
       foodItemModal: _viewFoodItem,
 
-      bannerCampaignModal: _bannerCampaign,
-      channelsCampaign: _channelsCampaign,
       createCampaignModal: _createCampaign,
-      editCampaignModal: _editCampaign,
-      facebookCampaignModal: _facebookCampaign,
-      googleCampaignModal: _googleCampaign,
-      newsletterCampaignModal: _newsletterCampaign,
-      twitterCampaignModal: _twitterCampaign,
-      viewCampaignModal: _viewCampaign,
+      campaignModal: _viewCampaign,
 
       createCustomerModal: _createCustomer,
       customerModal: _viewCustomer,

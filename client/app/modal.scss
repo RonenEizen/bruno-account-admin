@@ -37,10 +37,8 @@
       &:last-child                { margin-bottom: 0; }
     }
   }
-  form.custom-form                {
-    .bottom-text                  { padding-top: 30px;
-      small                       { color: $reservation-gray; }
-    }
+  .bottom-text                  { padding-top: 30px;
+    small                       { color: $reservation-gray; }
   }
   .top-instructions               { border-bottom: 1px solid $lightgray; font-size: 18px; margin-bottom: 30px; text-align: center; }
   .shadowed-container             {

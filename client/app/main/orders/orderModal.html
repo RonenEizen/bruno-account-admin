@@ -1,7 +1,7 @@
 <button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8 col-md-offset-2" ng-show="!editing">
       <div class="row">
         <div class="col-md-12 text-center">
           <h1>Order No. {{object._id}}</h1>
@@ -92,7 +92,7 @@
         <div class="col-md-12 resetsave">
           <div class="pull-left">
             <button class="btn btn-default" ng-click="$dismiss()">Back</button>
-            <button class="btn btn-primary" ng-click="$dismiss()">Edit</button>
+            <button class="btn btn-primary" ng-click="editing = !editing">Edit</button>
           </div><!-- END .pull-left -->
           <div class="pull-right">
             <button class="btn btn-danger"  ng-hide="object.status === 'cancelled'" ng-click="object.status = 'cancelled'">Cancel Order</button>
@@ -102,6 +102,93 @@
           </div><!-- END .pull-right -->
         </div><!-- END .resetsave -->
       </div><!-- END .row -->
-    </div><!-- END .col-md-6 -->
+    </div><!-- END .col-md-8 -->
+
+    <div class="col-md-8 col-md-offset-2" ng-show="editing">
+      <form name="orderForm" class="custom-form" novalidate>
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">Edit Order No. {{object._id}}</h1>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label">Customer</label>
+              <fieldset>
+                <select name="customer" class="form-control" ng-model="object.owner" required ng-options="customer._id as (customer.fname + ' ' +customer.lname) for customer in customers">
+                  <option value="">Pick one</option>
+                </select>
+              </fieldset>
+              <p ng-show="orderForm.customer.$error.required && orderForm.customer.$touched" class="help-block">This is a required field.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label">Type</label>
+              <fieldset>
+                <select name="type" class="form-control" ng-model="object.type" required>
+                  <option value="">Pick one</option>
+                  <option value="pickup">Pickup</option>
+                  <option value="delivery">Delivery</option>
+                </select>
+              </fieldset>
+              <p ng-show="orderForm.type.$error.required && orderForm.type.$touched" class="help-block">This is a required field.</p>
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table table-default table-edit-order">
+              <div class="thead" ng-hide="isOrderEmpty()">
+                <div class="tr">
+                  <div class="th">Food Item</div>
+                  <div class="th">Category</div>
+                  <div class="th">Quantity</div>
+                  <div class="th">Price</div>
+                  <div class="th"></div>
+                </div>
+              </div><!-- END .thead -->
+
+              <div class="tbody">
+                <div class="tr" ng-repeat="item in object.items">
+                  <div class="td">
+                    <div class="form-group">
+                      <fieldset>
+                        <select name="item" ng-model="item._id" class="form-control" ng-options="item._id as item.name for item in foodItems">
+                          <option value="">Pick one</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="td">{{item.category}}</div>
+                  <div class="td">
+                    <div class="form-group">
+                      <input type="number" ng-model="item.qty" class="form-control" min="1">
+                    </div>
+                  </div>
+                  <div class="td">{{item.qty ? item.qty + ' &times; ' + item.price : ''}}</div>
+                  <div class="td"><i class="icon-close" ng-click="object.items.splice($index,1)"></i></div>
+                </div><!-- END .tr -->
+              </div><!-- END .tbody -->
+            </div><!-- END .table -->
+
+            <div class="pull-left"><a ng-click="object.items.push({qty: 1})">+ Add Item</a></div>
+            <div class="pull-right">Total amount: <strong>{{object.total | currency}}</strong></div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="resetsave text-center">
+              <button class="btn btn-default" ng-click="editing = !editing">Cancel</button>
+              <button class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="$dismiss()">Save</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div><!-- END .col-md-8 -->
   </div><!-- END .row -->
 </div><!-- END .container -->

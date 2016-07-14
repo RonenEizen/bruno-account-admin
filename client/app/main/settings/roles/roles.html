@@ -1,4 +1,3 @@
-<div ui-view></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
@@ -80,7 +79,7 @@
         <div class="tr repeat-animation" ng-animate ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
 
           <div class="td" ng-show="displayColumns.role">
-            <a ng-click="viewRoleModal(role._id)">{{role.name}}</a>
+            <a ng-click="roleModal(role)">{{role.name}}</a>
           </div>
 
           <div class="td" ng-show="displayColumns.access">

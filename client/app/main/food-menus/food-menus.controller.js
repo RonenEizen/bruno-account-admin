@@ -10,18 +10,14 @@ angular.module('accountAdminApp')
     // Modal calls
     // menu
     $scope.createFoodMenuModal = Modal.createFoodMenuModal;
-    $scope.editFoodMenuModal = Modal.editFoodMenuModal;
-    $scope.removeFoodMenuModal = Modal.removeFoodMenuModal;
+    $scope.foodMenuModal = Modal.foodMenuModal;
     // category
     $scope.createMenuCategoryModal = Modal.createMenuCategoryModal;
-    $scope.editMenuCategoryModal = Modal.editMenuCategoryModal;
-    $scope.removeMenuCategoryModal = Modal.removeMenuCategoryModal;
+    $scope.menuCategoryModal = Modal.menuCategoryModal;
     // food item
-    $scope.addExistingFoodModal = Modal.addExistingFoodModal;
+    $scope.addFoodItemModal = Modal.addFoodItemModal;
     $scope.createFoodItemModal = Modal.createFoodItemModal;
-    $scope.editFoodItemModal = Modal.editFoodItemModal;
-    $scope.removeFoodItemModal = Modal.removeFoodItemModal;
-    $scope.viewFoodItemModal = Modal.viewFoodItemModal;
+    $scope.foodItemModal = Modal.foodItemModal;
 
     $scope.object = {
       _id: '1',

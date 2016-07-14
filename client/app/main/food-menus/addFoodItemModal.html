@@ -1,0 +1,48 @@
+<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <form name="addExistingFoodForm" class="custom-form form-group">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>Add Existing Food Item</h1>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="top-instructions">
+              <p>Item will be added to <strong>Appetizers</strong> in <strong>My Menu</strong></p>
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group has-feedback">
+              <ui-select name="selected" ng-model="selectedItem">
+                <ui-select-match placeholder="Search by name">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="item in foodItems | filter: $select.search" position='down'>
+                  <strong ng-bind-html="item.name | highlight: $select.search"></strong><br>
+                  <small ng-bind-html="item.description | highlight: $select.search"></small>
+                </ui-select-choices>
+              </ui-select>
+              <span class="icon-search form-control-feedback"></span>
+            </div>
+            <p ng-show="addExistingFoodForm.selected.$error.required && addExistingFoodForm.selected.$touched" class="help-block">This is a required field.</p>
+
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 text-center resetsave">
+            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+            <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="addExistingFoodForm.$invalid">Add</button>
+          </div>
+        </div><!-- END .row -->
+      </form>
+
+    </div>
+  </div><!-- END .row -->
+</div><!-- END .container -->

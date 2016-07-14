@@ -1,7 +1,78 @@
 <button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-3" ng-show="!editing && !removing">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1 class="text-center">View Customer</h1>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row row-info">
+          <div class="col-md-6">
+            <p><strong>First Name</strong><br>
+            {{object.fname}}</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Last Name</strong><br>
+            {{object.lname}}</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row row-info">
+          <div class="col-md-6">
+            <p><strong>Home Phone</strong><br>
+            {{object.homePhone | phone}}</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Mobile Phone</strong><br>
+            {{object.mobilePhone | phone}}</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row row-info">
+          <div class="col-md-6">
+            <p><strong>Personal Email</strong><br>
+            {{object.email}}</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Work Email</strong><br>
+            {{object.workEmail}}</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row row-info">
+          <div class="col-md-12">
+            <p><strong>Street Address</strong><br>
+            {{object.addr}}</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row row-info">
+          <div class="col-md-6">
+            <p><strong>City</strong><br>
+            {{object.city}}</p>
+          </div>
+          <div class="col-md-3">
+            <p><strong>State</strong><br>
+            {{object.state}}</p>
+          </div>
+          <div class="col-md-3">
+            <p><strong>ZIP</strong><br>
+            {{object.zip}}</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave text-center">
+            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+            <button class="btn btn-danger" ng-click="editing = !editing">Remove</button>
+            <button class="btn btn-primary" ng-click="removing = !removing">Edit</button>
+          </div>
+        </div><!-- END .row -->
+    </div><!-- END .col-md-6 -->
+
+    <div class="col-md-6 col-md-offset-3" ng-show="editing">
       <form name="customerForm" class="custom-form">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -81,8 +152,26 @@
         </div><!-- END .row -->
         <div class="row">
           <div class="col-md-12 resetsave text-center">
-            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+            <button class="btn btn-default" ng-click="editing = !editing">Cancel</button>
             <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="customerForm.$invalid">Save</button>
+          </div>
+        </div><!-- END .row -->
+      </form>
+    </div><!-- END .col-md-6 -->
+
+    <div class="col-md-6 col-md-offset-3" ng-show="removing">
+      <form name="removeForm" class="custom-form">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>Remove Customer</h1>
+            <p><strong>Are you sure that you want to remove this customer?</strong></p>
+            <p>{{object.fname + ' ' + object.lname}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 resetsave text-center">
+            <button class="btn btn-default" ng-click="removing = !removing">Cancel</button>
+            <button class="btn btn-danger" ng-click="$dismiss()">Confirm</button>
           </div>
         </div><!-- END .row -->
       </form>

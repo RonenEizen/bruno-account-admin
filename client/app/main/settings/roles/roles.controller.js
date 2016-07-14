@@ -11,19 +11,17 @@ angular.module('accountAdminApp')
 
     // Modal calls
     $scope.createRoleModal = Modal.createRoleModal;
-    $scope.editRoleModal = Modal.editRoleModal;
-    $scope.removeRoleModal = Modal.removeRoleModal;
-    $scope.viewRoleModal = Modal.viewRoleModal;
+    $scope.roleModal = Modal.roleModal;
 
-    $scope.$watchCollection(
-      () => { return $state.params; },
-      () => { $scope.roleId = $state.params._id; }
-    );
+    // $scope.$watchCollection(
+    //   () => { return $state.params; },
+    //   () => { $scope.roleId = $state.params._id; }
+    // );
     $scope.roleData = (roleId) => getRoleData(roleId);
 
     // this function gathers data to create the $scope.roles collection
     function getRoleData(id) {
-      let role = { _id: '', name: '', accesses: [], rights: [] }
+      let role = { _id: '', name: '', accesses: [], rights: [] };
 
       // finds the role in roles Array
       let roleObj = _.find(roles, [ '_id', id.toString() ]);

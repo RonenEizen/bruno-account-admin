@@ -1,0 +1,67 @@
+<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3" ng-show="!deleting">
+      <form class="custom-form">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>Edit Food Menu</h1>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label">Name</label>
+              <input type="text" class="form-control" value="My Menu">
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            <label class="control-label">Categories Order</label> <span class="optional">(drag to edit)</span>
+            <div class="shadowed-container">
+              <ul class="dragable">
+                <li>Appetizers
+                  <span class="handle fa fa-ellipsis-v"></span>
+                </li>
+                <li>Salads
+                  <span class="handle fa fa-ellipsis-v"></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave text-center">
+            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+            <button class="btn btn-danger" ng-click="deleting = !deleting">Remove</button>
+            <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
+          </div>
+        </div><!-- END .row -->
+      </form>
+    </div><!-- END .col-md-6 -->
+
+    <div class="col-md-6 col-md-offset-3" ng-show="deleting">
+      <form class="custom-form">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h1>Remove Food Menu</h1>
+            <p><strong>Are you sure that you want to remove this Food Menu?</strong></p>
+            <p><strong>All its categories and food items will be removed too.</strong></p>
+            <p>My Menu</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave text-center">
+            <button class="btn btn-default" ng-click="deleting = !deleting">Cancel</button>
+            <button class="btn btn-danger" ng-click="$dismiss()">Confirm</button>
+          </div>
+        </div><!-- END .row -->
+      </form>
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</div><!-- END .container -->

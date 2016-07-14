@@ -9,16 +9,16 @@ angular.module('accountAdminApp')
 
     // Modal calls
     $scope.createUserModal = Modal.createUserModal;
-    $scope.editUserModal = Modal.editUserModal;
-    $scope.removeUserModal = Modal.removeUserModal;
-    $scope.viewUserModal = Modal.viewUserModal;
+    $scope.userModal = Modal.userModal;
 
-    $scope.$watchCollection(
-      () => { return $state.params; },
-      () => { $scope.userId = $state.params._id; }
-    );
+    $scope.object = $scope.users[0]
 
-    $scope.getUserData = (id) => _.find($scope.users, [ '_id', id.toString() ]);
+    // $scope.$watchCollection(
+    //   () => { return $state.params; },
+    //   () => { $scope.userId = $state.params._id; }
+    // );
+
+    // $scope.getUserData = (id) => _.find($scope.users, [ '_id', id.toString() ]);
     $scope.userRole = (roleId) => _.find($scope.roles, ['_id', roleId.toString()]).name;
 
     // Columns

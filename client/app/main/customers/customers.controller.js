@@ -8,10 +8,8 @@ angular.module('accountAdminApp')
 
     // Modal calls
     $scope.createCustomerModal = Modal.createCustomerModal;
-    $scope.editCustomerModal = Modal.editCustomerModal;
-    $scope.removeCustomerModal = Modal.removeCustomerModal;
-    $scope.viewCustomerModal = Modal.viewCustomerModal;
-    $scope.viewCustomerOrdersModal = Modal.viewCustomerOrdersModal;
+    $scope.customerModal = Modal.customerModal;
+    $scope.customerOrdersModal = Modal.customerOrdersModal;
 
     $scope.object = {
       _id: '1',

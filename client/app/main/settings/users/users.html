@@ -1,4 +1,3 @@
-<div ui-view></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
@@ -92,7 +91,7 @@
 
       <div class="tbody">
         <div class="tr repeat-animation" ng-animate ng-repeat="user in users | filter:usersFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
-          <div class="td" ng-show="displayColumns.name"><a ng-click="viewUserModal(user)">{{user.fname + ' ' + user.lname}}</a></div>
+          <div class="td" ng-show="displayColumns.name"><a ng-click="userModal(user)">{{user.fname + ' ' + user.lname}}</a></div>
           <div class="td" ng-show="displayColumns.role" ng-bind="userRole(user.role)"></div>
           <div class="td" ng-show="displayColumns.phone">{{user.phone | phone}}</div>
           <div class="td" ng-show="displayColumns.email">{{user.email}}</div>

@@ -9,9 +9,7 @@ angular.module('accountAdminApp')
         size: 'lg',
         controller: controller,
         resolve: {
-          object: function () {
-            return modalObject;
-          }
+          object: () => modalObject
         }
       });
 
@@ -22,44 +20,33 @@ angular.module('accountAdminApp')
       });
     };
 
-    // $scope.cancel = () => $uibModalInstance.dismiss();
-
     // DASHBOARD MODALS
-    var _viewTable = (modalObject) => openModal('app/main/dashboard/viewTableModal.html', modalObject);
-    var _viewUpdates = (modalObject) => openModal('app/main/dashboard/viewUpdatesModal.html', modalObject);
+    var _viewTable = (modalObject) => openModal('app/main/dashboard/viewTableModal.html', 'DashboardCtrl', modalObject);
+    var _viewUpdates = (modalObject) => openModal('app/main/dashboard/viewUpdatesModal.html', 'DashboardCtrl', modalObject);
 
     // ORDERS MODALS
     var _createOrder = () => openModal('app/main/orders/createOrderModal.html', 'OrdersCtrl');
-    var _editOrder = (modalObject) => openModal('app/main/orders/editOrderModal.html', 'OrdersCtrl', modalObject);
-    var _viewOrder = (modalObject) => openModal('app/main/orders/viewOrderModal.html', 'OrdersCtrl', modalObject);
+    var _viewOrder = (modalObject) => openModal('app/main/orders/orderModal.html', 'OrdersCtrl', modalObject);
 
     // RESERVATIONS MODALS
     var _createReservation = () => openModal('app/main/reservations/createReservationModal.html', 'ReservationsCtrl', );
-    var _editReservation = (modalObject) => openModal('app/main/reservations/editReservationModal.html', 'ReservationsCtrl', modalObject);
-    var _viewReservation = (modalObject) => openModal('app/main/reservations/viewReservationModal.html', 'ReservationsCtrl', modalObject);
+    var _viewReservation = (modalObject) => openModal('app/main/reservations/reservationModal.html', 'ReservationsCtrl', modalObject);
 
     // FOOD MENUS MODALS
     // menu
-    var _foodMenu = (modalObject) => openModal('app/main/food-menus/foodMenuModal.html', 'FoodMenusCtrl', modalObject);
     var _createFoodMenu = () => openModal('app/main/food-menus/createFoodMenuModal.html', 'FoodMenusCtrl');
-    var _editFoodMenu = (modalObject) => openModal('app/main/food-menus/editFoodMenuModal.html', 'FoodMenusCtrl', modalObject);
-    var _removeFoodMenu = (modalObject) => openModal('app/main/food-menus/removeFoodMenuModal.html', 'FoodMenusCtrl', modalObject);
+    var _viewFoodMenu = (modalObject) => openModal('app/main/food-menus/foodMenuModal.html', 'FoodMenusCtrl', modalObject);
     // category
-    var _menuCategory = (modalObject) => openModal('app/main/food-menus/menuCategoryModal.html', 'FoodMenusCtrl', modalObject);
     var _createMenuCategory = () => openModal('app/main/food-menus/createMenuCategoryModal.html', 'FoodMenusCtrl');
-    var _editMenuCategory = (modalObject) => openModal('app/main/food-menus/editMenuCategoryModal.html', 'FoodMenusCtrl', modalObject);
-    var _removeMenuCategory = (modalObject) => openModal('app/main/food-menus/removeMenuCategoryModal.html', 'FoodMenusCtrl', modalObject);
+    var _viewMenuCategory = (modalObject) => openModal('app/main/food-menus/menuCategoryModal.html', 'FoodMenusCtrl', modalObject);
     // food item
-    var _foodItem = (modalObject) => openModal('app/main/food-menus/foodItemModal.html', 'FoodMenusCtrl', modalObject);
-    var _addExistingFood = (modalObject) => openModal('app/main/food-menus/addExistingFoodModal.html', 'FoodMenusCtrl', modalObject);
+    var _addFoodItem = (modalObject) => openModal('app/main/food-menus/addFoodItemModal.html', 'FoodMenusCtrl', modalObject);
     var _createFoodItem = () => openModal('app/main/food-menus/createFoodItemModal.html', 'FoodMenusCtrl');
-    var _editFoodItem = (modalObject) => openModal('app/main/food-menus/editFoodItemModal.html', 'FoodMenusCtrl', modalObject);
-    var _removeFoodItem = (modalObject) => openModal('app/main/food-menus/removeFoodItemModal.html', 'FoodMenusCtrl', modalObject);
-    var _viewFoodItem = (modalObject) => openModal('app/main/food-menus/viewFoodItemModal.html', 'FoodMenusCtrl', modalObject);
+    var _viewFoodItem = (modalObject) => openModal('app/main/food-menus/foodItemModal.html', 'FoodMenusCtrl', modalObject);
 
     // MARKETING
     var _bannerCampaign = (modalObject) => openModal('app/main/marketing/bannerCampaignModal.html', 'MarketingCtrl', modalObject);
-    var _channelsCam = (modalObject) => openModal('app/main/marketing/channelsCampaign.html', 'MarketingCtrl', modalObject);
+    var _channelsCampaign = (modalObject) => openModal('app/main/marketing/channelsCampaign.html', 'MarketingCtrl', modalObject);
     var _createCampaign = () => openModal('app/main/marketing/createCampaignModal.html', 'MarketingCtrl');
     var _editCampaign = (modalObject) => openModal('app/main/marketing/editCampaignModal.html', 'MarketingCtrl', modalObject);
     var _facebookCampaign = (modalObject) => openModal('app/main/marketing/facebookCampaignModal.html', 'MarketingCtrl', modalObject);
@@ -70,9 +57,7 @@ angular.module('accountAdminApp')
 
     // CUSTOMERS
     var _createCustomer = () => openModal('app/main/customers/createCustomerModal.html', 'CustomersCtrl');
-    var _editCustomer = (modalObject) => openModal('app/main/customers/editCustomerModal.html', 'CustomersCtrl', modalObject);
-    var _removeCustomer = (modalObject) => openModal('app/main/customers/removeCustomerModal.html', 'CustomersCtrl', modalObject);
-    var _viewCustomer = (modalObject) => openModal('app/main/customers/viewCustomerModal.html', 'CustomersCtrl', modalObject);
+    var _viewCustomer = (modalObject) => openModal('app/main/customers/customerModal.html', 'CustomersCtrl', modalObject);
     var _viewCustomerOrders = (modalObject) => openModal('app/main/customers/viewCustomerOrdersModal.html', 'CustomersCtrl', modalObject);
 
     // SETTINGS
@@ -83,14 +68,10 @@ angular.module('accountAdminApp')
     var _restaurant = (modalObject) => openModal('app/main/settings/business-info/restaurantModal.html', 'SettingsBusinessInfoCtrl', modalObject);
     // users
     var _createUser = () => openModal('app/main/settings/users/createUserModal.html', 'SettingsUsersCtrl');
-    var _editUser = (modalObject) => openModal('app/main/settings/users/editUserModal.html', 'SettingsUsersCtrl', modalObject);
-    var _removeUser = (modalObject) => openModal('app/main/settings/users/removeUserModal.html', 'SettingsUsersCtrl', modalObject);
-    var _viewUser = (modalObject) => openModal('app/main/settings/users/viewUserModal.html', 'SettingsUsersCtrl', modalObject);
+    var _viewUser = (modalObject) => openModal('app/main/settings/users/userModal.html', 'SettingsUsersCtrl', modalObject);
     // roles
     var _createRole = () => openModal('app/main/settings/roles/createRoleModal.html', 'SettingsRolesCtrl');
-    var _editRole = (modalObject) => openModal('app/main/settings/roles/editRoleModal.html', 'SettingsRolesCtrl', modalObject);
-    var _removeRole = (modalObject) => openModal('app/main/settings/roles/removeRoleModal.html', 'SettingsRolesCtrl', modalObject);
-    var _viewRole = (modalObject) => openModal('app/main/settings/roles/viewRoleModal.html', 'SettingsRolesCtrl', modalObject);
+    var _viewRole = (modalObject) => openModal('app/main/settings/roles/roleModal.html', 'SettingsRolesCtrl', modalObject);
     // delivery
     var _additional = (modalObject) => openModal('app/main/settings/delivery/additionalModal.html', 'SettingsDeliveryCtrl', modalObject);
     var _delivery = (modalObject) => openModal('app/main/settings/delivery/deliveryModal.html', 'SettingsDeliveryCtrl', modalObject);
@@ -111,28 +92,26 @@ angular.module('accountAdminApp')
     return {
       viewTableModal: _viewTable,
       viewUpdatesModal: _viewUpdates,
+
       createOrderModal: _createOrder,
-      editOrderModal: _editOrder,
-      viewOrderModal: _viewOrder,
+      orderModal: _viewOrder,
+
       createReservationModal: _createReservation,
-      editReservationModal: _editReservation,
-      viewReservationModal: _viewReservation,
-      foodMenuModal: _foodMenu,
+      reservationModal: _viewReservation,
+
+
       createFoodMenuModal: _createFoodMenu,
-      editFoodMenuModal: _editFoodMenu,
-      removeFoodMenuModal: _removeFoodMenu,
-      menuCategoryModal: _menuCategory,
+      foodMenuModal: _viewFoodMenu,
+
       createMenuCategoryModal: _createMenuCategory,
-      editMenuCategoryModal: _editMenuCategory,
-      removeMenuCategoryModal: _removeMenuCategory,
-      foodItemModal: _foodItem,
-      addExistingFoodModal: _addExistingFood,
+      menuCategoryModal: _viewMenuCategory,
+
+      addFoodItemModal: _addFoodItem,
       createFoodItemModal: _createFoodItem,
-      editFoodItemModal: _editFoodItem,
-      removeFoodItemModal: _removeFoodItem,
-      viewFoodItemModal: _viewFoodItem,
+      foodItemModal: _viewFoodItem,
+
       bannerCampaignModal: _bannerCampaign,
-      channelsCampaign: _channelsCam,
+      channelsCampaign: _channelsCampaign,
       createCampaignModal: _createCampaign,
       editCampaignModal: _editCampaign,
       facebookCampaignModal: _facebookCampaign,
@@ -140,23 +119,22 @@ angular.module('accountAdminApp')
       newsletterCampaignModal: _newsletterCampaign,
       twitterCampaignModal: _twitterCampaign,
       viewCampaignModal: _viewCampaign,
+
       createCustomerModal: _createCustomer,
-      editCustomerModal: _editCustomer,
-      removeCustomerModal: _removeCustomer,
-      viewCustomerModal: _viewCustomer,
-      viewCustomerOrdersModal: _viewCustomerOrders,
+      customerModal: _viewCustomer,
+      customerOrdersModal: _viewCustomerOrders,
+
       businessModal: _business,
       openingModal: _opening,
       ownerModal: _owner,
       restaurantModal: _restaurant,
+
       createUserModal: _createUser,
-      editUserModal: _editUser,
-      removeUserModal: _removeUser,
-      viewUserModal: _viewUser,
+      userModal: _viewUser,
+
       createRoleModal: _createRole,
-      editRoleModal: _editRole,
-      removeRoleModal: _removeRole,
-      viewRoleModal: _viewRole,
+      roleModal: _viewRole,
+
       additionalModal: _additional,
       deliveryModal: _delivery,
       radiusModal: _radius,

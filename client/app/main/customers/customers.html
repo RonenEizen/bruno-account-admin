@@ -1,4 +1,3 @@
-<div ui-view></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
@@ -149,7 +148,7 @@
       <div class="tbody">
         <div class="tr repeat-animation" ng-animate ng-repeat="customer in customers | filter:customersFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
           <div class="td" ng-show="displayColumns.name">
-            <a ng-click="viewCustomerModal(customer)">{{customer.fname + ' ' + customer.lname}}</a>
+            <a ng-click="customerModal(customer)">{{customer.fname + ' ' + customer.lname}}</a>
           </div>
           <div class="td" ng-show="displayColumns.homePhone">{{customer.homePhone | phone}}</div>
           <div class="td" ng-show="displayColumns.mobilePhone">{{customer.mobilePhone | phone}}</div>
@@ -158,7 +157,7 @@
           <div class="td" ng-show="displayColumns.addr">{{customer.addr}}</div>
           <div class="td" ng-show="displayColumns.city">{{customer.city}}</div>
           <div class="td" ng-show="displayColumns.zip">{{customer.zip}}</div>
-          <div class="td"><a ng-click="viewCustomerOrdersModal(customer)">View</a></div>
+          <div class="td"><a ng-click="customerOrdersModal(customer)">View</a></div>
         </div>
       </div><!-- END .tbody -->
 

@@ -9,15 +9,7 @@ angular.module('accountAdminApp')
 
     // Modal calls
     $scope.createCampaignModal = Modal.createCampaignModal;
-    $scope.editCampaignModal = Modal.editCampaignModal;
-    $scope.viewCampaignModal = Modal.viewCampaignModal;
-
-    $scope.bannerCampaignModal = Modal.bannerCampaignModal;
-    $scope.channelsCampaign = Modal.channelsCampaign;
-    $scope.facebookCampaignModal = Modal.facebookCampaignModal;
-    $scope.googleCampaignModal = Modal.googleCampaignModal;
-    $scope.newsletterCampaignModal = Modal.newsletterCampaignModal;
-    $scope.twitterCampaignModal = Modal.twitterCampaignModal;
+    $scope.viewCampaignModal = Modal.campaignModal;
 
     $scope.$watchCollection(
       () => { return $state.current.url; },

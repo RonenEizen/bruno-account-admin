@@ -8,8 +8,7 @@ angular.module('accountAdminApp')
 
     // Modal calls
     $scope.createReservationModal = Modal.createReservationModal;
-    $scope.editReservationModal = Modal.editReservationModal;
-    $scope.viewReservationModal = Modal.viewReservationModal;
+    $scope.reservationModal = Modal.reservationModal;
 
     // sets current tab
     $scope.view = $location.$$url.replace('/reservations/', '');

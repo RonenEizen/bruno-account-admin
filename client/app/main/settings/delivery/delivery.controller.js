@@ -1,13 +1,19 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsDeliveryCtrl', function($scope) {
+  .controller('SettingsDeliveryCtrl', function($scope, SettingsService, Modal) {
     $scope.pageTitle = 'Delivery';
 
-    $scope.delivery = $scope.main.delivery;
-    $scope.enabled = $scope.main.delivery.enabled;
-    $scope.radius = $scope.main.delivery.radius;
-    $scope.requests = $scope.main.delivery.requests;
-    $scope.additional = $scope.main.delivery.additional;
-    $scope.deliveryHours = $scope.main.delivery.deliveryHours;
+    var delivery = SettingsService.delivery;
+    $scope.enabled = delivery.enabled;
+    $scope.radius = delivery.radius;
+    $scope.requests = delivery.requests;
+    $scope.additional = delivery.additional;
+    $scope.deliveryHours = delivery.deliveryHours;
+
+    // Modal calls
+    $scope.additionalModal = Modal.additionalModal;
+    $scope.deliveryModal = Modal.deliveryModal;
+    $scope.radiusModal = Modal.radiusModal;
+    $scope.requestsModal = Modal.requestsModal;
   });

@@ -1,4 +1,3 @@
-<div class="modal-animation" ui-view ng-animate></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
@@ -17,7 +16,7 @@
       <div class="col-md-6 column">
         <h2 ng-class="{'reservations-heading': !!reservations.tables.length}">Tables</h2>
         <p ng-show="!reservations.tables.length">
-          <a ui-sref=".create">Add Information</a>
+          <a ng-click="createTableModal()">Add Information</a>
         </p>
         <div class="table reservations-table" ng-show="!!reservations.tables.length">
           <div class="thead">
@@ -32,7 +31,7 @@
           <div class="tbody">
             <div class="tr repeat-animation" ng-animate ng-repeat="table in reservations.tables">
               <div class="td">
-                <a href="/settings/reservations/{{table._id}}">{{table.name}}</a>
+                <a ng-click="tableModal(table)">{{table.name}}</a>
               </div>
               <div class="td">{{table.capacity}}</div>
               <div class="td">{{table.quantity}}</div>
@@ -41,7 +40,7 @@
 
             <div class="tr">
               <div class="td">
-                <a ui-sref=".create">+ Add Table</a>
+                <a ng-click="createTableModal()">+ Add Table</a>
               </div>
             </div><!-- END .tr -->
 
@@ -51,9 +50,9 @@
       </div><!-- END .col-md-6 -->
 
       <div class="col-md-6 column">
-        <h2>Seating <a ui-sref=".seating" class="pull-right">Edit</a></h2>
+        <h2>Seating <a ng-click="seatingModal()" class="pull-right">Edit</a></h2>
         <p ng-show="!reservations.seatings">
-          <a ui-sref=".seating">Add Information</a>
+          <a ng-click="seatingModal()">Add Information</a>
         </p>
         <p ng-show="reservations.seatings">
           <strong>Maximun Seating Capacity</strong><br>

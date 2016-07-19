@@ -6,14 +6,9 @@ class MainController {
 
   constructor(
         Auth
-      , CampaignService
-      , CustomerService
       , DefaultsService
-      , MarketingService
-      , MenuService
       , OrderService
       , ReservationService
-      , SettingsService
       , $state
     ) {
     this.navRevealed = true;
@@ -30,24 +25,9 @@ class MainController {
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
 
-
     // SERVICES
-    // CampaignService
-    this.campaigns = CampaignService.campaigns;
-
-    // CustomerService
-    this.customers = CustomerService.customers;
-
     // DefaultsService
     this.states = DefaultsService.states;
-
-    // MenuService
-    // this.menus = MenuService.menus;
-    // this.categories = MenuService.categories;
-    this.foodItems = MenuService.foodItems;
-
-    // MarketingService
-    this.campaigns = MarketingService.campaigns;
 
     // OrderService
     this.orders = OrderService.orders;
@@ -56,19 +36,6 @@ class MainController {
 
     // ReservationService
     this.reservations = ReservationService.reservations;
-
-    // SettingsService
-    this.businessInfo = SettingsService.businessInfo;
-    this.users = SettingsService.users;
-    this.roles = SettingsService.roles;
-    this.accesses = SettingsService.accesses;
-    this.rights = SettingsService.rights;
-    this.delivery = SettingsService.delivery;
-    this.reservationSettings = SettingsService.reservations;
-    this.onlinePayments = SettingsService.onlinePayments;
-    this.domain = SettingsService.domain;
-    this.integrations = SettingsService.integrations;
-    this.reviews = SettingsService.reviews;
 
     this.go = (dest = '^') => { $state.go(dest); };
   }

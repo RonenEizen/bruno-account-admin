@@ -256,7 +256,7 @@ strong,
 .sortorder                        { vertical-align: baseline; }
 
 // HEADER
-header.top                        { background: $headerbg; border-bottom: 1px solid $black; height: 55px; line-height: 54px; padding-left: 30px; padding-right: 30px; position: fixed; top: 0; transition: ease-in-out 500ms all; width: calc(100% - 240px); z-index: 50;
+header.top                        { background: $headerbg; border-bottom: 1px solid $black; height: 55px; line-height: 54px; padding-left: 30px; padding-right: 30px; position: absolute; top: 0; transition: ease-in-out 500ms all; width: calc(100% - 240px); z-index: 50;
   &.expanded                      { width: 100%; }
   .col-md-2                       { text-align: center; }
   .toggle-nav                     { float: left; height: 55px; margin-left: -15px; position: relative; transition: ease-in-out 500ms all; width: 35px;

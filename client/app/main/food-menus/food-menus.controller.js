@@ -1,11 +1,23 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('FoodMenusCtrl', function($scope, MenuService) {
+  .controller('FoodMenusCtrl', function($scope, MenuService, Modal) {
     $scope.pageTitle = 'Food Menus';
     $scope.menus = MenuService.menus;
     $scope.categories = MenuService.categories;
     $scope.foodItems = MenuService.foodItems;
+
+    // Modal calls
+    // menu
+    $scope.createFoodMenuModal = Modal.createFoodMenuModal;
+    $scope.foodMenuModal = Modal.foodMenuModal;
+    // category
+    $scope.createMenuCategoryModal = Modal.createMenuCategoryModal;
+    $scope.menuCategoryModal = Modal.menuCategoryModal;
+    // food item
+    $scope.addFoodItemModal = Modal.addFoodItemModal;
+    $scope.createFoodItemModal = Modal.createFoodItemModal;
+    $scope.foodItemModal = Modal.foodItemModal;
 
     $scope.object = {
       _id: '1',

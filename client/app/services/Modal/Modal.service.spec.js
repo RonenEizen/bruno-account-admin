@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: CampaignService', function () {
+describe('Service: Modal', function () {
 
   // load the service's module
   beforeEach(module('accountAdminApp'));
 
   // instantiate service
-  var Campaign;
-  beforeEach(inject(function (_Campaign_) {
-    Campaign = _Campaign_;
+  var Modal;
+  beforeEach(inject(function (_Modal_) {
+    Modal = _Modal_;
   }));
 
   it('should do something', function () {
-    expect(!!Campaign).toBe(true);
+    expect(!!Modal).toBe(true);
   });
 
 });

@@ -1,4 +1,3 @@
-<div class="modal-animation" ui-view ng-animate></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
@@ -24,7 +23,7 @@
               <img src="{{integration.imgUrl}}" alt="{{integration.name}}" title="{{integration.name}}">
             </div>
             <div class="td text-right">
-              <a href="/settings/integration/{{integration.name.toLowerCase()}}">{{integration.apiKey || 'Enter ' + integration.name + ' ID'}}</a>
+              <a ng-click="integrationModal(integration.name.toLowerCase())">{{integration.apiKey || 'Enter ' + integration.name + ' ID'}}</a>
             </div>
           </div>
         </div>
@@ -39,7 +38,7 @@
               <img src="{{review.imgUrl}}" alt="{{review.name}}" title="{{review.name}}">
             </div>
             <div class="td text-right">
-              <a href="/settings/integration/{{review.name.toLowerCase()}}">{{review.apiKey || 'Enter ' + review.name + ' ID'}}</a>
+              <a ng-click="integrationModal(review.name.toLowerCase())">{{review.apiKey || 'Enter ' + review.name + ' ID'}}</a>
             </div>
           </div>
         </div>

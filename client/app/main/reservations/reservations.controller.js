@@ -1,10 +1,14 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('ReservationsCtrl', function ($scope, $location) {
+  .controller('ReservationsCtrl', function ($scope, $location, Modal) {
     $scope.$parent.pageTitle = 'Reservations';
 
     // $scope.reservations = $scope.main.ReservationService.reservations;
+
+    // Modal calls
+    $scope.createReservationModal = Modal.createReservationModal;
+    $scope.reservationModal = Modal.reservationModal;
 
     // sets current tab
     $scope.view = $location.$$url.replace('/reservations/', '');

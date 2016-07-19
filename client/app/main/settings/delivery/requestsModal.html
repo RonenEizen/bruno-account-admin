@@ -1,52 +1,51 @@
-<div class="flyout">
-  <div class="container custom-form">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<div class="container custom-form">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
 
-        <form name="requestsForm" class="custom-form" novalidate>
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h1>Edit Send Delivery Requests To</h1>
+      <form name="requestsForm" class="custom-form" novalidate>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>Edit Send Delivery Requests To</h1>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-model="requests.email.enabled"> Email
+                <span></span>
+              </label>
             </div>
-          </div><!-- END .row -->
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" ng-model="requests.email.enabled"> Email
-                  <span></span>
-                </label>
-              </div>
-              <div class="form-group">
-                <input type="email" name="email" class="form-control" ng-readonly="!requests.email.enabled" placeholder="Email to get requests" ng-required="requests.email.enabled" ng-model="requests.email.input">
-                <p ng-show="requests.email.enabled && requestsForm.email.$error.required && requestsForm.email.$touched" class="help-block">This is a required field.</p>
-              </div>
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" ng-readonly="!requests.email.enabled" placeholder="Email to get requests" ng-required="requests.email.enabled" ng-model="requests.email.input">
+              <p ng-show="requests.email.enabled && requestsForm.email.$error.required && requestsForm.email.$touched" class="help-block">This is a required field.</p>
             </div>
+          </div>
 
-            <div class="col-md-6">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" ng-model="requests.phone.enabled"> Phone
-                  <span></span>
-                </label>
-              </div>
-              <div class="form-group">
-                <input type="tel" name="phone" class="form-control" ng-readonly="!requests.phone.enabled" placeholder="Phone to get requests" ng-required="requests.phone.enabled" ng-model="requests.phone.input">
-                <p ng-show="requests.phone.enabled && requestsForm.phone.$error.required && requestsForm.phone.$touched" class="help-block">This is a required field.</p>
-              </div>
+          <div class="col-md-6">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-model="requests.phone.enabled"> Phone
+                <span></span>
+              </label>
             </div>
-          </div><!-- END .row -->
-
-          <div class="row">
-            <div class="col-md-12 text-center resetsave">
-              <button class="btn btn-default" ng-click="main.go('main.deliverySettings')">Cancel</button>
-              <button class="btn btn-primary" ng-click="main.go('main.deliverySettings')" ng-disabled="requestsForm.$invalid">Save</button>
+            <div class="form-group">
+              <input type="tel" name="phone" class="form-control" ng-readonly="!requests.phone.enabled" placeholder="Phone to get requests" ng-required="requests.phone.enabled" ng-model="requests.phone.input">
+              <p ng-show="requests.phone.enabled && requestsForm.phone.$error.required && requestsForm.phone.$touched" class="help-block">This is a required field.</p>
             </div>
-          </div><!-- END .row -->
-        </form><!-- END Send Delivery Requests To -->
+          </div>
+        </div><!-- END .row -->
 
-      </div><!-- END .col-md-6 -->
-    </div><!-- END .row -->
-  </div><!-- END .container -->
-</div><!-- END .flyout -->
+        <div class="row">
+          <div class="col-md-12 text-center resetsave">
+            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+            <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="requestsForm.$invalid">Save</button>
+          </div>
+        </div><!-- END .row -->
+      </form><!-- END Send Delivery Requests To -->
+
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</div><!-- END .container -->

@@ -1,31 +1,30 @@
-<div class="flyout">
-  <div class="container custom-form">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<div class="container custom-form">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
 
-        <form name="integrationForm" class="custom-form form-group">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h1>Edit ID</h1>
+      <form name="integrationForm" class="custom-form form-group">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>Edit ID</h1>
 
-              <img class="integration-image" src="{{getImg()}}" alt="{{getName()}}">
+            <img class="integration-image" src="{{getImg()}}" alt="{{getName()}}">
 
-              <div class="form-group">
-                <input type="text" name="integration" ng-model="apiKey" class="form-control" placeholder="{{getPlaceholder()}}" required>
-                <p ng-show="integrationForm.integration.$error.required && integrationForm.integration.$touched" class="help-block">This is a required field.</p>
-              </div>
+            <div class="form-group">
+              <input type="text" name="integration" ng-model="apiKey" class="form-control" placeholder="{{getPlaceholder()}}" required>
+              <p ng-show="integrationForm.integration.$error.required && integrationForm.integration.$touched" class="help-block">This is a required field.</p>
             </div>
-          </div><!-- END .row -->
+          </div>
+        </div><!-- END .row -->
 
-          <div class="row">
-            <div class="col-md-12 text-center resetsave">
-              <button class="btn btn-default" ng-click="main.go('main.integration')">Cancel</button>
-              <button class="btn btn-primary" ng-click="main.go('main.integration')" ng-disabled="integrationForm.$invalid">Save</button>
-            </div>
-          </div><!-- END .row -->
-        </form>
+        <div class="row">
+          <div class="col-md-12 text-center resetsave">
+            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+            <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="integrationForm.$invalid">Save</button>
+          </div>
+        </div><!-- END .row -->
+      </form>
 
-      </div><!-- END .col-md-6 -->
-    </div><!-- END .row -->
-  </div><!-- END .container -->
-</div><!-- END .flyout -->
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</div><!-- END .container -->

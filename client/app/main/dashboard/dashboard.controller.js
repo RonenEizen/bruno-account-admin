@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('DashboardCtrl', function ($scope, $http, $interval) {
+  .controller('DashboardCtrl', function ($scope, $http, $interval, Modal) {
     $scope.pageTitle = 'Dashboard';
 
     // Columns
@@ -25,6 +25,11 @@ angular.module('accountAdminApp')
       });
       $('.sortable').disableSelection()
     };
+
+    // Modal calls
+    $scope.orderModal = Modal.orderModal;
+    $scope.reservationModal = Modal.reservationModal;
+    $scope.viewUpdatesModal = Modal.viewUpdatesModal;
 
     // set and update time every second
     $scope.currentDate = Date;

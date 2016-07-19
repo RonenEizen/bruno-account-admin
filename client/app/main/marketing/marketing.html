@@ -1,4 +1,3 @@
-<div class="modal-animation" ui-view ng-animate></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
@@ -6,7 +5,7 @@
       <h1>{{pageTitle}}</h1>
     </div><!-- END .col-md-5 -->
     <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="main.go('.create')">+ New Campaign</button>
+      <button class="btn btn-primary" ng-click="createCampaignModal()">+ New Campaign</button>
     </div><!-- END .col-md-2 -->
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -73,7 +72,7 @@
       <div class="tbody">
         <div class="tr repeat-animation" ng-animate ng-repeat="campaign in campaigns | filter:campaignsFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
           <div ng-show="displayColumns.campaign" class="td">
-            <a href="/marketing/{{campaign._id}}/view">{{campaign.name}}</a>
+            <a ng-click="campaignModal(campaign)">{{campaign.name}}</a>
           </div>
           <div ng-show="displayColumns.enabled" class="td">
             <i class="channel enabled {{social}}" ng-repeat="social in campaign.enabled"></i>

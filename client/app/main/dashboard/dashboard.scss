@@ -76,7 +76,7 @@
     ul.cal-row                    { color: $black; display: table; font: 500 14px $serif-font; list-style: none; margin: 0; padding: 0; table-layout: fixed; width: 100%;
       li                          { display: table-cell; height: 65px; vertical-align: middle; text-align: center; white-space: nowrap; }
     }
-    .ruler                        { border-left: 1px solid $black; height: calc(100% - 66px); position: absolute; top: 66px; width: 0; z-index: 100;
+    .ruler                        { border-left: 1px solid $black; height: calc(100% - 66px); position: absolute; top: 66px; width: 0; z-index: 10;
       time                        { color: $red; font-size: 12px; font-weight: 700; left: 5px; position: absolute; top: -23px; width: 60px; }
       i                           { background: $black; border-radius: 100%; display: block; height: 11px; left: -6px; position: absolute; top: -6px; width: 11px; }
     }

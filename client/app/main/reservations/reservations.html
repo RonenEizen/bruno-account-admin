@@ -1,11 +1,10 @@
-<div class="modal-animation" ui-view="modal" ng-animate></div>
 <header class="top clearfix" ng-class="{expanded: !main.navRevealed}">
   <div class="row">
     <div class="col-md-5">
       <div class="toggle-nav" ng-class="{open: main.navRevealed}"><div class="hamburger open" ng-click="main.toggleNav()"><span></span><span></span><span></span><span></span></div></div>
       <h1>{{pageTitle}}</h1>
     </div>
-    <div class="col-md-2"><button class="btn btn-primary" ng-click="main.go('^.create')">+ New Reservation</button></div>
+    <div class="col-md-2"><button class="btn btn-primary" ng-click="createReservationModal()">+ New Reservation</button></div>
     <div class="col-md-5"></div>
   </div>
 </header>

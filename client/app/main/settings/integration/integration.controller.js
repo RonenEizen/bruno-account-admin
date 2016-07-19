@@ -1,11 +1,14 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsIntegrationCtrl', function ($scope, $state) {
+  .controller('SettingsIntegrationCtrl', function ($scope, $state, SettingsService, Modal) {
     $scope.pageTitle = 'Integrations';
 
-    $scope.integrations = $scope.main.integrations;
-    $scope.reviews = $scope.main.reviews;
+    $scope.integrations = SettingsService.integrations;
+    $scope.reviews = SettingsService.reviews;
+
+    // Modal calls
+    $scope.integrationModal = Modal.integrationModal;
 
     var getObject = () => {
       let name = $state.params.name;

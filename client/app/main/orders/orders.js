@@ -8,18 +8,18 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/orders/orders.html',
         controller: 'OrdersCtrl'
       })
-      // .state('main.orders.create', {
-      //   url: '/create',
-      //   templateUrl: 'app/main/orders/createOrderModal.html'
-      // })
-      // .state('main.orders.order.view', {
-      //   url: '/view',
-      //   templateUrl: 'app/main/orders/viewOrderModal.html'
-      // })
-      // .state('main.orders.order.edit', {
-      //   url: '/edit',
-      //   templateUrl: 'app/main/orders/editOrderModal.html'
-      // });
+      .state('main.orders.create', {
+        url: '/create',
+        onEnter: function (Modal) {
+          Modal.createOrderModal()
+        }
+      })
+      .state('main.orders.order', {
+        url: '/:id/:state',
+        onEnter: function (Modal, OrderService, $stateParams) {
+          Modal.orderModal(_.find(OrderService.orders, { '_id': $stateParams.id }), $stateParams.state)
+        }
+      })
     $urlRouterProvider
-      .when('/orders/:_id', '/orders/:_id/view');
+      .when('/orders/:id', '/orders/:id/view')
   });

@@ -1,22 +1,11 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsUsersCtrl', function($scope, $state, SettingsService, Modal) {
+  .controller('SettingsUsersCtrl', function($scope, SettingsService) {
     $scope.pageTitle = 'Users';
 
     $scope.users = SettingsService.users;
     $scope.roles = SettingsService.roles;
-
-    // Modal calls
-    $scope.createUserModal = Modal.createUserModal;
-    $scope.userModal = Modal.userModal;
-
-    $scope.object = $scope.users[0]
-
-    // $scope.$watchCollection(
-    //   () => { return $state.params; },
-    //   () => { $scope.userId = $state.params._id; }
-    // );
 
     // $scope.getUserData = (id) => _.find($scope.users, [ '_id', id.toString() ]);
     $scope.userRole = (roleId) => _.find($scope.roles, ['_id', roleId.toString()]).name;

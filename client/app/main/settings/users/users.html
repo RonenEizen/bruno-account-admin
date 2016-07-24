@@ -4,9 +4,7 @@
       <div class="toggle-nav" ng-class="{open: main.navRevealed}"><div class="hamburger open" ng-click="main.toggleNav()"><span></span><span></span><span></span><span></span></div></div>
       <h1>{{pageTitle}}</h1>
     </div>
-    <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="createUserModal()">+ New User</button>
-    </div>
+    <div class="col-md-2"><a class="btn btn-primary" href="/settings/users/create">+ New User</a></div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
         <i class="icon-export_data"></i>
@@ -91,7 +89,7 @@
 
       <div class="tbody">
         <div class="tr repeat-animation" ng-animate ng-repeat="user in users | filter:usersFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
-          <div class="td" ng-show="displayColumns.name"><a ng-click="userModal(user)">{{user.fname + ' ' + user.lname}}</a></div>
+          <div class="td" ng-show="displayColumns.name"><a href="/settings/users/{{user._id}}">{{user.fname + ' ' + user.lname}}</a></div>
           <div class="td" ng-show="displayColumns.role" ng-bind="userRole(user.role)"></div>
           <div class="td" ng-show="displayColumns.phone">{{user.phone | phone}}</div>
           <div class="td" ng-show="displayColumns.email">{{user.email}}</div>

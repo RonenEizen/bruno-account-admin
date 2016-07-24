@@ -1,7 +1,7 @@
 <button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2" ng-show="!editing && !removing">
+    <div class="col-md-8 col-md-offset-2" ng-show="action === 'view'">
       <form class="custom-form">
         <div class="row">
           <div class="col-md-12">
@@ -84,14 +84,14 @@
         <div class="row">
           <div class="col-md-12 resetsave text-center">
             <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-            <button class="btn btn-danger" ng-click="removing = !removing">Remove</button>
-            <button class="btn btn-primary" ng-click="editing = !editing">Edit</button>
+            <button class="btn btn-danger" ng-click="action = 'remove'">Remove</button>
+            <button class="btn btn-primary" ng-click="action = 'edit'">Edit</button>
           </div>
         </div><!-- END .row -->
       </form>
     </div><!-- END .col-md-8 -->
 
-    <div class="col-md-8 col-md-offset-2" ng-show="editing">
+    <div class="col-md-8 col-md-offset-2" ng-show="action === 'edit'">
       <form name="editFoodItemForm" class="custom-form food-item">
         <div class="row">
           <div class="col-md-12">
@@ -269,14 +269,14 @@
 
         <div class="row">
           <div class="col-md-12 resetsave text-center">
-            <button class="btn btn-default" ng-click="editing = !editing">Cancel</button>
+            <button class="btn btn-default" ng-click="action = 'view'">Cancel</button>
             <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="editFoodItemForm.$invalid">Save</button>
           </div>
         </div><!-- END .row -->
       </form>
     </div><!-- END .col-md-8 -->
 
-    <div class="col-md-8 col-md-offset-2" ng-show="removing">
+    <div class="col-md-8 col-md-offset-2" ng-show="action === 'remove'">
       <form class="custom-form">
         <div class="row text-center">
           <div class="col-md-12">
@@ -288,7 +288,7 @@
 
         <div class="row">
           <div class="col-md-12 resetsave text-center">
-            <button class="btn btn-default" ng-click="removing = !removing">Cancel</button>
+            <button class="btn btn-default" ng-click="action = 'view'">Cancel</button>
             <button class="btn btn-danger" ng-click="$dismiss()">Confirm</button>
           </div>
         </div><!-- END .row -->

@@ -9,46 +9,45 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/reservations/reservations.html',
         controller: 'ReservationsCtrl'
       })
+
       .state('main.reservations.day', {
         url: '/day',
         templateUrl: 'app/main/reservations/reservations-day.html',
         controller: 'ReservationsDayCtrl'
       })
+      .state('main.reservations.day.create', {
+        url: '/create',
+        onEnter: function (Modal, ReservationService, $stateParams) {
+          Modal.createReservationModal()
+        }
+      })
+      .state('main.reservations.day.reservation', {
+        url: '/:_id/:state',
+        onEnter: function (Modal, ReservationService, $stateParams) {
+          Modal.reservationModal(_.find(ReservationService.reservations, { '_id': $stateParams.id }), $stateParams.state)
+        }
+      })
+
       .state('main.reservations.week', {
         url: '/week',
         templateUrl: 'app/main/reservations/reservations-week.html',
         controller: 'ReservationsWeekCtrl'
       })
-      .state('main.reservations.create', {
+      .state('main.reservations.week.create', {
         url: '/create',
-        views: {
-          modal: {
-            templateUrl: 'app/main/reservations/createReservationModal.html'
-          }
+        onEnter: function (Modal, ReservationService, $stateParams) {
+          Modal.createReservationModal()
         }
       })
-      .state('main.reservations.reservation', {
-        abstract: true,
-        url: '/:_id',
-        views: {
-          modal: {
-            templateUrl: 'app/main/reservations/reservationModal.html'
-          }
+      .state('main.reservations.week.reservation', {
+        url: '/:_id/:state',
+        onEnter: function (Modal, ReservationService, $stateParams) {
+          Modal.reservationModal(_.find(ReservationService.reservations, { '_id': $stateParams.id }), $stateParams.state)
         }
       })
-      .state('main.reservations.reservation.view', {
-        url: '/view',
-        templateUrl: 'app/main/reservations/viewReservationModal.html'
-      })
-      .state('main.reservations.reservation.edit', {
-        url: '/edit',
-        templateUrl: 'app/main/reservations/editReservationModal.html'
-      })
-      .state('main.reservations.reservation.remove', {
-        url: '/remove',
-        templateUrl: 'app/main/reservations/removeReservationModal.html'
-      });
+
     $urlRouterProvider
       .when('/reservations', '/reservations/day')
-      .when('/reservations/:_id', '/reservations/:_id/view');
+      .when('/reservations/day/:_id', '/reservations/day/:_id/view')
+      .when('/reservations/week/:_id', '/reservations/week/:_id/view')
   });

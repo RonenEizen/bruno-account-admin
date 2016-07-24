@@ -5,7 +5,7 @@
       <h1>{{pageTitle}}</h1>
     </div>
     <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="createCustomerModal()">+ New Customer</button>
+      <a class="btn btn-primary" href="/customers/create">+ New Customer</a>
     </div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
@@ -148,7 +148,7 @@
       <div class="tbody">
         <div class="tr repeat-animation" ng-animate ng-repeat="customer in customers | filter:customersFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
           <div class="td" ng-show="displayColumns.name">
-            <a ng-click="customerModal(customer)">{{customer.fname + ' ' + customer.lname}}</a>
+            <a href="/customers/{{customer._id}}">{{customer.fname + ' ' + customer.lname}}</a>
           </div>
           <div class="td" ng-show="displayColumns.homePhone">{{customer.homePhone | phone}}</div>
           <div class="td" ng-show="displayColumns.mobilePhone">{{customer.mobilePhone | phone}}</div>
@@ -157,7 +157,7 @@
           <div class="td" ng-show="displayColumns.addr">{{customer.addr}}</div>
           <div class="td" ng-show="displayColumns.city">{{customer.city}}</div>
           <div class="td" ng-show="displayColumns.zip">{{customer.zip}}</div>
-          <div class="td"><a ng-click="customerOrdersModal(customer)">View</a></div>
+          <div class="td"><a href="/customers/{{customer._id}}/orders">View</a></div>
         </div>
       </div><!-- END .tbody -->
 

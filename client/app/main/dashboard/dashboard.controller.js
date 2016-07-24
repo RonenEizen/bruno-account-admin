@@ -28,8 +28,8 @@ angular.module('accountAdminApp')
 
     // Modal calls
     $scope.orderModal = Modal.orderModal;
+    $scope.campaignModal = Modal.campaignModal;
     $scope.reservationModal = Modal.reservationModal;
-    $scope.viewUpdatesModal = Modal.viewUpdatesModal;
 
     // set and update time every second
     $scope.currentDate = Date;
@@ -38,9 +38,9 @@ angular.module('accountAdminApp')
     // Dashboard alerts
     $scope.alerts = [
       { type: 'warning', msg: 'Your domain <strong>rodeo.chefbr.uno</strong> is expiring. Visit <a href="/settings/domain">Domain</a> to update it.' },
-      { type: 'danger', msg: 'Your domain <strong>rodeo.chefbr.uno</strong> is expiring. Visit <a href="/settings/domain">Domain</a> to update it.' },
-      { type: 'success', msg: 'Your domain <strong>rodeo.chefbr.uno</strong> is expiring. Visit <a href="/settings/domain">Domain</a> to update it.' },
-      { type: 'info', msg: 'Your domain <strong>rodeo.chefbr.uno</strong> is expiring. Visit <a href="/settings/domain">Domain</a> to update it.' },
+      // { type: 'danger', msg: 'Your domain <strong>rodeo.chefbr.uno</strong> is expiring. Visit <a href="/settings/domain">Domain</a> to update it.' },
+      // { type: 'success', msg: 'Your domain <strong>rodeo.chefbr.uno</strong> is expiring. Visit <a href="/settings/domain">Domain</a> to update it.' },
+      // { type: 'info', msg: 'Your domain <strong>rodeo.chefbr.uno</strong> is expiring. Visit <a href="/settings/domain">Domain</a> to update it.' },
     ];
     $scope.closeAlert = function(index) { $scope.alerts.splice(index, 1); };
 

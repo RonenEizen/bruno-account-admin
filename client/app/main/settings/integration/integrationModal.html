@@ -8,10 +8,10 @@
           <div class="col-md-12 text-center">
             <h1>Edit ID</h1>
 
-            <img class="integration-image" src="{{getImg()}}" alt="{{getName()}}">
+            <img class="integration-image" src="{{object.imgUrl}}" alt="{{object.name}}">
 
             <div class="form-group">
-              <input type="text" name="integration" ng-model="apiKey" class="form-control" placeholder="{{getPlaceholder()}}" required>
+              <input type="text" name="integration" ng-model="apiKey" class="form-control" placeholder="{{'Enter ' + object.name + ' ID'}}" required>
               <p ng-show="integrationForm.integration.$error.required && integrationForm.integration.$touched" class="help-block">This is a required field.</p>
             </div>
           </div>

@@ -14,11 +14,11 @@
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-6 column">
-        <h2 ng-class="{'reservations-heading': !!reservations.tables.length}">Tables</h2>
-        <p ng-show="!reservations.tables.length">
-          <a ng-click="createTableModal()">Add Information</a>
+        <h2 ng-class="{'reservations-heading': !!tables.length}">Tables</h2>
+        <p ng-show="!tables.length">
+          <a href="/settings/reservations/create">Add Information</a>
         </p>
-        <div class="table reservations-table" ng-show="!!reservations.tables.length">
+        <div class="table reservations-table" ng-show="!!tables.length">
           <div class="thead">
             <div class="tr">
               <div class="th">Table Name</div>
@@ -29,9 +29,9 @@
           </div><!-- END .thead -->
 
           <div class="tbody">
-            <div class="tr repeat-animation" ng-animate ng-repeat="table in reservations.tables">
+            <div class="tr repeat-animation" ng-animate ng-repeat="table in tables">
               <div class="td">
-                <a ng-click="tableModal(table)">{{table.name}}</a>
+                <a href="/settings/reservations/{{table._id}}">{{table.name}}</a>
               </div>
               <div class="td">{{table.capacity}}</div>
               <div class="td">{{table.quantity}}</div>
@@ -39,9 +39,10 @@
             </div><!-- END .tr -->
 
             <div class="tr">
-              <div class="td">
-                <a ng-click="createTableModal()">+ Add Table</a>
-              </div>
+              <div class="td"><a href="/settings/reservations/create">+ Add Table</a></div>
+              <div class="td"></div>
+              <div class="td"></div>
+              <div class="td"></div>
             </div><!-- END .tr -->
 
           </div><!-- END .tbody -->
@@ -50,13 +51,13 @@
       </div><!-- END .col-md-6 -->
 
       <div class="col-md-6 column">
-        <h2>Seating <a ng-click="seatingModal()" class="pull-right">Edit</a></h2>
-        <p ng-show="!reservations.seatings">
-          <a ng-click="seatingModal()">Add Information</a>
+        <h2>Seating <a href="/settings/reservations/seating" class="pull-right">Edit</a></h2>
+        <p ng-show="!seating">
+          <a href="/settings/reservations/seating">Add Information</a>
         </p>
-        <p ng-show="reservations.seatings">
+        <p ng-show="seating">
           <strong>Maximun Seating Capacity</strong><br>
-          {{reservations.seatings}} people
+          {{seating}} people
         </p>
       </div>
     </div><!-- END .row -->

@@ -5,8 +5,9 @@ angular.module('accountAdminApp')
     $stateProvider
       .state('main.paymentsSettings.bankInfo', {
         url: '/bank-info',
-        templateUrl: 'app/main/settings/payments/bankInfoModal.html',
-        controller: 'SettingsPaymentsCtrl',
-        controllerAs: 'vm'
-      });
+        onEnter: function (Modal, SettingsService) {
+          Modal.bankInfoModal(SettingsService.onlinePayments)
+          console.log(Modal.bankInfoModal)
+        }
+      })
   });

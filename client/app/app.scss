@@ -310,9 +310,10 @@ header.top                        { background: $headerbg; border-bottom: 1px so
   .tbody                          { display: table-row-group; }
   .tfoot                          { display: table-footer-group; }
   .tr                             { display: table-row; }
-  .td, .th                        { display: table-cell; padding: 8px; vertical-align: middle; }
-  .th                             { border-bottom: 2px solid $black; font: 500 14px $serif-font;
+  .td, .th                        { display: table-cell; padding: 8px; vertical-align: middle;
     &:last-child                  { text-align: right; }
+  }
+  .th                             { border-bottom: 2px solid $black; font: 500 14px $serif-font;
     .filter                       { cursor: pointer; margin-left: -15px; }
   }
   .td                             { border-bottom: 1px solid $border; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

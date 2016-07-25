@@ -16,5 +16,5 @@ angular.module('accountAdminApp')
         }
       })
     $urlRouterProvider
-      .when('/settings/roles/:_id', '/settings/roles/:_id/view');
+      .when('/settings/roles/:id', '/settings/roles/:id/view');
   });

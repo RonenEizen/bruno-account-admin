@@ -94,8 +94,13 @@
             <button class="btn btn-default" ng-click="$dismiss()">Back</button>
             <button class="btn btn-primary" ng-click="action = 'edit'">Edit</button>
           </div><!-- END .pull-left -->
-          <div class="pull-right">
-            <button class="btn btn-danger"  ng-hide="object.status === 'cancelled'" ng-click="object.status = 'cancelled'">Cancel Order</button>
+          <div class="pull-right relative">
+            <div class="canceling" ng-show="canceling">
+              <p>Are you sure you want to cancel this order?</p>
+              <button class="btn btn-default btn-xs" ng-click="canceling = !canceling">no</button>
+              <button class="btn btn-danger btn-xs" ng-click="canceling = !canceling;object.status = 'cancelled';$dismiss()">yes</button>
+            </div>
+            <button class="btn btn-danger"  ng-hide="object.status === 'cancelled'" ng-click="canceling = !canceling" ng-class="{faded: canceling}">Cancel Order</button>
             <button class="btn btn-default" ng-show="object.status === 'cancelled'" ng-click="object.status = 'new'">Reopen Order</button>
             <button class="btn btn-success" ng-show="object.status === 'new'" ng-click="object.status = 'inprogress'">Start Progress</button>
             <button class="btn btn-warning" ng-show="object.status === 'inprogress'" ng-click="object.status = 'fulfilled'">Fulfill Order</button>

@@ -52,7 +52,14 @@
     }
   }
   .resetsave                      { margin: 30px 0;
-    .btn                          { margin: 0 5px; }
+    .btn                          { margin: 0 5px;
+      &.faded                     { opacity: .5; }
+    }
+    .relative                     { position: relative; }
+    .canceling                    { left: 5px; position: absolute; top: 50px;
+      p                           { font-size: 14px; margin: 0 }
+      .btn-xs                     { font-size: 12px; padding: 2px 10px; margin: 0 2px 0 0; }
+    }
   }
   .dragable                       { list-style: none; margin: 0; padding: 0;
     li                            { background: $white; border: 1px solid $lightgray; font-size: 14px; height: 50px; line-height: 50px; margin-bottom: 20px; padding: 0 20px; position: relative;
@@ -60,8 +67,8 @@
       &:last-child                { margin-bottom: 0; }
     }
   }
-  .bottom-text                  { padding-top: 30px;
-    small                       { color: $reservation-gray; }
+  .bottom-text                    { padding-top: 30px;
+    small                         { color: $reservation-gray; }
   }
   .top-instructions               { border-bottom: 1px solid $lightgray; font-size: 18px; margin-bottom: 30px; text-align: center; }
   .shadowed-container             {

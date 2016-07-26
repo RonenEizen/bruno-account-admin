@@ -10,7 +10,7 @@
   }
   h3                              { font: 300 16px $sans-font; }
   h4                              { font: medium 16px $sans-font;
-    &.table-title                 { border-bottom: 2px solid $black; font: 500 16px $sans-font; margin: 20px 0 0; }
+    &.table-title                 { border-bottom: 2px solid $black; font: 500 16px $sans-font; margin: 20px 0 0; padding-bottom: 5px; }
   }
   .icon-close                     { color: $gray; font-size: 14px; opacity: 1; transition: 500ms ease all;
     &:hover                       { color: $red; }
@@ -63,7 +63,7 @@
   }
   .dragable                       { list-style: none; margin: 0; padding: 0;
     li                            { background: $white; border: 1px solid $lightgray; font-size: 14px; height: 50px; line-height: 50px; margin-bottom: 20px; padding: 0 20px; position: relative;
-      .handle                     { color: $reservation-gray; cursor: grab; display: block; font-size: 28px; height: 100%; line-height: 50px; position: absolute; right: 0; text-align: center; top: 0; width: 40px; }
+      .handle                     { color: $reservation-gray; cursor: grab; display: block; font-size: 14px; height: 100%; line-height: 50px; position: absolute; right: 0; text-align: center; top: 0; width: 40px; }
       &:last-child                { margin-bottom: 0; }
     }
   }
@@ -92,6 +92,7 @@
       &:nth-child(2)              { padding: 0 0 0 10px; }
       &:nth-child(3)              { text-align: center; }
     }
+    .icon-close                   { line-height: 50px; }
   }
   .extra-margin                   { margin-bottom: 30px; }
   form.food-item                  {

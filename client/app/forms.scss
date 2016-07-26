@@ -73,7 +73,7 @@ label.radio-inline                { font-weight: normal; line-height: 1; padding
 
 // uib-dropdown
 .dropdown-menu                    { min-width: 100px; }
-.btn-group                        { background: $white; box-shadow: none;
+.btn-group.inline                 { background: $white; box-shadow: none;
   &.open                          {
     .dropdown-toggle              { border: 1px solid $border; box-shadow: none; color: $black; }
   }

@@ -1,32 +1,30 @@
-<div class="flyout">
-  <button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
-  <form name="addFoodMenuForm" class="custom-form container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1>Add Food Menu</h1>
+<button class="dismiss" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<form name="addFoodMenuForm" class="custom-form container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>Add Food Menu</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="control-label">Name</label> <span class="mandatory">*</span>
+            <input name="name" type="text" ng-model="object.menuName" class="form-control" required>
+            <p ng-show="addFoodMenuForm.name.$error.required && addFoodMenuForm.name.$touched" class="help-block">This is a required field.</p>
           </div>
         </div>
+      </div><!-- END .row -->
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label class="control-label">Name</label> <span class="mandatory">*</span>
-              <input name="name" type="text" ng-model="object.menuName" class="form-control" required>
-              <p ng-show="addFoodMenuForm.name.$error.required && addFoodMenuForm.name.$touched" class="help-block">This is a required field.</p>
-            </div>
-          </div>
-        </div><!-- END .row -->
+      <div class="row">
+        <div class="col-md-12 text-center resetsave">
+          <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+          <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="addFoodMenuForm.$invalid">Save</button>
+        </div>
+      </div><!-- END .row -->
 
-        <div class="row">
-          <div class="col-md-12 text-center resetsave">
-            <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-            <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="addFoodMenuForm.$invalid">Save</button>
-          </div>
-        </div><!-- END .row -->
-
-      </div><!-- END .col-md-6 -->
-    </div><!-- END .row -->
-  </form><!-- END .container -->
-</div><!-- END .flyout -->
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</form><!-- END .container -->

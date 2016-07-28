@@ -9,7 +9,7 @@ angular.module('accountAdminApp')
 
     // Alerts
     $scope.alerts = [
-      { type: 'warning', msg: '<i class="fa fa-exclamation-circle"></i>Table not available. change date, time or number of seats' },
+      { type: 'warning', msg: '<i class="fa fa-exclamation-circle"></i> Table not available. Change date, time or number of seats' },
     ];
     $scope.closeAlert = function(index) { $scope.alerts.splice(index, 1); };
   });

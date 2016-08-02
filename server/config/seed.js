@@ -5,6 +5,7 @@
 
 'use strict';
 import User from '../api/user/user.model';
+import Account from '../api/account/account.model';
 
 User.find({}).removeAsync()
   .then(() => {

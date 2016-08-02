@@ -82,7 +82,7 @@
               </div>
 
               <div class="col-md-12 col-sm-6">
-                <uib-datepicker ng-model="datepicked" class="date-picker" datepicker-options="{showWeeks: false}"></uib-datepicker>
+                <uib-datepicker ng-model="datepicked" class="date-picker" datepicker-options="{showWeeks: false, maxMode: 'day'}"></uib-datepicker>
               </div>
 
               <div class="col-md-12 col-sm-6">
@@ -100,7 +100,7 @@
                   </p>
                   <p>Jarred Leto<br>(347) 578-9001</p>
                   <p>Notes: would like a table by the window, gluten free, pays with Discover</p>
-                  <a class="btn btn-primary" ng-click="reservationModal('1')">Edit</a>
+                  <a class="btn btn-primary" href="/reservations/day/1/edit">Edit</a>
                 </div>
               </div>
             </div><!-- END .row -->

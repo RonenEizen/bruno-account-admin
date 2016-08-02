@@ -1,4 +1,4 @@
-$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+$icon-font-path: "../bower_components/bootstrap/fonts/";
 @import '../bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
@@ -205,12 +205,10 @@ strong,
 
 // cell-like tabs
 .tab-group                        { color: $white; float: left; font: 500 14px $serif-font; height: 35px; width: auto;
-  a                               { color: inherit; float: left; transition: 500ms ease opacity;
-    &:first-child .tab            { border-top-left-radius: 2px; border-bottom-left-radius: 2px; }
-    &:last-child .tab             { border-right: 1px solid $gray; border-top-right-radius: 2px; border-bottom-right-radius: 2px; }
+  a                               { color: inherit; float: left; margin-right: 5px; transition: 500ms ease opacity;
     &:focus,
     &:hover                       { opacity: .7; text-decoration: none; }
-    .tab                          { background: $gray; border: 1px solid $gray; border-right: 0; cursor: pointer; float: left; padding: 8px 30px;
+    .tab                          { background: $gray; border: 1px solid $gray; border-radius: 2px; cursor: pointer; float: left; padding: 8px 30px;
       &.active                    { background: $white; border-color: $border; color: $darkgray; }
     }
   }
@@ -310,9 +308,10 @@ header.top                        { background: $headerbg; border-bottom: 1px so
   .tbody                          { display: table-row-group; }
   .tfoot                          { display: table-footer-group; }
   .tr                             { display: table-row; }
-  .td, .th                        { display: table-cell; padding: 8px; vertical-align: middle; }
-  .th                             { border-bottom: 2px solid $black; font: 500 14px $serif-font;
+  .td, .th                        { display: table-cell; padding: 8px; vertical-align: middle;
     &:last-child                  { text-align: right; }
+  }
+  .th                             { border-bottom: 2px solid $black; font: 500 14px $serif-font;
     .filter                       { cursor: pointer; margin-left: -15px; }
   }
   .td                             { border-bottom: 1px solid $border; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

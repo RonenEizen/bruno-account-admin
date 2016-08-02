@@ -12,74 +12,57 @@ angular.module('accountAdminApp')
 
       // MENUS
       .state('main.food-menus.createMenu', {
-        url: '/createMenu',
-        templateUrl: 'app/main/food-menus/createFoodMenuModal.html'
+        url: '/create-menu',
+        onEnter: function (Modal) {
+          Modal.createFoodMenuModal()
+        }
       })
       .state('main.food-menus.menu', {
-        abstract: true,
-        url: '/menu/:_id',
-        templateUrl: 'app/main/food-menus/foodMenuModal.html'
-      })
-      .state('main.food-menus.menu.edit', {
-        url: '/edit',
-        templateUrl: 'app/main/food-menus/editFoodMenuModal.html'
-      })
-      .state('main.food-menus.menu.remove', {
-        url: '/remove',
-        templateUrl: 'app/main/food-menus/removeFoodMenuModal.html'
+        url: '/:id/:state',
+        onEnter: function (Modal, MenuService, $stateParams) {
+          Modal.foodMenuModal(_.find(MenuService.menus, { '_id': $stateParams.id }), $stateParams.state)
+        }
       })
 
 
       // CATEGORIES
       .state('main.food-menus.createCategory', {
-        url: '/createCategory',
-        templateUrl: 'app/main/food-menus/createMenuCategoryModal.html'
+        url: '/create-category',
+        onEnter: function (Modal) {
+          Modal.createMenuCategoryModal()
+        }
       })
       .state('main.food-menus.category', {
-        abstract: true,
-        url: '/category/:_id',
-        templateUrl: 'app/main/food-menus/menuCategoryModal.html'
-      })
-      .state('main.food-menus.category.edit', {
-        url: '/edit',
-        templateUrl: 'app/main/food-menus/editMenuCategoryModal.html'
-      })
-      .state('main.food-menus.category.remove', {
-        url: '/remove',
-        templateUrl: 'app/main/food-menus/removeMenuCategoryModal.html'
+        url: '/category/:id/:state',
+        onEnter: function (Modal, MenuService, $stateParams) {
+          Modal.menuCategoryModal(_.find(MenuService.categories, { '_id': $stateParams.id }), $stateParams.state)
+        }
       })
 
 
       // FOOD ITEMS
+      .state('main.food-menus.food', {
+        url: '/food/:id/:state',
+        onEnter: function (Modal, MenuService, $stateParams) {
+          Modal.foodItemModal(_.find(MenuService.foodItems, { '_id': $stateParams.id }), $stateParams.state)
+        }
+      })
       .state('main.food-menus.addFood', {
-        url: '/addFood',
-        templateUrl: 'app/main/food-menus/addExistingFoodModal.html'
+        url: '/add-food',
+        onEnter: function (Modal) {
+          Modal.addFoodItemModal()
+        }
       })
       .state('main.food-menus.createFood', {
-        url: '/createFood',
-        templateUrl: 'app/main/food-menus/createFoodItemModal.html'
+        url: '/create-food',
+        onEnter: function (Modal) {
+          Modal.createFoodItemModal()
+        }
       })
-      .state('main.food-menus.food', {
-        abstract: true,
-        url: '/food/:_id',
-        templateUrl: 'app/main/food-menus/foodItemModal.html'
-      })
-      .state('main.food-menus.food.view', {
-        url: '/view',
-        templateUrl: 'app/main/food-menus/viewFoodItemModal.html'
-      })
-      .state('main.food-menus.food.edit', {
-        url: '/edit',
-        templateUrl: 'app/main/food-menus/editFoodItemModal.html'
-      })
-      .state('main.food-menus.food.remove', {
-        url: '/remove',
-        templateUrl: 'app/main/food-menus/removeFoodItemModal.html'
-      });
 
 
     $urlRouterProvider
-      .when('/food-menus/menu/:_id', '/food-menus/menu/:_id/edit')
-      .when('/food-menus/category/:_id', '/food-menus/category/:_id/edit')
-      .when('/food-menus/food/:_id', '/food-menus/food/:_id/view');
+      .when('/food-menus/menu/:id', '/food-menus/menu/:id/edit')
+      .when('/food-menus/category/:id', '/food-menus/category/:id/edit')
+      .when('/food-menus/food/:id', '/food-menus/food/:id/view');
   });

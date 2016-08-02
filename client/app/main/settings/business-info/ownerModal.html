@@ -1,4 +1,4 @@
-<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<button class="dismiss" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <div class="container custom-form">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -12,13 +12,13 @@
         <div class="row">
           <div class="col-md-6 form-group">
             <label class="control-label">First Name</label> <span class="mandatory">*</span>
-            <input name="fname" type="text" class="form-control" ng-model="owner.fname" required>
+            <input name="fname" type="text" class="form-control" ng-model="object.fname" required>
             <p ng-show="ownerForm.fname.$error.required && ownerForm.fname.$touched" class="help-block">This is a required field.</p>
           </div>
 
           <div class="col-md-6 form-group">
             <label class="control-label">Last Name</label> <span class="mandatory">*</span>
-            <input name="lname" type="text" class="form-control" ng-model="owner.lname" required>
+            <input name="lname" type="text" class="form-control" ng-model="object.lname" required>
             <p ng-show="ownerForm.lname.$error.required && ownerForm.lname.$touched" class="help-block">This is a required field.</p>
           </div>
         </div><!-- END .row -->
@@ -26,13 +26,13 @@
         <div class="row">
           <div class="col-md-6 form-group">
             <label class="control-label">Date of Birth</label> <span class="mandatory">*</span>
-            <input name="bday" type="date" class="form-control" ng-model="owner.bday" required>
+            <input name="bday" type="date" class="form-control" ng-model="object.bday" required>
             <p ng-show="ownerForm.bday.$error.required && ownerForm.bday.$touched" class="help-block">This is a required field.</p>
           </div>
 
           <div class="col-md-6 form-group">
             <label class="control-label">Social Security Number</label> <span class="mandatory">*</span>
-            <input name="ssn" type="text" class="form-control" ng-model="owner.ssn" minlength="11" maxlength="11" required  ui-mask="999-99-9999" ui-mask-placeholder ui-mask-placeholder-char="_">
+            <input name="ssn" type="text" class="form-control" ng-model="object.ssn" minlength="11" maxlength="11" required  ui-mask="999-99-9999" ui-mask-placeholder ui-mask-placeholder-char="_">
             <p ng-show="ownerForm.ssn.$error.minlength" class="help-block">Social Security Number is too short.</p>
             <p ng-show="ownerForm.ssn.$error.maxlength" class="help-block">Social Security Number is too long.</p>
             <p ng-show="ownerForm.ssn.$error.required && ownerForm.ssn.$touched" class="help-block">This is a required field.</p>
@@ -42,13 +42,13 @@
         <div class="row">
           <div class="col-md-6 form-group">
             <label class="control-label">Email</label> <span class="mandatory">*</span>
-            <input name="email" type="email" class="form-control" ng-model="owner.email" required>
+            <input name="email" type="email" class="form-control" ng-model="object.email" required>
             <p ng-show="ownerForm.email.$error.required && ownerForm.email.$touched" class="help-block">Make sure this is a valid email.</p>
           </div>
 
           <div class="col-md-6 form-group">
             <label class="control-label">Phone Number</label> <span class="mandatory">*</span>
-            <input name="phone" type="tel" class="form-control" ng-model="owner.phone" minlength="14" maxlength="14" required ui-mask="(999) 999-9999" ui-mask-placeholder ui-mask-placeholder-char="_">
+            <input name="phone" type="tel" class="form-control" ng-model="object.phone" minlength="14" maxlength="14" required ui-mask="(999) 999-9999" ui-mask-placeholder ui-mask-placeholder-char="_">
             <p ng-show="ownerForm.phone.$error.minlength" class="help-block">Phone Number is too short.</p>
             <p ng-show="ownerForm.phone.$error.maxlength" class="help-block">Phone Number is too long.</p>
             <p ng-show="ownerForm.phone.$error.required && ownerForm.phone.$touched" class="help-block">Make sure this is a valid phone number.</p>
@@ -58,7 +58,7 @@
         <div class="row">
           <div class="col-md-12 form-group">
             <label class="control-label">Street Address 1</label> <span class="mandatory">*</span>
-            <input name="addr1" type="text" class="form-control" ng-model="owner.addr1" required>
+            <input name="addr1" type="text" class="form-control" ng-model="object.addr1" required>
             <p ng-show="ownerForm.addr1.$error.required && ownerForm.addr1.$touched" class="help-block">This is a required field.</p>
           </div>
         </div><!-- END .row -->
@@ -66,21 +66,21 @@
         <div class="row">
           <div class="col-md-12 form-group">
             <label class="control-label">Street Address 2 <span class="optional">(optional)</span></label>
-            <input name="addr2" type="text" class="form-control" ng-model="owner.addr2">
+            <input name="addr2" type="text" class="form-control" ng-model="object.addr2">
           </div>
         </div><!-- END .row -->
 
         <div class="row">
           <div class="col-md-6 form-group">
             <label class="control-label">City</label> <span class="mandatory">*</span>
-            <input name="city" type="text" class="form-control" ng-model="owner.city" required>
+            <input name="city" type="text" class="form-control" ng-model="object.city" required>
             <p ng-show="ownerForm.city.$error.required && ownerForm.city.$touched" class="help-block">This is a required field.</p>
           </div>
 
           <div class="col-md-6 form-group">
             <label class="control-label">State</label> <span class="mandatory">*</span>
             <fieldset>
-              <select name="state" ng-model="owner.state" class="form-control" required>
+              <select name="state" ng-model="object.state" class="form-control" required>
                 <option value="">Pick</option>
                 <option value="NY">NY</option>
                 <option value="FL">FL</option>
@@ -93,7 +93,7 @@
         <div class="row">
           <div class="col-md-6 form-group">
             <label class="control-label">ZIP Code</label> <span class="mandatory">*</span>
-            <input name="zip" type="number" class="form-control" ng-model="owner.zip" required>
+            <input name="zip" type="number" class="form-control" ng-model="object.zip" required>
             <p ng-show="ownerForm.zip.$error.minlength" class="help-block">Zip Code is too short.</p>
             <p ng-show="ownerForm.zip.$error.maxlength" class="help-block">Zip Code is too long.</p>
             <p ng-show="ownerForm.zip.$error.required && ownerForm.zip.$touched" class="help-block">This is a required field.</p>
@@ -102,7 +102,7 @@
           <div class="col-md-6 form-group">
             <label class="control-label">Country</label> <span class="mandatory">*</span>
             <fieldset>
-              <select name="country" ng-model="owner.country" class="form-control" required>
+              <select name="country" ng-model="object.country" class="form-control" required>
                 <option value="">Pick one</option>
                 <option value="US">United States</option>
                 <option value="BR">Brazil</option>

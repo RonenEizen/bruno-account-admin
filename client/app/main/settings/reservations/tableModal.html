@@ -1,4 +1,4 @@
-<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<button class="dismiss" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <div class="container custom-form">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -14,14 +14,14 @@
           <div class="col-md-6">
             <div class="form-group">
               <label class="control-label">Table Name</label>
-              <input type="text" name="name" ng-model="table.name" class="form-control" required>
+              <input type="text" name="name" ng-model="object.name" class="form-control" required>
               <p ng-show="tableForm.name.$error.required && tableForm.name.$touched" class="help-block">This is a required field.</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label class="control-label">Table Capacity</label>
-              <input type="number" name="capacity" ng-model="table.capacity" class="form-control" required>
+              <input type="number" name="capacity" ng-model="object.capacity" class="form-control" required>
               <p ng-show="tableForm.capacity.$error.required && tableForm.capacity.$touched" class="help-block">This is a required field.</p>
             </div>
           </div>
@@ -31,7 +31,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label class="control-label">Number of Tables</label>
-              <input type="number" name="quantity" ng-model="table.quantity" class="form-control" required>
+              <input type="number" name="quantity" ng-model="object.quantity" class="form-control" required>
               <p ng-show="tableForm.quantity.$error.required && tableForm.quantity.$touched" class="help-block">This is a required field.</p>
             </div>
           </div>
@@ -39,7 +39,7 @@
             <div class="form-group">
               <label class="control-label">Mergeable</label>
               <fieldset>
-                <select name="mergeable" ng-model="table.mergeable" class="form-control" required>
+                <select name="mergeable" ng-model="object.mergeable" class="form-control" required>
                   <option value="">Pick</option>
                   <option value="0">No</option>
                   <option value="1">Yes</option>

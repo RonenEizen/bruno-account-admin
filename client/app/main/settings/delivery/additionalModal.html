@@ -1,4 +1,4 @@
-<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<button class="dismiss" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <div class="container custom-form">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -14,26 +14,26 @@
           <div class="col-md-6">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-model="additional.minimum.enabled"> Minimum Delivery Amount
+                <input type="checkbox" ng-model="object.minimum.enabled"> Minimum Delivery Amount
                 <span></span>
               </label>
             </div>
             <div class="form-group">
-              <input type="number" name="minimum" class="form-control" ng-readonly="!additional.minimum.enabled" ng-model="additional.minimum.input" placeholder="Minimum Amount" ng-required="additional.minimum.enabled">
-              <p ng-show="additional.minimum.enabled && additionalForm.minimum.$error.required && additionalForm.minimum.$touched" class="help-block">This is a required field.</p>
+              <input type="number" name="minimum" class="form-control" ng-readonly="!object.minimum.enabled" ng-model="object.minimum.input" placeholder="Minimum Amount" ng-required="object.minimum.enabled">
+              <p ng-show="object.minimum.enabled && additionalForm.minimum.$error.required && additionalForm.minimum.$touched" class="help-block">This is a required field.</p>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-model="additional.surcharge.enabled"> Delivery Surcharge
+                <input type="checkbox" ng-model="object.surcharge.enabled"> Delivery Surcharge
                 <span></span>
               </label>
             </div>
             <div class="form-group">
-              <input type="number" name="surcharge" class="form-control" ng-readonly="!additional.surcharge.enabled" ng-model="additional.surcharge.input" placeholder="Surcharge" ng-required="additional.surcharge.enabled">
-              <p ng-show="additional.surcharge.enabled && additionalForm.surcharge.$error.required && additionalForm.surcharge.$touched" class="help-block">This is a required field.</p>
+              <input type="number" name="surcharge" class="form-control" ng-readonly="!object.surcharge.enabled" ng-model="object.surcharge.input" placeholder="Surcharge" ng-required="object.surcharge.enabled">
+              <p ng-show="object.surcharge.enabled && additionalForm.surcharge.$error.required && additionalForm.surcharge.$touched" class="help-block">This is a required field.</p>
             </div>
           </div>
         </div><!-- END .row -->
@@ -42,13 +42,13 @@
           <div class="col-md-12">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-model="additional.instructions.enabled"> Delivery Instructions
+                <input type="checkbox" ng-model="object.instructions.enabled"> Delivery Instructions
                 <span></span>
               </label>
             </div>
             <div class="form-group">
-              <textarea name="instructions" class="form-control" ng-readonly="!additional.instructions.enabled" ng-model="additional.instructions.input" placeholder="Instructions" ng-required="additional.instructions.enabled"></textarea>
-              <p ng-show="additional.instructions.enabled && additionalForm.instructions.$error.required && additionalForm.instructions.$touched" class="help-block">This is a required field.</p>
+              <textarea name="instructions" class="form-control" ng-readonly="!object.instructions.enabled" ng-model="object.instructions.input" placeholder="Instructions" ng-required="object.instructions.enabled"></textarea>
+              <p ng-show="object.instructions.enabled && additionalForm.instructions.$error.required && additionalForm.instructions.$touched" class="help-block">This is a required field.</p>
             </div>
           </div>
         </div><!-- END .row -->

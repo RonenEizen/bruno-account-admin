@@ -131,10 +131,10 @@ angular.module('accountAdminApp')
     };
     this.reservations = {
       tables: [
-        { _id: '1', name: 'Booth', capacity: 6, quantity: 5, mergeable: false },
-        { _id: '2', name: 'Window', capacity: 2, quantity: 2, mergeable: true }
+        { _id: '1', name: 'Booth', capacity: 6, quantity: 5, mergeable: 0 },
+        { _id: '2', name: 'Window', capacity: 2, quantity: 2, mergeable: 1 }
       ],
-      seatings: 52
+      seating: 52
     };
     this.onlinePayments = {
       enabled: true,
@@ -151,9 +151,7 @@ angular.module('accountAdminApp')
       seamless: { apiKey: '12345ABC&^', name: 'seamless', imgUrl: 'http://borntocoupon.com/wp-content/uploads/2015/02/Seamless-logo.png' },
       seatme: { apiKey: '', name: 'SeatMe', imgUrl: 'https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png' },
       opentable: { apiKey: '', name: 'OpenTable', imgUrl: 'http://www.pricelinegroup.com/wp-content/uploads/2014/07/1_Brand_logo-435x110_x2-435x110@2x.png' },
-      grubhub: { apiKey: '12345ABC&^', name: 'grubHub', imgUrl: 'https://snowulf.com/wp-content/uploads/2015/11/grubhub.png' }
-    };
-    this.reviews = {
+      grubhub: { apiKey: '12345ABC&^', name: 'grubHub', imgUrl: 'https://snowulf.com/wp-content/uploads/2015/11/grubhub.png' },
       menupages: { apiKey: '12345ABC&^', name: 'MenuPages', imgUrl: 'http://culintro.com/media/files/page/menu-pages.png' },
       yelp: { apiKey: '12345ABC&^', name: 'yelp', imgUrl: 'http://static1.squarespace.com/static/54c8415ce4b0b5c877bc5bf9/55709f2ae4b0467afc6e7950/55709f59e4b00405e9c5b2e0/1433444338056/yelp.png' },
       tripadvisor: { apiKey: '', name: 'TripAdvisor', imgUrl: 'https://static.tacdn.com/img2/branding/TA_550x370.png' }

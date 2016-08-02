@@ -44,7 +44,7 @@
         <div class="grayout" ng-show="rearranging"></div>
         <header>
           <h2>Recent Orders</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orders, 'fa-chevron-down': collapsed.orders}" ng-click="collapsed.orders = !collapsed.orders;msnry.layout()" ng-show="!rearranging"></i>
+          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orders, 'fa-chevron-down': collapsed.orders}" ng-click="collapsed.orders = !collapsed.orders" ng-show="!rearranging"></i>
           <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
         </header>
         <div class="collapsable" ng-show="!collapsed.orders">
@@ -60,25 +60,25 @@
               </div>
               <div class="tbody">
                 <div class="tr">
-                  <div class="td"><a ng-click="orderModal()">037565</a></div>
+                  <div class="td"><a ng-click="orderModal('654321', 'view')">037565</a></div>
                   <div class="td">10:25 PM</div>
                   <div class="td">Pickup</div>
                   <div class="td status new">New</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="orderModal()">037565</a></div>
+                  <div class="td"><a ng-click="orderModal('654321', 'view')">037565</a></div>
                   <div class="td">10:25 PM</div>
                   <div class="td">Delivery</div>
                   <div class="td status inprogress">In Progress</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="orderModal()">037565</a></div>
+                  <div class="td"><a ng-click="orderModal('654321', 'view')">037565</a></div>
                   <div class="td">10:25 PM</div>
                   <div class="td">Delivery</div>
                   <div class="td status inprogress">In Progress</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a ng-click="orderModal()">037565</a></div>
+                  <div class="td"><a ng-click="orderModal('654321', 'view')">037565</a></div>
                   <div class="td">10:25 PM</div>
                   <div class="td">Pickup</div>
                   <div class="td status cancelled">Cancelled</div>
@@ -97,7 +97,7 @@
         <div class="grayout" ng-show="rearranging"></div>
         <header>
           <h2>Recent Reservations</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservations, 'fa-chevron-down': collapsed.reservations}" ng-click="collapsed.reservations = !collapsed.reservations;msnry.layout()" ng-show="!rearranging"></i>
+          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservations, 'fa-chevron-down': collapsed.reservations}" ng-click="collapsed.reservations = !collapsed.reservations" ng-show="!rearranging"></i>
           <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
         </header>
         <div class="collapsable" ng-show="!collapsed.reservations">
@@ -112,23 +112,23 @@
                     <li ng-repeat="quarter in quarters track by $index">{{quarter}}</li>
                   </ul>
                   <div class="cal-row">
-                    <div class="booked pending" ng-click="reservationModal()" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
+                    <div class="booked pending" ng-click="reservationModal('1','view')" style="left: 550px; width: 500px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked active" ng-click="reservationModal()" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
+                    <div class="booked active" ng-click="reservationModal('1','view')" style="left: 300px; width: 600px;"><span>Table for 6</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked closed" ng-click="reservationModal()" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
-                    <div class="booked pending" ng-click="reservationModal()" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
+                    <div class="booked closed" ng-click="reservationModal('1','view')" style="left: 0px; width: 400px;"><span>Table for 4</span></div>
+                    <div class="booked pending" ng-click="reservationModal('1','view')" style="left: 500px; width: 450px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked active" ng-click="reservationModal()" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
+                    <div class="booked active" ng-click="reservationModal('1','view')" style="left: 250px; width: 350px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked active" ng-click="reservationModal()" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
+                    <div class="booked active" ng-click="reservationModal('1','view')" style="left: 150px; width: 450px;"><span>Table for 4</span></div>
                   </div>
                   <div class="cal-row">
-                    <div class="booked pending" ng-click="reservationModal()" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
+                    <div class="booked pending" ng-click="reservationModal('1','view')" style="left: 475px; width: 400px;"><span>Table for 4</span></div>
                   </div>
                 </div><!-- END .calendar-widget -->
               </div>
@@ -147,7 +147,7 @@
         <div class="grayout" ng-show="rearranging"></div>
         <header>
           <h2>Current Campaigns</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.campaigns, 'fa-chevron-down': collapsed.campaigns}" ng-click="collapsed.campaigns = !collapsed.campaigns;msnry.layout()" ng-show="!rearranging"></i>
+          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.campaigns, 'fa-chevron-down': collapsed.campaigns}" ng-click="collapsed.campaigns = !collapsed.campaigns" ng-show="!rearranging"></i>
           <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
         </header>
         <div class="collapsable" ng-show="!collapsed.campaigns">
@@ -162,41 +162,41 @@
               </div>
               <div class="tbody">
                 <div class="tr">
-                  <div class="td"><a href="/marketing/1/view">Children Eat Free</a></div>
+                  <div class="td"><a ng-click="campaignModal('1', 'view')">Children Eat Free</a></div>
                   <div class="td">
-                    <a href="/marketing/1/facebook"><i class="icon-Facebook"></i></a>
-                    <a href="/marketing/1/twitter"><i class="icon-Twitter"></i></a>
-                    <a href="/marketing/1/google"><i class="icon-GooglePlus"></i></a>
-                    <a href="/marketing/1/newsletter"><i class="icon-Newsletter"></i></a>
-                    <a href="/marketing/1/banner"><i class="icon-Banner"></i></a>
+                    <a ng-click="campaignModal('1','facebook')"><i class="icon-Facebook"></i></a>
+                    <a ng-click="campaignModal('1','twitter')"><i class="icon-Twitter"></i></a>
+                    <a ng-click="campaignModal('1','google')"><i class="icon-GooglePlus"></i></a>
+                    <a ng-click="campaignModal('1','newsletter')"><i class="icon-Newsletter"></i></a>
+                    <a ng-click="campaignModal('1','banner')"><i class="icon-Banner"></i></a>
                   </div>
                   <div class="td status expiring">Expiring Tomorrow</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a href="/marketing/1/view">Lunch Special - 20% Off</a></div>
+                  <div class="td"><a ng-click="campaignModal('1', 'view')">Lunch Special - 20% Off</a></div>
                   <div class="td">
-                    <a href="/marketing/1/facebook"><i class="icon-Facebook"></i></a>
-                    <a href="/marketing/1/twitter"><i class="icon-Twitter"></i></a>
-                    <a href="/marketing/1/newsletter"><i class="icon-Newsletter"></i></a>
+                    <a ng-click="campaignModal('1','facebook')"><i class="icon-Facebook"></i></a>
+                    <a ng-click="campaignModal('1','twitter')"><i class="icon-Twitter"></i></a>
+                    <a ng-click="campaignModal('1','newsletter')"><i class="icon-Newsletter"></i></a>
                   </div>
                   <div class="td status expiring">Expiring 01/20/2016</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a href="/marketing/1/view">Free Cofee with Breakfast</a></div>
+                  <div class="td"><a ng-click="campaignModal('1', 'view')">Free Cofee with Breakfast</a></div>
                   <div class="td">
-                    <a href="/marketing/1/facebook"><i class="icon-Facebook"></i></a>
-                    <a href="/marketing/1/google"><i class="icon-GooglePlus"></i></a>
-                    <a href="/marketing/1/banner"><i class="icon-Banner"></i></a>
+                    <a ng-click="campaignModal('1','facebook')"><i class="icon-Facebook"></i></a>
+                    <a ng-click="campaignModal('1','google')"><i class="icon-GooglePlus"></i></a>
+                    <a ng-click="campaignModal('1','banner')"><i class="icon-Banner"></i></a>
                   </div>
                   <div class="td status">02/20/2016</div>
                 </div>
                 <div class="tr">
-                  <div class="td"><a href="/marketing/1/view">Dinner Specials</a></div>
+                  <div class="td"><a ng-click="campaignModal('1', 'view')">Dinner Specials</a></div>
                   <div class="td">
-                    <a href="/marketing/1/facebook"><i class="icon-Facebook"></i></a>
-                    <a href="/marketing/1/twitter"><i class="icon-Twitter"></i></a>
-                    <a href="/marketing/1/newsletter"><i class="icon-Newsletter"></i></a>
-                    <a href="/marketing/1/banner"><i class="icon-Banner"></i></a>
+                    <a ng-click="campaignModal('1','facebook')"><i class="icon-Facebook"></i></a>
+                    <a ng-click="campaignModal('1','twitter')"><i class="icon-Twitter"></i></a>
+                    <a ng-click="campaignModal('1','newsletter')"><i class="icon-Newsletter"></i></a>
+                    <a ng-click="campaignModal('1','banner')"><i class="icon-Banner"></i></a>
                   </div>
                   <div class="td status">02/20/2016</div>
                 </div>
@@ -214,7 +214,7 @@
         <div class="grayout" ng-show="rearranging"></div>
         <header>
           <h2>Settings Updates</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.updates, 'fa-chevron-down': collapsed.updates}" ng-click="collapsed.updates = !collapsed.updates;msnry.layout()" ng-show="!rearranging"></i>
+          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.updates, 'fa-chevron-down': collapsed.updates}" ng-click="collapsed.updates = !collapsed.updates" ng-show="!rearranging"></i>
           <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
         </header>
         <div class="collapsable" ng-show="!collapsed.updates">
@@ -247,7 +247,7 @@
             </div><!-- END .table -->
           </div><!-- END .row -->
           <div class="bottom-link text-right">
-            <a ng-click="viewUpdatesModal()">All Settings Updates ›</a>
+            <a href="/dashboard/updates">All Settings Updates ›</a>
           </div><!-- END .row -->
         </div><!-- END .collapsable -->
       </div><!-- END .shadowed-container -->
@@ -257,7 +257,7 @@
         <div class="grayout" ng-show="rearranging"></div>
         <header>
           <h2>Order Trends</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orderTrends, 'fa-chevron-down': collapsed.orderTrends}" ng-click="collapsed.orderTrends = !collapsed.orderTrends;msnry.layout()" ng-show="!rearranging"></i>
+          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.orderTrends, 'fa-chevron-down': collapsed.orderTrends}" ng-click="collapsed.orderTrends = !collapsed.orderTrends" ng-show="!rearranging"></i>
           <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
         </header>
         <div class="collapsable" ng-show="!collapsed.orderTrends">
@@ -274,7 +274,7 @@
         <div class="grayout" ng-show="rearranging"></div>
         <header>
           <h2>Reservation Trends</h2>
-          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservationTrends, 'fa-chevron-down': collapsed.reservationTrends}" ng-click="collapsed.reservationTrends = !collapsed.reservationTrends;msnry.layout()" ng-show="!rearranging"></i>
+          <i class="fa pull-right" ng-class="{'fa-chevron-up': !collapsed.reservationTrends, 'fa-chevron-down': collapsed.reservationTrends}" ng-click="collapsed.reservationTrends = !collapsed.reservationTrends" ng-show="!rearranging"></i>
           <i class="fa fa-ellipsis-v pull-right" ng-show="rearranging"></i>
         </header>
         <div class="collapsable" ng-show="!collapsed.reservationTrends">

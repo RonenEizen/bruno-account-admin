@@ -1,7 +1,7 @@
-<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<button class="dismiss" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2" ng-show="!editing">
+    <div class="col-md-8 col-md-offset-2" ng-show="action === 'view'">
       <div class="row">
         <div class="col-md-12 text-center">
           <h1>Order No. {{object._id}}</h1>
@@ -92,10 +92,15 @@
         <div class="col-md-12 resetsave">
           <div class="pull-left">
             <button class="btn btn-default" ng-click="$dismiss()">Back</button>
-            <button class="btn btn-primary" ng-click="editing = !editing">Edit</button>
+            <button class="btn btn-primary" ng-click="action = 'edit'">Edit</button>
           </div><!-- END .pull-left -->
-          <div class="pull-right">
-            <button class="btn btn-danger"  ng-hide="object.status === 'cancelled'" ng-click="object.status = 'cancelled'">Cancel Order</button>
+          <div class="pull-right relative">
+            <div class="canceling" ng-show="canceling">
+              <p>Are you sure you want to cancel this order?</p>
+              <button class="btn btn-default btn-xs" ng-click="canceling = !canceling">no</button>
+              <button class="btn btn-danger btn-xs" ng-click="canceling = !canceling;object.status = 'cancelled';$dismiss()">yes</button>
+            </div>
+            <button class="btn btn-danger"  ng-hide="object.status === 'cancelled'" ng-click="canceling = !canceling" ng-class="{faded: canceling}">Cancel Order</button>
             <button class="btn btn-default" ng-show="object.status === 'cancelled'" ng-click="object.status = 'new'">Reopen Order</button>
             <button class="btn btn-success" ng-show="object.status === 'new'" ng-click="object.status = 'inprogress'">Start Progress</button>
             <button class="btn btn-warning" ng-show="object.status === 'inprogress'" ng-click="object.status = 'fulfilled'">Fulfill Order</button>
@@ -104,7 +109,7 @@
       </div><!-- END .row -->
     </div><!-- END .col-md-8 -->
 
-    <div class="col-md-8 col-md-offset-2" ng-show="editing">
+    <div class="col-md-8 col-md-offset-2" ng-show="action === 'edit'">
       <form name="orderForm" class="custom-form" novalidate>
         <div class="row">
           <div class="col-md-12">
@@ -183,7 +188,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="resetsave text-center">
-              <button class="btn btn-default" ng-click="editing = !editing">Cancel</button>
+              <button class="btn btn-default" ng-click="action = 'view'">Cancel</button>
               <button class="btn btn-primary" ng-disabled="orderForm.$invalid" ng-click="$dismiss()">Save</button>
             </div>
           </div>

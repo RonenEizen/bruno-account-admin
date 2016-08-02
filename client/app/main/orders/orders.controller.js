@@ -1,24 +1,14 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('OrdersCtrl', function($scope, CustomerService, DefaultsService, MenuService, OrderService, $filter, Modal) {
+  .controller('OrdersCtrl', function($scope, CustomerService, OrderService, $filter) {
     $scope.pageTitle = 'Orders';
 
     $scope.customers = CustomerService.customers;
-    $scope.foodItems = MenuService.foodItems;
     $scope.orders = OrderService.orders;
-    $scope.states = DefaultsService.states;
-
-    // Modal calls
-    $scope.createOrderModal = Modal.createOrderModal;
-    $scope.orderModal = Modal.orderModal;
-
-    // THIS OBJECT IS LOADED INTO MODALS
-    $scope.object = { _id: '654321', owner: '1', createdAt: new Date('2016-05-01T10:41:00Z'), updatedAt: new Date('2016-05-01T10:41:00Z'), type: 'pickup', status: 'new', items: [{ _id: '1', category: 'Beverages', name: 'Coca-Cola', qty: 2, price: 1.10 }, { _id: '2', category: 'Hamburgers', name: 'Big Burger', qty: 3, price: 5.5 }, { _id: '3', category: 'Snacks', name: 'Fries', qty: 5, price: 2.15 }], total: 29.45 }
-    $scope.isOrderEmpty = () => _.size($scope.object.items) < 1;
 
     // ORDERS: Sets class to rows based on order status
-    $scope.setStatus = () => status.toLowerCase().replace(/\s+/g, '')
+    $scope.setStatus = (status) => status.toLowerCase().replace(/\s+/g, '')
 
     // this function gets data from a customer ID
     $scope.customerData = (ownerID, query) => {

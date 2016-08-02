@@ -1,7 +1,7 @@
-<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<button class="dismiss" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3" ng-show="!editing && !removing">
+    <div class="col-md-6 col-md-offset-3" ng-show="action === 'view'">
       <div class="row">
         <div class="col-md-12 text-center">
           <h1 class="text-center">Table for 6</h1>
@@ -37,13 +37,13 @@
       <div class="row">
         <div class="col-md-12 resetsave text-center">
           <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-          <button class="btn btn-danger" ng-click="removing = !removing">Remove</button>
-          <button class="btn btn-primary" ng-click="editing = !editing">Edit</button>
+          <button class="btn btn-danger" ng-click="action = 'remove'">Remove</button>
+          <button class="btn btn-primary" ng-click="action = 'edit'">Edit</button>
         </div>
       </div><!-- END .row -->
     </div><!-- END .col-md-6 -->
 
-    <div class="col-md-6 col-md-offset-3" ng-show="editing">
+    <div class="col-md-6 col-md-offset-3"  ng-show="action === 'edit'">
       <form name="reservationForm" class="custom-form">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -109,14 +109,14 @@
 
         <div class="row">
           <div class="col-md-12 resetsave text-center">
-            <button class="btn btn-default" ng-click="editing = !editing">Cancel</button>
-            <button class="btn btn-primary" ng-disabled="reservationForm.$invalid" ng-click="$dismiss()">Save</button>
+            <button class="btn btn-default" ng-click="action = 'view'">Cancel</button>
+            <button class="btn btn-primary" ng-click="$dismiss()" ng-disabled="reservationForm.$invalid">Save</button>
           </div>
         </div><!-- END .row -->
       </form>
     </div><!-- END .col-md-6 -->
 
-    <div class="col-md-6 col-md-offset-3" ng-show="removing">
+    <div class="col-md-6 col-md-offset-3"  ng-show="action === 'remove'">
       <form name="removeForm" class="custom-form">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -128,7 +128,7 @@
 
         <div class="row">
           <div class="col-md-12 resetsave text-center">
-            <button class="btn btn-default" ng-click="removing = !removing">Cancel</button>
+            <button class="btn btn-default" ng-click="action = 'view'">Cancel</button>
             <button class="btn btn-danger" ng-click="$dismiss()">Confirm</button>
           </div>
         </div><!-- END .row -->

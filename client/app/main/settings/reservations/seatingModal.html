@@ -1,4 +1,4 @@
-<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<button class="dismiss" ng-click="$dismiss()"><i class="icon-close"></i></button>
 <div class="container custom-form">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -14,7 +14,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <label class="control-label">Maximum Seating Capacity</label>
-              <input type="number" name="seating" ng-model="reservations.seatings" class="form-control" required>
+              <input type="number" name="seating" ng-model="object" class="form-control" required>
               <p ng-show="seatingForm.seating.$error.required && seatingForm.seating.$touched" class="help-block">This is a required field.</p>
             </div>
           </div>

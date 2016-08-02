@@ -1,11 +1,11 @@
-<button class="close" ng-click="$dismiss()"><i class="icon-close"></i></button>
-<div class="container" ng-show="!channels">
+<button class="dismiss" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<div class="container" ng-show="action === 'view' || action === 'edit'">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3" ng-show="!editing">
+    <div class="col-md-6 col-md-offset-3" ng-show="action === 'view'">
 
       <div class="row">
         <div class="col-md-12">
-          <h1 class="text-center">Lunch Special – 20% Off <button ng-hide="campaign.active" class="btn icon-edit_pencil" ng-click="editing = !editing"></button></h1>
+          <h1 class="text-center">Lunch Special – 20% Off <button ng-hide="campaign.active" class="btn icon-edit_pencil" ng-click="action = 'edit'"></button></h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias excepturi quis sapiente, quia ab nulla dicta deserunt eos dignissimos perspiciatis sequi cumque magni ducimus maiores expedita! Aliquam, repellat in odit.</p>
         </div>
       </div><!-- END .row -->
@@ -26,7 +26,7 @@
                 <div class="td status current" ng-show="campaign.active">Current</div>
                 <div class="td text-right">
                   <button class="icon-preview"></button>
-                  <button class="icon-edit_pencil" ui-sref="^.facebook"></button>
+                  <button class="icon-edit_pencil" ng-click="action = 'facebook'"></button>
                 </div>
               </div>
               <div class="tr">
@@ -34,7 +34,7 @@
                 <div class="td status expiring" ng-show="campaign.active">Expiring</div>
                 <div class="td text-right">
                   <button class="icon-preview"></button>
-                  <button class="icon-edit_pencil" ui-sref="^.google"></button>
+                  <button class="icon-edit_pencil" ng-click="action = 'google'"></button>
                 </div>
               </div>
               <div class="tr">
@@ -42,7 +42,7 @@
                 <div class="td status cancelled" ng-show="campaign.active">Cancelled</div>
                 <div class="td text-right">
                   <button class="icon-preview"></button>
-                  <button class="icon-edit_pencil" ui-sref="^.twitter"></button>
+                  <button class="icon-edit_pencil" ng-click="action = 'twitter'"></button>
                 </div>
               </div>
               <div class="tr">
@@ -50,7 +50,7 @@
                 <div class="td status expired" ng-show="campaign.active">Expired</div>
                 <div class="td text-right">
                   <button class="icon-preview"></button>
-                  <button class="icon-edit_pencil" ui-sref="^.newsletter"></button>
+                  <button class="icon-edit_pencil" ng-click="action = 'newsletter'"></button>
                 </div>
               </div>
             </div>
@@ -71,19 +71,19 @@
               <div class="tr">
                 <div class="td">Twitter</div>
                 <div class="td text-right">
-                  <button class="icon-edit_pencil" ui-sref="^.twitter"></button>
+                  <button class="icon-edit_pencil" ng-click="action = 'twitter'"></button>
                 </div>
               </div>
               <div class="tr">
                 <div class="td">Google</div>
                 <div class="td text-right">
-                  <button class="icon-edit_pencil" ui-sref="^.google"></button>
+                  <button class="icon-edit_pencil" ng-click="action = 'google'"></button>
                 </div>
               </div>
               <div class="tr">
                 <div class="td">Site Banner</div>
                 <div class="td text-right">
-                  <button class="icon-edit_pencil" ui-sref="^.banner"></button>
+                  <button class="icon-edit_pencil" ng-click="action = 'banner'"></button>
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@
       </div><!-- END .row -->
     </div><!-- END .col-md-6 -->
 
-    <div class="col-md-6 col-md-offset-3" ng-show="editing">
+    <div class="col-md-6 col-md-offset-3" ng-show="action === 'edit'">
       <div class="row">
         <div class="col-md-12 text-center">
           <h1>Edit Campaign</h1>
@@ -123,11 +123,11 @@
 
       <div class="row">
         <div class="col-md-6">
-          <button class="btn btn-default" ng-click="editing = !editing">Cancel</button>
+          <button class="btn btn-default" ng-click="action = 'view'">Cancel</button>
           <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
         </div>
         <div class="col-md-6 text-right">
-          <button class="btn btn-primary" ng-click="channels = !channels"><strong>Next</strong> | Channels</button>
+          <button class="btn btn-primary" ng-click="action = 'facebook'"><strong>Next</strong> | Channels</button>
         </div>
       </div><!-- END .row -->
       <div class="row bottom-text">
@@ -139,10 +139,10 @@
   </div><!-- END .row -->
 </div><!-- END .container -->
 
-<div class="channels" ng-show="channels" ng-init="channelTab = 'facebook'">
-  <channel-header ng-model="currentPage"></channel-header>
+<div class="channels" ng-show="action === 'facebook' || action === 'twitter' || action === 'google' || action === 'newsletter' || action === 'banner'">
+  <channel-header ng-model="action"></channel-header>
 
-  <form class="custom-form" ng-show="channelTab === 'facebook'">
+  <form class="custom-form" ng-show="action === 'facebook'">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -310,8 +310,8 @@
                 <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
               </div><!-- END .pull-left -->
               <div class="pull-right">
-                <button class="btn btn-primary" ng-click="channelTab = 'twitter'"><strong>Next</strong> | Twitter</button>
-                <button class="btn btn-default" ng-click="channelTab = 'twitter'">Skip</button>
+                <button class="btn btn-primary" ng-click="action = 'twitter'"><strong>Next</strong> | Twitter</button>
+                <button class="btn btn-default" ng-click="action = 'twitter'">Skip</button>
               </div><!-- END .pull-right -->
             </div><!-- END .resetsave -->
           </div><!-- END .row -->
@@ -320,7 +320,7 @@
     </div><!-- END .container -->
   </form><!-- END .custom-form -->
 
-  <form class="custom-form" ng-show="channelTab === 'twitter'">
+  <form class="custom-form" ng-show="action === 'twitter'">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -349,8 +349,8 @@
                 <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
               </div><!-- END .pull-left -->
               <div class="pull-right">
-                <button class="btn btn-primary" ng-click="channelTab = 'google'"><strong>Next</strong> | Google</button>
-                <button class="btn btn-default" ng-click="channelTab = 'google'">Skip</button>
+                <button class="btn btn-primary" ng-click="action = 'google'"><strong>Next</strong> | Google</button>
+                <button class="btn btn-default" ng-click="action = 'google'">Skip</button>
               </div><!-- END .pull-right -->
             </div><!-- END .resetsave -->
           </div><!-- END .row -->
@@ -360,7 +360,7 @@
     </div><!-- END .container -->
   </form><!-- END .custom-form -->
 
-  <form class="custom-form" ng-show="channelTab === 'google'">
+  <form class="custom-form" ng-show="action === 'google'">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -443,8 +443,8 @@
                 <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
               </div><!-- END .pull-left -->
               <div class="pull-right">
-                <button class="btn btn-primary" ng-click="channelTab = 'newsletter'"><strong>Next</strong> | Newsletter</button>
-                <button class="btn btn-default" ng-click="channelTab = 'newsletter'">Skip</button>
+                <button class="btn btn-primary" ng-click="action = 'newsletter'"><strong>Next</strong> | Newsletter</button>
+                <button class="btn btn-default" ng-click="action = 'newsletter'">Skip</button>
               </div><!-- END .pull-right -->
             </div><!-- END .resetsave -->
           </div><!-- END .row -->
@@ -454,7 +454,7 @@
     </div><!-- END .container -->
   </form><!-- END .custom-form -->
 
-  <form class="custom-form" ng-show="channelTab === 'newsletter'">
+  <form class="custom-form" ng-show="action === 'newsletter'">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -546,8 +546,8 @@
                 <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
               </div><!-- END .pull-left -->
               <div class="pull-right">
-                <button class="btn btn-primary" ng-click="channelTab = 'banner'"><strong>Next</strong> | Site Banner</button>
-                <button class="btn btn-default" ng-click="channelTab = 'banner'">Skip</button>
+                <button class="btn btn-primary" ng-click="action = 'banner'"><strong>Next</strong> | Site Banner</button>
+                <button class="btn btn-default" ng-click="action = 'banner'">Skip</button>
               </div><!-- END .pull-right -->
             </div><!-- END .resetsave -->
           </div><!-- END .row -->
@@ -557,7 +557,7 @@
     </div><!-- END .container -->
   </form><!-- END .custom-form -->
 
-  <form class="custom-form" ng-show="channelTab === 'banner'">
+  <form class="custom-form" ng-show="action === 'banner'">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -587,7 +587,7 @@
                 <button class="btn btn-primary" ng-click="$dismiss()">Save</button>
               </div><!-- END .pull-left -->
               <div class="pull-right">
-                <button class="btn btn-primary" ng-click="channels = !channels; editing = !editing"><strong>Next</strong> | Review</button>
+                <button class="btn btn-primary" ng-click="action = 'view'"><strong>Next</strong> | Review</button>
               </div><!-- END .pull-right -->
             </div><!-- END .resetsave -->
           </div><!-- END .row -->

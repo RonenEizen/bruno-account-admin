@@ -4,9 +4,7 @@
       <div class="toggle-nav" ng-class="{open: main.navRevealed}"><div class="hamburger open" ng-click="main.toggleNav()"><span></span><span></span><span></span><span></span></div></div>
       <h1>{{pageTitle}}</h1>
     </div>
-    <div class="col-md-2">
-      <button class="btn btn-primary" ng-click="createRoleModal()">+ New Role</button>
-    </div>
+    <div class="col-md-2"><a class="btn btn-primary" href="/settings/roles/create">+ New Role</a></div>
     <div class="col-md-5">
       <div class="actions-right" ng-init="pickColumns=false">
         <i class="icon-export_data"></i>
@@ -79,7 +77,7 @@
         <div class="tr repeat-animation" ng-animate ng-repeat="role in roles | filter:rolesFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
 
           <div class="td" ng-show="displayColumns.role">
-            <a ng-click="roleModal(role)">{{role.name}}</a>
+            <a href="settings/roles/{{role._id}}">{{role.name}}</a>
           </div>
 
           <div class="td" ng-show="displayColumns.access">

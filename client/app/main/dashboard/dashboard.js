@@ -8,16 +8,10 @@ angular.module('accountAdminApp')
         templateUrl: 'app/main/dashboard/dashboard.html',
         controller: 'DashboardCtrl'
       })
-      .state('main.dashboard.table', {
-        url: '/table',
-        templateUrl: 'app/main/dashboard/viewTableModal.html',
-        controller: 'DashboardCtrl',
-        controllerAs: 'vm'
-      })
       .state('main.dashboard.updates', {
         url: '/updates',
-        templateUrl: 'app/main/dashboard/viewUpdatesModal.html',
-        controller: 'DashboardCtrl',
-        controllerAs: 'vm'
+        onEnter: function (Modal) {
+          Modal.updatesModal()
+        }
       });
   });

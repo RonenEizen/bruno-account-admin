@@ -5,8 +5,8 @@ angular.module('accountAdminApp')
     $stateProvider
       .state('main.integration.view', {
         url: '/:name',
-        templateUrl: 'app/main/settings/integration/integrationModal.html',
-        controller: 'SettingsIntegrationCtrl',
-        controllerAs: 'vm'
+        onEnter: function (Modal, SettingsService, $stateParams) {
+          Modal.integrationModal(SettingsService.integrations[$stateParams.name])
+        }
       });
   });

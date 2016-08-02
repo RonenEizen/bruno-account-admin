@@ -5,16 +5,20 @@ angular.module('accountAdminApp')
     $stateProvider
       .state('main.reservationsSettings.create', {
         url: '/create',
-        templateUrl: 'app/main/settings/reservations/createTableModal.html'
+        onEnter: function (Modal, SettingsService) {
+          Modal.createTableModal()
+        }
       })
       .state('main.reservationsSettings.seating', {
         url: '/seating',
-        templateUrl: 'app/main/settings/reservations/seatingModal.html'
+        onEnter: function (Modal, SettingsService) {
+          Modal.seatingModal(SettingsService.reservations.seating)
+        }
       })
       .state('main.reservationsSettings.table', {
-        url: '/:_id/edit',
-        templateUrl: 'app/main/settings/reservations/tableModal.html'
-      });
-    $urlRouterProvider
-      .when('/settings/reservations/1', '/settings/reservations/1/edit');
+        url: '/:id',
+        onEnter: function (Modal, SettingsService, $stateParams) {
+          Modal.tableModal(_.find(SettingsService.reservations.tables, { '_id': $stateParams.id }))
+        }
+      })
   });

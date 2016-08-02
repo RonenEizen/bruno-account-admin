@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-12">
       <h1 class="channel-heading">Edit Marketing Channels –
-        <strong ng-show="channelTab === 'facebook'">Facebook Ads</strong>
-        <strong ng-show="channelTab === 'twitter'">Twitter</strong>
-        <strong ng-show="channelTab === 'google'">Google Adwords</strong>
-        <strong ng-show="channelTab === 'newsletter'">Newsletter</strong>
-        <strong ng-show="channelTab === 'banner'">Site Banner</strong>
+        <strong ng-show="action === 'facebook'">Facebook Ads</strong>
+        <strong ng-show="action === 'twitter'">Twitter</strong>
+        <strong ng-show="action === 'google'">Google Adwords</strong>
+        <strong ng-show="action === 'newsletter'">Newsletter</strong>
+        <strong ng-show="action === 'banner'">Site Banner</strong>
       </h1>
     </div><!-- END .col-md-6 -->
   </div><!-- END .row -->
@@ -15,20 +15,20 @@
 <div class="container-fluid channel-nav">
   <div class="row">
     <ul class="col-md-8 col-md-offset-2 nav nav-tabs">
-      <li ng-class="{active: channelTab === 'facebook'}">
-        <a ng-click="channelTab = 'facebook'"><i class="icon-Facebook"></i></a>
+      <li ng-class="{active: action === 'facebook'}">
+        <a ng-click="action = 'facebook'"><i class="icon-Facebook"></i></a>
       </li>
-      <li ng-class="{active: channelTab === 'twitter'}">
-        <a ng-click="channelTab = 'twitter'"><i class="icon-Twitter"></i></a>
+      <li ng-class="{active: action === 'twitter'}">
+        <a ng-click="action = 'twitter'"><i class="icon-Twitter"></i></a>
       </li>
-      <li ng-class="{active: channelTab === 'google'}">
-        <a ng-click="channelTab = 'google'"><i class="icon-GooglePlus"></i></a>
+      <li ng-class="{active: action === 'google'}">
+        <a ng-click="action = 'google'"><i class="icon-GooglePlus"></i></a>
       </li>
-      <li ng-class="{active: channelTab === 'newsletter'}">
-        <a ng-click="channelTab = 'newsletter'"><i class="icon-Newsletter"></i></a>
+      <li ng-class="{active: action === 'newsletter'}">
+        <a ng-click="action = 'newsletter'"><i class="icon-Newsletter"></i></a>
       </li>
-      <li ng-class="{active: channelTab === 'banner'}">
-        <a ng-click="channelTab = 'banner'"><i class="icon-Banner"></i></a>
+      <li ng-class="{active: action === 'banner'}">
+        <a ng-click="action = 'banner'"><i class="icon-Banner"></i></a>
       </li>
     </ul>
   </div><!-- END .row -->

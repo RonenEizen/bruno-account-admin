@@ -72,13 +72,13 @@
       <div class="tbody">
         <div class="tr repeat-animation" ng-animate ng-repeat="campaign in campaigns | filter:campaignsFilter | orderBy:clickedHeader:reverse | limitTo:displayingItems">
           <div ng-show="displayColumns.campaign" class="td">
-            <a href="/marketing/{{campaign._id}}/view">{{campaign.name}}</a>
+            <a ui-sref=".campaign({id: campaign._id})">{{campaign.name}}</a>
           </div>
           <div ng-show="displayColumns.enabled" class="td">
-            <i class="channel enabled {{social}}" ng-repeat="social in campaign.enabled"></i>
+            <a ui-sref=".campaign({id: campaign._id, state: social})" ng-repeat="social in campaign.enabled"><i class="channel enabled {{social}}"></i></a>
           </div>
           <div ng-show="displayColumns.disabled" class="td">
-            <i class="channel disabled {{social}}" ng-repeat="social in campaign.disabled"></i>
+            <a ui-sref=".campaign({id: campaign._id, state: social})" ng-repeat="social in campaign.disabled"><i class="channel disabled {{social}}"></i></a>
           </div>
           <div ng-show="displayColumns.status" ng-switch="campaign.status" class="td">
             <span class="status cancelled" ng-switch-when="0">Cancelled</span>

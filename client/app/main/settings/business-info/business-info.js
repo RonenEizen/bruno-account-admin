@@ -1,30 +1,22 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
   .config(function($stateProvider) {
     $stateProvider
       .state('main.businessInfo.business', {
         url: '/business',
-        onEnter: function (Modal, SettingsService) {
-          Modal.businessModal(SettingsService.businessInfo.business)
-        }
+        onEnter: Modal => Modal.openModal('app/main/settings/business-info/business-modal.html', 'SettingsBusinessInfoModalCtrl')
       })
       .state('main.businessInfo.restaurant', {
         url: '/restaurant',
-        onEnter: function (Modal, SettingsService) {
-          Modal.restaurantModal(SettingsService.businessInfo.restaurant)
-        }
+        onEnter: Modal => Modal.openModal('app/main/settings/business-info/restaurant-modal.html', 'SettingsBusinessInfoModalCtrl')
       })
       .state('main.businessInfo.owner', {
         url: '/owner',
-        onEnter: function (Modal, SettingsService) {
-          Modal.ownerModal(SettingsService.businessInfo.owner)
-        }
+        onEnter: Modal => Modal.openModal('app/main/settings/business-info/owner-modal.html', 'SettingsBusinessInfoModalCtrl')
       })
       .state('main.businessInfo.opening', {
         url: '/opening',
-        onEnter: function (Modal, SettingsService) {
-          Modal.openingModal(SettingsService.businessInfo.openingHours)
-        }
-      });
-  });
+        onEnter: Modal => Modal.openModal('app/main/settings/business-info/opening-modal.html', 'SettingsBusinessInfoModalCtrl')
+      })
+  })

@@ -1,15 +1,17 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
-  .controller('SettingsBusinessInfoCtrl', function($scope, SettingsService) {
-    $scope.pageTitle = 'General Business Info';
+  .controller('SettingsBusinessInfoCtrl', function($scope, BusinessInfoService) {
+    const SERVICE = BusinessInfoService
 
-    $scope.business = SettingsService.businessInfo.business;
-    $scope.restaurant = SettingsService.businessInfo.restaurant;
-    $scope.owner = SettingsService.businessInfo.owner;
-    $scope.opening = SettingsService.businessInfo.openingHours;
+    $scope.pageTitle = 'General Business Info'
 
-    $scope.hideBusiness = _.isEmpty($scope.business);
-    $scope.hideRestaurant = _.isEmpty($scope.restaurant);
-    $scope.hideOwner = _.isEmpty($scope.owner);
-  });
+    $scope.business = SERVICE.businessInfo.business
+    $scope.restaurant = SERVICE.businessInfo.restaurant
+    $scope.owner = SERVICE.businessInfo.owner
+    $scope.opening = SERVICE.businessInfo.opening
+
+    $scope.hideBusiness = _.isEmpty($scope.business)
+    $scope.hideRestaurant = _.isEmpty($scope.restaurant)
+    $scope.hideOwner = _.isEmpty($scope.owner)
+  })

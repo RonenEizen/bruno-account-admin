@@ -1,0 +1,103 @@
+<button class="dismiss" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<div class="container custom-form">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <form name="businessForm" novalidate class="custom-form text-input">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>Edit Business Info</h1>
+          </div>
+        </div><!-- END .row -->
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <label class="control-label">Business Name</label> <span class="mandatory">*</span>
+            <input name="name" ng-model="object.business.name" type="text" class="form-control" required>
+            <p ng-show="businessForm.name.$error.required && businessForm.name.$touched" class="help-block">This is a required field.</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label class="control-label">Business Email</label> <span class="mandatory">*</span>
+            <input name="email" ng-model="object.business.email" type="email" class="form-control"  required>
+            <p ng-show="businessForm.email.$error.required && businessForm.email.$touched" class="help-block">Make sure this is a valid email.</p>
+          </div>
+
+          <div class="col-md-6 form-group">
+            <label class="control-label">Business Phone Number</label> <span class="mandatory">*</span>
+            <input name="phone" ng-model="object.business.phone" type="tel" class="form-control" minlength="14" maxlength="14" required ui-mask="(999) 999-9999" ui-mask-placeholder ui-mask-placeholder-char="_">
+            <p ng-show="businessForm.phone.$error.minlength" class="help-block">Phone Number is too short.</p>
+            <p ng-show="businessForm.phone.$error.maxlength" class="help-block">Phone Number is too long.</p>
+            <p ng-show="businessForm.phone.$error.required && businessForm.phone.$touched" class="help-block">Make sure this is a valid phone number.</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <label class="control-label">Business Address Line 1</label> <span class="mandatory">*</span>
+            <input name="addr1" ng-model="object.business.addr1" type="text" class="form-control" required>
+            <p ng-show="businessForm.addr1.$error.required && businessForm.addr1.$touched" class="help-block">This is a required field.</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <label class="control-label">Business Address Line 2 <span class="optional">(optional)<span></label>
+            <input name="addr2" ng-model="object.business.addr2" type="text" class="form-control">
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label class="control-label">City</label> <span class="mandatory">*</span>
+            <input name="city" ng-model="object.business.city" type="text" class="form-control" required>
+            <p ng-show="businessForm.city.$error.required && businessForm.city.$touched" class="help-block">This is a required field.</p>
+          </div>
+
+          <div class="col-md-6 form-group">
+            <label class="control-label">State</label> <span class="mandatory">*</span>
+            <fieldset>
+              <select name="state" ng-model="object.business.state" class="form-control" required>
+                <option value="">Pick</option>
+                <option value="NY">NY</option>
+                <option value="FL">FL</option>
+              </select>
+            </fieldset>
+            <p ng-show="businessForm.state.$error.required && businessForm.state.$touched" class="help-block">This is a required field.</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <label class="control-label">ZIP Code</label> <span class="mandatory">*</span>
+            <input name="zip" ng-model="object.business.zip" type="number" class="form-control" minlength="5" ng-maxlength="5" required>
+            <p ng-show="businessForm.zip.$error.minlength" class="help-block">Zip Code is too short.</p>
+            <p ng-show="businessForm.zip.$error.maxlength" class="help-block">Zip Code is too long.</p>
+            <p ng-show="businessForm.zip.$error.required && businessForm.zip.$touched" class="help-block">This is a required field.</p>
+          </div>
+
+          <div class="col-md-6 form-group">
+            <label class="control-label">Country</label> <span class="mandatory">*</span>
+            <fieldset>
+              <select name="country" ng-model="object.business.country" class="form-control" required>
+                <option value="">Pick one</option>
+                <option value="US">United States</option>
+                <option value="BR">Brazil</option>
+              </select>
+            </fieldset>
+            <p ng-show="businessForm.country.$error.required && businessForm.country.$touched" class="help-block">This is a required field.</p>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 text-center resetsave">
+            <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-primary" ng-click="save()" ng-disabled="businessForm.$invalid">Save</button>
+          </div>
+        </div><!-- END .row -->
+      </form><!-- END Business Info -->
+
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</div><!-- END .container -->

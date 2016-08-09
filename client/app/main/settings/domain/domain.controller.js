@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsDomainCtrl', function ($scope, SettingsService) {
+  .controller('SettingsDomainCtrl', function ($scope, DomainService) {
     $scope.pageTitle = 'Domain';
-    $scope.domain = SettingsService.domain.domain;
-    $scope.subdomain = SettingsService.domain.subdomain;
+    $scope.domain = DomainService.domain.domain;
+    $scope.subdomain = DomainService.domain.subdomain;
   });

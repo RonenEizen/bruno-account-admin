@@ -23,9 +23,9 @@
     <div class="column" ng-show="enabled">
       <div class="row">
         <div class="col-md-12">
-          <h2>Delivery Radius <a class="pull-right" href="/settings/delivery/radius">Edit</a></h2>
+          <h2>Delivery Radius <a class="pull-right" ui-sref=".radius">Edit</a></h2>
           <p ng-show="!radius.radius">
-            <a href="/settings/delivery/radius">Add Information</a>
+            <a ui-sref=".radius">Add Information</a>
           </p>
           <div ng-show="radius.radius" class="googlemap">
             <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d58420.22179022014!2d-51.171596471397784!3d-30.028410566185656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbr!4v1443130059406"></iframe>
@@ -38,9 +38,9 @@
         <div class="col-md-6 column">
           <div class="row">
             <div class="col-md-12 paragraph-margin">
-              <h2>Send Delivery Requests To <a class="pull-right" href="/settings/delivery/requests">Edit</a></h2>
+              <h2>Send Delivery Requests To <a class="pull-right" ui-sref=".requests">Edit</a></h2>
               <p ng-show="!requests.email.enabled && !requests.phone.enabled">
-                <a href="/settings/delivery/requests">Add Information</a>
+                <a ui-sref=".requests">Add Information</a>
               </p>
               <p ng-show="requests.email.enabled">
                 <strong>Email</strong><br>
@@ -55,7 +55,7 @@
 
           <div class="row">
             <div class="col-md-12">
-              <h2>Delivery Hours <a class="pull-right" href="/settings/delivery/delivery">Edit</a></h2>
+              <h2>Delivery Hours <a class="pull-right" ui-sref=".delivery">Edit</a></h2>
               <span ng-show="opening.twentyFourSeven">Open 24/7</span>
               <div ng-show="!opening.twentyFourSeven" class="table opening-hours">
                 <div class="tbody">
@@ -75,9 +75,9 @@
         <div class="col-md-6 column">
           <div class="row">
             <div class="col-md-12 paragraph-margin">
-              <h2>Additional Information <span class="optional">(optional)</span> <a class="pull-right" href="/settings/delivery/additional">Edit</a></h2>
+              <h2>Additional Information <span class="optional">(optional)</span> <a class="pull-right" ui-sref=".additional">Edit</a></h2>
               <p ng-show="!additional.minimum.enabled && !additional.surcharge.enabled && !additional.instructions.enabled">
-                <a href="/settings/delivery/additional">Add Information</a>
+                <a ui-sref=".additional">Add Information</a>
               </p>
               <p ng-show="additional.minimum.enabled">
                 <strong>Minimum Delivery Amount</strong><br>

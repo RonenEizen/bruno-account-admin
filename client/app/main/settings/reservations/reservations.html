@@ -16,7 +16,7 @@
       <div class="col-md-6 column">
         <h2 ng-class="{'reservations-heading': !!tables.length}">Tables</h2>
         <p ng-show="!tables.length">
-          <a href="/settings/reservations/create">Add Information</a>
+          <a ui-sref=".create">Add Information</a>
         </p>
         <div class="table reservations-table" ng-show="!!tables.length">
           <div class="thead">
@@ -31,15 +31,15 @@
           <div class="tbody">
             <div class="tr repeat-animation" ng-animate ng-repeat="table in tables">
               <div class="td">
-                <a href="/settings/reservations/{{table._id}}">{{table.name}}</a>
+                <a ui-sref=".table({id: table._id})">{{table.name}}</a>
               </div>
               <div class="td">{{table.capacity}}</div>
               <div class="td">{{table.quantity}}</div>
-              <div class="td">{{table.mergeable ? 'yes':'no'}}</div>
+              <div class="td">{{table.mergeable > 0 ? 'yes':'no'}}</div>
             </div><!-- END .tr -->
 
             <div class="tr">
-              <div class="td"><a href="/settings/reservations/create">+ Add Table</a></div>
+              <div class="td"><a ui-sref=".create">+ Add Table</a></div>
               <div class="td"></div>
               <div class="td"></div>
               <div class="td"></div>
@@ -51,9 +51,9 @@
       </div><!-- END .col-md-6 -->
 
       <div class="col-md-6 column">
-        <h2>Seating <a href="/settings/reservations/seating" class="pull-right">Edit</a></h2>
+        <h2>Seating <a ui-sref=".seating" class="pull-right">Edit</a></h2>
         <p ng-show="!seating">
-          <a href="/settings/reservations/seating">Add Information</a>
+          <a ui-sref=".seating">Add Information</a>
         </p>
         <p ng-show="seating">
           <strong>Maximun Seating Capacity</strong><br>
@@ -64,7 +64,7 @@
 
     <div class="reservation-integrations">
       <div class="col-md-8 col-md-offset-2 text-center">
-        <p>Please go to <a href="/settings/integration">Integration</a> settings to connect to online reservation services.</p>
+        <p>Please go to <a ui-sref="main.integration">Integration</a> settings to connect to online reservation services.</p>
         <div class="col-xs-3"><img src="http://borntocoupon.com/wp-content/uploads/2015/02/Seamless-logo.png" alt="Seamless"></div>
         <div class="col-xs-3"><img src="https://github-jobs.s3.amazonaws.com/aa017848-3710-11e1-948e-e2fa802ba968.png" alt="seatme"></div>
         <div class="col-xs-3"><img src="http://www.pricelinegroup.com/wp-content/uploads/2014/07/1_Brand_logo-435x110_x2-435x110@2x.png" alt="OpenTable"></div>

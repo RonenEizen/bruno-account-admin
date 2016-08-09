@@ -1,0 +1,93 @@
+<button class="dismiss" ng-click="$dismiss()"><i class="icon-close"></i></button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3" ng-show="!editing && !removing">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center">{{object.name}}</h1>
+        </div>
+      </div><!-- END .row -->
+
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong>Access</strong><br>
+            <span ng-repeat="access in object.accesses">{{access}}{{$last ? '' : ', '}}</span></p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Rights</strong><br>
+          <span ng-repeat="right in object.rights">{{right}}{{$last ? '' : ', '}}</span></p>
+        </div>
+      </div><!-- END .row -->
+
+      <div class="row">
+        <div class="col-md-12 resetsave text-center">
+          <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+          <button class="btn btn-danger" ng-click="removing = !removing">Remove</button>
+          <button class="btn btn-primary" ng-click="editing = !editing">Edit</button>
+        </div>
+      </div><!-- END .row -->
+    </div><!-- END .col-md-6 -->
+
+    <div class="col-md-6 col-md-offset-3" ng-show="editing">
+      <form class="custom-form" novalidate>
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">Edit Role</h1>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <label class="control-label">Name</label>
+            <input type="text" class="form-control" ng-model="object.name">
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <label class="control-label">Access</label>
+            <!-- TODO: make this input a ui-select with accesses -->
+            <input type="text" class="form-control" ng-model="object.accesses">
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <label class="control-label">Rights</label>
+            <!-- TODO: make this input a ui-select with rights -->
+            <input type="text" class="form-control" ng-model="object.rights">
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 resetsave text-center">
+            <button class="btn btn-default" ng-click="editing = !editing">Cancel</button>
+            <button class="btn btn-primary" ng-click="save()">Save</button>
+          </div>
+        </div><!-- END .row -->
+      </form>
+    </div><!-- END .col-md-6 -->
+
+    <div class="col-md-6 col-md-offset-3" ng-show="removing">
+      <form class="custom-form" novalidate>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="row">
+              <div class="col-md-12">
+                <h1>Remove Role</h1>
+                <p><strong>Are you sure that you want to remove this role?</strong></p>
+                <p>{{object.name}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 resetsave text-center">
+                <button class="btn btn-default" ng-click="removing = !removing">Cancel</button>
+                <button class="btn btn-danger" ng-click="delete()">Confirm</button>
+              </div>
+            </div><!-- END .row -->
+          </div>
+        </div><!-- END .row -->
+      </form>
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</div><!-- END .container -->

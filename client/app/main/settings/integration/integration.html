@@ -18,48 +18,48 @@
         <h2>Reservation &amp; Online Ordering</h2>
 
         <div class="table integrations">
-          <div class="tr appintegration" ng-class="{inactive: !integrations.bookatable.apiKey}">
+          <div class="tr appintegration" ng-class="{inactive: !integrations[0].apiKey}">
             <div class="td">
-              <img src="{{integrations.bookatable.imgUrl}}" alt="{{integrations.bookatable.name}}" title="{{integrations.bookatable.name}}">
+              <img src="{{integrations[0].imgUrl}}" alt="{{integrations[0].name}}" title="{{integrations[0].name}}">
             </div>
             <div class="td text-right">
-              <a href="/settings/integration/bookatable">{{integrations.bookatable.apiKey || 'Enter ' + integrations.bookatable.name + ' ID'}}</a>
+              <a href="/settings/integration/bookatable">{{integrations[0].apiKey || 'Enter ' + integrations[0].name + ' ID'}}</a>
             </div>
           </div>
 
-          <div class="tr appintegration" ng-class="{inactive: !integrations.seamless.apiKey}">
+          <div class="tr appintegration" ng-class="{inactive: !integrations[1].apiKey}">
             <div class="td">
-              <img src="{{integrations.seamless.imgUrl}}" alt="{{integrations.seamless.name}}" title="{{integrations.seamless.name}}">
+              <img src="{{integrations[1].imgUrl}}" alt="{{integrations[1].name}}" title="{{integrations[1].name}}">
             </div>
             <div class="td text-right">
-              <a href="/settings/integration/seamless">{{integrations.seamless.apiKey || 'Enter ' + integrations.seamless.name + ' ID'}}</a>
+              <a href="/settings/integration/seamless">{{integrations[1].apiKey || 'Enter ' + integrations[1].name + ' ID'}}</a>
             </div>
           </div>
 
-          <div class="tr appintegration" ng-class="{inactive: !integrations.seatme.apiKey}">
+          <div class="tr appintegration" ng-class="{inactive: !integrations[2].apiKey}">
             <div class="td">
-              <img src="{{integrations.seatme.imgUrl}}" alt="{{integrations.seatme.name}}" title="{{integrations.seatme.name}}">
+              <img src="{{integrations[2].imgUrl}}" alt="{{integrations[2].name}}" title="{{integrations[2].name}}">
             </div>
             <div class="td text-right">
-              <a href="/settings/integration/seatme">{{integrations.seatme.apiKey || 'Enter ' + integrations.seatme.name + ' ID'}}</a>
+              <a href="/settings/integration/seatme">{{integrations[2].apiKey || 'Enter ' + integrations[2].name + ' ID'}}</a>
             </div>
           </div>
 
-          <div class="tr appintegration" ng-class="{inactive: !integrations.opentable.apiKey}">
+          <div class="tr appintegration" ng-class="{inactive: !integrations[3].apiKey}">
             <div class="td">
-              <img src="{{integrations.opentable.imgUrl}}" alt="{{integrations.opentable.name}}" title="{{integrations.opentable.name}}">
+              <img src="{{integrations[3].imgUrl}}" alt="{{integrations[3].name}}" title="{{integrations[3].name}}">
             </div>
             <div class="td text-right">
-              <a href="/settings/integration/opentable">{{integrations.opentable.apiKey || 'Enter ' + integrations.opentable.name + ' ID'}}</a>
+              <a href="/settings/integration/opentable">{{integrations[3].apiKey || 'Enter ' + integrations[3].name + ' ID'}}</a>
             </div>
           </div>
 
-          <div class="tr appintegration" ng-class="{inactive: !integrations.grubhub.apiKey}">
+          <div class="tr appintegration" ng-class="{inactive: !integrations[4].apiKey}">
             <div class="td">
-              <img src="{{integrations.grubhub.imgUrl}}" alt="{{integrations.grubhub.name}}" title="{{integrations.grubhub.name}}">
+              <img src="{{integrations[4].imgUrl}}" alt="{{integrations[4].name}}" title="{{integrations[4].name}}">
             </div>
             <div class="td text-right">
-              <a href="/settings/integration/grubhub">{{integrations.grubhub.apiKey || 'Enter ' + integrations.grubhub.name + ' ID'}}</a>
+              <a href="/settings/integration/grubhub">{{integrations[4].apiKey || 'Enter ' + integrations[4].name + ' ID'}}</a>
             </div>
           </div>
         </div>
@@ -69,30 +69,30 @@
         <h2>Social Reviews</h2>
 
         <div class="table integrations">
-          <div class="tr appintegration" ng-class="{inactive: !integrations.menupages.apiKey}">
+          <div class="tr appintegration" ng-class="{inactive: !integrations[5].apiKey}">
             <div class="td">
-              <img src="{{integrations.menupages.imgUrl}}" alt="{{integrations.menupages.name}}" title="{{integrations.menupages.name}}">
+              <img src="{{integrations[5].imgUrl}}" alt="{{integrations[5].name}}" title="{{integrations[5].name}}">
             </div>
             <div class="td text-right">
-              <a href="/settings/integration/menupages">{{integrations.menupages.apiKey || 'Enter ' + integrations.menupages.name + ' ID'}}</a>
+              <a href="/settings/integration/menupages">{{integrations[5].apiKey || 'Enter ' + integrations[5].name + ' ID'}}</a>
             </div>
           </div>
 
-          <div class="tr appintegration" ng-class="{inactive: !integrations.yelp.apiKey}">
+          <div class="tr appintegration" ng-class="{inactive: !integrations[6].apiKey}">
             <div class="td">
-              <img src="{{integrations.yelp.imgUrl}}" alt="{{integrations.yelp.name}}" title="{{integrations.yelp.name}}">
+              <img src="{{integrations[6].imgUrl}}" alt="{{integrations[6].name}}" title="{{integrations[6].name}}">
             </div>
             <div class="td text-right">
-              <a href="/settings/integration/yelp">{{integrations.yelp.apiKey || 'Enter ' + integrations.yelp.name + ' ID'}}</a>
+              <a href="/settings/integration/yelp">{{integrations[6].apiKey || 'Enter ' + integrations[6].name + ' ID'}}</a>
             </div>
           </div>
 
-          <div class="tr appintegration" ng-class="{inactive: !integrations.tripadvisor.apiKey}">
+          <div class="tr appintegration" ng-class="{inactive: !integrations[7].apiKey}">
             <div class="td">
-              <img src="{{integrations.tripadvisor.imgUrl}}" alt="{{integrations.tripadvisor.name}}" title="{{integrations.tripadvisor.name}}">
+              <img src="{{integrations[7].imgUrl}}" alt="{{integrations[7].name}}" title="{{integrations[7].name}}">
             </div>
             <div class="td text-right">
-              <a href="/settings/integration/tripadvisor">{{integrations.tripadvisor.apiKey || 'Enter ' + integrations.tripadvisor.name + ' ID'}}</a>
+              <a href="/settings/integration/tripadvisor">{{integrations[7].apiKey || 'Enter ' + integrations[7].name + ' ID'}}</a>
             </div>
           </div>
         </div>

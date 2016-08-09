@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -10,16 +10,10 @@ angular.module('accountAdminApp')
       })
       .state('main.orders.create', {
         url: '/create',
-        onEnter: function (Modal) {
-          Modal.createOrderModal()
-        }
+        onEnter: Modal => Modal.openModal('app/main/orders/create-order-modal.html', 'OrdersModalCtrl', {items:[]})
       })
       .state('main.orders.order', {
-        url: '/:id/:state',
-        onEnter: function (Modal, OrderService, $stateParams) {
-          Modal.orderModal(_.find(OrderService.orders, { '_id': $stateParams.id }), $stateParams.state)
-        }
+        url: '/:id?state',
+        onEnter: (Modal, $stateParams) => Modal.openModal('app/main/orders/order-modal.html', 'OrdersModalCtrl', $stateParams.id, $stateParams.state)
       })
-    $urlRouterProvider
-      .when('/orders/:id', '/orders/:id/view')
-  });
+  })

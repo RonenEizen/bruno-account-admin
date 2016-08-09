@@ -1,15 +1,15 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
-  .controller('SettingsPaymentsCtrl', function ($scope, SettingsService, Modal) {
-    $scope.pageTitle = 'Payments';
+  .controller('SettingsPaymentsCtrl', function ($scope, BusinessInfoService, PaymentsService, Modal) {
+    $scope.pageTitle = 'Payments'
 
-    $scope.payments = SettingsService.onlinePayments;
-    $scope.businessInfo = SettingsService.businessInfo;
-    $scope.business = SettingsService.businessInfo.business;
-    $scope.owner = SettingsService.businessInfo.owner;
+    $scope.payments = PaymentsService.payments
+
+    $scope.business = BusinessInfoService.businessInfo.business
+    $scope.owner = BusinessInfoService.businessInfo.owner
 
     // Modal calls
-    $scope.businessModal = Modal.businessModal;
-    $scope.ownerModal = Modal.ownerModal;
-  });
+    $scope.businessModal = () => Modal.openModal('app/main/settings/business-info/business-modal.html', 'SettingsBusinessInfoModalCtrl')
+    $scope.ownerModal = () => Modal.openModal('app/main/settings/business-info/owner-modal.html', 'SettingsBusinessInfoModalCtrl')
+  })

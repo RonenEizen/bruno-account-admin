@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
   .config(function ($stateProvider) {
@@ -10,8 +10,6 @@ angular.module('accountAdminApp')
       })
       .state('main.dashboard.updates', {
         url: '/updates',
-        onEnter: function (Modal) {
-          Modal.updatesModal()
-        }
-      });
-  });
+        onEnter: Modal => Modal.openModal('app/main/dashboard/view-updates-modal.html', 'DashboardModalCtrl')
+      })
+  })

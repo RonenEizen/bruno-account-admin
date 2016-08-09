@@ -3,11 +3,11 @@
     .channel                      { font: normal normal normal 24px 'BrunoIcons' !important; speak: none; line-height: 1; margin-right: 20px; text-transform: none;
       &.enabled                   { color: $blue; }
       &.disabled                  { color: $column-picker-bd; }
-      &.bn:before                 { content: "\e90c"; }
-      &.em:before                 { content: "\e90b"; }
-      &.fb:before                 { content: "\e908"; }
-      &.ga:before                 { content: "\e90a"; }
-      &.tw:before                 { content: "\e909"; }
+      &.banner:before             { content: "\e90c"; }
+      &.newsletter:before         { content: "\e90b"; }
+      &.facebook:before           { content: "\e908"; }
+      &.google:before             { content: "\e90a"; }
+      &.twitter:before            { content: "\e909"; }
     }
     .status                       {
       &.cancelled                 { color: $red; }

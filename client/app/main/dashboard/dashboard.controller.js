@@ -27,9 +27,9 @@ angular.module('accountAdminApp')
     };
 
     // Modal calls
-    $scope.orderModal = Modal.orderModal;
-    $scope.campaignModal = Modal.campaignModal;
-    $scope.reservationModal = Modal.reservationModal;
+    $scope.orderModal = (object) => Modal.openModal('app/main/orders/order-modal.html', 'OrdersModalCtrl', object);
+    $scope.campaignModal = (object, action) => Modal.openModal('app/main/marketing/campaign-modal.html', 'MarketingModalCtrl', object, action);
+    $scope.reservationModal = (object) => Modal.openModal('app/main/reservations/reservation-modal.html', 'ReservationsModalCtrl', object);
 
     // set and update time every second
     $scope.currentDate = Date;

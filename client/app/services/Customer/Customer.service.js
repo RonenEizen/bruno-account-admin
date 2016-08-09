@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
   .service('CustomerService', function () {
@@ -13,23 +13,28 @@ angular.module('accountAdminApp')
       { _id: '8', createdAt: Date('2016-03-01T12:00:00'), updatedAt: Date('2016-03-01T12:00:00'), fname: 'Hotel', mname: 'I', lname: 'India', homePhone: '9999999998', mobilePhone: '9999999998', email: 'hotel@domain.com', workEmail: 'hotel@company.com', addr: '98th Dundas St', city: 'New York City', state: 'FL', zip: 99998, orders: ['12345', '12346', '12347'] },
       { _id: '9', createdAt: Date('2016-03-01T12:00:00'), updatedAt: Date('2016-03-01T12:00:00'), fname: 'India', mname: 'I', lname: 'Juliet', homePhone: '9999999999', mobilePhone: '9999999999', email: 'india@domain.com', workEmail: 'india@company.com', addr: '99th Dundas St', city: 'New York City', state: 'CA', zip: 99999, orders: ['12345', '12346', '12347'] },
       { _id: '10', createdAt: Date('2016-03-01T12:00:00'), updatedAt: Date('2016-03-01T12:00:00'), fname: 'Juliet', mname: 'I', lname: 'Kilo', homePhone: '9999999990', mobilePhone: '9999999990', email: 'juliet@domain.com', workEmail: 'juliet@company.com', addr: '90th Dundas St', city: 'New York City', state: 'NY', zip: 99990, orders: ['12345', '12346', '12347'] },
-    ];
-    this.add = (newCustomer) => {
+    ]
+
+    this.get = (id) => this.customers.find((item) => item._id === id) || undefined
+
+    this.delete = (id) => {
+      let i = _.findIndex(this.customers, {'_id': id })
+      this.customers.splice(i, 1)
+    }
+
+    this.add = (newItem) => {
       let newProps = {
         _id: (Number(this.customers[this.customers.length - 1]._id) + 1).toString(),
         createdAt: new Date(),
         updatedAt: new Date()
-      };
-      angular.extend(newCustomer, newProps);
-      this.customers.push(newCustomer);
-    };
-    this.update = (updatedCustomer) => {
-      updatedCustomer.updatedAt = new Date();
-      this.customers.forEach((cust) => {
-        if(cust._id === updatedCustomer._id){
-          console.log(cust);
-        }
-      });
-      // splice and add to index
-    };
-  });
+      }
+      angular.extend(newItem, newProps)
+      this.customers.push(newItem)
+    }
+
+    this.put = (updatedItem) => {
+      let i = _.findIndex(this.customers, {'_id': updatedItem._id })
+      updatedItem.updatedAt = new Date()
+      this.customers[i] = updatedItem
+    }
+  })

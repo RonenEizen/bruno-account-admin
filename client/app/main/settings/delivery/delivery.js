@@ -1,30 +1,22 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
   .config(function($stateProvider) {
     $stateProvider
       .state('main.deliverySettings.radius', {
         url: '/radius',
-        onEnter: function (Modal, SettingsService) {
-          Modal.radiusModal(SettingsService.delivery.radius)
-        }
+        onEnter: Modal => Modal.openModal('app/main/settings/delivery/radius-modal.html', 'SettingsDeliveryModalCtrl')
       })
       .state('main.deliverySettings.requests', {
         url: '/requests',
-        onEnter: function (Modal, SettingsService) {
-          Modal.requestsModal(SettingsService.delivery.requests)
-        }
+        onEnter: Modal => Modal.openModal('app/main/settings/delivery/requests-modal.html', 'SettingsDeliveryModalCtrl')
       })
       .state('main.deliverySettings.delivery', {
         url: '/delivery',
-        onEnter: function (Modal, SettingsService) {
-          Modal.deliveryModal(SettingsService.delivery.deliveryHours)
-        }
+        onEnter: Modal => Modal.openModal('app/main/settings/delivery/delivery-modal.html', 'SettingsDeliveryModalCtrl')
       })
       .state('main.deliverySettings.additional', {
         url: '/additional',
-        onEnter: function (Modal, SettingsService) {
-          Modal.additionalModal(SettingsService.delivery.additional)
-        }
-      });
-  });
+        onEnter: Modal => Modal.openModal('app/main/settings/delivery/additional-modal.html', 'SettingsDeliveryModalCtrl')
+      })
+  })

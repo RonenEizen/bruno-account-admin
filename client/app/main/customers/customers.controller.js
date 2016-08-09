@@ -6,28 +6,6 @@ angular.module('accountAdminApp')
 
     $scope.customers = CustomerService.customers;
 
-    $scope.object = {
-      _id: '1',
-      createdAt: new Date('2016-05-01T10:41:00Z'),
-      updatedAt: new Date('2016-05-01T10:41:00Z'),
-      fname: 'Alpha',
-      mname: 'I',
-      lname: 'Bravo',
-      homePhone: '9999999991',
-      mobilePhone: '9999999991',
-      email: 'alpha@domain.com',
-      workEmail: 'alpha@company.com',
-      addr: '91th Dundas St',
-      city: 'New York City',
-      state: 'NY',
-      zip: 99991,
-      orders: [
-        '12345',
-        '12346',
-        '12347'
-      ]
-    }
-
     // Columns
     $scope.displayColumns = { name: true, homePhone: true, mobilePhone: false, email: true, addr: true, zip: true, city: false, workEmail: false };
     $scope.showColumnPicker = function () {

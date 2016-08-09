@@ -102,7 +102,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   .icon-triangle_right:before       { content: "\e913"; }
 
 $serif-font:                      Museo, Oswald, serif;
-$sans-font:                       "Helvetica Neue", HelveticaNeue, Helvetica, Roboto, "Open Sans", sans;
+$sans-font:                       "Helvetica Neue", HelveticaNeue, Roboto, "Open Sans", sans;
 
 // sketch colors
   $headerbg:                        #F8F8F8;
@@ -182,7 +182,9 @@ $sans-font:                       "Helvetica Neue", HelveticaNeue, Helvetica, Ro
  * App-wide Styles
  */
 *                                 { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-smooth: always; }
-a                                 { color: $blue; }
+a                                 { color: $blue;
+  &:hover, &:focus                { text-decoration: none; }
+}
 html, body                        { color: $black; font-family: $sans-font; font-size: 16px; height: 100%; position: relative; width: 100%; }
 strong,
 .bold                             { font-weight: 500; }

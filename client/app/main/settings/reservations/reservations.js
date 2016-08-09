@@ -1,24 +1,20 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('main.reservationsSettings.create', {
         url: '/create',
-        onEnter: function (Modal, SettingsService) {
-          Modal.createTableModal()
-        }
+        onEnter: Modal => Modal.openModal('app/main/settings/reservations/create-table-modal.html', 'SettingsReservationsModalCtrl')
       })
+
       .state('main.reservationsSettings.seating', {
         url: '/seating',
-        onEnter: function (Modal, SettingsService) {
-          Modal.seatingModal(SettingsService.reservations.seating)
-        }
+        onEnter: Modal => Modal.openModal('app/main/settings/reservations/seating-modal.html', 'SettingsSeatingModalCtrl')
       })
+
       .state('main.reservationsSettings.table', {
         url: '/:id',
-        onEnter: function (Modal, SettingsService, $stateParams) {
-          Modal.tableModal(_.find(SettingsService.reservations.tables, { '_id': $stateParams.id }))
-        }
+        onEnter: (Modal, $stateParams) => Modal.openModal('app/main/settings/reservations/table-modal.html', 'SettingsReservationsModalCtrl', $stateParams.id)
       })
-  });
+  })

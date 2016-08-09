@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
-  .controller('FoodMenusCtrl', function($scope, MenuService) {
-    $scope.pageTitle = 'Food Menus';
-    $scope.menus = MenuService.menus;
-    $scope.categories = MenuService.categories;
-    $scope.foodItems = MenuService.foodItems;
-  });
+  .controller('FoodMenusCtrl', function($scope, FoodMenusService, FoodCategoriesService, FoodItemsService) {
+    $scope.pageTitle = 'Food Menus'
+    $scope.menus = FoodMenusService.menus
+    $scope.categories = FoodCategoriesService.categories
+    $scope.foodItems = FoodItemsService.foodItems
+  })

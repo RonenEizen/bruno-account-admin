@@ -1,0 +1,30 @@
+<button class="dismiss" ng-click="cancel()"><i class="icon-close"></i></button>
+<div class="container custom-form">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <form name="integrationForm" class="custom-form form-group">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>Edit ID</h1>
+
+            <img class="integration-image" src="{{object.imgUrl}}" alt="{{object.name}}">
+
+            <div class="form-group">
+              <input type="text" name="integration" ng-model="object.apiKey" class="form-control" placeholder="{{'Enter ' + object.name + ' ID'}}" required>
+              <p ng-show="integrationForm.integration.$error.required && integrationForm.integration.$touched" class="help-block">This is a required field.</p>
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 text-center resetsave">
+            <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-primary" ng-click="save()" ng-disabled="integrationForm.$invalid">Save</button>
+          </div>
+        </div><!-- END .row -->
+      </form>
+
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</div><!-- END .container -->

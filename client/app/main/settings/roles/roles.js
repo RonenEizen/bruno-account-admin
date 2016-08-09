@@ -1,20 +1,14 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('main.roles.create', {
         url: '/create',
-        onEnter: function (Modal) {
-          Modal.createRolesModal()
-        }
+        onEnter: Modal => Modal.openModal('app/main/settings/roles/createRoleModal.html', 'SettingsRolesModalCtrl')
       })
       .state('main.roles.role', {
-        url: '/:id/:state',
-        onEnter: function (Modal, SettingsService, $stateParams) {
-          Modal.roleModal(_.find(SettingsService.roles, { '_id': $stateParams.id }), $stateParams.state)
-        }
+        url: '/:id?state',
+        onEnter: (Modal, $stateParams) => Modal.openModal('app/main/settings/roles/roleModal.html', 'SettingsRolesModalCtrl', $stateParams.id, $stateParams.state)
       })
-    $urlRouterProvider
-      .when('/settings/roles/:id', '/settings/roles/:id/view');
-  });
+  })

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -9,60 +9,37 @@ angular.module('accountAdminApp')
         controller: 'FoodMenusCtrl'
       })
 
-
       // MENUS
-      .state('main.food-menus.createMenu', {
+      .state('main.food-menus.create-menu', {
         url: '/create-menu',
-        onEnter: function (Modal) {
-          Modal.createFoodMenuModal()
-        }
+        onEnter: Modal => Modal.openModal('app/main/food-menus/create-food-menu-modal.html', 'FoodMenuModalCtrl')
       })
       .state('main.food-menus.menu', {
-        url: '/:id/:state',
-        onEnter: function (Modal, MenuService, $stateParams) {
-          Modal.foodMenuModal(_.find(MenuService.menus, { '_id': $stateParams.id }), $stateParams.state)
-        }
+        url: '/menu/:id?state',
+        onEnter: (Modal, $stateParams) => Modal.openModal('app/main/food-menus/food-menu-modal.html', 'FoodMenuModalCtrl', $stateParams.id, $stateParams.state || 'edit')
       })
-
 
       // CATEGORIES
-      .state('main.food-menus.createCategory', {
+      .state('main.food-menus.create-category', {
         url: '/create-category',
-        onEnter: function (Modal) {
-          Modal.createMenuCategoryModal()
-        }
+        onEnter: Modal => Modal.openModal('app/main/food-menus/create-menu-category-modal.html', 'FoodCategoryModalCtrl')
       })
       .state('main.food-menus.category', {
-        url: '/category/:id/:state',
-        onEnter: function (Modal, MenuService, $stateParams) {
-          Modal.menuCategoryModal(_.find(MenuService.categories, { '_id': $stateParams.id }), $stateParams.state)
-        }
+        url: '/category/:id?state',
+        onEnter: (Modal, $stateParams) => Modal.openModal('app/main/food-menus/menu-category-modal.html', 'FoodCategoryModalCtrl', $stateParams.id, $stateParams.state || 'edit')
       })
-
 
       // FOOD ITEMS
       .state('main.food-menus.food', {
-        url: '/food/:id/:state',
-        onEnter: function (Modal, MenuService, $stateParams) {
-          Modal.foodItemModal(_.find(MenuService.foodItems, { '_id': $stateParams.id }), $stateParams.state)
-        }
+        url: '/food/:id?state',
+        onEnter: (Modal, $stateParams) => Modal.openModal('app/main/food-menus/food-item-modal.html', 'FoodItemModalCtrl', $stateParams.id, $stateParams.state)
       })
-      .state('main.food-menus.addFood', {
+      .state('main.food-menus.add-food', {
         url: '/add-food',
-        onEnter: function (Modal) {
-          Modal.addFoodItemModal()
-        }
+        onEnter: Modal => Modal.openModal('app/main/food-menus/add-food-item-modal.html', 'FoodItemModalCtrl')
       })
-      .state('main.food-menus.createFood', {
+      .state('main.food-menus.create-food', {
         url: '/create-food',
-        onEnter: function (Modal) {
-          Modal.createFoodItemModal()
-        }
+        onEnter: Modal => Modal.openModal('app/main/food-menus/create-food-item-modal.html', 'FoodItemModalCtrl')
       })
-
-
-    $urlRouterProvider
-      .when('/food-menus/menu/:id', '/food-menus/menu/:id/edit')
-      .when('/food-menus/category/:id', '/food-menus/category/:id/edit')
-      .when('/food-menus/food/:id', '/food-menus/food/:id/view');
-  });
+  })

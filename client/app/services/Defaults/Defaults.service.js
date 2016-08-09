@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 angular.module('accountAdminApp')
   .service('DefaultsService', function () {
@@ -54,5 +54,5 @@ angular.module('accountAdminApp')
       { _id: 'WV', name: 'West Virginia', cities: [123, 456, 789] },
       { _id: 'WI', name: 'Wisconsin', cities: [123, 456, 789] },
       { _id: 'WY', name: 'Wyoming', cities: [123, 456, 789] }
-    ];
-  });
+    ]
+  })

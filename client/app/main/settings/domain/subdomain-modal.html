@@ -1,0 +1,31 @@
+<button class="dismiss" ng-click="cancel()"><i class="icon-close"></i></button>
+<div class="container custom-form">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <form name="subdomainForm" class="custom-form form-group">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>Edit Subdomain</h1>
+
+            <div class="form-inline">
+              <div class="input-group">
+                <input type="text" name="subdomain" ng-model="object.subdomain" class="form-control" placeholder="Enter a domain name" required>
+                <div class="input-group-addon">.chefbr.uno</div>
+              </div>
+              <p ng-show="domain.subdomain.$invalid || (subdomainForm.subdomain.$error.required && subdomainForm.subdomain.$touched)" class="help-block">This is a required field.</p>
+            </div>
+          </div>
+        </div><!-- END .row -->
+
+        <div class="row">
+          <div class="col-md-12 text-center resetsave">
+            <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-primary" ng-click="save()" ng-disabled="subdomainForm.$invalid">Save</button>
+          </div>
+        </div><!-- END .row -->
+      </form>
+
+    </div><!-- END .col-md-6 -->
+  </div><!-- END .row -->
+</div><!-- END .container -->

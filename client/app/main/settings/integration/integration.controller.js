@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('accountAdminApp')
-  .controller('SettingsIntegrationCtrl', function ($scope, SettingsService) {
+  .controller('SettingsIntegrationCtrl', function ($scope, IntegrationsService) {
     $scope.pageTitle = 'Integrations';
 
-    $scope.integrations = SettingsService.integrations;
-    $scope.reviews = SettingsService.reviews;
+    $scope.integrations = IntegrationsService.integrations;
+    $scope.reviews = IntegrationsService.reviews;
   });
